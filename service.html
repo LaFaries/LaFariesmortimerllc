@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - LaFaries Mortimer LLC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #e74c3c;
+            --gold-accent: #d4af37;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-light: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .phone-link {
+            background: var(--accent-color);
+            color: white !important;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gold-accent);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: #c19b26;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-accent);
+        }
+
+        .service-icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .service-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Audience Section */
+        .audience-section {
+            padding: 5rem 5%;
+            background: var(--bg-light);
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .audience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .audience-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .audience-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .audience-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-number {
+            background: var(--accent-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .step-description {
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-gold {
+            background: var(--gold-accent);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-gold:hover {
+            background: #c19b26;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+        }
+
+        .mobile-nav.show {
+            transform: translateY(0);
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 1rem 5%;
+        }
+
+        .mobile-nav li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LM</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="laap.html">LAAP</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="tel:305-859-1279" class="phone-link">305-859-1279</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="laap.html">LAAP</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="tel:305-859-1279">305-859-1279</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Services</h1>
+            <p class="hero-subtitle">For Your Business or Ministry</p>
+            <p class="hero-description">Whether you're forming an LLC, launching a nonprofit, or cleaning up your back-office, LaFaries Mortimer LLC brings order, structure, and simple tech setups so you can focus on the assignment in your hands.</p>
+            <div class="cta-buttons">
+                <a href="#packages" class="btn btn-primary">
+                    <i class="fas fa-box"></i>
+                    View Service Packages
+                </a>
+                <a href="goals.html" class="btn btn-secondary">
+                    <i class="fas fa-calendar"></i>
+                    Book a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="packages">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We Do on the Services Side</h2>
+                <p class="section-subtitle">Think of this as your professional support layer — when you're ready for someone to walk with you through the details, not just give you a template.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="service-title">Business & Nonprofit Formation</h3>
+                    <p class="service-description">Guidance and structure so you don't guess your way through forming an LLC, ministry, or nonprofit.</p>
+                    <ul class="service-features">
+                        <li>LLC / nonprofit formation support (Florida-focused, wider application)</li>
+                        <li>Sunbiz navigation, name checks, and formation outline</li>
+                        <li>EIN application guidance (what to enter and where)</li>
+                        <li>Bank-ready documentation support</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">Administrative Systems & Operations</h3>
+                    <p class="service-description">Bring order to your office, documents, meetings, and team workflows so you can operate like the leader you are.</p>
+                    <ul class="service-features">
+                        <li>Digital file organization and naming structure (2025 system)</li>
+                        <li>Meeting agendas, minutes, and decision tracking</li>
+                        <li>Simple SOPs for recurring tasks and key processes</li>
+                        <li>Board documentation and compliance</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">IT Support for Everyday Users</h3>
+                    <p class="service-description">Non-technical, practical support for setting up your digital foundation without overwhelm or tech jargon.</p>
+                    <ul class="service-features">
+                        <li>New computer setup for work or ministry</li>
+                        <li>Password managers and 2-step verification basics</li>
+                        <li>Cloud storage setup (Google Drive / OneDrive)</li>
+                        <li>Zoom / Teams setup, audio/video troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Section -->
+    <section class="audience-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Who This Is For</h2>
+                <p class="section-subtitle">Leaders Who Need Order, Not More Overwhelm</p>
+            </div>
+            
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="audience-title">Entrepreneurs & Start-Ups</h3>
+                    <p class="audience-description">Service-based and online business owners who need clear steps for LLC formation, EIN setup, bank readiness, and basic systems.</p>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3 class="audience-title">Churches, Ministries & Nonprofits</h3>
+                    <p class="audience-description">New works and established organizations that need documentation, board structure, meeting minutes, compliance basics, and digital organization.</p>
+                </div>
+                
+                <div class="audience-card">
+                    <div class="audience-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="audience-title">Small Teams & Community Organizations</h3>
+                    <p class="audience-description">Leaders managing volunteers and staff who need practical admin tools, clear workflows, and basic tech support to keep everyone aligned.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Simple steps to get the support you need</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Schedule Consultation</h3>
+                    <p class="step-description">Book a call to discuss your needs and goals</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Choose Your Services</h3>
+                    <p class="step-description">Select the support level that fits your budget</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Get It Done</h3>
+                    <p class="step-description">We handle the details while you focus on your mission</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-description">Schedule a consultation to discuss your needs and find the right support level for your organization.</p>
+            <a href="goals.html" class="btn-gold">
+                <i class="fas fa-calendar"></i>
+                Book a 1:1 Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LaFaries Mortimer LLC</h3>
+                <p>Professional Administrative & IT Services for Your Business</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="laap.html">LAAP Suite</a></p>
+                <p><a href="tutorial.html">Tutorials</a></p>
+                <p><a href="service.html">Services</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> (305) 859-1279</p>
+                <p><i class="fas fa-envelope"></i> info@lafariesmortimerllc.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Miami, Florida</p>
+                <p>Serving clients virtually</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday</p>
+                <p>By appointment</p>
+                <p><a href="goals.html" style="color: var(--gold-accent);">Book a Consultation</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 LaFaries Mortimer LLC - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

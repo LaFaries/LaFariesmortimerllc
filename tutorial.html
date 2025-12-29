@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials - LaFaries Mortimer LLC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #e74c3c;
+            --gold-accent: #d4af37;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-light: #e9ecef;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .phone-link {
+            background: var(--accent-color);
+            color: white !important;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 3rem 5%;
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--border-light);
+            background: white;
+            color: var(--text-dark);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        /* Tutorials Section */
+        .tutorials-section {
+            padding: 3rem 5%;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tutorials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .tutorial-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .tutorial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .tutorial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tutorial-icon {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .tutorial-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .tutorial-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c0392b;
+        }
+
+        .btn-secondary {
+            background: var(--border-light);
+            color: var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background: #dee2e6;
+        }
+
+        /* Video Tutorials */
+        .video-section {
+            padding: 5rem 5%;
+            background: var(--bg-light);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .video-thumbnail {
+            background: var(--primary-color);
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .video-thumbnail:hover {
+            background: var(--secondary-color);
+        }
+
+        .video-content {
+            padding: 1.5rem;
+        }
+
+        .video-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .video-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Templates Section */
+        .templates-section {
+            padding: 5rem 5%;
+            background: white;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .template-card {
+            background: var(--bg-light);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .template-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .template-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .template-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .template-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 5%;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-gold {
+            background: var(--gold-accent);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-gold:hover {
+            background: #c19b26;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+        }
+
+        .mobile-nav.show {
+            transform: translateY(0);
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 1rem 5%;
+        }
+
+        .mobile-nav li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            display: block;
+        }
+
+        /* Hidden by default */
+        .tutorial-item {
+            display: none;
+        }
+
+        .tutorial-item.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">LM</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="laap.html">LAAP</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="tel:305-859-1279" class="phone-link">305-859-1279</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="laap.html">LAAP</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="tel:305-859-1279">305-859-1279</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Tutorials</h1>
+            <p class="hero-subtitle">IT & Administrative Tutorials Library</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" onclick="filterTutorials('all')">All</button>
+                <button class="filter-btn" onclick="filterTutorials('it-basics')">IT Basics</button>
+                <button class="filter-btn" onclick="filterTutorials('administrative')">Administrative</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tutorials Section -->
+    <section class="tutorials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Free Step-by-Step Guides</h2>
+                <p class="section-subtitle">Download as .DOCX or PDF and share with your team</p>
+            </div>
+            
+            <div class="tutorials-grid">
+                <!-- IT Basics Tutorials -->
+                <div class="tutorial-item show" data-category="it-basics">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h3 class="tutorial-title">Set Up a Secure Work Computer</h3>
+                        </div>
+                        <p class="tutorial-description">Checklist for setting up a new Windows or Mac computer safely for work. Create a secure user account & screen lock, turn on automatic updates, install required software & security tools.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('secure-computer', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('secure-computer', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="it-basics">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="tutorial-title">Cybersecurity Basics for Everyday Users</h3>
+                        </div>
+                        <p class="tutorial-description">Simple rules staff can follow to avoid the most common online attacks. Learn 7 signs of a phishing email or text, safe browsing habits, and what to do if something feels "off".</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('cybersecurity', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('cybersecurity', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="it-basics">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3 class="tutorial-title">Use Cloud Storage the Right Way</h3>
+                        </div>
+                        <p class="tutorial-description">How to store and share documents in Google Drive, OneDrive, or iCloud. Learn upload vs. sync vs. share, setting permissions safely, and using version history.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('cloud-storage', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('cloud-storage', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="it-basics">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3 class="tutorial-title">Join & Host Zoom / Teams Meetings</h3>
+                        </div>
+                        <p class="tutorial-description">Step-by-step guide for smooth online meetings with audio and video working. Join from app or browser, mute, share screen, use chat, and fix common audio/video problems.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('zoom-meetings', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('zoom-meetings', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="it-basics">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-key"></i>
+                            </div>
+                            <h3 class="tutorial-title">Password Managers & 2-Step Verification</h3>
+                        </div>
+                        <p class="tutorial-description">How to create strong passwords and protect key accounts with 2FA. Learn about choosing a password manager, building a strong master password, and turning on 2FA for email and banking.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('password-security', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('password-security', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="it-basics">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-hdd"></i>
+                            </div>
+                            <h3 class="tutorial-title">Back Up Your Computer & Phone</h3>
+                        </div>
+                        <p class="tutorial-description">A simple backup plan so you don't lose critical files or photos. Learn about cloud backups (iCloud, Google, OneDrive), using an external drive safely, and how to restore from a backup.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('backup-guide', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('backup-guide', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Administrative Tutorials -->
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 class="tutorial-title">Professional Email Etiquette & Templates</h3>
+                        </div>
+                        <p class="tutorial-description">Modern email standards and ready-made templates for everyday office situations. Learn about writing clear subjects & messages, reply-all rules, and templates for follow-ups and saying "no" with grace.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('email-etiquette', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('email-etiquette', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-folder-open"></i>
+                            </div>
+                            <h3 class="tutorial-title">Digital File Organization (2025 System)</h3>
+                        </div>
+                        <p class="tutorial-description">A simple folder and naming system anyone in the office can follow. Learn about using dates + type + topic in filenames, yearly/monthly/project folders, and shared drive do's and don'ts.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('file-organization', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('file-organization', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3 class="tutorial-title">Scheduling with Google Calendar / Outlook</h3>
+                        </div>
+                        <p class="tutorial-description">Use digital calendars to keep leaders on time and reduce missed appointments. Learn how to create events, set reminders, share calendars, and manage appointments effectively.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('calendar-scheduling', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('calendar-scheduling', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="tutorial-title">Run a Professional Meeting (Agenda & Minutes)</h3>
+                        </div>
+                        <p class="tutorial-description">Plan, host, and record meetings so decisions and action items are clear. Learn how to create effective agendas, facilitate discussions, and document minutes professionally.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('meeting-management', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('meeting-management', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h3 class="tutorial-title">EIN Application (IRS)</h3>
+                        </div>
+                        <p class="tutorial-description">Step-by-step screenshots for requesting your EIN online and saving your letter. Complete guide to navigating the IRS website and obtaining your Employer Identification Number.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('ein-application', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('ein-application', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h3 class="tutorial-title">D-U-N-S Number</h3>
+                        </div>
+                        <p class="tutorial-description">Request your D-U-N-S number and update your profile for vendors and grants. Complete walkthrough of the Dun & Bradstreet registration process.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('duns-number', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('duns-number', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <h3 class="tutorial-title">LLC Formation – General Steps</h3>
+                        </div>
+                        <p class="tutorial-description">Simple checklist to help you plan your filing, records, and bank account. Understand the key steps in forming your LLC and what you need to prepare.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('llc-formation', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('llc-formation', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tutorial-item show" data-category="administrative">
+                    <div class="tutorial-card">
+                        <div class="tutorial-header">
+                            <div class="tutorial-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h3 class="tutorial-title">Meeting Minutes Template</h3>
+                        </div>
+                        <p class="tutorial-description">Fill-in-the-blank minutes layout for boards, churches, and nonprofits. Professional template for documenting meetings and decisions.</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-primary" onclick="downloadFile('meeting-minutes', 'docx')">
+                                <i class="fas fa-download"></i>
+                                Download .DOCX
+                            </a>
+                            <a href="#" class="btn btn-secondary" onclick="downloadFile('meeting-minutes', 'pdf')">
+                                <i class="fas fa-file-pdf"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorials Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Video Tutorials & Walkthroughs</h2>
+                <p class="section-subtitle">Prefer to watch? Follow these short videos as I walk through key steps on screen.</p>
+            </div>
+            
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('ein-walkthrough')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">EIN Application Walkthrough</h3>
+                        <p class="video-description">Live demo on the IRS site</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-thumbnail" onclick="playVideo('llc-basics')">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">LLC Basics & Next Steps</h3>
+                        <p class="video-description">What to do after you file</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Templates Section -->
+    <section class="templates-section" id="templates">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">DIY Administrative Templates</h2>
+                <p class="section-subtitle">Fill in the blanks, then Print or Download .doc. Save time and money — do it yourself.</p>
+            </div>
+            
+            <div class="templates-grid">
+                <div class="template-card" onclick="openTemplate('email')">
+                    <div class="template-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="template-title">Professional Email</h3>
+                    <p class="template-description">Ready-made email templates for everyday office situations</p>
+                </div>
+                
+                <div class="template-card" onclick="openTemplate('agenda')">
+                    <div class="template-icon">
+                        <i class="fas fa-list-alt"></i>
+                    </div>
+                    <h3 class="template-title">Meeting Agenda</h3>
+                    <p class="template-description">Structured agenda template for productive meetings</p>
+                </div>
+                
+                <div class="template-card" onclick="openTemplate('minutes')">
+                    <div class="template-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="template-title">Meeting Minutes</h3>
+                    <p class="template-description">Professional minutes layout for documenting decisions</p>
+                </div>
+                
+                <div class="template-card" onclick="openTemplate('project')">
+                    <div class="template-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="template-title">Project Plan</h3>
+                    <p class="template-description">Simple project planning template with timelines</p>
+                </div>
+                
+                <div class="template-card" onclick="openTemplate('checklist')">
+                    <div class="template-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="template-title">Task Checklist</h3>
+                    <p class="template-description">Organized checklist template for tracking tasks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Need Help? We Can Do It For You</h2>
+            <p class="cta-description">When you need it done for you, we can help with filings, bookkeeping, websites, and support.</p>
+            <a href="service.html" class="btn-gold">
+                <i class="fas fa-hands-helping"></i>
+                View Services
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>LaFaries Mortimer LLC</h3>
+                <p>Professional Administrative & IT Services for Your Business</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="laap.html">LAAP Suite</a></p>
+                <p><a href="tutorial.html">Tutorials</a></p>
+                <p><a href="service.html">Services</a></p>
+                <p><a href="about.html">About</a></p>
+                <p><a href="faq.html">FAQ</a></p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> (305) 859-1279</p>
+                <p><i class="fas fa-envelope"></i> info@lafariesmortimerllc.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Miami, Florida</p>
+                <p>Serving clients virtually</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>Monday - Friday</p>
+                <p>By appointment</p>
+                <p><a href="goals.html" style="color: var(--gold-accent);">Book a Consultation</a></p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 LaFaries Mortimer LLC - All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
