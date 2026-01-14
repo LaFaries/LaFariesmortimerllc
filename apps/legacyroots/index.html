@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LegacyRoots™ | Premium Family Legacy & Genealogy System</title>
+  <meta name="description" content="LegacyRoots™ is a premium legacy and genealogy system designed to preserve family history, organize generations, and build a structured legacy record.">
+
+  <style>
+    :root{
+      --bg:#050608;
+      --panel:#020617;
+      --card:#111827;
+      --gold:#d4af37;
+      --text:#f9fafb;
+      --muted:#9ca3af;
+      --border:#1f2937;
+      --radius:18px;
+      --radius2:26px;
+      --shadow:0 18px 40px rgba(0,0,0,.35);
+      --max:1100px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 1rem}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:#050608e6;border-bottom:1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+    .header-inner{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:.75rem 0;gap:1rem;flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:.55rem}
+    .brand-logo{
+      width:34px;height:34px;border-radius:999px;
+      background:var(--gold);color:#111827;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:900;font-size:.78rem;
+    }
+    nav{display:flex;gap:1.1rem;font-size:.92rem;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--gold)}
+    .btn{
+      display:inline-block;
+      padding:.58rem 1.1rem;border-radius:999px;
+      font-size:.8rem;font-weight:800;
+      border:1px solid transparent;
+      text-transform:uppercase;letter-spacing:.08em;
+    }
+    .btn-primary{background:var(--gold);color:#111827}
+    .btn-outline{border-color:var(--gold);color:var(--gold);background:transparent}
+
+    main{padding:2.2rem 0 3rem}
+    .hero{
+      background:
+        radial-gradient(850px 320px at 12% 10%, rgba(212,175,55,.22), transparent 60%),
+        radial-gradient(650px 260px at 92% 18%, rgba(212,175,55,.12), transparent 65%),
+        var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius2);
+      box-shadow:var(--shadow);
+      padding:1.7rem 1.4rem;
+      display:grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap:1.4rem;
+      align-items:center;
+    }
+    .eyebrow{
+      color:var(--muted);
+      font-size:.78rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      margin-bottom:.5rem;
+    }
+    .hero h1{font-size:2.1rem;line-height:1.12;margin-bottom:.65rem}
+    .hero h1 span{color:var(--gold)}
+    .hero p{color:var(--muted);max-width:60ch}
+    .hero-actions{margin-top:1.1rem;display:flex;gap:.7rem;flex-wrap:wrap}
+
+    .hero-card{
+      background:rgba(17,24,39,.75);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.15rem 1.05rem;
+      color:var(--muted);
+      font-size:.93rem;
+    }
+    .hero-card strong{color:var(--gold)}
+    .bullets{margin:.7rem 0 0 1.1rem}
+    .bullets li{margin-bottom:.35rem}
+
+    section{padding:2.1rem 0}
+    .section-head{margin-bottom:1rem}
+    .section-head h2{font-size:1.25rem;margin-bottom:.35rem}
+    .section-head p{color:var(--muted);max-width:78ch}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1rem;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.05rem 1.0rem;
+    }
+    .card h3{font-size:1.02rem;margin-bottom:.35rem}
+    .card p{color:var(--muted);font-size:.9rem}
+
+    .split{
+      display:grid;
+      grid-template-columns:1.3fr 1fr;
+      gap:1rem;
+      align-items:start;
+    }
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius2);
+      padding:1.2rem 1.1rem;
+    }
+    .list{margin:.7rem 0 0 1.1rem;color:var(--muted)}
+    .list li{margin-bottom:.35rem}
+
+    .cta{
+      background: linear-gradient(90deg, rgba(212,175,55,.16), rgba(2,6,23,.0));
+      border:1px solid rgba(212,175,55,.45);
+      border-radius:var(--radius2);
+      padding:1.2rem 1.2rem;
+      display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+    }
+    .cta h3{font-size:1.1rem}
+    .cta p{color:var(--muted);max-width:72ch}
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:1.2rem 0;
+      color:var(--muted);
+      background:var(--panel);
+      font-size:.82rem;
+    }
+
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .split{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-logo">LM</div>
+      <strong>LaFaries Mortimer LLC</strong>
+    </div>
+
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/apps/">Apps & Portfolio</a>
+      <a href="/service.html">Services</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/goals.html">Contact</a>
+    </nav>
+
+    <a class="btn btn-outline" href="/goals.html">Request a Consultation</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Premium legacy system • genealogy • family records</div>
+        <h1>LegacyRoots™ — Build a <span>Structured Legacy</span> That Lasts.</h1>
+        <p>
+          LegacyRoots™ is designed for families, ministries, and estate-minded leaders who want more than a “tree.”
+          It’s a system for preserving history, organizing generations, and storing records responsibly — with clarity,
+          structure, and long-term stewardship.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/goals.html">Request a Legacy Consultation</a>
+          <a class="btn btn-outline" href="/apps/">Back to Apps</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <p><strong>Best for:</strong> Family archivists, ministry historians, estate planning support teams, and leaders
+          who want order, verification, and a clean record system.</p>
+
+        <ul class="bullets">
+          <li>Organize generations with clean structure.</li>
+          <li>Track records, sources, and proof notes.</li>
+          <li>Build a legacy archive that can be shared responsibly.</li>
+          <li>Turn scattered history into a coherent system.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE BLOCKS -->
+  <section>
+    <div class="section-head">
+      <h2>What LegacyRoots™ Solves</h2>
+      <p>
+        Most families don’t have a “history problem.” They have an <strong>organization problem</strong> —
+        documents scattered across devices, names missing, stories unverified, and no structure.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <h3>From Scattered to Structured</h3>
+        <p>Bring names, dates, documents, and stories into one organized legacy system.</p>
+      </article>
+      <article class="card">
+        <h3>Proof + Documentation</h3>
+        <p>Keep source notes, record references, and verification details clean and trackable.</p>
+      </article>
+      <article class="card">
+        <h3>Responsible Sharing</h3>
+        <p>Prepare a legacy you can pass down without exposing sensitive details carelessly.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- WHAT IT INCLUDES -->
+  <section>
+    <div class="split">
+      <div class="panel">
+        <div class="section-head">
+          <h2>What’s Included (Concept Scope)</h2>
+          <p>LegacyRoots™ can be delivered as a guided build, a done-for-you setup, or a phased rollout.</p>
+        </div>
+
+        <ul class="list">
+          <li><strong>Legacy Folder System</strong> (naming, structure, and archive layout)</li>
+          <li><strong>Family Tree Structure</strong> (clean lineage map + notes)</li>
+          <li><strong>Record Vault</strong> (documents, photos, certificates, and references)</li>
+          <li><strong>Source Notes</strong> (where info came from + confidence notes)</li>
+          <li><strong>Sharing Plan</strong> (what to share, what to protect, and how)</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="section-head">
+          <h2>Perfect for</h2>
+          <p>High-trust, high-value situations.</p>
+        </div>
+
+        <ul class="list">
+          <li>Family reunions & legacy projects</li>
+          <li>Ministry history & leadership archives</li>
+          <li>Estate and next-generation planning support</li>
+          <li>Genealogy proof + documentation organization</li>
+          <li>Families with scattered records across devices</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta">
+      <div>
+        <h3>Ready to build your legacy system the right way?</h3>
+        <p>
+          Submit your goals and we’ll map the best approach — self-service, guided support, or done-for-you.
+        </p>
+      </div>
+      <div>
+        <a class="btn btn-primary" href="/goals.html">Request a Legacy Consultation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> LaFaries Mortimer LLC • All rights reserved
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
