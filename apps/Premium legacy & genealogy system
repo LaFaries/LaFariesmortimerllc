@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apps & Portfolio | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Explore the systems, apps, and digital tools built by LaFaries Mortimer LLC — showcasing versatility across business, ministry, planning, and legacy tools.">
+
+  <style>
+    :root{
+      --bg:#050608;
+      --panel:#020617;
+      --card:#111827;
+      --gold:#d4af37;
+      --text:#f9fafb;
+      --muted:#9ca3af;
+      --border:#1f2937;
+      --radius:18px;
+      --radius2:24px;
+      --shadow:0 18px 40px rgba(0,0,0,.35);
+      --max:1100px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 1rem}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:#050608e6;border-bottom:1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
+    .header-inner{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:.75rem 0;gap:1rem;flex-wrap:wrap;
+    }
+    .brand{display:flex;align-items:center;gap:.55rem}
+    .brand-logo{
+      width:34px;height:34px;border-radius:999px;
+      background:var(--gold);color:#111827;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:.78rem;
+    }
+    nav{display:flex;gap:1.1rem;font-size:.92rem;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--gold)}
+    .btn{
+      display:inline-block;
+      padding:.58rem 1.1rem;border-radius:999px;
+      font-size:.8rem;font-weight:700;
+      border:1px solid transparent;
+      text-transform:uppercase;letter-spacing:.08em;
+    }
+    .btn-primary{background:var(--gold);color:#111827}
+    .btn-outline{border-color:var(--gold);color:var(--gold);background:transparent}
+
+    main{padding:2.3rem 0 3rem}
+    .hero{
+      background: radial-gradient(800px 300px at 15% 10%, rgba(212,175,55,.20), transparent 60%),
+                  radial-gradient(600px 260px at 90% 20%, rgba(212,175,55,.12), transparent 65%),
+                  var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius2);
+      box-shadow:var(--shadow);
+      padding:1.6rem 1.4rem;
+      display:grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap:1.4rem;
+      align-items:center;
+    }
+    .hero h1{font-size:2.0rem;line-height:1.15;margin-bottom:.65rem}
+    .hero h1 span{color:var(--gold)}
+    .hero p{color:var(--muted);max-width:52ch}
+    .hero-actions{margin-top:1.1rem;display:flex;gap:.7rem;flex-wrap:wrap}
+
+    .hero-card{
+      background:rgba(17,24,39,.75);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.1rem 1rem;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .hero-card strong{color:var(--gold)}
+    .pill{
+      display:inline-block;
+      padding:.35rem .7rem;
+      border-radius:999px;
+      font-size:.74rem;
+      border:1px solid var(--gold);
+      color:var(--gold);
+      margin:.5rem .4rem 0 0;
+    }
+
+    section{padding:2.2rem 0}
+    .section-head{margin-bottom:1.1rem}
+    .section-head h2{font-size:1.25rem;margin-bottom:.35rem}
+    .section-head p{color:var(--muted);max-width:75ch}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:1rem;
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:1.1rem 1.05rem;
+    }
+    .card h3{font-size:1.05rem;margin-bottom:.35rem}
+    .card p{color:var(--muted);font-size:.9rem;margin-bottom:.65rem;max-width:80ch}
+    .meta{
+      display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:.8rem
+    }
+    .tag{
+      font-size:.72rem;
+      padding:.28rem .6rem;border-radius:999px;
+      border:1px solid var(--border);
+      color:var(--muted);
+      background:rgba(2,6,23,.35);
+    }
+    .tag.gold{border-color:rgba(212,175,55,.55);color:var(--gold)}
+    .card-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+
+    .cta{
+      background: linear-gradient(90deg, rgba(212,175,55,.15), rgba(2,6,23,.0));
+      border:1px solid rgba(212,175,55,.45);
+      border-radius:var(--radius2);
+      padding:1.2rem 1.2rem;
+      display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+    }
+    .cta h3{font-size:1.1rem}
+    .cta p{color:var(--muted);max-width:70ch}
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:1.2rem 0;
+      color:var(--muted);
+      background:var(--panel);
+      font-size:.82rem;
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="brand-logo">LM</div>
+      <strong>LaFaries Mortimer LLC</strong>
+    </div>
+
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/service.html">Services</a>
+      <a href="/laap.html">LAAP Suite</a>
+      <a href="/apps/">Apps & Portfolio</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/goals.html">Contact</a>
+    </nav>
+
+    <a class="btn btn-outline" href="/goals.html">Request a Consultation</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section>
+    <div class="hero">
+      <div>
+        <h1>Built Systems. Real Tools. <span>Proven Versatility.</span></h1>
+        <p>
+          This portfolio shows the range of systems LaFaries Mortimer LLC builds — from legacy & family
+          tools to ministry systems, planning utilities, and business-ready platforms.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/apps/legacyroots/">Explore LegacyRoots™</a>
+          <a class="btn btn-outline" href="https://rococo-snickerdoodle-5a851e.netlify.app/wizard/" target="_blank" rel="noopener">Open LAAP Suite™ Wizard</a>
+        </div>
+
+        <span class="pill">Systems-first</span>
+        <span class="pill">Admin + IT</span>
+        <span class="pill">Ministry-ready</span>
+        <span class="pill">Legacy-focused</span>
+      </div>
+
+      <div class="hero-card">
+        <p><strong>What this proves:</strong> You’re not hiring “a template person.” You’re hiring someone who can
+          <strong>design systems</strong>, <strong>build working tools</strong>, and <strong>organize operations</strong> for real-world use.</p>
+        <p style="margin-top:.7rem">
+          Want something like this built for your organization? Start with a consultation and we’ll map the right path.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED -->
+  <section>
+    <div class="section-head">
+      <h2>Featured Builds</h2>
+      <p>Premium-level systems and flagship tools.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="meta">
+          <span class="tag gold">Flagship</span>
+          <span class="tag">Legacy</span>
+          <span class="tag">Family / Estate</span>
+        </div>
+        <h3>LegacyRoots™</h3>
+        <p>
+          A premium legacy & genealogy system designed to preserve family history, organize generations, and build
+          a structured legacy record that can be shared responsibly.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="/apps/legacyroots/">View Landing Page</a>
+          <a class="btn btn-outline" href="/goals.html">Request a Legacy Consultation</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">
+          <span class="tag gold">Live</span>
+          <span class="tag">Automation</span>
+          <span class="tag">Intake</span>
+        </div>
+        <h3>LAAP Suite™ Wizard</h3>
+        <p>
+          A guided intake + resource flow designed to move clients from confusion to clarity with structured steps,
+          downloadable assets, and consultation pathways.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://rococo-snickerdoodle-5a851e.netlify.app/wizard/" target="_blank" rel="noopener">Open Wizard</a>
+          <a class="btn btn-outline" href="/goals.html">Request Support</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- TOOL LIBRARY -->
+  <section>
+    <div class="section-head">
+      <h2>Tools & Platforms</h2>
+      <p>Supporting apps and systems across ministry, planning, and digital organization.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card">
+        <div class="meta">
+          <span class="tag">Family</span>
+          <span class="tag">Media</span>
+          <span class="tag gold">Live</span>
+        </div>
+        <h3>Family Adventures Studio™</h3>
+        <p>
+          A family storytelling and interactive experience platform showcasing web creativity, branded pages,
+          and character-based engagement.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://lafariesfamilyadv.org/" target="_blank" rel="noopener">Open Site</a>
+          <a class="btn btn-outline" href="/goals.html">Build Something Similar</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">
+          <span class="tag">Ministry</span>
+          <span class="tag">Web</span>
+          <span class="tag gold">Live</span>
+        </div>
+        <h3>Ministry Digital Hub™</h3>
+        <p>
+          A ministry web hub that demonstrates structure, clarity, and branded communication for events, updates,
+          and digital presence.
+        </p>
+        <div class="card-actions">
+          <a class="btn btn-primary" href="https://www.mec-miami.org" target="_blank" rel="noopener">Open Site</a>
+          <a class="btn btn-outline" href="/goals.html">Request Ministry Support</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">
+          <span class="tag">Prophetic</span>
+          <span class="tag">Journaling</span>
+        </div>
+        <h3>DreamVault™</h3>
+        <p>Capture dreams, interpretations, scripture references, and growth notes in a structured way.</p>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="/goals.html">Request Demo / Build</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">
+          <span class="tag">Prophetic</span>
+          <span class="tag">Discernment</span>
+        </div>
+        <h3>PropheticMark™</h3>
+        <p>A tool concept for tracking prophetic tokens, signs, patterns, dates, and confirmations responsibly.</p>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="/goals.html">Request Demo / Build</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">
+          <span class="tag">Prayer</span>
+          <span class="tag">Audio</span>
+        </div>
+        <h3>PrayerFlow™</h3>
+        <p>A prayer audio player concept for structured listening, playlists, and spiritual consistency.</p>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="/goals.html">Request Demo / Build</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">
+          <span class="tag">Planning</span>
+          <span class="tag">Daily Systems</span>
+        </div>
+        <h3>FocusPath™ Planner</h3>
+        <p>A smart daily planner concept for routines, priorities, time blocks, and progress tracking.</p>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="/goals.html">Request Demo / Build</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="meta">
+          <span class="tag">Finance</span>
+          <span class="tag">Budgeting</span>
+        </div>
+        <h3>ClearPath™ Budget</h3>
+        <p>A budgeting tool concept focused on clarity, categories, and consistent money habits.</p>
+        <div class="card-actions">
+          <a class="btn btn-outline" href="/goals.html">Request Demo / Build</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta">
+      <div>
+        <h3>Want a system built for your business, ministry, or family legacy?</h3>
+        <p>Submit your goals and we’ll recommend the smartest next step — DIY, guided support, or done-for-you.</p>
+      </div>
+      <div>
+        <a class="btn btn-primary" href="/goals.html">Request a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="y"></span> LaFaries Mortimer LLC • All rights reserved
+  </div>
+</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
