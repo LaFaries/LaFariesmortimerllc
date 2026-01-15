@@ -1,72 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | LaFaries Mortimer LLC</title>
   <meta name="description" content="Contact LaFaries Mortimer LLC.">
+
   <link rel="stylesheet" href="/assets/style.css">
+
+  <style>
+    /* Safe fallback styling */
+    :root{
+      --bg:#050608;
+      --panel:#020617;
+      --gold:#d4af37;
+      --text:#f9fafb;
+      --muted:#9ca3af;
+      --border:#1f2937;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .wrapper{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+    header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(5,6,8,.92);
+      border-bottom:1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+    .header-inner{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:.75rem 0;gap:1rem;flex-wrap:wrap
+    }
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+    .brand img{
+      width:34px;height:34px;border-radius:999px;
+      border:1px solid var(--border);
+      object-fit:cover;
+      background:#0b1220;
+    }
+    nav{display:flex;gap:1.1rem;font-size:.9rem;flex-wrap:wrap}
+    nav a{color:var(--muted)}
+    nav a:hover{color:var(--gold)}
+
+    .btn{
+      padding:.55rem 1.1rem;border-radius:999px;
+      font-size:.8rem;font-weight:700;
+      border:1px solid transparent;
+      display:inline-block;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .btn-outline{border-color:var(--gold);color:var(--gold)}
+    .btn-primary{background:var(--gold);color:#111827}
+
+    main{padding:2.25rem 0}
+    .section-header{margin-bottom:1.25rem}
+    h1{font-size:2rem;line-height:1.15;margin-bottom:.5rem}
+    p{color:var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+      margin-top:1.25rem
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:1rem;
+      padding:1rem;
+    }
+
+    form{display:flex;flex-direction:column;gap:.75rem}
+    input,textarea{
+      width:100%;
+      padding:.75rem .9rem;
+      border-radius:.75rem;
+      border:1px solid var(--border);
+      background:#050608;
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px;resize:vertical}
+
+    footer{
+      border-top:1px solid var(--border);
+      padding:1.25rem 0;
+      color:var(--muted);
+      background:var(--panel);
+      font-size:.8rem;
+      margin-top:2rem
+    }
+    @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  </style>
 </head>
 
 <body>
 
-  <!-- ✅ FIX #1: HEADER MUST BE INSIDE BODY -->
-  <header>
-    <div class="wrapper header-inner">
+<header>
+  <div class="wrapper header-inner">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo">
+      <span>LaFaries Mortimer LLC</span>
+    </a>
 
-      <a href="/index.html" class="brand">
-        <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" class="brand-logo">
-        <strong>LaFaries Mortimer LLC</strong>
-      </a>
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/laap.html">LAAP Suite</a>
+      <a href="/apps.html">Apps & Portfolio</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/tutorial.html">Resources</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
 
-      <!-- ✅ FIX #2: Wrap your menu links INSIDE a <nav> -->
-      <nav>
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/services.html">Services</a>
-        <a href="/laap.html">LAAP Suite</a>
-        <a href="/apps.html">Apps &amp; Portfolio</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/resources.html">Resources</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
+    <a href="/contact.html" class="btn btn-outline">Book a Call</a>
+  </div>
+</header>
 
-      <a href="/contact.html" class="btn btn-outline">Book a Call</a>
+<main class="wrapper">
+  <div class="section-header">
+    <h1>Contact</h1>
+    <p>Let’s talk about what support makes sense.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Get in Touch</h3>
+      <p>Email: <a href="mailto:info@lafariesmortimerllc.com">info@lafariesmortimerllc.com</a></p>
+      <p>Virtual Support • U.S.</p>
     </div>
-  </header>
 
-  <!-- ✅ FIX #3: REMOVE the duplicate nav and extra closing tags -->
-  <main class="wrapper">
-    <section>
-      <div class="section-header">
-        <h1>Contact</h1>
-        <p>Let’s talk about what support makes sense.</p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Get in Touch</h3>
-          <p>Email: info@lafariesmortimerllc.com</p>
-          <p>Virtual Support • U.S.</p>
-        </div>
-
-        <div class="card">
-          <form>
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Email address" required>
-            <textarea placeholder="How can we help?"></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrapper">
-      © 2026 LaFaries Mortimer LLC
+    <div class="card">
+      <form>
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
     </div>
-  </footer>
+  </div>
+</main>
+
+<footer>
+  <div class="wrapper">© 2026 LaFaries Mortimer LLC • All rights reserved</div>
+</footer>
 
 </body>
 </html>
