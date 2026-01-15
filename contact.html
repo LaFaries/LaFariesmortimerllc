@@ -1,75 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | LaFaries Mortimer LLC</title>
-<meta name="description" content="Contact LaFaries Mortimer LLC.">
-<link rel="stylesheet" href="/assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Contact LaFaries Mortimer LLC.">
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
-<header>
-  <div class="wrapper header-inner">
-    <a href="/index.html" class="brand">
-      <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" class="brand-logo">
-      <strong>LaFaries Mortimer LLC</strong>
-    </a>
-
-
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps & Portfolio</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/resources.html">Resources</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-
-    <a href="/contact.html" class="btn btn-outline">Book a Call</a>
-  </div>
-</header>
 
 <body>
+
+  <!-- ✅ FIX #1: HEADER MUST BE INSIDE BODY -->
+  <header>
+    <div class="wrapper header-inner">
+
+      <a href="/index.html" class="brand">
+        <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" class="brand-logo">
+        <strong>LaFaries Mortimer LLC</strong>
+      </a>
+
+      <!-- ✅ FIX #2: Wrap your menu links INSIDE a <nav> -->
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/laap.html">LAAP Suite</a>
+        <a href="/apps.html">Apps &amp; Portfolio</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/resources.html">Resources</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <a href="/contact.html" class="btn btn-outline">Book a Call</a>
     </div>
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/services.html">Services</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/apps.html">Apps</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<main class="wrapper">
-<section>
-  <div class="section-header">
-    <h1>Contact</h1>
-    <p>Let’s talk about what support makes sense.</p>
-  </div>
+  <!-- ✅ FIX #3: REMOVE the duplicate nav and extra closing tags -->
+  <main class="wrapper">
+    <section>
+      <div class="section-header">
+        <h1>Contact</h1>
+        <p>Let’s talk about what support makes sense.</p>
+      </div>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Get in Touch</h3>
-      <p>Email: info@lafariesmortimerllc.com</p>
-      <p>Virtual Support • U.S.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Get in Touch</h3>
+          <p>Email: info@lafariesmortimerllc.com</p>
+          <p>Virtual Support • U.S.</p>
+        </div>
+
+        <div class="card">
+          <form>
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Email address" required>
+            <textarea placeholder="How can we help?"></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      © 2026 LaFaries Mortimer LLC
     </div>
+  </footer>
 
-    <div class="card">
-      <form>
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Email address" required>
-        <textarea placeholder="How can we help?"></textarea>
-        <button class="btn btn-primary">Send Message</button>
-      </form>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="wrapper">
-    © 2026 LaFaries Mortimer LLC
-  </div>
-</footer>
 </body>
 </html>
