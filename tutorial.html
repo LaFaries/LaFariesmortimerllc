@@ -2,131 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resources | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Step-by-step guides designed to make everyday work easier—no technical experience required.">
-  <link rel="stylesheet" href="/assets/style.css">
-
-  <style>
-    :root{--bg:#050608;--panel:#020617;--gold:#d4af37;--text:#f9fafb;--muted:#9ca3af;--border:#1f2937;}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    .wrapper{max-width:1100px;margin:0 auto;padding:0 1rem}
-    header{position:sticky;top:0;z-index:10;background:rgba(5,6,8,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
-    .header-inner{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;gap:1rem;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
-    .brand img{width:34px;height:34px;border-radius:999px;border:1px solid var(--border);object-fit:cover;background:#0b1220}
-    nav{display:flex;gap:1.1rem;font-size:.9rem;flex-wrap:wrap}
-    nav a{color:var(--muted)} nav a:hover{color:var(--gold)}
-    .btn{padding:.55rem 1.1rem;border-radius:999px;font-size:.8rem;font-weight:700;border:1px solid transparent;display:inline-block;text-transform:uppercase;letter-spacing:.08em}
-    .btn-outline{border-color:var(--gold);color:var(--gold)}
-    .btn-primary{background:var(--gold);color:#111827}
-    main{padding:2.25rem 0}
-    h1{font-size:2rem;line-height:1.15;margin-bottom:.5rem}
-    .lead{color:var(--muted);max-width:75ch}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.25rem}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:1rem;padding:1rem}
-    .card h3{margin-bottom:.25rem}
-    .card p{color:var(--muted);margin:.35rem 0 .75rem}
-    .actions{display:flex;gap:.6rem;flex-wrap:wrap}
-    footer{border-top:1px solid var(--border);padding:1.25rem 0;color:var(--muted);background:var(--panel);font-size:.8rem;margin-top:2rem}
-    @media(max-width:900px){.grid{grid-template-columns:1fr}}
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorials | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Simple step-by-step tutorials designed for non-technical users." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header>
   <div class="wrapper header-inner">
     <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo">
-      <span>LaFaries Mortimer LLC</span>
+      <img class="brand-logo" src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" />
+      <strong>LaFaries Mortimer LLC</strong>
     </a>
 
-    <nav>
+    <nav aria-label="Primary">
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
       <a href="/services.html">Services</a>
       <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps & Portfolio</a>
+      <a href="/apps.html">Apps &amp; Portfolio</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
-      <a href="/tutorial.html">Resources</a>
+      <a class="active" href="/tutorial.html">Resources</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <a href="/contact.html" class="btn btn-outline">Book a Call</a>
+    <a class="btn btn-primary" href="/contact.html">Book a Call</a>
   </div>
 </header>
 
-<main class="wrapper">
-  <h1>Resources</h1>
-  <p class="lead">Step-by-step guides designed to make everyday work easier — no technical experience required.</p>
-
-  <div class="grid">
-
-    <div class="card">
-      <h3>Email Basics</h3>
-      <p>Send, reply, attach files, and stay organized.</p>
-      <div class="actions">
-        <a class="btn btn-outline" href="#" download>Download PDF</a>
-        <a class="btn btn-primary" href="/contact.html">Need Help</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>How to Upload Files to GitHub</h3>
-      <p>Quick steps to upload and commit changes.</p>
-      <div class="actions">
-        <a class="btn btn-outline" href="#" download>Download PDF</a>
-        <a class="btn btn-primary" href="/contact.html">Need Help</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Website Updates (Simple)</h3>
-      <p>Update text, images, and pages without stress.</p>
-      <div class="actions">
-        <a class="btn btn-outline" href="#" download>Download PDF</a>
-        <a class="btn btn-primary" href="/contact.html">Need Help</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Basic File Organization</h3>
-      <p>Folders, naming, and keeping things easy to find.</p>
-      <div class="actions">
-        <a class="btn btn-outline" href="#" download>Download PDF</a>
-        <a class="btn btn-primary" href="/contact.html">Need Help</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Printing & Scanning</h3>
-      <p>How to scan documents clean and save as PDF.</p>
-      <div class="actions">
-        <a class="btn btn-outline" href="#" download>Download PDF</a>
-        <a class="btn btn-primary" href="/contact.html">Need Help</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Passwords & Security</h3>
-      <p>Simple habits to protect your accounts.</p>
-      <div class="actions">
-        <a class="btn btn-outline" href="#" download>Download PDF</a>
-        <a class="btn btn-primary" href="/contact.html">Need Help</a>
-      </div>
-    </div>
-
+<main id="main" class="wrapper">
+  <div class="section-header">
+    <h1>Tutorials</h1>
+    <p class="muted">Step-by-step guides designed to make everyday work easier — no technical experience required.</p>
   </div>
 
-  <p class="lead" style="margin-top:1.5rem;">
-    Your download will begin shortly. If you need help, contact us.
-  </p>
+  <div class="grid-2">
+    <div class="card">
+      <h2>How to Upload Files to GitHub</h2>
+      <p class="muted">Simple steps to add files to your repository.</p>
+      <div class="card-actions">
+        <a class="btn btn-outline" href="/assets/tutorials/github-upload.pdf" download>Download PDF</a>
+      </div>
+      <p class="small-note">Your download will begin shortly.</p>
+    </div>
+
+    <div class="card">
+      <h2>How to Point a Domain to Netlify</h2>
+      <p class="muted">A clean checklist for DNS + SSL setup.</p>
+      <div class="card-actions">
+        <a class="btn btn-outline" href="/assets/tutorials/netlify-domain.pdf" download>Download PDF</a>
+      </div>
+      <p class="small-note">Your download will begin shortly.</p>
+    </div>
+
+    <div class="card">
+      <h2>Basic Email Organization</h2>
+      <p class="muted">Folders, rules, and a simple system for staying organized.</p>
+      <div class="card-actions">
+        <a class="btn btn-outline" href="/assets/tutorials/email-organization.pdf" download>Download PDF</a>
+      </div>
+      <p class="small-note">Your download will begin shortly.</p>
+    </div>
+
+    <div class="card">
+      <h2>Simple File Naming System</h2>
+      <p class="muted">Keep your business documents clean and searchable.</p>
+      <div class="card-actions">
+        <a class="btn btn-outline" href="/assets/tutorials/file-naming.pdf" download>Download PDF</a>
+      </div>
+      <p class="small-note">Your download will begin shortly.</p>
+    </div>
+  </div>
+
+  <div class="card-actions" style="margin-top:1rem;">
+    <a class="btn btn-primary" href="/contact.html">Need help? Book a Call</a>
+  </div>
 </main>
 
 <footer>
-  <div class="wrapper">© 2026 LaFaries Mortimer LLC • All rights reserved</div>
+  <div class="wrapper footer-inner">
+    <div>© 2026 LaFaries Mortimer LLC</div>
+    <div><a href="/contact.html">Contact</a></div>
+  </div>
 </footer>
 </body>
 </html>
