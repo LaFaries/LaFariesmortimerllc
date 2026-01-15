@@ -2,219 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apps & Portfolio | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Explore tools and apps built by LaFaries Mortimer LLC—admin automation, ministry tools, planning systems, and family legacy solutions.">
-
-  <link rel="stylesheet" href="/assets/style.css">
-
-  <style>
-    /* If your style.css already controls these, you can remove this <style> block.
-       Keeping it here makes the page stable even if style.css is still being updated. */
-    :root{
-      --bg:#050608;
-      --panel:#020617;
-      --gold:#d4af37;
-      --text:#f9fafb;
-      --muted:#9ca3af;
-      --border:#1f2937;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
-    a{text-decoration:none;color:inherit}
-    .wrapper{max-width:1100px;margin:0 auto;padding:0 1rem}
-
-    header{
-      position:sticky;top:0;z-index:10;
-      background:rgba(5,6,8,.92);
-      border-bottom:1px solid var(--border);
-      backdrop-filter: blur(8px);
-    }
-    .header-inner{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:.75rem 0;gap:1rem;flex-wrap:wrap
-    }
-    .brand{
-      display:flex;align-items:center;gap:.6rem;font-weight:700;
-    }
-    .brand img{
-      width:34px;height:34px;border-radius:999px;
-      border:1px solid var(--border);
-      object-fit:cover;
-      background:#0b1220;
-    }
-
-    nav{display:flex;gap:1.1rem;font-size:.9rem;flex-wrap:wrap}
-    nav a{color:var(--muted)}
-    nav a:hover{color:var(--gold)}
-
-    .btn{
-      padding:.55rem 1.1rem;border-radius:999px;
-      font-size:.8rem;font-weight:700;
-      border:1px solid transparent;
-      display:inline-block;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-    }
-    .btn-outline{border-color:var(--gold);color:var(--gold)}
-    .btn-primary{background:var(--gold);color:#111827}
-
-    main{padding:2.25rem 0}
-    .section-header{margin-bottom:1.25rem}
-    h1{font-size:2rem;line-height:1.15;margin-bottom:.5rem}
-    p{color:var(--muted)}
-
-    .cta{margin-top:1.25rem;display:flex;gap:.75rem;flex-wrap:wrap}
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:1rem;
-      margin-top:1.25rem
-    }
-    .card{
-      background:var(--panel);
-      border:1px solid var(--border);
-      border-radius:1rem;
-      padding:1rem;
-    }
-    .card h3{margin-bottom:.35rem}
-    .card-actions{margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap}
-
-    .tag{
-      display:inline-block;
-      margin-top:.75rem;
-      padding:.35rem .7rem;
-      border-radius:999px;
-      font-size:.75rem;
-      border:1px solid var(--gold);
-      color:var(--gold);
-    }
-
-    footer{
-      border-top:1px solid var(--border);
-      padding:1.25rem 0;
-      color:var(--muted);
-      background:var(--panel);
-      font-size:.8rem;
-      margin-top:2rem
-    }
-    @media(max-width:900px){.grid{grid-template-columns:1fr}}
-  </style>
+  <meta name="description" content="Explore apps and tools built by LaFaries Mortimer LLC—simple systems that bring clarity, order, and confidence." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header>
   <div class="wrapper header-inner">
     <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo">
-      <span>LaFaries Mortimer LLC</span>
+      <img class="brand-logo" src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" />
+      <strong>LaFaries Mortimer LLC</strong>
     </a>
 
-    <nav>
+    <nav aria-label="Primary">
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
       <a href="/services.html">Services</a>
       <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps & Portfolio</a>
+      <a class="active" href="/apps.html">Apps &amp; Portfolio</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
       <a href="/tutorial.html">Resources</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <a href="/contact.html" class="btn btn-outline">Book a Call</a>
+    <a class="btn btn-primary" href="/contact.html">Book a Call</a>
   </div>
 </header>
 
-<main class="wrapper">
-
+<main id="main" class="wrapper">
   <div class="section-header">
-    <h1>Apps & Portfolio</h1>
-    <p>These are real tools I’ve built to help families, ministries, and small businesses operate with clarity, order, and confidence.</p>
+    <h1>Apps &amp; Portfolio</h1>
+    <p class="muted">These are real tools I’ve built to help families, ministries, and small businesses operate with clarity, order, and confidence.</p>
 
-    <div class="cta">
-      <a class="btn btn-primary" href="/apps/legacyroots/">Open App</a>
-      <a class="btn btn-outline" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank" rel="noopener">Open App</a>
+    <div class="card-actions">
+      <a class="btn btn-primary" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank" rel="noopener">Open App</a>
       <a class="btn btn-outline" href="/contact.html">Request a Custom Build</a>
     </div>
   </div>
 
-  <div class="grid">
-
+  <div class="grid-2">
+    <!-- LAAP -->
     <div class="card">
-      <h3>LegacyRoots™ Family Tree Builder</h3>
-      <p>Your family history—organized, searchable, and preserved with purpose.</p>
-      <div class="card-actions">
-        <a class="btn btn-primary" href="/apps/legacyroots/">Open App</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>LAAP Suite™ Wizard</h3>
-      <p>Step-by-step guidance to help you organize, build, and move forward with confidence.</p>
+      <h2>LAAP Suite™ Wizard</h2>
+      <p class="muted">Step-by-step guidance to help you organize, build, and move forward with confidence.</p>
       <div class="card-actions">
         <a class="btn btn-primary" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank" rel="noopener">Open App</a>
       </div>
     </div>
 
+    <!-- LegacyRoots (update path if needed) -->
     <div class="card">
-      <h3>LaFaries Family Adventures Hub</h3>
-      <p>A family-friendly experience site with interactive storytelling and pages.</p>
+      <h2>LegacyRoots™ Family Tree Builder</h2>
+      <p class="muted">Your family history—organized, searchable, and preserved with purpose.</p>
       <div class="card-actions">
-        <a class="btn btn-primary" href="https://lafariesfamilyadv.org/" target="_blank" rel="noopener">Open App</a>
+        <a class="btn btn-primary" href="/apps/legacyroots-overview/" target="_blank" rel="noopener">Open App</a>
+      </div>
+    </div>
+
+    <!-- Your CodePen Apps -->
+    <div class="card">
+      <h2>Portfolio App 1</h2>
+      <p class="muted">Live tool in your portfolio.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/RNaEJao" target="_blank" rel="noopener">Open App</a>
       </div>
     </div>
 
     <div class="card">
-      <h3>DreamVault™ — Book of Dreams</h3>
-      <p>Capture dreams, meanings, and spiritual patterns over time.</p>
-      <span class="tag">In Progress</span>
-    </div>
-
-    <div class="card">
-      <h3>Token & Sign Decoder™</h3>
-      <p>Track tokens, signs, confirmations, and “God moments.”</p>
-      <span class="tag">In Progress</span>
-    </div>
-
-    <div class="card">
-      <h3>PrayerPulse™ — Prayer Player</h3>
-      <p>Tap-to-play prayer sessions and declarations for daily consistency.</p>
-      <span class="tag">In Progress</span>
-    </div>
-
-    <div class="card">
-      <h3>MEC Miami Website</h3>
-      <p>Church site build + structure, announcements, and ministry support.</p>
+      <h2>Portfolio App 2</h2>
+      <p class="muted">Live tool in your portfolio.</p>
       <div class="card-actions">
-        <a class="btn btn-primary" href="https://www.mec-miami.org" target="_blank" rel="noopener">Open App</a>
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/PwNxXGN" target="_blank" rel="noopener">Open App</a>
       </div>
     </div>
 
     <div class="card">
-      <h3>Smart Day Planner™</h3>
-      <p>Daily planning that actually works—time blocks, priorities, and follow-through.</p>
-      <span class="tag">In Progress</span>
+      <h2>Portfolio App 3</h2>
+      <p class="muted">Live tool in your portfolio.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/gbrXXQY" target="_blank" rel="noopener">Open App</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>BudgetGuard™</h3>
-      <p>Simple budgeting with clarity—income, bills, and weekly control.</p>
-      <span class="tag">In Progress</span>
+      <h2>Portfolio App 4</h2>
+      <p class="muted">Live tool in your portfolio.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/jEWLEOV" target="_blank" rel="noopener">Open App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Portfolio App 5</h2>
+      <p class="muted">Live tool in your portfolio.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/raxOPqa" target="_blank" rel="noopener">Open App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Portfolio App 6</h2>
+      <p class="muted">Live tool in your portfolio.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/GgpPaGY" target="_blank" rel="noopener">Open App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Portfolio App 7</h2>
+      <p class="muted">Live tool in your portfolio.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/VYvQmyr" target="_blank" rel="noopener">Open App</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Portfolio App 8</h2>
+      <p class="muted">Live tool in your portfolio.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://codepen.io/lafaries1225/pen/RNWxzzN" target="_blank" rel="noopener">Open App</a>
+      </div>
     </div>
 
   </div>
 </main>
 
 <footer>
-  <div class="wrapper">© 2026 LaFaries Mortimer LLC • All rights reserved</div>
+  <div class="wrapper footer-inner">
+    <div>© 2026 LaFaries Mortimer LLC</div>
+    <div><a href="/contact.html">Contact</a></div>
+  </div>
 </footer>
-
 </body>
 </html>
