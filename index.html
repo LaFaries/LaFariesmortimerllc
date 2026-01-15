@@ -4,129 +4,385 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LaFaries Mortimer LLC | Administrative & IT Support</title>
-  <meta name="description" content="LaFaries Mortimer LLC provides administrative and IT support with simple systems that bring clarity, order, and confidence." />
-  <link rel="stylesheet" href="/assets/style.css" />
+  <meta name="description" content="LaFaries Mortimer LLC helps families, ministries, and small businesses operate with clarity, order, and confidence through administrative support, IT help, and simple tools." />
+
+  <!-- ✅ NEW BRAND FONTS (matches the luxury serif look like your L.A.A.P. graphic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Fonts */
+      --font-display: "Cinzel", "Times New Roman", serif;
+      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+
+      /* Brand colors (cream + soft gold + charcoal) */
+      --bg: #fbf7ef;          /* warm cream */
+      --surface: #ffffff;     /* white */
+      --panel: #f6efe2;       /* light cream panel */
+      --text: #1b1b1b;        /* near-black */
+      --muted: #6b6b6b;       /* soft gray */
+      --gold: #b08a3a;        /* soft luxury gold */
+      --gold-2: #d7bf85;      /* pale gold */
+      --border: #e7dcc6;      /* cream border */
+      --shadow: 0 10px 30px rgba(18, 18, 18, 0.08);
+      --radius: 18px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrapper{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    /* Header */
+    header{
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251,247,239,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px; padding: 14px 0;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 12px;
+      min-width: 220px;
+    }
+    .brand img{
+      width: 38px; height: 38px; border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      object-fit: cover;
+    }
+    .brand strong{
+      font-family: var(--font-display);
+      letter-spacing: .04em;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    nav{
+      display:flex; align-items:center; gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a{
+      font-size: 14px;
+      color: var(--muted);
+      padding: 6px 2px;
+      border-bottom: 2px solid transparent;
+    }
+    nav a:hover{ color: var(--text); border-bottom-color: var(--gold-2); }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+    .btn-primary{
+      background: var(--gold);
+      color: #fff;
+      box-shadow: 0 10px 18px rgba(176,138,58,0.20);
+    }
+    .btn-outline{
+      border-color: var(--gold);
+      color: var(--gold);
+      background: transparent;
+    }
+    .btn-primary:hover{ filter: brightness(0.98); }
+    .btn-outline:hover{ background: rgba(176,138,58,0.08); }
+
+    /* Mobile menu button */
+    .menu-btn{
+      display:none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      padding: 10px 12px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    main{ padding: 28px 0 46px; }
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 10px;
+    }
+    .hero-card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 26px;
+    }
+    .kicker{
+      font-family: var(--font-display);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 12px;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    h1{
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      line-height: 1.15;
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+    .lead{
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 18px;
+      max-width: 52ch;
+    }
+    .hero-actions{ display:flex; gap: 10px; flex-wrap:wrap; margin-top: 10px; }
+
+    .side-card{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .side-card h2{
+      font-family: var(--font-display);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .side-card p{ color: var(--muted); font-size: 14px; }
+    .mini-list{ margin-top: 14px; display:grid; gap: 10px; }
+    .mini-item{
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .mini-item strong{ display:block; font-size: 14px; margin-bottom: 4px; }
+    .mini-item span{ color: var(--muted); font-size: 13px; }
+
+    /* Sections */
+    .section{
+      margin-top: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .section h2{
+      font-family: var(--font-display);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .section p{ color: var(--muted); }
+
+    .grid{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .card{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      min-height: 130px;
+    }
+    .card h3{
+      font-family: var(--font-display);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .card p{ font-size: 13px; color: var(--muted); }
+
+    /* Footer */
+    footer{
+      margin-top: 46px;
+      border-top: 1px solid var(--border);
+      padding: 18px 0;
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(246,239,226,0.60);
+    }
+    .footer-inner{
+      display:flex; gap: 12px; align-items:center; justify-content:space-between;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: 1fr; }
+      nav{ display:none; width:100%; padding: 8px 0 12px; }
+      nav.open{ display:flex; }
+      .menu-btn{ display:inline-flex; align-items:center; gap: 8px; }
+      .header-inner{ align-items:flex-start; }
+    }
+  </style>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="wrapper header-inner">
+      <a class="brand" href="/index.html">
+        <!-- ✅ Logo file path (make sure this exists in your repo) -->
+        <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo">
+        <strong>LaFaries Mortimer LLC</strong>
+      </a>
 
-<header>
-  <div class="wrapper header-inner">
-    <a class="brand" href="/index.html">
-      <img class="brand-logo" src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" />
-      <strong>LaFaries Mortimer LLC</strong>
-    </a>
+      <button class="menu-btn" type="button" aria-label="Open menu" onclick="toggleMenu()">
+        ☰ <span style="font-family:var(--font-body);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--muted)">Menu</span>
+      </button>
 
-    <nav aria-label="Primary">
-      <a class="active" href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps &amp; Portfolio</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/tutorial.html">Resources</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+      <nav id="siteNav">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/laap.html">LAAP Suite</a>
+        <a href="/apps.html">Apps & Portfolio</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/goals.html">Goals</a>
+        <a href="/tutorial.html">Tutorials</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
 
-    <a class="btn btn-primary" href="/contact.html">Book a Call</a>
-  </div>
-</header>
+      <a class="btn btn-primary" href="/contact.html">Book a Call</a>
+    </div>
+  </header>
 
-<main id="main">
-  <section class="hero">
-    <div class="wrapper hero-grid">
-      <div class="card">
+  <main class="wrapper">
+    <section class="hero">
+      <div class="hero-card">
         <div class="kicker">Administrative + IT Support</div>
         <h1>Clarity. Order. Confidence.</h1>
-
-        <p class="muted">
+        <p class="lead">
           LaFaries Mortimer LLC was built to be more than a service provider — it is a catalyst for transformation.
+          We help families, ministries, and small businesses get organized and move forward without overwhelm.
         </p>
 
-        <div class="card-actions">
-          <a class="btn btn-primary" href="/services.html">See Services</a>
-          <a class="btn btn-outline" href="/apps.html">Open Apps</a>
-        </div>
-
-        <hr class="sep" />
-
-        <div class="badge">Simple systems — no tech overwhelm</div>
-        <div class="list">
-          <div class="list-item">
-            <div class="dot"></div>
-            <div>
-              <strong>Small Business:</strong> admin setup, websites, forms, and organization.
-            </div>
-          </div>
-          <div class="list-item">
-            <div class="dot"></div>
-            <div>
-              <strong>Ministries:</strong> systems for giving, events, tracking, and communication.
-            </div>
-          </div>
-          <div class="list-item">
-            <div class="dot"></div>
-            <div>
-              <strong>Families:</strong> planning, legacy tools, and documentation support.
-            </div>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/services.html">View Services</a>
+          <a class="btn btn-outline" href="/laap.html">Open LAAP</a>
+          <a class="btn btn-outline" href="/apps.html">Apps & Portfolio</a>
         </div>
       </div>
 
-      <div class="card soft">
-        <h2>Start with LAAP</h2>
-        <p class="small-note">
-          A guided step-by-step experience that helps you move from idea → organized action.
-        </p>
-        <div class="card-actions">
-          <a class="btn btn-primary" href="/laap.html">Open LAAP</a>
-          <a class="btn btn-outline" href="/contact.html">Need Help?</a>
-        </div>
+      <aside class="side-card">
+        <h2>What We Do</h2>
+        <p>Simple support that feels like a helping hand, not a hurdle.</p>
 
-        <hr class="sep" />
-
-        <h2>Popular Tools</h2>
-        <p class="small-note">Simple, ready-to-use tools made for real life.</p>
-        <div class="card-actions">
-          <a class="btn btn-outline" href="/apps.html">Apps &amp; Portfolio</a>
-          <a class="btn btn-outline" href="/tutorial.html">Tutorials</a>
+        <div class="mini-list">
+          <div class="mini-item">
+            <strong>Admin Support</strong>
+            <span>Documents, systems, organization, templates, workflows.</span>
+          </div>
+          <div class="mini-item">
+            <strong>IT Help</strong>
+            <span>Website setup, troubleshooting, accounts, tools, guidance.</span>
+          </div>
+          <div class="mini-item">
+            <strong>LAAP Suite™</strong>
+            <span>Step-by-step structure to build and move forward with confidence.</span>
+          </div>
         </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <h2>Services</h2>
+      <p>Pick what you need. Keep it simple. Get results.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Business Setup</h3>
+          <p>Formation guidance, EIN support, business readiness steps.</p>
+        </div>
+        <div class="card">
+          <h3>Systems & Organization</h3>
+          <p>Streamline your operations so your work feels lighter and clearer.</p>
+        </div>
+        <div class="card">
+          <h3>Tech Support</h3>
+          <p>Fix issues, improve your setup, and make tools work for you.</p>
+        </div>
+      </div>
+
+      <div class="hero-actions" style="margin-top:14px;">
+        <a class="btn btn-primary" href="/pricing.html">See Pricing</a>
+        <a class="btn btn-outline" href="/contact.html">Talk to Us</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Apps & Tools</h2>
+      <p>These are real tools built to support real missions.</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>LAAP Suite™ Wizard</h3>
+          <p>Step-by-step guidance — no tech skills required.</p>
+        </div>
+        <div class="card">
+          <h3>LegacyRoots™</h3>
+          <p>Family history, organized and preserved with purpose.</p>
+        </div>
+        <div class="card">
+          <h3>Tutorial Library</h3>
+          <p>Simple training guides to help you do everyday work with confidence.</p>
+        </div>
+      </div>
+
+      <div class="hero-actions" style="margin-top:14px;">
+        <a class="btn btn-primary" href="/apps.html">Open App Page</a>
+        <a class="btn btn-outline" href="/tutorial.html">Open Tutorials</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper footer-inner">
+      <div>© 2026 LaFaries Mortimer LLC</div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="/faq.html">FAQ</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html" style="display:none;">Privacy</a>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <section class="section">
-    <div class="wrapper">
-      <div class="section-header">
-        <h2>What we do</h2>
-        <p>Support that helps you get organized, stay consistent, and move forward.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <h2>Admin Support</h2>
-          <p class="muted">Documents, organization, workflows, and setup.</p>
-        </div>
-        <div class="card">
-          <h2>IT Support</h2>
-          <p class="muted">Web updates, troubleshooting, tools, and guidance.</p>
-        </div>
-        <div class="card">
-          <h2>Systems + Automation</h2>
-          <p class="muted">Simple systems that reduce stress and save time.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrapper footer-inner">
-    <div>© 2026 LaFaries Mortimer LLC</div>
-    <div><a href="/contact.html">Contact</a></div>
-  </div>
-</footer>
+  <script>
+    function toggleMenu(){
+      const nav = document.getElementById("siteNav");
+      nav.classList.toggle("open");
+    }
+  </script>
 </body>
 </html>
