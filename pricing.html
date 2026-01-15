@@ -1,72 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<header class="site-header">
-  <div class="wrapper header-inner">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Simple pricing options for admin and IT support." />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
 
-    <!-- Brand / Logo -->
-    <a href="/index.html" class="brand">
-      <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" class="brand-logo">
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrapper header-inner">
+    <a class="brand" href="/index.html">
+      <img class="brand-logo" src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" />
       <strong>LaFaries Mortimer LLC</strong>
     </a>
 
-    <!-- Main Navigation -->
-    <nav class="main-nav" aria-label="Main navigation">
+    <nav aria-label="Primary">
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
       <a href="/services.html">Services</a>
       <a href="/laap.html">LAAP Suite</a>
       <a href="/apps.html">Apps &amp; Portfolio</a>
+      <a class="active" href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
-      <a href="/goals.html">Goals</a>
-      <a href="/tutorial.html">Tutorials</a>
+      <a href="/tutorial.html">Resources</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <!-- CTA -->
-    <a href="/contact.html" class="btn btn-outline">Book a Call</a>
-
+    <a class="btn btn-primary" href="/contact.html">Book a Call</a>
   </div>
 </header>
 
-
-<main class="wrapper">
-<section>
+<main id="main" class="wrapper">
   <div class="section-header">
-    <h1>Starter Rates</h1>
-    <p>Transparent, affordable, and flexible.</p>
+    <h1>Pricing</h1>
+    <p class="muted">Clear, simple options. Choose what fits your needs.</p>
   </div>
 
-  <div class="grid">
+  <div class="grid-3">
     <div class="card">
-      <h3>Consultation</h3>
-      <p>Starting at $75</p>
-      <p>Assessment + action plan.</p>
+      <h2>Starter</h2>
+      <p class="muted">Best for quick fixes and simple help.</p>
+      <hr class="sep" />
+      <p><strong>Includes:</strong> 1 focused task + guidance.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="/contact.html">Book a Call</a>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <h2>Standard</h2>
+      <p class="muted">Best for weekly support and organization.</p>
+      <hr class="sep" />
+      <p><strong>Includes:</strong> multiple tasks + system cleanup.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="/contact.html">Book a Call</a>
+      </div>
     </div>
 
     <div class="card">
-      <h3>Admin Support</h3>
-      <p>Starting at $95/session</p>
-      <p>Documents, systems, cleanup.</p>
-    </div>
-
-    <div class="card">
-      <h3>IT Support</h3>
-      <p>Starting at $110/session</p>
-      <p>Tech setup and security basics.</p>
-    </div>
-
-    <div class="card">
-      <h3>Project Packages</h3>
-      <p>Custom quoted</p>
-      <p>Larger structured builds.</p>
+      <h2>Premium</h2>
+      <p class="muted">Best for full setup, structure, and systems.</p>
+      <hr class="sep" />
+      <p><strong>Includes:</strong> setup + automation + training.</p>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="/contact.html">Book a Call</a>
+      </div>
     </div>
   </div>
-</section>
+
+  <p class="small-note" style="margin-top:1rem;">
+    Pricing is finalized during your call based on your exact needs and timeline.
+  </p>
 </main>
 
 <footer>
-  <div class="wrapper">
-    © 2026 LaFaries Mortimer LLC
+  <div class="wrapper footer-inner">
+    <div>© 2026 LaFaries Mortimer LLC</div>
+    <div><a href="/contact.html">Contact</a></div>
   </div>
 </footer>
 </body>
