@@ -1,121 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LAAP Wizard | LaFaries Mortimer LLC</title>
-  <meta name="description" content="LAAP Wizard prototype – capture client launch details step-by-step." />
-  <link rel="stylesheet" href="../assets/styles.css" />
-  <link rel="stylesheet" href="./wizard.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAAP Suite™ | LaFaries Mortimer LLC</title>
+  <meta name="description" content="LAAP Suite™ is a guided step-by-step experience that helps you organize and move forward with confidence." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <div class="brand">
-        <div class="brand__mark">LM</div>
-        <div class="brand__text">
-          <div class="brand__title">LaFaries Mortimer LLC</div>
-          <div class="brand__sub">LAAP Wizard (Prototype)</div>
-        </div>
-      </div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-      <nav class="topnav">
-        <a href="https://laap.lafariesmortimerllc.com/">Tutorial Center</a>
-        <a href="#form">Wizard</a>
-        <a class="btn btn--primary" href="https://lafariesmortimerllc.com/service#consult" target="_blank" rel="noopener">
-          Request a Consultation
-        </a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="wrapper header-inner">
+    <a class="brand" href="/index.html">
+      <img class="brand-logo" src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" />
+      <strong>LaFaries Mortimer LLC</strong>
+    </a>
 
-  <main class="wrap wizard-wrap">
-    <section class="wizard-hero">
-      <h1>LAAP Formation Wizard</h1>
-      <p class="lead">
-        This is the live LAAP Wizard page hosted on Netlify. Entries save automatically in your browser (Draft mode).
+    <nav aria-label="Primary">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a class="active" href="/laap.html">LAAP Suite</a>
+      <a href="/apps.html">Apps &amp; Portfolio</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/tutorial.html">Resources</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <a class="btn btn-primary" href="/contact.html">Book a Call</a>
+  </div>
+</header>
+
+<main id="main" class="wrapper">
+  <div class="section-header">
+    <h1>LAAP Suite™</h1>
+    <p class="muted">
+      A guided, step-by-step experience that helps you organize, build, and move forward with confidence — no tech skills required.
+    </p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2>Start Here</h2>
+      <p class="muted">
+        LaFaries Mortimer LLC was built to be more than a service provider — it is a catalyst for transformation.
       </p>
-
-      <div class="wizard-meta">
-        <span class="pill" id="saveState">Draft: Not saved yet</span>
-        <span class="pill">Prototype v0.1</span>
-        <span class="pill">Auto-save enabled</span>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank" rel="noopener">Open App</a>
+        <a class="btn btn-outline" href="/contact.html">Need Help?</a>
       </div>
-    </section>
+    </div>
 
-    <section class="wizard-shell" id="form">
-      <aside class="wizard-steps">
-        <div class="wizard-steps__title">10-Step Formation Journey</div>
-        <ol id="stepList"></ol>
+    <div class="card soft">
+      <h2>What you’ll do</h2>
+      <div class="list">
+        <div class="list-item"><div class="dot"></div><div>Answer simple questions.</div></div>
+        <div class="list-item"><div class="dot"></div><div>Get organized step by step.</div></div>
+        <div class="list-item"><div class="dot"></div><div>Finish with clear next actions.</div></div>
+      </div>
+    </div>
+  </div>
+</main>
 
-        <div class="wizard-sidebox">
-          <div class="wizard-sidebox__title">System Actions</div>
-          <button class="btn btn--ghost" id="btnSave">Save Draft</button>
-          <button class="btn btn--ghost" id="btnExport">Export JSON</button>
-          <button class="btn btn--ghost" id="btnReset">Reset Draft</button>
-        </div>
-
-        <div class="wizard-sidebox">
-          <div class="wizard-sidebox__title">Quick Links</div>
-          <a class="btn btn--ghost" href="https://laap.lafariesmortimerllc.com/#overview">Watch Overview</a>
-          <a class="btn btn--ghost" href="https://laap.lafariesmortimerllc.com/#downloads">Downloads</a>
-        </div>
-      </aside>
-
-      <section class="wizard-main">
-        <div class="wizard-card">
-          <div class="wizard-card__head">
-            <div>
-              <div class="wizard-kicker" id="stepKicker">Step 1</div>
-              <h2 id="stepTitle">Business Concept & Vision</h2>
-              <p class="wizard-sub" id="stepDesc">Capture the heart of the business and the first foundational details.</p>
-            </div>
-
-            <div class="wizard-nav">
-              <button class="btn btn--ghost" id="btnBack" disabled>Back</button>
-              <button class="btn btn--primary" id="btnNext">Continue</button>
-            </div>
-          </div>
-
-          <div class="wizard-tabs" id="tabs"></div>
-
-          <form class="wizard-form" id="wizardForm">
-            <div id="fields"></div>
-
-            <div class="wizard-form__footer">
-              <div class="wizard-hint" id="hintArea"></div>
-              <div class="wizard-nav">
-                <button class="btn btn--ghost" type="button" id="btnBack2" disabled>Back</button>
-                <button class="btn btn--primary" type="button" id="btnNext2">Continue</button>
-              </div>
-            </div>
-          </form>
-
-          <div class="wizard-done" id="donePanel" hidden>
-            <h3>Draft Complete</h3>
-            <p class="wizard-sub">
-              You can export the draft as JSON and use it to generate documents, checklists, and next steps.
-            </p>
-            <div class="wizard-done__actions">
-              <button class="btn btn--primary" id="btnExport2">Export JSON</button>
-              <a class="btn btn--ghost" href="https://lafariesmortimerllc.com/service#consult" target="_blank" rel="noopener">
-                Request a Consultation
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-  </main>
-
-  <!-- Sticky consult button -->
-  <a class="sticky-consult"
-     href="https://lafariesmortimerllc.com/service#consult"
-     target="_blank"
-     rel="noopener">
-    Request a Consultation
-  </a>
-
-  <script src="./wizard.js"></script>
+<footer>
+  <div class="wrapper footer-inner">
+    <div>© 2026 LaFaries Mortimer LLC</div>
+    <div><a href="/contact.html">Contact</a></div>
+  </div>
+</footer>
 </body>
 </html>
