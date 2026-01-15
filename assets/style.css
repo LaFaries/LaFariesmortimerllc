@@ -1,12 +1,14 @@
 :root{
-  --bg:#050608;
-  --panel:#020617;
-  --card:#111827;
-  --gold:#d4af37;
-  --text:#f9fafb;
-  --muted:#9ca3af;
-  --line:#1f2937;
+  --bg:#050608;          /* deep black */
+  --panel:#070A12;       /* rich navy-black */
+  --card:#0B1020;        /* elevated card */
+  --gold:#D4AF37;        /* metallic gold */
+  --cream:#F6F1E3;       /* cream */
+  --text:#F6F1E3;        /* cream text */
+  --muted:#C9C2B2;       /* warm muted cream */
+  --line:#2B2A26;        /* warm divider */
 }
+
 
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
