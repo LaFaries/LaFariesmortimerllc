@@ -2,96 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Administrative and IT services designed to bring clarity, order, and confidence to your work.">
-  <link rel="stylesheet" href="/assets/style.css">
-
-  <style>
-    :root{--bg:#050608;--panel:#020617;--gold:#d4af37;--text:#f9fafb;--muted:#9ca3af;--border:#1f2937;}
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-    a{text-decoration:none;color:inherit}
-    .wrapper{max-width:1100px;margin:0 auto;padding:0 1rem}
-    header{position:sticky;top:0;z-index:10;background:rgba(5,6,8,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(8px)}
-    .header-inner{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0;gap:1rem;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
-    .brand img{width:34px;height:34px;border-radius:999px;border:1px solid var(--border);object-fit:cover;background:#0b1220}
-    nav{display:flex;gap:1.1rem;font-size:.9rem;flex-wrap:wrap}
-    nav a{color:var(--muted)} nav a:hover{color:var(--gold)}
-    .btn{padding:.55rem 1.1rem;border-radius:999px;font-size:.8rem;font-weight:700;border:1px solid transparent;display:inline-block;text-transform:uppercase;letter-spacing:.08em}
-    .btn-outline{border-color:var(--gold);color:var(--gold)}
-    .btn-primary{background:var(--gold);color:#111827}
-    main{padding:2.25rem 0}
-    h1{font-size:2rem;line-height:1.15;margin-bottom:.5rem}
-    .lead{color:var(--muted);max-width:75ch}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.25rem}
-    .card{background:var(--panel);border:1px solid var(--border);border-radius:1rem;padding:1rem}
-    .card h3{margin-bottom:.35rem}
-    .card p{color:var(--muted)}
-    .cta{margin-top:1.5rem;display:flex;gap:.75rem;flex-wrap:wrap}
-    footer{border-top:1px solid var(--border);padding:1.25rem 0;color:var(--muted);background:var(--panel);font-size:.8rem;margin-top:2rem}
-    @media(max-width:900px){.grid{grid-template-columns:1fr}}
-  </style>
+  <meta name="description" content="Administrative and IT services that bring clarity, order, and confidence." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header>
   <div class="wrapper header-inner">
     <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo">
-      <span>LaFaries Mortimer LLC</span>
+      <img class="brand-logo" src="/assets/img/logo-lm.jpg" alt="LaFaries Mortimer LLC logo" />
+      <strong>LaFaries Mortimer LLC</strong>
     </a>
 
-    <nav>
+    <nav aria-label="Primary">
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
+      <a class="active" href="/services.html">Services</a>
       <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps & Portfolio</a>
+      <a href="/apps.html">Apps &amp; Portfolio</a>
+      <a href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
       <a href="/tutorial.html">Resources</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <a href="/contact.html" class="btn btn-outline">Book a Call</a>
+    <a class="btn btn-primary" href="/contact.html">Book a Call</a>
   </div>
 </header>
 
-<main class="wrapper">
-  <h1>Services</h1>
-  <p class="lead">Simple support that helps you stay organized, build strong systems, and move forward with confidence.</p>
+<main id="main" class="wrapper">
+  <div class="section-header">
+    <h1>Services</h1>
+    <p class="muted">Simple support that helps you move forward without overwhelm.</p>
+  </div>
 
-  <div class="grid">
+  <div class="grid-3">
     <div class="card">
-      <h3>Administrative Support</h3>
-      <p>Inbox cleanup, document organization, scheduling, templates, and business support that saves time.</p>
+      <h2>Administrative Support</h2>
+      <p class="muted">Documents, organization, email setup, forms, and workflows.</p>
     </div>
-
     <div class="card">
-      <h3>IT & Website Support</h3>
-      <p>Website updates, troubleshooting, setup help, domains/DNS guidance, and clean, reliable structure.</p>
+      <h2>IT Support</h2>
+      <p class="muted">Website updates, troubleshooting, simple tech help, guidance.</p>
     </div>
-
     <div class="card">
-      <h3>Systems & Automation</h3>
-      <p>Simple workflows, checklists, forms, and automation that reduce mistakes and improve follow-through.</p>
-    </div>
-
-    <div class="card">
-      <h3>Ministry & Organization Support</h3>
-      <p>Announcements, calendars, signup forms, event structure, and tools built to support ministry operations.</p>
+      <h2>Systems &amp; Automation</h2>
+      <p class="muted">Streamlined processes that save time and reduce stress.</p>
     </div>
   </div>
 
-  <div class="cta">
-    <a class="btn btn-primary" href="/contact.html">Book a Call</a>
-    <a class="btn btn-outline" href="/apps.html">View Tools</a>
+  <div class="card-actions">
+    <a class="btn btn-primary" href="/pricing.html">See Pricing</a>
+    <a class="btn btn-outline" href="/contact.html">Book a Call</a>
   </div>
 </main>
 
 <footer>
-  <div class="wrapper">© 2026 LaFaries Mortimer LLC • All rights reserved</div>
+  <div class="wrapper footer-inner">
+    <div>© 2026 LaFaries Mortimer LLC</div>
+    <div><a href="/contact.html">Contact</a></div>
+  </div>
 </footer>
 </body>
 </html>
