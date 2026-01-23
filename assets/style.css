@@ -63,18 +63,17 @@ header{
   min-width: 220px;
 }
 .brand-logo{
-  width:64px;
-  height:64px;
-  min-width:64px;
-  min-height:64px;
-
-  border-radius: 999px;
-  border: 2px solid var(--lm-gold);
-  background: #fff;
-  object-fit: contain;
-
-  box-shadow: 0 12px 30px rgba(0,0,0,.14);
-  padding: 6px;
+  width:56px;
+  height:56px;
+  border-radius:999px;
+  border:2px solid var(--lm-gold);
+  background:#000;
+  object-fit:contain;
+  padding:6px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.25),
+    inset 0 0 0 1px rgba(255,255,255,.06);
+}
 
 
 }
