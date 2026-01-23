@@ -1,7 +1,27 @@
-/* =========================================================
-   LAFARIES MORTIMER LLC — MASTER STYLESHEET
-   One file. One source of truth.
-   ========================================================= */
+/* ======================================================
+   LaFaries Mortimer LLC — Global Stylesheet (2026)
+   SINGLE SOURCE OF TRUTH
+   ====================================================== */
+
+/* ---------- GOOGLE FONTS ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ---------- CSS VARIABLES ---------- */
+:root {
+  --ivory: #F8F6F1;
+  --cream: #DFD3B0;
+  --gold: #DAB85C;
+  --charcoal: #1D1D1D;
+  --softgray: #A7A4A0;
+  --line: rgba(29, 29, 29, 0.14);
+
+  --radius-lg: 22px;
+  --radius-sm: 14px;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
 
 /* ---------- RESET ---------- */
 *,
@@ -10,36 +30,20 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
-/* ---------- VARIABLES ---------- */
-:root {
-  --ivory: #F8F6F1;
-  --cream: #DFD3B0;
-  --gold: #DAB85C;
-  --charcoal: #1D1D1D;
-  --muted: rgba(29,29,29,.65);
-  --line: rgba(29,29,29,.14);
-
-  --radius: 22px;
-  --shadow: 0 18px 45px rgba(0,0,0,.08);
-
-  --font-heading: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-}
-
-/* ---------- BASE ---------- */
 body {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--charcoal);
   background: linear-gradient(180deg, var(--ivory), #ffffff);
+  color: var(--charcoal);
+  line-height: 1.6;
 }
 
+/* ---------- GLOBAL ELEMENTS ---------- */
 a {
   color: inherit;
   text-decoration: none;
@@ -50,78 +54,38 @@ img {
   display: block;
 }
 
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
 /* ---------- LAYOUT ---------- */
-.wrapper,
-.wrap {
+.wrapper {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* ---------- TYPOGRAPHY (LOCKED) ---------- */
-.kicker {
-  font-weight: 600;
-  font-size: .75rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  margin: 0;
-  color: var(--charcoal);
-}
-
-h1 {
-  font-size: clamp(2.4rem, 4vw, 3.2rem);
-  line-height: 1.05;
-}
-
-h2 {
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
-  line-height: 1.15;
-}
-
-h3 {
-  font-size: 1.45rem;
-}
-
-h4 {
-  font-size: 1.15rem;
-}
-
-p {
-  margin: .4rem 0 0;
-  font-size: 1rem;
-  color: var(--charcoal);
-}
-
-p.muted,
-.muted {
-  color: var(--muted);
-  font-size: .95rem;
-}
-
-.small,
-.small-note {
-  font-size: .85rem;
-  color: var(--muted);
-}
-
-/* ---------- HEADER / NAV ---------- */
+/* ---------- HEADER ---------- */
 header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(248,246,241,.88);
+  background: rgba(248, 246, 241, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
 
-.header-inner,
-.nav {
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -129,6 +93,7 @@ header {
   padding: 14px 0;
 }
 
+/* ---------- BRAND ---------- */
 .brand {
   display: flex;
   align-items: center;
@@ -139,28 +104,37 @@ header {
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  object-fit: cover;
-  border: 1px solid var(--line);
+  border: 1px solid rgba(29, 29, 29, 0.12);
   background: #fff;
+  object-fit: cover;
 }
 
+.brand strong {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.05;
+}
+
+/* ---------- NAV ---------- */
 nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
+  justify-content: center;
 }
 
 nav a {
   font-size: 14px;
-  padding: 8px 10px;
+  padding: 8px 12px;
   border-radius: 999px;
-  color: var(--muted);
+  color: rgba(29, 29, 29, 0.7);
 }
 
 nav a:hover,
 nav a.active {
-  background: rgba(218,184,92,.18);
-  color: var(--charcoal);
+  background: rgba(218, 184, 92, 0.18);
+  color: rgba(29, 29, 29, 0.95);
 }
 
 /* ---------- BUTTONS ---------- */
@@ -172,143 +146,181 @@ nav a.active {
   padding: 12px 16px;
   border-radius: 999px;
   font-size: 12px;
-  letter-spacing: .14em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
   border: 1px solid transparent;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.btn-primary,
-.btnGold {
+.btn-primary {
   background: var(--gold);
   color: #1a1a1a;
-  border-color: rgba(29,29,29,.1);
+  border-color: rgba(29, 29, 29, 0.1);
 }
 
-.btn-outline,
-.btnGhost {
+.btn-primary:hover {
+  filter: brightness(0.98);
+}
+
+.btn-outline {
   background: transparent;
-  border-color: rgba(29,29,29,.25);
-  color: var(--charcoal);
+  border-color: rgba(29, 29, 29, 0.25);
+  color: rgba(29, 29, 29, 0.85);
 }
 
-.btn-outline:hover,
-.btnGhost:hover {
-  background: rgba(29,29,29,.05);
+.btn-outline:hover {
+  background: rgba(29, 29, 29, 0.04);
+}
+
+/* ---------- MAIN ---------- */
+main {
+  padding: 32px 0;
+}
+
+/* ---------- HEADINGS ---------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+/* ---------- TEXT ---------- */
+p {
+  margin: 0.25rem 0 0;
+}
+
+.muted {
+  color: rgba(29, 29, 29, 0.65);
+}
+
+.small-note {
+  font-size: 13px;
+  color: rgba(29, 29, 29, 0.55);
 }
 
 /* ---------- SECTIONS ---------- */
-.section,
-main {
-  padding: 26px 0;
-}
-
 .section-header {
-  margin-bottom: 18px;
+  margin-bottom: 1.5rem;
 }
 
-/* ---------- GRIDS ---------- */
-.grid,
-.grid-2,
-.grid-3,
-.cards {
-  display: grid;
-  gap: 16px;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-3,
-.cards {
-  grid-template-columns: repeat(3, 1fr);
+.section-header p {
+  max-width: 60ch;
 }
 
 /* ---------- CARDS ---------- */
 .card {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: 0 10px 26px rgba(0,0,0,.05);
-  padding: 18px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 20px;
 }
 
 .card.soft {
-  background: linear-gradient(180deg, rgba(223,211,176,.18), #fff);
+  background: linear-gradient(
+    180deg,
+    rgba(223, 211, 176, 0.2),
+    #ffffff
+  );
 }
 
 .card-actions {
-  margin-top: 14px;
+  margin-top: 1rem;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 /* ---------- LISTS ---------- */
 .list {
-  margin-top: 10px;
   display: grid;
-  gap: 8px;
+  gap: 10px;
 }
 
 .list-item {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 999px;
   background: var(--gold);
+  box-shadow: 0 0 0 6px rgba(218, 184, 92, 0.18);
+}
+
+/* ---------- GRIDS ---------- */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
 /* ---------- FOOTER ---------- */
 footer {
-  margin-top: 30px;
+  margin-top: 40px;
   border-top: 1px solid var(--line);
-  background: rgba(248,246,241,.75);
-  padding: 18px 0;
+  background: rgba(248, 246, 241, 0.75);
+  padding: 20px 0;
   font-size: 12px;
-  color: var(--muted);
+  color: rgba(29, 29, 29, 0.6);
 }
 
-.footer-inner,
-.foot {
+.footer-inner {
   display: flex;
   justify-content: space-between;
+  gap: 12px;
   flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* ---------- ACCESSIBILITY ---------- */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-}
-
-.skip-link:focus {
-  left: 10px;
-  top: 10px;
-  background: #fff;
-  padding: 8px 12px;
-  border-radius: 6px;
-  z-index: 1000;
 }
 
 /* ---------- MOBILE ---------- */
-@media (max-width: 980px) {
-  .grid-2,
-  .grid-3,
-  .cards {
-    grid-template-columns: 1fr;
+@media (max-width: 900px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   nav {
-    justify-content: center;
+    justify-content: flex-start;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
   }
 }
