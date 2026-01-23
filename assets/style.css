@@ -155,29 +155,62 @@ main{padding:2.25rem 0}
 }
 
 /* ---------- TYPOGRAPHY ---------- */
-.kicker{
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-size:.76rem;
-  color:var(--lm-text-muted);
+/* ==========================
+   TYPOGRAPHY SYSTEM (LOCKED)
+   ========================== */
+
+body{
+  font-family: var(--b);
+  font-size: 16px;              /* BASE SIZE — DO NOT CHANGE */
+  line-height: 1.6;
+  color: var(--charcoal);
 }
 
+/* Headings */
+h1, h2, h3, h4, h5{
+  font-family: var(--h);
+  font-weight: 500;
+  letter-spacing: .2px;
+  color: var(--charcoal);
+  margin: 0;
+}
+
+/* Type Scale */
 h1{
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-size:clamp(2rem,3vw,2.6rem);
-  line-height:1.15;
-  margin:.4rem 0 .75rem;
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1.05;
 }
 
 h2{
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-size:1.35rem;
-  margin:0 0 .6rem;
+  font-size: 2rem;
+  line-height: 1.1;
 }
 
-p{font-size:1rem}
-p.muted{color:var(--lm-text-muted)}
+h3{
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+h4{
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+/* Body text */
+p{
+  font-family: var(--b);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(29,29,29,.78);
+  margin: 0;
+}
+
+.small,
+.muted{
+  font-size: .9rem;
+  color: rgba(29,29,29,.60);
+}
+
 
 /* ---------- SECTIONS ---------- */
 .section{padding:1.25rem 0}
