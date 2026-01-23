@@ -263,7 +263,14 @@ footer{
   justify-content:space-between;
 }
 
-@media (max-width: 980px){
+@media (max-width: 980px)
+{@media (max-width: 768px){
+  .brand-logo{
+    width:64px;
+    height:64px;
+  }
+}
+
   .hero-grid{ grid-template-columns: 1fr; }
   .grid-3{ grid-template-columns: 1fr; }
   .grid-2{ grid-template-columns: 1fr; }
