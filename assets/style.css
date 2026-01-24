@@ -1,68 +1,133 @@
-/* ================================
-   GLOBAL TYPOGRAPHY RESET
-   ================================ */
-
-/* Font imports (single source of truth) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600&display=swap');
-
+/* =====================
+   ROOT
+===================== */
 :root {
-  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-
-  --text-base: 16px;
-  --text-small: 14px;
-
-  --h1: 48px;
-  --h2: 36px;
-  --h3: 26px;
-  --h4: 20px;
-
-  --line-tight: 1.15;
-  --line-normal: 1.6;
+  --gold: #d4af37;
+  --ink: #111;
+  --muted: #555;
+  --bg: #faf8f4;
+  --card: #ffffff;
+  --border: #e6e1d8;
 }
 
-/* Base reset */
-html {
-  font-size: var(--text-base);
+/* =====================
+   RESET
+===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--line-normal);
-  color: #1d1d1d;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
 }
 
-/* Headings — ONE system */
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  line-height: var(--line-tight);
-  margin: 0 0 0.75rem;
+/* =====================
+   LAYOUT
+===================== */
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
 }
 
-h1 { font-size: var(--h1); }
-h2 { font-size: var(--h2); }
-h3 { font-size: var(--h3); }
-h4 { font-size: var(--h4); }
-
-/* Paragraphs & lists */
-p, li {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: var(--line-normal);
+/* =====================
+   HEADER
+===================== */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: #fff;
 }
 
-.small,
-.muted {
-  font-size: var(--text-small);
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-/* Navigation ONLY (strong + visible as requested) */
-nav a {
-  font-family: var(--font-body);
-  font-size: 14px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brand-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.main-nav a {
+  text-decoration: none;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--ink);
+}
+
+.main-nav a:hover {
+  color: var(--gold);
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.btn {
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #000;
+}
+
+/* =====================
+   TYPE
+===================== */
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* =====================
+   CARDS
+===================== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
 }
