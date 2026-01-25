@@ -1,13 +1,13 @@
 /* =====================
-   ROOT
+   ROOT VARIABLES
 ===================== */
 :root {
+  --ivory: #faf8f4;
   --gold: #d4af37;
   --ink: #111;
-  --muted: #555;
-  --bg: #faf8f4;
-  --card: #ffffff;
+  --muted: #666;
   --border: #e6e1d8;
+  --card: #ffffff;
 }
 
 /* =====================
@@ -21,90 +21,121 @@
 
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: var(--bg);
+  background: var(--ivory);
   color: var(--ink);
   line-height: 1.6;
 }
 
 /* =====================
-   LAYOUT
+   WRAPPER
 ===================== */
-.wrapper {
-  max-width: 1100px;
+.wrap {
+  max-width: 1180px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 /* =====================
-   HEADER
+   HEADER (MATCHES EXISTING HTML)
 ===================== */
-.site-header {
-  border-bottom: 1px solid var(--border);
+header {
   background: #fff;
+  border-bottom: 1px solid var(--border);
 }
 
-.header-inner {
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 1.25rem;
+  flex-wrap: nowrap;
 }
 
+/* =====================
+   BRAND
+===================== */
 .brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
   color: var(--ink);
+  white-space: nowrap;
 }
 
-.brand-logo {
+.brand img {
   height: 42px;
   width: auto;
   display: block;
 }
 
-.brand-name {
-  font-weight: 700;
+.brand strong {
   font-size: 1.05rem;
+  font-weight: 700;
+  display: block;
 }
 
-.main-nav {
+.brand span {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* =====================
+   NAVIGATION
+===================== */
+nav {
   display: flex;
   gap: 1.25rem;
+  flex-wrap: nowrap;
 }
 
-.main-nav a {
-  text-decoration: none;
+nav a {
+  font-size: 0.75rem;
   font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-decoration: none;
   color: var(--ink);
+  white-space: nowrap;
 }
 
-.main-nav a:hover {
+nav a:hover {
   color: var(--gold);
 }
 
 /* =====================
-   BUTTONS
+   CTA BUTTONS
 ===================== */
-.btn {
-  padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
+.ctaTop {
+  display: flex;
+  gap: 0.75rem;
+  white-space: nowrap;
 }
 
-.btn-primary {
+.btn {
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btnGhost {
+  border: 1px solid var(--border);
+  color: var(--ink);
+  background: transparent;
+}
+
+.btnGold {
   background: var(--gold);
   color: #000;
 }
 
 /* =====================
-   TYPE
+   TYPOGRAPHY
 ===================== */
 h1 {
   font-size: 2.4rem;
@@ -122,12 +153,21 @@ p {
 }
 
 /* =====================
-   CARDS
+   CARDS / SECTIONS
 ===================== */
-.card {
+.card,
+.service-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+}
+
+/* =====================
+   RESPONSIVE SAFETY
+===================== */
+@media (max-width: 1000px) {
+  nav {
+    gap: 0.75rem;
+  }
 }
