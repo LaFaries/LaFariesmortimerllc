@@ -1,30 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LaFaries Mortimer LLC | Administrative & IT Services</title>
-  <meta name="description" content="Administrative and IT support built to bring clarity, order, and confidence.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaFaries Mortimer LLC</title>
+  <meta name="description" content="Administrative, bookkeeping, and IT support designed to bring clarity and confidence to your operations." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
+
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
-      </div>
+<header class="site-header">
+  <div class="wrapper header-inner">
+    <a href="/index.html" class="brand">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo" class="brand-logo">
+      <span class="brand-name">LaFaries Mortimer LLC</span>
     </a>
 
-    <nav aria-label="Main navigation">
+    <nav class="main-nav" aria-label="Main navigation">
       <a href="/index.html" aria-current="page">Home</a>
       <a href="/about.html">About</a>
       <a href="/services.html">Services</a>
@@ -36,35 +34,31 @@
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <div class="ctaTop">
-      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
-    </div>
+    <a href="/contact.html" class="btn btn-primary">Book a Call</a>
   </div>
 </header>
 
-<main class="wrap">
-  <section class="page-hero">
-    <h1>Clarity. Order. Confidence.</h1>
-    <p class="muted">
-      Administrative and IT support designed to help families, ministries,
-      and small businesses operate with structure and peace of mind.
-    </p>
+<main>
+
+  <section class="section">
+    <div class="wrapper">
+      <h1>Administrative & IT Support<br><span style="color:var(--gold)">Done Right</span></h1>
+      <p>
+        We help businesses, ministries, and nonprofits simplify operations,
+        regain control, and move forward with confidence.
+      </p>
+      <a href="/services.html" class="btn btn-outline">View Services</a>
+    </div>
   </section>
+
 </main>
 
-<footer class="site-footer">
-  <div class="wrap foot">
-    <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
-    <div class="footer-links">
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy</a>
-    </div>
+<footer>
+  <div class="wrapper footer-inner">
+    <div>© 2026 LaFaries Mortimer LLC</div>
+    <div><a href="/contact.html">Contact</a></div>
   </div>
 </footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
