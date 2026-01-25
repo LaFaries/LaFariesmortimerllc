@@ -1,52 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Administrative and IT services that bring clarity, order, and confidence.">
 
+  <meta name="description"
+        content="Administrative, bookkeeping, and IT services that bring clarity, order, and confidence." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- GLOBAL SITE CSS (same as all other pages) -->
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
+
 <body>
 
-<header>…(SAME HEADER AS INDEX)…</header>
+<!-- ================= HEADER (STANDARDIZED) ================= -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo-2026.png"
+           alt="LaFaries Mortimer LLC logo"
+           class="brand-logo">
+      <div>
+        <strong>LaFaries Mortimer LLC</strong>
+        <span>Administrative & IT Services</span>
+      </div>
+    </a>
 
-<main class="wrap">
-  <section class="page-hero">
-    <h1>Services</h1>
-    <p class="muted">
-      Structured administrative and IT support designed to bring clarity,
-      consistency, and confidence to your operations.
-    </p>
+    <nav aria-label="Main navigation">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html" aria-current="page">Services</a>
+      <a href="/laap.html">LAAP Suite</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/goals.html">Goals</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <div class="ctaTop">
+      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
+      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main id="main">
+
+  <!-- HERO -->
+  <section class="section hero">
+    <div class="wrap heroGrid">
+
+      <div class="heroCard">
+        <p class="kicker">DONE-FOR-YOU ADMIN & IT SUPPORT</p>
+
+        <h1>
+          We handle the <span class="gold">admin, bookkeeping & IT</span><br>
+          so you can focus on growth.
+        </h1>
+
+        <p class="sub">
+          Professional support for small businesses, ministries, and nonprofits —
+          designed to reduce overwhelm and bring structure to your operations.
+        </p>
+
+        <div class="heroBtns">
+          <a href="/contact.html" class="btn btnGold">Schedule a Consultation</a>
+          <a href="#services-offerings" class="btn btnGhost">View Services</a>
+        </div>
+      </div>
+
+      <aside class="side">
+        <h2>What we take off your plate</h2>
+        <ul class="bullet">
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Bookkeeping & financial tracking</strong>
+              <span>Clear, organized records</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Administrative systems</strong>
+              <span>Documentation & workflows</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Secure IT guidance</strong>
+              <span>Practical, safe solutions</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div>
+              <strong>Ministry back-office support</strong>
+              <span>Faith-aware administration</span>
+            </div>
+          </li>
+        </ul>
+        <p class="mini">Average response time: under 24 hours</p>
+      </aside>
+
+    </div>
   </section>
 
-  <section class="services-grid">
-    <article class="service-card">
-      <h3>Administrative Support</h3>
-      <p>Documentation, organization, executive assistance, workflows, and operations.</p>
-    </article>
+  <!-- SERVICES -->
+  <section id="services-offerings" class="section">
+    <div class="wrap">
 
-    <article class="service-card">
-      <h3>IT & Technical Support</h3>
-      <p>Website updates, troubleshooting, systems guidance, and secure technology support.</p>
-    </article>
+      <div class="sectionTitle">
+        <h3>Services built around your business</h3>
+        <p>Choose the level of support you need — project-based or ongoing.</p>
+      </div>
 
-    <article class="service-card">
-      <h3>Systems & Automation</h3>
-      <p>Process improvement, tools, and automation that save time and reduce friction.</p>
-    </article>
+      <div class="cards">
+
+        <div class="card">
+          <h4>Executive & Virtual Administration</h4>
+          <p>Documents, workflows, scheduling, email management, and organization.</p>
+        </div>
+
+        <div class="card">
+          <h4>Bookkeeping & Financial Organization</h4>
+          <p>Accurate tracking, reconciliations, reports, and tax-ready records.</p>
+        </div>
+
+        <div class="card">
+          <h4>IT & Cybersecurity Guidance</h4>
+          <p>Secure workflows, account hygiene, system setup, and troubleshooting.</p>
+        </div>
+
+      </div>
+    </div>
   </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap band">
+      <div>
+        <h3>Ready to lighten your load?</h3>
+        <p>Tell us where things feel heavy — we’ll help you simplify.</p>
+      </div>
+      <div class="bandActions">
+        <a href="/contact.html" class="btn btnGold">Start the Conversation</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
-<footer class="site-footer">…(SAME FOOTER)…</footer>
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
+    <div class="footer-links">
+      <a href="/contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
