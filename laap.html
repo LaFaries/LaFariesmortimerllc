@@ -1,67 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LAAP Suite™ | LaFaries Mortimer LLC</title>
-  <meta name="description" content="LAAP Suite™ is a guided step-by-step experience that helps you organize and move forward with confidence." />
-  <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LAAP Suite | LaFaries Mortimer LLC</title>
+  <meta name="description" content="LAAP Suite provides structured administrative and automation tools." />
 
-  <title>LAAP Suite™ | LaFaries Mortimer LLC</title>
-  <meta name="description" content="LAAP Suite™ is a guided step-by-step experience that helps you organize and move forward with confidence." />
-
-  <!-- GOOGLE FONTS (REQUIRED) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- SITE STYLES -->
-  <link rel="stylesheet" href="/assets/style.css" />
-</head>
-<link rel="stylesheet" href="/assets/style.css" />
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
 
-<main id="main" class="wrapper">
-  <div class="section-header">
-    <h1>LAAP Suite™</h1>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
+      <div>
+        <strong>LaFaries Mortimer LLC</strong>
+        <span>Administrative & IT Services</span>
+      </div>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/laap.html" aria-current="page">LAAP Suite</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/goals.html">Goals</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <div class="ctaTop">
+      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
+      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-hero">
+    <h1>LAAP Suite</h1>
     <p class="muted">
-      A guided, step-by-step experience that helps you organize, build, and move forward with confidence — no tech skills required.
+      LaFaries Administration Automation Platform — tools designed to
+      simplify workflows and strengthen operational consistency.
     </p>
-  </div>
+  </section>
 
-  <div class="grid-2">
-    <div class="card">
-      <h2>Start Here</h2>
-      <p class="muted">
-        LaFaries Mortimer LLC was built to be more than a service provider — it is a catalyst for transformation.
-      </p>
-      <div class="card-actions">
-        <a class="btn btn-primary" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank" rel="noopener">Open App</a>
-        <a class="btn btn-outline" href="/contact.html">Need Help?</a>
-      </div>
-    </div>
-
-    <div class="card soft">
-      <h2>What you’ll do</h2>
-      <div class="list">
-        <div class="list-item"><div class="dot"></div><div>Answer simple questions.</div></div>
-        <div class="list-item"><div class="dot"></div><div>Get organized step by step.</div></div>
-        <div class="list-item"><div class="dot"></div><div>Finish with clear next actions.</div></div>
-      </div>
-    </div>
-  </div>
+  <section class="cards">
+    <article class="card">
+      <h4>Process Automation</h4>
+      <p>Reduce manual work and streamline recurring administrative tasks.</p>
+    </article>
+    <article class="card">
+      <h4>Templates & Systems</h4>
+      <p>Ready-to-use tools built for clarity, accuracy, and efficiency.</p>
+    </article>
+    <article class="card">
+      <h4>Guided Setup</h4>
+      <p>Support to help you implement tools confidently and correctly.</p>
+    </article>
+  </section>
 </main>
 
-<footer>
-  <div class="wrapper footer-inner">
-    <div>© 2026 LaFaries Mortimer LLC</div>
-    <div><a href="/contact.html">Contact</a></div>
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
+    <div class="footer-links">
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
