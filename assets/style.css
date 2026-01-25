@@ -1,284 +1,287 @@
-/* ==========================
-   LaFaries Mortimer LLC
-   Brand System (Cream + Gold)
-   ========================== */
+/* ======================================================
+   LaFaries Mortimer LLC — MASTER STYLESHEET
+   ONE SOURCE OF TRUTH
+   ====================================================== */
 
-:root{
-  --lm-gold:#D4AF37;
-  --lm-gold-hover:#C9A227;
-
-  --lm-cream:#F9F4EC;
-  --lm-ivory:#F7F1E7;
-
-  --lm-text-dark:#1F2933;
-  --lm-text-muted:#6B7280;
-
-  --lm-border:#E5DCC8;
-
-  --radius:18px;
-  --shadow:0 14px 40px rgba(0,0,0,.08);
+/* -------------------- RESET -------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* ---------- RESET ---------- */
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family: "Inter", system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  background:var(--lm-cream);
-  color:var(--lm-text-dark);
-  line-height:1.65;
-}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
-.wrapper{max-width:1120px;margin:0 auto;padding:0 1rem}
-
-/* ---------- HEADER ---------- */
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(249,244,236,.88);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--lm-border);
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-  padding:.9rem 0;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:.75rem;
-  min-width:220px;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-.brand-logo{
-  width:56px;
-  height:56px;
-  min-width:56px;
-  min-height:56px;
-  border-radius:999px;
-  border:2px solid var(--lm-gold);
-  background:#000;
-  object-fit:contain;
-  padding:6px;
-  box-shadow:
-    0 10px 25px rgba(0,0,0,.25),
-    inset 0 0 0 1px rgba(255,255,255,.06);
+/* -------------------- VARIABLES -------------------- */
+:root {
+  /* Colors */
+  --bg: #ffffff;
+  --text: #1d1d1d;
+  --muted: #6b6b6b;
+  --gold: #d4af37;
+  --gold-soft: #f4e7b5;
+  --border: rgba(0,0,0,0.12);
+
+  /* Fonts */
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Layout */
+  --radius: 18px;
+  --max-width: 1180px;
 }
 
-.brand strong{
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-weight:600;
-  letter-spacing:.05em;
-  font-size:1.05rem;
+/* -------------------- BASE -------------------- */
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
 }
 
-/* ---------- NAV ---------- */
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:.9rem;
-  justify-content:center;
-}
-nav a{
-  padding:.35rem .25rem;
-  color:var(--lm-text-muted);
-  font-weight:500;
-}
-nav a:hover{
-  color:var(--lm-text-dark);
-}
-nav a.active{
-  color:var(--lm-text-dark);
-  border-bottom:2px solid var(--lm-gold);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* ---------- BUTTONS ---------- */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.5rem;
-  padding:.75rem 1.2rem;
-  border-radius:999px;
-  font-weight:600;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-size:.78rem;
-  border:1px solid transparent;
-  cursor:pointer;
-  white-space:nowrap;
-}
-.btn-primary{
-  background:var(--lm-gold);
-  color:#1a1a1a;
-}
-.btn-primary:hover{background:var(--lm-gold-hover)}
-.btn-outline{
-  background:transparent;
-  border-color:var(--lm-gold);
-  color:#1a1a1a;
-}
-.btn-outline:hover{
-  background:rgba(212,175,55,.12);
+/* -------------------- UTILITIES -------------------- */
+.wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
-/* ---------- MAIN ---------- */
-main{padding:2.25rem 0}
-
-/* ---------- HERO ---------- */
-.hero{
-  padding:2.25rem 0 1.5rem;
-}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:1.25rem;
-  align-items:start;
+.muted {
+  color: var(--muted);
 }
 
-/* ---------- CARDS ---------- */
-.card{
-  background:#fff;
-  border:1px solid var(--lm-border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:1.25rem;
-}
-.card.soft{
-  background:var(--lm-ivory);
+.small {
+  font-size: 0.9rem;
 }
 
-/* ---------- TYPOGRAPHY ---------- */
-.kicker{
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-size:.76rem;
-  color:var(--lm-text-muted);
+.kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
 }
 
-h1{
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-size:clamp(2rem,3vw,2.6rem);
-  line-height:1.15;
-  margin:.4rem 0 .75rem;
+/* -------------------- TYPOGRAPHY -------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
 }
 
-h2{
-  font-family:"Cormorant Garamond", Georgia, serif;
-  font-size:1.35rem;
-  margin:0 0 .6rem;
+h1 { font-size: clamp(2.1rem, 4vw, 2.6rem); }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
+
+p {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
 }
 
-p{font-size:1rem}
-p.muted{color:var(--lm-text-muted)}
-
-/* ---------- SECTIONS ---------- */
-.section{padding:1.25rem 0}
-.section-header{margin-bottom:.85rem}
-.section-header p{color:var(--lm-text-muted)}
-
-.grid-3{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1rem;
-}
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:1rem;
+/* -------------------- HEADER -------------------- */
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
 }
 
-/* ---------- BADGES ---------- */
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  padding:.35rem .7rem;
-  border-radius:999px;
-  border:1px solid var(--lm-gold);
-  background:rgba(212,175,55,.10);
-  font-weight:600;
-  font-size:.8rem;
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  flex-wrap: wrap;
 }
 
-/* ---------- LIST ---------- */
-.list{
-  display:grid;
-  gap:.65rem;
-  margin-top:.65rem;
-}
-.list-item{
-  display:flex;
-  gap:.65rem;
-  align-items:flex-start;
-}
-.dot{
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  background:var(--lm-gold);
-  margin-top:.4rem;
-  flex:0 0 10px;
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
 }
 
-/* ---------- FORMS ---------- */
-.form{
-  display:grid;
-  gap:.75rem;
-}
-input,textarea{
-  width:100%;
-  padding:.85rem 1rem;
-  border-radius:14px;
-  border:1px solid var(--lm-border);
-  background:#fff;
-  font-size:1rem;
-}
-textarea{
-  min-height:140px;
-  resize:vertical;
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
-.small-note{
-  color:var(--lm-text-muted);
-  font-size:.92rem;
+.brand-text {
+  display: flex;
+  flex-direction: column;
 }
 
-/* ---------- FOOTER ---------- */
-footer{
-  margin-top:2rem;
-  border-top:1px solid var(--lm-border);
-  background:#fff;
-}
-.footer-inner{
-  padding:1.25rem 0;
-  color:var(--lm-text-muted);
-  font-size:.9rem;
-  display:flex;
-  flex-wrap:wrap;
-  gap:.75rem;
-  align-items:center;
-  justify-content:space-between;
+.brand-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width:980px){
-  .hero-grid{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr}
-  .grid-2{grid-template-columns:1fr}
-  nav{justify-content:flex-start}
+.brand-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
-@media (max-width:768px){
-  .brand-logo{
-    width:64px;
-    height:64px;
+/* Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  font-size: 0.95rem;
+  color: var(--muted);
+  padding-bottom: 2px;
+}
+
+nav a.active,
+nav a[aria-current="page"] {
+  color: var(--text);
+  border-bottom: 2px solid var(--gold);
+}
+
+/* CTA */
+.header-cta {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* -------------------- BUTTONS -------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #111;
+}
+
+.btn-outline {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+
+/* -------------------- SECTIONS -------------------- */
+.section-header {
+  margin: 2.5rem 0 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* -------------------- CARDS -------------------- */
+.card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  background: #fff;
+}
+
+.card.soft {
+  background: #fafafa;
+}
+
+.card-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.list {
+  padding-left: 1rem;
+}
+
+.list li {
+  margin-bottom: 0.35rem;
+}
+
+/* -------------------- BAND -------------------- */
+.band {
+  margin-top: 2rem;
+  padding: 1.75rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--gold-soft), #fff);
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.25rem;
+}
+
+/* -------------------- FOOTER -------------------- */
+footer {
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 900px) {
+  .grid-3,
+  .grid-2,
+  .band {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .header-cta {
+    width: 100%;
+    justify-content: center;
   }
 }
