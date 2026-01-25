@@ -1,84 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAQ | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Frequently asked questions about LaFaries Mortimer LLC." />
-  <link rel="stylesheet" href="/assets/style.css" />
+  <meta name="description" content="Frequently asked questions about LaFaries Mortimer LLC Administrative & IT Services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header">
-  <div class="wrapper header-inner">
-    <a href="/index.html" class="brand">
-      <img
-        src="/assets/img/logo-2026.png"
-        alt="LaFaries Mortimer LLC logo"
-        class="brand-logo"
-      />
-      <span class="brand-name">LaFaries Mortimer LLC</span>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
+      <div>
+        <strong>LaFaries Mortimer LLC</strong>
+        <span>Administrative & IT Services</span>
+      </div>
     </a>
 
-    <nav class="main-nav">
+    <nav aria-label="Main navigation">
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
       <a href="/services.html">Services</a>
       <a href="/laap.html">LAAP Suite</a>
       <a href="/apps.html">Apps</a>
       <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQ</a>
+      <a href="/faq.html" aria-current="page">FAQ</a>
       <a href="/goals.html">Goals</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <a href="/contact.html" class="btn btn-primary">Book a Call</a>
+    <div class="ctaTop">
+      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
+      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+    </div>
   </div>
 </header>
 
+<main class="wrap">
 
-<main id="main" class="wrapper">
-  <div class="section-header">
+  <section class="page-hero">
     <h1>FAQ</h1>
-    <p class="muted">We build tools and systems to bring clarity, order, and confidence to everyday work.</p>
-  </div>
+    <p class="muted">Answers to the most common questions about support, process, and what to expect.</p>
+  </section>
 
-  <div class="grid-2">
-    <div class="card">
-      <h2>Do I need to be tech-savvy?</h2>
-      <p class="muted">No. Everything is designed to be simple, step-by-step, and easy to follow.</p>
-    </div>
+  <section class="cards">
+    <article class="card">
+      <h4>Do you offer ongoing monthly support?</h4>
+      <p>Yes. Many clients choose ongoing support for consistent admin and IT coverage.</p>
+    </article>
 
-    <div class="card">
-      <h2>What industries do you support?</h2>
-      <p class="muted">Small businesses, ministries, and families who need structure and support.</p>
-    </div>
+    <article class="card">
+      <h4>Can you help with website updates?</h4>
+      <p>Yes. We support updates, troubleshooting, and improvements to keep your site stable and polished.</p>
+    </article>
 
-    <div class="card">
-      <h2>How do I start?</h2>
-      <p class="muted">Book a call, or start with LAAP and follow the steps.</p>
-      <div class="card-actions">
-        <a class="btn btn-primary" href="/laap.html">Open LAAP</a>
-      </div>
-    </div>
+    <article class="card">
+      <h4>How do we get started?</h4>
+      <p>Start with a call. We’ll confirm your needs and map the right service plan.</p>
+    </article>
+  </section>
 
-    <div class="card">
-      <h2>Do you offer custom work?</h2>
-      <p class="muted">Yes. If you need a custom system, we’ll build it based on your needs.</p>
-      <div class="card-actions">
-        <a class="btn btn-outline" href="/contact.html">Request Custom Build</a>
-      </div>
-    </div>
-  </div>
+  <section class="page-cta">
+    <a href="/contact.html" class="btn btnGold">Ask a Question</a>
+    <a href="/services.html" class="btn btnGhost">View Services</a>
+  </section>
+
 </main>
 
-<footer>
-  <div class="wrapper footer-inner">
-    <div>© 2026 LaFaries Mortimer LLC</div>
-    <div><a href="/contact.html">Contact</a></div>
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
+    <div class="footer-links">
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
