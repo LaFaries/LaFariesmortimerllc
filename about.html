@@ -1,26 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | LaFaries Mortimer LLC</title>
-  <meta name="description" content="About LaFaries Mortimer LLC — DIY support, admin systems, and IT guidance to help organizations move forward with confidence.">
-  <link rel="stylesheet" href="/assets/style.css" />
+  <meta name="description" content="Learn about LaFaries Mortimer LLC and our mission to bring clarity, order, and confidence through Administrative and IT services." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
+
 <body>
-<header class="site-header">
-  <div class="wrapper header-inner">
-    <a href="/index.html" class="brand">
-      <img
-        src="/assets/img/logo-2026.png"
-        alt="LaFaries Mortimer LLC logo"
-        class="brand-logo"
-      />
-      <span class="brand-name">LaFaries Mortimer LLC</span>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
+      <div>
+        <strong>LaFaries Mortimer LLC</strong>
+        <span>Administrative & IT Services</span>
+      </div>
     </a>
 
-    <nav class="main-nav">
+    <nav aria-label="Main navigation">
       <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
+      <a href="/about.html" aria-current="page">About</a>
       <a href="/services.html">Services</a>
       <a href="/laap.html">LAAP Suite</a>
       <a href="/apps.html">Apps</a>
@@ -30,84 +37,69 @@
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <a href="/contact.html" class="btn btn-primary">Book a Call</a>
+    <div class="ctaTop">
+      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
+      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+    </div>
   </div>
 </header>
 
+<main class="wrap">
 
-<main class="wrapper">
-
-  <section>
-    <div class="section-header">
-      <div class="kicker">About</div>
-      <h1>Practical support for people building something real</h1>
-      <p>
-        LaFaries Mortimer LLC helps small businesses, ministries, and organizations create order, structure, and
-        confidence — through DIY tools, templates, and optional hands-on support.
-      </p>
-    </div>
-
-    <div class="grid">
-      <div class="card">
-        <h3>What we do</h3>
-        <p>
-          We simplify admin, systems, and technology so you can move forward. Whether you need a template,
-          a walkthrough, or help cleaning up your operations — we build clear steps and stable structure.
-        </p>
-        <ul class="list">
-          <li>Admin & documentation systems</li>
-          <li>Basic IT guidance + cybersecurity hygiene</li>
-          <li>Automation-style checklists & workflows</li>
-          <li>DIY templates you can reuse</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>How we serve</h3>
-        <p>
-          We believe in empowerment. That means you’ll find free resources and also support options when you
-          need someone to walk with you.
-        </p>
-        <ul class="list">
-          <li>Free tutorials (giving back)</li>
-          <li>DIY templates and toolkits</li>
-          <li>Affordable support sessions</li>
-          <li>Project-based service packages</li>
-        </ul>
-      </div>
-    </div>
+  <section class="page-hero">
+    <h1>About</h1>
+    <p class="muted">
+      LaFaries Mortimer LLC provides structured Administrative and IT support to help
+      families, ministries, and small businesses operate with clarity, order, and confidence.
+    </p>
   </section>
 
-  <section class="band">
-    <div>
-      <h2>Our standard</h2>
-      <p class="small">
-        Clean. Professional. Documented. Repeatable. We don’t do messy systems.
+  <section class="cards">
+    <article class="card">
+      <h4>Our Focus</h4>
+      <p>
+        Practical systems that reduce overwhelm: organized workflows, professional documentation,
+        and reliable technology support.
       </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="/services.html">View Services</a>
-        <a class="btn btn-outline" href="/contact.html">Contact</a>
-      </div>
-    </div>
+    </article>
 
-    <div class="card">
-      <h3>Trust + clarity</h3>
-      <p class="small">
-        If it’s important enough to build, it’s important enough to document properly.
+    <article class="card">
+      <h4>How We Help</h4>
+      <p>
+        We simplify operations, strengthen consistency, and help you stay on top of what matters
+        — without the confusion.
       </p>
-      <p class="small">
-        We help you keep your work organized so it can grow without you burning out.
+    </article>
+
+    <article class="card">
+      <h4>What You Can Expect</h4>
+      <p>
+        Clear communication, professional results, and a support partner that protects your time
+        and improves your day-to-day.
       </p>
-    </div>
+    </article>
+  </section>
+
+  <section class="page-cta">
+    <a href="/services.html" class="btn btnGold">View Services</a>
+    <a href="/contact.html" class="btn btnGhost">Schedule a Call</a>
   </section>
 
 </main>
 
-<footer>
-  <div class="wrapper">
-    © 2026 LaFaries Mortimer LLC • <a class="btn-link" href="/privacy.html">Privacy</a> • <a class="btn-link" href="/terms.html">Terms</a> • <a class="btn-link" href="/accessibility.html">Accessibility</a> • <a class="btn-link" href="/sitemap.html">Sitemap</a>
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
+    <div class="footer-links">
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
