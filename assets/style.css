@@ -1,173 +1,284 @@
-/* =====================
-   ROOT VARIABLES
-===================== */
-:root {
-  --gold: #d4af37;
-  --black: #0f0f0f;
-  --ink: #1a1a1a;
-  --muted: #666;
-  --cream: #faf8f4;
-  --white: #ffffff;
-  --border: #e6e1d8;
+/* ==========================
+   LaFaries Mortimer LLC
+   Brand System (Cream + Gold)
+   ========================== */
+
+:root{
+  --lm-gold:#D4AF37;
+  --lm-gold-hover:#C9A227;
+
+  --lm-cream:#F9F4EC;
+  --lm-ivory:#F7F1E7;
+
+  --lm-text-dark:#1F2933;
+  --lm-text-muted:#6B7280;
+
+  --lm-border:#E5DCC8;
+
+  --radius:18px;
+  --shadow:0 14px 40px rgba(0,0,0,.08);
 }
 
-/* =====================
-   RESET
-===================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* ---------- RESET ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: "Inter", system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:var(--lm-cream);
+  color:var(--lm-text-dark);
+  line-height:1.65;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+.wrapper{max-width:1120px;margin:0 auto;padding:0 1rem}
+
+/* ---------- HEADER ---------- */
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(249,244,236,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--lm-border);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.9rem 0;
 }
 
-body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  line-height: 1.6;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  min-width:220px;
 }
 
-/* =====================
-   LAYOUT
-===================== */
-.wrapper {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 1.5rem;
+.brand-logo{
+  width:56px;
+  height:56px;
+  min-width:56px;
+  min-height:56px;
+  border-radius:999px;
+  border:2px solid var(--lm-gold);
+  background:#000;
+  object-fit:contain;
+  padding:6px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.25),
+    inset 0 0 0 1px rgba(255,255,255,.06);
 }
 
-/* =====================
-   HEADER
-===================== */
-.site-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
+.brand strong{
+  font-family:"Cormorant Garamond", Georgia, serif;
+  font-weight:600;
+  letter-spacing:.05em;
+  font-size:1.05rem;
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
+/* ---------- NAV ---------- */
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.9rem;
+  justify-content:center;
+}
+nav a{
+  padding:.35rem .25rem;
+  color:var(--lm-text-muted);
+  font-weight:500;
+}
+nav a:hover{
+  color:var(--lm-text-dark);
+}
+nav a.active{
+  color:var(--lm-text-dark);
+  border-bottom:2px solid var(--lm-gold);
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--ink);
+/* ---------- BUTTONS ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.5rem;
+  padding:.75rem 1.2rem;
+  border-radius:999px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.78rem;
+  border:1px solid transparent;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.btn-primary{
+  background:var(--lm-gold);
+  color:#1a1a1a;
+}
+.btn-primary:hover{background:var(--lm-gold-hover)}
+.btn-outline{
+  background:transparent;
+  border-color:var(--lm-gold);
+  color:#1a1a1a;
+}
+.btn-outline:hover{
+  background:rgba(212,175,55,.12);
 }
 
-.brand-logo {
-  height: 44px;
+/* ---------- MAIN ---------- */
+main{padding:2.25rem 0}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:2.25rem 0 1.5rem;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:1.25rem;
+  align-items:start;
 }
 
-.brand-name {
-  font-weight: 700;
-  letter-spacing: 0.02em;
+/* ---------- CARDS ---------- */
+.card{
+  background:#fff;
+  border:1px solid var(--lm-border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:1.25rem;
+}
+.card.soft{
+  background:var(--lm-ivory);
 }
 
-.main-nav {
-  display: flex;
-  gap: 1.25rem;
+/* ---------- TYPOGRAPHY ---------- */
+.kicker{
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:.76rem;
+  color:var(--lm-text-muted);
 }
 
-.main-nav a {
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--ink);
+h1{
+  font-family:"Cormorant Garamond", Georgia, serif;
+  font-size:clamp(2rem,3vw,2.6rem);
+  line-height:1.15;
+  margin:.4rem 0 .75rem;
 }
 
-.main-nav a:hover,
-.main-nav a[aria-current="page"] {
-  color: var(--gold);
+h2{
+  font-family:"Cormorant Garamond", Georgia, serif;
+  font-size:1.35rem;
+  margin:0 0 .6rem;
 }
 
-/* =====================
-   BUTTONS
-===================== */
-.btn {
-  padding: 0.6rem 1.25rem;
-  border-radius: 999px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
+p{font-size:1rem}
+p.muted{color:var(--lm-text-muted)}
+
+/* ---------- SECTIONS ---------- */
+.section{padding:1.25rem 0}
+.section-header{margin-bottom:.85rem}
+.section-header p{color:var(--lm-text-muted)}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1rem;
+}
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
 }
 
-.btn-primary {
-  background: var(--gold);
-  color: #000;
+/* ---------- BADGES ---------- */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.35rem .7rem;
+  border-radius:999px;
+  border:1px solid var(--lm-gold);
+  background:rgba(212,175,55,.10);
+  font-weight:600;
+  font-size:.8rem;
 }
 
-.btn-outline {
-  border: 1px solid var(--gold);
-  color: var(--gold);
+/* ---------- LIST ---------- */
+.list{
+  display:grid;
+  gap:.65rem;
+  margin-top:.65rem;
+}
+.list-item{
+  display:flex;
+  gap:.65rem;
+  align-items:flex-start;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  background:var(--lm-gold);
+  margin-top:.4rem;
+  flex:0 0 10px;
 }
 
-/* =====================
-   TYPE
-===================== */
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+/* ---------- FORMS ---------- */
+.form{
+  display:grid;
+  gap:.75rem;
+}
+input,textarea{
+  width:100%;
+  padding:.85rem 1rem;
+  border-radius:14px;
+  border:1px solid var(--lm-border);
+  background:#fff;
+  font-size:1rem;
+}
+textarea{
+  min-height:140px;
+  resize:vertical;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+.small-note{
+  color:var(--lm-text-muted);
+  font-size:.92rem;
 }
 
-p {
-  color: var(--muted);
-  margin-bottom: 1rem;
+/* ---------- FOOTER ---------- */
+footer{
+  margin-top:2rem;
+  border-top:1px solid var(--lm-border);
+  background:#fff;
+}
+.footer-inner{
+  padding:1.25rem 0;
+  color:var(--lm-text-muted);
+  font-size:.9rem;
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  align-items:center;
+  justify-content:space-between;
 }
 
-/* =====================
-   SECTIONS
-===================== */
-.section {
-  padding: 4rem 0;
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+  nav{justify-content:flex-start}
 }
 
-.section.bg-soft {
-  background: var(--white);
-}
-
-/* =====================
-   GRID / CARDS
-===================== */
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 1.75rem;
-}
-
-/* =====================
-   FOOTER
-===================== */
-footer {
-  background: var(--black);
-  color: #ccc;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-footer a {
-  color: var(--gold);
-  text-decoration: none;
+@media (max-width:768px){
+  .brand-logo{
+    width:64px;
+    height:64px;
+  }
 }
