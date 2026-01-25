@@ -2,12 +2,13 @@
    ROOT VARIABLES
 ===================== */
 :root {
-  --ivory: #faf8f4;
   --gold: #d4af37;
-  --ink: #111;
+  --black: #0f0f0f;
+  --ink: #1a1a1a;
   --muted: #666;
+  --cream: #faf8f4;
+  --white: #ffffff;
   --border: #e6e1d8;
-  --card: #ffffff;
 }
 
 /* =====================
@@ -20,130 +21,103 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  background: var(--ivory);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cream);
   color: var(--ink);
   line-height: 1.6;
 }
 
 /* =====================
-   WRAPPER
+   LAYOUT
 ===================== */
-.wrap {
-  max-width: 1180px;
+.wrapper {
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 1.25rem;
+  padding: 1.5rem;
 }
 
 /* =====================
-   HEADER (MATCHES EXISTING HTML)
+   HEADER
 ===================== */
-header {
-  background: #fff;
+.site-header {
+  background: var(--white);
   border-bottom: 1px solid var(--border);
 }
 
-.nav {
+.header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-  flex-wrap: nowrap;
+  gap: 1.5rem;
 }
 
-/* =====================
-   BRAND
-===================== */
 .brand {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
   color: var(--ink);
-  white-space: nowrap;
 }
 
-.brand img {
-  height: 42px;
-  width: auto;
-  display: block;
+.brand-logo {
+  height: 44px;
 }
 
-.brand strong {
-  font-size: 1.05rem;
+.brand-name {
   font-weight: 700;
-  display: block;
+  letter-spacing: 0.02em;
 }
 
-.brand span {
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-/* =====================
-   NAVIGATION
-===================== */
-nav {
+.main-nav {
   display: flex;
   gap: 1.25rem;
-  flex-wrap: nowrap;
 }
 
-nav a {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.main-nav a {
   text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--ink);
-  white-space: nowrap;
 }
 
-nav a:hover {
+.main-nav a:hover,
+.main-nav a[aria-current="page"] {
   color: var(--gold);
 }
 
 /* =====================
-   CTA BUTTONS
+   BUTTONS
 ===================== */
-.ctaTop {
-  display: flex;
-  gap: 0.75rem;
-  white-space: nowrap;
-}
-
 .btn {
-  padding: 0.55rem 1.1rem;
+  padding: 0.6rem 1.25rem;
   border-radius: 999px;
-  font-size: 0.75rem;
   font-weight: 600;
   text-decoration: none;
-  text-transform: uppercase;
+  display: inline-block;
 }
 
-.btnGhost {
-  border: 1px solid var(--border);
-  color: var(--ink);
-  background: transparent;
-}
-
-.btnGold {
+.btn-primary {
   background: var(--gold);
   color: #000;
 }
 
+.btn-outline {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
 /* =====================
-   TYPOGRAPHY
+   TYPE
 ===================== */
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -153,21 +127,47 @@ p {
 }
 
 /* =====================
-   CARDS / SECTIONS
+   SECTIONS
 ===================== */
-.card,
-.service-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.5rem;
+.section {
+  padding: 4rem 0;
+}
+
+.section.bg-soft {
+  background: var(--white);
 }
 
 /* =====================
-   RESPONSIVE SAFETY
+   GRID / CARDS
 ===================== */
-@media (max-width: 1000px) {
-  nav {
-    gap: 0.75rem;
-  }
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.75rem;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+  background: var(--black);
+  color: #ccc;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
 }
