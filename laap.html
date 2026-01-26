@@ -5,36 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LAAP Suite | LaFaries Mortimer LLC</title>
   <meta name="description" content="LAAP Suite provides structured administrative and automation tools." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Match working pages -->
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+
+<body>
+
 <header>
-  <div class="wrapper header-inner">
-    <!-- Brand -->
-    <a href="/index.html" class="brand">
-      <img
-        src="/assets/img/logo-2026.png"
-        alt="LaFaries Mortimer LLC logo"
-        class="brand-logo"
-      />
-      <div class="brand-text">
-        <span class="brand-eyebrow">Administrative & IT Services</span>
-        <strong class="brand-name">LaFaries Mortimer LLC</strong>
+  <div class="wrap nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
+      <div>
+        <strong>LaFaries Mortimer LLC</strong>
+        <span>Administrative & IT Services</span>
       </div>
     </a>
 
-    <!-- Navigation -->
-    <nav aria-label="Primary navigation">
+    <nav>
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
-      <a href="/services.html" class="active" aria-current="page">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
+      <a href="/services.html">Services</a>
+      <a href="/laap.html" class="active">LAAP Suite</a>
       <a href="/apps.html">Apps</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <!-- CTA -->
-    <div class="header-cta">
-      <a href="/contact.html" class="btn btn-primary">Book a Call</a>
+    <div class="ctaTop">
+      <a class="btn btnGold" href="/contact.html">Book a Call</a>
     </div>
   </div>
 </header>
@@ -53,10 +58,12 @@
       <h4>Process Automation</h4>
       <p>Reduce manual work and streamline recurring administrative tasks.</p>
     </article>
+
     <article class="card">
       <h4>Templates & Systems</h4>
       <p>Ready-to-use tools built for clarity, accuracy, and efficiency.</p>
     </article>
+
     <article class="card">
       <h4>Guided Setup</h4>
       <p>Support to help you implement tools confidently and correctly.</p>
@@ -64,18 +71,15 @@
   </section>
 </main>
 
-<footer class="site-footer">
+<footer>
   <div class="wrap foot">
     <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
-    <div class="footer-links">
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy</a>
-    </div>
   </div>
 </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
