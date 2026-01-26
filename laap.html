@@ -17,32 +17,64 @@
 
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
-      </div>
-    </a>
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 20px;
+}
 
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
 
-    <div class="ctaTop">
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
-    </div>
-  </div>
-</header>
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#fff;
+}
+
+.brand strong{
+  font-family:"Cormorant Garamond", serif;
+  font-size:18px;
+}
+
+.brand span{
+  display:block;
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  opacity:.7;
+}
+
+nav{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  font-size:14px;
+  text-decoration:none;
+}
+
+.ctaTop .btnGold{
+  padding:12px 18px;
+  border-radius:999px;
+  background:#DAB85C;
+  color:#1a1a1a;
+  font-weight:600;
+}
+
 
 
 <main class="wrap">
