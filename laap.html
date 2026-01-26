@@ -11,41 +11,39 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Match working pages -->
+  <!-- Shared site styles (WORKING FILE) -->
   <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <!-- Brand -->
-    <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
+  <div class="wrapper header-inner">
+    <a href="/index.html" class="brand">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo" class="brand-logo" />
+      <div class="brand-text">
+        <span class="brand-eyebrow">Administrative & IT Services</span>
+        <strong class="brand-name">LaFaries Mortimer LLC</strong>
       </div>
     </a>
 
-    <!-- Navigation -->
-    <nav aria-label="Main navigation">
+    <nav aria-label="Primary navigation">
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
       <a href="/services.html">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
+      <a href="/laap.html" class="active" aria-current="page">LAAP Suite</a>
       <a href="/apps.html">Apps</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <!-- CTA -->
-    <div class="ctaTop">
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+    <div class="header-cta">
+      <a href="/contact.html" class="btn btn-primary">Book a Call</a>
     </div>
   </div>
 </header>
+
 <main class="wrap">
   <section class="page-hero">
     <h1>LAAP Suite</h1>
@@ -73,7 +71,7 @@
   </section>
 </main>
 
-<footer>
+<footer class="site-footer">
   <div class="wrap foot">
     <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
   </div>
