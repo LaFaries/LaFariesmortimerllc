@@ -1,9 +1,44 @@
-/* ======================================================
-   LaFaries Mortimer LLC — MASTER STYLESHEET
-   ONE SOURCE OF TRUTH
-   ====================================================== */
+/* =========================================================
+   LAFARIES MORTIMER LLC — GLOBAL DESIGN SYSTEM
+   Typography + Buttons + Core UI
+   ========================================================= */
 
-/* -------------------- RESET -------------------- */
+/* -------------------------
+   ROOT VARIABLES
+------------------------- */
+:root {
+  /* COLORS */
+  --ivory: #F8F6F1;
+  --cream: #DFD3B0;
+  --gold: #DAB85C;
+  --gold-line: rgba(218,184,92,.9);
+  --gold-soft: rgba(218,184,92,.35);
+  --charcoal: #1D1D1D;
+  --muted: rgba(29,29,29,.70);
+  --line: rgba(29,29,29,.14);
+
+  /* SHAPE & DEPTH */
+  --radius: 22px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 10px 26px rgba(0,0,0,.05);
+  --shadow-gold: 0 10px 30px rgba(218,184,92,.45);
+
+  /* TYPOGRAPHY */
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-body: 1.6;
+  --lh-heading: 1.15;
+}
+
+/* -------------------------
+   RESET
+------------------------- */
 *,
 *::before,
 *::after {
@@ -20,268 +55,201 @@ img {
   display: block;
 }
 
-/* -------------------- VARIABLES -------------------- */
-:root {
-  /* Colors */
-  --bg: #ffffff;
-  --text: #1d1d1d;
-  --muted: #6b6b6b;
-  --gold: #d4af37;
-  --gold-soft: #f4e7b5;
-  --border: rgba(0,0,0,0.12);
-
-  /* Fonts */
-  --font-heading: "Cormorant Garamond", Georgia, serif;
-  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-  /* Layout */
-  --radius: 18px;
-  --max-width: 1180px;
-}
-
-/* -------------------- BASE -------------------- */
-body {
-  font-family: var(--font-body);
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
-}
-
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* -------------------- UTILITIES -------------------- */
-.wrapper {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.25rem;
+/* -------------------------
+   BASE TYPOGRAPHY
+------------------------- */
+body {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  color: var(--charcoal);
+  background: linear-gradient(180deg, var(--ivory), #ffffff);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-.muted {
-  color: var(--muted);
-}
-
-.small {
-  font-size: 0.9rem;
-}
-
-.kicker {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-
-/* -------------------- TYPOGRAPHY -------------------- */
-h1, h2, h3, h4 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.15;
-  margin: 0 0 0.5rem;
-}
-
-h1 { font-size: clamp(2.1rem, 4vw, 2.6rem); }
-h2 { font-size: 1.5rem; }
-h3 { font-size: 1.2rem; }
-h4 { font-size: 1.05rem; }
 
 p {
-  margin: 0 0 0.75rem;
-  font-size: 1rem;
+  margin: 0 0 1rem;
+  color: var(--muted);
 }
 
-/* -------------------- HEADER -------------------- */
-header {
-  position: sticky;
-  top: 0;
+small,
+.muted {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+/* -------------------------
+   HEADINGS (AUTHORITY LOCKED)
+------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem;
+  color: var(--charcoal);
+}
+
+h1 { font-size: clamp(2.2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.4rem; }
+h4 { font-size: 1.15rem; }
+h5 { font-size: 1rem; }
+
+/* -------------------------
+   LAYOUT HELPERS
+------------------------- */
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+/* -------------------------
+   CARDS
+------------------------- */
+.card {
   background: #fff;
-  border-bottom: 1px solid var(--border);
-  z-index: 100;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.9rem 0;
-  flex-wrap: wrap;
-}
-
-/* Brand */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  min-width: 0;
-}
-
-.brand-logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-eyebrow {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--muted);
-}
-
-.brand-name {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.05rem;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-nav a {
-  font-size: 0.95rem;
-  color: var(--muted);
-  padding-bottom: 2px;
-}
-
-nav a.active,
-nav a[aria-current="page"] {
-  color: var(--text);
-  border-bottom: 2px solid var(--gold);
-}
-
-/* CTA */
-.header-cta {
-  display: flex;
-  gap: 0.5rem;
-}
-
-/* -------------------- BUTTONS -------------------- */
-.btn {
+/* -------------------------
+   BUTTON SYSTEM (GLOBAL)
+------------------------- */
+.btn,
+button,
+input[type="submit"],
+input[type="button"],
+a.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  gap: 10px;
+
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  font-size: 12px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  border: 1px solid transparent;
-  cursor: pointer;
-}
 
-.btn-primary {
-  background: var(--gold);
-  color: #111;
-}
-
-.btn-outline {
-  border-color: var(--gold);
-  color: var(--gold);
   background: transparent;
+  color: var(--charcoal);
+
+  border: 1.5px solid var(--gold-line);
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: all 0.25s ease;
 }
 
-/* -------------------- SECTIONS -------------------- */
-.section-header {
-  margin: 2.5rem 0 1.5rem;
+/* PRIMARY GOLD BUTTON */
+.btnGold,
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    #fef3c7,
+    #facc15,
+    #dab85c,
+    #b8963e
+  );
+  color: #1a1a1a;
+  box-shadow:
+    0 0 0 1px var(--gold-line),
+    var(--shadow-gold);
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+/* OUTLINE / GHOST */
+.btnGhost,
+.btn-outline {
+  background: rgba(255,255,255,.6);
+  color: var(--charcoal);
 }
 
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+/* HOVER */
+.btn:hover,
+button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px var(--gold),
+    0 12px 32px rgba(218,184,92,.55);
 }
 
-/* -------------------- CARDS -------------------- */
-.card {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  background: #fff;
+/* FOCUS (ACCESSIBLE + LUXURY) */
+.btn:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(218,184,92,.65),
+    0 0 0 6px rgba(218,184,92,.25);
 }
 
-.card.soft {
-  background: #fafafa;
+/* -------------------------
+   FORMS (SAFE DEFAULTS)
+------------------------- */
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
 }
 
-.card-actions {
-  margin-top: 1rem;
-  display: flex;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(218,184,92,.25);
 }
 
-.list {
-  padding-left: 1rem;
+/* -------------------------
+   NAVIGATION LINKS
+------------------------- */
+nav a {
+  font-weight: var(--fw-medium);
+  color: rgba(29,29,29,.75);
 }
 
-.list li {
-  margin-bottom: 0.35rem;
+nav a:hover,
+nav a.active {
+  color: var(--charcoal);
+  background: rgba(218,184,92,.18);
+  border-radius: var(--radius-pill);
 }
 
-/* -------------------- BAND -------------------- */
-.band {
-  margin-top: 2rem;
-  padding: 1.75rem;
-  border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--gold-soft), #fff);
-  border: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 1.25rem;
-}
-
-/* -------------------- FOOTER -------------------- */
+/* -------------------------
+   FOOTER
+------------------------- */
 footer {
-  margin-top: 3rem;
-  border-top: 1px solid var(--border);
-  padding: 1.25rem 0;
-  font-size: 0.8rem;
-  color: var(--muted);
+  font-size: 12px;
+  color: rgba(29,29,29,.6);
+  border-top: 1px solid var(--line);
+  background: rgba(248,246,241,.75);
 }
 
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* -------------------- RESPONSIVE -------------------- */
+/* -------------------------
+   RESPONSIVE
+------------------------- */
 @media (max-width: 900px) {
-  .grid-3,
-  .grid-2,
-  .band {
-    grid-template-columns: 1fr;
-  }
-
-  nav {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .header-cta {
-    width: 100%;
-    justify-content: center;
+  .wrap {
+    padding: 0 16px;
   }
 }
