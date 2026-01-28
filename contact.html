@@ -257,6 +257,106 @@
       line-height: 1.05;
     }
     .ctaBox p{margin:0;color:rgba(29,29,29,.70); max-width: 70ch}
+/* ===== CONTACT PAGE ===== */
+
+.contact-hero{
+  padding:70px 0 30px;
+  background:linear-gradient(180deg,var(--ivory),#fff);
+  text-align:left;
+}
+
+.contact-hero h1{
+  font-family:var(--heading);
+  font-size:48px;
+  margin:0 0 6px;
+}
+
+.contact-sub{
+  color:rgba(29,29,29,.65);
+  max-width:50ch;
+}
+
+/* Main Card */
+.contact-main{
+  padding:30px 0 80px;
+}
+
+.contact-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:26px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  padding:40px;
+  max-width:960px;
+  margin:0 auto;
+}
+
+/* Left */
+.contact-info h2,
+.contact-form h2{
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.contact-info p{
+  margin-bottom:16px;
+  color:rgba(29,29,29,.75);
+}
+
+.contact-info a{
+  color:var(--gold);
+  font-weight:500;
+}
+
+.contact-note{
+  margin-top:24px;
+  padding:14px 16px;
+  border-radius:14px;
+  background:rgba(218,184,92,.15);
+  color:rgba(29,29,29,.85);
+  font-size:14px;
+}
+
+/* Form */
+.contact-form form{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  font-family:inherit;
+  font-size:14px;
+}
+
+.contact-form textarea{
+  resize:vertical;
+}
+
+.contact-form button{
+  align-self:flex-start;
+  margin-top:6px;
+}
+
+.form-note{
+  font-size:12px;
+  color:rgba(29,29,29,.55);
+}
+
+/* Mobile */
+@media(max-width:900px){
+  .contact-card{
+    grid-template-columns:1fr;
+    padding:28px;
+  }
+}
 
     /* Footer */
     footer{
@@ -312,8 +412,64 @@
     </div>
   </div>
 </header>
+<section class="contact-hero">
+  <div class="wrap">
+    <h1>Contact</h1>
+    <p class="contact-sub">
+      Let’s talk about what support actually makes sense for you.
+    </p>
+  </div>
+</section>
 
+<section class="contact-main">
+  <div class="wrap">
+    <div class="contact-card">
 
+      <!-- LEFT -->
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+
+        <p>
+          <strong>Email:</strong><br>
+          <a href="mailto:info@lafariesmortimerllc.com">
+            info@lafariesmortimerllc.com
+          </a>
+        </p>
+
+        <p>
+          <strong>Support:</strong><br>
+          Virtual • U.S.
+        </p>
+
+        <div class="contact-note">
+          If you’re not sure what you need yet, that’s okay.
+          We’ll help you figure it out.
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="contact-form">
+        <h2>Send a Message</h2>
+
+        <form>
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Email address" required>
+          <textarea rows="4" placeholder="How can we help?"></textarea>
+
+          <button class="btn btnGold" type="submit">
+            Send Message
+          </button>
+
+          <p class="form-note">
+            If the form doesn’t submit on your hosting yet,
+            email us directly.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <main id="main" class="wrapper">
   <div class="section-header">
