@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LAAP Suite | LaFaries Mortimer LLC</title>
-  <meta name="description" content="LAAP Suite provides structured administrative and automation tools." />
+  <title>LAAP Suite™ | LaFaries Mortimer LLC</title>
+  <meta name="description" content="LAAP Suite™ is a guided administrative system that replaces scattered admin work with clarity, structure, and consistency." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -17,221 +17,181 @@
       --cream:#DFD3B0;
       --gold:#DAB85C;
       --charcoal:#1D1D1D;
-      --muted: rgba(29,29,29,.70);
-      --line: rgba(29,29,29,.14);
+      --muted:rgba(29,29,29,.7);
+      --line:rgba(29,29,29,.14);
 
-      --radius: 22px;
-      --shadow: 0 18px 45px rgba(0,0,0,.08);
+      --radius:22px;
+      --shadow:0 18px 45px rgba(0,0,0,.08);
 
-      --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --heading:"Cormorant Garamond", Georgia, serif;
+      --body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
     *{box-sizing:border-box}
     html,body{margin:0;padding:0}
     body{
-      font-family:var(--font-body);
-      background: linear-gradient(180deg, var(--ivory), #ffffff);
-      color: var(--charcoal);
+      font-family:var(--body);
+      background:linear-gradient(180deg,var(--ivory),#fff);
+      color:var(--charcoal);
       line-height:1.6;
-      -webkit-font-smoothing: antialiased;
     }
 
-    a{color:inherit;text-decoration:none}
+    a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 
-    /* Header */
-    header
-    <section class="laap-hero">
-  <div class="wrap laap-hero-grid">
-    <div>
-      <span class="laap-eyebrow">LAAP Suite™</span>
-      <h1>
-        A guided administrative system —<br>
-        <span>not just tools.</span>
-      </h1>
-      <p>
-        LAAP replaces scattered admin work with a clear, repeatable system.
-        Every step is intentional. Every tool has a purpose.
-      </p>
-
-      <div class="laap-actions">
-        <a class="btn btnGold" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank">
-          Open LAAP Wizard
-        </a>
-        <a class="btn btnGhost" href="/contact.html">
-          Guided Setup
-        </a>
-      </div>
-    </div>
-
-    <div class="laap-visual">
-      <!-- Replace with real image when ready -->
-      <div class="laap-placeholder">
-        LAAP System Overview
-      </div>
-    </div>
-  </div>
-</section>
-{
-      position:sticky; top:0; z-index:50;
-      background: rgba(248,246,241,.9);
-      backdrop-filter: blur(10px);
+    /* ================= HEADER ================= */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(248,246,241,.9);
+      backdrop-filter:blur(10px);
       border-bottom:1px solid var(--line);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:16px;
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:14px 0;
     }
     .brand{display:flex;align-items:center;gap:12px}
     .brand img{
       width:44px;height:44px;border-radius:999px;
       border:1px solid rgba(29,29,29,.12);background:#fff;
     }
-    .brand strong{font-weight:700;font-size:16px}
+    .brand strong{font-family:var(--heading);font-size:18px}
     .brand span{
-      display:block;font-size:11px;letter-spacing:.12em;
-      text-transform:uppercase;color:rgba(29,29,29,.55)
+      display:block;font-size:11px;
+      letter-spacing:.12em;text-transform:uppercase;
+      color:rgba(29,29,29,.55)
     }
-
     nav{display:flex;gap:14px;flex-wrap:wrap}
     nav a{
       font-size:14px;color:rgba(29,29,29,.75);
       padding:8px 10px;border-radius:999px;
     }
-    nav a.active,
-    nav a:hover{
+    nav a.active,nav a:hover{
       background:rgba(218,184,92,.22);
       color:rgba(29,29,29,.95);
     }
 
     .btn{
+      display:inline-flex;align-items:center;justify-content:center;
       padding:12px 16px;border-radius:999px;
       font-size:12px;letter-spacing:.14em;
       text-transform:uppercase;font-weight:600;
       border:1px solid transparent;
+      white-space:nowrap;
     }
-    .btnGold{background:var(--gold)}
+    .btnGold{background:var(--gold);color:#1a1a1a}
     .btnGhost{border-color:rgba(29,29,29,.25)}
 
-    /* Main */
-    main{padding:40px 0}
+    /* ================= HERO ================= */
+    .laap-hero{
+      padding:64px 0 48px;
+      background:
+        radial-gradient(800px 400px at 20% 0%, rgba(218,184,92,.22), transparent 55%),
+        linear-gradient(180deg, rgba(248,246,241,.85), #fff);
+      border-bottom:1px solid var(--line);
+    }
+    .laap-hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:32px;
+      align-items:center;
+    }
+    .laap-eyebrow{
+      display:inline-block;
+      font-size:12px;letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(29,29,29,.6);
+      margin-bottom:12px;
+    }
+    .laap-hero h1{
+      font-family:var(--heading);
+      font-size:52px;line-height:1.02;
+      margin:0 0 12px;
+    }
+    .laap-hero h1 span{color:var(--gold)}
+    .laap-hero p{
+      font-size:16px;
+      color:rgba(29,29,29,.72);
+      max-width:52ch;
+    }
+    .laap-actions{display:flex;gap:12px;margin-top:18px}
 
-    h1{
-      font-size:52px;
-      line-height:1.05;
-      margin:0 0 10px;
-      font-weight:700;
+    .laap-visual{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
     }
+    .laap-placeholder{
+      height:220px;
+      border-radius:16px;
+      border:1px dashed rgba(29,29,29,.25);
+      display:flex;align-items:center;justify-content:center;
+      font-style:italic;color:rgba(29,29,29,.55);
+    }
+
+    /* ================= SECTIONS ================= */
+    main{padding:48px 0}
     h2{
-      font-size:28px;
-      font-weight:700;
-      margin:0 0 8px;
-    }
-    h3{
-      font-size:20px;
-      font-weight:700;
-      margin:0 0 6px;
+      font-family:var(--heading);
+      font-size:34px;margin:0 0 10px;
     }
     p{margin:0;color:var(--muted)}
 
-    /* Summary Cards */
     .cards{
-      margin-top:24px;
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:16px;
+      gap:16px;margin-top:24px;
     }
     .card{
       background:#fff;
       border:1px solid var(--line);
       border-radius:20px;
-      padding:20px;
+      padding:22px;
       box-shadow:0 10px 26px rgba(0,0,0,.05);
     }
-
-    /* LAAP Visual System */
-   .laap-hero{
-  padding:64px 0 40px;
-  background:
-    radial-gradient(800px 400px at 20% 0%, rgba(218,184,92,.22), transparent 55%),
-    linear-gradient(180deg, rgba(248,246,241,.85), #ffffff);
-  border-bottom:1px solid var(--line);
-}
-
-.laap-hero-grid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:32px;
-  align-items:center;
-}
-
-.laap-eyebrow{
-  display:inline-block;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(29,29,29,.65);
-  margin-bottom:12px;
-}
-
-.laap-hero h1{
-  font-family:var(--h);
-  font-size:52px;
-  line-height:1;
-  margin:0 0 12px;
-}
-
-.laap-hero h1 span{color:var(--gold)}
-
-.laap-hero p{
-  font-size:16px;
-  color:rgba(29,29,29,.72);
-  max-width:52ch;
-}
-
-.laap-actions{
-  display:flex;
-  gap:12px;
-  margin-top:18px;
-}
-
-.laap-visual{
-  border-radius:22px;
-  border:1px solid var(--line);
-  background:#fff;
-  padding:18px;
-  box-shadow:var(--shadow);
-}
-
-.laap-placeholder{
-  height:180px;
-  border-radius:16px;
-  border:1px dashed rgba(29,29,29,.25);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:rgba(29,29,29,.55);
-  font-style:italic;
-}
-
-
-    footer{
-      margin-top:40px;
-      padding:18px 0;
-      border-top:1px solid var(--line);
-      font-size:12px;
-      color:rgba(29,29,29,.55);
-      background:rgba(248,246,241,.75);
+    .card h3{
+      font-family:var(--heading);
+      font-size:22px;margin:0 0 6px;
     }
 
+    /* ================= VISUAL BLOCKS ================= */
+    .visual-block{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:center;
+      margin:56px 0;
+    }
+    .visual-block.reverse{
+      grid-template-columns:.9fr 1.1fr;
+    }
+    .visual-block img{
+      border-radius:18px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(248,246,241,.75);
+      padding:18px 0;
+      font-size:12px;color:rgba(29,29,29,.55);
+    }
+
+    /* ================= MOBILE ================= */
     @media(max-width:900px){
-      h1{font-size:40px}
-      .cards{grid-template-columns:1fr}
+      .laap-hero-grid,
       .visual-block,
-      .visual-block.reverse{grid-template-columns:1fr}
-      nav{display:none}
+      .visual-block.reverse{
+        grid-template-columns:1fr;
+      }
+      .cards{grid-template-columns:1fr}
+      h1{font-size:40px}
     }
   </style>
 </head>
@@ -264,50 +224,77 @@
   </div>
 </header>
 
+<section class="laap-hero">
+  <div class="wrap laap-hero-grid">
+    <div>
+      <span class="laap-eyebrow">LAAP Suite™</span>
+      <h1>A guided administrative system —<br><span>not just tools.</span></h1>
+      <p>
+        LAAP replaces scattered admin work with a clear, repeatable system.
+        Every step is intentional. Every tool has a purpose.
+      </p>
+      <div class="laap-actions">
+        <a class="btn btnGold" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank">Open LAAP Wizard</a>
+        <a class="btn btnGhost" href="/contact.html">Guided Setup</a>
+      </div>
+    </div>
+
+    <div class="laap-visual">
+      <div class="laap-placeholder">LAAP System Overview</div>
+    </div>
+  </div>
+</section>
+
 <main class="wrap">
-  <h1>LAAP Suite</h1>
-  <p>LaFaries Administration Automation Platform — structured tools that replace manual administrative work with clarity and consistency.</p>
 
   <section class="cards">
     <div class="card">
       <h3>Process Automation</h3>
-      <p>Replace repetitive admin tasks with consistent workflows.</p>
+      <p>Replace repetitive administrative tasks with consistent workflows.</p>
     </div>
     <div class="card">
       <h3>Templates & Systems</h3>
-      <p>Pre-built documents and tools designed for accuracy and efficiency.</p>
+      <p>Professional documents and tools built for accuracy and efficiency.</p>
     </div>
     <div class="card">
       <h3>Guided Setup</h3>
-      <p>Hands-on support to implement systems correctly and confidently.</p>
+      <p>Hands-on support to ensure systems are implemented correctly.</p>
     </div>
   </section>
 
-  <section class="laap-visuals">
-    <div class="visual-block">
-      <div>
-        <h2>How LAAP Works</h2>
-        <p>From intake to completion, LAAP organizes administrative work into a repeatable, dependable system.</p>
-      </div>
-      <img src="/assets/img/laap-workflow.png" alt="LAAP workflow diagram">
+  <section class="visual-block">
+    <div>
+      <h2>How LAAP Works</h2>
+      <p>
+        From intake to completion, LAAP organizes administrative work
+        into a dependable, repeatable system.
+      </p>
     </div>
-
-    <div class="visual-block reverse">
-      <div>
-        <h2>Templates & Tools</h2>
-        <p>Professional templates eliminate guesswork and standardize operations across your organization.</p>
-      </div>
-      <img src="/assets/img/laap-templates.png" alt="LAAP templates preview">
-    </div>
-
-    <div class="visual-block">
-      <div>
-        <h2>Guided Implementation</h2>
-        <p>Every system is implemented with clear guidance so tools are used correctly from day one.</p>
-      </div>
-      <img src="/assets/img/laap-guided-setup.png" alt="LAAP guided setup">
-    </div>
+    <img src="/assets/img/laap-workflow.png" alt="LAAP workflow diagram">
   </section>
+
+  <section class="visual-block reverse">
+    <div>
+      <h2>Templates & Tools</h2>
+      <p>
+        Pre-built templates eliminate guesswork and standardize operations
+        across your organization.
+      </p>
+    </div>
+    <img src="/assets/img/laap-templates.png" alt="LAAP templates preview">
+  </section>
+
+  <section class="visual-block">
+    <div>
+      <h2>Guided Implementation</h2>
+      <p>
+        Every system is implemented with clarity so tools are used
+        correctly from day one.
+      </p>
+    </div>
+    <img src="/assets/img/laap-guided-setup.png" alt="LAAP guided setup">
+  </section>
+
 </main>
 
 <footer>
