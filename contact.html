@@ -5,13 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | LaFaries Mortimer LLC</title>
   <meta name="description" content="Contact LaFaries Mortimer LLC." />
-  <link rel="stylesheet" href="/assets/style.css" />
-</head>
 
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
-
-  <!-- Fonts (same as index) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -19,364 +14,150 @@
   <style>
     :root{
       --ivory:#F8F6F1;
-      --cream:#DFD3B0;
       --gold:#DAB85C;
       --charcoal:#1D1D1D;
-      --softgray:#A7A4A0;
       --line: rgba(29,29,29,.14);
-
-      --radius: 22px;
-      --shadow: 0 18px 45px rgba(0,0,0,.08);
-
-      --h: "Cormorant Garamond", Georgia, serif;
-      --b: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      --radius:22px;
+      --shadow:0 18px 45px rgba(0,0,0,.08);
+      --h:"Cormorant Garamond", Georgia, serif;
+      --b:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
     body{
+      margin:0;
       font-family:var(--b);
-      background: linear-gradient(180deg, var(--ivory), #ffffff);
-      color: var(--charcoal);
-      line-height:1.6;
+      background:linear-gradient(180deg,var(--ivory),#fff);
+      color:var(--charcoal);
     }
-    a{color:inherit;text-decoration:none}
+
+    a{text-decoration:none;color:inherit}
     .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 
     /* Skip link */
     .skip-link{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+      position:absolute;left:-999px;
     }
     .skip-link:focus{
-      left:20px; top:14px; width:auto; height:auto;
-      background:#fff; border:1px solid var(--line);
-      padding:10px 12px; border-radius:12px; z-index:9999;
+      left:20px;top:20px;
+      background:#fff;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      z-index:999;
     }
 
-    /* Header (same structure as index) */
+    /* Header */
     header{
-      position:sticky; top:0; z-index:50;
-      background: rgba(248,246,241,.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
+      position:sticky;top:0;z-index:50;
+      background:rgba(248,246,241,.85);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
     }
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:16px;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px 0;gap:16px;
     }
     .brand{
-      display:flex; align-items:center; gap:12px; min-width:240px;
+      display:flex;gap:12px;align-items:center;
     }
     .brand img{
       width:44px;height:44px;border-radius:999px;
-      border:1px solid rgba(29,29,29,.12);
-      object-fit:cover;
-      background:#fff;
+      border:1px solid var(--line);background:#fff;
     }
     .brand strong{
-      font-family:var(--h);
-      font-weight:600;
-      letter-spacing:.2px;
-      font-size:18px;
-      line-height:1.05;
+      font-family:var(--h);font-size:18px;font-weight:600;
     }
     .brand span{
-      display:block;
-      font-family:var(--b);
-      font-weight:500;
-      font-size:12px;
-      letter-spacing:.10em;
-      color: rgba(29,29,29,.62);
-      text-transform:uppercase;
-      margin-top:2px;
+      display:block;font-size:12px;letter-spacing:.1em;
+      text-transform:uppercase;color:rgba(29,29,29,.6);
     }
 
-    nav{
-      display:flex; flex-wrap:wrap; gap:14px;
-      align-items:center; justify-content:center;
-    }
+    nav{display:flex;gap:14px;flex-wrap:wrap}
     nav a{
-      font-size:14px;
-      color: rgba(29,29,29,.70);
-      padding:8px 10px;
-      border-radius:999px;
+      font-size:14px;padding:8px 10px;border-radius:999px;
+      color:rgba(29,29,29,.7);
     }
-    nav a:hover{background: rgba(218,184,92,.18); color: rgba(29,29,29,.92)}
+    nav a:hover,
     nav a.active{
-      color: rgba(29,29,29,.92);
-      background: rgba(218,184,92,.22);
-      border: 1px solid rgba(29,29,29,.08);
+      background:rgba(218,184,92,.22);
+      color:rgba(29,29,29,.95);
     }
 
-    .ctaTop{
-      display:flex; gap:10px; align-items:center; justify-content:flex-end;
-      min-width:210px;
-    }
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:600;
+      padding:12px 16px;border-radius:999px;
+      font-size:12px;letter-spacing:.14em;
+      text-transform:uppercase;font-weight:600;
       border:1px solid transparent;
-      cursor:pointer;
-      white-space:nowrap;
     }
-    .btnGold{background: var(--gold); color: #1a1a1a; border-color: rgba(29,29,29,.10)}
-    .btnGhost{background: transparent; border-color: rgba(29,29,29,.20); color: rgba(29,29,29,.85)}
-    .btnGhost:hover{background: rgba(29,29,29,.04)}
-    .btnGold:hover{filter: brightness(.98)}
+    .btnGold{background:var(--gold)}
+    .btnGhost{border:1px solid rgba(29,29,29,.25)}
 
-    /* Page Header */
-    main{padding: 34px 0 40px}
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border:1px solid rgba(29,29,29,.12);
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      background: rgba(248,246,241,.75);
-      color: rgba(29,29,29,.72);
-      margin-bottom:14px;
+    /* Hero */
+    .contact-hero{
+      padding:70px 0 30px;
     }
-    h1{
+    .contact-hero h1{
       font-family:var(--h);
-      font-weight:600;
-      font-size: 52px;
-      line-height: 1.02;
-      margin: 0 0 10px;
-      letter-spacing: .2px;
+      font-size:48px;
+      margin:0 0 8px;
     }
-    .sub{
-      margin:0;
-      font-size:16px;
-      color: rgba(29,29,29,.72);
-      max-width: 70ch;
+    .contact-hero p{
+      color:rgba(29,29,29,.65);
+      max-width:52ch;
     }
 
-    /* Service cards */
-    .grid{
-      margin-top: 22px;
+    /* Main card */
+    .contact-main{padding:20px 0 80px}
+    .contact-card{
+      max-width:960px;
+      margin:0 auto;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      padding:40px;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    .card{
-      border-radius: 20px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      padding: 20px;
-      min-height: 220px;
-    }
-    .card h2{
-      font-family:var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size:22px;
-    }
-    .card p{
-      margin:0 0 12px;
-      color: rgba(29,29,29,.66);
-      font-size:14px;
-    }
-    .list{
-      margin: 0 0 14px;
-      padding-left: 18px;
-      color: rgba(29,29,29,.78);
-      font-size: 14px;
-    }
-    .list li{margin:6px 0}
-    .cardActions{margin-top:auto}
-
-    /* LAAP band */
-    .band{
-      margin-top: 18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(29,29,29,.12);
-      background:
-        radial-gradient(750px 340px at 85% 10%, rgba(218,184,92,.22), transparent 60%),
-        linear-gradient(180deg, rgba(223,211,176,.28), rgba(255,255,255,.9));
-      padding: 22px;
-      box-shadow: var(--shadow);
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:16px;
-      align-items:stretch;
-    }
-    .band h3{
-      font-family: var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size: 30px;
-      line-height: 1.05;
-    }
-    .band p{margin:0;color:rgba(29,29,29,.70)}
-    .bandRight{
-      border-radius: 18px;
-      background: rgba(255,255,255,.8);
-      border: 1px solid rgba(29,29,29,.10);
-      padding: 16px;
-    }
-    .bandRight strong{
-      display:block;
-      font-family: var(--h);
-      font-weight:600;
-      font-size: 20px;
-      margin-bottom: 4px;
-    }
-    .bandActions{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 14px;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
     }
 
-    /* CTA box */
-    .ctaBox{
-      margin-top: 18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(29,29,29,.12);
-      background: #fff;
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      padding: 22px;
+    .contact-info h2,
+    .contact-form h2{
+      font-size:24px;
+      margin-bottom:12px;
+    }
+
+    .contact-note{
+      margin-top:20px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(218,184,92,.15);
+    }
+
+    form{
       display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 16px;
-      flex-wrap:wrap;
+      flex-direction:column;
+      gap:14px;
     }
-    .ctaBox h3{
-      font-family: var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size: 28px;
-      line-height: 1.05;
+    input,textarea{
+      padding:14px 16px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      font-family:inherit;
     }
-    .ctaBox p{margin:0;color:rgba(29,29,29,.70); max-width: 70ch}
-/* ===== CONTACT PAGE ===== */
 
-.contact-hero{
-  padding:70px 0 30px;
-  background:linear-gradient(180deg,var(--ivory),#fff);
-  text-align:left;
-}
-
-.contact-hero h1{
-  font-family:var(--heading);
-  font-size:48px;
-  margin:0 0 6px;
-}
-
-.contact-sub{
-  color:rgba(29,29,29,.65);
-  max-width:50ch;
-}
-
-/* Main Card */
-.contact-main{
-  padding:30px 0 80px;
-}
-
-.contact-card{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:26px;
-  box-shadow:var(--shadow);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  padding:40px;
-  max-width:960px;
-  margin:0 auto;
-}
-
-/* Left */
-.contact-info h2,
-.contact-form h2{
-  font-size:24px;
-  margin-bottom:12px;
-}
-
-.contact-info p{
-  margin-bottom:16px;
-  color:rgba(29,29,29,.75);
-}
-
-.contact-info a{
-  color:var(--gold);
-  font-weight:500;
-}
-
-.contact-note{
-  margin-top:24px;
-  padding:14px 16px;
-  border-radius:14px;
-  background:rgba(218,184,92,.15);
-  color:rgba(29,29,29,.85);
-  font-size:14px;
-}
-
-/* Form */
-.contact-form form{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-.contact-form input,
-.contact-form textarea{
-  padding:14px 16px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  font-family:inherit;
-  font-size:14px;
-}
-
-.contact-form textarea{
-  resize:vertical;
-}
-
-.contact-form button{
-  align-self:flex-start;
-  margin-top:6px;
-}
-
-.form-note{
-  font-size:12px;
-  color:rgba(29,29,29,.55);
-}
-
-/* Mobile */
-@media(max-width:900px){
-  .contact-card{
-    grid-template-columns:1fr;
-    padding:28px;
-  }
-}
-
-    /* Footer */
     footer{
-      margin-top: 30px;
       border-top:1px solid var(--line);
-      background: rgba(248,246,241,.75);
-      padding: 18px 0;
-      color: rgba(29,29,29,.60);
+      padding:18px 0;
       font-size:12px;
-    }
-    .foot{
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:center;
+      color:rgba(29,29,29,.6);
+      background:rgba(248,246,241,.75);
     }
 
-    @media (max-width: 980px){
-      h1{font-size:42px}
-      .grid{grid-template-columns: 1fr}
-      .band{grid-template-columns: 1fr}
-      .ctaTop{min-width:auto}
-      .brand{min-width:auto}
+    @media(max-width:900px){
+      .contact-card{grid-template-columns:1fr;padding:28px}
+      nav{display:none}
     }
   </style>
 </head>
@@ -387,123 +168,66 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo" class="brand-logo">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
       <div>
         <strong>LaFaries Mortimer LLC</strong>
         <span>Administrative & IT Services</span>
       </div>
     </a>
 
-    <nav aria-label="Main navigation">
+    <nav>
       <a href="/index.html">Home</a>
       <a href="/about.html">About</a>
-      <a class="active" href="/services.html" aria-current="page">Services</a>
+      <a href="/services.html">Services</a>
       <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps & Portfolio</a>
+      <a href="/apps.html">Apps</a>
       <a href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
-      <a href="/tutorial.html">Resources</a>
-      <a href="/contact.html">Contact</a>
+      <a class="active" href="/contact.html">Contact</a>
     </nav>
 
-    <div class="ctaTop">
+    <div>
       <a class="btn btnGhost" href="/apps.html">Open Tools</a>
       <a class="btn btnGold" href="/contact.html">Book a Call</a>
     </div>
   </div>
 </header>
-<section class="contact-hero">
-  <div class="wrap">
-    <h1>Contact</h1>
-    <p class="contact-sub">
-      Let’s talk about what support actually makes sense for you.
-    </p>
-  </div>
-</section>
 
-<section class="contact-main">
-  <div class="wrap">
+<main id="main">
+  <section class="contact-hero">
+    <div class="wrap">
+      <h1>Contact</h1>
+      <p>Let’s talk about what support actually makes sense for you.</p>
+    </div>
+  </section>
+
+  <section class="contact-main">
     <div class="contact-card">
-
-      <!-- LEFT -->
       <div class="contact-info">
         <h2>Get in Touch</h2>
-
-        <p>
-          <strong>Email:</strong><br>
-          <a href="mailto:info@lafariesmortimerllc.com">
-            info@lafariesmortimerllc.com
-          </a>
-        </p>
-
-        <p>
-          <strong>Support:</strong><br>
-          Virtual • U.S.
-        </p>
-
+        <p><strong>Email:</strong><br>info@lafariesmortimerllc.com</p>
+        <p><strong>Support:</strong><br>Virtual • U.S.</p>
         <div class="contact-note">
-          If you’re not sure what you need yet, that’s okay.
-          We’ll help you figure it out.
+          If you’re not sure what you need yet, that’s okay — we’ll guide you.
         </div>
       </div>
 
-      <!-- RIGHT -->
       <div class="contact-form">
         <h2>Send a Message</h2>
-
         <form>
           <input type="text" placeholder="Your name" required>
           <input type="email" placeholder="Email address" required>
           <textarea rows="4" placeholder="How can we help?"></textarea>
-
-          <button class="btn btnGold" type="submit">
-            Send Message
-          </button>
-
-          <p class="form-note">
-            If the form doesn’t submit on your hosting yet,
-            email us directly.
-          </p>
+          <button class="btn btnGold">Send Message</button>
         </form>
       </div>
-
     </div>
-  </div>
-</section>
-
-<main id="main" class="wrapper">
-  <div class="section-header">
-    <h1>Contact</h1>
-    <p class="muted">Let’s talk about what support makes sense.</p>
-  </div>
-
-  <div class="grid-2">
-    <div class="card">
-      <h2>Get in Touch</h2>
-      <p class="muted"><strong>Email:</strong> info@lafariesmortimerllc.com</p>
-      <p class="muted"><strong>Support:</strong> Virtual • U.S.</p>
-      <hr class="sep" />
-      <p class="small-note">If you’re not sure what you need, that’s okay — we’ll guide you.</p>
-    </div>
-
-    <div class="card soft" id="contact">
-      <h2>Send a message</h2>
-      <form class="form" action="#" method="post">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Email address" required />
-        <textarea name="message" placeholder="How can we help?"></textarea>
-        <button class="btn btn-primary" type="submit">Send Message</button>
-      </form>
-      <p class="small-note">If the form does not submit on your hosting yet, email us directly.</p>
-    </div>
-  </div>
+  </section>
 </main>
 
 <footer>
-  <div class="wrapper footer-inner">
-    <div>© 2026 LaFaries Mortimer LLC</div>
-    <div><a href="/contact.html">Contact</a></div>
-  </div>
+  <div class="wrap">© 2026 LaFaries Mortimer LLC</div>
 </footer>
+
 </body>
 </html>
