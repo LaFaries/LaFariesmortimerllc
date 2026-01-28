@@ -152,31 +152,70 @@
     }
 
     /* LAAP Visual System */
-    .laap-visuals{
-      margin-top:36px;
-      display:flex;
-      flex-direction:column;
-      gap:36px;
-    }
-    .visual-block{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:24px;
-      align-items:center;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:22px;
-      box-shadow:0 10px 26px rgba(0,0,0,.05);
-    }
-    .visual-block.reverse{
-      grid-template-columns:.9fr 1.1fr;
-    }
-    .visual-block img{
-      border-radius:16px;
-      border:1px solid rgba(29,29,29,.12);
-      box-shadow:0 12px 30px rgba(0,0,0,.08);
-    }
+   .laap-hero{
+  padding:64px 0 40px;
+  background:
+    radial-gradient(800px 400px at 20% 0%, rgba(218,184,92,.22), transparent 55%),
+    linear-gradient(180deg, rgba(248,246,241,.85), #ffffff);
+  border-bottom:1px solid var(--line);
+}
+
+.laap-hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:32px;
+  align-items:center;
+}
+
+.laap-eyebrow{
+  display:inline-block;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(29,29,29,.65);
+  margin-bottom:12px;
+}
+
+.laap-hero h1{
+  font-family:var(--h);
+  font-size:52px;
+  line-height:1;
+  margin:0 0 12px;
+}
+
+.laap-hero h1 span{color:var(--gold)}
+
+.laap-hero p{
+  font-size:16px;
+  color:rgba(29,29,29,.72);
+  max-width:52ch;
+}
+
+.laap-actions{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+}
+
+.laap-visual{
+  border-radius:22px;
+  border:1px solid var(--line);
+  background:#fff;
+  padding:18px;
+  box-shadow:var(--shadow);
+}
+
+.laap-placeholder{
+  height:180px;
+  border-radius:16px;
+  border:1px dashed rgba(29,29,29,.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(29,29,29,.55);
+  font-style:italic;
+}
+
 
     footer{
       margin-top:40px;
