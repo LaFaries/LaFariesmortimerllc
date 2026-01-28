@@ -1,233 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Contact LaFaries Mortimer LLC." />
+/* Header layout: lock it into 3 zones */
+.nav{
+  display:grid;
+  grid-template-columns: auto 1fr auto; /* brand | nav | buttons */
+  align-items:center;
+  gap:16px;
+  padding:14px 0;
+}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+/* Center nav, allow it to shrink nicely */
+nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+  min-width:0;              /* allows shrink */
+}
 
-  <style>
-    :root{
-      --ivory:#F8F6F1;
-      --gold:#DAB85C;
-      --charcoal:#1D1D1D;
-      --line: rgba(29,29,29,.14);
-      --radius:22px;
-      --shadow:0 18px 45px rgba(0,0,0,.08);
-      --h:"Cormorant Garamond", Georgia, serif;
-      --b:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
+/* Right side buttons: never wrap weird, never overflow */
+.nav > div:last-child{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;       /* keeps OPEN TOOLS + BOOK A CALL together */
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--b);
-      background:linear-gradient(180deg,var(--ivory),#fff);
-      color:var(--charcoal);
-    }
+/* Buttons: consistent size + no weird line breaks */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 16px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  border:1px solid transparent;
+  line-height:1;
+}
 
-    a{text-decoration:none;color:inherit}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-
-    /* Skip link */
-    .skip-link{
-      position:absolute;left:-999px;
-    }
-    .skip-link:focus{
-      left:20px;top:20px;
-      background:#fff;
-      padding:10px 12px;
-      border-radius:12px;
-      border:1px solid var(--line);
-      z-index:999;
-    }
-
-    /* Header */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(248,246,241,.85);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:14px 0;gap:16px;
-    }
-    .brand{
-      display:flex;gap:12px;align-items:center;
-    }
-    .brand img{
-      width:44px;height:44px;border-radius:999px;
-      border:1px solid var(--line);background:#fff;
-    }
-    .brand strong{
-      font-family:var(--h);font-size:18px;font-weight:600;
-    }
-    .brand span{
-      display:block;font-size:12px;letter-spacing:.1em;
-      text-transform:uppercase;color:rgba(29,29,29,.6);
-    }
-
-    nav{display:flex;gap:14px;flex-wrap:wrap}
-    nav a{
-      font-size:14px;padding:8px 10px;border-radius:999px;
-      color:rgba(29,29,29,.7);
-    }
-    nav a:hover,
-    nav a.active{
-      background:rgba(218,184,92,.22);
-      color:rgba(29,29,29,.95);
-    }
-
-    .btn{
-      padding:12px 16px;border-radius:999px;
-      font-size:12px;letter-spacing:.14em;
-      text-transform:uppercase;font-weight:600;
-      border:1px solid transparent;
-    }
-    .btnGold{background:var(--gold)}
-    .btnGhost{border:1px solid rgba(29,29,29,.25)}
-
-    /* Hero */
-    .contact-hero{
-      padding:70px 0 30px;
-    }
-    .contact-hero h1{
-      font-family:var(--h);
-      font-size:48px;
-      margin:0 0 8px;
-    }
-    .contact-hero p{
-      color:rgba(29,29,29,.65);
-      max-width:52ch;
-    }
-
-    /* Main card */
-    .contact-main{padding:20px 0 80px}
-    .contact-card{
-      max-width:960px;
-      margin:0 auto;
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:26px;
-      box-shadow:var(--shadow);
-      padding:40px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-    }
-
-    .contact-info h2,
-    .contact-form h2{
-      font-size:24px;
-      margin-bottom:12px;
-    }
-
-    .contact-note{
-      margin-top:20px;
-      padding:14px 16px;
-      border-radius:14px;
-      background:rgba(218,184,92,.15);
-    }
-
-    form{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-    }
-    input,textarea{
-      padding:14px 16px;
-      border-radius:14px;
-      border:1px solid var(--line);
-      font-family:inherit;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      padding:18px 0;
-      font-size:12px;
-      color:rgba(29,29,29,.6);
-      background:rgba(248,246,241,.75);
-    }
-
-    @media(max-width:900px){
-      .contact-card{grid-template-columns:1fr;padding:28px}
-      nav{display:none}
-    }
-  </style>
-</head>
-
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
-
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
-      </div>
-    </a>
-
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQ</a>
-      <a class="active" href="/contact.html">Contact</a>
-    </nav>
-
-    <div>
-      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
-    </div>
-  </div>
-</header>
-
-<main id="main">
-  <section class="contact-hero">
-    <div class="wrap">
-      <h1>Contact</h1>
-      <p>Let’s talk about what support actually makes sense for you.</p>
-    </div>
-  </section>
-
-  <section class="contact-main">
-    <div class="contact-card">
-      <div class="contact-info">
-        <h2>Get in Touch</h2>
-        <p><strong>Email:</strong><br>info@lafariesmortimerllc.com</p>
-        <p><strong>Support:</strong><br>Virtual • U.S.</p>
-        <div class="contact-note">
-          If you’re not sure what you need yet, that’s okay — we’ll guide you.
-        </div>
-      </div>
-
-      <div class="contact-form">
-        <h2>Send a Message</h2>
-        <form>
-          <input type="text" placeholder="Your name" required>
-          <input type="email" placeholder="Email address" required>
-          <textarea rows="4" placeholder="How can we help?"></textarea>
-          <button class="btn btnGold">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">© 2026 LaFaries Mortimer LLC</div>
-</footer>
-
-</body>
-</html>
+/* If the screen gets tighter, hide nav (buttons stay perfect) */
+@media(max-width: 980px){
+  nav{display:none;}
+  .nav{grid-template-columns: auto auto;}
+}
