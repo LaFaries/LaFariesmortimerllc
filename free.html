@@ -29,7 +29,7 @@
 body{
   margin:0;
   font-family:var(--b);
-  background:linear-gradient(180deg,var(--ivory),#fff);
+  background:linear-gradient(180deg,var(--ivory),#ffffff);
   color:var(--charcoal);
   line-height:1.6;
 }
@@ -77,67 +77,34 @@ nav{display:flex;gap:14px;justify-content:center}
 }
 .ctaTop{display:flex;gap:10px}
 .btn{
-  padding:12px 16px;
+  padding:12px 18px;
   border-radius:999px;
   font-size:12px;
   letter-spacing:.14em;
   text-transform:uppercase;
   font-weight:600;
+  display:inline-block;
 }
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
 /* HERO */
 .hero{
-  padding:80px 0 60px;
+  padding:90px 0 70px;
 }
 .hero h1{
   font-family:var(--h);
-  font-size:52px;
+  font-size:54px;
   line-height:1.05;
   margin:0 0 12px;
 }
 .hero p{
-  max-width:60ch;
+  max-width:62ch;
   color:rgba(29,29,29,.75);
+  font-size:17px;
 }
 
-/* TOOLS GRID */
-.tools{
-  padding:60px 0;
-}
-.tools-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
-.tool-card{
-  background:#fff;
-  border-radius:26px;
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-.tool-card h3{
-  font-family:var(--h);
-  font-size:26px;
-  margin-top:0;
-}
-.tool-card label{
-  font-size:13px;
-  color:#555;
-}
-.tool-card input, .tool-card select{
-  width:100%;
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  margin:6px 0 12px;
-}
-.result{
-  font-weight:600;
-  margin-top:8px;
-}/* ================= FREE TOOLS ACCENT ================= */
-
+/* FREE TOOLS ACCENT */
 .free-tools{
   position:relative;
   padding:90px 0 80px;
@@ -147,150 +114,63 @@ nav{display:flex;gap:14px;justify-content:center}
     linear-gradient(180deg,#f9f7f2,#ffffff);
 }
 
-/* Free tools heading polish */
-.free-tools h1,
-.free-tools h2{
-  font-family:var(--h);
-}
-
-.free-tools .sub{
-  font-size:16px;
-  color:rgba(29,29,29,.65);
-  max-width:58ch;
-  margin-bottom:44px;
-}
-
-/* ================= TOOL CARDS ================= */
-
 .tool-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:28px;
+  gap:30px;
 }
 
 .tool-card{
   background:linear-gradient(180deg,#ffffff,#f8f6f1);
   border-radius:26px;
-  padding:30px;
+  padding:32px;
   box-shadow:
     0 20px 45px rgba(0,0,0,.12),
     inset 0 0 0 1px rgba(218,184,92,.25);
   transition:transform .35s ease, box-shadow .35s ease;
 }
-
 .tool-card:hover{
   transform:translateY(-6px);
   box-shadow:
     0 34px 90px rgba(0,0,0,.18),
     inset 0 0 0 1px rgba(218,184,92,.45);
 }
-
 .tool-card h3{
   font-family:var(--h);
-  font-size:22px;
-  margin-bottom:10px;
+  font-size:24px;
+  margin:0 0 6px;
 }
-
 .tool-card p{
   font-size:14px;
   color:rgba(29,29,29,.7);
+  margin-bottom:16px;
 }
-
-.tool-card .hint{
-  margin-top:16px;
-  font-size:12px;
-  color:#b89b4a;
-  letter-spacing:.06em;
+.tool-card label{
+  font-size:13px;
+  color:#555;
 }
-
-<section style="padding:70px 0">
-  <div class="wrap">
-
-    <h2 style="font-family:var(--h);font-size:36px;margin-bottom:10px">
-      Free Converters
-    </h2>
-    <p style="color:rgba(255,255,255,.7);max-width:60ch;margin-bottom:40px">
-      Use these tools free. Save results, history, and decisions inside LAAP when ready.
-    </p>
-
-    <div class="free-grid">
-
-      <!-- Currency Converter -->
-      <div class="free-card">
-        <span class="card-tag">Converter</span>
-        <h3>Currency Converter</h3>
-        <p>Quick estimates for planning and budgeting.</p>
-
-        <input type="number" placeholder="Amount (USD)" style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:10px">
-        <select style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:14px">
-          <option>USD → EUR</option>
-          <option>USD → GBP</option>
-          <option>USD → CAD</option>
-        </select>
-
-        <div class="btn btnGhost">Convert</div>
-        <p style="font-size:12px;margin-top:12px;opacity:.7">
-          Save conversions inside LAAP →
-        </p>
-      </div>
-
-      <!-- Weight Converter -->
-      <div class="free-card">
-        <span class="card-tag">Converter</span>
-        <h3>Weight Converter</h3>
-        <p>Useful for shipping, inventory, and planning.</p>
-
-        <input type="number" placeholder="Enter weight" style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:10px">
-        <select style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:14px">
-          <option>lbs → kg</option>
-          <option>kg → lbs</option>
-        </select>
-
-        <div class="btn btnGhost">Convert</div>
-        <p style="font-size:12px;margin-top:12px;opacity:.7">
-          History saved in LAAP →
-        </p>
-      </div>
-
-      <!-- Business Cost Estimator -->
-      <div class="free-card highlight">
-        <span class="card-tag">Estimator</span>
-        <h3>Business Setup Cost</h3>
-        <p>See the real cost of starting and maintaining a business.</p>
-
-        <select style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:10px">
-          <option>Select State</option>
-          <option>Florida</option>
-          <option>Texas</option>
-          <option>California</option>
-        </select>
-
-        <select style="width:100%;padding:12px;border-radius:12px;border:none;margin-bottom:14px">
-          <option>LLC</option>
-          <option>Corporation</option>
-        </select>
-
-        <div class="btn btnGold">Compare with LAAP</div>
-        <p style="font-size:12px;margin-top:12px;opacity:.8">
-          LAAP replaces LegalZoom, filing services, and consultants.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-/* SAVE TEASER */
+.tool-card input,
+.tool-card select{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  margin:6px 0 12px;
+}
+.result{
+  font-weight:600;
+  margin-top:6px;
+}
 .save-box{
-  margin-top:16px;
-  padding:14px;
+  margin-top:14px;
+  padding:12px;
   border-radius:14px;
   background:rgba(218,184,92,.15);
-  font-size:13px;
+  font-size:12px;
+  color:#7a6426;
 }
 
-/* HUB LINKS */
+/* HUB */
 .hub{
   padding:80px 0;
   background:
@@ -299,7 +179,7 @@ nav{display:flex;gap:14px;justify-content:center}
 }
 .hub-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:28px;
 }
 .hub-card{
@@ -310,7 +190,11 @@ nav{display:flex;gap:14px;justify-content:center}
 }
 .hub-card h3{
   font-family:var(--h);
-  font-size:28px;
+  font-size:26px;
+  margin-top:0;
+}
+.hub-card p{
+  color:rgba(255,255,255,.7);
 }
 
 /* FOOTER */
@@ -325,7 +209,6 @@ footer{
 
 /* MOBILE */
 @media(max-width:980px){
-  .tools-grid,.hub-grid{grid-template-columns:1fr}
   nav{display:none}
 }
 </style>
@@ -362,37 +245,34 @@ footer{
 <section class="hero">
   <div class="wrap">
     <h1>Free Business Tools</h1>
-    <p>
-      Use these tools freely.  
-      When you're ready, everything you save lives inside <strong>LAAP™</strong>.
-    </p>
+    <p>Use these tools freely. When you're ready, everything you save lives inside <strong>LAAP™</strong>.</p>
   </div>
 </section>
 
-<section class="tools">
-  <div class="wrap tools-grid">
+<section class="free-tools">
+  <div class="wrap tool-grid">
 
-    <!-- CURRENCY -->
     <div class="tool-card">
       <h3>Currency Converter</h3>
+      <p>Quick planning estimates.</p>
       <label>USD</label>
       <input type="number" id="usd" placeholder="Amount">
       <div class="result" id="eurResult"></div>
       <div class="save-box">Save conversions inside LAAP →</div>
     </div>
 
-    <!-- WEIGHT -->
     <div class="tool-card">
       <h3>Weight Converter</h3>
+      <p>Shipping & inventory support.</p>
       <label>Pounds</label>
       <input type="number" id="lbs" placeholder="lbs">
       <div class="result" id="kgResult"></div>
       <div class="save-box">Saved measurements live in LAAP →</div>
     </div>
 
-    <!-- PERCENT -->
     <div class="tool-card">
       <h3>Quick Percentage</h3>
+      <p>Fast calculations for decisions.</p>
       <label>Value</label>
       <input type="number" id="value" placeholder="Value">
       <label>Percent</label>
@@ -409,7 +289,7 @@ footer{
 
     <div class="hub-card">
       <h3>Free Tutorials</h3>
-      <p>Step-by-step guidance for admin & IT tasks.</p>
+      <p>Step-by-step admin & IT guidance.</p>
       <a class="btn btnGold" href="/tutorials.html">View Tutorials</a>
     </div>
 
@@ -433,12 +313,11 @@ footer{
 </footer>
 
 <script>
-/* SIMPLE LOCAL CONVERSIONS */
-usd.oninput = () => eurResult.textContent =
-  usd.value ? `≈ €${(usd.value * 0.92).toFixed(2)}` : '';
+usd.oninput = () =>
+  eurResult.textContent = usd.value ? `≈ €${(usd.value * 0.92).toFixed(2)}` : '';
 
-lbs.oninput = () => kgResult.textContent =
-  lbs.value ? `≈ ${(lbs.value * 0.4536).toFixed(2)} kg` : '';
+lbs.oninput = () =>
+  kgResult.textContent = lbs.value ? `≈ ${(lbs.value * 0.4536).toFixed(2)} kg` : '';
 
 percent.oninput = value.oninput = () =>
   percentResult.textContent =
