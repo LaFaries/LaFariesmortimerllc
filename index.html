@@ -6,6 +6,7 @@
 <title>LaFaries Mortimer LLC | Administrative & IT Services</title>
 <meta name="description" content="Clear administrative and IT support that brings order, structure, and confidence.">
 
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
   --charcoal:#1D1D1D;
   --line:rgba(29,29,29,.14);
   --radius:26px;
-  --shadow:0 28px 80px rgba(0,0,0,.18);
+  --shadow:0 30px 90px rgba(0,0,0,.25);
   --h:"Cormorant Garamond",serif;
   --b:"Inter",system-ui;
 }
@@ -30,15 +31,16 @@ body{
   font-family:var(--b);
   background:linear-gradient(180deg,var(--ivory),#fff);
   color:var(--charcoal);
+  line-height:1.6;
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1180px;margin:auto;padding:0 20px}
 
-/* HEADER */
+/* ================= HEADER ================= */
 header{
   position:sticky;
   top:0;
-  z-index:50;
+  z-index:100;
   background:rgba(15,17,21,.9);
   backdrop-filter:blur(10px);
 }
@@ -50,11 +52,11 @@ header{
   align-items:center;
 }
 .brand{display:flex;gap:12px;align-items:center}
-.brand img{width:42px;height:42px;border-radius:50%}
+.brand img{width:42px;height:42px;border-radius:50%;background:#fff}
 .brand strong{font-family:var(--h);color:#fff}
 .brand span{font-size:11px;color:rgba(255,255,255,.6)}
 nav{display:flex;gap:14px;justify-content:center}
-nav a{color:rgba(255,255,255,.75)}
+nav a{color:rgba(255,255,255,.75);font-size:14px}
 nav a:hover{color:#fff}
 .ctaTop{display:flex;gap:10px}
 .btn{
@@ -66,88 +68,120 @@ nav a:hover{color:#fff}
   font-weight:600;
 }
 .btnGold{background:var(--gold);color:#1a1a1a}
-.btnGhost{border:1px solid rgba(255,255,255,.3);color:#fff}
+.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
+.btnGhostLight{border:1px solid rgba(255,255,255,.4);color:#fff}
 
-/* HERO */
-.hero{padding:80px 0 60px}
-.heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:30px}
+/* ================= HERO ================= */
+.hero{padding:90px 0 70px}
+.heroGrid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:30px;
+}
 .heroCard{
   background:
     radial-gradient(900px 420px at 20% 0%, rgba(218,184,92,.35), transparent 60%),
     linear-gradient(180deg,#fff,rgba(248,246,241,.9));
   border-radius:var(--radius);
-  padding:40px;
+  padding:42px;
   box-shadow:var(--shadow);
 }
-.kicker{text-transform:uppercase;font-size:12px;letter-spacing:.14em}
-.hero h1{font-family:var(--h);font-size:54px;margin:12px 0}
-.hero p{max-width:52ch;color:rgba(29,29,29,.75)}
-.heroBtns{margin-top:22px;display:flex;gap:12px}
+.kicker{text-transform:uppercase;font-size:12px;letter-spacing:.14em;color:#555}
+.hero h1{font-family:var(--h);font-size:56px;margin:14px 0}
+.hero p{max-width:54ch;color:rgba(29,29,29,.75)}
+.heroBtns{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
 
 .side{
   background:#fff;
   border-radius:var(--radius);
-  padding:30px;
+  padding:32px;
   box-shadow:var(--shadow);
 }
-.side h2{font-family:var(--h);margin:0 0 10px}
-.side ul{padding-left:0;list-style:none}
+.side h2{font-family:var(--h);margin:0 0 12px;font-size:30px}
+.side ul{list-style:none;padding:0;margin:0}
 .side li{margin-bottom:10px}
 
-/* CORE OFFERINGS */
-.core{padding:70px 0}
-.coreGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-.coreCard{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:34px;
-  box-shadow:var(--shadow);
-  border:1px solid var(--line);
-}
-.coreCard h3{font-family:var(--h);font-size:30px;margin:0 0 10px}
-.coreCard p{color:rgba(29,29,29,.75)}
-.coreCard ul{padding-left:18px}
-.coreCard li{margin:6px 0}
-.coreCard.highlight{
+/* ================= CORE SYSTEMS (FIXED) ================= */
+.core-systems{
   background:
-    radial-gradient(800px 360px at 20% 0%, rgba(218,184,92,.4), transparent 60%),
-    linear-gradient(180deg,#fff,rgba(248,246,241,.95));
-  border-color:rgba(218,184,92,.6);
+    radial-gradient(900px 360px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
+    linear-gradient(180deg,#0f1115,#151821);
+  padding:90px 0;
 }
 
-/* DARK VALUE BAND */
-.dark{
-  background:linear-gradient(180deg,#0f1115,#151821);
-  padding:70px 0;
+.sectionTitle.light h3{
+  font-family:var(--h);
+  font-size:38px;
+  color:#fff;
+  margin:0;
 }
-.darkGrid{
+.sectionTitle.light p{
+  color:rgba(255,255,255,.7);
+  max-width:60ch;
+  margin:6px 0 40px;
+}
+
+.system-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:26px;
 }
-.darkCard{
-  background:#151821;
-  padding:30px;
-  border-radius:22px;
-  box-shadow:0 40px 100px rgba(0,0,0,.9);
-}
-.darkCard h4{font-family:var(--h);color:#fff;margin:0 0 6px}
-.darkCard p{color:rgba(255,255,255,.75)}
 
+.system-card{
+  background:linear-gradient(180deg,#1a1d24,#0f1115);
+  border-radius:28px;
+  padding:34px;
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 40px 120px rgba(0,0,0,.9);
+  color:#fff;
+}
+
+.system-card.highlight{
+  border-color:rgba(218,184,92,.7);
+  background:
+    radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.4), transparent 60%),
+    linear-gradient(180deg,#1a1d24,#0f1115);
+}
+
+.system-tag{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(218,184,92,.9);
+}
+
+.system-card h4{
+  font-family:var(--h);
+  font-size:28px;
+  margin:10px 0;
+}
+
+.system-card p{
+  color:rgba(255,255,255,.78);
+  font-size:15px;
+}
+
+.system-card ul{
+  padding-left:18px;
+  margin:12px 0 18px;
+  color:rgba(255,255,255,.75);
+}
+
+.system-card li{margin:6px 0}
+
+/* ================= FOOTER ================= */
 footer{
+  background:rgba(248,246,241,.9);
+  border-top:1px solid var(--line);
   padding:20px 0;
   text-align:center;
   font-size:12px;
   color:rgba(29,29,29,.6);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media(max-width:980px){
-  .heroGrid,.coreGrid,.darkGrid{grid-template-columns:1fr}
+  .heroGrid,.system-grid{grid-template-columns:1fr}
   nav{display:none}
 }
 </style>
@@ -158,7 +192,7 @@ footer{
 <header>
   <div class="wrap nav">
     <a class="brand" href="/">
-      <img src="/assets/img/logo-2026.png">
+      <img src="/assets/img/logo-2026.png" alt="">
       <div>
         <strong>LaFaries Mortimer LLC</strong><br>
         <span>Administrative & IT Services</span>
@@ -190,8 +224,10 @@ footer{
       <div class="heroBtns">
         <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
         <a class="btn btnGhost" href="/tutorials.html">Free Tutorials</a>
+        <a class="btn btnGhost" href="/templates.html">DIY Templates</a>
       </div>
     </div>
+
     <div class="side">
       <h2>What we help you do</h2>
       <ul>
@@ -205,62 +241,45 @@ footer{
 
 <section class="core-systems">
   <div class="wrap">
-
     <div class="sectionTitle light">
       <h3>Your Support Systems</h3>
-      <p>
-        Choose the level of guidance that fits where you are right now.
-        All paths stay available.
-      </p>
+      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
     </div>
 
     <div class="system-grid">
 
-      <!-- LAAP -->
       <div class="system-card highlight">
         <span class="system-tag">Guided System</span>
         <h4>LAAP Suite™</h4>
-        <p>
-          LAAP is a guided decision and organization system.
-          It removes guesswork by asking the right questions and
-          turning your answers into clear next steps.
-        </p>
+        <p>A structured guidance platform that asks the right questions and turns answers into clear next steps.</p>
         <ul>
-          <li>Step-by-step guidance</li>
-          <li>Structured workflows</li>
-          <li>Integrated tools & templates</li>
+          <li>Decision guidance</li>
+          <li>Workflow clarity</li>
+          <li>Integrated tools</li>
         </ul>
         <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
       </div>
 
-      <!-- Tutorials -->
       <div class="system-card">
         <span class="system-tag">Always Free</span>
         <h4>Free Tutorials</h4>
-        <p>
-          Clear, step-by-step tutorials that teach you how to handle
-          administrative and IT tasks on your own — without jargon.
-        </p>
+        <p>Learn how to handle administrative and IT tasks step by step — clearly and confidently.</p>
         <ul>
-          <li>Business setup basics</li>
+          <li>Business basics</li>
           <li>IT organization</li>
           <li>Admin workflows</li>
         </ul>
         <a class="btn btnGhostLight" href="/tutorials.html">View Tutorials</a>
       </div>
 
-      <!-- Templates -->
       <div class="system-card">
         <span class="system-tag">DIY Resources</span>
         <h4>DIY Templates</h4>
-        <p>
-          Ready-to-use, fill-in-the-blank documents designed to save time,
-          reduce errors, and keep your records clean.
-        </p>
+        <p>Professional, fill-in-the-blank documents to save time and reduce confusion.</p>
         <ul>
-          <li>Business & ministry docs</li>
-          <li>Administrative forms</li>
-          <li>Planning templates</li>
+          <li>Business documents</li>
+          <li>Forms & planning</li>
+          <li>Operational templates</li>
         </ul>
         <a class="btn btnGhostLight" href="/templates.html">Browse Templates</a>
       </div>
@@ -268,7 +287,6 @@ footer{
     </div>
   </div>
 </section>
-
 
 </main>
 
