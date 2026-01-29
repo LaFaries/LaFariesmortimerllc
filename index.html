@@ -23,47 +23,6 @@
   --h:"Cormorant Garamond",serif;
   --b:"Inter",system-ui;
 }
-/* ================= HERO CAROUSEL ================= */
-
-.hero-carousel{
-  position:relative;
-  min-height:78vh; /* 👈 slightly taller for impact */
-  overflow:hidden;
-}
-
-.hero-slide{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:scale(.98);
-  transition:opacity .9s ease, transform .9s ease;
-  pointer-events:none;
-}
-
-.hero-slide.active{
-  opacity:1;
-  transform:scale(1);
-  pointer-events:auto;
-}
-
-.heroVisual{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.heroVisual img{
-  max-width:100%;
-  max-height:380px; /* 👈 larger, more visible */
-  object-fit:contain;
-  filter:drop-shadow(0 30px 80px rgba(0,0,0,.25));
-}
-
-/* mobile tuning */
-@media(max-width:980px){
-  .hero-carousel{min-height:auto}
-  .heroVisual img{max-height:260px}
-}
 
 *{box-sizing:border-box}
 body{
@@ -75,16 +34,6 @@ body{
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1180px;margin:auto;padding:0 20px}
-
-/* ================= IMAGE SIZE CONTROL ================= */
-.feature-img{
-  max-width:100%;
-  height:auto;
-  max-height:220px;
-  object-fit:contain;
-  display:block;
-  margin:20px auto;
-}
 
 /* ================= HEADER ================= */
 header{
@@ -114,161 +63,146 @@ header{
 }
 .brand strong{font-family:var(--h);color:#fff}
 .brand span{font-size:11px;color:rgba(255,255,255,.6)}
-nav{display:flex;justify-content:center;gap:14px}
-.nav-pill{padding:8px 14px;border-radius:999px;font-size:14px;color:rgba(255,255,255,.8)}
-.nav-pill:hover{background:rgba(255,255,255,.08);box-shadow:0 0 18px rgba(218,184,92,.35)}
+
+nav{display:flex;gap:14px;justify-content:center}
+.nav-pill{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  color:rgba(255,255,255,.8);
+}
+.nav-pill:hover{
+  background:rgba(255,255,255,.08);
+  box-shadow:0 0 18px rgba(218,184,92,.35);
+}
+
 .ctaTop{display:flex;gap:10px}
-.btn{padding:12px 16px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.btn{
+  padding:12px 16px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+}
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-/* ================= HERO ================= */
-<section class="hero hero-carousel">
+/* ================= HERO CAROUSEL ================= */
+.hero-carousel{
+  position:relative;
+  min-height:80vh;
+  overflow:hidden;
+}
+.hero-slide{
+  position:absolute;
+  inset:0;
+  opacity:0;
+  transform:scale(.98);
+  transition:opacity .9s ease, transform .9s ease;
+  pointer-events:none;
+}
+.hero-slide.active{
+  opacity:1;
+  transform:scale(1);
+  pointer-events:auto;
+}
 
-  <div class="hero-slide active">
-    <div class="wrap heroGrid">
-      <div class="heroCard">
-        <div class="kicker">LAAP™ Guided System</div>
-        <h1>Build a business that feels organized — not overwhelming.</h1>
-        <p>
-          LAAP™ turns your answers into structure, filings, and clear next steps —
-          all in one guided cloud-based system you can access from anywhere.
-        </p>
-        <div class="heroBtns">
-          <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-        </div>
-      </div>
+.heroGrid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:32px;
+  align-items:center;
+  height:100%;
+}
 
-      <div class="heroVisual">
-        <img src="/assets/img/LAAP Image.png" alt="LAAP system preview">
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-slide">
-    <div class="wrap heroGrid">
-      <div class="heroCard">
-        <div class="kicker">AI-Powered Support</div>
-        <h1>Your business, answered — even when you’re offline.</h1>
-        <p>
-          A custom AI receptionist, lead follow-up agent, and information hub
-          that works 24/7 and connects directly into your systems.
-        </p>
-        <div class="heroBtns">
-          <a class="btn btnGold" href="/contact.html">See AI Agent</a>
-        </div>
-      </div>
-
-      <div class="heroVisual">
-        <img src="/assets/img/AI Agent Ipad.png" alt="AI agent interface">
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-slide">
-    <div class="wrap heroGrid">
-      <div class="heroCard">
-        <div class="kicker">Free Tools</div>
-        <h1>Start free. Stay organized. Scale when ready.</h1>
-        <p>
-          Use calculators, converters, and tools today —
-          then save everything inside LAAP when you’re ready.
-        </p>
-        <div class="heroBtns">
-          <a class="btn btnGold" href="/free.html">Free Tools</a>
-        </div>
-      </div>
-
-      <div class="heroVisual">
-        <img src="/assets/img/free-tools-preview.png" alt="Free tools preview">
-      </div>
-    </div>
-  </div>
-
-</section>
-
-  <div class="wrap">
-
-    <header class="support-header">
-      <h2>Your Support Systems</h2>
-      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
-    </header>
-
-    <div class="support-grid">
-
-      <div class="support-card highlight">
-        <span class="card-tag">Guided System</span>
-        <h3>LAAP Suite™</h3>
-        <p>
-          A guided decision and organization system that turns answers into clear next steps.
-        </p>
-        <ul>
-          <li>Structured workflows</li>
-          <li>Clarity-driven guidance</li>
-          <li>Integrated tools</li>
-        </ul>
-        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-      </div>
-
-      <div class="support-card">
-        <span class="card-tag muted">Always Free</span>
-        <h3>Free Tutorials</h3>
-        <p>
-          Step-by-step guidance to handle administrative and IT tasks with confidence.
-        </p>
-        <a class="btn btnOutline" href="/tutorials.html">View Tutorials</a>
-      </div>
-
-      <div class="support-card">
-        <span class="card-tag muted">DIY Resources</span>
-        <h3>DIY Templates</h3>
-        <p>
-          Professional fill-in-the-blank documents that save time and reduce confusion.
-        </p>
-        <a class="btn btnOutline" href="/templates.html">Browse Templates</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-/* ================= SIDE ================= */
-.side{
-  background:#fff;
+.heroCard{
+  background:
+    radial-gradient(800px 360px at 20% 0%, rgba(218,184,92,.28), transparent 60%),
+    linear-gradient(180deg,#fff,rgba(248,246,241,.9));
   border-radius:var(--radius);
-  padding:30px;
+  padding:42px;
   box-shadow:var(--shadow);
 }
-.side h2{font-family:var(--h);font-size:28px;margin:0 0 10px}
-.side ul{list-style:none;padding:0;margin:0}
-.side li{margin-bottom:8px}
 
-/* ================= CORE SYSTEMS ================= */
-.core-systems{
-  background:
-    radial-gradient(900px 360px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
-    linear-gradient(180deg,#0f1115,#151821);
-  padding:70px 0;
+.kicker{
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#555;
 }
-.sectionTitle.light h3{font-family:var(--h);font-size:36px;color:#fff}
-.sectionTitle.light p{color:rgba(255,255,255,.7);margin-bottom:36px}
-.system-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.system-card{
-  background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:26px;
-  padding:32px;
-  border:1px solid rgba(255,255,255,.1);
+
+.heroCard h1{
+  font-family:var(--h);
+  font-size:52px;
+  line-height:1.05;
+  margin:12px 0;
+}
+
+.heroCard p{max-width:54ch;color:rgba(29,29,29,.75)}
+
+.heroBtns{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+
+.heroVisual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.heroVisual img{
+  max-width:100%;
+  max-height:420px;
+  object-fit:contain;
+  filter:drop-shadow(0 30px 80px rgba(0,0,0,.25));
+}
+
+/* ================= SUPPORT SYSTEMS ================= */
+.support-systems{
+  background:
+    radial-gradient(900px 400px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
+    linear-gradient(180deg,#0f1115,#141720);
+  padding:90px 0;
+}
+.support-header h2{
+  font-family:var(--h);
+  font-size:40px;
   color:#fff;
 }
-.system-card.highlight{
-  border-color:rgba(218,184,92,.7);
+.support-header p{
+  color:rgba(255,255,255,.7);
+  max-width:60ch;
+  margin-bottom:48px;
+}
+.support-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.support-card{
+  background:linear-gradient(180deg,#1a1d24,#0f1115);
+  border-radius:28px;
+  padding:36px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 40px 110px rgba(0,0,0,.85);
+  color:#fff;
+}
+.support-card.highlight{
+  border-color:rgba(218,184,92,.75);
   background:
-    radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.4), transparent 60%),
+    radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.45), transparent 60%),
     linear-gradient(180deg,#1a1d24,#0f1115);
 }
-.system-tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(218,184,92,.9)}
-.system-card h4{font-family:var(--h);font-size:26px;margin:10px 0}
-.system-card p{color:rgba(255,255,255,.78)}
+.card-tag{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(218,184,92,.95);
+}
+.support-card h3{
+  font-family:var(--h);
+  font-size:28px;
+  margin:12px 0;
+}
+.support-card ul{margin:18px 0 26px;padding-left:18px}
 
 /* ================= FOOTER ================= */
 footer{
@@ -281,100 +215,13 @@ footer{
 }
 
 /* ================= MOBILE ================= */
-/* ================= SUPPORT SYSTEMS ================= */
-
-.support-systems{
-  background:
-    radial-gradient(900px 400px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
-    linear-gradient(180deg,#0f1115,#141720);
-  padding:80px 0;
-}
-
-.support-header h2{
-  font-family:var(--h);
-  font-size:40px;
-  color:#fff;
-  margin:0 0 6px;
-}
-
-.support-header p{
-  color:rgba(255,255,255,.7);
-  max-width:60ch;
-  margin-bottom:48px;
-}
-
-.support-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
-
-.support-card{
-  background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:28px;
-  padding:34px;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 40px 110px rgba(0,0,0,.85);
-  color:#fff;
-}
-
-.support-card h3{
-  font-family:var(--h);
-  font-size:28px;
-  margin:12px 0;
-}
-
-.support-card p{
-  color:rgba(255,255,255,.78);
-}
-
-.support-card ul{
-  margin:18px 0 26px;
-  padding-left:18px;
-}
-
-.support-card li{
-  margin:8px 0;
-}
-
-.card-tag{
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:rgba(218,184,92,.95);
-}
-
-.card-tag.muted{
-  color:rgba(218,184,92,.65);
-}
-
-.support-card.highlight{
-  border-color:rgba(218,184,92,.75);
-  background:
-    radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.45), transparent 60%),
-    linear-gradient(180deg,#1a1d24,#0f1115);
-}
-
-.btnOutline{
-  border:1px solid rgba(255,255,255,.35);
-  color:#fff;
-}
 @media(max-width:980px){
-  .heroGrid,.system-grid{grid-template-columns:1fr}
+  .heroGrid,.support-grid{grid-template-columns:1fr}
   nav{display:none}
+  .heroVisual img{max-height:280px}
 }
 </style>
 </head>
-<script>
-  const slides = document.querySelectorAll('.hero-slide');
-  let index = 0;
-
-  setInterval(() => {
-    slides[index].classList.remove('active');
-    index = (index + 1) % slides.length;
-    slides[index].classList.add('active');
-  }, 10000); // 10 seconds
-</script>
 
 <body>
 
@@ -398,55 +245,111 @@ footer{
     </nav>
 
     <div class="ctaTop">
-      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
+      <a class="btn btnGhost" href="/free.html">Free Tools</a>
       <a class="btn btnGold" href="/contact.html">Book a Call</a>
     </div>
   </div>
 </header>
 
-<main>
+<section class="hero-carousel">
 
-<section class="hero">
-  <div class="wrap heroGrid">
-
-    <div class="heroCard">
-      <div class="kicker">Clarity • Order • Confidence</div>
-      <h1>Build a business that feels organized — not overwhelming.</h1>
-      <p>Guided administrative and IT support designed to help you move forward with confidence.</p>
-
-      <img src="/assets/img/LAAP Image.png" alt="LAAP System Overview" class="feature-img">
-
-      <p>LAAP™ turns your answers into structure — step by step.</p>
-
-      <div class="heroBtns">
-        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-        <a class="btn btnGhost" href="/tutorials.html">Free Tutorials</a>
-        <a class="btn btnGhost" href="/templates.html">DIY Templates</a>
+  <div class="hero-slide active">
+    <div class="wrap heroGrid">
+      <div class="heroCard">
+        <div class="kicker">LAAP™ Guided System</div>
+        <h1>Build a business that feels organized — not overwhelming.</h1>
+        <p>Turn answers into structure, filings, and clarity with a guided cloud-based system.</p>
+        <div class="heroBtns">
+          <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+        </div>
+      </div>
+      <div class="heroVisual">
+        <img src="/assets/img/LAAP Image.png" alt="LAAP system preview">
       </div>
     </div>
-
-    <div class="side">
-      <h2>What we help you do</h2>
-      <ul>
-        <li>✔ Get organized fast</li>
-        <li>✔ Set things up the right way</li>
-        <li>✔ Use tools you understand</li>
-      </ul>
-
-      <img src="/assets/img/AI Agent Ipad.png" alt="Custom AI Agent" class="feature-img">
-
-      <p><strong>NEW:</strong> Custom AI Agents that answer calls, follow up on leads, and work 24/7.</p>
-      <a class="btn btnGold" href="/contact.html">Inquire About an AI Agent</a>
-    </div>
-
   </div>
+
+  <div class="hero-slide">
+    <div class="wrap heroGrid">
+      <div class="heroCard">
+        <div class="kicker">AI-Powered Support</div>
+        <h1>Your business — answered 24/7.</h1>
+        <p>Custom AI agents that answer calls, follow up on leads, and integrate with your systems.</p>
+        <div class="heroBtns">
+          <a class="btn btnGold" href="/contact.html">See AI Agent</a>
+        </div>
+      </div>
+      <div class="heroVisual">
+        <img src="/assets/img/AI Agent Ipad.png" alt="AI agent preview">
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-slide">
+    <div class="wrap heroGrid">
+      <div class="heroCard">
+        <div class="kicker">Free Tools</div>
+        <h1>Start free. Save later. Scale when ready.</h1>
+        <p>Use calculators and tools today — save everything inside LAAP when ready.</p>
+        <div class="heroBtns">
+          <a class="btn btnGold" href="/free.html">Free Tools</a>
+        </div>
+      </div>
+      <div class="heroVisual">
+        <img src="/assets/img/free-tools-preview.png" alt="Free tools preview">
+      </div>
+    </div>
+  </div>
+
 </section>
 
-</main>
+<section class="support-systems">
+  <div class="wrap">
+    <div class="support-header">
+      <h2>Your Support Systems</h2>
+      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
+    </div>
+
+    <div class="support-grid">
+      <div class="support-card highlight">
+        <span class="card-tag">Guided System</span>
+        <h3>LAAP Suite™</h3>
+        <ul>
+          <li>Structured workflows</li>
+          <li>Clarity-driven guidance</li>
+          <li>Integrated tools</li>
+        </ul>
+        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+      </div>
+
+      <div class="support-card">
+        <span class="card-tag">Always Free</span>
+        <h3>Free Tutorials</h3>
+        <a class="btn btnGhost" href="/tutorials.html">View Tutorials</a>
+      </div>
+
+      <div class="support-card">
+        <span class="card-tag">DIY Resources</span>
+        <h3>DIY Templates</h3>
+        <a class="btn btnGhost" href="/templates.html">Browse Templates</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   © 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
 </footer>
+
+<script>
+const slides = document.querySelectorAll('.hero-slide');
+let index = 0;
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 10000);
+</script>
 
 </body>
 </html>
