@@ -296,7 +296,18 @@ footer{
     with confidence, structure, and clarity.
   </p>
 
-  <!-- LAAP IMAGE -->
+  <!-- LAAP IMAGE -->/* ===== IMAGE SIZE CONTROL ===== */
+
+.laap-img,
+.ai-img {
+  max-width:100%;
+  height:auto;
+  max-height:240px;   /* adjust as needed */
+  object-fit:contain;
+  display:block;
+  margin:18px auto;
+}
+
   <div class="laap-hero-visual">
    <img src="/assets/img/LAAP Image.png" alt="LAAP System Overview" class="laap-img">
 
