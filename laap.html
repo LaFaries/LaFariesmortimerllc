@@ -1,212 +1,275 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LAAP Suite™ | LaFaries Mortimer LLC</title>
-  <meta name="description" content="LAAP Suite™ is a guided administrative system that replaces scattered admin work with clarity, structure, and consistency." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<title>LAAP Suite™ | LaFaries Mortimer LLC</title>
+<meta name="description" content="LAAP Suite™ is a guided administrative system that replaces scattered admin work with clarity, structure, and consistency.">
 
-  <style>
-    :root{
-      --ivory:#F8F6F1;
-      --cream:#DFD3B0;
-      --gold:#DAB85C;
-      --charcoal:#1D1D1D;
-      --muted:rgba(29,29,29,.7);
-      --line:rgba(29,29,29,.14);
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-      --radius:22px;
-      --shadow:0 18px 45px rgba(0,0,0,.08);
+<style>
+:root{
+  --ivory:#F8F6F1;
+  --cream:#DFD3B0;
+  --gold:#DAB85C;
+  --charcoal:#1D1D1D;
+  --muted:rgba(29,29,29,.7);
+  --line:rgba(29,29,29,.14);
 
-      --heading:"Cormorant Garamond", Georgia, serif;
-      --body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
+  --radius:24px;
+  --shadow:0 22px 60px rgba(0,0,0,.10);
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:var(--body);
-      background:linear-gradient(180deg,var(--ivory),#fff);
-      color:var(--charcoal);
-      line-height:1.6;
-    }
+  --heading:"Cormorant Garamond", serif;
+  --body:"Inter", system-ui, sans-serif;
+}
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
 
-    /* ================= HEADER ================= */
-    header{
-  position:sticky;top:0;z-index:50;
-  background
+body{
+  font-family:var(--body);
+  background:linear-gradient(180deg,var(--ivory),#fff);
+  color:var(--charcoal);
+  line-height:1.6;
+}
 
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:16px;padding:14px 0;
-    }
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{
-      width:44px;height:44px;border-radius:999px;
-      border:1px solid rgba(29,29,29,.12);background:#fff;
-    }
-    .brand strong{font-family:var(--heading);font-size:18px}
-    .brand span{
-      display:block;font-size:11px;
-      letter-spacing:.12em;text-transform:uppercase;
-      color:rgba(29,29,29,.55)
-    }
-    nav{display:flex;gap:14px;flex-wrap:wrap}
-    nav a{
-      font-size:14px;color:rgba(29,29,29,.75);
-      padding:8px 10px;border-radius:999px;
-    }
-    nav a.active,nav a:hover{
-      background:rgba(218,184,92,.22);
-      color:rgba(29,29,29,.95);
-    }
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 16px;border-radius:999px;
-      font-size:12px;letter-spacing:.14em;
-      text-transform:uppercase;font-weight:600;
-      border:1px solid transparent;
-      white-space:nowrap;
-    }
-    .btnGold{background:var(--gold);color:#1a1a1a}
-    .btnGhost{border-color:rgba(29,29,29,.25)}
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(248,246,241,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
 
-    /* ================= HERO ================= */
-    .laap-hero{
-      padding:64px 0 48px;
-      background:
-        radial-gradient(800px 400px at 20% 0%, rgba(218,184,92,.22), transparent 55%),
-        linear-gradient(180deg, rgba(248,246,241,.85), #fff);
-      border-bottom:1px solid var(--line);
-    }
-    .laap-hero-grid{
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:32px;
-      align-items:center;
-    }
-    .laap-eyebrow{
-      display:inline-block;
-      font-size:12px;letter-spacing:.14em;
-      text-transform:uppercase;
-      color:rgba(29,29,29,.6);
-      margin-bottom:12px;
-    }<span class="laap-context-badge">
-  You’re in LAAP Suite™
-</span>
-.lAAP-context-badge,
-.lAAP-context-badge{
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 0;
+  gap:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  padding:3px;
+  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
+  box-shadow:
+    0 0 0 2px rgba(218,184,92,.6),
+    0 10px 26px rgba(218,184,92,.55);
+  animation:haloPulse 6s ease-in-out infinite;
+}
+
+@keyframes haloPulse{
+  0%,100%{
+    box-shadow:
+      0 0 0 2px rgba(218,184,92,.55),
+      0 10px 26px rgba(218,184,92,.45);
+  }
+  50%{
+    box-shadow:
+      0 0 0 3px rgba(218,184,92,.9),
+      0 14px 34px rgba(218,184,92,.65);
+  }
+}
+
+.brand strong{
+  font-family:var(--heading);
+  font-size:18px;
+}
+
+.brand span{
+  display:block;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(29,29,29,.55);
+}
+
+nav{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  font-size:14px;
+  padding:8px 12px;
+  border-radius:999px;
+  color:rgba(29,29,29,.75);
+}
+
+nav a.active,
+nav a:hover{
+  background:rgba(218,184,92,.22);
+  color:#1a1a1a;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+  white-space:nowrap;
+}
+
+.btnGold{background:var(--gold);color:#1a1a1a}
+.btnGhost{border:1px solid rgba(29,29,29,.25)}
+
+/* ================= HERO ================= */
+.laap-hero{
+  padding:56px 0 44px;
+  background:
+    radial-gradient(900px 420px at 20% 0%, rgba(218,184,92,.22), transparent 55%),
+    linear-gradient(180deg, rgba(248,246,241,.9), #fff);
+  border-bottom:1px solid var(--line);
+}
+
+.laap-hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:36px;
+  align-items:center;
+}
+
+/* Context badge */
+.laap-context{
   display:inline-block;
   font-size:11px;
   letter-spacing:.14em;
   text-transform:uppercase;
-  padding:6px 12px;
+  padding:6px 14px;
   border-radius:999px;
   background:rgba(218,184,92,.18);
   color:#7a6426;
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 
-    .laap-hero h1{
-      font-family:var(--heading);
-      font-size:52px;line-height:1.02;
-      margin:0 0 12px;
-    }
-    .laap-hero h1 span{color:var(--gold)}
-    .laap-hero p{
-      font-size:16px;
-      color:rgba(29,29,29,.72);
-      max-width:52ch;
-    }
-    .laap-actions{display:flex;gap:12px;margin-top:18px}
+.laap-hero h1{
+  font-family:var(--heading);
+  font-size:52px;
+  line-height:1.05;
+  margin:0 0 14px;
+}
 
-    .laap-visual{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .laap-placeholder{
-      height:220px;
-      border-radius:16px;
-      border:1px dashed rgba(29,29,29,.25);
-      display:flex;align-items:center;justify-content:center;
-      font-style:italic;color:rgba(29,29,29,.55);
-    }
+.laap-hero h1 span{color:var(--gold)}
 
-    /* ================= SECTIONS ================= */
-    main{padding:48px 0}
-    h2{
-      font-family:var(--heading);
-      font-size:34px;margin:0 0 10px;
-    }
-    p{margin:0;color:var(--muted)}
+.laap-hero p{
+  font-size:16px;
+  color:var(--muted);
+  max-width:54ch;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;margin-top:24px;
-    }
-    .card{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:20px;
-      padding:22px;
-      box-shadow:0 10px 26px rgba(0,0,0,.05);
-    }
-    .card h3{
-      font-family:var(--heading);
-      font-size:22px;margin:0 0 6px;
-    }
+.laap-actions{
+  display:flex;
+  gap:14px;
+  margin-top:22px;
+}
 
-    /* ================= VISUAL BLOCKS ================= */
-    .visual-block{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:28px;
-      align-items:center;
-      margin:56px 0;
-    }
-    .visual-block.reverse{
-      grid-template-columns:.9fr 1.1fr;
-    }
-    .visual-block img{
-      border-radius:18px;
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      background:#fff;
-    }
+.laap-visual{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
 
-    /* ================= FOOTER ================= */
-    footer{
-      border-top:1px solid var(--line);
-      background:rgba(248,246,241,.75);
-      padding:18px 0;
-      font-size:12px;color:rgba(29,29,29,.55);
-    }
+.laap-placeholder{
+  height:230px;
+  border-radius:16px;
+  border:1px dashed rgba(29,29,29,.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-style:italic;
+  color:rgba(29,29,29,.55);
+}
 
-    /* ================= MOBILE ================= */
-    @media(max-width:900px){
-      .laap-hero-grid,
-      .visual-block,
-      .visual-block.reverse{
-        grid-template-columns:1fr;
-      }
-      .cards{grid-template-columns:1fr}
-      h1{font-size:40px}
-    }
-  </style>
+/* ================= CONTENT ================= */
+main{padding:56px 0}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-bottom:60px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:24px;
+  box-shadow:0 12px 30px rgba(0,0,0,.06);
+}
+
+.card h3{
+  font-family:var(--heading);
+  font-size:22px;
+  margin:0 0 6px;
+}
+
+.visual-block{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:36px;
+  align-items:center;
+  margin:60px 0;
+}
+
+.visual-block.reverse{
+  grid-template-columns:.9fr 1.1fr;
+}
+
+.visual-block img{
+  border-radius:20px;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  border-top:1px solid var(--line);
+  background:rgba(248,246,241,.8);
+  padding:18px 0;
+  font-size:12px;
+  color:rgba(29,29,29,.55);
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  .laap-hero-grid,
+  .visual-block,
+  .visual-block.reverse{
+    grid-template-columns:1fr;
+  }
+  .cards{grid-template-columns:1fr}
+  .laap-hero h1{font-size:40px}
+}
+</style>
 </head>
 
 <body>
@@ -240,7 +303,7 @@
 <section class="laap-hero">
   <div class="wrap laap-hero-grid">
     <div>
-      <span class="laap-eyebrow">LAAP Suite™</span>
+      <span class="laap-context">You’re in LAAP Suite™</span>
       <h1>A guided administrative system —<br><span>not just tools.</span></h1>
       <p>
         LAAP replaces scattered admin work with a clear, repeatable system.
@@ -275,39 +338,6 @@
     </div>
   </section>
 
-  <section class="visual-block">
-    <div>
-      <h2>How LAAP Works</h2>
-      <p>
-        From intake to completion, LAAP organizes administrative work
-        into a dependable, repeatable system.
-      </p>
-    </div>
-    <img src="/assets/img/laap-workflow.png" alt="LAAP workflow diagram">
-  </section>
-
-  <section class="visual-block reverse">
-    <div>
-      <h2>Templates & Tools</h2>
-      <p>
-        Pre-built templates eliminate guesswork and standardize operations
-        across your organization.
-      </p>
-    </div>
-    <img src="/assets/img/laap-templates.png" alt="LAAP templates preview">
-  </section>
-
-  <section class="visual-block">
-    <div>
-      <h2>Guided Implementation</h2>
-      <p>
-        Every system is implemented with clarity so tools are used
-        correctly from day one.
-      </p>
-    </div>
-    <img src="/assets/img/laap-guided-setup.png" alt="LAAP guided setup">
-  </section>
-
 </main>
 
 <footer>
@@ -317,7 +347,7 @@
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
