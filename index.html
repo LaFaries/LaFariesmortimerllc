@@ -56,14 +56,23 @@ header{
   gap:12px;
 }
 .brand-logo{
-  width:44px;height:44px;border-radius:50%;
+  width:44px;
+  height:44px;
+  border-radius:50%;
   padding:3px;
   background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
+  box-shadow:
+    0 0 0 2px rgba(218,184,92,.6),
+    0 8px 22px rgba(218,184,92,.55);
 }
 .brand strong{font-family:var(--h);color:#fff}
 .brand span{font-size:11px;color:rgba(255,255,255,.6)}
-nav{display:flex;gap:14px;justify-content:center}
+
+nav{
+  display:flex;
+  gap:14px;
+  justify-content:center;
+}
 .nav-pill{
   padding:8px 14px;
   border-radius:999px;
@@ -74,6 +83,7 @@ nav{display:flex;gap:14px;justify-content:center}
   background:rgba(255,255,255,.08);
   box-shadow:0 0 18px rgba(218,184,92,.35);
 }
+
 .ctaTop{display:flex;gap:10px}
 .btn{
   padding:12px 16px;
@@ -86,31 +96,15 @@ nav{display:flex;gap:14px;justify-content:center}
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-/* ================= HERO VIDEO CAROUSEL ================= */
-.hero-carousel{
-  position:relative;
-  min-height:80vh;
-  overflow:hidden;
-}
-.hero-slide{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:scale(.98);
-  transition:opacity .9s ease, transform .9s ease;
-  pointer-events:none;
-}
-.hero-slide.active{
-  opacity:1;
-  transform:scale(1);
-  pointer-events:auto;
+/* ================= HERO ================= */
+.hero{
+  padding:90px 0;
 }
 .heroGrid{
   display:grid;
   grid-template-columns:1.2fr .8fr;
-  gap:32px;
+  gap:36px;
   align-items:center;
-  height:100%;
 }
 .heroCard{
   background:
@@ -137,20 +131,21 @@ nav{display:flex;gap:14px;justify-content:center}
   color:rgba(29,29,29,.75);
 }
 .heroBtns{
-  margin-top:22px;
+  margin-top:24px;
   display:flex;
   gap:12px;
   flex-wrap:wrap;
 }
+
+/* RIGHT SIDE VISUAL */
 .heroVisual{
   display:flex;
   align-items:center;
   justify-content:center;
 }
-.heroVisual video{
+.heroVisual img{
   max-width:100%;
   max-height:420px;
-  border-radius:18px;
   object-fit:contain;
   filter:drop-shadow(0 30px 80px rgba(0,0,0,.25));
 }
@@ -221,7 +216,7 @@ footer{
 @media(max-width:980px){
   .heroGrid,.support-grid{grid-template-columns:1fr}
   nav{display:none}
-  .heroVisual video{max-height:280px}
+  .heroVisual img{max-height:280px}
 }
 </style>
 </head>
@@ -254,65 +249,27 @@ footer{
   </div>
 </header>
 
-<section class="hero-carousel">
+<section class="hero">
+  <div class="wrap heroGrid">
 
-  <!-- SLIDE 1 -->
-  <div class="hero-slide active">
-    <div class="wrap heroGrid">
-      <div class="heroCard">
-        <div class="kicker">LAAP™ Guided System</div>
-        <h1>Build a business that feels organized — not overwhelming.</h1>
-        <p>Turn answers into structure, filings, and clarity with a guided cloud-based system.</p>
-        <div class="heroBtns">
-          <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-        </div>
-      </div>
-      <div class="heroVisual">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="/assets/video/TRIAL__Hero-AI-Agent2.mp4" type="video/mp4">
-        </video>
+    <div class="heroCard">
+      <div class="kicker">LAAP™ Guided System</div>
+      <h1>Build a business that feels organized — not overwhelming.</h1>
+      <p>
+        Turn answers into structure, filings, and clarity with a guided,
+        cloud-based system you can access from anywhere.
+      </p>
+      <div class="heroBtns">
+        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+        <a class="btn btnGhost" href="/free.html">Free Tools</a>
       </div>
     </div>
-  </div>
 
-  <!-- SLIDE 2 -->
-  <div class="hero-slide">
-    <div class="wrap heroGrid">
-      <div class="heroCard">
-        <div class="kicker">AI-Powered Support</div>
-        <h1>Your business — answered 24/7.</h1>
-        <p>Custom AI agents that answer calls, follow up on leads, and integrate with your systems.</p>
-        <div class="heroBtns">
-          <a class="btn btnGold" href="/contact.html">See AI Agent</a>
-        </div>
-      </div>
-      <div class="heroVisual">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="/assets/video/TRIAL__Hero-AI-Agent.mp4" type="video/mp4">
-        </video>
-      </div>
+    <div class="heroVisual">
+      <img src="/assets/img/LAAP Image.png" alt="LAAP system preview">
     </div>
-  </div>
 
-  <!-- SLIDE 3 -->
-  <div class="hero-slide">
-    <div class="wrap heroGrid">
-      <div class="heroCard">
-        <div class="kicker">Free Tools</div>
-        <h1>Start free. Save later. Scale when ready.</h1>
-        <p>Use calculators and tools today — save everything inside LAAP when ready.</p>
-        <div class="heroBtns">
-          <a class="btn btnGold" href="/free.html">Free Tools</a>
-        </div>
-      </div>
-      <div class="heroVisual">
-        <video autoplay muted loop playsinline preload="metadata">
-          <source src="/assets/video/TRIAL__hero-free-tools.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
   </div>
-
 </section>
 
 <section class="support-systems">
@@ -352,17 +309,6 @@ footer{
 <footer>
   © 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
 </footer>
-
-<script>
-const slides = document.querySelectorAll('.hero-slide');
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove('active');
-  index = (index + 1) % slides.length;
-  slides[index].classList.add('active');
-}, 10000);
-</script>
 
 </body>
 </html>
