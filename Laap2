@@ -109,146 +109,168 @@ nav{
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-/* ================= HERO ================= */
-.hero{
-  padding:60px 0 40px;
-}
-.heroGrid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:26px;
-}
-.heroCard{
-  background:
-    radial-gradient(800px 360px at 20% 0%, rgba(218,184,92,.32), transparent 60%),
-    linear-gradient(180deg,#fff,rgba(248,246,241,.9));
-  border-radius:var(--radius);
-  padding:36px;
-  box-shadow:var(--shadow);
-}
-.kicker{
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:#555;
-}
-.hero h1{
-  font-family:var(--h);
-  font-size:50px;
-  line-height:1.05;
-  margin:12px 0;
-}
-.hero p{
-  max-width:52ch;
-  color:rgba(29,29,29,.75);
-}
-.heroBtns{
-  margin-top:20px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
+ /* ================= HEADER ================= */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(248,246,241,.9);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{
+      width:44px;height:44px;border-radius:999px;
+      border:1px solid rgba(29,29,29,.12);background:#fff;
+    }
+    .brand strong{font-family:var(--heading);font-size:18px}
+    .brand span{
+      display:block;font-size:11px;
+      letter-spacing:.12em;text-transform:uppercase;
+      color:rgba(29,29,29,.55)
+    }
+    nav{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{
+      font-size:14px;color:rgba(29,29,29,.75);
+      padding:8px 10px;border-radius:999px;
+    }
+    nav a.active,nav a:hover{
+      background:rgba(218,184,92,.22);
+      color:rgba(29,29,29,.95);
+    }
 
-.side{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-.side h2{
-  font-family:var(--h);
-  font-size:28px;
-  margin:0 0 10px;
-}
-.side ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-.side li{margin-bottom:8px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 16px;border-radius:999px;
+      font-size:12px;letter-spacing:.14em;
+      text-transform:uppercase;font-weight:600;
+      border:1px solid transparent;
+      white-space:nowrap;
+    }
+    .btnGold{background:var(--gold);color:#1a1a1a}
+    .btnGhost{border-color:rgba(29,29,29,.25)}
 
-/* ================= CORE SYSTEMS ================= */
-.core-systems{
-  background:
-    radial-gradient(900px 360px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
-    linear-gradient(180deg,#0f1115,#151821);
-  padding:70px 0;
-}
-.sectionTitle.light h3{
-  font-family:var(--h);
-  font-size:36px;
-  color:#fff;
-  margin:0;
-}
-.sectionTitle.light p{
-  color:rgba(255,255,255,.7);
-  max-width:60ch;
-  margin:6px 0 36px;
-}
+    /* ================= HERO ================= */
+    .laap-hero{
+      padding:64px 0 48px;
+      background:
+        radial-gradient(800px 400px at 20% 0%, rgba(218,184,92,.22), transparent 55%),
+        linear-gradient(180deg, rgba(248,246,241,.85), #fff);
+      border-bottom:1px solid var(--line);
+    }
+    .laap-hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:32px;
+      align-items:center;
+    }
+    .laap-eyebrow{
+      display:inline-block;
+      font-size:12px;letter-spacing:.14em;
+      text-transform:uppercase;
+      color:rgba(29,29,29,.6);
+      margin-bottom:12px;
+    }
+    .laap-hero h1{
+      font-family:var(--heading);
+      font-size:52px;line-height:1.02;
+      margin:0 0 12px;
+    }
+    .laap-hero h1 span{color:var(--gold)}
+    .laap-hero p{
+      font-size:16px;
+      color:rgba(29,29,29,.72);
+      max-width:52ch;
+    }
+    .laap-actions{display:flex;gap:12px;margin-top:18px}
 
-.system-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-.system-card{
-  background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:26px;
-  padding:32px;
-  border:1px solid rgba(255,255,255,.1);
-  box-shadow:0 40px 110px rgba(0,0,0,.85);
-  color:#fff;
-}
-.system-card.highlight{
-  border-color:rgba(218,184,92,.7);
-  background:
-    radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.4), transparent 60%),
-    linear-gradient(180deg,#1a1d24,#0f1115);
-}
-.system-tag{
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:rgba(218,184,92,.9);
-}
-.system-card h4{
-  font-family:var(--h);
-  font-size:26px;
-  margin:10px 0;
-}
-.system-card p{
-  color:rgba(255,255,255,.78);
-}
-.system-card ul{
-  padding-left:18px;
-  margin:12px 0 18px;
-}
-.system-card li{margin:6px 0}
+    .laap-visual{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .laap-placeholder{
+      height:220px;
+      border-radius:16px;
+      border:1px dashed rgba(29,29,29,.25);
+      display:flex;align-items:center;justify-content:center;
+      font-style:italic;color:rgba(29,29,29,.55);
+    }
 
-/* ================= FOOTER ================= */
-footer{
-  background:rgba(248,246,241,.95);
-  border-top:1px solid var(--line);
-  padding:18px 0;
-  text-align:center;
-  font-size:12px;
-  color:rgba(29,29,29,.6);
-}
+    /* ================= SECTIONS ================= */
+    main{padding:48px 0}
+    h2{
+      font-family:var(--heading);
+      font-size:34px;margin:0 0 10px;
+    }
+    p{margin:0;color:var(--muted)}
 
-/* ================= MOBILE ================= */
-@media(max-width:980px){
-  .heroGrid,.system-grid{grid-template-columns:1fr}
-  nav{display:none}
-}
-</style>
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;margin-top:24px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+      box-shadow:0 10px 26px rgba(0,0,0,.05);
+    }
+    .card h3{
+      font-family:var(--heading);
+      font-size:22px;margin:0 0 6px;
+    }
+
+    /* ================= VISUAL BLOCKS ================= */
+    .visual-block{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;
+      align-items:center;
+      margin:56px 0;
+    }
+    .visual-block.reverse{
+      grid-template-columns:.9fr 1.1fr;
+    }
+    .visual-block img{
+      border-radius:18px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+
+    /* ================= FOOTER ================= */
+    footer{
+      border-top:1px solid var(--line);
+      background:rgba(248,246,241,.75);
+      padding:18px 0;
+      font-size:12px;color:rgba(29,29,29,.55);
+    }
+
+    /* ================= MOBILE ================= */
+    @media(max-width:900px){
+      .laap-hero-grid,
+      .visual-block,
+      .visual-block.reverse{
+        grid-template-columns:1fr;
+      }
+      .cards{grid-template-columns:1fr}
+      h1{font-size:40px}
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="/">
-      <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
       <div>
         <strong>LaFaries Mortimer LLC</strong>
         <span>Administrative & IT Services</span>
@@ -256,147 +278,105 @@ footer{
     </a>
 
     <nav>
-      <a class="nav-pill" href="/">Home</a>
-      <a class="nav-pill" href="/about.html">About</a>
-      <a class="nav-pill" href="/laap.html">LAAP Suite</a>
-      <a class="nav-pill" href="/services.html">Services</a>
-      <a class="nav-pill" href="/faq.html">FAQ</a>
-      <a class="nav-pill" href="/contact.html">Contact</a>
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a class="active" href="/laap.html">LAAP Suite</a>
+      <a href="/apps.html">Apps</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/contact.html">Contact</a>
     </nav>
 
-    <div class="ctaTop">
+    <div>
       <a class="btn btnGhost" href="/apps.html">Open Tools</a>
       <a class="btn btnGold" href="/contact.html">Book a Call</a>
     </div>
   </div>
 </header>
 
-<main>
-
-<section class="hero">
-  <div class="wrap heroGrid">
-    <div class="heroCard">
-
-  <div class="kicker">Clarity • Order • Confidence</div>
-
-  <h1>Build a business that feels organized — not overwhelming.</h1>
-
-  <p>
-    Guided administrative and IT support designed to help you move forward
-    with confidence, structure, and clarity.
-  </p>
-
-  <!-- LAAP IMAGE -->
-  <div class="laap-hero-visual">
-    <img 
-      src="/assets/img/laap-snapshot.png"
-      alt="LAAP guided system preview"
-    >
-  </div>
-
-  <p class="hero-sub">
-    LAAP™ turns your answers into structure — step by step.
-    No guessing. No confusion. Just clear next actions.
-  </p>
-
-  <div class="heroBtns">
-    <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-    <a class="btn btnGhost" href="/tutorials.html">Free Tutorials</a>
-    <a class="btn btnGhost" href="/templates.html">DIY Templates</a>
-  </div>
-
-</div>
-<div class="side enhanced">
-
-  <h2>What we help you do</h2>
-
-  <p class="side-intro">
-    We don’t just support your business — we help it work
-    even when you’re not available.
-  </p>
-
-  <ul class="side-list">
-    <li>✔ Get organized fast — without overwhelm</li>
-    <li>✔ Set things up the right way from the start</li>
-    <li>✔ Use tools you actually understand and control</li>
-  </ul>
-
-  <!-- AI AGENT IMAGE -->
-  <div class="ai-hero-visual">
-    <img 
-      src="/assets/img/ai-agent-preview.png"
-      alt="Custom AI Agent answering business calls"
-    >
-  </div>
-
-  <div class="mini-card ai-feature">
-    <span class="new-badge">NEW</span>
-
-    <h3>Custom AI Agent for Your Business</h3>
-
-    <p>
-      Don’t miss another opportunity.
-      We can build an AI agent that works for your business
-      24/7 — even when you’re offline.
-    </p>
-
-    <ul class="icon-list">
-      <li>📞 A receptionist that never sleeps</li>
-      <li>📩 A sales agent that follows up on leads</li>
-      <li>📊 Smart routing, responses, and data capture</li>
-    </ul>
-    <p class="fine">
-      Missed calls are missed revenue.
-      Your AI agent ensures every inquiry is handled.
-    </p>
-
-    <a class="btn btnGold" href="/contact.html">
-      Inquire About an AI Agent
-    </a>
-  </div>
-
-</div>
-
-</section>
-
-<section class="core-systems">
-  <div class="wrap">
-    <div class="sectionTitle light">
-      <h3>Your Support Systems</h3>
-      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
+<section class="laap-hero">
+  <div class="wrap laap-hero-grid">
+    <div>
+      <span class="laap-eyebrow">LAAP Suite™</span>
+      <h1>A guided administrative system —<br><span>not just tools.</span></h1>
+      <p>
+        LAAP replaces scattered admin work with a clear, repeatable system.
+        Every step is intentional. Every tool has a purpose.
+      </p>
+      <div class="laap-actions">
+        <a class="btn btnGold" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank">Open LAAP Wizard</a>
+        <a class="btn btnGhost" href="/contact.html">Guided Setup</a>
+      </div>
     </div>
 
-    <div class="system-grid">
-      <div class="system-card highlight">
-        <span class="system-tag">Guided System</span>
-        <h4>LAAP Suite™</h4>
-        <p>A guided decision and organization system that turns answers into clear next steps.</p>
-        <ul>
-          <li>Structured workflows</li>
-          <li>Clarity-driven guidance</li>
-          <li>Integrated tools</li>
-        </ul>
-        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-      </div>
-
-      <div class="system-card">
-        <span class="system-tag">Always Free</span>
-        <h4>Free Tutorials</h4>
-        <p>Step-by-step guidance to handle administrative and IT tasks with confidence.</p>
-        <a class="btn btnGhost" href="/tutorials.html">View Tutorials</a>
-      </div>
-
-      <div class="system-card">
-        <span class="system-tag">DIY Resources</span>
-        <h4>DIY Templates</h4>
-        <p>Professional fill-in-the-blank documents that save time and reduce confusion.</p>
-        <a class="btn btnGhost" href="/templates.html">Browse Templates</a>
-      </div>
+    <div class="laap-visual">
+      <div class="laap-placeholder">LAAP System Overview</div>
     </div>
   </div>
 </section>
+
+<main class="wrap">
+
+  <section class="cards">
+    <div class="card">
+      <h3>Process Automation</h3>
+      <p>Replace repetitive administrative tasks with consistent workflows.</p>
+    </div>
+    <div class="card">
+      <h3>Templates & Systems</h3>
+      <p>Professional documents and tools built for accuracy and efficiency.</p>
+    </div>
+    <div class="card">
+      <h3>Guided Setup</h3>
+      <p>Hands-on support to ensure systems are implemented correctly.</p>
+    </div>
+  </section>
+
+  <section class="visual-block">
+    <div>
+      <h2>How LAAP Works</h2>
+      <p>
+        From intake to completion, LAAP organizes administrative work
+        into a dependable, repeatable system.
+      </p>
+    </div>
+    <img src="/assets/img/laap-workflow.png" alt="LAAP workflow diagram">
+  </section>
+
+  <section class="visual-block reverse">
+    <div>
+      <h2>Templates & Tools</h2>
+      <p>
+        Pre-built templates eliminate guesswork and standardize operations
+        across your organization.
+      </p>
+    </div>
+    <img src="/assets/img/laap-templates.png" alt="LAAP templates preview">
+  </section>
+
+  <section class="visual-block">
+    <div>
+      <h2>Guided Implementation</h2>
+      <p>
+        Every system is implemented with clarity so tools are used
+        correctly from day one.
+      </p>
+    </div>
+    <img src="/assets/img/laap-guided-setup.png" alt="LAAP guided setup">
+  </section>
 
 </main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> LaFaries Mortimer LLC
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
 
 <footer>
   © 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
