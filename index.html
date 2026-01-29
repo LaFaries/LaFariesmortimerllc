@@ -1,270 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LaFaries Mortimer LLC | Administrative & IT Services</title>
-<meta name="description" content="Clear administrative and IT support that brings order, structure, and confidence.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --ivory:#F8F6F1;
-  --cream:#DFD3B0;
-  --gold:#DAB85C;
-  --dark:#0F1115;
-  --charcoal:#1D1D1D;
-  --line:rgba(29,29,29,.14);
-  --radius:26px;
-  --shadow:0 26px 80px rgba(0,0,0,.22);
-  --h:"Cormorant Garamond",serif;
-  --b:"Inter",system-ui;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:var(--b);
-  background:linear-gradient(180deg,var(--ivory),#fff);
-  color:var(--charcoal);
-  line-height:1.6;
-}
-a{text-decoration:none;color:inherit}
-.wrap{max-width:1180px;margin:auto;padding:0 20px}
-
-/* HEADER */
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(15,17,21,.92);
-  backdrop-filter:blur(10px);
-}
-.nav{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:16px;
-  padding:14px 0;
-}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-logo{
-  width:44px;height:44px;border-radius:50%;padding:3px;
-  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
-}
-.brand strong{font-family:var(--h);color:#fff}
-.brand span{display:block;font-size:11px;color:rgba(255,255,255,.6)}
-
-nav{display:flex;justify-content:center;gap:14px}
-.nav-pill{
-  padding:8px 14px;border-radius:999px;
-  font-size:14px;color:rgba(255,255,255,.8);
-}
-.nav-pill:hover{
-  background:rgba(255,255,255,.08);
-  box-shadow:0 0 18px rgba(218,184,92,.35);
-  color:#fff;
-}
-
-.ctaTop{display:flex;gap:10px}
-.btn{
-  padding:12px 16px;border-radius:999px;
-  font-size:12px;letter-spacing:.14em;
-  text-transform:uppercase;font-weight:600;
-}
-.btnGold{background:var(--gold);color:#1a1a1a}
-.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
-
-/* HERO */
-.hero{padding:60px 0 40px}
-.heroGrid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:26px;
-}
-.heroCard{
-  background:
-    radial-gradient(800px 360px at 20% 0%, rgba(218,184,92,.32), transparent 60%),
-    linear-gradient(180deg,#fff,rgba(248,246,241,.9));
-  border-radius:var(--radius);
-  padding:36px;
-  box-shadow:var(--shadow);
-}
-.kicker{
-  font-size:12px;letter-spacing:.14em;
-  text-transform:uppercase;color:#555;
-}
-.hero h1{
-  font-family:var(--h);
-  font-size:50px;
-  line-height:1.05;
-  margin:12px 0;
-}
-.hero p{max-width:52ch;color:rgba(29,29,29,.75)}
-
-.lAAP-snapshot{
-  margin:22px 0 18px;
-  border-radius:18px;
-  overflow:hidden;
-  background:linear-gradient(180deg,#fff,rgba(248,246,241,.9));
-  box-shadow:0 22px 60px rgba(0,0,0,.18),
-             0 0 0 1px rgba(218,184,92,.35);
-}
-.lAAP-snapshot img{width:100%;display:block}
-
-.heroBtns{
-  margin-top:18px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.side{
-  background:#fff;
-  border-radius:var(--radius);
-  padding:30px;
-  box-shadow:var(--shadow);
-}
-.side h2{
-  font-family:var(--h);
-  font-size:28px;
-  margin:0 0 10px;
-}
-.side ul{list-style:none;padding:0;margin:0}
-.side li{margin-bottom:8px}
-
-/* AI FEATURE */
-.ai-feature{
-  margin-top:18px;
-  padding:20px;
-  border-radius:20px;
-  background:linear-gradient(180deg,#fff,rgba(248,246,241,.9));
-  border:1px solid var(--line);
-  box-shadow:0 18px 50px rgba(0,0,0,.15);
-}
-.ai-tag{
-  font-size:11px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--gold);
-}
-.ai-feature h3{
-  font-family:var(--h);
-  margin:6px 0;
-}
-.ai-feature ul{list-style:none;padding:0}
-.ai-feature li{margin-bottom:6px}
-
-/* CORE SYSTEMS */
-.core-systems{
-  background:
-    radial-gradient(900px 360px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
-    linear-gradient(180deg,#0f1115,#151821);
-  padding:70px 0;
-}
-.sectionTitle.light h3{
-  font-family:var(--h);
-  font-size:36px;
-  color:#fff;
-  margin:0;
-}
-.sectionTitle.light p{
-  color:rgba(255,255,255,.7);
-  max-width:60ch;
-  margin:6px 0 36px;
-}
-.system-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-.system-card{
-  background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:26px;
-  padding:32px;
-  border:1px solid rgba(255,255,255,.1);
-  box-shadow:0 40px 110px rgba(0,0,0,.85);
-  color:#fff;
-}
-.system-card.highlight{
-  border-color:rgba(218,184,92,.7);
-  background:
-    radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.4), transparent 60%),
-    linear-gradient(180deg,#1a1d24,#0f1115);
-}
-.system-tag{
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:rgba(218,184,92,.9);
-}
-.system-card h4{
-  font-family:var(--h);
-  font-size:26px;
-  margin:10px 0;
-}
-
-/* FOOTER */
-footer{
-  background:rgba(248,246,241,.95);
-  border-top:1px solid var(--line);
-  padding:18px 0;
-  text-align:center;
-  font-size:12px;
-  color:rgba(29,29,29,.6);
-}
-
-/* MOBILE */
-@media(max-width:980px){
-  .heroGrid,.system-grid{grid-template-columns:1fr}
-  nav{display:none}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LaFaries Mortimer LLC</title>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">
-      <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
-      </div>
-    </a>
-
-    <nav>
-      <a class="nav-pill" href="/">Home</a>
-      <a class="nav-pill" href="/about.html">About</a>
-      <a class="nav-pill" href="/laap.html">LAAP Suite</a>
-      <a class="nav-pill" href="/services.html">Services</a>
-      <a class="nav-pill" href="/faq.html">FAQ</a>
-      <a class="nav-pill" href="/contact.html">Contact</a>
-    </nav>
-
-    <div class="ctaTop">
-      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
-    </div>
-  </div>
+  <!-- header content -->
 </header>
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
   <div class="wrap heroGrid">
-    <div class="heroCard">
-      <div class="kicker">Clarity • Order • Confidence</div>
-      <h1>Build a business that feels organized — not overwhelming.</h1>
-      <p>Guided administrative and IT support designed to help you move forward with confidence.</p>
 
-      <div class="lAAP-snapshot">
-        <img src="/assets/img/laap-snapshot.png" alt="LAAP guided system preview">
+    <div class="heroCard">
+      <h1>Build a business that feels organized — not overwhelming.</h1>
+
+      <!-- SNAPSHOT -->
+      <div class="laap-snapshot">
+        <img src="/assets/img/laap-snapshot.png" alt="LAAP preview">
       </div>
 
       <div class="heroBtns">
@@ -275,23 +34,49 @@ footer{
     </div>
 
     <div class="side">
-      <h2>What we help you do</h2>
-      <ul>
-        <li>✔ Get organized fast</li>
-        <li>✔ Set things up the right way</li>
-        <li>✔ Use tools you actually understand</li>
-      </ul>
+      <!-- What we help you do + AI Agent -->
+    </div>
 
-      <div class="ai-feature">
-        <span class="ai-tag">New • Advanced Support</span>
-        <h3>Custom AI Agents for Your Business</h3>
+  </div>
+</section>
+
+<!-- ✅ THIS IS YOUR MISSING SECTION -->
+<section class="core-systems">
+  <div class="wrap">
+
+    <div class="sectionTitle light">
+      <h3>Your Support Systems</h3>
+      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
+    </div>
+
+    <div class="system-grid">
+
+      <div class="system-card highlight">
+        <span class="system-tag">Guided System</span>
+        <h4>LAAP Suite™</h4>
+        <p>A guided decision and organization system that turns answers into clear next steps.</p>
         <ul>
-          <li>📞 Answers calls 24/7</li>
-          <li>📩 Follows up on leads automatically</li>
-          <li>📊 Smart routing & data capture</li>
+          <li>Structured workflows</li>
+          <li>Clarity-driven guidance</li>
+          <li>Integrated tools</li>
         </ul>
-        <a class="btn btnGold" href="/contact.html">Inquire About an AI Agent</a>
+        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
       </div>
+
+      <div class="system-card">
+        <span class="system-tag">Always Free</span>
+        <h4>Free Tutorials</h4>
+        <p>Step-by-step guidance to handle administrative and IT tasks with confidence.</p>
+        <a class="btn btnGhost" href="/tutorials.html">View Tutorials</a>
+      </div>
+
+      <div class="system-card">
+        <span class="system-tag">DIY Resources</span>
+        <h4>DIY Templates</h4>
+        <p>Professional fill-in-the-blank documents that save time and reduce confusion.</p>
+        <a class="btn btnGhost" href="/templates.html">Browse Templates</a>
+      </div>
+
     </div>
   </div>
 </section>
