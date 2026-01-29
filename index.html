@@ -63,7 +63,6 @@ header{
 }
 .brand strong{font-family:var(--h);color:#fff}
 .brand span{font-size:11px;color:rgba(255,255,255,.6)}
-
 nav{display:flex;gap:14px;justify-content:center}
 .nav-pill{
   padding:8px 14px;
@@ -75,7 +74,6 @@ nav{display:flex;gap:14px;justify-content:center}
   background:rgba(255,255,255,.08);
   box-shadow:0 0 18px rgba(218,184,92,.35);
 }
-
 .ctaTop{display:flex;gap:10px}
 .btn{
   padding:12px 16px;
@@ -92,7 +90,6 @@ nav{display:flex;gap:14px;justify-content:center}
 .hero{
   padding:80px 0;
 }
-
 .hero-wrap{
   display:grid;
   grid-template-columns:1.2fr .8fr;
@@ -103,9 +100,8 @@ nav{display:flex;gap:14px;justify-content:center}
 /* TEXT CAROUSEL */
 .hero-text{
   position:relative;
-  min-height:320px;
+  min-height:340px;
 }
-
 .text-slide{
   position:absolute;
   inset:0;
@@ -113,26 +109,22 @@ nav{display:flex;gap:14px;justify-content:center}
   transform:translateY(10px);
   transition:opacity .6s ease, transform .6s ease;
 }
-
 .text-slide.active{
   opacity:1;
   transform:translateY(0);
 }
-
 .kicker{
   font-size:12px;
   letter-spacing:.14em;
   text-transform:uppercase;
   color:#555;
 }
-
 .hero-text h1{
   font-family:var(--h);
   font-size:50px;
   line-height:1.05;
   margin:12px 0;
 }
-
 .hero-text p{
   max-width:54ch;
   color:rgba(29,29,29,.75);
@@ -147,12 +139,12 @@ nav{display:flex;gap:14px;justify-content:center}
   box-shadow:0 30px 80px rgba(0,0,0,.25);
 }
 
-/* SUPPORT SYSTEMS (SLIGHTLY SMALLER) */
+/* SUPPORT SYSTEMS */
 .support-systems{
   background:
     radial-gradient(900px 400px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
     linear-gradient(180deg,#0f1115,#141720);
-  padding:70px 0;
+  padding:60px 0;
 }
 .support-header h2{
   font-family:var(--h);
@@ -162,17 +154,17 @@ nav{display:flex;gap:14px;justify-content:center}
 .support-header p{
   color:rgba(255,255,255,.7);
   max-width:60ch;
-  margin-bottom:36px;
+  margin-bottom:32px;
 }
 .support-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:26px;
+  gap:24px;
 }
 .support-card{
   background:linear-gradient(180deg,#1a1d24,#0f1115);
   border-radius:26px;
-  padding:30px;
+  padding:28px;
   border:1px solid rgba(255,255,255,.12);
   color:#fff;
 }
@@ -232,30 +224,22 @@ footer{
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-<div class="heroCard">
-  <div class="kicker">LAAP™ — Your Business Operating System</div>
+  <div class="wrap hero-wrap">
 
-  <h1>
-    Everything your business needs to start, stay compliant, and grow — in one place.
-  </h1>
+    <div class="hero-text">
 
-  <p>
-    LAAP™ automates business formation, filings, documentation, and yearly maintenance.
-    No confusion. No unnecessary fees. Just structure you can trust.
-  </p>
-
-  <div class="heroBtns">
-    <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-  </div>
-</div>
-
+      <div class="text-slide active">
+        <span class="kicker">LAAP™ — Your Business Operating System</span>
+        <h1>Everything your business needs to start, stay compliant, and grow.</h1>
+        <p>Automated filings, documentation, and yearly maintenance — all in one guided system.</p>
+        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+      </div>
 
       <div class="text-slide">
         <span class="kicker">AI-Powered Support</span>
         <h1>Your business — answered 24/7.</h1>
-        <p>Custom AI agents that answer calls, follow up on leads, and guide customers automatically.</p>
+        <p>AI agents that answer calls, follow up on leads, and guide customers automatically.</p>
         <a class="btn btnGold" href="/contact.html">See AI Agent</a>
       </div>
 
@@ -265,6 +249,7 @@ footer{
         <p>Use tools today — save everything inside LAAP when you’re ready.</p>
         <a class="btn btnGold" href="/free.html">Free Tools</a>
       </div>
+
     </div>
 
     <div class="hero-video">
@@ -276,7 +261,6 @@ footer{
   </div>
 </section>
 
-<!-- SUPPORT -->
 <section class="support-systems">
   <div class="wrap">
     <div class="support-header">
