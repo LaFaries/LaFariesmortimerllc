@@ -96,6 +96,51 @@ nav{display:flex;justify-content:center;gap:14px}
 .hero h1{font-family:var(--h);font-size:50px;line-height:1.05;margin:12px 0}
 .hero p{max-width:52ch;color:rgba(29,29,29,.75)}
 .heroBtns{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+<section class="support-systems">
+  <div class="wrap">
+
+    <header class="support-header">
+      <h2>Your Support Systems</h2>
+      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
+    </header>
+
+    <div class="support-grid">
+
+      <div class="support-card highlight">
+        <span class="card-tag">Guided System</span>
+        <h3>LAAP Suite™</h3>
+        <p>
+          A guided decision and organization system that turns answers into clear next steps.
+        </p>
+        <ul>
+          <li>Structured workflows</li>
+          <li>Clarity-driven guidance</li>
+          <li>Integrated tools</li>
+        </ul>
+        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+      </div>
+
+      <div class="support-card">
+        <span class="card-tag muted">Always Free</span>
+        <h3>Free Tutorials</h3>
+        <p>
+          Step-by-step guidance to handle administrative and IT tasks with confidence.
+        </p>
+        <a class="btn btnOutline" href="/tutorials.html">View Tutorials</a>
+      </div>
+
+      <div class="support-card">
+        <span class="card-tag muted">DIY Resources</span>
+        <h3>DIY Templates</h3>
+        <p>
+          Professional fill-in-the-blank documents that save time and reduce confusion.
+        </p>
+        <a class="btn btnOutline" href="/templates.html">Browse Templates</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 /* ================= SIDE ================= */
 .side{
@@ -146,6 +191,84 @@ footer{
 }
 
 /* ================= MOBILE ================= */
+/* ================= SUPPORT SYSTEMS ================= */
+
+.support-systems{
+  background:
+    radial-gradient(900px 400px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
+    linear-gradient(180deg,#0f1115,#141720);
+  padding:80px 0;
+}
+
+.support-header h2{
+  font-family:var(--h);
+  font-size:40px;
+  color:#fff;
+  margin:0 0 6px;
+}
+
+.support-header p{
+  color:rgba(255,255,255,.7);
+  max-width:60ch;
+  margin-bottom:48px;
+}
+
+.support-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+
+.support-card{
+  background:linear-gradient(180deg,#1a1d24,#0f1115);
+  border-radius:28px;
+  padding:34px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 40px 110px rgba(0,0,0,.85);
+  color:#fff;
+}
+
+.support-card h3{
+  font-family:var(--h);
+  font-size:28px;
+  margin:12px 0;
+}
+
+.support-card p{
+  color:rgba(255,255,255,.78);
+}
+
+.support-card ul{
+  margin:18px 0 26px;
+  padding-left:18px;
+}
+
+.support-card li{
+  margin:8px 0;
+}
+
+.card-tag{
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(218,184,92,.95);
+}
+
+.card-tag.muted{
+  color:rgba(218,184,92,.65);
+}
+
+.support-card.highlight{
+  border-color:rgba(218,184,92,.75);
+  background:
+    radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.45), transparent 60%),
+    linear-gradient(180deg,#1a1d24,#0f1115);
+}
+
+.btnOutline{
+  border:1px solid rgba(255,255,255,.35);
+  color:#fff;
+}
 @media(max-width:980px){
   .heroGrid,.system-grid{grid-template-columns:1fr}
   nav{display:none}
