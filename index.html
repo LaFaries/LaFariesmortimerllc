@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>LaFaries Mortimer LLC | Administrative & IT Services</title>
 <meta name="description" content="Clear administrative and IT support that brings order, structure, and confidence.">
 
@@ -11,22 +12,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-<style>.lAAP-img,
-.lAAP-visual img,
-.lAAP-img{
-  max-width:100%;
-  height:auto;
-  max-height:260px;   /* 👈 controls visual size */
-  object-fit:contain;
-  display:block;
-  margin:0 auto;
-}
-
+<style>
 :root{
   --ivory:#F8F6F1;
-  --cream:#DFD3B0;
   --gold:#DAB85C;
-  --dark:#0F1115;
   --charcoal:#1D1D1D;
   --line:rgba(29,29,29,.14);
   --radius:26px;
@@ -45,6 +34,16 @@ body{
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1180px;margin:auto;padding:0 20px}
+
+/* ================= IMAGE SIZE CONTROL ================= */
+.feature-img{
+  max-width:100%;
+  height:auto;
+  max-height:220px;
+  object-fit:contain;
+  display:block;
+  margin:20px auto;
+}
 
 /* ================= HEADER ================= */
 header{
@@ -67,67 +66,24 @@ header{
   gap:12px;
 }
 .brand-logo{
-  width:44px;
-  height:44px;
-  border-radius:50%;
+  width:44px;height:44px;border-radius:50%;
   padding:3px;
   background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-  box-shadow:
-    0 0 0 2px rgba(218,184,92,.6),
-    0 8px 22px rgba(218,184,92,.55);
+  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
 }
-.brand strong{
-  font-family:var(--h);
-  color:#fff;
-}
-.brand span{
-  display:block;
-  font-size:11px;
-  color:rgba(255,255,255,.6);
-}
-
-nav{
-  display:flex;
-  justify-content:center;
-  gap:14px;
-}
-.nav-pill{
-  position:relative;
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:14px;
-  color:rgba(255,255,255,.8);
-}
-.nav-pill:hover{
-  background:rgba(255,255,255,.08);
-  box-shadow:0 0 18px rgba(218,184,92,.35);
-  color:#fff;
-}
-
-.ctaTop{
-  display:flex;
-  gap:10px;
-}
-.btn{
-  padding:12px 16px;
-  border-radius:999px;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-weight:600;
-}
+.brand strong{font-family:var(--h);color:#fff}
+.brand span{font-size:11px;color:rgba(255,255,255,.6)}
+nav{display:flex;justify-content:center;gap:14px}
+.nav-pill{padding:8px 14px;border-radius:999px;font-size:14px;color:rgba(255,255,255,.8)}
+.nav-pill:hover{background:rgba(255,255,255,.08);box-shadow:0 0 18px rgba(218,184,92,.35)}
+.ctaTop{display:flex;gap:10px}
+.btn{padding:12px 16px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
 /* ================= HERO ================= */
-.hero{
-  padding:60px 0 40px;
-}
-.heroGrid{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:26px;
-}
+.hero{padding:60px 0 40px}
+.heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:26px}
 .heroCard{
   background:
     radial-gradient(800px 360px at 20% 0%, rgba(218,184,92,.32), transparent 60%),
@@ -136,45 +92,20 @@ nav{
   padding:36px;
   box-shadow:var(--shadow);
 }
-.kicker{
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:#555;
-}
-.hero h1{
-  font-family:var(--h);
-  font-size:50px;
-  line-height:1.05;
-  margin:12px 0;
-}
-.hero p{
-  max-width:52ch;
-  color:rgba(29,29,29,.75);
-}
-.heroBtns{
-  margin-top:20px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#555}
+.hero h1{font-family:var(--h);font-size:50px;line-height:1.05;margin:12px 0}
+.hero p{max-width:52ch;color:rgba(29,29,29,.75)}
+.heroBtns{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
 
+/* ================= SIDE ================= */
 .side{
   background:#fff;
   border-radius:var(--radius);
   padding:30px;
   box-shadow:var(--shadow);
 }
-.side h2{
-  font-family:var(--h);
-  font-size:28px;
-  margin:0 0 10px;
-}
-.side ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
+.side h2{font-family:var(--h);font-size:28px;margin:0 0 10px}
+.side ul{list-style:none;padding:0;margin:0}
 .side li{margin-bottom:8px}
 
 /* ================= CORE SYSTEMS ================= */
@@ -184,29 +115,14 @@ nav{
     linear-gradient(180deg,#0f1115,#151821);
   padding:70px 0;
 }
-.sectionTitle.light h3{
-  font-family:var(--h);
-  font-size:36px;
-  color:#fff;
-  margin:0;
-}
-.sectionTitle.light p{
-  color:rgba(255,255,255,.7);
-  max-width:60ch;
-  margin:6px 0 36px;
-}
-
-.system-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
+.sectionTitle.light h3{font-family:var(--h);font-size:36px;color:#fff}
+.sectionTitle.light p{color:rgba(255,255,255,.7);margin-bottom:36px}
+.system-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .system-card{
   background:linear-gradient(180deg,#1a1d24,#0f1115);
   border-radius:26px;
   padding:32px;
   border:1px solid rgba(255,255,255,.1);
-  box-shadow:0 40px 110px rgba(0,0,0,.85);
   color:#fff;
 }
 .system-card.highlight{
@@ -215,25 +131,9 @@ nav{
     radial-gradient(700px 320px at 20% 0%, rgba(218,184,92,.4), transparent 60%),
     linear-gradient(180deg,#1a1d24,#0f1115);
 }
-.system-tag{
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:rgba(218,184,92,.9);
-}
-.system-card h4{
-  font-family:var(--h);
-  font-size:26px;
-  margin:10px 0;
-}
-.system-card p{
-  color:rgba(255,255,255,.78);
-}
-.system-card ul{
-  padding-left:18px;
-  margin:12px 0 18px;
-}
-.system-card li{margin:6px 0}
+.system-tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(218,184,92,.9)}
+.system-card h4{font-family:var(--h);font-size:26px;margin:10px 0}
+.system-card p{color:rgba(255,255,255,.78)}
 
 /* ================= FOOTER ================= */
 footer{
@@ -285,144 +185,37 @@ footer{
 
 <section class="hero">
   <div class="wrap heroGrid">
+
     <div class="heroCard">
+      <div class="kicker">Clarity • Order • Confidence</div>
+      <h1>Build a business that feels organized — not overwhelming.</h1>
+      <p>Guided administrative and IT support designed to help you move forward with confidence.</p>
 
-  <div class="kicker">Clarity • Order • Confidence</div>
+      <img src="/assets/img/LAAP Image.png" alt="LAAP System Overview" class="feature-img">
 
-  <h1>Build a business that feels organized — not overwhelming.</h1>
+      <p>LAAP™ turns your answers into structure — step by step.</p>
 
-  <p>
-    Guided administrative and IT support designed to help you move forward
-    with confidence, structure, and clarity.
-  </p>
-
-  <!-- LAAP IMAGE -->/* ===== IMAGE SIZE CONTROL ===== */
-
-.laap-img,
-.ai-img {
-  max-width:100%;
-  height:auto;
-  max-height:240px;   /* adjust as needed */
-  object-fit:contain;
-  display:block;
-  margin:18px auto;
-}
-
-  <div class="laap-hero-visual">
-   <img src="/assets/img/LAAP Image.png" alt="LAAP System Overview" class="laap-img">
-
-  </div>
-
-  <p class="hero-sub">
-    LAAP™ turns your answers into structure — step by step.
-    No guessing. No confusion. Just clear next actions.
-  </p>
-
-  <div class="heroBtns">
-    <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-    <a class="btn btnGhost" href="/tutorials.html">Free Tutorials</a>
-    <a class="btn btnGhost" href="/templates.html">DIY Templates</a>
-  </div>
-
-</div>
-<div class="side enhanced">
-
-  <h2>What we help you do</h2>
-
-  <p class="side-intro">
-    We don’t just support your business — we help it work
-    even when you’re not available.
-  </p>
-
-  <ul class="side-list">
-    <li>✔ Get organized fast — without overwhelm</li>
-    <li>✔ Set things up the right way from the start</li>
-    <li>✔ Use tools you actually understand and control</li>
-  </ul>
-
-  <!-- AI AGENT IMAGE -->/* ===== IMAGE SIZE CONTROL ===== */
-
-.laap-img,
-.ai-img {
-  max-width:100%;
-  height:auto;
-  max-height:240px;   /* adjust as needed */
-  object-fit:contain;
-  display:block;
-  margin:18px auto;
-}
-
-  <div class="ai-hero-visual">
-    <img 
-      src="/assets/img/AI Agent Ipad.png"
-      alt="Custom AI Agent answering business calls"
-    >
-  </div>
-
-  <div class="mini-card ai-feature">
-    <span class="new-badge">NEW</span>
-
-    <h3>Custom AI Agent for Your Business</h3>
-
-    <p>
-      Don’t miss another opportunity.
-      We can build an AI agent that works for your business
-      24/7 — even when you’re offline.
-    </p>
-
-    <ul class="icon-list">
-      <li>📞 A receptionist that never sleeps</li>
-      <li>📩 A sales agent that follows up on leads</li>
-      <li>📊 Smart routing, responses, and data capture</li>
-    </ul>
-    <p class="fine">
-      Missed calls are missed revenue.
-      Your AI agent ensures every inquiry is handled.
-    </p>
-
-    <a class="btn btnGold" href="/contact.html">
-      Inquire About an AI Agent
-    </a>
-  </div>
-
-</div>
-
-</section>
-
-<section class="core-systems">
-  <div class="wrap">
-    <div class="sectionTitle light">
-      <h3>Your Support Systems</h3>
-      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
-    </div>
-
-    <div class="system-grid">
-      <div class="system-card highlight">
-        <span class="system-tag">Guided System</span>
-        <h4>LAAP Suite™</h4>
-        <p>A guided decision and organization system that turns answers into clear next steps.</p>
-        <ul>
-          <li>Structured workflows</li>
-          <li>Clarity-driven guidance</li>
-          <li>Integrated tools</li>
-        </ul>
+      <div class="heroBtns">
         <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-      </div>
-
-      <div class="system-card">
-        <span class="system-tag">Always Free</span>
-        <h4>Free Tutorials</h4>
-        <p>Step-by-step guidance to handle administrative and IT tasks with confidence.</p>
-        <a class="btn btnGhost" href="/tutorials.html">View Tutorials</a>
-      </div>
-
-      <div class="system-card">
-        <span class="system-tag">DIY Resources</span>
-        <h4>DIY Templates</h4>
-        <p>Professional fill-in-the-blank documents that save time and reduce confusion.</p>
-        <a class="btn btnGhost" href="/templates.html">Browse Templates</a>
+        <a class="btn btnGhost" href="/tutorials.html">Free Tutorials</a>
+        <a class="btn btnGhost" href="/templates.html">DIY Templates</a>
       </div>
     </div>
+
+    <div class="side">
+      <h2>What we help you do</h2>
+      <ul>
+        <li>✔ Get organized fast</li>
+        <li>✔ Set things up the right way</li>
+        <li>✔ Use tools you understand</li>
+      </ul>
+
+      <img src="/assets/img/AI Agent Ipad.png" alt="Custom AI Agent" class="feature-img">
+
+      <p><strong>NEW:</strong> Custom AI Agents that answer calls, follow up on leads, and work 24/7.</p>
+      <a class="btn btnGold" href="/contact.html">Inquire About an AI Agent</a>
+    </div>
+
   </div>
 </section>
 
