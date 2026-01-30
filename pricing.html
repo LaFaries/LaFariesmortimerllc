@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Pricing | LaFaries Mortimer LLC</title>
-<meta name="description" content="Transparent pricing for administrative systems, AI support, and the LAAP Suite™.">
+<meta name="description" content="Transparent pricing for administrative systems, AI support, LAAP Suite™, and custom website design.">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,7 +127,7 @@ nav{display:flex;gap:14px;justify-content:center}
 /* ================= PRICING GRID ================= */
 .pricing-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:26px;
   margin-bottom:80px;
 }
@@ -138,7 +138,6 @@ nav{display:flex;gap:14px;justify-content:center}
   padding:34px;
   border:1px solid rgba(255,255,255,.12);
   box-shadow:var(--shadow);
-  position:relative;
 }
 .price-card.featured{
   border-color:rgba(218,184,92,.85);
@@ -191,7 +190,10 @@ footer{
 }
 
 /* ================= MOBILE ================= */
-@media(max-width:980px){
+@media(max-width:1100px){
+  .pricing-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
   .pricing-grid{grid-template-columns:1fr}
   nav{display:none}
   .pricing-hero h1{font-size:42px}
@@ -230,8 +232,8 @@ footer{
   <div class="wrap">
     <h1>Clear pricing.<br><span>Real systems.</span></h1>
     <p>
-      Choose the level of structure and support your business needs.
-      Upgrade only when it makes sense.
+      Administrative systems, AI support, LAAP Suite™, and custom-built websites
+      designed for clarity, credibility, and growth.
     </p>
     <div class="gold-rule"></div>
   </div>
@@ -257,12 +259,25 @@ footer{
     <h3>LAAP Suite™</h3>
     <div class="price">$97 <span>/ month</span></div>
     <ul class="price-list">
-      <li>Guided business system</li>
+      <li>Guided business operating system</li>
       <li>Formation & compliance tracking</li>
       <li>Document & record management</li>
       <li>AI-assisted guidance</li>
     </ul>
     <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+  </div>
+
+  <div class="price-card">
+    <span class="plan-tag">Digital Presence</span>
+    <h3>Custom Websites</h3>
+    <div class="price">Custom</div>
+    <ul class="price-list">
+      <li>Strategic website design</li>
+      <li>Custom layout & branding</li>
+      <li>Mobile-optimized builds</li>
+      <li>Hosted & integrated with LAAP</li>
+    </ul>
+    <a class="btn btnGhost" href="/contact.html">Discuss Website</a>
   </div>
 
   <div class="price-card">
