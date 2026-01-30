@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Free Tools | LaFaries Mortimer LLC</title>
-<meta name="description" content="Free business tools, calculators, and converters. Save everything inside LAAP when ready.">
+<meta name="description" content="Free business tools and converters. Use instantly. Save everything inside LAAP™ when ready.">
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -19,8 +18,8 @@
   --dark:#0F1115;
   --charcoal:#1D1D1D;
   --line:rgba(29,29,29,.14);
-  --radius:26px;
-  --shadow:0 26px 80px rgba(0,0,0,.22);
+  --radius:28px;
+  --shadow:0 30px 100px rgba(0,0,0,.25);
   --h:"Cormorant Garamond",serif;
   --b:"Inter",system-ui;
 }
@@ -29,9 +28,8 @@
 body{
   margin:0;
   font-family:var(--b);
-  background:linear-gradient(180deg,var(--ivory),#ffffff);
+  background:#ffffff;
   color:var(--charcoal);
-  line-height:1.6;
 }
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1180px;margin:auto;padding:0 20px}
@@ -41,7 +39,7 @@ header{
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(15,17,21,.92);
+  background:rgba(15,17,21,.95);
   backdrop-filter:blur(10px);
 }
 .nav{
@@ -51,11 +49,7 @@ header{
   gap:16px;
   padding:14px 0;
 }
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
+.brand{display:flex;align-items:center;gap:12px}
 .brand-logo{
   width:44px;height:44px;border-radius:50%;
   padding:3px;
@@ -66,10 +60,8 @@ header{
 .brand span{font-size:11px;color:rgba(255,255,255,.6)}
 nav{display:flex;gap:14px;justify-content:center}
 .nav-pill{
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:14px;
-  color:rgba(255,255,255,.8);
+  padding:8px 14px;border-radius:999px;
+  font-size:14px;color:rgba(255,255,255,.8)
 }
 .nav-pill:hover{
   background:rgba(255,255,255,.08);
@@ -77,104 +69,133 @@ nav{display:flex;gap:14px;justify-content:center}
 }
 .ctaTop{display:flex;gap:10px}
 .btn{
-  padding:12px 18px;
-  border-radius:999px;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-weight:600;
-  display:inline-block;
+  padding:12px 16px;border-radius:999px;
+  font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:600;
 }
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-/* HERO */
+/* HERO – HIGH CONTRAST */
 .hero{
-  padding:90px 0 70px;
+  position:relative;
+  padding:140px 0 120px;
+  background:
+    radial-gradient(1000px 420px at 50% -15%, rgba(218,184,92,.38), transparent 55%),
+    linear-gradient(180deg,#0f1115,#141720);
+  color:#fff;
+}
+.hero .accent{
+  display:inline-block;
+  margin-bottom:18px;
+  font-size:13px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
 }
 .hero h1{
   font-family:var(--h);
-  font-size:54px;
-  line-height:1.05;
-  margin:0 0 12px;
+  font-size:64px;
+  margin:0 0 20px;
+  position:relative;
+  display:inline-block;
+}
+.hero h1::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-14px;
+  width:100%;
+  height:6px;
+  border-radius:6px;
+  background:
+    linear-gradient(90deg,#f5e6a8,#d9b65c,#b8913a);
+  box-shadow:
+    0 6px 18px rgba(218,184,92,.65),
+    inset 0 1px 0 rgba(255,255,255,.6);
 }
 .hero p{
-  max-width:62ch;
-  color:rgba(29,29,29,.75);
-  font-size:17px;
+  margin-top:32px;
+  font-size:18px;
+  max-width:65ch;
+  color:rgba(255,255,255,.78);
 }
 
-/* FREE TOOLS ACCENT */
-.free-tools{
-  position:relative;
-  padding:90px 0 80px;
-  background:
-    radial-gradient(900px 380px at 20% -10%, rgba(218,184,92,.22), transparent 55%),
-    radial-gradient(700px 300px at 80% 0%, rgba(218,184,92,.14), transparent 60%),
-    linear-gradient(180deg,#f9f7f2,#ffffff);
+/* RAISED DIVIDER */
+.hero-divider{
+  position:absolute;
+  bottom:-40px;
+  left:50%;
+  transform:translateX(-50%);
+  width:92%;
+  height:80px;
+  background:linear-gradient(180deg,#ffffff,#f8f6f1);
+  border-radius:40px;
+  box-shadow:0 -20px 60px rgba(0,0,0,.35);
 }
 
-.tool-grid{
+/* TOOLS */
+.tools{
+  padding:140px 0 90px;
+  background:linear-gradient(180deg,#f8f6f1,#ffffff);
+}
+.tools-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:34px;
 }
-
 .tool-card{
   background:linear-gradient(180deg,#ffffff,#f8f6f1);
-  border-radius:26px;
-  padding:32px;
+  border-radius:30px;
+  padding:36px;
   box-shadow:
-    0 20px 45px rgba(0,0,0,.12),
-    inset 0 0 0 1px rgba(218,184,92,.25);
+    0 30px 90px rgba(0,0,0,.22),
+    inset 0 0 0 1px rgba(218,184,92,.28);
   transition:transform .35s ease, box-shadow .35s ease;
 }
 .tool-card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-8px);
   box-shadow:
-    0 34px 90px rgba(0,0,0,.18),
+    0 42px 120px rgba(0,0,0,.3),
     inset 0 0 0 1px rgba(218,184,92,.45);
 }
 .tool-card h3{
   font-family:var(--h);
-  font-size:24px;
-  margin:0 0 6px;
+  font-size:28px;
+  margin:0 0 8px;
 }
 .tool-card p{
   font-size:14px;
   color:rgba(29,29,29,.7);
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 .tool-card label{
-  font-size:13px;
-  color:#555;
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:#777;
 }
 .tool-card input,
 .tool-card select{
   width:100%;
   padding:12px 14px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  margin:6px 0 12px;
-}
-.result{
-  font-weight:600;
-  margin-top:6px;
-}
-.save-box{
-  margin-top:14px;
-  padding:12px;
   border-radius:14px;
-  background:rgba(218,184,92,.15);
+  border:1px solid var(--line);
+  margin:6px 0 14px;
+}
+.result{font-weight:600}
+.save{
+  margin-top:14px;
   font-size:12px;
-  color:#7a6426;
+  color:var(--gold);
+  letter-spacing:.08em;
 }
 
 /* HUB */
 .hub{
-  padding:80px 0;
+  padding:110px 0;
   background:
-    radial-gradient(900px 400px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
+    radial-gradient(900px 420px at 50% -10%, rgba(218,184,92,.22), transparent 60%),
     linear-gradient(180deg,#0f1115,#141720);
 }
 .hub-grid{
@@ -184,22 +205,19 @@ nav{display:flex;gap:14px;justify-content:center}
 }
 .hub-card{
   background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:26px;
-  padding:34px;
+  border-radius:30px;
+  padding:38px;
   color:#fff;
+  box-shadow:0 40px 110px rgba(0,0,0,.85);
 }
 .hub-card h3{
   font-family:var(--h);
-  font-size:26px;
-  margin-top:0;
+  font-size:30px;
 }
-.hub-card p{
-  color:rgba(255,255,255,.7);
-}
+.hub-card p{color:rgba(255,255,255,.75)}
 
-/* FOOTER */
 footer{
-  background:rgba(248,246,241,.95);
+  background:#f8f6f1;
   border-top:1px solid var(--line);
   padding:18px 0;
   text-align:center;
@@ -207,9 +225,9 @@ footer{
   color:rgba(29,29,29,.6);
 }
 
-/* MOBILE */
 @media(max-width:980px){
   nav{display:none}
+  .hero h1{font-size:48px}
 }
 </style>
 </head>
@@ -228,10 +246,8 @@ footer{
 
     <nav>
       <a class="nav-pill" href="/">Home</a>
-      <a class="nav-pill" href="/about.html">About</a>
       <a class="nav-pill" href="/laap.html">LAAP Suite</a>
       <a class="nav-pill" href="/services.html">Services</a>
-      <a class="nav-pill" href="/faq.html">FAQ</a>
       <a class="nav-pill" href="/contact.html">Contact</a>
     </nav>
 
@@ -244,41 +260,62 @@ footer{
 
 <section class="hero">
   <div class="wrap">
-    <h1>Free Business Tools</h1>
-    <p>Use these tools freely. When you're ready, everything you save lives inside <strong>LAAP™</strong>.</p>
+    <span class="accent">Free Tools Hub</span>
+    <h1>Instant tools. Real clarity.</h1>
+    <p>
+      Plan, estimate, and decide with confidence.
+      When ready, everything saves and automates inside <strong>LAAP™</strong>.
+    </p>
   </div>
+  <div class="hero-divider"></div>
 </section>
 
-<section class="free-tools">
-  <div class="wrap tool-grid">
+<section class="tools">
+  <div class="wrap tools-grid">
 
     <div class="tool-card">
       <h3>Currency Converter</h3>
-      <p>Quick planning estimates.</p>
-      <label>USD</label>
-      <input type="number" id="usd" placeholder="Amount">
-      <div class="result" id="eurResult"></div>
-      <div class="save-box">Save conversions inside LAAP →</div>
+      <p>Quick estimates for global planning.</p>
+
+      <label>Amount</label>
+      <input type="number" id="currencyAmount">
+
+      <label>From</label>
+      <select id="fromCurrency">
+        <option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option>
+      </select>
+
+      <label>To</label>
+      <select id="toCurrency">
+        <option>EUR</option><option>USD</option><option>GBP</option><option>CAD</option>
+      </select>
+
+      <div class="result" id="currencyResult"></div>
+      <div class="save">Save inside LAAP →</div>
     </div>
 
     <div class="tool-card">
       <h3>Weight Converter</h3>
-      <p>Shipping & inventory support.</p>
+      <p>Shipping and inventory made simple.</p>
+
       <label>Pounds</label>
-      <input type="number" id="lbs" placeholder="lbs">
+      <input type="number" id="lbs">
       <div class="result" id="kgResult"></div>
-      <div class="save-box">Saved measurements live in LAAP →</div>
+      <div class="save">History saved in LAAP →</div>
     </div>
 
     <div class="tool-card">
       <h3>Quick Percentage</h3>
-      <p>Fast calculations for decisions.</p>
+      <p>Margins, pricing, and fees.</p>
+
       <label>Value</label>
-      <input type="number" id="value" placeholder="Value">
+      <input type="number" id="value">
+
       <label>Percent</label>
-      <input type="number" id="percent" placeholder="%">
+      <input type="number" id="percent">
+
       <div class="result" id="percentResult"></div>
-      <div class="save-box">Track calculations with LAAP →</div>
+      <div class="save">Track inside LAAP →</div>
     </div>
 
   </div>
@@ -286,25 +323,21 @@ footer{
 
 <section class="hub">
   <div class="wrap hub-grid">
-
     <div class="hub-card">
       <h3>Free Tutorials</h3>
-      <p>Step-by-step admin & IT guidance.</p>
+      <p>Learn before you spend.</p>
       <a class="btn btnGold" href="/tutorials.html">View Tutorials</a>
     </div>
-
     <div class="hub-card">
       <h3>DIY Templates</h3>
-      <p>Professional fill-in-the-blank documents.</p>
+      <p>Professional documents, ready.</p>
       <a class="btn btnGold" href="/templates.html">Browse Templates</a>
     </div>
-
     <div class="hub-card">
       <h3>LAAP™ System</h3>
-      <p>Save, organize, and automate everything.</p>
+      <p>Everything you calculate—saved.</p>
       <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
     </div>
-
   </div>
 </section>
 
@@ -313,17 +346,27 @@ footer{
 </footer>
 
 <script>
-usd.oninput = () =>
-  eurResult.textContent = usd.value ? `≈ €${(usd.value * 0.92).toFixed(2)}` : '';
+const rates={
+  USD:{USD:1,EUR:.92,GBP:.79,CAD:1.35},
+  EUR:{EUR:1,USD:1.09,GBP:.86,CAD:1.47},
+  GBP:{GBP:1,USD:1.27,EUR:1.16,CAD:1.72},
+  CAD:{CAD:1,USD:.74,EUR:.68,GBP:.58}
+};
 
-lbs.oninput = () =>
-  kgResult.textContent = lbs.value ? `≈ ${(lbs.value * 0.4536).toFixed(2)} kg` : '';
+const a=document.getElementById("currencyAmount"),
+f=document.getElementById("fromCurrency"),
+t=document.getElementById("toCurrency"),
+r=document.getElementById("currencyResult");
 
-percent.oninput = value.oninput = () =>
-  percentResult.textContent =
-    value.value && percent.value
-      ? `= ${(value.value * percent.value / 100).toFixed(2)}`
-      : '';
+function convert(){
+  if(!a.value)return r.textContent="";
+  r.textContent=`≈ ${(a.value*rates[f.value][t.value]).toFixed(2)} ${t.value}`;
+}
+a.oninput=f.onchange=t.onchange=convert;
+
+lbs.oninput=()=>kgResult.textContent=lbs.value?`≈ ${(lbs.value*.4536).toFixed(2)} kg`:"";
+value.oninput=percent.oninput=()=>percentResult.textContent=
+value.value&&percent.value?`= ${(value.value*percent.value/100).toFixed(2)}`:"";
 </script>
 
 </body>
