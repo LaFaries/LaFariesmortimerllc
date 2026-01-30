@@ -1,373 +1,288 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pricing | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Simple, transparent pricing for Administrative and IT services." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <!-- Fonts (same as index) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Pricing | LaFaries Mortimer LLC</title>
+<meta name="description" content="Transparent pricing for administrative systems, AI support, and the LAAP Suite™.">
 
-  <style>
-    :root{
-      --ivory:#F8F6F1;
-      --cream:#DFD3B0;
-      --gold:#DAB85C;
-      --charcoal:#1D1D1D;
-      --softgray:#A7A4A0;
-      --line: rgba(29,29,29,.14);
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-      --radius: 22px;
-      --shadow: 0 18px 45px rgba(0,0,0,.08);
+<style>
+:root{
+  --black:#0f1115;
+  --charcoal:#141720;
+  --ivory:#F8F6F1;
+  --gold:#DAB85C;
+  --muted:rgba(255,255,255,.65);
+  --line:rgba(255,255,255,.14);
 
-      --h: "Cormorant Garamond", Georgia, serif;
-      --b: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
+  --radius:26px;
+  --shadow:0 30px 90px rgba(0,0,0,.55);
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:var(--b);
-      background: linear-gradient(180deg, var(--ivory), #ffffff);
-      color: var(--charcoal);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  --h:"Cormorant Garamond",serif;
+  --b:"Inter",system-ui;
+}
 
-    /* Skip link */
-    .skip-link{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip-link:focus{
-      left:20px; top:14px; width:auto; height:auto;
-      background:#fff; border:1px solid var(--line);
-      padding:10px 12px; border-radius:12px; z-index:9999;
-    }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
 
-    /* Header (same structure as index) */
-    header{
-      position:sticky; top:0; z-index:50;
-      background: rgba(248,246,241,.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:240px;
-    }
-    .brand img{
-      width:44px;height:44px;border-radius:999px;
-      border:1px solid rgba(29,29,29,.12);
-      object-fit:cover;
-      background:#fff;
-    }
-    .brand strong{
-      font-family:var(--h);
-      font-weight:600;
-      letter-spacing:.2px;
-      font-size:18px;
-      line-height:1.05;
-    }
-    .brand span{
-      display:block;
-      font-family:var(--b);
-      font-weight:500;
-      font-size:12px;
-      letter-spacing:.10em;
-      color: rgba(29,29,29,.62);
-      text-transform:uppercase;
-      margin-top:2px;
-    }
+body{
+  font-family:var(--b);
+  background:
+    radial-gradient(1200px 520px at 20% -10%, rgba(218,184,92,.18), transparent 60%),
+    linear-gradient(180deg,var(--black),var(--charcoal));
+  color:#fff;
+  line-height:1.6;
+}
 
-    nav{
-      display:flex; flex-wrap:wrap; gap:14px;
-      align-items:center; justify-content:center;
-    }
-    nav a{
-      font-size:14px;
-      color: rgba(29,29,29,.70);
-      padding:8px 10px;
-      border-radius:999px;
-    }
-    nav a:hover{background: rgba(218,184,92,.18); color: rgba(29,29,29,.92)}
-    nav a.active{
-      color: rgba(29,29,29,.92);
-      background: rgba(218,184,92,.22);
-      border: 1px solid rgba(29,29,29,.08);
-    }
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
 
-    .ctaTop{
-      display:flex; gap:10px; align-items:center; justify-content:flex-end;
-      min-width:210px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:600;
-      border:1px solid transparent;
-      cursor:pointer;
-      white-space:nowrap;
-    }
-    .btnGold{background: var(--gold); color: #1a1a1a; border-color: rgba(29,29,29,.10)}
-    .btnGhost{background: transparent; border-color: rgba(29,29,29,.20); color: rgba(29,29,29,.85)}
-    .btnGhost:hover{background: rgba(29,29,29,.04)}
-    .btnGold:hover{filter: brightness(.98)}
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(15,17,21,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand-logo{
+  width:44px;height:44px;border-radius:50%;
+  padding:3px;
+  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
+  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 10px 30px rgba(218,184,92,.55);
+}
+.brand strong{font-family:var(--h)}
+.brand span{font-size:11px;color:rgba(255,255,255,.6)}
 
-    /* Page Header */
-    main{padding: 34px 0 40px}
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border:1px solid rgba(29,29,29,.12);
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      background: rgba(248,246,241,.75);
-      color: rgba(29,29,29,.72);
-      margin-bottom:14px;
-    }
-    h1{
-      font-family:var(--h);
-      font-weight:600;
-      font-size: 52px;
-      line-height: 1.02;
-      margin: 0 0 10px;
-      letter-spacing: .2px;
-    }
-    .sub{
-      margin:0;
-      font-size:16px;
-      color: rgba(29,29,29,.72);
-      max-width: 70ch;
-    }
+nav{display:flex;gap:14px;justify-content:center}
+.nav-pill{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  color:rgba(255,255,255,.75);
+}
+.nav-pill:hover,
+.nav-pill.active{
+  background:rgba(218,184,92,.18);
+  color:#fff;
+  box-shadow:0 0 18px rgba(218,184,92,.35);
+}
 
-    /* Service cards */
-    .grid{
-      margin-top: 22px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    .card{
-      border-radius: 20px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      padding: 20px;
-      min-height: 220px;
-    }
-    .card h2{
-      font-family:var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size:22px;
-    }
-    .card p{
-      margin:0 0 12px;
-      color: rgba(29,29,29,.66);
-      font-size:14px;
-    }
-    .list{
-      margin: 0 0 14px;
-      padding-left: 18px;
-      color: rgba(29,29,29,.78);
-      font-size: 14px;
-    }
-    .list li{margin:6px 0}
-    .cardActions{margin-top:auto}
+.btn{
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.btnGold{background:var(--gold);color:#1a1a1a}
+.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-    /* LAAP band */
-    .band{
-      margin-top: 18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(29,29,29,.12);
-      background:
-        radial-gradient(750px 340px at 85% 10%, rgba(218,184,92,.22), transparent 60%),
-        linear-gradient(180deg, rgba(223,211,176,.28), rgba(255,255,255,.9));
-      padding: 22px;
-      box-shadow: var(--shadow);
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:16px;
-      align-items:stretch;
-    }
-    .band h3{
-      font-family: var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size: 30px;
-      line-height: 1.05;
-    }
-    .band p{margin:0;color:rgba(29,29,29,.70)}
-    .bandRight{
-      border-radius: 18px;
-      background: rgba(255,255,255,.8);
-      border: 1px solid rgba(29,29,29,.10);
-      padding: 16px;
-    }
-    .bandRight strong{
-      display:block;
-      font-family: var(--h);
-      font-weight:600;
-      font-size: 20px;
-      margin-bottom: 4px;
-    }
-    .bandActions{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 14px;
-    }
+/* ================= HERO ================= */
+.pricing-hero{
+  padding:90px 0 70px;
+  text-align:center;
+}
+.pricing-hero h1{
+  font-family:var(--h);
+  font-size:54px;
+  line-height:1.05;
+  margin:0 0 14px;
+}
+.pricing-hero h1 span{color:var(--gold)}
+.pricing-hero p{
+  max-width:62ch;
+  margin:auto;
+  color:var(--muted);
+  font-size:17px;
+}
+.gold-rule{
+  width:140px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  margin:26px auto 0;
+  box-shadow:0 0 22px rgba(218,184,92,.65);
+}
 
-    /* CTA box */
-    .ctaBox{
-      margin-top: 18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(29,29,29,.12);
-      background: #fff;
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      padding: 22px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 16px;
-      flex-wrap:wrap;
-    }
-    .ctaBox h3{
-      font-family: var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size: 28px;
-      line-height: 1.05;
-    }
-    .ctaBox p{margin:0;color:rgba(29,29,29,.70); max-width: 70ch}
+/* ================= PRICING GRID ================= */
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  margin-bottom:80px;
+}
+.price-card{
+  background:
+    linear-gradient(180deg,#1a1d24,#0f1115);
+  border-radius:var(--radius);
+  padding:34px;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.price-card.featured{
+  border-color:rgba(218,184,92,.85);
+  box-shadow:
+    0 40px 120px rgba(0,0,0,.75),
+    inset 0 0 0 1px rgba(218,184,92,.55);
+}
+.plan-tag{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.price-card h3{
+  font-family:var(--h);
+  font-size:28px;
+  margin:10px 0 6px;
+}
+.price{
+  font-size:40px;
+  font-weight:600;
+  margin:10px 0 18px;
+}
+.price span{
+  font-size:14px;
+  font-weight:400;
+  color:rgba(255,255,255,.6);
+}
+.price-list{
+  list-style:none;
+  padding:0;
+  margin:0 0 24px;
+}
+.price-list li{
+  margin:10px 0;
+  color:rgba(255,255,255,.8);
+}
+.price-card .btn{
+  width:100%;
+  text-align:center;
+}
 
-    /* Footer */
-    footer{
-      margin-top: 30px;
-      border-top:1px solid var(--line);
-      background: rgba(248,246,241,.75);
-      padding: 18px 0;
-      color: rgba(29,29,29,.60);
-      font-size:12px;
-    }
-    .foot{
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:center;
-    }
+/* ================= FOOTER ================= */
+footer{
+  border-top:1px solid var(--line);
+  padding:22px 0;
+  text-align:center;
+  font-size:12px;
+  color:rgba(255,255,255,.55);
+}
 
-    @media (max-width: 980px){
-      h1{font-size:42px}
-      .grid{grid-template-columns: 1fr}
-      .band{grid-template-columns: 1fr}
-      .ctaTop{min-width:auto}
-      .brand{min-width:auto}
-    }
-  </style>
+/* ================= MOBILE ================= */
+@media(max-width:980px){
+  .pricing-grid{grid-template-columns:1fr}
+  nav{display:none}
+  .pricing-hero h1{font-size:42px}
+}
+</style>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
 
 <header>
   <div class="wrap nav">
     <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo" class="brand-logo">
+      <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
       <div>
         <strong>LaFaries Mortimer LLC</strong>
         <span>Administrative & IT Services</span>
       </div>
     </a>
 
-    <nav aria-label="Main navigation">
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a class="active" href="/services.html" aria-current="page">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps & Portfolio</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/contact.html">Contact</a>
+    <nav>
+      <a class="nav-pill" href="/index.html">Home</a>
+      <a class="nav-pill" href="/about.html">About</a>
+      <a class="nav-pill" href="/laap.html">LAAP Suite</a>
+      <a class="nav-pill active" href="/pricing.html">Pricing</a>
+      <a class="nav-pill" href="/contact.html">Contact</a>
     </nav>
 
-    <div class="ctaTop">
-      <a class="btn btnGhost" href="/apps.html">Open Tools</a>
+    <div>
+      <a class="btn btnGhost" href="/free.html">Free Tools</a>
       <a class="btn btnGold" href="/contact.html">Book a Call</a>
     </div>
   </div>
 </header>
 
-
-<main class="wrap">
-
-  <!-- Page Hero -->
-  <section class="page-hero">
-    <h1>Pricing</h1>
-    <p class="muted">
-      Clear, flexible pricing built around your needs. No confusion. No pressure.
+<section class="pricing-hero">
+  <div class="wrap">
+    <h1>Clear pricing.<br><span>Real systems.</span></h1>
+    <p>
+      Choose the level of structure and support your business needs.
+      Upgrade only when it makes sense.
     </p>
-  </section>
-
-  <!-- Pricing Cards -->
-  <section class="cards">
-
-    <article class="card">
-      <h4>Starter Support</h4>
-      <p>
-        Ideal for individuals and small teams needing help with organization,
-        documentation, and basic administrative or tech support.
-      </p>
-    </article>
-
-    <article class="card">
-      <h4>Business Operations</h4>
-      <p>
-        Designed for growing businesses that need consistent workflows,
-        structured systems, and reliable operational support.
-      </p>
-    </article>
-
-    <article class="card">
-      <h4>Systems & Automation</h4>
-      <p>
-        Advanced support for automation, integrations, process improvements,
-        and scalable system design.
-      </p>
-    </article>
-
-  </section>
-
-  <!-- CTA -->
-  <section class="page-cta">
-    <a href="/contact.html" class="btn btnGold">Request Pricing</a>
-    <a href="/services.html" class="btn btnGhost">View Services</a>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap foot">
-    <div>© <span id="year"></span> LaFaries Mortimer LLC</div>
-    <div class="footer-links">
-      <a href="/contact.html">Contact</a>
-      <a href="/privacy.html">Privacy</a>
-    </div>
+    <div class="gold-rule"></div>
   </div>
-</footer>
+</section>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<section class="wrap pricing-grid">
+
+  <div class="price-card">
+    <span class="plan-tag">Foundational</span>
+    <h3>Free Tools</h3>
+    <div class="price">$0</div>
+    <ul class="price-list">
+      <li>Business calculators & converters</li>
+      <li>Admin templates (limited)</li>
+      <li>Educational walkthroughs</li>
+      <li>No account required</li>
+    </ul>
+    <a class="btn btnGhost" href="/free.html">Start Free</a>
+  </div>
+
+  <div class="price-card featured">
+    <span class="plan-tag">Core System</span>
+    <h3>LAAP Suite™</h3>
+    <div class="price">$97 <span>/ month</span></div>
+    <ul class="price-list">
+      <li>Guided business system</li>
+      <li>Formation & compliance tracking</li>
+      <li>Document & record management</li>
+      <li>AI-assisted guidance</li>
+    </ul>
+    <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+  </div>
+
+  <div class="price-card">
+    <span class="plan-tag">Hands-On</span>
+    <h3>Managed Support</h3>
+    <div class="price">Custom</div>
+    <ul class="price-list">
+      <li>Administrative support</li>
+      <li>IT setup & troubleshooting</li>
+      <li>AI agent deployment</li>
+      <li>Ongoing guidance</li>
+    </ul>
+    <a class="btn btnGhost" href="/contact.html">Request Quote</a>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 LaFaries Mortimer LLC • Virtual Support
+</footer>
 
 </body>
 </html>
