@@ -3,306 +3,177 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Contact | LaFaries Mortimer LLC</title>
-<meta name="description" content="Get in touch with LaFaries Mortimer LLC for administrative systems, LAAP Suite™, AI agents, and custom website design.">
+<meta name="description" content="Contact LaFaries Mortimer LLC to discuss services, tools, or custom solutions." />
 
-<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --black:#0f1115;
-  --charcoal:#141720;
-  --ivory:#F8F6F1;
+  --cream:#DFD3B0;
   --gold:#DAB85C;
-  --muted:rgba(255,255,255,.65);
-  --line:rgba(255,255,255,.14);
-
-  --radius:26px;
-  --shadow:0 30px 90px rgba(0,0,0,.55);
-
-  --h:"Cormorant Garamond",serif;
-  --b:"Inter",system-ui;
+  --charcoal:#1D1D1D;
+  --soft:#F8F6F1;
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
-
 body{
-  font-family:var(--b);
+  margin:0;
+  font-family:Inter, sans-serif;
   background:
-    radial-gradient(1200px 520px at 20% -10%, rgba(218,184,92,.18), transparent 60%),
-    linear-gradient(180deg,var(--black),var(--charcoal));
-  color:#fff;
-  line-height:1.6;
+    radial-gradient(circle at top, rgba(218,184,92,.22), transparent 55%),
+    linear-gradient(180deg, #141414, var(--charcoal));
+  color:var(--soft);
 }
 
-a{text-decoration:none;color:inherit}
-.wrap{max-width:1180px;margin:auto;padding:0 20px}
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 20px;
+}
 
-/* ================= HEADER ================= */
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(15,17,21,.92);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-}
-.nav{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:16px;
-  padding:14px 0;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.brand-logo{
-  width:44px;height:44px;border-radius:50%;
-  padding:3px;
-  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 10px 30px rgba(218,184,92,.55);
-}
-.brand strong{font-family:var(--h)}
-.brand span{font-size:11px;color:rgba(255,255,255,.6)}
-
-nav{display:flex;gap:14px;justify-content:center}
-.nav-pill{
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:14px;
-  color:rgba(255,255,255,.75);
-}
-.nav-pill:hover,
-.nav-pill.active{
-  background:rgba(218,184,92,.18);
-  color:#fff;
-  box-shadow:0 0 18px rgba(218,184,92,.35);
-}
-
-.btn{
-  padding:12px 18px;
-  border-radius:999px;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-weight:600;
-}
-.btnGold{background:var(--gold);color:#1a1a1a}
-.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
-
-/* ================= HERO ================= */
-.contact-hero{
-  padding:90px 0 60px;
   text-align:center;
-}
-.contact-hero h1{
-  font-family:var(--h);
-  font-size:54px;
-  line-height:1.05;
-  margin:0 0 14px;
-}
-.contact-hero h1 span{color:var(--gold)}
-.contact-hero p{
-  max-width:64ch;
-  margin:auto;
-  color:var(--muted);
-  font-size:17px;
-}
-.gold-rule{
-  width:160px;
-  height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  margin:26px auto 0;
-  box-shadow:0 0 22px rgba(218,184,92,.65);
+  margin-bottom:48px;
 }
 
-/* ================= CONTACT GRID ================= */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:40px;
-  margin-bottom:80px;
+h1{
+  font-family:"Cormorant Garamond", serif;
+  font-size:56px;
+  margin-bottom:10px;
 }
 
-/* FORM */
+.sub{
+  color:rgba(248,246,241,.75);
+  max-width:680px;
+  margin:0 auto;
+}
+
 .form-card{
-  background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:var(--radius);
-  padding:36px;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:var(--shadow);
-}
-.form-card h2{
-  font-family:var(--h);
-  font-size:32px;
-  margin:0 0 10px;
-}
-.form-card p{
-  color:var(--muted);
-  margin-bottom:24px;
+  max-width:720px;
+  margin:0 auto;
+  padding:38px;
+  border-radius:26px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(218,184,92,.35);
+  box-shadow:0 30px 80px rgba(0,0,0,.55);
 }
 
-form label{
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.75);
+form{
+  display:grid;
+  gap:18px;
 }
-form input,
-form textarea,
-form select{
+
+label{
+  font-size:13px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(248,246,241,.85);
+}
+
+input, textarea{
   width:100%;
   padding:14px 16px;
   border-radius:14px;
   border:1px solid rgba(255,255,255,.18);
-  background:#0f1115;
-  color:#fff;
-  margin:8px 0 18px;
-  font-family:var(--b);
-}
-form textarea{min-height:140px;resize:vertical}
-
-/* SIDE PANEL */
-.contact-panel{
-  background:
-    radial-gradient(600px 280px at 50% -10%, rgba(218,184,92,.22), transparent 60%),
-    linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:var(--radius);
-  padding:36px;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:var(--shadow);
-}
-.contact-panel h3{
-  font-family:var(--h);
-  font-size:30px;
-  margin:0 0 12px;
-}
-.contact-panel ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-}
-.contact-panel li{
-  margin:12px 0;
-  color:rgba(255,255,255,.8);
+  background:rgba(0,0,0,.35);
+  color:var(--soft);
+  font-family:Inter, sans-serif;
 }
 
-/* FOOTER */
+input::placeholder,
+textarea::placeholder{
+  color:rgba(248,246,241,.45);
+}
+
+textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+button{
+  margin-top:10px;
+  align-self:flex-start;
+  padding:14px 26px;
+  border-radius:999px;
+  border:none;
+  background:var(--gold);
+  color:#1a1a1a;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+button:hover{
+  filter:brightness(.96);
+}
+
 footer{
-  border-top:1px solid var(--line);
-  padding:22px 0;
+  margin-top:60px;
   text-align:center;
   font-size:12px;
-  color:rgba(255,255,255,.55);
-}
-
-/* MOBILE */
-@media(max-width:900px){
-  .contact-grid{grid-template-columns:1fr}
-  nav{display:none}
-  .contact-hero h1{font-size:42px}
+  color:rgba(248,246,241,.55);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
-      </div>
-    </a>
-
-    <nav>
-      <a class="nav-pill" href="/index.html">Home</a>
-      <a class="nav-pill" href="/about.html">About</a>
-      <a class="nav-pill" href="/laap.html">LAAP Suite</a>
-      <a class="nav-pill" href="/pricing.html">Pricing</a>
-      <a class="nav-pill active" href="/contact.html">Contact</a>
-    </nav>
-
-    <div>
-      <a class="btn btnGhost" href="/free.html">Free Tools</a>
-      <a class="btn btnGold" href="/pricing.html">View Pricing</a>
-    </div>
-  </div>
-</header>
-
-<section class="contact-hero">
-  <div class="wrap">
-    <h1>Let’s build something<br><span>that actually works.</span></h1>
-    <p>
-      Whether you need structure, systems, AI support, or a custom-built website,
-      start the conversation here.
+<main class="wrap">
+  <header>
+    <h1>Let’s Connect</h1>
+    <p class="sub">
+      Share a few details below and we’ll follow up to discuss your needs,
+      ideas, or next steps.
     </p>
-    <div class="gold-rule"></div>
-  </div>
-</section>
+  </header>
 
-<section class="wrap contact-grid">
+  <section class="form-card">
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      action="/thank-you.html"
+    >
 
-  <div class="form-card">
-    <h2>Send a request</h2>
-    <p>You’ll receive an email confirmation as soon as your request is submitted.</p>
-
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <!-- REQUIRED FOR NETLIFY -->
       <input type="hidden" name="form-name" value="contact">
-      <input type="hidden" name="subject" value="New Contact Request — LaFaries Mortimer LLC">
 
-      <p style="display:none">
-        <label>Don’t fill this out <input name="bot-field"></label>
-      </p>
+      <div>
+        <label for="name">Full Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+      </div>
 
-      <label>Your Name</label>
-      <input type="text" name="name" required>
+      <div>
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+      </div>
 
-      <label>Email Address</label>
-      <input type="email" name="email" required>
+      <div>
+        <label for="subject">What’s this about?</label>
+        <input id="subject" name="subject" type="text" placeholder="Services, tools, consultation…">
+      </div>
 
-      <label>What are you reaching out about?</label>
-      <select name="interest" required>
-        <option value="">Select one</option>
-        <option>LAAP Suite™</option>
-        <option>Administrative Support</option>
-        <option>AI Agent / Automation</option>
-        <option>Custom Website Design</option>
-        <option>General Inquiry</option>
-      </select>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us what you’re looking to build or explore…" required></textarea>
+      </div>
 
-      <label>Message</label>
-      <textarea name="message" required></textarea>
-
-      <button type="submit" class="btn btnGold">Send Request</button>
+      <button type="submit">Send Request</button>
     </form>
-  </div>
+  </section>
 
-  <aside class="contact-panel">
-    <h3>What happens next</h3>
-    <ul>
-      <li>✔ You receive an email confirmation</li>
-      <li>✔ Your request is reviewed personally</li>
-      <li>✔ Clear next steps are identified</li>
-      <li>✔ No pressure, no sales scripts</li>
-    </ul>
-  </aside>
+  <footer>
+    © <span id="year"></span> LaFaries Mortimer LLC
+  </footer>
+</main>
 
-</section>
-
-<footer>
-  © 2026 LaFaries Mortimer LLC • Virtual Support
-</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
