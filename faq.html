@@ -4,126 +4,184 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Frequently asked questions about LaFaries Mortimer LLC, including free tutorials, templates, and optional administrative and IT support.">
+  <meta name="description" content="Frequently asked questions about services, free tutorials, templates, and optional administrative and IT support.">
 
   <style>
     :root{
-      --bg:#050608;
-      --panel:#020617;
-      --card:#111827;
+      --bg:#0b0b0c;
+      --panel:#111115;
+      --card:#141418;
       --gold:#d4af37;
-      --text:#f9fafb;
-      --muted:#9ca3af;
+      --text:#f2f2f2;
+      --muted:#a3a3a3;
+      --line:rgba(212,175,55,.25);
+      --radius:18px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
+
     body{
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      background:var(--bg);
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:linear-gradient(180deg,#0b0b0c,#0f0f12);
       color:var(--text);
-      line-height:1.6;
+      line-height:1.9;
     }
 
-    a{text-decoration:none;color:var(--gold)}
+    a{color:var(--gold);text-decoration:none}
     a:hover{text-decoration:underline}
 
-    .wrapper{max-width:900px;margin:0 auto;padding:1.5rem}
+    .wrapper{
+      max-width:960px;
+      margin:0 auto;
+      padding:3rem 1.75rem;
+    }
 
+    /* Header */
     header{
-      background:var(--panel);
-      border-bottom:1px solid #1f2937;
-      margin-bottom:2rem;
+      background:rgba(11,11,12,.85);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      margin-bottom:3.5rem;
     }
     .header-inner{
       display:flex;
       justify-content:space-between;
       align-items:center;
       flex-wrap:wrap;
-      gap:1rem;
+      gap:1.25rem;
     }
     .brand{
       display:flex;
       align-items:center;
-      gap:.6rem;
+      gap:.75rem;
       font-weight:600;
     }
     .brand-logo{
-      width:34px;height:34px;
+      width:38px;height:38px;
       border-radius:999px;
-      background:var(--gold);
-      color:#111827;
+      background:linear-gradient(180deg,var(--gold),#b99425);
+      color:#111;
       display:flex;
       align-items:center;
       justify-content:center;
       font-weight:700;
-      font-size:.75rem;
+      font-size:.8rem;
     }
-    nav{display:flex;gap:1rem;font-size:.9rem}
+    nav{
+      display:flex;
+      gap:1.5rem;
+      font-size:1rem;
+    }
     nav a{color:var(--muted)}
     nav a:hover{color:var(--gold)}
 
+    /* Title */
     h1{
-      font-size:2rem;
-      margin-bottom:.5rem;
+      font-size:2.8rem;
+      margin-bottom:1.25rem;
+      font-family:"Cormorant Garamond", Georgia, serif;
+      font-weight:600;
+      letter-spacing:.3px;
     }
     h1 span{color:var(--gold)}
 
     .intro{
-      margin-bottom:2rem;
+      margin-bottom:3.5rem;
       color:var(--muted);
+      font-size:1.15rem;
+      max-width:72ch;
     }
 
+    /* FAQ Accordion */
     .faq{
       display:flex;
       flex-direction:column;
-      gap:1.25rem;
-    }
-    .faq-item{
-      background:var(--panel);
-      border:1px solid #1f2937;
-      border-radius:.9rem;
-      padding:1.25rem;
-    }
-    .faq-item h2{
-      font-size:1.05rem;
-      margin-bottom:.4rem;
-      color:var(--gold);
-    }
-    .faq-item p{
-      font-size:.9rem;
-      color:var(--text);
+      gap:1.75rem;
     }
 
+    details{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--radius);
+      padding:1.75rem 2rem;
+    }
+
+    details[open]{
+      border-color:var(--gold);
+      box-shadow:0 0 0 1px rgba(212,175,55,.25);
+    }
+
+    summary{
+      cursor:pointer;
+      list-style:none;
+      font-size:1.3rem;
+      font-weight:600;
+      color:var(--gold);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    summary::-webkit-details-marker{display:none}
+
+    summary::after{
+      content:"+";
+      font-size:1.5rem;
+      color:var(--gold);
+      transition:transform .2s ease;
+    }
+
+    details[open] summary::after{
+      content:"–";
+    }
+
+    details p{
+      margin-top:1.25rem;
+      font-size:1.1rem;
+      color:var(--text);
+      max-width:78ch;
+    }
+
+    /* CTA */
     .cta{
-      margin-top:2.5rem;
-      padding:1.5rem;
-      background:var(--panel);
+      margin-top:5rem;
+      padding:3rem;
+      background:linear-gradient(180deg,#111115,#0f0f12);
       border:1px solid var(--gold);
-      border-radius:1rem;
+      border-radius:2rem;
       text-align:center;
     }
-    .cta h3{margin-bottom:.4rem}
-    .cta p{color:var(--muted);margin-bottom:.75rem}
+    .cta h3{
+      font-size:2rem;
+      margin-bottom:1rem;
+      font-family:"Cormorant Garamond", Georgia, serif;
+    }
+    .cta p{
+      color:var(--muted);
+      margin-bottom:1.75rem;
+      font-size:1.1rem;
+    }
     .cta a{
       display:inline-block;
-      margin:.3rem;
-      padding:.5rem 1rem;
+      margin:.4rem;
+      padding:.9rem 1.7rem;
       border-radius:999px;
-      font-size:.8rem;
+      font-size:.95rem;
       font-weight:600;
       border:1px solid var(--gold);
     }
     .cta a.primary{
       background:var(--gold);
-      color:#111827;
+      color:#111;
     }
 
+    /* Footer */
     footer{
-      margin-top:3rem;
-      border-top:1px solid #1f2937;
-      padding-top:1rem;
-      font-size:.8rem;
+      margin-top:5rem;
+      border-top:1px solid rgba(255,255,255,.12);
+      padding:2rem 0;
+      font-size:.95rem;
       color:var(--muted);
       text-align:center;
     }
@@ -149,7 +207,7 @@
 
 <main class="wrapper">
 
-  <h1>Frequently Asked <span>Questions</span></h1>
+  <h1>Clear <span>Answers</span></h1>
   <p class="intro">
     This page explains what LaFaries Mortimer LLC offers, how our free resources work,
     and when paid support may be helpful.
@@ -157,68 +215,68 @@
 
   <section class="faq">
 
-    <div class="faq-item">
-      <h2>What is LaFaries Mortimer LLC?</h2>
+    <details>
+      <summary>What is LaFaries Mortimer LLC?</summary>
       <p>
         LaFaries Mortimer LLC is a support-based service that provides free tutorials,
         downloadable templates, and affordable administrative and IT assistance.
         Our goal is to help individuals, small businesses, and ministries get organized
         and move forward without unnecessary costs.
       </p>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <h2>Do you really offer free resources?</h2>
+    <details>
+      <summary>Do you really offer free resources?</summary>
       <p>
         Yes. We intentionally provide free tutorials and guides as a way to give back.
         These resources show you step by step how to complete common tasks on your own.
       </p>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <h2>What kinds of tutorials do you provide?</h2>
+    <details>
+      <summary>What kinds of tutorials do you provide?</summary>
       <p>
         Tutorials cover real-world topics such as basic IT setup, cybersecurity awareness,
         file organization, administrative workflows, EIN guidance, LLC basics,
         meeting documentation, and modern office tools.
       </p>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <h2>Are all services paid?</h2>
+    <details>
+      <summary>Are all services paid?</summary>
       <p>
         No. Tutorials and learning resources are free.
         Paid services are optional and are for those who want hands-on,
         personalized assistance or prefer not to do everything themselves.
       </p>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <h2>Who is this service for?</h2>
+    <details>
+      <summary>Who is this service for?</summary>
       <p>
         This service is for entrepreneurs, ministries, nonprofits, families,
         and individuals who want clarity and structure without being overwhelmed
         or overcharged.
       </p>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <h2>Do you provide legal, tax, or financial advice?</h2>
+    <details>
+      <summary>Do you provide legal, tax, or financial advice?</summary>
       <p>
         No. We do not replace licensed professionals.
         Our role is educational and administrative support,
         helping you understand processes and stay organized.
       </p>
-    </div>
+    </details>
 
-    <div class="faq-item">
-      <h2>How do I know if I need paid support?</h2>
+    <details>
+      <summary>How do I know if I need paid support?</summary>
       <p>
         If you’re comfortable following a guide, the free tutorials may be enough.
         If you need help applying the steps, organizing systems, or troubleshooting,
         paid support may be helpful.
       </p>
-    </div>
+    </details>
 
   </section>
 
