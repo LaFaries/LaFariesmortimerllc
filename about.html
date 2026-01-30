@@ -1,156 +1,185 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Learn about LaFaries Mortimer LLC and our mission to bring clarity, order, and confidence through Administrative and IT services." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>About Us | LaFaries Mortimer LLC</title>
+<meta name="description" content="Reliable, affordable, and compassionate administrative and IT support built on integrity, stewardship, and care.">
 
-  <style>
-    :root{
-      --ivory:#F8F6F1;
-      --cream:#DFD3B0;
-      --gold:#DAB85C;
-      --charcoal:#1D1D1D;
-      --softgray:#A7A4A0;
-      --line: rgba(29,29,29,.14);
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-      --radius: 22px;
-      --shadow: 0 18px 45px rgba(0,0,0,.08);
+<style>
+:root{
+  --ivory:#F8F6F1;
+  --gold:#DAB85C;
+  --dark:#0F1115;
+  --charcoal:#1D1D1D;
+  --muted:rgba(29,29,29,.7);
+  --line:rgba(29,29,29,.14);
+  --radius:26px;
+  --shadow:0 26px 80px rgba(0,0,0,.22);
+  --h:"Cormorant Garamond",serif;
+  --b:"Inter",system-ui;
+}
 
-      --h: "Cormorant Garamond", Georgia, serif;
-      --b: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--b);
+  background:linear-gradient(180deg,var(--ivory),#fff);
+  color:var(--charcoal);
+  line-height:1.65;
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:var(--b);
-      background: linear-gradient(180deg, var(--ivory), #ffffff);
-      color: var(--charcoal);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(15,17,21,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:14px 0;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.brand img{
+  width:44px;height:44px;border-radius:50%;
+  padding:3px;
+  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
+  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
+}
+.brand strong{font-family:var(--h);color:#fff}
+.brand span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+nav{display:flex;gap:14px;justify-content:center}
+nav a{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  color:rgba(255,255,255,.8);
+}
+nav a.active,
+nav a:hover{
+  background:rgba(218,184,92,.18);
+  box-shadow:0 0 18px rgba(218,184,92,.35);
+}
+.btn{
+  padding:12px 16px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.btnGold{background:var(--gold);color:#1a1a1a}
+.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-    header{
-      position:sticky; top:0; z-index:50;
-      background: rgba(248,246,241,.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px;
-    }
-    .brand img{
-      width:44px;height:44px;border-radius:999px;
-      border:1px solid rgba(29,29,29,.12);
-      background:#fff;
-    }
-    .brand strong{
-      font-family:var(--h);
-      font-weight:600;
-      font-size:18px;
-      line-height:1.05;
-    }
-    .brand span{
-      display:block;
-      font-size:12px;
-      letter-spacing:.10em;
-      text-transform:uppercase;
-      color: rgba(29,29,29,.62);
-      margin-top:2px;
-    }
+/* ================= HERO ================= */
+.about-hero{
+  padding:90px 0 70px;
+  background:
+    radial-gradient(900px 420px at 50% -10%, rgba(218,184,92,.30), transparent 60%),
+    linear-gradient(180deg,#fdfbf6,#ffffff);
+  border-bottom:1px solid var(--line);
+}
+.about-hero h1{
+  font-family:var(--h);
+  font-size:50px;
+  margin-bottom:14px;
+}
+.gold-rule{
+  width:90px;height:4px;border-radius:999px;
+  background:linear-gradient(90deg,#f7e9b9,#d4af37,#b8972e);
+  box-shadow:0 8px 22px rgba(218,184,92,.75);
+  margin-bottom:30px;
+}
+.about-hero p{
+  max-width:70ch;
+  font-size:17px;
+  margin-bottom:18px;
+}
+.about-hero p strong{color:var(--gold)}
 
-    nav{display:flex; gap:14px; flex-wrap:wrap}
-    nav a{
-      font-size:14px;
-      padding:8px 10px;
-      border-radius:999px;
-      color: rgba(29,29,29,.70);
-    }
-    nav a:hover{background: rgba(218,184,92,.18)}
-    nav a.active{color:#000; font-weight:600}
+/* ================= MISSION ================= */
+.mission{
+  margin:70px 0;
+  padding:44px;
+  border-radius:var(--radius);
+  background:#fff;
+  box-shadow:var(--shadow);
+}
+.mission h2{
+  font-family:var(--h);
+  font-size:34px;
+  margin-bottom:12px;
+}
+.mission p{
+  font-size:16px;
+  color:var(--muted);
+}
 
-    .ctaTop{display:flex; gap:10px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 16px;
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:600;
-      border:1px solid transparent;
-      white-space:nowrap;
-    }
-    .btnGold{background: var(--gold); color:#1a1a1a}
-    .btnGhost{border:1px solid rgba(29,29,29,.25)}
+/* ================= FAQ ================= */
+.faq{
+  margin:90px 0;
+}
+.faq h2{
+  font-family:var(--h);
+  font-size:38px;
+  margin-bottom:36px;
+}
+.faq-item{
+  border-radius:22px;
+  border:1px solid rgba(218,184,92,.45);
+  background:linear-gradient(180deg,#fffdfa,#ffffff);
+  margin-bottom:16px;
+  box-shadow:0 10px 28px rgba(0,0,0,.08);
+  overflow:hidden;
+}
+.faq-q{
+  padding:20px 26px;
+  cursor:pointer;
+}
+.faq-q strong{
+  font-size:16px;
+  color:#1a1a1a;
+}
+.faq-a{
+  padding:0 26px 22px;
+  color:var(--muted);
+  display:none;
+}
+.faq-item.open .faq-a{display:block}
 
-    main{padding:46px 0}
-    h1{
-      font-family:var(--h);
-      font-size:48px;
-      margin:0 0 10px;
-    }
-    .sub{
-      color: rgba(29,29,29,.70);
-      max-width:60ch;
-    }
+/* ================= FOOTER ================= */
+footer{
+  border-top:1px solid var(--line);
+  padding:18px 0;
+  text-align:center;
+  font-size:12px;
+  color:rgba(29,29,29,.55);
+  background:rgba(248,246,241,.9);
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns: repeat(3,1fr);
-      gap:16px;
-      margin-top:28px;
-    }
-    .card{
-      border-radius:20px;
-      background:#fff;
-      border:1px solid var(--line);
-      padding:20px;
-      box-shadow: var(--shadow);
-    }
-    .card h3{
-      font-family:var(--h);
-      margin:0 0 6px;
-    }
-    .card p{
-      margin:0;
-      font-size:14px;
-      color: rgba(29,29,29,.70);
-    }
-
-    .pageActions{
-      margin-top:28px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    footer{
-      margin-top:40px;
-      border-top:1px solid var(--line);
-      background: rgba(248,246,241,.75);
-      padding:18px 0;
-      font-size:12px;
-      color: rgba(29,29,29,.60);
-    }
-
-    @media(max-width:900px){
-      .cards{grid-template-columns:1fr}
-      h1{font-size:40px}
-    }
-  </style>
+/* ================= MOBILE ================= */
+@media(max-width:900px){
+  nav{display:none}
+  .about-hero h1{font-size:40px}
+}
+</style>
 </head>
 
 <body>
@@ -158,7 +187,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo">
+      <img src="/assets/img/logo-2026.png" alt="">
       <div>
         <strong>LaFaries Mortimer LLC</strong>
         <span>Administrative & IT Services</span>
@@ -167,65 +196,85 @@
 
     <nav>
       <a href="/index.html">Home</a>
-      <a href="/about.html" class="active">About</a>
-      <a href="/services.html">Services</a>
+      <a class="active" href="/about.html">About</a>
       <a href="/laap.html">LAAP Suite</a>
       <a href="/apps.html">Apps</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQ</a>
       <a href="/contact.html">Contact</a>
     </nav>
 
-    <div class="ctaTop">
+    <div>
+      <a class="btn btnGhost" href="/apps.html">Free Tools</a>
       <a class="btn btnGold" href="/contact.html">Book a Call</a>
     </div>
   </div>
 </header>
 
-<main class="wrap">
-  <h1>About LaFaries Mortimer LLC</h1>
-  <p class="sub">
-    We provide structured Administrative and IT support for families, ministries,
-    and small businesses who want clarity, order, and systems that actually work.
-  </p>
+<section class="about-hero">
+  <div class="wrap">
+    <h1>About Us</h1>
+    <div class="gold-rule"></div>
 
-  <section class="cards">
-    <div class="card">
-      <h3>Our Focus</h3>
-      <p>
-        Practical systems that reduce overwhelm — documentation, workflows,
-        and technology that supports daily operations.
-      </p>
-    </div>
+    <p><strong>LaFaries Mortimer LLC</strong> was created from a deep commitment to serve, uplift, and protect those who often feel overlooked—especially individuals, ministries, and small businesses who deserve professional support without unnecessary barriers or inflated costs.</p>
 
-    <div class="card">
-      <h3>How We Help</h3>
-      <p>
-        We simplify operations, create consistency, and remove confusion so
-        you can focus on what matters most.
-      </p>
-    </div>
+    <p>After years of witnessing people struggle with administrative tasks, business formation, and technology challenges, it became clear that support should not be a luxury. It should be accessible, honest, and dependable.</p>
 
-    <div class="card">
-      <h3>What to Expect</h3>
-      <p>
-        Clear communication, dependable support, and guidance that respects
-        your time and capacity.
-      </p>
-    </div>
-  </section>
+    <p><strong>Our mission is simple:</strong> to provide reliable, affordable, and compassionate administrative and IT solutions that help people move forward with confidence.</p>
 
-  <div class="pageActions">
-    <a class="btn btnGold" href="/services.html">View Services</a>
-    <a class="btn btnGhost" href="/contact.html">Schedule a Call</a>
+    <p>You should never feel alone or taken advantage of. Here, service is more than a skill—it is an expression of integrity, stewardship, and genuine care.</p>
+
+    <p><strong>You are not just receiving a service.</strong> You are partnering with someone invested in your growth, your vision, and your peace of mind.</p>
   </div>
-</main>
+</section>
+
+<section class="faq wrap">
+  <h2>Common Questions</h2>
+
+  <div class="faq-item">
+    <div class="faq-q"><strong>Do you only serve clients in Florida?</strong></div>
+    <div class="faq-a">No. While based in Miami, services are provided virtually across different locations via phone, email, and video.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><strong>How do I contact you or schedule a consultation?</strong></div>
+    <div class="faq-a">You can reach out by phone at (305) 859-1279, by email at info@lafariesmortimerllc.com, or through the website contact form.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><strong>How quickly will I hear back?</strong></div>
+    <div class="faq-a">Most inquiries receive a response within 24–48 business hours, Monday through Friday.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><strong>Are payment plans or phased projects available?</strong></div>
+    <div class="faq-a">Yes. For larger systems or ongoing support, payment plans or phased projects may be available.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><strong>Is my information kept private and secure?</strong></div>
+    <div class="faq-a">Yes. All information and documents are treated with confidentiality and care.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><strong>I’m a first-time entrepreneur—can you still help?</strong></div>
+    <div class="faq-a">Absolutely. Many clients are first-time founders, ministry leaders, or small business owners seeking clarity and structure.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q"><strong>I’m not sure what I need yet—can I still reach out?</strong></div>
+    <div class="faq-a">Yes. We will talk through your situation and determine the best next step together.</div>
+  </div>
+</section>
 
 <footer>
-  <div class="wrap">
-    © 2026 LaFaries Mortimer LLC
-  </div>
+  © <span id="year"></span> LaFaries Mortimer LLC • Miami, FL • Virtual Support
 </footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.onclick=()=>q.parentElement.classList.toggle('open');
+});
+</script>
 
 </body>
 </html>
