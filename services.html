@@ -1,403 +1,305 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Practical administrative and IT support that helps families, ministries, and small businesses move forward with clarity and confidence." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services | LaFaries Mortimer LLC</title>
 
-  <!-- Fonts (same as index) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --ivory:#F8F6F1;
-      --cream:#DFD3B0;
-      --gold:#DAB85C;
-      --charcoal:#1D1D1D;
-      --softgray:#A7A4A0;
-      --line: rgba(29,29,29,.14);
+<style>
+:root{
+  --ivory:#F8F6F1;
+  --gold:#DAB85C;
+  --gold-deep:#b79a45;
+  --charcoal:#1D1D1D;
+  --line:rgba(29,29,29,.14);
+  --radius:26px;
+  --shadow:0 30px 90px rgba(0,0,0,.18);
+  --h:"Cormorant Garamond",serif;
+  --b:"Inter",system-ui;
+}
 
-      --radius: 22px;
-      --shadow: 0 18px 45px rgba(0,0,0,.08);
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--b);
+  background:
+    radial-gradient(1200px 500px at 50% -15%, rgba(218,184,92,.28), transparent 55%),
+    linear-gradient(180deg,var(--ivory),#fff);
+  color:var(--charcoal);
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
 
-      --h: "Cormorant Garamond", Georgia, serif;
-      --b: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
+/* HEADER – SAME AS HOME */
+header{
+  position:sticky;top:0;z-index:100;
+  background:
+    radial-gradient(800px 220px at 50% -40%, rgba(218,184,92,.35), transparent 70%),
+    rgba(248,246,241,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;gap:16px;
+}
+.brand{
+  display:flex;align-items:center;gap:12px;
+}
+.brand img{
+  width:44px;height:44px;border-radius:50%;
+  padding:3px;
+  background:
+    radial-gradient(circle at top left,#fff,#e9d28a 35%,#b9973c 70%);
+  box-shadow:
+    0 0 0 2px rgba(218,184,92,.65),
+    0 0 24px rgba(218,184,92,.75);
+}
+.brand strong{
+  font-family:var(--h);
+  font-size:18px;
+}
+.brand span{
+  display:block;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(29,29,29,.55);
+}
+nav{display:flex;gap:14px}
+nav a{
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:14px;
+  color:rgba(29,29,29,.75);
+}
+nav a.active,
+nav a:hover{
+  background:rgba(218,184,92,.22);
+  color:#1a1a1a;
+}
+.ctaTop{display:flex;gap:10px}
+.btn{
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.btnGold{
+  background:
+    linear-gradient(180deg,#f6e29a,#d8b857,#b9973c);
+  color:#1a1a1a;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.5),
+    0 10px 26px rgba(218,184,92,.55);
+}
+.btnGhost{
+  border:1px solid rgba(29,29,29,.25);
+}
 
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:var(--b);
-      background: linear-gradient(180deg, var(--ivory), #ffffff);
-      color: var(--charcoal);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+/* HERO */
+.hero{
+  padding:90px 0 70px;
+  text-align:left;
+}
+.hero h1{
+  font-family:var(--h);
+  font-size:58px;
+  line-height:1.02;
+  margin:0 0 18px;
+  position:relative;
+}
+.hero h1 span{
+  background:
+    linear-gradient(180deg,#f7e6a5,#d8b857,#b9973c);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.hero h1:after{
+  content:"";
+  display:block;
+  width:140px;
+  height:4px;
+  margin-top:14px;
+  background:
+    linear-gradient(90deg,#f6e29a,#d8b857,#b9973c);
+  box-shadow:0 0 18px rgba(218,184,92,.85);
+  border-radius:999px;
+}
+.hero p{
+  max-width:64ch;
+  font-size:17px;
+  color:rgba(29,29,29,.72);
+}
+.hero-actions{
+  margin-top:26px;
+  display:flex;gap:14px;flex-wrap:wrap;
+}
 
-    /* Skip link */
-    .skip-link{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip-link:focus{
-      left:20px; top:14px; width:auto; height:auto;
-      background:#fff; border:1px solid var(--line);
-      padding:10px 12px; border-radius:12px; z-index:9999;
-    }
+/* SERVICES */
+.services{padding:70px 0}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+.card{
+  background:
+    linear-gradient(180deg,#ffffff,#f8f6f1);
+  border-radius:var(--radius);
+  padding:34px;
+  border:1px solid rgba(218,184,92,.35);
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.18),
+    inset 0 0 0 1px rgba(218,184,92,.35);
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:
+    0 40px 110px rgba(0,0,0,.25),
+    0 0 35px rgba(218,184,92,.55);
+}
+.card span{
+  font-size:11px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--gold-deep);
+}
+.card h3{
+  font-family:var(--h);
+  font-size:26px;
+  margin:10px 0 10px;
+}
+.card p{
+  font-size:15px;
+  color:rgba(29,29,29,.7);
+}
 
-    /* Header (same structure as index) */
-    header{
-      position:sticky; top:0; z-index:50;
-      background: rgba(248,246,241,.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:14px 0; gap:16px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; min-width:240px;
-    }
-    .brand img{
-      width:44px;height:44px;border-radius:999px;
-      border:1px solid rgba(29,29,29,.12);
-      object-fit:cover;
-      background:#fff;
-    }
-    .brand strong{
-      font-family:var(--h);
-      font-weight:600;
-      letter-spacing:.2px;
-      font-size:18px;
-      line-height:1.05;
-    }
-    .brand span{
-      display:block;
-      font-family:var(--b);
-      font-weight:500;
-      font-size:12px;
-      letter-spacing:.10em;
-      color: rgba(29,29,29,.62);
-      text-transform:uppercase;
-      margin-top:2px;
-    }
+/* LAAP STRIP */
+.lAAP{
+  padding:80px 0;
+  background:
+    radial-gradient(900px 380px at 50% -20%, rgba(218,184,92,.45), transparent 60%),
+    linear-gradient(180deg,#101216,#151922);
+  color:#fff;
+}
+.lAAP h2{
+  font-family:var(--h);
+  font-size:40px;
+  margin:0 0 14px;
+}
+.lAAP p{
+  max-width:60ch;
+  color:rgba(255,255,255,.75);
+}
+.lAAP .btnGold{
+  margin-top:24px;
+}
 
-    nav{
-      display:flex; flex-wrap:wrap; gap:14px;
-      align-items:center; justify-content:center;
-    }
-    nav a{
-      font-size:14px;
-      color: rgba(29,29,29,.70);
-      padding:8px 10px;
-      border-radius:999px;
-    }
-    nav a:hover{background: rgba(218,184,92,.18); color: rgba(29,29,29,.92)}
-    nav a.active{
-      color: rgba(29,29,29,.92);
-      background: rgba(218,184,92,.22);
-      border: 1px solid rgba(29,29,29,.08);
-    }
+/* FOOTER */
+footer{
+  padding:18px 0;
+  text-align:center;
+  font-size:12px;
+  color:rgba(29,29,29,.6);
+  border-top:1px solid var(--line);
+  background:rgba(248,246,241,.9);
+}
 
-    .ctaTop{
-      display:flex; gap:10px; align-items:center; justify-content:flex-end;
-      min-width:210px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:600;
-      border:1px solid transparent;
-      cursor:pointer;
-      white-space:nowrap;
-    }
-    .btnGold{background: var(--gold); color: #1a1a1a; border-color: rgba(29,29,29,.10)}
-    .btnGhost{background: transparent; border-color: rgba(29,29,29,.20); color: rgba(29,29,29,.85)}
-    .btnGhost:hover{background: rgba(29,29,29,.04)}
-    .btnGold:hover{filter: brightness(.98)}
-
-    /* Page Header */
-    main{padding: 34px 0 40px}
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:8px 12px;
-      border:1px solid rgba(29,29,29,.12);
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      background: rgba(248,246,241,.75);
-      color: rgba(29,29,29,.72);
-      margin-bottom:14px;
-    }
-    h1{
-      font-family:var(--h);
-      font-weight:600;
-      font-size: 52px;
-      line-height: 1.02;
-      margin: 0 0 10px;
-      letter-spacing: .2px;
-    }
-    .sub{
-      margin:0;
-      font-size:16px;
-      color: rgba(29,29,29,.72);
-      max-width: 70ch;
-    }
-
-    /* Service cards */
-    .grid{
-      margin-top: 22px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:16px;
-    }
-    .card{
-      border-radius: 20px;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      padding: 20px;
-      min-height: 220px;
-    }
-    .card h2{
-      font-family:var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size:22px;
-    }
-    .card p{
-      margin:0 0 12px;
-      color: rgba(29,29,29,.66);
-      font-size:14px;
-    }
-    .list{
-      margin: 0 0 14px;
-      padding-left: 18px;
-      color: rgba(29,29,29,.78);
-      font-size: 14px;
-    }
-    .list li{margin:6px 0}
-    .cardActions{margin-top:auto}
-
-    /* LAAP band */
-    .band{
-      margin-top: 18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(29,29,29,.12);
-      background:
-        radial-gradient(750px 340px at 85% 10%, rgba(218,184,92,.22), transparent 60%),
-        linear-gradient(180deg, rgba(223,211,176,.28), rgba(255,255,255,.9));
-      padding: 22px;
-      box-shadow: var(--shadow);
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:16px;
-      align-items:stretch;
-    }
-    .band h3{
-      font-family: var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size: 30px;
-      line-height: 1.05;
-    }
-    .band p{margin:0;color:rgba(29,29,29,.70)}
-    .bandRight{
-      border-radius: 18px;
-      background: rgba(255,255,255,.8);
-      border: 1px solid rgba(29,29,29,.10);
-      padding: 16px;
-    }
-    .bandRight strong{
-      display:block;
-      font-family: var(--h);
-      font-weight:600;
-      font-size: 20px;
-      margin-bottom: 4px;
-    }
-    .bandActions{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 14px;
-    }
-
-    /* CTA box */
-    .ctaBox{
-      margin-top: 18px;
-      border-radius: var(--radius);
-      border:1px solid rgba(29,29,29,.12);
-      background: #fff;
-      box-shadow: 0 10px 26px rgba(0,0,0,.05);
-      padding: 22px;
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 16px;
-      flex-wrap:wrap;
-    }
-    .ctaBox h3{
-      font-family: var(--h);
-      font-weight:600;
-      margin:0 0 6px;
-      font-size: 28px;
-      line-height: 1.05;
-    }
-    .ctaBox p{margin:0;color:rgba(29,29,29,.70); max-width: 70ch}
-
-    /* Footer */
-    footer{
-      margin-top: 30px;
-      border-top:1px solid var(--line);
-      background: rgba(248,246,241,.75);
-      padding: 18px 0;
-      color: rgba(29,29,29,.60);
-      font-size:12px;
-    }
-    .foot{
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:center;
-    }
-
-    @media (max-width: 980px){
-      h1{font-size:42px}
-      .grid{grid-template-columns: 1fr}
-      .band{grid-template-columns: 1fr}
-      .ctaTop{min-width:auto}
-      .brand{min-width:auto}
-    }
-  </style>
+/* MOBILE */
+@media(max-width:980px){
+  .grid{grid-template-columns:1fr}
+  nav{display:none}
+  .hero h1{font-size:42px}
+}
+</style>
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
 
 <header>
   <div class="wrap nav">
     <a class="brand" href="/index.html">
-      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC logo" class="brand-logo">
+      <img src="/assets/img/logo-2026.png" alt="">
       <div>
         <strong>LaFaries Mortimer LLC</strong>
         <span>Administrative & IT Services</span>
       </div>
     </a>
 
-    <nav aria-label="Main navigation">
+    <nav>
       <a href="/index.html">Home</a>
+      <a class="active" href="/services.html">Service</a>
+      <a href="/laap.html">LAAP</a>
+      <a href="/apps.html">Open LAAP</a>
       <a href="/about.html">About</a>
-      <a class="active" href="/services.html" aria-current="page">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps & Portfolio</a>
-      <a href="/pricing.html">Pricing</a>
       <a href="/faq.html">FAQ</a>
-      <a href="/tutorial.html">Resources</a>
-      <a href="/contact.html">Contact</a>
+      <a href="/goals.html">Goals</a>
     </nav>
 
     <div class="ctaTop">
       <a class="btn btnGhost" href="/apps.html">Open Tools</a>
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+      <a class="btn btnGold" href="/contact.html">Book a Consultation</a>
     </div>
   </div>
 </header>
 
-<main id="main">
+<section class="hero">
   <div class="wrap">
-    <div class="kicker">Services</div>
-    <h1>Practical support that helps you move forward</h1>
-    <p class="sub">
-      Clear steps. Clean systems. Support that meets you where you are — without overwhelm.
+    <h1>Professional Services for Your <span>Business or Ministry</span></h1>
+    <p>
+      Formation, administrative structure, and IT clarity—delivered with
+      integrity, stewardship, and confidence.
     </p>
-
-    <section class="grid" aria-label="Service categories">
-      <article class="card">
-        <h2>Administrative Support</h2>
-        <p>Organization, documentation, and systems that bring structure to daily operations.</p>
-        <ul class="list">
-          <li>Document creation &amp; cleanup</li>
-          <li>Email and calendar organization</li>
-          <li>Meeting agendas &amp; minutes</li>
-          <li>Process checklists &amp; SOPs</li>
-        </ul>
-        <div class="cardActions">
-          <a class="btn btnGhost" href="/contact.html">Request Support</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <h2>IT Guidance &amp; Support</h2>
-        <p>Straightforward technology help — no jargon, no confusion.</p>
-        <ul class="list">
-          <li>Website setup &amp; troubleshooting</li>
-          <li>Account security &amp; best practices</li>
-          <li>Cloud storage organization</li>
-          <li>Basic cybersecurity hygiene</li>
-        </ul>
-        <div class="cardActions">
-          <a class="btn btnGhost" href="/contact.html">Get IT Help</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <h2>Business &amp; Nonprofit Formation</h2>
-        <p>Step-by-step guidance so your organization starts on solid ground.</p>
-        <ul class="list">
-          <li>LLC &amp; nonprofit setup guidance</li>
-          <li>EIN &amp; D-U-N-S walkthroughs</li>
-          <li>Bank-ready documentation</li>
-          <li>Formation checklists</li>
-        </ul>
-        <div class="cardActions">
-          <a class="btn btnGhost" href="/contact.html">Start Formation</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="band" aria-label="LAAP Suite section">
-      <div>
-        <div class="kicker">LAAP Suite™</div>
-        <h3>A guided system that turns confusion into clarity</h3>
-        <p>
-          LAAP walks you through the right questions, steps, and next actions — especially
-          when you’re not sure where to start.
-        </p>
-
-        <div class="bandActions">
-          <a class="btn btnGold" href="/laap.html">Explore LAAP Suite</a>
-          <a class="btn btnGhost" href="https://scintillating-fairy-cd927a.netlify.app/wizard/" target="_blank" rel="noopener">Open LAAP Wizard</a>
-        </div>
-      </div>
-
-      <aside class="bandRight">
-        <strong>Who LAAP is for</strong>
-        <p style="margin:0;color:rgba(29,29,29,.70);">
-          Small businesses, ministries, and families who want structure without stress.
-        </p>
-      </aside>
-    </section>
-
-    <section class="ctaBox" aria-label="Call to action">
-      <div>
-        <h3>Not sure which service you need?</h3>
-        <p>Start with a conversation. We’ll identify the clearest next step together.</p>
-      </div>
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
-    </section>
+    <div class="hero-actions">
+      <a class="btn btnGold" href="/contact.html">View Service Packages</a>
+      <a class="btn btnGhost" href="/apps.html">Independent Tools</a>
+    </div>
   </div>
-</main>
+</section>
+
+<section class="services">
+  <div class="wrap grid">
+    <div class="card">
+      <span>Admin · Structure</span>
+      <h3>Administrative Systems</h3>
+      <p>Documentation, workflows, and operational cleanup that restore order and focus.</p>
+    </div>
+
+    <div class="card">
+      <span>IT · Guidance</span>
+      <h3>Practical Technology Support</h3>
+      <p>Websites, cloud tools, security basics, and setup—explained clearly and done right.</p>
+    </div>
+
+    <div class="card">
+      <span>Formation</span>
+      <h3>Business & Ministry Setup</h3>
+      <p>LLC and nonprofit guidance, EIN support, and bank-ready documentation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lAAP">
+  <div class="wrap">
+    <h2>Prefer a guided system instead?</h2>
+    <p>
+      LAAP Suite™ unifies structure, tools, and clarity into one intelligent framework
+      designed to grow with you.
+    </p>
+    <a class="btn btnGold" href="/laap.html">Explore LAAP Suite</a>
+  </div>
+</section>
 
 <footer>
-  <div class="wrap foot">
-    <div>© 2026 LaFaries Mortimer LLC</div>
-    <div>Miami, Florida • Virtual Support (U.S.)</div>
-  </div>
+  © 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
 </footer>
 
 </body>
