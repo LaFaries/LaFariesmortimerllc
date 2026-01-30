@@ -11,6 +11,46 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+/* Gold emphasis line – refined */
+.support-emphasis{
+  color: rgba(218,184,92,.95);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: .04em;          /* tighter, premium */
+  margin-top: 8px;
+}
+/* Card hover polish */
+.support-card{
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.support-card:hover{
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 90px rgba(0,0,0,.45),
+    inset 0 0 0 1px rgba(218,184,92,.45);
+}
+
+/* Gold line reacts slightly on hover */
+.support-card:hover .support-emphasis{
+  color: rgba(218,184,92,1);
+  letter-spacing: .06em;
+}
+/* Card structure alignment */
+.support-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.support-card h3{
+  min-height: 42px;   /* aligns titles */
+}
+
+.support-emphasis{
+  min-height: 64px;   /* aligns gold description blocks */
+}
 
 <style>
 :root{
