@@ -1,320 +1,246 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apps & Tools | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Purpose-built apps for legacy, reflection, organization, and digital clarity." />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Apps | LaFaries Mortimer LLC</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --charcoal:#0f1115;
-      --charcoal-soft:#151922;
-      --cream:#f8f6f1;
-      --gold:#d4af37;
-      --gold-soft:rgba(212,175,55,.25);
-      --muted:#9ca3af;
-      --line:rgba(255,255,255,.08);
+<style>
+:root{
+  --gold:#DAB85C;
+  --cream:#F8F6F1;
+  --charcoal:#0f0f12;
+  --panel:#15161a;
+  --border:rgba(255,255,255,.12);
+  --glow:0 0 25px rgba(218,184,92,.55);
+}
 
-      --radius:22px;
-      --shadow:0 30px 70px rgba(0,0,0,.45);
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  color:var(--cream);
+  background:
+    radial-gradient(900px 500px at 50% -200px, rgba(218,184,92,.35), transparent 60%),
+    linear-gradient(180deg,#0b0c0f,var(--charcoal));
+}
 
-      --h:"Cormorant Garamond", Georgia, serif;
-      --b:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
+.wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:90px 24px;
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--b);
-      background:
-        radial-gradient(1200px 600px at 70% -10%, rgba(212,175,55,.12), transparent 60%),
-        linear-gradient(180deg,var(--charcoal),#000);
-      color:var(--cream);
-      line-height:1.7;
-    }
+header{
+  text-align:center;
+  margin-bottom:70px;
+}
 
-    a{text-decoration:none;color:inherit}
+header h1{
+  font-family:"Cormorant Garamond",serif;
+  font-size:56px;
+  margin:0 0 14px;
+}
 
-    .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+header p{
+  max-width:720px;
+  margin:0 auto;
+  opacity:.8;
+  font-size:18px;
+}
 
-    /* Header */
-    header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(15,17,21,.85);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:16px 0;gap:18px;
-    }
-    .brand{
-      display:flex;align-items:center;gap:12px;
-      font-family:var(--h);
-      font-size:20px;
-      font-weight:600;
-    }
-    nav{
-      display:flex;gap:14px;flex-wrap:wrap;
-    }
-    nav a{
-      font-size:14px;
-      padding:8px 14px;
-      border-radius:999px;
-      color:rgba(248,246,241,.75);
-    }
-    nav a:hover{
-      background:rgba(212,175,55,.15);
-      color:#fff;
-    }
-    nav a.active{
-      background:rgba(212,175,55,.25);
-      border:1px solid rgba(212,175,55,.4);
-      color:#fff;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:36px;
+}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 20px;
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:600;
-      border:1px solid transparent;
-    }
-    .btnGold{
-      background:linear-gradient(180deg,var(--gold),#b9982e);
-      color:#111;
-      box-shadow:0 12px 28px rgba(212,175,55,.35);
-    }
-    .btnGhost{
-      border:1px solid rgba(255,255,255,.25);
-      color:var(--cream);
-    }
-    .btnDisabled{
-      background:rgba(255,255,255,.08);
-      color:rgba(255,255,255,.4);
-      border:1px dashed rgba(255,255,255,.25);
-      cursor:not-allowed;
-    }
+.card{
+  background:linear-gradient(180deg,#15161a,#0e0f13);
+  border-radius:28px;
+  padding:36px;
+  border:1px solid var(--border);
+  box-shadow:0 30px 100px rgba(0,0,0,.7);
+  position:relative;
+}
 
-    main{padding:64px 0}
+.card h3{
+  font-family:"Cormorant Garamond",serif;
+  font-size:30px;
+  margin:0 0 12px;
+}
 
-    .kicker{
-      display:inline-block;
-      padding:8px 16px;
-      border-radius:999px;
-      border:1px solid rgba(212,175,55,.45);
-      background:rgba(212,175,55,.12);
-      font-size:12px;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      margin-bottom:18px;
-      color:var(--gold);
-    }
+.card p{
+  opacity:.85;
+  line-height:1.6;
+}
 
-    h1{
-      font-family:var(--h);
-      font-size:56px;
-      font-weight:600;
-      margin:0 0 14px;
-    }
+.card ul{
+  margin:18px 0 0;
+  padding-left:18px;
+}
 
-    .sub{
-      max-width:70ch;
-      font-size:17px;
-      color:rgba(248,246,241,.75);
-    }
+.card li{
+  margin:10px 0;
+  opacity:.85;
+}
 
-    .grid{
-      margin-top:42px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:26px;
-    }
+.cta{
+  display:inline-block;
+  margin-top:26px;
+  padding:12px 26px;
+  border-radius:999px;
+  background:var(--gold);
+  color:#1a1a1a;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
 
-    .card{
-      background:
-        radial-gradient(600px 240px at 80% 0%, rgba(212,175,55,.15), transparent 60%),
-        var(--charcoal-soft);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:26px;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      position:relative;
-      overflow:hidden;
-    }
+.cta:hover{filter:brightness(.95)}
 
-    .card::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(120deg,transparent 60%,rgba(255,255,255,.04),transparent 80%);
-      pointer-events:none;
-    }
+.highlight{
+  border:1px solid rgba(218,184,92,.55);
+  box-shadow:var(--glow), 0 40px 120px rgba(0,0,0,.85);
+}
 
-    .card h2{
-      font-family:var(--h);
-      font-size:26px;
-      margin:0;
-    }
+.badge{
+  position:absolute;
+  top:18px;
+  right:18px;
+  background:rgba(218,184,92,.15);
+  color:var(--gold);
+  padding:6px 14px;
+  border-radius:999px;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
 
-    .card p{
-      font-size:15px;
-      color:rgba(248,246,241,.75);
-    }
-
-    .meta{
-      font-size:12px;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--gold);
-    }
-
-    .actions{
-      margin-top:auto;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-
-    footer{
-      border-top:1px solid var(--line);
-      background:#0b0d11;
-      padding:22px 0;
-      font-size:12px;
-      color:rgba(248,246,241,.55);
-      margin-top:60px;
-    }
-
-    @media(max-width:900px){
-      h1{font-size:42px}
-    }
-  </style>
+@media(max-width:700px){
+  header h1{font-size:42px}
+}
+</style>
 </head>
 
 <body>
 
+<main class="wrap">
+
 <header>
-  <div class="wrap nav">
-    <div class="brand">LaFaries Mortimer LLC</div>
-
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/services.html">Services</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a class="active" href="/apps.html">Apps</a>
-      <a href="/pricing.html">Pricing</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/contact.html">Contact</a>
-    </nav>
-
-    <a class="btn btnGold" href="/contact.html">Book a Call</a>
-  </div>
+  <h1>Apps & Digital Tools</h1>
+  <p>
+    A growing ecosystem of intelligent tools designed for legacy, insight,
+    automation, and modern business operations.
+  </p>
 </header>
 
-<main class="wrap">
-  <span class="kicker">Built with Purpose</span>
-  <h1>Apps & Digital Tools</h1>
-  <p class="sub">
-    A growing ecosystem of applications designed to preserve legacy,
-    support reflection, and bring clarity to everyday life.
-  </p>
+<section class="grid">
 
-  <section class="grid">
-
-    <!-- Legacy Roots -->
-    <article class="card">
-      <div class="meta">Live App</div>
-      <h2>Legacy Roots</h2>
-      <p>
-        A private legacy-tracking system designed to document people,
-        relationships, family connections, and historical context so
-        stories and lineage are not lost over time.
-      </p>
-      <div class="actions">
-        <a href="https://lafariescustom.com/" target="_blank" class="btn btnGold">Open App</a>
-      </div>
-    </article>
-
-    <!-- Dream Journal -->
-    <article class="card">
-      <div class="meta">Live App</div>
-      <h2>Dream Journal</h2>
-      <p>
-        A personal dream-logging tool that allows you to record,
-        review, question, and track recurring dreams and patterns
-        over time.
-      </p>
-      <div class="actions">
-        <a href="https://lafarieslm.com/" target="_blank" class="btn btnGold">Open Journal</a>
-      </div>
-    </article>
-
-    <!-- Family Adventures -->
-    <article class="card">
-      <div class="meta">Live App</div>
-      <h2>Family Adventures</h2>
-      <p>
-        A creative storytelling and exploration platform built to
-        document family experiences, imagination, and shared journeys.
-      </p>
-      <div class="actions">
-        <a href="https://lafariesfamilyadv.org/" target="_blank" class="btn btnGold">Visit Site</a>
-      </div>
-    </article>
-
-    <!-- Mobile Player -->
-    <article class="card">
-      <div class="meta">In Development</div>
-      <h2>Mobile Player</h2>
-      <p>
-        A mobile-first audio recorder and player with waveform
-        visualization, timeline scrubbing, and local saving.
-      </p>
-      <div class="actions">
-        <span class="btn btnDisabled">Coming Soon</span>
-      </div>
-    </article>
-
-    <!-- Bill Tracker -->
-    <article class="card">
-      <div class="meta">In Development</div>
-      <h2>Bill Tracker</h2>
-      <p>
-        A simple local-first bill tracking tool to monitor due dates,
-        payment history, and recurring expenses.
-      </p>
-      <div class="actions">
-        <span class="btn btnDisabled">Coming Soon</span>
-      </div>
-    </article>
-
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    © <span id="year"></span> LaFaries Mortimer LLC • All rights reserved
+  <!-- CUSTOM AI AGENT -->
+  <div class="card highlight">
+    <span class="badge">Flagship</span>
+    <h3>Custom AI Agent</h3>
+    <p>
+      A fully customized AI agent built specifically for your business needs.
+      Designed to answer calls, follow up with leads, handle inquiries,
+      and operate 24/7 without rest.
+    </p>
+    <ul>
+      <li>✔ Never miss calls or leads again</li>
+      <li>✔ Custom-built for your workflows</li>
+      <li>✔ Lead follow-up, intake, and automation</li>
+      <li>✔ Scales without increasing payroll</li>
+    </ul>
+    <p><strong>This agent does not sleep. No more missed money.</strong></p>
+    <a href="/contact.html" class="cta">Request AI Agent</a>
   </div>
-</footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <!-- LEGACY ROOTS -->
+  <div class="card">
+    <h3>Legacy Roots</h3>
+    <p>
+      A digital legacy system designed to document your people, relationships,
+      and life connections — helping you map lineage, history, and meaning
+      across generations.
+    </p>
+    <ul>
+      <li>✔ Track family, relationships, and history</li>
+      <li>✔ Build a living legacy archive</li>
+      <li>✔ Discover connections over time</li>
+    </ul>
+    <a href="https://lafariescustom.com" class="cta">Open App</a>
+  </div>
+
+  <!-- DREAM JOURNAL -->
+  <div class="card">
+    <h3>Dream Journal</h3>
+    <p>
+      A guided digital journal to log dreams, track patterns, reflect on meaning,
+      and observe emotional or symbolic trends over time.
+    </p>
+    <ul>
+      <li>✔ Dream logging & reflection</li>
+      <li>✔ Pattern recognition</li>
+      <li>✔ Mood & insight tracking</li>
+    </ul>
+    <a href="https://lafarieslm.com" class="cta">Open App</a>
+  </div>
+
+  <!-- LAFARIES FAMILY ADVENTURES -->
+  <div class="card">
+    <h3>LaFaries Family Adventures</h3>
+    <p>
+      A family-centered digital experience designed to preserve memories,
+      share adventures, and build a living archive of family moments
+      through storytelling and interaction.
+    </p>
+    <ul>
+      <li>✔ Family storytelling & archives</li>
+      <li>✔ Interactive, kid-friendly experiences</li>
+      <li>✔ Built for creativity, connection, and legacy</li>
+    </ul>
+    <a href="https://lafariesfamilyadv.org" class="cta">Visit Website</a>
+  </div>
+
+  <!-- MOBILE PLAYER -->
+  <div class="card">
+    <h3>Mobile Player</h3>
+    <p>
+      A mobile-first audio player and recorder allowing users to paste a URL,
+      record audio, visualize waveforms, and save recordings.
+    </p>
+    <ul>
+      <li>✔ Record & playback audio</li>
+      <li>✔ Timeline scrubber & waveform</li>
+      <li>✔ Rename and save recordings</li>
+    </ul>
+    <span class="badge">Coming Soon</span>
+  </div>
+
+  <!-- BILL TRACKER -->
+  <div class="card">
+    <h3>Bill Tracker</h3>
+    <p>
+      A simple financial tracking tool to manage recurring bills,
+      monitor due dates, and maintain financial awareness.
+    </p>
+    <ul>
+      <li>✔ Track monthly expenses</li>
+      <li>✔ Prevent missed payments</li>
+      <li>✔ Clean financial overview</li>
+    </ul>
+    <span class="badge">Coming Soon</span>
+  </div>
+
+</section>
+
+</main>
 
 </body>
 </html>
