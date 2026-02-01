@@ -1,0 +1,44 @@
+SERVICE AGREEMENT
+LaFaries Mortimer LLC
+This Service Agreement (“Agreement”) is made between:
+LaFaries Mortimer LLC
+and
+Client: {{client_name}}
+Fee: {{service_fee}}
+
+1. Scope of Services
+LaFaries Mortimer LLC agrees to provide Administrative and IT Services including, but not limited to:
+* Business formation and compliance assistance
+* Website and platform setup
+* Administrative automation and document systems
+* Ongoing technical and administrative support
+
+2. Service Fee
+Client agrees to pay a total service fee of:
+${{service_fee}}
+Payment terms and schedule will be agreed upon prior to project start.
+
+3. Project Timeline
+Services will begin upon receipt of initial payment and required client information.
+
+4. Client Responsibilities
+Client agrees to provide accurate information, timely responses, and required documentation necessary to complete services.
+
+5. Confidentiality
+All client data and information will remain confidential and will not be shared with third parties.
+
+6. Non-Refundable Work
+Due to the nature of digital and administrative services, all work completed is non-refundable once delivered.
+
+7. Liability
+LaFaries Mortimer LLC is not liable for client misuse of delivered systems, documents, or platforms.
+
+8. Agreement Acceptance
+By signing below, both parties agree to the terms outlined in this agreement.
+
+Client Signature: ___________________________
+Date: ___________________
+LaFaries Mortimer LLC Representative: ___________________________
+Date: ___________________
+
+
