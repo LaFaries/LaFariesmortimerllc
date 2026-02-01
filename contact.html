@@ -1,127 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact | LaFaries Mortimer LLC</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --gold:#DAB85C;
-  --charcoal:#0f0f12;
-  --panel:#15161a;
-  --border:rgba(255,255,255,.12);
-  --text:#F8F6F1;
-}
-
-*{box-sizing:border-box}
 body{
-  margin:0;
-  font-family:Inter,sans-serif;
-  background:
-    radial-gradient(900px 500px at 50% -200px, rgba(218,184,92,.35), transparent 60%),
-    linear-gradient(180deg, #0b0c0f, var(--charcoal));
-  color:var(--text);
+    font-family: Arial, sans-serif;
+    background:#f7f7f7;
+    margin:0;
+    padding:40px;
 }
-
-.wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:80px 24px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:36px;
-}
-
 .card{
-  background:linear-gradient(180deg,#14151a,#0e0f13);
-  border-radius:28px;
-  padding:36px;
-  border:1px solid var(--border);
-  box-shadow:0 40px 120px rgba(0,0,0,.75);
+    background:white;
+    max-width:600px;
+    margin:auto;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
-
-h1,h2{
-  font-family:"Cormorant Garamond",serif;
-  margin:0 0 14px;
+h1{
+    margin-top:0;
 }
-
-p{opacity:.8}
-
 label{
-  display:block;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  margin:22px 0 6px;
-  opacity:.75;
+    display:block;
+    margin-top:15px;
+    font-weight:bold;
 }
-
-input,textarea{
-  width:100%;
-  padding:14px 16px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:#0b0c10;
-  color:var(--text);
-  font-size:14px;
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:16px;
 }
-
-textarea{min-height:120px;resize:vertical}
-
 button{
-  margin-top:26px;
-  padding:14px 28px;
-  border-radius:999px;
-  border:none;
-  background:var(--gold);
-  color:#1a1a1a;
-  font-weight:600;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  cursor:pointer;
+    margin-top:20px;
+    padding:12px 20px;
+    font-size:16px;
+    background:#0a3d62;
+    color:white;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
 }
-
-button:hover{filter:brightness(.95)}
-
-ul{
-  margin:16px 0 0;
-  padding-left:18px;
-}
-li{margin:10px 0;opacity:.85}
-
-@media(max-width:900px){
-  .grid{grid-template-columns:1fr}
+button:hover{
+    background:#074172;
 }
 </style>
 </head>
 
 <body>
 
-<main class="wrap">
+<div class="card">
+    <h1>Send a Request</h1>
+    <p>You’ll receive your contract immediately after submission.</p>
 
-  <div class="grid">
-
-    <!-- CONTACT FORM -->
-    <div class="card">
-      <h1>Send a request</h1>
-      <p>You’ll receive confirmation once your request is submitted.</p>
-
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        action="/thank-you.html"
-      >
-        <input type="hidden" name="form-name" value="contact">
-
+    <form id="contractForm">
         <label>Your Name</label>
         <input name="name" required>
 
@@ -135,23 +72,31 @@ li{margin:10px 0;opacity:.85}
         <textarea name="message"></textarea>
 
         <button type="submit">Send Request</button>
-      </form>
-    </div>
+    </form>
+</div>
 
-    <!-- WHAT HAPPENS NEXT -->
-    <div class="card">
-      <h2>What happens next</h2>
-      <ul>
-        <li>✔ You receive confirmation</li>
-        <li>✔ Your request is reviewed personally</li>
-        <li>✔ Clear next steps are identified</li>
-        <li>✔ No pressure, no sales scripts</li>
-      </ul>
-    </div>
+<script>
+document.getElementById('contractForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-  </div>
+    const formData = {
+        client_name: document.querySelector('input[name="name"]').value,
+        service_fee: "0"
+    };
 
-</main>
+    const response = await fetch('/.netlify/functions/generate-contract', {
+        method: 'POST',
+        body: JSON.stringify(formData),
+    });
+
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Contract-${formData.client_name}.docx`;
+    a.click();
+});
+</script>
 
 </body>
 </html>
