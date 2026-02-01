@@ -1,3 +1,4 @@
+// netlify/functions/generate-contract.js
 const fs = require("fs");
 const path = require("path");
 const PizZip = require("pizzip");
@@ -5,40 +6,45 @@ const Docxtemplater = require("docxtemplater");
 
 exports.handler = async (event) => {
   try {
-    const { client_name, service_fee } = JSON.parse(event.body);
+    if (event.httpMethod !== "POST") {
+      return { statusCode: 405, body: "Method Not Allowed" };
+    }
+
+    const data = JSON.parse(event.body || "{}");
+
+    // Expecting: client_name, service_fee, topic, message, email, name
+    const payload = {
+      client_name: data.client_name || "",
+      service_fee: data.service_fee || "",
+      name: data.name || "",
+      email: data.email || "",
+      topic: data.topic || "",
+      message: data.message || "",
+      date: new Date().toLocaleDateString(),
+    };
 
     const templatePath = path.join(__dirname, "contract-template.docx");
-    const content = fs.readFileSync(templatePath, "binary");
+    const templateBinary = fs.readFileSync(templatePath, "binary");
 
-    const zip = new PizZip(content);
-    const doc = new Docxtemplater(zip);
-
-    doc.setData({
-      client_name: client_name,
-      service_fee: service_fee,
+    const zip = new PizZip(templateBinary);
+    const doc = new Docxtemplater(zip, {
+      paragraphLoop: true,
+      linebreaks: true,
     });
+
+    doc.setData(payload);
 
     doc.render();
 
-    const buffer = doc.getZip().generate({
+    const outBuffer = doc.getZip().generate({
       type: "nodebuffer",
       compression: "DEFLATE",
     });
 
+    const safeClient = (payload.client_name || "Client")
+      .replace(/[^\w\- ]+/g, "")
+      .trim()
+      .replace(/\s+/g, "-");
+
     return {
-      statusCode: 200,
-      headers: {
-        "Content-Type":
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        "Content-Disposition": `attachment; filename=Contract-${client_name}.docx`,
-      },
-      body: buffer.toString("base64"),
-      isBase64Encoded: true,
-    };
-  } catch (error) {
-    return {
-      statusCode: 500,
-      body: error.toString(),
-    };
-  }
-};
+      status
