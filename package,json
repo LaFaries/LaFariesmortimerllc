@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "docxtemplater": "^3.37.12",
+    "pizzip": "^3.1.5"
+  }
+}
