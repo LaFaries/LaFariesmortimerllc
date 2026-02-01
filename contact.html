@@ -7,47 +7,73 @@
 
 <style>
 body{
-    font-family: Arial, sans-serif;
-    background:#f7f7f7;
-    margin:0;
-    padding:40px;
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  background:#1c1c1c;
+  color:#f5f5f5;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
 }
+
 .card{
-    background:white;
-    max-width:600px;
-    margin:auto;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  background:#2a2a2a;
+  width:100%;
+  max-width:650px;
+  padding:40px;
+  border-radius:10px;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
 }
+
 h1{
-    margin-top:0;
+  margin-top:0;
+  text-align:center;
+  letter-spacing:1px;
 }
+
+p{
+  text-align:center;
+  color:#bdbdbd;
+}
+
 label{
-    display:block;
-    margin-top:15px;
-    font-weight:bold;
+  display:block;
+  margin-top:20px;
+  font-weight:600;
 }
+
 input, textarea{
-    width:100%;
-    padding:10px;
-    margin-top:5px;
-    border:1px solid #ccc;
-    border-radius:4px;
-    font-size:16px;
+  width:100%;
+  margin-top:8px;
+  padding:12px;
+  border-radius:6px;
+  border:none;
+  background:#3a3a3a;
+  color:white;
+  font-size:15px;
 }
+
+input:focus, textarea:focus{
+  outline:none;
+  background:#444;
+}
+
 button{
-    margin-top:20px;
-    padding:12px 20px;
-    font-size:16px;
-    background:#0a3d62;
-    color:white;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
+  width:100%;
+  margin-top:30px;
+  padding:14px;
+  background:#000;
+  color:white;
+  font-size:16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.3s ease;
 }
+
 button:hover{
-    background:#074172;
+  background:#111;
 }
 </style>
 </head>
@@ -55,48 +81,28 @@ button:hover{
 <body>
 
 <div class="card">
-    <h1>Send a Request</h1>
-    <p>You’ll receive your contract immediately after submission.</p>
+  <h1>Send a Message</h1>
+  <p>You’ll receive a response shortly.</p>
 
-    <form id="contractForm">
-        <label>Your Name</label>
-        <input name="name" required>
+  <form name="contact"
+        method="POST"
+        data-netlify="true"
+        action="/thank-you.html">
 
-        <label>Email Address</label>
-        <input type="email" name="email" required>
+    <input type="hidden" name="form-name" value="contact" />
 
-        <label>What are you reaching out about?</label>
-        <input name="topic">
+    <label>Your Name</label>
+    <input name="name" required />
 
-        <label>Message</label>
-        <textarea name="message"></textarea>
+    <label>Email Address</label>
+    <input type="email" name="email" required />
 
-        <button type="submit">Send Request</button>
-    </form>
+    <label>Message</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
 </div>
-
-<script>
-document.getElementById('contractForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const formData = {
-        client_name: document.querySelector('input[name="name"]').value,
-        service_fee: "0"
-    };
-
-    const response = await fetch('/.netlify/functions/generate-contract', {
-        method: 'POST',
-        body: JSON.stringify(formData),
-    });
-
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `Contract-${formData.client_name}.docx`;
-    a.click();
-});
-</script>
 
 </body>
 </html>
