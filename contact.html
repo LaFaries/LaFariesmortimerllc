@@ -5,75 +5,96 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact | LaFaries Mortimer LLC</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
+:root{
+  --gold:#DAB85C;
+  --charcoal:#0f1115;
+  --panel:#171a21;
+  --border:rgba(255,255,255,.1);
+  --text:#F8F6F1;
+  --radius:22px;
+}
+
+*{box-sizing:border-box}
+
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background:#1c1c1c;
-  color:#f5f5f5;
+  font-family:Inter,sans-serif;
+  background:
+    radial-gradient(900px 400px at 50% -200px, rgba(218,184,92,.25), transparent 60%),
+    linear-gradient(180deg,#0b0c10,var(--charcoal));
+  color:var(--text);
   display:flex;
   justify-content:center;
   align-items:center;
   min-height:100vh;
+  padding:30px 20px;
 }
 
 .card{
-  background:#2a2a2a;
   width:100%;
-  max-width:650px;
-  padding:40px;
-  border-radius:10px;
-  box-shadow:0 0 25px rgba(0,0,0,0.6);
+  max-width:720px;
+  background:linear-gradient(180deg,#161921,#0f1116);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:50px 40px;
+  box-shadow:0 40px 120px rgba(0,0,0,.7);
 }
 
 h1{
-  margin-top:0;
+  font-family:"Cormorant Garamond",serif;
+  font-size:44px;
+  margin:0 0 10px;
   text-align:center;
-  letter-spacing:1px;
 }
 
 p{
   text-align:center;
-  color:#bdbdbd;
+  color:rgba(255,255,255,.6);
+  margin-bottom:30px;
 }
 
 label{
   display:block;
-  margin-top:20px;
-  font-weight:600;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin:22px 0 6px;
+  opacity:.7;
 }
 
-input, textarea{
+input,textarea{
   width:100%;
-  margin-top:8px;
-  padding:12px;
-  border-radius:6px;
-  border:none;
-  background:#3a3a3a;
-  color:white;
-  font-size:15px;
+  padding:14px 16px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:#0b0d12;
+  color:var(--text);
+  font-size:14px;
 }
 
-input:focus, textarea:focus{
-  outline:none;
-  background:#444;
-}
+textarea{min-height:120px;resize:vertical}
 
 button{
-  width:100%;
   margin-top:30px;
-  padding:14px;
-  background:#000;
-  color:white;
-  font-size:16px;
+  width:100%;
+  padding:16px;
+  border-radius:999px;
   border:none;
-  border-radius:6px;
+  background:var(--gold);
+  color:#1a1a1a;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
   cursor:pointer;
-  transition:0.3s ease;
+  transition:.3s ease;
 }
 
 button:hover{
-  background:#111;
+  box-shadow:0 0 25px rgba(218,184,92,.6);
+  transform:translateY(-2px);
 }
 </style>
 </head>
@@ -81,27 +102,28 @@ button:hover{
 <body>
 
 <div class="card">
-  <h1>Send a Message</h1>
-  <p>You’ll receive a response shortly.</p>
+  <h1>Send a Request</h1>
+  <p>You’ll receive confirmation once your request is submitted.</p>
 
-  <form name="contact"
-        method="POST"
-        data-netlify="true"
-        action="/thank-you.html">
-
-    <input type="hidden" name="form-name" value="contact" />
+  <!-- DO NOT TOUCH THIS FORM -->
+  <form name="contact" method="POST" data-netlify="true" action="/thank-you.html">
+    <input type="hidden" name="form-name" value="contact">
 
     <label>Your Name</label>
-    <input name="name" required />
+    <input type="text" name="name" required>
 
     <label>Email Address</label>
-    <input type="email" name="email" required />
+    <input type="email" name="email" required>
+
+    <label>What are you reaching out about?</label>
+    <input type="text" name="topic">
 
     <label>Message</label>
-    <textarea name="message" rows="5" required></textarea>
+    <textarea name="message"></textarea>
 
-    <button type="submit">Send Message</button>
+    <button type="submit">Send Request</button>
   </form>
+
 </div>
 
 </body>
