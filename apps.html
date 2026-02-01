@@ -239,6 +239,39 @@ header p{
   </div>
 
 </section>
+<h2>Start Your Service Agreement</h2>
+
+<form id="contractForm">
+  <label>Client Name</label>
+  <input type="text" id="client_name" required />
+
+  <label>Service Fee</label>
+  <input type="text" id="service_fee" required />
+
+  <button type="submit">Generate My Contract</button>
+</form>
+
+<script>
+document.getElementById("contractForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const client_name = document.getElementById("client_name").value;
+  const service_fee = document.getElementById("service_fee").value;
+
+  const response = await fetch("/.netlify/functions/generate-contract", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ client_name, service_fee })
+  });
+
+  const blob = await response.blob();
+  const url = window.URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `Contract-${client_name}.docx`;
+  a.click();
+});
+</script>
 
 </main>
 
