@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,30 +105,39 @@ button:hover{
   <h1>Send a Request</h1>
   <p>You’ll receive confirmation once your request is submitted.</p>
 
-  <!-- DO NOT TOUCH THIS FORM -->
-  <form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact" />
+  <!-- ✅ NETLIFY FORM -->
+  <form
+    name="contact"
+    method="POST"
+    action="/thank-you.html"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
 
-  <p hidden>
-    <label>Don’t fill this out: <input name="bot-field" /></label>
-  </p>
+    <input type="hidden" name="form-name" value="contact" />
 
-  <label>Your Name</label>
-  <input type="text" name="name" required>
+    <p hidden>
+      <label>
+        Don’t fill this out:
+        <input name="bot-field" />
+      </label>
+    </p>
 
-  <label>Email Address</label>
-  <input type="email" name="email" required>
+    <label>Your Name</label>
+    <input type="text" name="name" required>
 
-  <label>What are you reaching out about?</label>
-  <input type="text" name="topic">
+    <label>Email Address</label>
+    <input type="email" name="email" required>
 
-  <label>Message</label>
-  <textarea name="message"></textarea>
+    <label>What are you reaching out about?</label>
+    <input type="text" name="topic">
 
-  <button type="submit">Send Request</button>
-</form>
+    <label>Message</label>
+    <textarea name="message" required></textarea>
 
+    <button type="submit">Send Request</button>
 
+  </form>
 </div>
 
 </body>
