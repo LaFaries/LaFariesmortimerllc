@@ -352,3 +352,36 @@ header nav a.active{
     #b8963e
   );
 }
+/* =========================================================
+   FORCE HEADER NAV VISIBILITY + GOLD ALUMINUM PILLS
+   (High specificity so it overrides global nav rules)
+   ========================================================= */
+
+body header nav a,
+body header .nav nav a,
+body header .wrap nav a {
+  color: rgba(255,255,255,.92) !important;
+  background: rgba(255,255,255,.08) !important;
+  border: 1px solid rgba(218,184,92,.35) !important;
+  padding: 8px 16px !important;
+  border-radius: 999px !important;
+  display: inline-block !important;
+  font-weight: 500 !important;
+  letter-spacing: .04em !important;
+  line-height: 1 !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.25) !important;
+  transition: all .25s ease !important;
+}
+
+/* Hover: gold "raised aluminum" */
+body header nav a:hover,
+body header .nav nav a:hover,
+body header .wrap nav a:hover {
+  color: #1a1a1a !important;
+  background: linear-gradient(135deg,#fef3c7,#facc15,#dab85c,#b8963e) !important;
+  border-color: rgba(218,184,92,.95) !important;
+  box-shadow:
+    0 0 0 1px rgba(218,184,92,.65),
+    0 14px 34px rgba(218,184,92,.45) !important;
+  transform: translateY(-1px);
+}
