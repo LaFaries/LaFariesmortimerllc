@@ -292,3 +292,16 @@ video,
 .hero button {
   pointer-events: auto;
 }
+/* =========================================================
+   FIX: HEADER ABOVE HERO (links clickable)
+   ========================================================= */
+
+header {
+  position: relative;
+  z-index: 9999;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
