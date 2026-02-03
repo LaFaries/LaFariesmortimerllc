@@ -276,3 +276,19 @@ video,
   position: relative;
   z-index: 1;
 }
+/* =========================================================
+   FIX: HERO / SLIDER BLOCKING HEADER CLICKS
+   ========================================================= */
+
+/* Allow clicks to pass through hero background */
+.hero,
+.hero-video,
+.hero-video video {
+  pointer-events: none;
+}
+
+/* But keep buttons inside hero clickable */
+.hero a,
+.hero button {
+  pointer-events: auto;
+}
