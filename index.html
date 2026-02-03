@@ -227,14 +227,16 @@ footer{
 /* ================= MOBILE ================= */
 @media(max-width:980px){
   .hero-wrap,.support-grid{grid-template-columns:1fr}
-  nav{display:}
+  nav{display:none}
 }
 </style>
 </head>
 
 <body>
+
+<header>
   <header>
-  <div class="wrap nav">
+  <div class="wrap nav" style="position:relative; z-index:9999;">
 
     <a class="brand" href="/">
       <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
@@ -256,6 +258,8 @@ footer{
   <a class="btn btnGhost" href="free.html">Free Tools</a>
   <a class="btn btnGold" href="contact.html">Book a Call</a>
 </div>
+
+
 </header>
 
 <section class="hero">
