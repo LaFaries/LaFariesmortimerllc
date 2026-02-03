@@ -313,3 +313,42 @@ nav a,
   position: relative;
   z-index: 9999;
 }
+/* =========================================
+   RESTORE ORIGINAL HEADER NAV (HOME LOOK)
+   ========================================= */
+
+header nav a{
+  color: rgba(255,255,255,.92) !important;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  transition: all .25s ease;
+}
+
+/* Gold aluminum oval effect */
+header nav a:hover{
+  color: #1a1a1a !important;
+  background: linear-gradient(
+    135deg,
+    #fef3c7,
+    #facc15,
+    #dab85c,
+    #b8963e
+  );
+  box-shadow:
+    0 0 0 1px rgba(218,184,92,.9),
+    0 10px 28px rgba(218,184,92,.45);
+}
+
+/* Active page state */
+header nav a.active{
+  color:#1a1a1a !important;
+  background: linear-gradient(
+    135deg,
+    #fef3c7,
+    #facc15,
+    #dab85c,
+    #b8963e
+  );
+}
