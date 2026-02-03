@@ -305,3 +305,11 @@ header {
   position: relative;
   z-index: 1;
 }
+/* ===== FIX DEAD HEADER LINKS ===== */
+header a,
+nav a,
+.ctaTop a {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 9999;
+}
