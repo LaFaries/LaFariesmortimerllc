@@ -270,7 +270,67 @@ footer{
     </section>
 
     <div class="laap-visual">
-      Live LAAP System Preview (Interactive Module Placeholder)
+      Live LAAP System Preview 
+      <div class="laap-visual">
+        <h2 style="margin-bottom:15px;">Live LAAP System Preview</h2>
+<p>Click through the steps below to see how LAAP forms and protects a business before you begin the wizard.</p>
+
+<div id="demo-step" style="
+  margin-top:20px;
+  padding:25px;
+  border:1px solid #d4af37;
+  border-radius:10px;
+  font-size:20px;
+  text-align:center;">
+  Step 1: Business Concept & Vision
+</div>
+
+<button onclick="nextDemo()" style="
+  margin-top:20px;
+  padding:10px 20px;
+  background:#d4af37;
+  border:none;
+  border-radius:6px;
+  font-weight:bold;
+  cursor:pointer;">
+  Next Step
+</button>
+
+<div style="margin-top:25px;">
+  <a href="/wizard/" style="
+    background:#d4af37;
+    padding:12px 22px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    color:black;">
+    Start LAAP Wizard
+  </a>
+</div>
+
+<script>
+let steps = [
+"Step 1: Business Concept & Vision",
+"Step 2: Name & Sunbiz Check",
+"Step 3: Structure Selection",
+"Step 4: Articles Filed on Sunbiz",
+"Step 5: EIN & IRS Setup",
+"Step 6: State & Local Tax Registration",
+"Step 7: Bank & Money Flow Setup",
+"Step 8: Licensing & Compliance",
+"Step 9: Digital Infrastructure",
+"Step 10: Launch & 90-Day Plan Complete"
+];
+
+let current = 0;
+
+function nextDemo(){
+  current = (current + 1) % steps.length;
+  document.getElementById("demo-step").innerText = steps[current];
+}
+</script>
+
+
     </div>
 
   </div>
