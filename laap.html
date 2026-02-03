@@ -268,42 +268,83 @@ footer{
         <p>Stay current year after year without chasing deadlines or documents.</p>
       </div>
     </section>
-      <div class="laap-visual">
-        <h2 style="margin-bottom:15px;">Live LAAP System Preview</h2>
-<p>Click through the steps below to see how LAAP forms and protects a business before you begin the wizard.</p>
+      <h2 class="laap-preview-title">Live LAAP System Preview</h2>
+<p class="laap-preview-sub">
+Watch how LAAP forms and protects a business before you begin the wizard.
+</p>
 
-<div id="demo-step" style="
-  margin-top:20px;
-  padding:25px;
-  border:1px solid #d4af37;
-  border-radius:10px;
-  font-size:20px;
-  text-align:center;">
+<div class="laap-demo-box" id="demo-step">
   Step 1: Business Concept & Vision
 </div>
 
-<button onclick="nextDemo()" style="
-  margin-top:20px;
-  padding:10px 20px;
-  background:#d4af37;
-  border:none;
-  border-radius:6px;
-  font-weight:bold;
-  cursor:pointer;">
+<button class="laap-demo-btn" onclick="nextDemo()">
   Next Step
 </button>
 
-<div style="margin-top:25px;">
-  <a href="/wizard/" style="
-    background:#d4af37;
-    padding:12px 22px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    color:black;">
+<div class="laap-start-wrap">
+  <a href="/wizard/" class="laap-start-btn">
     Start LAAP Wizard
   </a>
 </div>
+
+<style>
+.laap-preview-title{
+  font-size:32px;
+  color:#d4af37;
+  margin-bottom:10px;
+  text-align:center;
+  letter-spacing:1px;
+}
+
+.laap-preview-sub{
+  text-align:center;
+  margin-bottom:25px;
+  color:#ccc;
+}
+
+.laap-demo-box{
+  background:linear-gradient(145deg,#0f0f0f,#1a1a1a);
+  border:2px solid #d4af37;
+  border-radius:14px;
+  padding:40px;
+  font-size:24px;
+  text-align:center;
+  color:white;
+  box-shadow:0 0 30px rgba(212,175,55,0.35);
+  transition:all .4s ease;
+}
+
+.laap-demo-btn{
+  margin-top:25px;
+  padding:12px 28px;
+  background:#d4af37;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  font-size:16px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow:0 6px 18px rgba(212,175,55,0.4);
+}
+
+.laap-start-wrap{
+  text-align:center;
+  margin-top:30px;
+}
+
+.laap-start-btn{
+  background:#d4af37;
+  padding:14px 30px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  color:black;
+  font-size:18px;
+  box-shadow:0 6px 18px rgba(212,175,55,0.4);
+}
+</style>
 
 <script>
 let steps = [
@@ -326,6 +367,7 @@ function nextDemo(){
   document.getElementById("demo-step").innerText = steps[current];
 }
 </script>
+
 
 
     </div>
