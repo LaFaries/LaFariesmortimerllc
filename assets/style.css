@@ -253,3 +253,26 @@ footer {
     padding: 0 16px;
   }
 }
+/* =========================================================
+   HEADER LAYER FIX — MAKES LINKS CLICKABLE
+   ========================================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;      /* sits above hero/video */
+}
+
+nav {
+  position: relative;
+  z-index: 10000;     /* sits above everything */
+}
+
+/* Hero / rotating section sits BELOW header */
+.hero,
+section,
+video,
+.hero-video {
+  position: relative;
+  z-index: 1;
+}
