@@ -14,7 +14,7 @@
 }
 
 body{
-  font-family: "Inter", sans-serif;
+  font-family:"Inter",sans-serif;
   background:var(--light);
   color:var(--charcoal);
   margin:0;
@@ -31,13 +31,12 @@ body{
   position:relative;
 }
 
-/* Header */
 .header{
   text-align:center;
   margin-bottom:40px;
 }
 .header h1{
-  font-family:"Cormorant Garamond", serif;
+  font-family:"Cormorant Garamond",serif;
   font-size:40px;
   margin:0;
 }
@@ -48,7 +47,6 @@ body{
   text-transform:uppercase;
 }
 
-/* Info Grid */
 .info{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -56,17 +54,14 @@ body{
   margin-bottom:35px;
   font-size:14px;
 }
-
 .info div{
   border-bottom:1px solid var(--line);
   padding-bottom:6px;
 }
 
-/* Sections */
 .section{
   margin-bottom:28px;
 }
-
 .section-title{
   font-weight:600;
   font-size:15px;
@@ -75,13 +70,12 @@ body{
   padding-left:10px;
 }
 
-.item{
+.line{
   border-bottom:1px dashed var(--line);
-  padding:8px 0;
+  padding:10px 0;
   font-size:14px;
 }
 
-/* Footer brand */
 .brand{
   position:absolute;
   bottom:18px;
@@ -90,7 +84,6 @@ body{
   opacity:.55;
 }
 
-/* Print Perfect */
 @media print{
   body{padding:0;background:#fff}
   .document{
@@ -120,38 +113,38 @@ body{
 
   <div class="section">
     <div class="section-title">Opening</div>
-    <div class="item">Welcome & Opening Remarks</div>
-    <div class="item">Prayer / Devotional</div>
-    <div class="item">Review of Previous Meeting</div>
+    <div class="line">Welcome & Opening Remarks</div>
+    <div class="line">Prayer / Devotional</div>
+    <div class="line">Review of Previous Meeting</div>
   </div>
 
   <div class="section">
     <div class="section-title">Discussion Topics</div>
-    <div class="item">Topic 1: ________________________________________________</div>
-    <div class="item">Topic 2: ________________________________________________</div>
-    <div class="item">Topic 3: ________________________________________________</div>
-    <div class="item">Topic 4: ________________________________________________</div>
+    <div class="line">Topic 1: ________________________________________________</div>
+    <div class="line">Topic 2: ________________________________________________</div>
+    <div class="line">Topic 3: ________________________________________________</div>
+    <div class="line">Topic 4: ________________________________________________</div>
   </div>
 
   <div class="section">
-    <div class="section-title">Ministry / Department Updates</div>
-    <div class="item">Administration</div>
-    <div class="item">Finance</div>
-    <div class="item">Worship / Media</div>
-    <div class="item">Outreach / Events</div>
+    <div class="section-title">Department / Ministry Updates</div>
+    <div class="line">Administration</div>
+    <div class="line">Finance</div>
+    <div class="line">Worship / Media</div>
+    <div class="line">Outreach / Events</div>
   </div>
 
   <div class="section">
     <div class="section-title">Action Items</div>
-    <div class="item">Assigned To: ____________________ | Task: __________________________</div>
-    <div class="item">Assigned To: ____________________ | Task: __________________________</div>
-    <div class="item">Assigned To: ____________________ | Task: __________________________</div>
+    <div class="line">Assigned To: ____________________ | Task: __________________________</div>
+    <div class="line">Assigned To: ____________________ | Task: __________________________</div>
+    <div class="line">Assigned To: ____________________ | Task: __________________________</div>
   </div>
 
   <div class="section">
     <div class="section-title">Closing</div>
-    <div class="item">Announcements</div>
-    <div class="item">Closing Prayer</div>
+    <div class="line">Announcements</div>
+    <div class="line">Closing Prayer</div>
   </div>
 
   <div class="brand">LaFaries Mortimer LLC</div>
