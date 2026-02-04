@@ -1,46 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Meeting Minutes</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Meeting Minutes | LaFaries Mortimer LLC</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-body{font-family:Inter,system-ui;margin:60px;color:#1D1D1D}
-h1{font-size:28px;margin-bottom:4px}
-hr{margin:20px 0}
-.section{margin-bottom:22px}
-.line{border-bottom:1px solid #000;height:28px}
+@page { margin: 1in; }
+
+body{
+  margin:0;
+  background:#f4f4f4;
+  font-family: "Cormorant Garamond", serif;
+  color:#1d1d1d;
+  line-height:1.6;
+}
+
+.print-btn{
+  text-align:right;
+  padding:20px 30px 0 0;
+}
+
+.print-btn button{
+  padding:8px 14px;
+  border-radius:6px;
+  border:1px solid #DAB85C;
+  background:#fff;
+  cursor:pointer;
+  font-family:inherit;
+}
+
+.doc-wrap{
+  background:#fff;
+  max-width:800px;
+  margin:20px auto 80px;
+  padding:60px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15);
+}
+
+.doc-header{
+  border-bottom:2px solid #DAB85C;
+  padding-bottom:14px;
+  margin-bottom:30px;
+}
+
+.doc-title{
+  font-size:34px;
+  letter-spacing:.04em;
+  margin-bottom:6px;
+}
+
+.doc-sub{
+  font-size:14px;
+  color:#666;
+}
+
+.section{
+  margin-bottom:26px;
+}
+
+label{
+  font-weight:600;
+  font-size:15px;
+}
+
+input, textarea{
+  width:100%;
+  border:none;
+  border-bottom:1px solid #aaa;
+  padding:8px 4px;
+  margin-top:6px;
+  font-family:inherit;
+  font-size:16px;
+}
+
+textarea{
+  min-height:90px;
+  resize:vertical;
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+.brand-mark{
+  position:fixed;
+  bottom:14px;
+  right:24px;
+  font-size:9px;
+  color:#999;
+  letter-spacing:.14em;
+}
+
+@media print{
+  body{background:#fff;}
+  .print-btn{display:none;}
+  .doc-wrap{
+    box-shadow:none;
+    margin:0;
+    padding:0;
+  }
+}
 </style>
 </head>
+
 <body>
 
-<h1>Meeting Minutes</h1>
-<p>LaFaries Mortimer LLC</p>
-<hr>
-
-<div class="section">
-<strong>Date:</strong>
-<div class="line"></div>
+<div class="print-btn">
+  <button onclick="window.print()">Download as PDF</button>
 </div>
 
-<div class="section">
-<strong>Attendees:</strong>
-<div class="line"></div>
+<div class="doc-wrap">
+
+  <div class="doc-header">
+    <div class="doc-title">Meeting Minutes</div>
+    <div class="doc-sub">Official Record of Proceedings</div>
+  </div>
+
+  <div class="two-col section">
+    <div>
+      <label>Date</label>
+      <input type="text" placeholder="Enter date">
+    </div>
+    <div>
+      <label>Location</label>
+      <input type="text" placeholder="Meeting location">
+    </div>
+  </div>
+
+  <div class="section">
+    <label>Meeting Called By</label>
+    <input type="text" placeholder="Name / Title">
+  </div>
+
+  <div class="section">
+    <label>Attendees</label>
+    <textarea placeholder="List all attendees"></textarea>
+  </div>
+
+  <div class="section">
+    <label>Agenda Items</label>
+    <textarea placeholder="Agenda discussed"></textarea>
+  </div>
+
+  <div class="section">
+    <label>Discussion Notes</label>
+    <textarea placeholder="Detailed discussion notes"></textarea>
+  </div>
+
+  <div class="section">
+    <label>Decisions Made</label>
+    <textarea placeholder="Summary of decisions"></textarea>
+  </div>
+
+  <div class="section">
+    <label>Action Items</label>
+    <textarea placeholder="Tasks assigned and deadlines"></textarea>
+  </div>
+
+  <div class="two-col section">
+    <div>
+      <label>Recorded By</label>
+      <input type="text" placeholder="Name">
+    </div>
+    <div>
+      <label>Approved By</label>
+      <input type="text" placeholder="Name">
+    </div>
+  </div>
+
 </div>
 
-<div class="section">
-<strong>Agenda Topics:</strong>
-<div class="line" style="height:60px"></div>
-</div>
-
-<div class="section">
-<strong>Decisions Made:</strong>
-<div class="line" style="height:60px"></div>
-</div>
-
-<div class="section">
-<strong>Action Items:</strong>
-<div class="line" style="height:60px"></div>
+<div class="brand-mark">
+  LaFaries Mortimer LLC
 </div>
 
 </body>
