@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Letterhead Generator | LaFaries Mortimer LLC</title>
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.0.3/docx.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{
+  font-family: Inter, sans-serif;
+  background:#f8f6f1;
+  padding:40px;
+}
+.container{
+  max-width:700px;
+  margin:auto;
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15);
+}
+h1{
+  font-family:"Cormorant Garamond",serif;
+  margin-bottom:20px;
+}
+input{
+  width:100%;
+  padding:12px;
+  margin-bottom:14px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+button{
+  padding:12px 18px;
+  border:none;
+  border-radius:30px;
+  background:#DAB85C;
+  font-weight:600;
+  cursor:pointer;
+  margin-right:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Letterhead Generator</h1>
+
+  <input id="orgName" placeholder="Organization Name">
+  <input id="address" placeholder="Address Line">
+  <input id="phone" placeholder="Phone Number">
+  <input id="email" placeholder="Email Address">
+
+  <button onclick="generateWord()">Download Word</button>
+  <button onclick="generatePDF()">Download PDF</button>
+</div>
+
+<script>
+function getValues(){
+  return {
+    org: document.getElementById('orgName').value,
+    address: document.getElementById('address').value,
+    phone: document.getElementById('phone').value,
+    email: document.getElementById('email').value
+  };
+}
+
+// WORD DOC
+async function generateWord(){
+  const { Document, Packer, Paragraph, TextRun } = window.docx;
+  const v = getValues();
+
+  const doc = new Document({
+    sections: [{
+      children: [
+        new Paragraph({
+          children: [
+            new TextRun({ text: v.org, bold: true, size: 40 }),
+          ],
+          spacing: { after: 300 }
+        }),
+        new Paragraph(v.address),
+        new Paragraph(v.phone),
+        new Paragraph(v.email),
+      ],
+    }],
+  });
+
+  const blob = await Packer.toBlob(doc);
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "letterhead.docx";
+  link.click();
+}
+
+// PDF
+async function generatePDF(){
+  const { jsPDF } = window.jspdf;
+  const v = getValues();
+
+  const doc = new jsPDF();
+  doc.setFontSize(26);
+  doc.text(v.org, 20, 30);
+  doc.setFontSize(14);
+  doc.text(v.address, 20, 50);
+  doc.text(v.phone, 20, 60);
+  doc.text(v.email, 20, 70);
+  doc.save("letterhead.pdf");
+}
+</script>
+
+</body>
+</html>
