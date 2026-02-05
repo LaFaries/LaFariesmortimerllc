@@ -1,184 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<meta charset="utf-8">
 <title>Meeting Minutes | LaFaries Mortimer LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-@page { margin: 1in; }
+:root{
+ --gold:#DAB85C;
+ --black:#0f1115;
+ --panel:#171a21;
+ --line:rgba(218,184,92,.35);
+}
 
 body{
-  margin:0;
-  background:#f4f4f4;
-  font-family: "Cormorant Garamond", serif;
-  color:#1d1d1d;
-  line-height:1.6;
+ margin:0;
+ font-family:Inter,sans-serif;
+ background:var(--black);
+ color:#fff;
 }
 
-.print-btn{
-  text-align:right;
-  padding:20px 30px 0 0;
+.layout{
+ display:grid;
+ grid-template-columns:1.1fr .9fr;
+ min-height:100vh;
 }
 
-.print-btn button{
-  padding:8px 14px;
-  border-radius:6px;
-  border:1px solid #DAB85C;
-  background:#fff;
-  cursor:pointer;
-  font-family:inherit;
+.editor{
+ padding:70px;
+ background:var(--panel);
+ border-right:1px solid var(--line);
+ position:relative;
 }
 
-.doc-wrap{
-  background:#fff;
-  max-width:800px;
-  margin:20px auto 80px;
-  padding:60px;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
+.preview{
+ background:#ffffff;
+ padding:70px;
+ color:#111;
 }
 
-.doc-header{
-  border-bottom:2px solid #DAB85C;
-  padding-bottom:14px;
-  margin-bottom:30px;
-}
-
-.doc-title{
-  font-size:34px;
-  letter-spacing:.04em;
-  margin-bottom:6px;
-}
-
-.doc-sub{
-  font-size:14px;
-  color:#666;
-}
-
-.section{
-  margin-bottom:26px;
+h1{
+ font-family:"Cormorant Garamond",serif;
+ font-size:48px;
+ color:var(--gold);
+ margin:0 0 30px;
 }
 
 label{
-  font-weight:600;
-  font-size:15px;
+ font-size:12px;
+ letter-spacing:.12em;
+ text-transform:uppercase;
+ color:rgba(255,255,255,.55);
 }
 
 input, textarea{
-  width:100%;
-  border:none;
-  border-bottom:1px solid #aaa;
-  padding:8px 4px;
-  margin-top:6px;
-  font-family:inherit;
-  font-size:16px;
+ width:100%;
+ margin:12px 0 26px;
+ background:transparent;
+ border:none;
+ border-bottom:1px solid var(--line);
+ color:#fff;
+ font-size:17px;
 }
 
 textarea{
-  min-height:90px;
-  resize:vertical;
+ border:1px solid var(--line);
+ border-radius:12px;
+ padding:12px;
+ min-height:160px;
 }
 
-.two-col{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:30px;
+button{
+ position:fixed;
+ top:24px;
+ right:28px;
+ background:transparent;
+ border:1px solid var(--gold);
+ color:var(--gold);
+ padding:10px 18px;
+ border-radius:999px;
+ cursor:pointer;
 }
 
-.brand-mark{
-  position:fixed;
-  bottom:14px;
-  right:24px;
-  font-size:9px;
-  color:#999;
-  letter-spacing:.14em;
+.footer{
+ position:absolute;
+ bottom:16px;
+ right:24px;
+ font-size:10px;
+ color:rgba(255,255,255,.3);
 }
 
-@media print{
-  body{background:#fff;}
-  .print-btn{display:none;}
-  .doc-wrap{
-    box-shadow:none;
-    margin:0;
-    padding:0;
-  }
+.preview h2{
+ font-family:"Cormorant Garamond",serif;
+ font-size:36px;
+ margin:0 0 14px;
+}
+
+.preview .meta{
+ font-size:13px;
+ color:#333;
+ margin-bottom:18px;
+}
+
+.section{
+ margin-top:20px;
+}
+
+.section h3{
+ font-family:"Cormorant Garamond",serif;
+ font-size:20px;
+ margin-bottom:6px;
+}
+
+hr{
+ border:none;
+ border-top:1px solid #ddd;
+ margin:18px 0;
 }
 </style>
 </head>
-
 <body>
 
-<div class="print-btn">
-  <button onclick="window.print()">Download as PDF</button>
-</div>
+<button onclick="downloadPDF()">Download PDF</button>
 
-<div class="doc-wrap">
+<div class="layout">
+  <div class="editor">
+    <h1>Meeting Minutes</h1>
 
-  <div class="doc-header">
-    <div class="doc-title">Meeting Minutes</div>
-    <div class="doc-sub">Official Record of Proceedings</div>
-  </div>
+    <label>Date</label>
+    <input id="date">
 
-  <div class="two-col section">
-    <div>
-      <label>Date</label>
-      <input type="text" placeholder="Enter date">
-    </div>
-    <div>
-      <label>Location</label>
-      <input type="text" placeholder="Meeting location">
-    </div>
-  </div>
+    <label>Meeting Title</label>
+    <input id="title">
 
-  <div class="section">
-    <label>Meeting Called By</label>
-    <input type="text" placeholder="Name / Title">
-  </div>
+    <label>Facilitator</label>
+    <input id="facilitator">
 
-  <div class="section">
     <label>Attendees</label>
-    <textarea placeholder="List all attendees"></textarea>
-  </div>
+    <textarea id="attendees"></textarea>
 
-  <div class="section">
-    <label>Agenda Items</label>
-    <textarea placeholder="Agenda discussed"></textarea>
-  </div>
-
-  <div class="section">
     <label>Discussion Notes</label>
-    <textarea placeholder="Detailed discussion notes"></textarea>
-  </div>
+    <textarea id="notes"></textarea>
 
-  <div class="section">
-    <label>Decisions Made</label>
-    <textarea placeholder="Summary of decisions"></textarea>
-  </div>
-
-  <div class="section">
     <label>Action Items</label>
-    <textarea placeholder="Tasks assigned and deadlines"></textarea>
+    <textarea id="actions"></textarea>
+
+    <div class="footer">LaFaries Mortimer LLC</div>
   </div>
 
-  <div class="two-col section">
-    <div>
-      <label>Recorded By</label>
-      <input type="text" placeholder="Name">
+  <div class="preview" id="preview">
+    <h2 id="p-title">Meeting Title</h2>
+
+    <div class="meta">
+      <b>Date:</b> <span id="p-date"></span><br>
+      <b>Facilitator:</b> <span id="p-facilitator"></span>
     </div>
-    <div>
-      <label>Approved By</label>
-      <input type="text" placeholder="Name">
+
+    <hr>
+
+    <div class="section">
+      <h3>Attendees</h3>
+      <div id="p-attendees" style="white-space:pre-wrap"></div>
+    </div>
+
+    <div class="section">
+      <h3>Discussion Notes</h3>
+      <div id="p-notes" style="white-space:pre-wrap"></div>
+    </div>
+
+    <div class="section">
+      <h3>Action Items</h3>
+      <div id="p-actions" style="white-space:pre-wrap"></div>
     </div>
   </div>
-
 </div>
 
-<div class="brand-mark">
-  LaFaries Mortimer LLC
-</div>
+<script>
+function bind(i,o){
+ document.getElementById(i).addEventListener("input",e=>{
+   document.getElementById(o).textContent=e.target.value;
+ });
+}
+bind("date","p-date");
+bind("title","p-title");
+bind("facilitator","p-facilitator");
+bind("attendees","p-attendees");
+bind("notes","p-notes");
+bind("actions","p-actions");
+
+function downloadPDF(){
+ html2pdf().from(document.getElementById("preview")).set({
+  margin:0.4,
+  filename:"meeting-minutes.pdf",
+  html2canvas:{scale:2},
+  jsPDF:{unit:"in",format:"letter",orientation:"portrait"}
+ }).save();
+}
+</script>
 
 </body>
 </html>
