@@ -1,41 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <title>Professional Email Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body{font-family:Inter,system-ui;margin:60px;color:#1D1D1D;line-height:1.6}
-h1{font-size:26px;margin-bottom:8px}
-hr{margin:20px 0}
+body{margin:0;font-family:"Cormorant Garamond",serif;background:#f4f1ea;}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;height:100vh;}
+.editor{padding:60px;background:#fff;position:relative;}
+.preview{background:#eceae4;padding:50px;border-left:1px solid #ddd;}
+h1{font-size:42px;margin-bottom:20px}
+label{font-size:14px;color:#555}
+input,textarea{width:100%;border:none;border-bottom:1px solid #999;margin-bottom:25px;font-family:inherit;font-size:18px;background:transparent}
+button{position:fixed;top:20px;right:20px;padding:10px 16px;border:1px solid #c9a646;background:white;cursor:pointer}
+.footer{position:absolute;bottom:12px;right:20px;font-size:10px;color:#999}
 </style>
 </head>
 <body>
-
-<h1>Professional Email Structure</h1>
-<p>LaFaries Mortimer LLC</p>
-<hr>
-
-<p><strong>Subject:</strong> _______________________________________</p>
-
-<p>Dear ____________________,</p>
-
-<p>
-This email is to formally ________________________________
-___________________________________________________________.
-</p>
-
-<p>
-Please let me know if any additional information is required.
-</p>
-
-<p>Kind regards,</p>
-
-<p>
-Your Name<br>
-Your Title<br>
-Your Contact Information
-</p>
-
+<button onclick="window.print()">Download as PDF</button>
+<div class="layout">
+<div class="editor">
+<h1>Professional Email</h1>
+<label>Recipient</label><input>
+<label>Subject</label><input>
+<label>Email Body</label><textarea rows="10"></textarea>
+<div class="footer">LaFaries Mortimer LLC</div>
+</div>
+<div class="preview">
+<h1>Preview</h1>
+<p>Email layout for printing or saving.</p>
+</div>
+</div>
 </body>
 </html>
