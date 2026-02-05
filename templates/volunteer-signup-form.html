@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Volunteer Signup | LaFaries Mortimer LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+:root{--gold:#DAB85C;--black:#0f1115;--panel:#171a21;--line:rgba(218,184,92,.35);}
+body{margin:0;font-family:Inter;background:var(--black);color:#fff;}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;min-height:100vh;}
+.editor{padding:70px;background:var(--panel);border-right:1px solid var(--line);position:relative;}
+.preview{background:#fff;padding:70px;color:#111;}
+h1{font-family:"Cormorant Garamond";color:var(--gold);}
+label{font-size:12px;text-transform:uppercase;color:rgba(255,255,255,.55);}
+input,textarea{width:100%;margin:12px 0 26px;border-bottom:1px solid var(--line);background:transparent;color:#fff;}
+button{position:fixed;top:24px;right:28px;border:1px solid var(--gold);background:transparent;color:var(--gold);}
+.footer{position:absolute;bottom:16px;right:24px;font-size:10px;color:rgba(255,255,255,.3);}
+</style>
+</head>
+<body>
+<button onclick="downloadPDF()">Download PDF</button>
+
+<div class="layout">
+<div class="editor">
+<h1>Volunteer Signup</h1>
+
+<label>Full Name</label><input id="name">
+<label>Email</label><input id="email">
+<label>Phone</label><input id="phone">
+<label>Ministry Interest</label><input id="interest">
+<label>Availability</label><textarea id="availability"></textarea>
+
+<div class="footer">LaFaries Mortimer LLC</div>
+</div>
+
+<div class="preview" id="preview">
+<h2 id="p-name"></h2>
+<p><b>Email:</b> <span id="p-email"></span></p>
+<p><b>Phone:</b> <span id="p-phone"></span></p>
+<p><b>Interest:</b> <span id="p-interest"></span></p>
+<p><b>Availability:</b><br><span id="p-availability"></span></p>
+</div>
+</div>
+
+<script>
+function bind(i,o){document.getElementById(i).addEventListener("input",e=>{document.getElementById(o).textContent=e.target.value;});}
+bind("name","p-name");
+bind("email","p-email");
+bind("phone","p-phone");
+bind("interest","p-interest");
+bind("availability","p-availability");
+
+function downloadPDF(){
+ html2pdf().from(document.getElementById("preview")).save("volunteer-signup.pdf");
+}
+</script>
+</body>
+</html>
