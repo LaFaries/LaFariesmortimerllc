@@ -1,29 +1,77 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Operating Agreement Outline</title>
+<title>Operating Agreement | LaFaries Mortimer LLC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <style>
-body{margin:0;font-family:"Cormorant Garamond",serif;background:#f4f1ea;}
-.layout{display:grid;grid-template-columns:1.1fr .9fr;height:100vh;}
-.editor{padding:60px;background:#fff;position:relative;}
-.preview{background:#eceae4;padding:50px;border-left:1px solid #ddd;}
-h1{font-size:42px;margin-bottom:20px}
-textarea{width:100%;border:none;border-bottom:1px solid #999;margin-bottom:25px;font-family:inherit;font-size:18px;background:transparent}
-button{position:fixed;top:20px;right:20px;padding:10px 16px;border:1px solid #c9a646;background:white;cursor:pointer}
-.footer{position:absolute;bottom:12px;right:20px;font-size:10px;color:#999}
+:root{--gold:#DAB85C;--black:#0f1115;--panel:#171a21;--line:rgba(218,184,92,.35);}
+body{margin:0;font-family:Inter,sans-serif;background:var(--black);color:#fff}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;min-height:100vh}
+.editor{padding:70px;background:var(--panel);border-right:1px solid var(--line);position:relative}
+.preview{background:#ffffff;padding:70px;color:#111}
+h1{font-family:"Cormorant Garamond",serif;font-size:46px;color:var(--gold);margin:0 0 26px}
+label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+input{width:100%;margin:12px 0 24px;background:transparent;border:none;border-bottom:1px solid var(--line);color:#fff;font-size:16px}
+button{position:fixed;top:24px;right:28px;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 18px;border-radius:999px;cursor:pointer}
+.footer{position:absolute;bottom:16px;right:24px;font-size:10px;color:rgba(255,255,255,.3)}
+h2{font-family:"Cormorant Garamond",serif;margin:0 0 10px;font-size:32px}
+.small{font-size:12px;color:#444;line-height:1.6}
 </style>
 </head>
 <body>
-<button onclick="window.print()">Download as PDF</button>
+
+<button onclick="downloadPDF()">Download PDF</button>
+
 <div class="layout">
-<div class="editor">
-<h1>Operating Agreement Outline</h1>
-<textarea rows="14"></textarea>
-<div class="footer">LaFaries Mortimer LLC</div>
+  <div class="editor">
+    <h1>Operating Agreement</h1>
+
+    <label>LLC Name</label>
+    <input id="llc" placeholder="LLC Name">
+
+    <label>State</label>
+    <input id="state" placeholder="State">
+
+    <label>Member Name</label>
+    <input id="member" placeholder="Member / Manager Name">
+
+    <div class="footer">LaFaries Mortimer LLC</div>
+  </div>
+
+  <div class="preview" id="preview">
+    <h2>Operating Agreement (Starter Summary)</h2>
+    <p class="small"><b>Company:</b> <span id="p-llc"></span> · <b>State:</b> <span id="p-state"></span></p>
+    <p class="small"><b>Member/Manager:</b> <span id="p-member"></span></p>
+
+    <hr style="border:none;border-top:1px solid #ddd;margin:16px 0">
+
+    <p class="small"><b>1. Formation.</b> This agreement confirms the LLC is organized under the laws of the state listed above.</p>
+    <p class="small"><b>2. Management.</b> The LLC is member-managed unless otherwise stated. The member listed above has authority to act.</p>
+    <p class="small"><b>3. Capital & Profits.</b> Capital contributions, profits, and distributions are recorded and allocated to the member(s).</p>
+    <p class="small"><b>4. Banking & Records.</b> Business banking is maintained separately. Records are kept and available upon request.</p>
+    <p class="small"><b>5. Liability.</b> Members are generally not personally liable for LLC obligations except as required by law.</p>
+    <p class="small" style="margin-top:18px"><i>Prepared using LAAP™ systems. This is a starter summary for administrative use, not legal advice.</i></p>
+  </div>
 </div>
-<div class="preview"><h1>Preview</h1></div>
-</div>
+
+<script>
+["llc","state","member"].forEach(id=>{
+  document.getElementById(id).addEventListener("input", e=>{
+    document.getElementById("p-"+id).textContent = e.target.value;
+  });
+});
+function downloadPDF(){
+  html2pdf().from(document.getElementById("preview")).set({
+    margin: 0.4,
+    filename: "operating-agreement-starter.pdf",
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+  }).save();
+}
+</script>
 </body>
 </html>
