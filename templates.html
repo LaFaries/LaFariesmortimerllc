@@ -1,139 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>DIY Templates | LaFaries Mortimer LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Download professional DIY administrative and business templates from LaFaries Mortimer LLC." />
+<meta charset="UTF-8" />
+<title>DIY Templates | LaFaries Mortimer LLC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style>
-    :root{
-      --bg:#050608;
-      --panel:#020617;
-      --card:#111827;
-      --gold:#d4af37;
-      --gold-soft:#f0d97a;
-      --text:#f9fafb;
-      --muted:#9ca3af;
-      --border:rgba(212,175,55,.35);
-    }
+<style>
+:root{
+  --bg:#050608;
+  --card:#111827;
+  --gold:#d4af37;
+  --gold-soft:#f0d97a;
+  --text:#f9fafb;
+  --muted:#9ca3af;
+  --border:rgba(212,175,55,.35);
+}
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      background:radial-gradient(circle at top,#111827,#050608 55%,#000);
-      color:var(--text);
-      line-height:1.6;
-    }
-    a{text-decoration:none;color:inherit}
-    .wrapper{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+*{box-sizing:border-box;margin:0;padding:0}
 
-    header{
-      position:sticky;top:0;z-index:10;
-      background:#050608e6;
-      border-bottom:1px solid var(--border);
-      backdrop-filter:blur(10px);
-    }
-    .nav{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:.9rem 0;gap:1rem;flex-wrap:wrap;
-    }
-    .brand{
-      display:flex;align-items:center;gap:.6rem;
-      font-weight:700;letter-spacing:.05em;
-    }
-    .logo{
-      width:38px;height:38px;border-radius:999px;
-      background:radial-gradient(circle at 30% 0%,#fef3c7,#d4af37 45%,#4b3a12);
-      color:#111827;
-      display:flex;align-items:center;justify-content:center;
-      font-size:.75rem;
-      box-shadow:0 0 20px rgba(212,175,55,.6);
-    }
-    nav a{color:var(--muted);margin-left:1.1rem}
-    nav a:hover{color:var(--gold-soft)}
+body{
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at top,#111827,#050608 55%,#000);
+  color:var(--text);
+}
 
-    .hero{
-      padding:3rem 0 2rem;
-    }
-    .hero h1{
-      font-size:clamp(2rem,4vw,2.6rem);
-      margin-bottom:.75rem;
-    }
-    .hero h1 span{color:var(--gold-soft)}
-    .hero p{color:var(--muted);max-width:40rem}
+.wrapper{max-width:1100px;margin:auto;padding:0 1.25rem}
 
-    section{padding:2.5rem 0}
-    .section-title{
-      font-size:1.35rem;
-      margin-bottom:.5rem;
-      display:flex;align-items:center;gap:.5rem;
-    }
-    .section-title::before{
-      content:"";
-      width:10px;height:10px;border-radius:999px;
-      background:var(--gold);
-      box-shadow:0 0 12px rgba(212,175,55,.8);
-    }
-    .section-sub{color:var(--muted);max-width:38rem;margin-bottom:1.5rem}
-align-items:start;
-  .grid{
+header{
+  position:sticky;top:0;z-index:10;
+  background:#050608e6;
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(10px);
+}
+
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:.9rem 0;
+}
+
+.logo{
+  width:38px;height:38px;border-radius:999px;
+  background:radial-gradient(circle at 30% 0%,#fef3c7,#d4af37 45%,#4b3a12);
+  box-shadow:0 0 20px rgba(212,175,55,.6);
+}
+
+nav a{color:var(--muted);margin-left:1.1rem;text-decoration:none}
+nav a:hover{color:var(--gold-soft)}
+
+.hero{padding:3rem 0}
+.hero h1 span{color:var(--gold-soft)}
+
+section{padding:2.5rem 0}
+
+.section-title{
+  font-size:1.35rem;
+  margin-bottom:1rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.section-title::before{
+  content:"";
+  width:10px;height:10px;border-radius:999px;
+  background:var(--gold);
+  box-shadow:0 0 12px rgba(212,175,55,.8);
+}
+
+.grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:1.25rem;
-  align-items:start;
 }
 
-    .card{
-      background:linear-gradient(160deg,#020617,#111827);
-      border:1px solid var(--border);
-      border-radius:1.1rem;
-      padding:1.25rem;
-      box-shadow:0 16px 36px rgba(0,0,0,.8);
-      transition:.18s ease;
-    }
-    .card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 20px 44px rgba(0,0,0,.9),0 0 24px rgba(212,175,55,.25);
-    }
-    .card h3{
-      font-size:1.05rem;
-      margin-bottom:.4rem;
-    }
-    .card p{
-      font-size:.9rem;
-      color:var(--muted);
-      margin-bottom:.75rem;
-    }
-    .tag{
-      display:inline-block;
-      padding:.25rem .7rem;
-      border-radius:999px;
-      font-size:.7rem;
-      border:1px solid var(--gold);
-      color:var(--gold-soft);
-      letter-spacing:.08em;
-      text-transform:uppercase;
-    }
+.card{
+  background:linear-gradient(160deg,#020617,#111827);
+  border:1px solid var(--border);
+  border-radius:1rem;
+  padding:1.25rem;
+  transition:.2s ease;
+}
 
-    footer{
-      border-top:1px solid var(--border);
-      padding:1.5rem 0;
-      background:#020617;
-      font-size:.8rem;
-      color:var(--muted);
-      text-align:center;
-    }
-  </style>
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 28px rgba(212,175,55,.25);
+}
+
+.card h3{margin-bottom:.4rem}
+.card p{color:var(--muted);font-size:.9rem;margin-bottom:.8rem}
+
+.open-btn{
+  display:inline-block;
+  padding:.4rem .9rem;
+  border-radius:999px;
+  border:1px solid var(--gold);
+  color:var(--gold-soft);
+  font-size:.7rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:1.5rem 0;
+  text-align:center;
+  color:var(--muted);
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="wrapper nav">
-    <div class="brand">
-      <div class="logo">LM</div>
-      LaFaries Mortimer LLC
+    <div style="display:flex;align-items:center;gap:.6rem">
+      <div class="logo"></div>
+      <strong>LaFaries Mortimer LLC</strong>
     </div>
     <nav>
       <a href="/index.html">Home</a>
@@ -146,119 +126,70 @@ align-items:start;
 
 <main class="wrapper">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>DIY Templates <span>That Save Time</span></h1>
-    <p>
-      Download professional, fill-in-the-blank templates designed for
-      small businesses, ministries, and organizations that want structure
-      without confusion.
-    </p>
-  </section>
+<section class="hero">
+  <h1>DIY Templates <span>That Save Time</span></h1>
+</section>
 
-  <!-- ADMIN TEMPLATES -->
-  <section>
-    <div class="section-title">Administrative Templates</div>
-    <p class="section-sub">
-      Everyday documents used by offices, churches, and business owners.
-    </p>
+<section>
+  <div class="section-title">Administrative Templates</div>
+  <div class="grid">
 
-    <div class="grid">
-      <div class="card">
-        <h3>Meeting Agenda</h3>
-        <p>Clean, professional agenda format for any meeting.</p>
-        <span class="tag"></span><a class="template-card" href="/templates/meeting-agenda.html">
-  <h3>Meeting agenda</h3>
-  <p>Collect client details + export the PDF.</p>
-  <span class="tag">PDF</span>
-</a>
+    <div class="card">
+      <h3>Meeting Agenda</h3>
+      <p>Clean, professional agenda format for any meeting.</p>
+      <a href="/templates/meeting-agenda.html" class="open-btn">Open Template</a>
+    </div>
 
-  <div class="template-actions">
-   <a href="/templates/meeting-agenda.html" target="_blank" class="btn btnGold">
-  Open Template
-</a>
+    <div class="card">
+      <h3>Meeting Minutes</h3>
+      <p>Live preview with PDF export.</p>
+      <a href="/templates/meeting-minutes.html" class="open-btn">Open Template</a>
+    </div>
 
-<a href="/templates/meeting-agenda.html" download class="btn btnGhost">
-  Download
-</a>
+    <div class="card">
+      <h3>Professional Email</h3>
+      <p>Client-ready email structure.</p>
+      <a href="/templates/professional-email.html" class="open-btn">Open Template</a>
+    </div>
+
+    <div class="card">
+      <h3>Task Checklist</h3>
+      <p>Printable and editable checklist.</p>
+      <a href="/templates/task-checklist.html" class="open-btn">Open Template</a>
+    </div>
 
   </div>
-</div>
+</section>
 
-      </div>
-      <div class="card">
-        <h3>Meeting Minutes</h3>
-        <p>Simple record-keeping template for accurate documentation.</p>
-     <a class="template-card" href="/templates/meeting-minutes.html">
-  <h3>Meeting Minutes</h3>
-  <p>Structured documentation with live preview and PDF export.</p>
-  <span class="tag">PDF</span>
-</a>
+<section>
+  <div class="section-title">Business Setup Templates</div>
+  <div class="grid">
 
-      </div>
-      <div class="card">
-        <h3>Professional Email Template</h3>
-        <p>Reusable email structure for formal communication.</p>
-        <span class="tag"></span><a class="template-card" href="/templates/professional-email.html">
-  <h3>Professional Email</h3>
-  <p>Client-ready email format with live preview + PDF.</p>
-  <span class="tag">PDF</span>
-</a>
-      </div>
-      <div class="card">
-        <h3>Task Checklist</h3>
-        <p>Stay organized with a printable and editable checklist.</p>
-        <span class="tag"></span><a class="template-card" href="/templates/task-checklist.html">
-  <h3>Task Checklist</h3>
-  <p>One-per-line tasks render into a clean checklist.</p>
-  <span class="tag">PDF</span>
-</a>
-      </div>
+    <div class="card">
+      <h3>LLC Setup Checklist</h3>
+      <p>Track formation and compliance steps.</p>
+      <a href="/templates/llc-setup.html" class="open-btn">Open Template</a>
     </div>
-  </section>
 
-  <!-- BUSINESS SETUP -->
-  <section>
-    <div class="section-title">Business Setup Templates</div>
-    <p class="section-sub">
-      Helpful planning and organization tools for early-stage businesses.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>LLC Setup Notes</h3>
-        <p>Track filings, logins, and formation steps.</p>
-        <span class="tag"></span><a class="template-card" href="/templates/llc-setup.html">
-  <h3>LLC Setup Checklist</h3>
-  <p>Formation + compliance checklist for new LLCs.</p>
-  <span class="tag">PDF</span>
-</a>
-      </div>
-      <div class="card">
-        <h3>Operating Agreement Outline</h3>
-        <p>Starter framework for organizing ownership terms.</p>
-        <span class="tag"></span><a class="template-card" href="/templates/operating-agreement.html">
-  <h3>Operating Agreement (Starter)</h3>
-  <p>Structured starter summary for admin use.</p>
-  <span class="tag">PDF</span>
-</a>
-      </div>
-      <div class="card">
-        <h3>Client Intake Form</h3>
-        <p>Collect essential client information professionally.</p>
-        <span class="tag"></span><a class="template-card" href="/templates/client-intake.html">
-  <h3>Client Intake Form</h3>
-  <p>Collect client details + export the PDF.</p>
-  <span class="tag">PDF</span>
-</a>
-      </div>
+    <div class="card">
+      <h3>Operating Agreement</h3>
+      <p>Starter ownership framework.</p>
+      <a href="/templates/operating-agreement.html" class="open-btn">Open Template</a>
     </div>
-  </section>
+
+    <div class="card">
+      <h3>Client Intake Form</h3>
+      <p>Collect essential client information.</p>
+      <a href="/templates/client-intake.html" class="open-btn">Open Template</a>
+    </div>
+
+  </div>
+</section>
 
 </main>
 
 <footer>
-  © 2026 LaFaries Mortimer LLC • Templates provided for educational use
+© 2026 LaFaries Mortimer LLC
 </footer>
 
 </body>
