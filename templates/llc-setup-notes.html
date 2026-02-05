@@ -1,30 +1,86 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<title>LLC Setup Notes</title>
+<title>LLC Setup Checklist | LaFaries Mortimer LLC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <style>
-body{margin:0;font-family:"Cormorant Garamond",serif;background:#f4f1ea;}
-.layout{display:grid;grid-template-columns:1.1fr .9fr;height:100vh;}
-.editor{padding:60px;background:#fff;position:relative;}
-.preview{background:#eceae4;padding:50px;border-left:1px solid #ddd;}
-h1{font-size:42px;margin-bottom:20px}
-input,textarea{width:100%;border:none;border-bottom:1px solid #999;margin-bottom:25px;font-family:inherit;font-size:18px;background:transparent}
-button{position:fixed;top:20px;right:20px;padding:10px 16px;border:1px solid #c9a646;background:white;cursor:pointer}
-.footer{position:absolute;bottom:12px;right:20px;font-size:10px;color:#999}
+:root{--gold:#DAB85C;--black:#0f1115;--panel:#171a21;--line:rgba(218,184,92,.35);}
+body{margin:0;font-family:Inter,sans-serif;background:var(--black);color:#fff}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;min-height:100vh}
+.editor{padding:70px;background:var(--panel);border-right:1px solid var(--line);position:relative}
+.preview{background:#ffffff;padding:70px;color:#111}
+h1{font-family:"Cormorant Garamond",serif;font-size:46px;color:var(--gold);margin:0 0 26px}
+label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+input{width:100%;margin:12px 0 24px;background:transparent;border:none;border-bottom:1px solid var(--line);color:#fff;font-size:16px}
+button{position:fixed;top:24px;right:28px;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 18px;border-radius:999px;cursor:pointer}
+.footer{position:absolute;bottom:16px;right:24px;font-size:10px;color:rgba(255,255,255,.3)}
+ul{margin:14px 0 0 18px;line-height:1.9}
+.small{font-size:12px;color:#444}
 </style>
 </head>
 <body>
-<button onclick="window.print()">Download as PDF</button>
+
+<button onclick="downloadPDF()">Download PDF</button>
+
 <div class="layout">
-<div class="editor">
-<h1>LLC Setup Notes</h1>
-<input placeholder="Business Name">
-<textarea rows="10" placeholder="Logins, filing steps, notes..."></textarea>
-<div class="footer">LaFaries Mortimer LLC</div>
+  <div class="editor">
+    <h1>LLC Setup</h1>
+
+    <label>LLC Name</label>
+    <input id="name" placeholder="Your LLC Name">
+
+    <label>State</label>
+    <input id="state" placeholder="Florida">
+
+    <label>Purpose</label>
+    <input id="purpose" placeholder="Administrative & IT Services">
+
+    <div class="footer">LaFaries Mortimer LLC</div>
+  </div>
+
+  <div class="preview" id="preview">
+    <h2 style="font-family:Cormorant Garamond,serif;font-size:34px;margin:0 0 10px">
+      LLC Setup Checklist
+    </h2>
+    <div class="small"><b>LLC:</b> <span id="p-name"></span> · <b>State:</b> <span id="p-state"></span></div>
+    <div class="small"><b>Purpose:</b> <span id="p-purpose"></span></div>
+    <hr style="border:none;border-top:1px solid #ddd;margin:16px 0">
+
+    <ul>
+      <li>☐ Confirm name availability (state registry + domain).</li>
+      <li>☐ File Articles of Organization.</li>
+      <li>☐ Obtain EIN (IRS).</li>
+      <li>☐ Create Operating Agreement.</li>
+      <li>☐ Open business bank account.</li>
+      <li>☐ Set up bookkeeping (chart of accounts + monthly close).</li>
+      <li>☐ Business email + domain + website basics.</li>
+      <li>☐ Licenses/permits (if applicable).</li>
+      <li>☐ Insurance quote (GL, E&O, cyber if needed).</li>
+      <li>☐ Compliance calendar (annual report + renewals).</li>
+    </ul>
+
+    <p class="small" style="margin-top:18px">Prepared using LAAP™ systems. Not legal advice.</p>
+  </div>
 </div>
-<div class="preview"><h1>Preview</h1></div>
-</div>
+
+<script>
+["name","state","purpose"].forEach(id=>{
+  document.getElementById(id).addEventListener("input", e=>{
+    document.getElementById("p-"+id).textContent = e.target.value;
+  });
+});
+function downloadPDF(){
+  html2pdf().from(document.getElementById("preview")).set({
+    margin: 0.4,
+    filename: "llc-setup-checklist.pdf",
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+  }).save();
+}
+</script>
 </body>
 </html>
