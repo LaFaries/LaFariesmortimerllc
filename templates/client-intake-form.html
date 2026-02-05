@@ -1,133 +1,79 @@
-<!doctype html><!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Template</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  background:#f3f3f3;
-  font-family:"Inter",sans-serif;
-}
-.doc-wrap{
-  max-width:1000px;
-  margin:60px auto;
-  background:#fff;
-  padding:70px;
-  box-shadow:0 30px 80px rgba(0,0,0,.15);
-  position:relative;
-}
-h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:42px;
-  margin-bottom:6px;
-}
-.subtitle{
-  font-family:"Cormorant Garamond",serif;
-  color:#888;
-  margin-bottom:30px;
-}
-.rule{
-  height:2px;
-  background:#DAB85C;
-  margin:26px 0 40px;
-}
-.field{
-  margin-bottom:28px;
-}
-label{
-  font-family:"Cormorant Garamond",serif;
-  font-size:18px;
-  display:block;
-  margin-bottom:8px;
-}
-.line{
-  border-bottom:1px solid #bbb;
-  height:24px;
-}
-.footer{
-  position:absolute;
-  bottom:20px;
-  right:30px;
-  font-size:10px;
-  color:#aaa;
-}
-.pdf-btn{
-  position:fixed;
-  top:20px;
-  right:30px;
-  padding:10px 18px;
-  border:1px solid #DAB85C;
-  border-radius:999px;
-  background:#fff;
-  cursor:pointer;
-}
-@media print{
-  .pdf-btn{display:none}
-  body{background:#fff}
-  .doc-wrap{box-shadow:none;margin:0}
-}
-</style>
-</head>
-<body>
-
-<button class="pdf-btn" onclick="window.print()">Download as PDF</button>
-
-<div class="doc-wrap">
-
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Client Intake Form</title>
+<title>Client Intake Form | LaFaries Mortimer LLC</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
 <style>
-body{font-family:Inter,system-ui;margin:60px;color:#1D1D1D}
-h1{font-size:28px;margin-bottom:4px}
-hr{margin:20px 0}
-label{font-weight:600}
-.field{margin-bottom:18px}
-.line{border-bottom:1px solid #000;height:28px}
-.small{font-size:13px;color:#555}
+:root{--gold:#DAB85C;--black:#0f1115;--panel:#171a21;--line:rgba(218,184,92,.35);}
+body{margin:0;font-family:Inter,sans-serif;background:var(--black);color:#fff}
+.layout{display:grid;grid-template-columns:1.1fr .9fr;min-height:100vh}
+.editor{padding:70px;background:var(--panel);border-right:1px solid var(--line);position:relative}
+.preview{background:#ffffff;padding:70px;color:#111}
+h1{font-family:"Cormorant Garamond",serif;font-size:46px;color:var(--gold);margin:0 0 26px}
+label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+input,textarea{width:100%;margin:12px 0 24px;background:transparent;border:none;border-bottom:1px solid var(--line);color:#fff;font-size:16px}
+textarea{border:1px solid var(--line);border-radius:12px;padding:12px;min-height:140px}
+button{position:fixed;top:24px;right:28px;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:10px 18px;border-radius:999px;cursor:pointer}
+.footer{position:absolute;bottom:16px;right:24px;font-size:10px;color:rgba(255,255,255,.3)}
+h2{font-family:"Cormorant Garamond",serif;margin:0 0 10px;font-size:32px}
+.small{font-size:12px;color:#444;line-height:1.6}
+.box{border:1px solid #ddd;border-radius:10px;padding:12px;margin:10px 0}
 </style>
 </head>
 <body>
 
-<h1>Client Intake Form</h1>
-<p class="small">LaFaries Mortimer LLC — Administrative & IT Services</p>
-<hr>
+<button onclick="downloadPDF()">Download PDF</button>
 
-<div class="field">
-<label>Full Name</label>
-<div class="line"></div>
+<div class="layout">
+  <div class="editor">
+    <h1>Client Intake</h1>
+
+    <label>Client Name</label>
+    <input id="name" placeholder="Full name">
+
+    <label>Email</label>
+    <input id="email" placeholder="email@example.com">
+
+    <label>Phone</label>
+    <input id="phone" placeholder="(xxx) xxx-xxxx">
+
+    <label>Requested Service</label>
+    <input id="service" placeholder="Example: LLC Setup, Website, Admin Systems">
+
+    <label>Summary / Needs</label>
+    <textarea id="summary" placeholder="What do they need help with?"></textarea>
+
+    <div class="footer">LaFaries Mortimer LLC</div>
+  </div>
+
+  <div class="preview" id="preview">
+    <h2>Client Intake Form</h2>
+    <div class="box"><b>Client:</b> <span id="p-name"></span></div>
+    <div class="box"><b>Email:</b> <span id="p-email"></span> · <b>Phone:</b> <span id="p-phone"></span></div>
+    <div class="box"><b>Requested Service:</b> <span id="p-service"></span></div>
+    <div class="box"><b>Summary / Needs:</b><br><span id="p-summary" style="white-space:pre-wrap"></span></div>
+    <p class="small" style="margin-top:18px"><i>Prepared using LAAP™ systems.</i></p>
+  </div>
 </div>
 
-<div class="field">
-<label>Business / Organization Name</label>
-<div class="line"></div>
-</div>
-
-<div class="field">
-<label>Email Address</label>
-<div class="line"></div>
-</div>
-
-<div class="field">
-<label>Phone Number</label>
-<div class="line"></div>
-</div>
-
-<div class="field">
-<label>Type of Service Needed</label>
-<div class="line"></div>
-</div>
-
-<div class="field">
-<label>Brief Description of Request</label>
-<div class="line" style="height:60px"></div>
-</div>
-
+<script>
+["name","email","phone","service","summary"].forEach(id=>{
+  document.getElementById(id).addEventListener("input", e=>{
+    document.getElementById("p-"+id).textContent = e.target.value;
+  });
+});
+function downloadPDF(){
+  html2pdf().from(document.getElementById("preview")).set({
+    margin: 0.4,
+    filename: "client-intake.pdf",
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "in", format: "letter", orientation: "portrait" }
+  }).save();
+}
+</script>
 </body>
 </html>
