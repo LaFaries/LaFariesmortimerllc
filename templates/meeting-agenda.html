@@ -1,155 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Meeting Agenda | LaFaries Mortimer LLC</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>Meeting Agenda Template</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-:root{
-  --gold:#DAB85C;
-  --charcoal:#1D1D1D;
-  --light:#F8F6F1;
-  --line:rgba(29,29,29,.15);
-}
-
 body{
-  font-family:"Inter",sans-serif;
-  background:var(--light);
-  color:var(--charcoal);
   margin:0;
-  padding:40px;
+  font-family: "Cormorant Garamond", serif;
+  background:#f6f4ef;
 }
-
-.document{
-  max-width:850px;
-  margin:auto;
-  background:#fff;
-  padding:60px 70px;
-  border-radius:12px;
-  box-shadow:0 20px 60px rgba(0,0,0,.08);
-  position:relative;
-}
-
-.header{
-  text-align:center;
-  margin-bottom:40px;
-}
-.header h1{
-  font-family:"Cormorant Garamond",serif;
-  font-size:40px;
-  margin:0;
-}
-.header p{
-  letter-spacing:.12em;
-  font-size:12px;
-  margin-top:6px;
-  text-transform:uppercase;
-}
-
-.info{
+.layout{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px 40px;
-  margin-bottom:35px;
-  font-size:14px;
+  grid-template-columns:1.1fr .9fr;
+  height:100vh;
 }
-.info div{
-  border-bottom:1px solid var(--line);
-  padding-bottom:6px;
+.editor{
+  padding:60px;
+  overflow:auto;
+  background:white;
 }
-
-.section{
-  margin-bottom:28px;
+.preview{
+  background:#eceae4;
+  padding:40px;
+  border-left:1px solid #ddd;
 }
-.section-title{
-  font-weight:600;
-  font-size:15px;
-  margin-bottom:10px;
-  border-left:4px solid var(--gold);
-  padding-left:10px;
+h1{font-size:40px;margin-bottom:10px}
+label{font-size:14px;color:#666}
+input, textarea{
+  width:100%;
+  border:none;
+  border-bottom:1px solid #999;
+  margin-bottom:25px;
+  font-family:inherit;
+  font-size:18px;
 }
-
-.line{
-  border-bottom:1px dashed var(--line);
-  padding:10px 0;
-  font-size:14px;
+button{
+  position:fixed;
+  top:20px;
+  right:20px;
+  padding:10px 16px;
+  border:1px solid #c9a646;
+  background:white;
+  cursor:pointer;
 }
-
-.brand{
+.footer{
   position:absolute;
-  bottom:18px;
-  right:24px;
+  bottom:10px;
+  right:20px;
   font-size:10px;
-  opacity:.55;
-}
-
-@media print{
-  body{padding:0;background:#fff}
-  .document{
-    box-shadow:none;
-    border-radius:0;
-    padding:40px 50px;
-  }
+  color:#999;
 }
 </style>
 </head>
-
 <body>
 
-<div class="document">
+<button onclick="window.print()">Download as PDF</button>
 
-  <div class="header">
-    <h1>Meeting Agenda</h1>
-    <p>Administrative & Ministry Planning Document</p>
-  </div>
+<div class="layout">
 
-  <div class="info">
-    <div><strong>Organization:</strong> __________________________</div>
-    <div><strong>Date:</strong> __________________________</div>
-    <div><strong>Location:</strong> __________________________</div>
-    <div><strong>Facilitator:</strong> __________________________</div>
-  </div>
+<div class="editor">
+<h1>Meeting Agenda</h1>
 
-  <div class="section">
-    <div class="section-title">Opening</div>
-    <div class="line">Welcome & Opening Remarks</div>
-    <div class="line">Prayer / Devotional</div>
-    <div class="line">Review of Previous Meeting</div>
-  </div>
+<label>Date</label>
+<input type="text" placeholder="Enter date">
 
-  <div class="section">
-    <div class="section-title">Discussion Topics</div>
-    <div class="line">Topic 1: ________________________________________________</div>
-    <div class="line">Topic 2: ________________________________________________</div>
-    <div class="line">Topic 3: ________________________________________________</div>
-    <div class="line">Topic 4: ________________________________________________</div>
-  </div>
+<label>Meeting Title</label>
+<input type="text" placeholder="Meeting topic">
 
-  <div class="section">
-    <div class="section-title">Department / Ministry Updates</div>
-    <div class="line">Administration</div>
-    <div class="line">Finance</div>
-    <div class="line">Worship / Media</div>
-    <div class="line">Outreach / Events</div>
-  </div>
+<label>Facilitator</label>
+<input type="text" placeholder="Name">
 
-  <div class="section">
-    <div class="section-title">Action Items</div>
-    <div class="line">Assigned To: ____________________ | Task: __________________________</div>
-    <div class="line">Assigned To: ____________________ | Task: __________________________</div>
-    <div class="line">Assigned To: ____________________ | Task: __________________________</div>
-  </div>
+<label>Agenda Items</label>
+<textarea rows="8" placeholder="List agenda topics..."></textarea>
 
-  <div class="section">
-    <div class="section-title">Closing</div>
-    <div class="line">Announcements</div>
-    <div class="line">Closing Prayer</div>
-  </div>
-
-  <div class="brand">LaFaries Mortimer LLC</div>
-
+<div class="footer">LaFaries Mortimer LLC</div>
 </div>
 
+<div class="preview">
+<h1>Preview</h1>
+<p>This panel represents how the PDF will print.</p>
+</div>
+
+</div>
 </body>
 </html>
