@@ -238,52 +238,57 @@ header p{
     <span class="badge">Coming Soon</span>
   </div>
 
-<section class="contract-section">
- <section class="agreement-container">
-  <form id="contractForm" novalidate>
+<!-- ============================= -->
+<!-- LaFaries Mortimer LLC Agreement Generator -->
+<!-- ============================= -->
 
-    <h2>Service Agreement Confirmation</h2>
+<section class="agreement-container">
 
-    <p class="agreement-intro">
-      To proceed, please complete the information below and confirm your
-      acknowledgment of the LaFaries Mortimer LLC Service Agreement.
-    </p>
+  <h2>Service Agreement Confirmation</h2>
 
-    <div class="agreement-fields">
-      <label>
-        Client Name
-        <input type="text" id="client_name" placeholder="Full legal name" />
-      </label>
+  <p class="agreement-intro">
+    To proceed, please complete the information below and confirm your acknowledgment
+    of the LaFaries Mortimer LLC Service Agreement.
+  </p>
 
-      <label>
-        Service Fee
-        <input type="text" id="service_fee" placeholder="$____" />
-      </label>
+  <div class="agreement-fields">
+    <label>
+      Client Name
+      <input type="text" id="client_name" placeholder="Full legal name" />
+    </label>
+
+    <label>
+      Service Fee
+      <input type="text" id="service_fee" placeholder="$____" />
+    </label>
+  </div>
+
+  <div class="agreement-acknowledgment">
+    <label class="ack-check">
+      <input type="checkbox" id="agree" />
+      <span>
+        I have read and agree to the
+        <strong>LaFaries Mortimer LLC Service Agreement</strong>.
+        This acknowledgment is required to generate my agreement.
+      </span>
+    </label>
+
+    <div id="agreeWarning" class="ack-warning">
+      Please check the box above to continue.
     </div>
+  </div>
 
-    <div class="agreement-acknowledgment">
-      <label class="ack-check">
-        <input type="checkbox" id="agree" />
-        <span>
-          I have read and agree to the
-          <strong>LaFaries Mortimer LLC Service Agreement</strong>.
-          This acknowledgment is required to generate my agreement.
-        </span>
-      </label>
+  <button type="button" id="generateAgreement" class="generate-btn">
+    Generate My Agreement
+  </button>
 
-      <div id="agreeWarning" class="ack-warning">
-        Please check the box above to continue.
-      </div>
-    </div>
-
-    <button type="button" class="generate-btn" id="generateAgreement">
-  Generate My Agreement
-</button>
-
-  </form>
 </section>
-</section>
+
 <style>
+/* ============================= */
+/* Agreement Generator Styling */
+/* ============================= */
+
 .agreement-container {
   max-width: 720px;
   margin: 3rem auto;
@@ -291,7 +296,7 @@ header p{
   background: #f9f7f3;
   border-radius: 16px;
   border: 2px solid #c9a44c;
-  font-family: Inter, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
 }
 
 .agreement-container h2 {
@@ -302,6 +307,7 @@ header p{
 .agreement-intro {
   color: #444;
   margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .agreement-fields label {
@@ -316,6 +322,7 @@ header p{
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: .95rem;
 }
 
 .agreement-acknowledgment {
@@ -349,13 +356,29 @@ header p{
   cursor: pointer;
   color: #fff;
   background: linear-gradient(135deg, #c9a44c, #9b7a2f);
+  transition: transform .15s ease, box-shadow .15s ease;
 }
+
+.generate-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+</style>
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+/* ============================= */
+/* Agreement Generator Logic */
+/* ============================= */
+
+(function () {
+
   const button = document.getElementById("generateAgreement");
   const warning = document.getElementById("agreeWarning");
 
+  if (!button) return;
+
   button.addEventListener("click", function () {
+
     const client = document.getElementById("client_name").value.trim();
     const fee = document.getElementById("service_fee").value.trim();
     const agreed = document.getElementById("agree").checked;
@@ -374,32 +397,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const date = new Date().toLocaleDateString();
 
-    const contractText = `
-SERVICE AGREEMENT
+    const contractText =
+`SERVICE AGREEMENT
 LaFaries Mortimer LLC
 
 Date: ${date}
 Client: ${client}
 Service Fee: ${fee}
 
-This agreement is acknowledged electronically.
+This Service Agreement confirms the electronic acknowledgment of the
+Client and governs the administrative and IT services provided by
+LaFaries Mortimer LLC.
 
 — LaFaries Mortimer LLC
-Administrative & IT Services
-`;
+Administrative & IT Services`;
 
     const blob = new Blob([contractText], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = \`LaFaries-Mortimer-Agreement-\${client}.txt\`;
+    a.download = "LaFaries-Mortimer-Service-Agreement.txt";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+
   });
-});
+
+})();
 </script>
 
 </main>
