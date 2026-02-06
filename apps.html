@@ -239,78 +239,170 @@ header p{
   </div>
 
 <section class="contract-section">
-  <h2>Start Your Service Agreement</h2>
-  <p class="contract-subtitle">
-    Complete the form below to generate your LaFaries Mortimer LLC service agreement.
-  </p>
+ <section class="agreement-container">
+  <form id="contractForm" novalidate>
 
-  <form id="contractForm" class="contract-form">
-    <label>Client Name</label>
-    <input type="text" id="client_name" required />
+    <h2>Service Agreement Confirmation</h2>
 
-    <label>Service Fee</label>
-    <input type="text" id="service_fee" placeholder="$____" required />
+    <p class="agreement-intro">
+      To proceed, please complete the information below and confirm your
+      acknowledgment of the LaFaries Mortimer LLC Service Agreement.
+    </p>
 
-    <label class="checkbox">
-      <input type="checkbox" id="agree" required />
-      I acknowledge and agree to the terms of service.
-    </label>
+    <div class="agreement-fields">
+      <label>
+        Client Name
+        <input type="text" id="client_name" placeholder="Full legal name" />
+      </label>
 
-    <button type="submit">Generate Agreement</button>
+      <label>
+        Service Fee
+        <input type="text" id="service_fee" placeholder="$____" />
+      </label>
+    </div>
+
+    <div class="agreement-acknowledgment">
+      <label class="ack-check">
+        <input type="checkbox" id="agree" />
+        <span>
+          I have read and agree to the
+          <strong>LaFaries Mortimer LLC Service Agreement</strong>.
+          This acknowledgment is required to generate my agreement.
+        </span>
+      </label>
+
+      <div id="agreeWarning" class="ack-warning">
+        Please check the box above to continue.
+      </div>
+    </div>
+
+    <button type="submit" class="generate-btn">
+      Generate My Agreement
+    </button>
+
   </form>
 </section>
-
+</section>
 <style>
-.contract-section {
-  background: #f8f6f2;
-  padding: 3rem;
-  border-radius: 14px;
-  max-width: 700px;
-  margin: auto;
+.agreement-container {
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: #f9f7f3;
+  border-radius: 16px;
+  border: 2px solid #c9a44c;
   font-family: Inter, sans-serif;
 }
 
-.contract-section h2 {
+.agreement-container h2 {
   color: #0b1f3a;
-  font-weight: 600;
-  margin-bottom: .5rem;
+  margin-bottom: .75rem;
 }
 
-.contract-subtitle {
-  color: #555;
+.agreement-intro {
+  color: #444;
   margin-bottom: 2rem;
 }
 
-.contract-form label {
+.agreement-fields label {
   display: block;
-  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
   font-weight: 500;
 }
 
-.contract-form input[type="text"] {
+.agreement-fields input {
   width: 100%;
+  margin-top: .5rem;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  margin-top: .5rem;
 }
 
-.checkbox {
-  margin-top: 1.5rem;
+.agreement-acknowledgment {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  background: #fffdf8;
+  border-radius: 12px;
+  border: 1px dashed #c9a44c;
+}
+
+.ack-check {
+  display: flex;
+  gap: .75rem;
   font-size: .95rem;
+  line-height: 1.4;
 }
 
-.contract-form button {
-  margin-top: 2rem;
-  background: linear-gradient(135deg, #c9a44c, #9b7a2f);
-  color: white;
-  padding: 14px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
+.ack-warning {
+  display: none;
+  margin-top: .75rem;
+  color: #c0392b;
+  font-weight: 500;
 }
-</style>
+
+.generate-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, #c9a44c, #9b7a2f);
+}
+</style><script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contractForm");
+  const warning = document.getElementById("agreeWarning");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const client = document.getElementById("client_name").value.trim();
+    const fee = document.getElementById("service_fee").value.trim();
+    const agreed = document.getElementById("agree").checked;
+
+    if (!client || !fee) {
+      alert("Please complete all required fields.");
+      return;
+    }
+
+    if (!agreed) {
+      warning.style.display = "block";
+      return;
+    }
+
+    warning.style.display = "none";
+
+    const date = new Date().toLocaleDateString();
+
+    const contractText = `
+SERVICE AGREEMENT
+LaFaries Mortimer LLC
+
+Date: ${date}
+Client: ${client}
+Service Fee: ${fee}
+
+This agreement is acknowledged electronically.
+
+— LaFaries Mortimer LLC
+Administrative & IT Services
+`;
+
+    const blob = new Blob([contractText], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = \`LaFaries-Mortimer-Agreement-\${client}.txt\`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+});
+</script>
 
 </main>
 
