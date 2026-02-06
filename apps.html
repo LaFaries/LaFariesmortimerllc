@@ -238,40 +238,79 @@ header p{
     <span class="badge">Coming Soon</span>
   </div>
 
+<section class="contract-section">
+  <h2>Start Your Service Agreement</h2>
+  <p class="contract-subtitle">
+    Complete the form below to generate your LaFaries Mortimer LLC service agreement.
+  </p>
+
+  <form id="contractForm" class="contract-form">
+    <label>Client Name</label>
+    <input type="text" id="client_name" required />
+
+    <label>Service Fee</label>
+    <input type="text" id="service_fee" placeholder="$____" required />
+
+    <label class="checkbox">
+      <input type="checkbox" id="agree" required />
+      I acknowledge and agree to the terms of service.
+    </label>
+
+    <button type="submit">Generate Agreement</button>
+  </form>
 </section>
-<h2>Start Your Service Agreement</h2>
 
-<form id="contractForm">
-  <label>Client Name</label>
-  <input type="text" id="client_name" required />
+<style>
+.contract-section {
+  background: #f8f6f2;
+  padding: 3rem;
+  border-radius: 14px;
+  max-width: 700px;
+  margin: auto;
+  font-family: Inter, sans-serif;
+}
 
-  <label>Service Fee</label>
-  <input type="text" id="service_fee" required />
+.contract-section h2 {
+  color: #0b1f3a;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
 
-  <button type="submit">Generate My Contract</button>
-</form>
+.contract-subtitle {
+  color: #555;
+  margin-bottom: 2rem;
+}
 
-<script>
-document.getElementById("contractForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+.contract-form label {
+  display: block;
+  margin-top: 1.25rem;
+  font-weight: 500;
+}
 
-  const client_name = document.getElementById("client_name").value;
-  const service_fee = document.getElementById("service_fee").value;
+.contract-form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: .5rem;
+}
 
-  const response = await fetch("/.netlify/functions/generate-contract", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ client_name, service_fee })
-  });
+.checkbox {
+  margin-top: 1.5rem;
+  font-size: .95rem;
+}
 
-  const blob = await response.blob();
-  const url = window.URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `Contract-${client_name}.docx`;
-  a.click();
-});
-</script>
+.contract-form button {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #c9a44c, #9b7a2f);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+</style>
 
 </main>
 
