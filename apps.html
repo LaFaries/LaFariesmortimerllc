@@ -289,6 +289,11 @@ header p{
 /* Agreement Generator Styling */
 /* ============================= */
 
+<style>
+/* ============================= */
+/* Agreement Generator Styling */
+/* ============================= */
+
 .agreement-container {
   max-width: 720px;
   margin: 3rem auto;
@@ -297,23 +302,27 @@ header p{
   border-radius: 16px;
   border: 2px solid #c9a44c;
   font-family: Inter, system-ui, sans-serif;
+
+  /* FORCE readable text */
+  color: #1f2937; /* deep slate */
 }
 
 .agreement-container h2 {
-  color: #0b1f3a;
+  color: #0b1f3a; /* navy */
   margin-bottom: .75rem;
 }
 
 .agreement-intro {
-  color: #444;
+  color: #374151; /* charcoal */
   margin-bottom: 2rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .agreement-fields label {
   display: block;
   margin-bottom: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: #111827; /* strong label */
 }
 
 .agreement-fields input {
@@ -321,8 +330,15 @@ header p{
   margin-top: .5rem;
   padding: 12px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #cbd5e1;
   font-size: .95rem;
+
+  color: #111827;
+  background: #ffffff;
+}
+
+.agreement-fields input::placeholder {
+  color: #9ca3af;
 }
 
 .agreement-acknowledgment {
@@ -331,20 +347,27 @@ header p{
   background: #fffdf8;
   border-radius: 12px;
   border: 1px dashed #c9a44c;
+
+  color: #1f2937;
 }
 
 .ack-check {
   display: flex;
   gap: .75rem;
   font-size: .95rem;
-  line-height: 1.4;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
+.ack-check strong {
+  color: #0b1f3a;
 }
 
 .ack-warning {
   display: none;
   margin-top: .75rem;
-  color: #c0392b;
-  font-weight: 500;
+  color: #b91c1c;
+  font-weight: 600;
 }
 
 .generate-btn {
@@ -354,7 +377,8 @@ header p{
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  color: #fff;
+
+  color: #ffffff;
   background: linear-gradient(135deg, #c9a44c, #9b7a2f);
   transition: transform .15s ease, box-shadow .15s ease;
 }
