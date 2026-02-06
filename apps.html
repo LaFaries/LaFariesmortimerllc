@@ -276,9 +276,9 @@ header p{
       </div>
     </div>
 
-    <button type="submit" class="generate-btn">
-      Generate My Agreement
-    </button>
+    <button type="button" class="generate-btn" id="generateAgreement">
+  Generate My Agreement
+</button>
 
   </form>
 </section>
@@ -350,14 +350,12 @@ header p{
   color: #fff;
   background: linear-gradient(135deg, #c9a44c, #9b7a2f);
 }
-</style><script>
+<script>
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contractForm");
+  const button = document.getElementById("generateAgreement");
   const warning = document.getElementById("agreeWarning");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
+  button.addEventListener("click", function () {
     const client = document.getElementById("client_name").value.trim();
     const fee = document.getElementById("service_fee").value.trim();
     const agreed = document.getElementById("agree").checked;
