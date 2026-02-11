@@ -1,30 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Goals | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Our purpose and goals at LaFaries Mortimer LLC." />
-  <link rel="stylesheet" href="/assets/style.css" />
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
+<title>LAAP Suite™ | LaFaries Mortimer LLC</title>
+<meta name="description" content="LAAP Suite™ is a guided administrative system that replaces scattered admin work with clarity, structure, and consistency.">
 
-<header>
-  <div class="wrapper header-inner">
-    <!-- Brand -->
-    <a href="/index.html" class="brand">
-      <img
-        src="/assets/img/logo-2026.png"
-        alt="LaFaries Mortimer LLC logo"
-        class="brand-logo"
-      />
-      <div class="brand-text">
-        <span class="brand-eyebrow">Administrative & IT Services</span>
-        <strong class="brand-name">LaFaries Mortimer LLC</strong>
-      </div>
-    </a>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ivory:#F8F6F1;
+  --gold:#DAB85C;
+  --dark:#0F1115;
+  --charcoal:#1D1D1D;
+  --muted:rgba(29,29,29,.7);
+  --line:rgba(29,29,29,.14);
+  --radius:28px;
+  --shadow:0 30px 100px rgba(0,0,0,.25);
+  --heading:"Cormorant Garamond", serif;
+  --body:"Inter", system-ui;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--body);
+  background:#fff;
+  color:var(--charcoal);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+
+/* ================= HEADER ================= */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(15,17,21,.95);
+  backdrop-filter:blur(10px);
+}
+.nav{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{
+  width:44px;height:44px;border-radius:50%;padding:3px;
+  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
+  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
+}
+.brand strong{font-family:var(--heading);color:#fff}
+.brand span{font-size:11px;color:rgba(255,255,255,.6)}
+nav{display:flex;gap:14px;justify-content:center}
+nav a{
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  color:rgba(255,255,255,.8);
+}
+nav a.active,nav a:hover{
+  background:rgba(255,255,255,.08);
+  box-shadow:0 0 18px rgba(218,184,92,.35);
+}
+.btn{
+  padding:12px 18px;
+  border-radius:999px;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.btnGold{background:var(--gold);color:#1a1a1a}
+.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
+
 
     <!-- Navigation -->
     <nav aria-label="Primary navigation">
