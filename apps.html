@@ -20,6 +20,83 @@
 }
 
 *{box-sizing:border-box}
+  <!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Free Tools | LaFaries Mortimer LLC</title>
+<meta name="description" content="Free business tools and converters. Use instantly. Save everything inside LAAP™ when ready.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ivory:#F8F6F1;
+  --gold:#DAB85C;
+  --dark:#0F1115;
+  --charcoal:#1D1D1D;
+  --line:rgba(29,29,29,.14);
+  --radius:28px;
+  --shadow:0 30px 100px rgba(0,0,0,.25);
+  --h:"Cormorant Garamond",serif;
+  --b:"Inter",system-ui;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--b);
+  background:#ffffff;
+  color:var(--charcoal);
+}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(15,17,21,.95);
+  backdrop-filter:blur(10px);
+}
+.nav{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:16px;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{
+  width:44px;height:44px;border-radius:50%;
+  padding:3px;
+  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
+  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
+}
+.brand strong{font-family:var(--h);color:#fff}
+.brand span{font-size:11px;color:rgba(255,255,255,.6)}
+nav{display:flex;gap:14px;justify-content:center}
+.nav-pill{
+  padding:8px 14px;border-radius:999px;
+  font-size:14px;color:rgba(255,255,255,.8)
+}
+.nav-pill:hover{
+  background:rgba(255,255,255,.08);
+  box-shadow:0 0 18px rgba(218,184,92,.35);
+}
+.ctaTop{display:flex;gap:10px}
+.btn{
+  padding:12px 16px;border-radius:999px;
+  font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:600;
+}
+.btnGold{background:var(--gold);color:#1a1a1a}
+.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 body{
   margin:0;
   font-family:Inter,sans-serif;
