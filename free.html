@@ -76,7 +76,7 @@ nav{display:flex;gap:14px;justify-content:center}
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-/* HERO – HIGH CONTRAST */
+/* HERO */
 .hero{
   position:relative;
   padding:140px 0 120px;
@@ -86,7 +86,6 @@ nav{display:flex;gap:14px;justify-content:center}
   color:#fff;
 }
 .hero .accent{
-  display:inline-block;
   margin-bottom:18px;
   font-size:13px;
   letter-spacing:.22em;
@@ -97,31 +96,13 @@ nav{display:flex;gap:14px;justify-content:center}
   font-family:var(--h);
   font-size:64px;
   margin:0 0 20px;
-  position:relative;
-  display:inline-block;
-}
-.hero h1::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-14px;
-  width:100%;
-  height:6px;
-  border-radius:6px;
-  background:
-    linear-gradient(90deg,#f5e6a8,#d9b65c,#b8913a);
-  box-shadow:
-    0 6px 18px rgba(218,184,92,.65),
-    inset 0 1px 0 rgba(255,255,255,.6);
 }
 .hero p{
-  margin-top:32px;
+  margin-top:24px;
   font-size:18px;
   max-width:65ch;
   color:rgba(255,255,255,.78);
 }
-
-/* RAISED DIVIDER */
 .hero-divider{
   position:absolute;
   bottom:-40px;
@@ -151,13 +132,6 @@ nav{display:flex;gap:14px;justify-content:center}
   box-shadow:
     0 30px 90px rgba(0,0,0,.22),
     inset 0 0 0 1px rgba(218,184,92,.28);
-  transition:transform .35s ease, box-shadow .35s ease;
-}
-.tool-card:hover{
-  transform:translateY(-8px);
-  box-shadow:
-    0 42px 120px rgba(0,0,0,.3),
-    inset 0 0 0 1px rgba(218,184,92,.45);
 }
 .tool-card h3{
   font-family:var(--h);
@@ -168,12 +142,6 @@ nav{display:flex;gap:14px;justify-content:center}
   font-size:14px;
   color:rgba(29,29,29,.7);
   margin-bottom:18px;
-}
-.tool-card label{
-  font-size:12px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:#777;
 }
 .tool-card input,
 .tool-card select{
@@ -189,6 +157,21 @@ nav{display:flex;gap:14px;justify-content:center}
   font-size:12px;
   color:var(--gold);
   letter-spacing:.08em;
+}
+
+/* MORE FREE TOOLS PREVIEW */
+.more-tools{
+  padding:90px 0;
+  text-align:center;
+}
+.tool-preview-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+  margin-top:40px;
+}
+.cta-more-tools{
+  margin-top:40px;
 }
 
 /* HUB */
@@ -208,13 +191,11 @@ nav{display:flex;gap:14px;justify-content:center}
   border-radius:30px;
   padding:38px;
   color:#fff;
-  box-shadow:0 40px 110px rgba(0,0,0,.85);
 }
 .hub-card h3{
   font-family:var(--h);
   font-size:30px;
 }
-.hub-card p{color:rgba(255,255,255,.75)}
 
 footer{
   background:#f8f6f1;
@@ -223,11 +204,6 @@ footer{
   text-align:center;
   font-size:12px;
   color:rgba(29,29,29,.6);
-}
-
-@media(max-width:980px){
-  nav{display:none}
-  .hero h1{font-size:48px}
 }
 </style>
 </head>
@@ -276,20 +252,9 @@ footer{
     <div class="tool-card">
       <h3>Currency Converter</h3>
       <p>Quick estimates for global planning.</p>
-
-      <label>Amount</label>
-      <input type="number" id="currencyAmount">
-
-      <label>From</label>
-      <select id="fromCurrency">
-        <option>USD</option><option>EUR</option><option>GBP</option><option>CAD</option>
-      </select>
-
-      <label>To</label>
-      <select id="toCurrency">
-        <option>EUR</option><option>USD</option><option>GBP</option><option>CAD</option>
-      </select>
-
+      <input type="number" id="currencyAmount" placeholder="Amount">
+      <select id="fromCurrency"><option>USD</option><option>EUR</option></select>
+      <select id="toCurrency"><option>EUR</option><option>USD</option></select>
       <div class="result" id="currencyResult"></div>
       <div class="save">Save inside LAAP →</div>
     </div>
@@ -297,9 +262,7 @@ footer{
     <div class="tool-card">
       <h3>Weight Converter</h3>
       <p>Shipping and inventory made simple.</p>
-
-      <label>Pounds</label>
-      <input type="number" id="lbs">
+      <input type="number" id="lbs" placeholder="Pounds">
       <div class="result" id="kgResult"></div>
       <div class="save">History saved in LAAP →</div>
     </div>
@@ -307,17 +270,38 @@ footer{
     <div class="tool-card">
       <h3>Quick Percentage</h3>
       <p>Margins, pricing, and fees.</p>
-
-      <label>Value</label>
-      <input type="number" id="value">
-
-      <label>Percent</label>
-      <input type="number" id="percent">
-
+      <input type="number" id="value" placeholder="Value">
+      <input type="number" id="percent" placeholder="Percent">
       <div class="result" id="percentResult"></div>
       <div class="save">Track inside LAAP →</div>
     </div>
 
+  </div>
+</section>
+
+<section class="more-tools">
+  <div class="wrap">
+    <h2>More Free Tools Available</h2>
+    <p>These are only a few of the resources available. Explore the full library of free tools designed to help you operate with confidence.</p>
+
+    <div class="tool-preview-grid">
+      <div class="tool-card">
+        <h3>QR Code Generator</h3>
+        <p>Create instant branded QR codes for documents and marketing.</p>
+      </div>
+      <div class="tool-card">
+        <h3>File Compressor</h3>
+        <p>Reduce PDF and image size before uploads.</p>
+      </div>
+      <div class="tool-card">
+        <h3>Color Palette Generator</h3>
+        <p>Build brand-ready color systems in seconds.</p>
+      </div>
+    </div>
+
+    <div class="cta-more-tools">
+      <a href="/free-tools.html" class="btn btnGold">View All Free Tools →</a>
+    </div>
   </div>
 </section>
 
@@ -346,24 +330,11 @@ footer{
 </footer>
 
 <script>
-const rates={
-  USD:{USD:1,EUR:.92,GBP:.79,CAD:1.35},
-  EUR:{EUR:1,USD:1.09,GBP:.86,CAD:1.47},
-  GBP:{GBP:1,USD:1.27,EUR:1.16,CAD:1.72},
-  CAD:{CAD:1,USD:.74,EUR:.68,GBP:.58}
+const rates={USD:{EUR:.92},EUR:{USD:1.09}};
+currencyAmount.oninput=fromCurrency.onchange=toCurrency.onchange=()=>{
+  if(!currencyAmount.value)return currencyResult.textContent="";
+  currencyResult.textContent="≈ "+(currencyAmount.value*rates[fromCurrency.value][toCurrency.value]).toFixed(2)+" "+toCurrency.value;
 };
-
-const a=document.getElementById("currencyAmount"),
-f=document.getElementById("fromCurrency"),
-t=document.getElementById("toCurrency"),
-r=document.getElementById("currencyResult");
-
-function convert(){
-  if(!a.value)return r.textContent="";
-  r.textContent=`≈ ${(a.value*rates[f.value][t.value]).toFixed(2)} ${t.value}`;
-}
-a.oninput=f.onchange=t.onchange=convert;
-
 lbs.oninput=()=>kgResult.textContent=lbs.value?`≈ ${(lbs.value*.4536).toFixed(2)} kg`:"";
 value.oninput=percent.oninput=()=>percentResult.textContent=
 value.value&&percent.value?`= ${(value.value*percent.value/100).toFixed(2)}`:"";
