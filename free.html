@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Free Tools | LaFaries Mortimer LLC</title>
-<meta name="description" content="Free business tools and converters. Use instantly. Save everything inside LAAP™ when ready.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,197 +12,87 @@
 
 <style>
 :root{
-  --ivory:#F8F6F1;
-  --gold:#DAB85C;
-  --dark:#0F1115;
-  --charcoal:#1D1D1D;
-  --line:rgba(29,29,29,.14);
-  --radius:28px;
-  --shadow:0 30px 100px rgba(0,0,0,.25);
-  --h:"Cormorant Garamond",serif;
-  --b:"Inter",system-ui;
+--ivory:#F8F6F1;
+--gold:#DAB85C;
+--dark:#0F1115;
+--charcoal:#1D1D1D;
+--line:rgba(29,29,29,.14);
+--h:"Cormorant Garamond",serif;
+--b:"Inter",system-ui;
 }
 
 *{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:var(--b);
-  background:#ffffff;
-  color:var(--charcoal);
-}
-a{text-decoration:none;color:inherit}
+body{margin:0;font-family:var(--b);background:#fff;color:#1D1D1D}
 .wrap{max-width:1180px;margin:auto;padding:0 20px}
 
 /* HEADER */
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(15,17,21,.95);
-  backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(15,17,21,.95);
+backdrop-filter:blur(10px);
 }
-.nav{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:16px;
-  padding:14px 0;
-}
-.brand{display:flex;align-items:center;gap:12px}
+.nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:14px 0}
+.brand{display:flex;gap:12px;align-items:center}
 .brand-logo{
-  width:44px;height:44px;border-radius:50%;
-  padding:3px;
-  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
+width:44px;height:44px;border-radius:50%;
+background:radial-gradient(circle,#fff,#d8c27a 40%,#b89b4a 70%);
+box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
 }
 .brand strong{font-family:var(--h);color:#fff}
-.brand span{font-size:11px;color:rgba(255,255,255,.6)}
 nav{display:flex;gap:14px;justify-content:center}
-.nav-pill{
-  padding:8px 14px;border-radius:999px;
-  font-size:14px;color:rgba(255,255,255,.8)
-}
-.nav-pill:hover{
-  background:rgba(255,255,255,.08);
-  box-shadow:0 0 18px rgba(218,184,92,.35);
-}
+.nav-pill{color:#fff;padding:8px 14px;border-radius:999px}
 .ctaTop{display:flex;gap:10px}
-.btn{
-  padding:12px 16px;border-radius:999px;
-  font-size:12px;letter-spacing:.14em;
-  text-transform:uppercase;font-weight:600;
-}
+.btn{padding:12px 16px;border-radius:999px;font-size:12px;text-transform:uppercase;font-weight:600}
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
 /* HERO */
 .hero{
-  position:relative;
-  padding:140px 0 120px;
-  background:
-    radial-gradient(1000px 420px at 50% -15%, rgba(218,184,92,.38), transparent 55%),
-    linear-gradient(180deg,#0f1115,#141720);
-  color:#fff;
+padding:140px 0 120px;
+background:
+radial-gradient(1000px 420px at 50% -15%, rgba(218,184,92,.38), transparent 55%),
+linear-gradient(180deg,#0f1115,#141720);
+color:#fff;
 }
-.hero .accent{
-  margin-bottom:18px;
-  font-size:13px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--gold);
-}
-.hero h1{
-  font-family:var(--h);
-  font-size:64px;
-  margin:0 0 20px;
-}
-.hero p{
-  margin-top:24px;
-  font-size:18px;
-  max-width:65ch;
-  color:rgba(255,255,255,.78);
-}
-.hero-divider{
-  position:absolute;
-  bottom:-40px;
-  left:50%;
-  transform:translateX(-50%);
-  width:92%;
-  height:80px;
-  background:linear-gradient(180deg,#ffffff,#f8f6f1);
-  border-radius:40px;
-  box-shadow:0 -20px 60px rgba(0,0,0,.35);
-}
+.hero h1{font-family:var(--h);font-size:64px;margin:0 0 20px}
 
-/* TOOLS */
-.tools{
-  padding:140px 0 90px;
-  background:linear-gradient(180deg,#f8f6f1,#ffffff);
-}
-.tools-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:34px;
-}
+/* TOOLS GRID */
+.tools{padding:120px 0;background:linear-gradient(180deg,#f8f6f1,#fff)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:34px}
+
 .tool-card{
-  background:linear-gradient(180deg,#ffffff,#f8f6f1);
-  border-radius:30px;
-  padding:36px;
-  box-shadow:
-    0 30px 90px rgba(0,0,0,.22),
-    inset 0 0 0 1px rgba(218,184,92,.28);
+background:linear-gradient(180deg,#ffffff,#f8f6f1);
+border-radius:28px;
+padding:34px;
+box-shadow:0 30px 90px rgba(0,0,0,.22), inset 0 0 0 1px rgba(218,184,92,.28);
 }
-.tool-card h3{
-  font-family:var(--h);
-  font-size:28px;
-  margin:0 0 8px;
+.tool-card h3{font-family:var(--h);font-size:26px;margin:0 0 8px}
+.tool-card input,.tool-card select,.tool-card textarea{
+width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);margin:6px 0 12px
 }
-.tool-card p{
-  font-size:14px;
-  color:rgba(29,29,29,.7);
-  margin-bottom:18px;
-}
-.tool-card input,
-.tool-card select{
-  width:100%;
-  padding:12px 14px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  margin:6px 0 14px;
-}
-.result{font-weight:600}
-.save{
-  margin-top:14px;
-  font-size:12px;
-  color:var(--gold);
-  letter-spacing:.08em;
-}
+.result{font-weight:600;margin-top:6px}
+.free-tag{color:var(--gold);font-size:12px;margin-top:6px}
 
-/* MORE FREE TOOLS PREVIEW */
-.more-tools{
-  padding:90px 0;
-  text-align:center;
-}
-.tool-preview-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:26px;
-  margin-top:40px;
-}
-.cta-more-tools{
-  margin-top:40px;
-}
-
-/* HUB */
+/* HUB BOTTOM */
 .hub{
-  padding:110px 0;
-  background:
-    radial-gradient(900px 420px at 50% -10%, rgba(218,184,92,.22), transparent 60%),
-    linear-gradient(180deg,#0f1115,#141720);
+padding:110px 0;
+background:
+radial-gradient(900px 420px at 50% -10%, rgba(218,184,92,.22), transparent 60%),
+linear-gradient(180deg,#0f1115,#141720);
 }
-.hub-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:28px;
-}
-.hub-card{
-  background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:30px;
-  padding:38px;
-  color:#fff;
-}
-.hub-card h3{
-  font-family:var(--h);
-  font-size:30px;
-}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+.hub-card{background:linear-gradient(180deg,#1a1d24,#0f1115);border-radius:30px;padding:38px;color:#fff}
+.hub-card h3{font-family:var(--h);font-size:30px}
 
 footer{
-  background:#f8f6f1;
-  border-top:1px solid var(--line);
-  padding:18px 0;
-  text-align:center;
-  font-size:12px;
-  color:rgba(29,29,29,.6);
+background:#f8f6f1;
+border-top:1px solid var(--line);
+padding:18px 0;
+text-align:center;
+font-size:12px;
+color:rgba(29,29,29,.6);
 }
 </style>
 </head>
@@ -211,133 +100,178 @@ footer{
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">
-      <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
-      </div>
-    </a>
+<div class="wrap nav">
+<a class="brand" href="/">
+<img src="/assets/img/logo-2026.png" class="brand-logo">
+<div>
+<strong>LaFaries Mortimer LLC</strong>
+<span style="color:#bbb;font-size:11px">Administrative & IT Services</span>
+</div>
+</a>
 
-    <nav>
-      <a class="nav-pill" href="/">Home</a>
-      <a class="nav-pill" href="/laap.html">LAAP Suite</a>
-      <a class="nav-pill" href="/services.html">Services</a>
-      <a class="nav-pill" href="/contact.html">Contact</a>
-    </nav>
+<nav>
+<a class="nav-pill" href="/">Home</a>
+<a class="nav-pill" href="/laap.html">LAAP Suite</a>
+<a class="nav-pill" href="/services.html">Services</a>
+<a class="nav-pill" href="/contact.html">Contact</a>
+</nav>
 
-    <div class="ctaTop">
-      <a class="btn btnGhost" href="/laap.html">Explore LAAP</a>
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
-    </div>
-  </div>
+<div class="ctaTop">
+<a class="btn btnGhost" href="/laap.html">Explore LAAP</a>
+<a class="btn btnGold" href="/contact.html">Book a Call</a>
+</div>
+</div>
 </header>
 
 <section class="hero">
-  <div class="wrap">
-    <span class="accent">Free Tools Hub</span>
-    <h1>Instant tools. Real clarity.</h1>
-    <p>
-      Plan, estimate, and decide with confidence.
-      When ready, everything saves and automates inside <strong>LAAP™</strong>.
-    </p>
-  </div>
-  <div class="hero-divider"></div>
+<div class="wrap">
+<span style="letter-spacing:.2em;color:#DAB85C">FREE TOOLS HUB</span>
+<h1>Instant tools. Real clarity.</h1>
+<p>Plan, estimate, and decide with confidence. When ready, everything saves and automates inside LAAP™.</p>
+</div>
 </section>
 
 <section class="tools">
-  <div class="wrap tools-grid">
+<div class="wrap tools-grid">
 
-    <div class="tool-card">
-      <h3>Currency Converter</h3>
-      <p>Quick estimates for global planning.</p>
-      <input type="number" id="currencyAmount" placeholder="Amount">
-      <select id="fromCurrency"><option>USD</option><option>EUR</option></select>
-      <select id="toCurrency"><option>EUR</option><option>USD</option></select>
-      <div class="result" id="currencyResult"></div>
-      <div class="save">Save inside LAAP →</div>
-    </div>
+<!-- ORIGINAL CONVERTERS (UNCHANGED) -->
+<div class="tool-card">
+<h3>Currency Converter</h3>
+<input type="number" id="currencyAmount" placeholder="Amount">
+<select id="fromCurrency"><option>USD</option><option>EUR</option></select>
+<select id="toCurrency"><option>EUR</option><option>USD</option></select>
+<div class="result" id="currencyResult"></div>
+<div class="free-tag">Free Tool</div>
+</div>
 
-    <div class="tool-card">
-      <h3>Weight Converter</h3>
-      <p>Shipping and inventory made simple.</p>
-      <input type="number" id="lbs" placeholder="Pounds">
-      <div class="result" id="kgResult"></div>
-      <div class="save">History saved in LAAP →</div>
-    </div>
+<div class="tool-card">
+<h3>Weight Converter</h3>
+<input type="number" id="lbs" placeholder="Pounds">
+<div class="result" id="kgResult"></div>
+<div class="free-tag">Free Tool</div>
+</div>
 
-    <div class="tool-card">
-      <h3>Quick Percentage</h3>
-      <p>Margins, pricing, and fees.</p>
-      <input type="number" id="value" placeholder="Value">
-      <input type="number" id="percent" placeholder="Percent">
-      <div class="result" id="percentResult"></div>
-      <div class="save">Track inside LAAP →</div>
-    </div>
+<div class="tool-card">
+<h3>Quick Percentage</h3>
+<input type="number" id="value" placeholder="Value">
+<input type="number" id="percent" placeholder="Percent">
+<div class="result" id="percentResult"></div>
+<div class="free-tag">Free Tool</div>
+</div>
 
-  </div>
-</section>
+<!-- LANGUAGE TRANSLATOR -->
+<div class="tool-card">
+<h3>Language Translator</h3>
+<select id="langFrom">
+<option value="en">English</option>
+<option value="es">Spanish</option>
+<option value="fr">French</option>
+<option value="de">German</option>
+<option value="it">Italian</option>
+<option value="pt">Portuguese</option>
+<option value="nl">Dutch</option>
+<option value="ru">Russian</option>
+<option value="ja">Japanese</option>
+<option value="zh">Chinese</option>
+</select>
 
-<section class="more-tools">
-  <div class="wrap">
-    <h2>More Free Tools Available</h2>
-    <p>These are only a few of the resources available. Explore the full library of free tools designed to help you operate with confidence.</p>
+<select id="langTo">
+<option value="es">Spanish</option>
+<option value="en">English</option>
+<option value="fr">French</option>
+<option value="de">German</option>
+<option value="it">Italian</option>
+<option value="pt">Portuguese</option>
+<option value="nl">Dutch</option>
+<option value="ru">Russian</option>
+<option value="ja">Japanese</option>
+<option value="zh">Chinese</option>
+</select>
 
-    <div class="tool-preview-grid">
-      <div class="tool-card">
-        <h3>QR Code Generator</h3>
-        <p>Create instant branded QR codes for documents and marketing.</p>
-      </div>
-      <div class="tool-card">
-        <h3>File Compressor</h3>
-        <p>Reduce PDF and image size before uploads.</p>
-      </div>
-      <div class="tool-card">
-        <h3>Color Palette Generator</h3>
-        <p>Build brand-ready color systems in seconds.</p>
-      </div>
-    </div>
+<textarea id="translateText" placeholder="Type text to translate..."></textarea>
+<button class="btn btnGold" onclick="translate()">Translate</button>
+<div class="result" id="translateResult"></div>
+</div>
 
-    <div class="cta-more-tools">
-      <a href="/free-tools.html" class="btn btnGold">View All Free Tools →</a>
-    </div>
-  </div>
+<!-- EMAIL LENGTH CHECKER -->
+<div class="tool-card">
+<h3>Email & Message Length Checker</h3>
+<textarea id="msg"></textarea>
+<div class="result" id="count">0 words • 0 characters</div>
+</div>
+
+<!-- QR GENERATOR -->
+<div class="tool-card">
+<h3>QR Code Generator</h3>
+<input id="qrText" placeholder="Enter URL or text">
+<button class="btn btnGold" onclick="genQR()">Generate</button>
+<div id="qr"></div>
+</div>
+
+<!-- COLOR PALETTE -->
+<div class="tool-card">
+<h3>Color Palette Generator</h3>
+<input type="color" id="colorPick">
+<div id="colorResult" class="result"></div>
+</div>
+
+</div>
 </section>
 
 <section class="hub">
-  <div class="wrap hub-grid">
-    <div class="hub-card">
-      <h3>Free Tutorials</h3>
-      <p>Learn before you spend.</p>
-      <a class="btn btnGold" href="/tutorials.html">View Tutorials</a>
-    </div>
-    <div class="hub-card">
-      <h3>DIY Templates</h3>
-      <p>Professional documents, ready.</p>
-      <a class="btn btnGold" href="/templates.html">Browse Templates</a>
-    </div>
-    <div class="hub-card">
-      <h3>LAAP™ System</h3>
-      <p>Everything you calculate—saved.</p>
-      <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-    </div>
-  </div>
+<div class="wrap hub-grid">
+<div class="hub-card">
+<h3>Free Tutorials</h3>
+<p>Learn before you spend.</p>
+<a class="btn btnGold" href="/tutorials.html">View Tutorials</a>
+</div>
+
+<div class="hub-card">
+<h3>DIY Templates</h3>
+<p>Professional documents ready instantly.</p>
+<a class="btn btnGold" href="/templates.html">Browse Templates</a>
+</div>
+
+<div class="hub-card">
+<h3>LAAP™ System</h3>
+<p>Everything you calculate—saved.</p>
+<a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+</div>
+</div>
 </section>
 
 <footer>
-  © 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
+© 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
 </footer>
 
 <script>
 const rates={USD:{EUR:.92},EUR:{USD:1.09}};
 currencyAmount.oninput=fromCurrency.onchange=toCurrency.onchange=()=>{
-  if(!currencyAmount.value)return currencyResult.textContent="";
-  currencyResult.textContent="≈ "+(currencyAmount.value*rates[fromCurrency.value][toCurrency.value]).toFixed(2)+" "+toCurrency.value;
+if(!currencyAmount.value)return currencyResult.textContent="";
+currencyResult.textContent="≈ "+(currencyAmount.value*rates[fromCurrency.value][toCurrency.value]).toFixed(2)+" "+toCurrency.value;
 };
 lbs.oninput=()=>kgResult.textContent=lbs.value?`≈ ${(lbs.value*.4536).toFixed(2)} kg`:"";
-value.oninput=percent.oninput=()=>percentResult.textContent=
-value.value&&percent.value?`= ${(value.value*percent.value/100).toFixed(2)}`:"";
+value.oninput=percent.oninput=()=>percentResult.textContent=value.value&&percent.value?`= ${(value.value*percent.value/100).toFixed(2)}`:"";
+
+msg.oninput=()=>{
+const words=msg.value.trim().split(/\s+/).filter(Boolean).length;
+count.textContent=`${words} words • ${msg.value.length} characters`;
+};
+
+function genQR(){
+qr.innerHTML="";
+const img=document.createElement("img");
+img.src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data="+encodeURIComponent(qrText.value);
+qr.appendChild(img);
+}
+
+colorPick.oninput=()=>colorResult.textContent=colorPick.value;
+
+async function translate(){
+const res=await fetch(`https://api.mymemory.translated.net/get?q=${translateText.value}&langpair=${langFrom.value}|${langTo.value}`);
+const data=await res.json();
+translateResult.textContent=data.responseData.translatedText;
+}
 </script>
 
 </body>
