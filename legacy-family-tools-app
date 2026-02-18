@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Legacy & Family Tools | LaFaries Mortimer LLC</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --black:#0f1115;
+ --charcoal:#141720;
+ --ivory:#F8F6F1;
+ --gold:#DAB85C;
+ --purple:#2B1547;
+ --line:rgba(218,184,92,.20);
+ --muted:rgba(248,246,241,.65);
+}
+
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ font-family:Inter,system-ui;
+ color:var(--ivory);
+ background:
+ radial-gradient(1200px 700px at 15% 10%, rgba(218,184,92,.10), transparent 60%),
+ radial-gradient(900px 600px at 85% 20%, rgba(43,21,71,.25), transparent 60%),
+ var(--black);
+}
+
+.wrapper{max-width:1100px;margin:auto;padding:50px 22px}
+h1{font-family:"Cormorant Garamond",serif;color:var(--gold);font-size:40px;margin:0 0 12px}
+.sub{color:var(--muted);margin-bottom:32px;font-size:14px;line-height:1.6}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+ gap:22px;
+ margin-bottom:40px;
+}
+
+.card{
+ background:linear-gradient(180deg,rgba(20,23,32,.95),rgba(15,17,21,.92));
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:24px;
+ box-shadow:0 14px 40px rgba(0,0,0,.35);
+}
+
+.card h2{
+ font-family:"Cormorant Garamond",serif;
+ color:var(--gold);
+ margin:0 0 10px;
+ font-size:26px;
+}
+
+.card-desc{
+ font-size:14px;
+ color:var(--muted);
+ line-height:1.5;
+ margin-bottom:16px;
+}
+
+label{
+ display:block;
+ font-size:13px;
+ color:rgba(248,246,241,.86);
+ margin:14px 0 6px;
+ font-weight:600;
+}
+
+input,textarea{
+ width:100%;
+ padding:12px;
+ border-radius:12px;
+ border:1px solid var(--line);
+ background:#020617;
+ color:#fff;
+ outline:none;
+}
+
+input:focus,textarea:focus{
+ border-color:rgba(218,184,92,.5);
+}
+
+textarea{min-height:120px;resize:vertical}
+
+button{
+ margin-top:12px;
+ margin-right:8px;
+ padding:11px 16px;
+ border-radius:12px;
+ border:1px solid var(--line);
+ background:linear-gradient(180deg, rgba(218,184,92,.18), rgba(43,21,71,.12));
+ color:#fff;
+ cursor:pointer;
+ font-weight:600;
+ font-size:14px;
+ transition:all .2s;
+}
+
+button:hover{
+ transform:translateY(-1px);
+ border-color:rgba(218,184,92,.4);
+}
+
+button.danger{
+ background:rgba(239,68,68,.12);
+ border-color:rgba(239,68,68,.25);
+}
+
+.result{margin-top:12px;color:var(--gold);font-weight:600}
+.small{font-size:.88rem;color:var(--muted);line-height:1.5}
+
+.vault-item{
+ padding:10px;
+ border-bottom:1px solid rgba(255,255,255,.08);
+ margin-bottom:8px;
+}
+
+.vault-item:last-child{border-bottom:none}
+
+.notice{
+ background:rgba(218,184,92,.08);
+ border:1px solid rgba(218,184,92,.22);
+ border-radius:12px;
+ padding:14px;
+ margin:16px 0;
+ font-size:13px;
+ line-height:1.5;
+}
+
+.download-link{
+ display:inline-block;
+ background:rgba(218,184,92,.12);
+ border:1px solid rgba(218,184,92,.25);
+ color:var(--gold);
+ padding:10px 16px;
+ border-radius:12px;
+ text-decoration:none;
+ font-weight:600;
+ font-size:14px;
+ margin-top:8px;
+ transition:all .2s;
+}
+
+.download-link:hover{
+ background:rgba(218,184,92,.2);
+ transform:translateY(-1px);
+}
+
+.tabs{
+ display:flex;
+ gap:12px;
+ margin-bottom:24px;
+ border-bottom:1px solid var(--line);
+ padding-bottom:12px;
+ flex-wrap:wrap;
+}
+
+.tab{
+ padding:8px 16px;
+ border-radius:8px 8px 0 0;
+ background:transparent;
+ border:none;
+ color:var(--muted);
+ cursor:pointer;
+ font-weight:600;
+ margin:0;
+}
+
+.tab.active{
+ background:rgba(218,184,92,.15);
+ color:var(--gold);
+}
+
+.tab-content{display:none}
+.tab-content.active{display:block}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+<h1>Legacy & Family Tools</h1>
+<p class="sub">
+  Plan your legacy, preserve family memories, and prepare for the future. All tools run locally in your browser — your data stays private and is never uploaded to any server.
+</p>
+
+<div class="notice">
+  🔒 <strong>Privacy First:</strong> All data is stored locally in your browser. Nothing is uploaded. For permanent storage, use the download buttons to save your work.
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('familyTree')">Family Tree</button>
+  <button class="tab" onclick="switchTab('legacyLetter')">Legacy Letter</button>
+  <button class="tab" onclick="switchTab('memoryVault')">Memory Vault</button>
+  <button class="tab" onclick="switchTab('estatePlanning')">Estate Planning</button>
+</div>
+
+<!-- FAMILY TREE TAB -->
+<div id="familyTree" class="tab-content active">
+  <div class="grid">
+    <div class="card">
+      <h2>Family Tree Template</h2>
+      <p class="card-desc">Download a ready-formatted family tree template you can edit and customize for your family.</p>
+      
+      <div class="small" style="margin-top:16px">
+        <strong>Available Formats:</strong><br>
+        • PDF - Print and fill by hand<br>
+        • Google Sheets - Digital editing<br>
+        • Excel - Desktop editing
+      </div>
+      
+      <div style="margin-top:20px">
+        <a href="#" class="download-link" onclick="downloadFamilyTreePDF()">📄 Download PDF Template</a>
+      </div>
+      
+      <div class="notice" style="margin-top:16px">
+        <strong>How to use:</strong> Open the template, fill in family names, dates, and relationships. Add photos if using digital format. Print or save for family records.
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>Quick Family Tree Builder</h2>
+      <p class="card-desc">Create a simple text-based family tree that you can save or print.</p>
+      
+      <label>Family Name</label>
+      <input id="familyName" placeholder="The Smith Family">
+      
+      <label>Generation 1 (Grandparents)</label>
+      <textarea id="gen1" placeholder="Example: John Smith (1930-2010) & Mary Smith (1932-2015)"></textarea>
+      
+      <label>Generation 2 (Parents)</label>
+      <textarea id="gen2" placeholder="Example: Robert Smith (1955-) & Sarah Smith (1958-)"></textarea>
+      
+      <label>Generation 3 (Children)</label>
+      <textarea id="gen3" placeholder="Example: Michael (1980-), Jennifer (1982-), David (1985-)"></textarea>
+      
+      <button onclick="generateFamilyTree()">Generate Tree</button>
+      <button onclick="downloadFamilyTreeText()">Download as Text</button>
+      
+      <div id="treeOutput" class="small" style="margin-top:16px;white-space:pre-wrap"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LEGACY LETTER TAB -->
+<div id="legacyLetter" class="tab-content">
+  <div class="grid">
+    <div class="card">
+      <h2>Legacy Letter Generator</h2>
+      <p class="card-desc">Write a heartfelt letter to your family with your blessings, values, and life lessons.</p>
+
+      <label>Your Name</label>
+      <input id="legacyName" placeholder="Your full name">
+
+      <label>Message to Family</label>
+      <textarea id="legacyMessage" placeholder="Write your words, blessings, or reflections for your family..."></textarea>
+
+      <label>Values & Life Lessons</label>
+      <textarea id="legacyValues" placeholder="What values or lessons do you want to pass on?"></textarea>
+
+      <label>Hopes for the Future (optional)</label>
+      <textarea id="legacyHopes" placeholder="Your hopes and dreams for your family's future..."></textarea>
+
+      <button onclick="generateLegacy()">Generate Letter</button>
+      <button onclick="downloadLegacy()">Download Letter</button>
+      <button class="danger" onclick="clearLegacy()">Clear</button>
+
+      <div id="legacyOutput" class="small" style="margin-top:16px;white-space:pre-wrap"></div>
+    </div>
+    
+    <div class="card">
+      <h2>Letter Writing Guide</h2>
+      <p class="card-desc">Tips for writing a meaningful legacy letter:</p>
+      
+      <div class="small">
+        <strong>What to include:</strong><br><br>
+        
+        <strong>Personal Stories:</strong> Share defining moments from your life<br><br>
+        
+        <strong>Family History:</strong> Pass down stories about ancestors<br><br>
+        
+        <strong>Values & Beliefs:</strong> What guided your decisions in life?<br><br>
+        
+        <strong>Gratitude:</strong> Thank those who shaped your journey<br><br>
+        
+        <strong>Forgiveness:</strong> Heal relationships and let go<br><br>
+        
+        <strong>Blessings:</strong> Give your blessing for their future<br><br>
+        
+        <strong>Practical Wisdom:</strong> Advice you wish you'd received
+      </div>
+      
+      <div class="notice" style="margin-top:16px">
+        💡 <strong>Tip:</strong> Write from the heart. This isn't about perfection — it's about connection.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MEMORY VAULT TAB -->
+<div id="memoryVault" class="tab-content">
+  <div class="grid">
+    <div class="card">
+      <h2>Memory Vault</h2>
+      <p class="card-desc">Store personal memories, notes, and reflections. Everything stays private on your device.</p>
+
+      <label>Memory or Note</label>
+      <textarea id="vaultNote" placeholder="Write a memory, reflection, or note to preserve..."></textarea>
+      
+      <label>Date (optional)</label>
+      <input type="date" id="vaultDate">
+      
+      <label>Category (optional)</label>
+      <input id="vaultCategory" placeholder="e.g., Childhood, Travel, Family">
+
+      <button onclick="saveVault()">Save Memory</button>
+      <button class="danger" onclick="clearVault()">Clear All Memories</button>
+      <button onclick="exportVault()">Export All as Text</button>
+
+      <div id="vaultList" class="small" style="margin-top:20px"></div>
+      
+      <div class="notice" style="margin-top:16px">
+        🔒 Memories are stored in your browser. Export regularly to keep permanent copies.
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>Saved Memories</h2>
+      <p class="card-desc">Your stored memories appear here. Click to view or delete individual items.</p>
+      
+      <div id="vaultDisplay" class="small"></div>
+      
+      <div class="notice" style="margin-top:16px">
+        💾 <strong>Backup Reminder:</strong> Your memories are safe as long as you don't clear your browser data. Download exports regularly for safekeeping.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ESTATE PLANNING TAB -->
+<div id="estatePlanning" class="tab-content">
+  <div class="grid">
+    <div class="card" style="grid-column:1/-1">
+      <h2>Estate Preparation Checklist</h2>
+      <p class="card-desc">Step-by-step guide to prepare your estate planning documents and information.</p>
+
+      <div id="estateChecklist"></div>
+
+      <button onclick="saveEstate()">Save Progress</button>
+      <button onclick="printEstate()">Print Checklist</button>
+      <button class="danger" onclick="resetEstate()">Reset Checklist</button>
+      
+      <div class="notice" style="margin-top:20px">
+        ⚠️ <strong>Important:</strong> This is a preparation checklist, not legal advice. Consult with an estate planning attorney for your specific situation.
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+// TAB SWITCHING
+function switchTab(tabName){
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  
+  event.target.classList.add('active');
+  document.getElementById(tabName).classList.add('active');
+}
+
+// FAMILY TREE
+let familyTreeText = "";
+
+function generateFamilyTree(){
+  const name = document.getElementById('familyName').value || "[Family Name]";
+  const gen1 = document.getElementById('gen1').value || "[Generation 1]";
+  const gen2 = document.getElementById('gen2').value || "[Generation 2]";
+  const gen3 = document.getElementById('gen3').value || "[Generation 3]";
+  
+  familyTreeText = `
+${name}
+${"=".repeat(name.length + 10)}
+
+Generation 1 (Grandparents):
+${gen1}
+
+Generation 2 (Parents):
+${gen2}
+
+Generation 3 (Children):
+${gen3}
+
+Created with LaFaries Mortimer LLC Legacy Tools
+${new Date().toLocaleDateString()}
+  `;
+  
+  document.getElementById('treeOutput').textContent = familyTreeText;
+}
+
+function downloadFamilyTreeText(){
+  if(!familyTreeText){
+    alert("Please generate the tree first");
+    return;
+  }
+  
+  const blob = new Blob([familyTreeText], {type:"text/plain"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "family-tree.txt";
+  link.click();
+}
+
+function downloadFamilyTreePDF(){
+  alert("PDF template download: In a production version, this would download a formatted PDF template. For now, use the Quick Builder to create a text version.");
+}
+
+// LEGACY LETTER
+let legacyText = "";
+
+function generateLegacy(){
+  const name = document.getElementById('legacyName').value || "[Your Name]";
+  const msg = document.getElementById('legacyMessage').value || "";
+  const values = document.getElementById('legacyValues').value || "";
+  const hopes = document.getElementById('legacyHopes').value || "";
+
+  legacyText = `
+Legacy Letter
+From: ${name}
+Date: ${new Date().toLocaleDateString()}
+
+═══════════════════════════════════════
+
+TO MY BELOVED FAMILY,
+
+${msg}
+
+VALUES & LIFE LESSONS
+
+${values}
+
+${hopes ? `\nHOPES FOR YOUR FUTURE\n\n${hopes}` : ''}
+
+With all my love,
+${name}
+
+═══════════════════════════════════════
+Created with LaFaries Mortimer LLC Legacy Tools
+  `;
+
+  document.getElementById('legacyOutput').textContent = legacyText;
+}
+
+function downloadLegacy(){
+  if(!legacyText){
+    alert("Generate letter first");
+    return;
+  }
+  
+  const blob = new Blob([legacyText], {type:"text/plain"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "legacy-letter.txt";
+  link.click();
+}
+
+function clearLegacy(){
+  if(confirm("Clear the legacy letter?")){
+    document.getElementById('legacyName').value = "";
+    document.getElementById('legacyMessage').value = "";
+    document.getElementById('legacyValues').value = "";
+    document.getElementById('legacyHopes').value = "";
+    document.getElementById('legacyOutput').textContent = "";
+    legacyText = "";
+  }
+}
+
+// MEMORY VAULT
+function loadVault(){
+  const data = JSON.parse(localStorage.getItem("lm_vault") || "[]");
+  const list = document.getElementById("vaultList");
+  const display = document.getElementById("vaultDisplay");
+  
+  list.innerHTML = `<strong>Total Memories: ${data.length}</strong>`;
+  
+  if(data.length === 0){
+    display.innerHTML = "<p style='color:var(--muted)'>No memories saved yet. Add your first memory in the left panel.</p>";
+    return;
+  }
+  
+  display.innerHTML = "";
+  data.forEach((v, idx) => {
+    const div = document.createElement("div");
+    div.className = "vault-item";
+    div.innerHTML = `
+      <strong>${v.category || 'Memory'}</strong> ${v.date ? `• ${v.date}` : ''}<br>
+      <span style="color:var(--muted)">${v.text}</span><br>
+      <button onclick="deleteMemory(${idx})" class="danger" style="margin-top:8px;padding:6px 10px;font-size:12px">Delete</button>
+    `;
+    display.appendChild(div);
+  });
+}
+
+function saveVault(){
+  const note = document.getElementById('vaultNote').value;
+  const date = document.getElementById('vaultDate').value;
+  const category = document.getElementById('vaultCategory').value;
+  
+  if(!note){
+    alert("Please write a memory first");
+    return;
+  }
+  
+  const data = JSON.parse(localStorage.getItem("lm_vault") || "[]");
+  data.push({text: note, date, category, timestamp: new Date().toISOString()});
+  localStorage.setItem("lm_vault", JSON.stringify(data));
+  
+  document.getElementById('vaultNote').value = "";
+  document.getElementById('vaultDate').value = "";
+  document.getElementById('vaultCategory').value = "";
+  
+  loadVault();
+  alert("Memory saved!");
+}
+
+function deleteMemory(idx){
+  if(confirm("Delete this memory?")){
+    const data = JSON.parse(localStorage.getItem("lm_vault") || "[]");
+    data.splice(idx, 1);
+    localStorage.setItem("lm_vault", JSON.stringify(data));
+    loadVault();
+  }
+}
+
+function clearVault(){
+  if(confirm("Delete ALL memories? This cannot be undone!")){
+    localStorage.removeItem("lm_vault");
+    loadVault();
+  }
+}
+
+function exportVault(){
+  const data = JSON.parse(localStorage.getItem("lm_vault") || "[]");
+  if(data.length === 0){
+    alert("No memories to export");
+    return;
+  }
+  
+  let text = "MEMORY VAULT EXPORT\n";
+  text += "═".repeat(50) + "\n\n";
+  
+  data.forEach((v, idx) => {
+    text += `Memory ${idx + 1}\n`;
+    text += `Category: ${v.category || 'General'}\n`;
+    text += `Date: ${v.date || v.timestamp}\n`;
+    text += `\n${v.text}\n`;
+    text += "\n" + "─".repeat(50) + "\n\n";
+  });
+  
+  const blob = new Blob([text], {type:"text/plain"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `memory-vault-${new Date().toISOString().split('T')[0]}.txt`;
+  link.click();
+}
+
+loadVault();
+
+// ESTATE PLANNING
+const estateSteps = [
+  {id:"will", title:"Create or update a will", detail:"Specify how assets should be distributed"},
+  {id:"accounts", title:"Organize financial account list", detail:"Bank accounts, investments, retirement accounts"},
+  {id:"beneficiaries", title:"Designate beneficiaries", detail:"Life insurance, 401k, IRA, bank accounts"},
+  {id:"contacts", title:"Prepare emergency contact sheet", detail:"Family, attorney, financial advisor, doctors"},
+  {id:"digital", title:"Document digital accounts", detail:"Email, social media, cloud storage, subscriptions"},
+  {id:"passwords", title:"Set up password manager access", detail:"Trusted person should have emergency access"},
+  {id:"property", title:"List physical property & valuables", detail:"Real estate, vehicles, jewelry, collections"},
+  {id:"healthcare", title:"Create healthcare directives", detail:"Living will, healthcare power of attorney"},
+  {id:"funeral", title:"Document funeral/burial preferences", detail:"Prepaid arrangements, specific wishes"},
+  {id:"discuss", title:"Discuss wishes with trusted family", detail:"Ensure they know your intentions"}
+];
+
+function renderEstate(){
+  const container = document.getElementById('estateChecklist');
+  container.innerHTML = "";
+  
+  const saved = JSON.parse(localStorage.getItem("lm_estate") || "{}");
+  
+  estateSteps.forEach(step => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.style.marginBottom = "16px";
+    card.innerHTML = `
+      <label style="display:flex;align-items:center;gap:12px;cursor:pointer">
+        <input type="checkbox" data-id="${step.id}" ${saved[step.id] ? "checked" : ""} 
+               style="width:20px;height:20px;cursor:pointer">
+        <div>
+          <strong style="font-size:16px;color:var(--gold)">${step.title}</strong><br>
+          <span class="small">${step.detail}</span>
+        </div>
+      </label>
+    `;
+    container.appendChild(card);
+  });
+  
+  container.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', saveEstate);
+  });
+}
+
+function saveEstate(){
+  const boxes = document.querySelectorAll("#estateChecklist input[type='checkbox']");
+  const state = {};
+  boxes.forEach(b => state[b.dataset.id] = b.checked);
+  localStorage.setItem("lm_estate", JSON.stringify(state));
+  
+  const completed = Object.values(state).filter(Boolean).length;
+  if(event && event.type === 'click'){
+    // Only show alert if manually clicked save button
+    if(event.target.tagName === 'BUTTON'){
+      alert(`Progress saved! ${completed} of ${estateSteps.length} items completed.`);
+    }
+  }
+}
+
+function resetEstate(){
+  if(confirm("Reset the estate planning checklist?")){
+    localStorage.removeItem("lm_estate");
+    renderEstate();
+  }
+}
+
+function printEstate(){
+  const saved = JSON.parse(localStorage.getItem("lm_estate") || "{}");
+  const completed = Object.values(saved).filter(Boolean).length;
+  
+  let text = "ESTATE PREPARATION CHECKLIST\n";
+  text += "═".repeat(60) + "\n\n";
+  text += `Progress: ${completed} of ${estateSteps.length} items completed\n\n`;
+  
+  estateSteps.forEach(step => {
+    text += `[${saved[step.id] ? '✓' : ' '}] ${step.title}\n`;
+    text += `    ${step.detail}\n\n`;
+  });
+  
+  text += "\nCreated with LaFaries Mortimer LLC Legacy Tools\n";
+  text += new Date().toLocaleDateString();
+  
+  const w = window.open("", "_blank");
+  w.document.write(`
+    <html><head><title>Estate Planning Checklist</title>
+    <style>body{font-family:Arial;padding:40px;max-width:800px;margin:auto}
+    pre{white-space:pre-wrap;line-height:1.6}</style>
+    </head><body><pre>${text}</pre>
+    <button onclick="window.print()">Print</button>
+    </body></html>
+  `);
+  w.document.close();
+}
+
+renderEstate();
+</script>
+
+</body>
+</html>
