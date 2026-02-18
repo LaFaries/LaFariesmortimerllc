@@ -21,7 +21,8 @@
   --shadow:0 26px 80px rgba(0,0,0,.22);
   --h:"Cormorant Garamond",serif;
   --b:"Inter",system-ui;
-}/* ===== HEADER ALWAYS ON TOP FIX ===== */
+}
+
 /* ================= HEADER ================= */
 header{
   position:sticky;
@@ -30,7 +31,6 @@ header{
   background:rgba(15,17,21,.95);
   backdrop-filter:blur(10px);
 }
-
 .nav{
   display:grid;
   grid-template-columns:auto 1fr auto;
@@ -38,87 +38,9 @@ header{
   gap:16px;
   padding:14px 0;
 }
-
 .brand{display:flex;align-items:center;gap:12px}
-
 .brand-logo{
   width:44px;height:44px;border-radius:50%;padding:3px;
-  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
-}
-
-.brand strong{
-  font-family:var(--h);
-  color:#fff;
-}
-
-.brand span{
-  font-size:11px;
-  color:rgba(255,255,255,.6);
-}
-
-nav{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-}
-
-nav a{
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:14px;
-  color:rgba(255,255,255,.8);
-}
-
-nav a:hover{
-  background:rgba(255,255,255,.08);
-  box-shadow:0 0 18px rgba(218,184,92,.35);
-}
-
-.ctaTop{display:flex;gap:10px}
-
-.btn{
-  padding:12px 18px;
-  border-radius:999px;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-weight:600;
-}
-
-.btnGold{background:var(--gold);color:#1a1a1a}
-.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
-a{text-decoration:none;color:inherit}
-
-.wrap{
-  max-width:1180px;
-  margin:0 auto;
-  padding:0 28px;
-}
-
-/* ================= HEADER ================= */
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(15,17,21,.92);
-  backdrop-filter:blur(10px);
-}
-.nav{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:16px;
-  padding:14px 0;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.brand-logo{
-  width:44px;height:44px;border-radius:50%;
-  padding:3px;
   background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
   box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
 }
@@ -131,15 +53,8 @@ nav{display:flex;gap:14px;justify-content:center}
   font-size:14px;
   color:rgba(255,255,255,.8);
 }
-  /* ===== FIX HEADER LINK VISIBILITY ===== */
-header nav a{
-  color:#ffffff !important;
-}
-
-header nav a:hover{
-  color:var(--gold) !important;
-}
-
+header nav a{color:#ffffff !important;}
+header nav a:hover{color:var(--gold) !important;}
 .nav-pill:hover{
   background:rgba(255,255,255,.08);
   box-shadow:0 0 18px rgba(218,184,92,.35);
@@ -155,130 +70,69 @@ header nav a:hover{
 }
 .btnGold{background:var(--gold);color:#1a1a1a}
 .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
 
 /* ================= HERO ================= */
-.hero{
-  padding:80px 0;
-}
+.hero{padding:80px 0;}
 .hero-wrap{
   display:grid;
   grid-template-columns:1.2fr .8fr;
   gap:40px;
   align-items:center;
 }
-.hero-text{
-  position:relative;
-  min-height:340px;
-}
+.hero-text{position:relative;min-height:340px;}
 .text-slide{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  transform:translateY(10px);
-  transition:opacity .6s ease, transform .6s ease;
+  position:absolute;inset:0;
+  opacity:0;transform:translateY(10px);
+  transition:opacity .6s ease,transform .6s ease;
 }
-.text-slide.active{
-  opacity:1;
-  transform:translateY(0);
-}
-.kicker{
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:#555;
-}
-.hero-text h1{
-  font-family:var(--h);
-  font-size:50px;
-  line-height:1.05;
-  margin:12px 0;
-}
-.hero-text p{
-  max-width:54ch;
-  color:rgba(29,29,29,.75);
-}
+.text-slide.active{opacity:1;transform:translateY(0);}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#555;}
+.hero-text h1{font-family:var(--h);font-size:50px;line-height:1.05;margin:12px 0;}
+.hero-text p{max-width:54ch;color:rgba(29,29,29,.75);}
 .hero-video video{
-  width:100%;
-  max-height:420px;
-  object-fit:contain;
-  border-radius:26px;
-  box-shadow:0 30px 80px rgba(0,0,0,.25);
+  width:100%;max-height:420px;object-fit:contain;
+  border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.25);
 }
 
 /* ================= SUPPORT SYSTEMS ================= */
 .support-systems{
   background:
-    radial-gradient(900px 400px at 50% -10%, rgba(218,184,92,.18), transparent 60%),
+    radial-gradient(900px 400px at 50% -10%,rgba(218,184,92,.18),transparent 60%),
     linear-gradient(180deg,#0f1115,#141720);
   padding:60px 0;
 }
-.support-header h2{
-  font-family:var(--h);
-  font-size:36px;
-  color:#fff;
-}
-.support-header p{
-  color:rgba(255,255,255,.7);
-  max-width:60ch;
-  margin-bottom:32px;
-}
-.support-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
+.support-header h2{font-family:var(--h);font-size:36px;color:#fff;}
+.support-header p{color:rgba(255,255,255,.7);max-width:60ch;margin-bottom:32px;}
+.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .support-card{
   background:linear-gradient(180deg,#1a1d24,#0f1115);
-  border-radius:26px;
-  padding:28px;
+  border-radius:26px;padding:28px;
   border:1px solid rgba(255,255,255,.12);
-  color:#fff;
-  display:flex;
-  flex-direction:column;
+  color:#fff;display:flex;flex-direction:column;
   justify-content:flex-start;
-  transition:transform .35s ease, box-shadow .35s ease;
+  transition:transform .35s ease,box-shadow .35s ease;
 }
-.support-card.highlight{
-  border-color:rgba(218,184,92,.75);
-}
+.support-card.highlight{border-color:rgba(218,184,92,.75);}
 .support-card:hover{
   transform:translateY(-6px);
-  box-shadow:
-    0 30px 90px rgba(0,0,0,.45),
-    inset 0 0 0 1px rgba(218,184,92,.45);
+  box-shadow:0 30px 90px rgba(0,0,0,.45),inset 0 0 0 1px rgba(218,184,92,.45);
 }
-.card-tag{
-  font-size:11px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:rgba(218,184,92,.95);
-}
-.support-card h3{
-  font-family:var(--h);
-  font-size:26px;
-  margin:10px 0 6px;
-  min-height:42px;
-}
+.card-tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(218,184,92,.95);}
+.support-card h3{font-family:var(--h);font-size:26px;margin:10px 0 6px;min-height:42px;}
 .support-emphasis{
-  color:rgba(218,184,92,.95);
-  font-size:13px;
-  font-weight:500;
-  line-height:1.45;
-  letter-spacing:.04em;
-  min-height:64px;
+  color:rgba(218,184,92,.95);font-size:13px;font-weight:500;
+  line-height:1.45;letter-spacing:.04em;min-height:64px;
 }
-.support-card:hover .support-emphasis{
-  letter-spacing:.06em;
-}
+.support-card:hover .support-emphasis{letter-spacing:.06em;}
 
 /* ================= FOOTER ================= */
 footer{
   background:rgba(248,246,241,.95);
   border-top:1px solid var(--line);
-  padding:18px 0;
-  text-align:center;
-  font-size:12px;
-  color:rgba(29,29,29,.6);
+  padding:18px 0;text-align:center;
+  font-size:12px;color:rgba(29,29,29,.6);
 }
 
 /* ================= MOBILE ================= */
@@ -286,138 +140,441 @@ footer{
   .hero-wrap,.support-grid{grid-template-columns:1fr}
   nav{display:none}
 }
+
+/* ================================================
+   LAFARIES CHAT WIDGET STYLES
+   ================================================ */
+#lf-launcher{
+  position:fixed;bottom:28px;right:28px;
+  z-index:9999;display:flex;flex-direction:column;
+  align-items:center;cursor:pointer;
+  filter:drop-shadow(0 8px 24px rgba(0,0,0,.32));
+  transition:transform .2s ease;
+}
+#lf-launcher:hover{transform:scale(1.04);}
+#lf-launcher .lf-av-wrap{
+  width:88px;height:88px;border-radius:50%;overflow:hidden;
+  border:3px solid #DAB85C;background:#1a1a2e;
+}
+#lf-launcher .lf-av-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:top center;
+}
+#lf-launcher .lf-bubble-tab{
+  margin-top:-6px;
+  background:linear-gradient(135deg,#1a1a2e,#16213e);
+  color:#DAB85C;font-size:11.5px;font-weight:700;
+  letter-spacing:.4px;padding:7px 15px;border-radius:20px;
+  border:1.5px solid #DAB85C;white-space:nowrap;
+  box-shadow:0 4px 14px rgba(0,0,0,.35);font-family:var(--b);
+}
+#lf-launcher::before{
+  content:'';position:absolute;top:-6px;left:-6px;
+  width:100px;height:100px;border-radius:50%;
+  border:2px solid rgba(218,184,92,.45);
+  animation:lf-pulse 2.2s infinite;
+}
+@keyframes lf-pulse{
+  0%{transform:scale(1);opacity:1;}
+  70%{transform:scale(1.16);opacity:0;}
+  100%{transform:scale(1.16);opacity:0;}
+}
+
+#lf-panel{
+  position:fixed;bottom:158px;right:28px;
+  width:368px;border-radius:22px;overflow:hidden;
+  box-shadow:0 24px 70px rgba(0,0,0,.4);
+  z-index:9998;display:none;flex-direction:column;
+  border:1px solid rgba(218,184,92,.3);
+}
+#lf-panel.lf-open{display:flex;animation:lf-slideUp .3s ease;}
+@keyframes lf-slideUp{
+  from{opacity:0;transform:translateY(18px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+.lf-hdr{
+  background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);
+  padding:15px 17px;display:flex;align-items:center;gap:11px;
+  border-bottom:1px solid rgba(218,184,92,.2);
+}
+.lf-hdr-av{
+  width:46px;height:46px;border-radius:50%;overflow:hidden;
+  border:2px solid #DAB85C;flex-shrink:0;
+}
+.lf-hdr-av img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+.lf-hdr-name{color:#DAB85C;font-weight:700;font-size:14.5px;font-family:var(--b);}
+.lf-hdr-status{
+  color:rgba(255,255,255,.6);font-size:11px;margin-top:2px;
+  display:flex;align-items:center;gap:5px;font-family:var(--b);
+}
+.lf-hdr-status::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:#4caf50;display:inline-block;
+}
+.lf-hdr-close{
+  color:rgba(255,255,255,.45);font-size:19px;
+  cursor:pointer;margin-left:auto;line-height:1;
+  transition:color .2s;
+}
+.lf-hdr-close:hover{color:#DAB85C;}
+
+.lf-msgs{
+  flex:1;overflow-y:auto;padding:16px 15px;
+  display:flex;flex-direction:column;gap:11px;
+  background:#0d0d1a;max-height:350px;
+}
+.lf-msgs::-webkit-scrollbar{width:3px;}
+.lf-msgs::-webkit-scrollbar-thumb{background:rgba(218,184,92,.25);border-radius:4px;}
+
+.lf-msg{display:flex;gap:8px;align-items:flex-end;max-width:90%;}
+.lf-msg.lf-bot{align-self:flex-start;}
+.lf-msg.lf-user{align-self:flex-end;flex-direction:row-reverse;}
+.lf-msg-av{
+  width:27px;height:27px;border-radius:50%;overflow:hidden;
+  border:1.5px solid #DAB85C;flex-shrink:0;
+}
+.lf-msg-av img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.lf-bbl{padding:9px 13px;border-radius:16px;font-size:13px;line-height:1.55;font-family:var(--b);}
+.lf-bot .lf-bbl{
+  background:#1e1e3a;color:#e8e8f0;
+  border-bottom-left-radius:4px;
+  border:1px solid rgba(218,184,92,.12);
+}
+.lf-user .lf-bbl{
+  background:linear-gradient(135deg,#DAB85C,#b8932a);
+  color:#fff;border-bottom-right-radius:4px;
+}
+
+.lf-chips{
+  display:flex;flex-wrap:wrap;gap:7px;
+  padding:10px 15px 13px;background:#0d0d1a;
+}
+.lf-chip{
+  background:transparent;border:1.5px solid rgba(218,184,92,.45);
+  color:#DAB85C;border-radius:20px;padding:6px 12px;
+  font-size:11.5px;cursor:pointer;transition:all .2s;
+  font-family:var(--b);
+}
+.lf-chip:hover{background:#DAB85C;color:#1a1a2e;font-weight:600;}
+
+.lf-typing{
+  display:flex;gap:4px;align-items:center;
+  padding:9px 13px;background:#1e1e3a;
+  border-radius:16px;border-bottom-left-radius:4px;
+  width:fit-content;border:1px solid rgba(218,184,92,.12);
+}
+.lf-typing span{
+  width:6px;height:6px;border-radius:50%;
+  background:#DAB85C;animation:lf-bounce 1.2s infinite;
+}
+.lf-typing span:nth-child(2){animation-delay:.2s;}
+.lf-typing span:nth-child(3){animation-delay:.4s;}
+@keyframes lf-bounce{
+  0%,60%,100%{transform:translateY(0);opacity:.5;}
+  30%{transform:translateY(-5px);opacity:1;}
+}
+
+.lf-input-row{
+  background:#12122a;border-top:1px solid rgba(218,184,92,.18);
+  padding:11px 13px;display:flex;gap:9px;align-items:center;
+}
+.lf-input-row input{
+  flex:1;background:#1e1e3a;
+  border:1px solid rgba(218,184,92,.22);border-radius:22px;
+  padding:9px 15px;color:#e8e8f0;font-size:13px;
+  font-family:var(--b);outline:none;transition:border-color .2s;
+}
+.lf-input-row input::placeholder{color:rgba(255,255,255,.28);}
+.lf-input-row input:focus{border-color:#DAB85C;}
+.lf-send-btn{
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,#DAB85C,#b8932a);
+  border:none;cursor:pointer;display:flex;
+  align-items:center;justify-content:center;flex-shrink:0;
+  transition:transform .2s,box-shadow .2s;
+}
+.lf-send-btn:hover{transform:scale(1.09);box-shadow:0 4px 14px rgba(218,184,92,.4);}
+.lf-send-btn svg{width:17px;height:17px;fill:#fff;}
+
+.lf-widget-footer{
+  background:#0d0d1a;text-align:center;padding:5px;
+  font-size:10px;color:rgba(255,255,255,.22);font-family:var(--b);
+}
+.lf-widget-footer a{color:rgba(218,184,92,.45);text-decoration:none;}
 </style>
 </head>
 
 <body>
+
+  <!-- ================= HEADER ================= -->
   <header>
-  <div class="wrap nav" style="position:relative; z-index:9999;">
-
-    <a class="brand" href="/">
-      <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
-      <div>
-        <strong>LaFaries Mortimer LLC</strong>
-        <span>Administrative & IT Services</span>
-      </div>
-    </a>
-
- <nav>
-  <a href="index.html">Home</a>
-  <a href="laap.html">LAAP Suite</a>
-  <a href="apps.html">Apps</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<div class="ctaTop">
-  <a class="btn btnGhost" href="free.html">Free Tools</a>
-  <a class="btn btnGold" href="contact.html">Book a Call</a>
-</div>
-
-
-</header>
-
-<section class="hero">
-  <div class="wrap hero-wrap">
-
-    <div class="hero-text">
-      <div class="text-slide active">
-        <span class="kicker">LAAP™ — Your Business Operating System</span>
-        <h1>Everything your business needs to start, stay compliant, and grow.</h1>
-        <p>Automated filings, documentation, and yearly maintenance — all in one guided system.</p>
-        <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
-      </div>
-
-      <div class="text-slide">
-        <span class="kicker">AI-Powered Support</span>
-        <h1>Your business — answered 24/7.</h1>
-        <p>AI agents that answer calls, follow up on leads, and guide customers automatically.</p>
-        <a class="btn btnGold" href="/contact.html">See AI Agent</a>
-      </div>
-
-      <div class="text-slide">
-        <span class="kicker">Free Tools</span>
-        <h1>Start free. Save later. Scale when ready.</h1>
-        <p>Use tools today — save everything inside LAAP when you’re ready.</p>
-        <a class="btn btnGold" href="/free.html">Free Tools</a>
+    <div class="wrap nav" style="position:relative;z-index:9999;">
+      <a class="brand" href="/">
+        <img src="/assets/img/logo-2026.png" class="brand-logo" alt="">
+        <div>
+          <strong>LaFaries Mortimer LLC</strong>
+          <span>Administrative & IT Services</span>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="laap.html">LAAP Suite</a>
+        <a href="apps.html">Apps</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="ctaTop">
+        <a class="btn btnGhost" href="free.html">Free Tools</a>
+        <a class="btn btnGold" href="contact.html">Book a Call</a>
       </div>
     </div>
+  </header>
 
-    <div class="hero-video">
-      <video id="heroVideo" autoplay muted loop playsinline preload="auto">
-        <source src="/assets/img/hero-ai-agent.mp4" type="video/mp4">
-      </video>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-wrap">
+      <div class="hero-text">
+        <div class="text-slide active">
+          <span class="kicker">LAAP™ — Your Business Operating System</span>
+          <h1>Everything your business needs to start, stay compliant, and grow.</h1>
+          <p>Automated filings, documentation, and yearly maintenance — all in one guided system.</p>
+          <a class="btn btnGold" href="/laap.html">Explore LAAP</a>
+        </div>
+        <div class="text-slide">
+          <span class="kicker">AI-Powered Support</span>
+          <h1>Your business — answered 24/7.</h1>
+          <p>AI agents that answer calls, follow up on leads, and guide customers automatically.</p>
+          <a class="btn btnGold" href="/contact.html">See AI Agent</a>
+        </div>
+        <div class="text-slide">
+          <span class="kicker">Free Tools</span>
+          <h1>Start free. Save later. Scale when ready.</h1>
+          <p>Use tools today — save everything inside LAAP when you're ready.</p>
+          <a class="btn btnGold" href="/free.html">Free Tools</a>
+        </div>
+      </div>
+      <div class="hero-video">
+        <video id="heroVideo" autoplay muted loop playsinline preload="auto">
+          <source src="/assets/img/hero-ai-agent.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
+  </section>
 
+  <!-- ================= SUPPORT SYSTEMS ================= -->
+  <section class="support-systems">
+    <div class="wrap">
+      <div class="support-header">
+        <h2>Your Support Systems</h2>
+        <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
+      </div>
+      <div class="support-grid">
+        <a href="https://lafariesmortimerllc.com/laap" class="support-card highlight card-link">
+          <h3>LAAP Suite™</h3>
+          <p class="support-emphasis">
+            Your business, organized automatically. Formation, filings, compliance,
+            records, and renewals — handled in one guided system.
+          </p>
+        </a>
+        <a href="/tutorials.html" class="support-card card-link">
+          <span class="card-tag">Always Free</span>
+          <h3>Free Tutorials</h3>
+          <p class="support-emphasis">
+            Learn before you spend. Clear walkthroughs for admin, IT,
+            and setup—no account required.
+          </p>
+        </a>
+        <a href="/templates.html" class="support-card card-link">
+          <span class="card-tag">DIY Resources</span>
+          <h3>DIY Templates</h3>
+          <p class="support-emphasis">
+            Professional documents, ready to use. Fill-in templates for real business
+            needs—save and manage inside LAAP™.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
+  </footer>
+
+
+  <!-- ================================================
+       LAFARIES AI CHAT WIDGET
+       ================================================ -->
+
+  <!-- Launcher Button -->
+  <div id="lf-launcher" onclick="lfToggle()">
+    <div class="lf-av-wrap">
+      <!-- Update this path to where you host your avatar image -->
+      <img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries" id="lf-av-main"/>
+    </div>
+    <div class="lf-bubble-tab">👋 Hi, I'm LaFaries — Let's Chat!</div>
   </div>
-</section>
 
-<section class="support-systems">
-  <div class="wrap">
-    <div class="support-header">
-      <h2>Your Support Systems</h2>
-      <p>LAAP, tutorials, and templates work together — choose what fits your needs.</p>
+  <!-- Chat Panel -->
+  <div id="lf-panel">
+    <div class="lf-hdr">
+      <div class="lf-hdr-av">
+        <img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/>
+      </div>
+      <div>
+        <div class="lf-hdr-name">LaFaries</div>
+        <div class="lf-hdr-status">Online · LaFaries Mortimer LLC</div>
+      </div>
+      <div class="lf-hdr-close" onclick="lfToggle()">✕</div>
     </div>
 
-  <div class="support-grid">
+    <div class="lf-msgs" id="lf-msgs"></div>
 
-  <!-- LAAP -->
-  <a href="https://lafariesmortimerllc.com/laap" class="support-card highlight card-link">
-    <h3>LAAP Suite™</h3>
-    <p class="support-emphasis">
-      Your business, organized automatically. Formation, filings, compliance,
-      records, and renewals — handled in one guided system.
-    </p>
-  </a>
+    <div class="lf-chips" id="lf-chips">
+      <button class="lf-chip" onclick="lfChip('Tell me about LAAP Suite')">📋 LAAP Suite</button>
+      <button class="lf-chip" onclick="lfChip('What are your AI Agent services?')">🤖 AI Agents</button>
+      <button class="lf-chip" onclick="lfChip('What free tools do you offer?')">🆓 Free Tools</button>
+      <button class="lf-chip" onclick="lfChip('I want to book a call')">📅 Book a Call</button>
+    </div>
 
-  <!-- Tutorials -->
-  <a href="/tutorials.html" class="support-card card-link">
-    <span class="card-tag">Always Free</span>
-    <h3>Free Tutorials</h3>
-    <p class="support-emphasis">
-      Learn before you spend. Clear walkthroughs for admin, IT,
-      and setup—no account required.
-    </p>
-  </a>
+    <div class="lf-input-row">
+      <input type="text" id="lf-input" placeholder="Ask me anything…"
+        onkeydown="if(event.key==='Enter') lfSend()"/>
+      <button class="lf-send-btn" onclick="lfSend()">
+        <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </div>
 
-  <!-- Templates -->
-  <a href="/templates.html" class="support-card card-link">
-    <span class="card-tag">DIY Resources</span>
-    <h3>DIY Templates</h3>
-    <p class="support-emphasis">
-      Professional documents, ready to use. Fill-in templates for real business
-      needs—save and manage inside LAAP™.
-    </p>
-  </a>
+    <div class="lf-widget-footer">
+      Powered by <a href="https://lafariesmortimerllc.com">LaFaries Mortimer LLC</a> · AI Assistant
+    </div>
+  </div>
 
-</div>
 
-<footer>
-  © 2026 LaFaries Mortimer LLC • Miami, FL • Virtual Support
-</footer>
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    /* ── Hero text & video rotation ── */
+    const textSlides = document.querySelectorAll('.text-slide');
+    let textIndex = 0;
+    setInterval(() => {
+      textSlides[textIndex].classList.remove('active');
+      textIndex = (textIndex + 1) % textSlides.length;
+      textSlides[textIndex].classList.add('active');
+    }, 10000);
 
-<script>
-const textSlides = document.querySelectorAll('.text-slide');
-let textIndex = 0;
-setInterval(() => {
-  textSlides[textIndex].classList.remove('active');
-  textIndex = (textIndex + 1) % textSlides.length;
-  textSlides[textIndex].classList.add('active');
-}, 10000);
+    const videos = [
+      "/assets/img/hero-ai-agent.mp4",
+      "/assets/img/hero-ai-agent-2.mp4",
+      "/assets/img/hero-free-tools.mp4"
+    ];
+    let videoIndex = 0;
+    const videoEl = document.getElementById("heroVideo");
+    setInterval(() => {
+      videoIndex = (videoIndex + 1) % videos.length;
+      videoEl.src = videos[videoIndex];
+      videoEl.play();
+    }, 10000);
 
-const videos = [
-  "/assets/img/hero-ai-agent.mp4",
-  "/assets/img/hero-ai-agent-2.mp4",
-  "/assets/img/hero-free-tools.mp4"
-];
-let videoIndex = 0;
-const videoEl = document.getElementById("heroVideo");
-setInterval(() => {
-  videoIndex = (videoIndex + 1) % videos.length;
-  videoEl.src = videos[videoIndex];
-  videoEl.play();
-}, 10000);
-</script>
+
+    /* ── LaFaries Chat Widget ── */
+    const LF_SYSTEM = `You are LaFaries, the friendly AI assistant for LaFaries Mortimer LLC — an Administrative & IT Services company based in Miami, FL (virtual support).
+
+You help visitors with:
+1. LAAP Suite™ — All-in-one business operating system: automated filings, formation, compliance, documentation, yearly renewals. Page: lafariesmortimerllc.com/laap
+2. AI Agent Services — 24/7 AI that answers calls, follows up leads, and guides customers automatically. Page: lafariesmortimerllc.com/contact
+3. Free Tools — Free tutorials (no account needed) and DIY professional templates. Page: lafariesmortimerllc.com/free
+4. Book a Call — Free consultation. Page: lafariesmortimerllc.com/contact
+
+Guidelines:
+- Keep replies concise: 2–4 sentences max.
+- Be warm, confident, and professional — like a trusted business advisor.
+- Always guide visitors toward booking a call or the right service page.
+- For pricing questions, say plans vary and invite them to book a call for details.
+- If asked who you are, say you're LaFaries, the AI assistant for LaFaries Mortimer LLC.`;
+
+    let lfHistory = [];
+    let lfOpen = false;
+
+    function lfToggle() {
+      lfOpen = !lfOpen;
+      const panel = document.getElementById('lf-panel');
+      if (lfOpen) {
+        panel.classList.add('lf-open');
+        if (lfHistory.length === 0) lfWelcome();
+      } else {
+        panel.classList.remove('lf-open');
+      }
+    }
+
+    function lfWelcome() {
+      lfAddMsg('bot', "Hi! I'm <strong>LaFaries</strong> — your virtual assistant for LaFaries Mortimer LLC. I can help with LAAP Suite™, AI Agents, free tools, or getting you booked for a call. What can I help you with today? 👇");
+    }
+
+    function lfAddMsg(role, html) {
+      const c = document.getElementById('lf-msgs');
+      const d = document.createElement('div');
+      d.className = `lf-msg lf-${role}`;
+      if (role === 'bot') {
+        d.innerHTML = `<div class="lf-msg-av"><img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/></div><div class="lf-bbl">${html}</div>`;
+      } else {
+        d.innerHTML = `<div class="lf-bbl">${html}</div>`;
+      }
+      c.appendChild(d);
+      c.scrollTop = c.scrollHeight;
+    }
+
+    function lfShowTyping() {
+      const c = document.getElementById('lf-msgs');
+      const d = document.createElement('div');
+      d.className = 'lf-msg lf-bot'; d.id = 'lf-typing';
+      d.innerHTML = `<div class="lf-msg-av"><img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/></div><div class="lf-typing"><span></span><span></span><span></span></div>`;
+      c.appendChild(d);
+      c.scrollTop = c.scrollHeight;
+    }
+
+    function lfRemoveTyping() {
+      document.getElementById('lf-typing')?.remove();
+    }
+
+    function lfSend() {
+      const inp = document.getElementById('lf-input');
+      const text = inp.value.trim();
+      if (!text) return;
+      inp.value = '';
+      lfDoSend(text);
+    }
+
+    function lfChip(text) {
+      document.getElementById('lf-chips').style.display = 'none';
+      lfDoSend(text);
+    }
+
+    async function lfDoSend(text) {
+      lfAddMsg('user', text);
+      lfHistory.push({ role: 'user', content: text });
+      lfShowTyping();
+      try {
+        const res = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 1000,
+            system: LF_SYSTEM,
+            messages: lfHistory
+          })
+        });
+        const data = await res.json();
+        const reply = data.content?.[0]?.text || "Sorry, I hit a snag — please try again!";
+        lfRemoveTyping();
+        lfAddMsg('bot', reply.replace(/\n/g, '<br>'));
+        lfHistory.push({ role: 'assistant', content: reply });
+      } catch(e) {
+        lfRemoveTyping();
+        lfAddMsg('bot', "I'm having a moment! Please visit <a href='https://lafariesmortimerllc.com/contact' style='color:#DAB85C'>our contact page</a> directly.");
+      }
+    }
+  </script>
 
 </body>
 </html>
