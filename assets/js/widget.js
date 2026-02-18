@@ -1,164 +1,211 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>LaFaries Chat Widget</title>
-<style>
-  /* ── LAUNCHER BUTTON ── */
-  #lf-launcher {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.28));
-    transition: transform .2s ease;
-  }
-  #lf-launcher:hover { transform: scale(1.04); }
-  #lf-launcher .avatar-wrap {
-    width: 90px; height: 90px;
-    border-radius: 50%; overflow: hidden;
-    border: 3px solid #c9a84c;
-    background: #1a1a2e;
-  }
-  #lf-launcher .avatar-wrap img {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: top center;
-  }
-  #lf-launcher .bubble-tab {
-    margin-top: -6px;
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    color: #c9a84c;
-    font-size: 12px; font-weight: 700;
-    padding: 7px 16px; border-radius: 20px;
-    border: 1.5px solid #c9a84c; white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(0,0,0,.3);
-  }
-  #lf-launcher::before {
-    content: '';
-    position: absolute; top: -6px; left: -6px;
-    width: 102px; height: 102px; border-radius: 50%;
-    border: 2px solid rgba(201,168,76,.5);
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    70% { transform: scale(1.15); opacity: 0; }
-    100% { transform: scale(1.15); opacity: 0; }
-  }
+/* ================================================
+   LAFARIES AI CHAT WIDGET
+   Load this on any page with:
+   <script src="/assets/js/widget.js"></script>
+   ================================================ */
 
-  /* ── CHAT PANEL ── */
-  #lf-panel {
-    position: fixed; bottom: 160px; right: 28px;
-    width: 370px; max-height: 560px;
-    border-radius: 20px; overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,.35);
-    z-index: 9998; display: none; flex-direction: column;
-    border: 1px solid rgba(201,168,76,.3);
-    animation: slideUp .3s ease;
-  }
-  #lf-panel.open { display: flex; }
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .lf-header {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 16px 18px; display: flex; align-items: center; gap: 12px;
-    border-bottom: 1px solid rgba(201,168,76,.25);
-  }
-  .lf-header .h-avatar {
-    width: 48px; height: 48px; border-radius: 50%;
-    overflow: hidden; border: 2px solid #c9a84c; flex-shrink: 0;
-  }
-  .lf-header .h-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
-  .lf-header .h-name { color: #c9a84c; font-weight: 700; font-size: 15px; }
-  .lf-header .h-status {
-    color: rgba(255,255,255,.65); font-size: 11px; margin-top: 2px;
-    display: flex; align-items: center; gap: 5px;
-  }
-  .lf-header .h-status::before {
-    content: ''; width: 7px; height: 7px; border-radius: 50%;
-    background: #4caf50; display: inline-block;
-  }
-  .lf-header .h-close { color: rgba(255,255,255,.5); font-size: 20px; cursor: pointer; margin-left:auto; transition: color .2s; }
-  .lf-header .h-close:hover { color: #c9a84c; }
-  .lf-messages {
-    flex: 1; overflow-y: auto; padding: 18px 16px;
-    display: flex; flex-direction: column; gap: 12px;
-    background: #0d0d1a; max-height: 360px;
-  }
-  .msg { display: flex; gap: 8px; align-items: flex-end; max-width: 88%; }
-  .msg.bot { align-self: flex-start; }
-  .msg.user { align-self: flex-end; flex-direction: row-reverse; }
-  .msg .m-avatar { width: 28px; height: 28px; border-radius: 50%; overflow: hidden; border: 1.5px solid #c9a84c; flex-shrink: 0; }
-  .msg .m-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-  .msg .bubble { padding: 10px 14px; border-radius: 16px; font-size: 13.5px; line-height: 1.5; }
-  .msg.bot .bubble { background: #1e1e3a; color: #e8e8f0; border-bottom-left-radius: 4px; border: 1px solid rgba(201,168,76,.15); }
-  .msg.user .bubble { background: linear-gradient(135deg, #c9a84c, #b8932a); color: #fff; border-bottom-right-radius: 4px; }
-  .quick-chips { display: flex; flex-wrap: wrap; gap: 7px; padding: 10px 16px 14px; background: #0d0d1a; }
-  .chip {
-    background: transparent; border: 1.5px solid rgba(201,168,76,.5);
-    color: #c9a84c; border-radius: 20px; padding: 6px 13px;
-    font-size: 12px; cursor: pointer; transition: all .2s; font-family: inherit;
-  }
-  .chip:hover { background: #c9a84c; color: #1a1a2e; font-weight: 600; }
-  .typing-indicator { display: flex; gap: 4px; align-items: center; padding: 10px 14px; background: #1e1e3a; border-radius: 16px; border-bottom-left-radius: 4px; width: fit-content; }
-  .typing-indicator span { width: 7px; height: 7px; border-radius: 50%; background: #c9a84c; animation: bounce 1.2s infinite; }
-  .typing-indicator span:nth-child(2) { animation-delay: .2s; }
-  .typing-indicator span:nth-child(3) { animation-delay: .4s; }
-  @keyframes bounce { 0%,60%,100% { transform: translateY(0); opacity:.6; } 30% { transform: translateY(-6px); opacity:1; } }
-  .lf-input-area { background: #12122a; border-top: 1px solid rgba(201,168,76,.2); padding: 12px 14px; display: flex; gap: 10px; align-items: center; }
-  .lf-input-area input { flex: 1; background: #1e1e3a; border: 1px solid rgba(201,168,76,.25); border-radius: 24px; padding: 10px 16px; color: #e8e8f0; font-size: 13.5px; font-family: inherit; outline: none; transition: border-color .2s; }
-  .lf-input-area input::placeholder { color: rgba(255,255,255,.3); }
-  .lf-input-area input:focus { border-color: #c9a84c; }
-  .lf-send { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #c9a84c, #b8932a); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform .2s; }
-  .lf-send:hover { transform: scale(1.08); }
-  .lf-send svg { width: 18px; height: 18px; fill: #fff; }
-  .lf-footer { background: #0d0d1a; text-align: center; padding: 6px; font-size: 10px; color: rgba(255,255,255,.25); }
-  .lf-footer a { color: rgba(201,168,76,.5); text-decoration: none; }
-</style>
-</head>
-<body>
+(function () {
 
-<div id="lf-launcher" onclick="toggleChat()">
-  <div class="avatar-wrap">
-    <img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/>
-  </div>
-  <div class="bubble-tab">👋 Hi, I'm LaFaries — Let's Chat!</div>
-</div>
+  /* ── Inject CSS ── */
+  const style = document.createElement('style');
+  style.textContent = `
+    #lf-launcher{
+      position:fixed;bottom:28px;right:28px;
+      z-index:99999;display:flex;flex-direction:column;
+      align-items:center;cursor:pointer;
+      filter:drop-shadow(0 8px 24px rgba(0,0,0,.32));
+      transition:transform .2s ease;
+      font-family:"Inter",system-ui;
+    }
+    #lf-launcher:hover{transform:scale(1.04);}
+    #lf-launcher .lf-av-wrap{
+      width:88px;height:88px;border-radius:50%;overflow:hidden;
+      border:3px solid #DAB85C;background:#1a1a2e;
+    }
+    #lf-launcher .lf-av-wrap img{
+      width:100%;height:100%;
+      object-fit:cover;object-position:top center;
+    }
+    #lf-launcher .lf-bubble-tab{
+      margin-top:-6px;
+      background:linear-gradient(135deg,#1a1a2e,#16213e);
+      color:#DAB85C;font-size:11.5px;font-weight:700;
+      letter-spacing:.4px;padding:7px 15px;border-radius:20px;
+      border:1.5px solid #DAB85C;white-space:nowrap;
+      box-shadow:0 4px 14px rgba(0,0,0,.35);
+    }
+    #lf-launcher::before{
+      content:'';position:absolute;top:-6px;left:-6px;
+      width:100px;height:100px;border-radius:50%;
+      border:2px solid rgba(218,184,92,.45);
+      animation:lf-pulse 2.2s infinite;
+    }
+    @keyframes lf-pulse{
+      0%{transform:scale(1);opacity:1;}
+      70%{transform:scale(1.16);opacity:0;}
+      100%{transform:scale(1.16);opacity:0;}
+    }
+    #lf-panel{
+      position:fixed;bottom:158px;right:28px;
+      width:368px;border-radius:22px;overflow:hidden;
+      box-shadow:0 24px 70px rgba(0,0,0,.4);
+      z-index:99998;display:none;flex-direction:column;
+      border:1px solid rgba(218,184,92,.3);
+      font-family:"Inter",system-ui;
+    }
+    #lf-panel.lf-open{display:flex;animation:lf-slideUp .3s ease;}
+    @keyframes lf-slideUp{
+      from{opacity:0;transform:translateY(18px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .lf-hdr{
+      background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%);
+      padding:15px 17px;display:flex;align-items:center;gap:11px;
+      border-bottom:1px solid rgba(218,184,92,.2);
+    }
+    .lf-hdr-av{
+      width:46px;height:46px;border-radius:50%;overflow:hidden;
+      border:2px solid #DAB85C;flex-shrink:0;
+    }
+    .lf-hdr-av img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+    .lf-hdr-name{color:#DAB85C;font-weight:700;font-size:14.5px;}
+    .lf-hdr-status{
+      color:rgba(255,255,255,.6);font-size:11px;margin-top:2px;
+      display:flex;align-items:center;gap:5px;
+    }
+    .lf-hdr-status::before{
+      content:'';width:7px;height:7px;border-radius:50%;
+      background:#4caf50;display:inline-block;
+    }
+    .lf-hdr-close{
+      color:rgba(255,255,255,.45);font-size:19px;
+      cursor:pointer;margin-left:auto;line-height:1;
+      transition:color .2s;
+    }
+    .lf-hdr-close:hover{color:#DAB85C;}
+    .lf-msgs{
+      flex:1;overflow-y:auto;padding:16px 15px;
+      display:flex;flex-direction:column;gap:11px;
+      background:#0d0d1a;max-height:350px;
+    }
+    .lf-msgs::-webkit-scrollbar{width:3px;}
+    .lf-msgs::-webkit-scrollbar-thumb{background:rgba(218,184,92,.25);border-radius:4px;}
+    .lf-msg{display:flex;gap:8px;align-items:flex-end;max-width:90%;}
+    .lf-msg.lf-bot{align-self:flex-start;}
+    .lf-msg.lf-user{align-self:flex-end;flex-direction:row-reverse;}
+    .lf-msg-av{
+      width:27px;height:27px;border-radius:50%;overflow:hidden;
+      border:1.5px solid #DAB85C;flex-shrink:0;
+    }
+    .lf-msg-av img{width:100%;height:100%;object-fit:cover;object-position:top;}
+    .lf-bbl{padding:9px 13px;border-radius:16px;font-size:13px;line-height:1.55;}
+    .lf-bot .lf-bbl{
+      background:#1e1e3a;color:#e8e8f0;
+      border-bottom-left-radius:4px;
+      border:1px solid rgba(218,184,92,.12);
+    }
+    .lf-user .lf-bbl{
+      background:linear-gradient(135deg,#DAB85C,#b8932a);
+      color:#fff;border-bottom-right-radius:4px;
+    }
+    .lf-chips{
+      display:flex;flex-wrap:wrap;gap:7px;
+      padding:10px 15px 13px;background:#0d0d1a;
+    }
+    .lf-chip{
+      background:transparent;border:1.5px solid rgba(218,184,92,.45);
+      color:#DAB85C;border-radius:20px;padding:6px 12px;
+      font-size:11.5px;cursor:pointer;transition:all .2s;
+    }
+    .lf-chip:hover{background:#DAB85C;color:#1a1a2e;font-weight:600;}
+    .lf-typing{
+      display:flex;gap:4px;align-items:center;
+      padding:9px 13px;background:#1e1e3a;
+      border-radius:16px;border-bottom-left-radius:4px;
+      width:fit-content;border:1px solid rgba(218,184,92,.12);
+    }
+    .lf-typing span{
+      width:6px;height:6px;border-radius:50%;
+      background:#DAB85C;animation:lf-bounce 1.2s infinite;
+    }
+    .lf-typing span:nth-child(2){animation-delay:.2s;}
+    .lf-typing span:nth-child(3){animation-delay:.4s;}
+    @keyframes lf-bounce{
+      0%,60%,100%{transform:translateY(0);opacity:.5;}
+      30%{transform:translateY(-5px);opacity:1;}
+    }
+    .lf-input-row{
+      background:#12122a;border-top:1px solid rgba(218,184,92,.18);
+      padding:11px 13px;display:flex;gap:9px;align-items:center;
+    }
+    .lf-input-row input{
+      flex:1;background:#1e1e3a;
+      border:1px solid rgba(218,184,92,.22);border-radius:22px;
+      padding:9px 15px;color:#e8e8f0;font-size:13px;
+      outline:none;transition:border-color .2s;
+    }
+    .lf-input-row input::placeholder{color:rgba(255,255,255,.28);}
+    .lf-input-row input:focus{border-color:#DAB85C;}
+    .lf-send-btn{
+      width:38px;height:38px;border-radius:50%;
+      background:linear-gradient(135deg,#DAB85C,#b8932a);
+      border:none;cursor:pointer;display:flex;
+      align-items:center;justify-content:center;flex-shrink:0;
+      transition:transform .2s,box-shadow .2s;
+    }
+    .lf-send-btn:hover{transform:scale(1.09);box-shadow:0 4px 14px rgba(218,184,92,.4);}
+    .lf-send-btn svg{width:17px;height:17px;fill:#fff;}
+    .lf-widget-footer{
+      background:#0d0d1a;text-align:center;padding:5px;
+      font-size:10px;color:rgba(255,255,255,.22);
+    }
+    .lf-widget-footer a{color:rgba(218,184,92,.45);text-decoration:none;}
+  `;
+  document.head.appendChild(style);
 
-<div id="lf-panel">
-  <div class="lf-header">
-    <div class="h-avatar"><img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/></div>
-    <div style="flex:1">
-      <div class="h-name">LaFaries</div>
-      <div class="h-status">Online · LaFaries Mortimer LLC</div>
+  /* ── Inject HTML ── */
+  const html = `
+    <div id="lf-launcher" onclick="lfToggle()">
+      <div class="lf-av-wrap">
+        <img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/>
+      </div>
+      <div class="lf-bubble-tab">&#x1F44B; Hi, I'm LaFaries — Let's Chat!</div>
     </div>
-    <div class="h-close" onclick="toggleChat()">✕</div>
-  </div>
-  <div class="lf-messages" id="lf-messages"></div>
-  <div class="quick-chips" id="quick-chips">
-    <button class="chip" onclick="sendChip('Tell me about LAAP Suite')">📋 LAAP Suite</button>
-    <button class="chip" onclick="sendChip('What are your AI Agent services?')">🤖 AI Agents</button>
-    <button class="chip" onclick="sendChip('What free tools do you offer?')">🆓 Free Tools</button>
-    <button class="chip" onclick="sendChip('I want to book a call')">📅 Book a Call</button>
-  </div>
-  <div class="lf-input-area">
-    <input type="text" id="lf-input" placeholder="Ask me anything…" onkeydown="if(event.key==='Enter') sendMessage()"/>
-    <button class="lf-send" onclick="sendMessage()">
-      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-    </button>
-  </div>
-  <div class="lf-footer">Powered by <a href="https://lafariesmortimerllc.com">LaFaries Mortimer LLC</a></div>
-</div>
 
-<script>
-const SYSTEM_PROMPT = `You are LaFaries, the friendly AI assistant for LaFaries Mortimer LLC — an Administrative & IT Services company based in Miami, FL providing virtual support nationwide.
+    <div id="lf-panel">
+      <div class="lf-hdr">
+        <div class="lf-hdr-av">
+          <img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/>
+        </div>
+        <div>
+          <div class="lf-hdr-name">LaFaries</div>
+          <div class="lf-hdr-status">Online · LaFaries Mortimer LLC</div>
+        </div>
+        <div class="lf-hdr-close" onclick="lfToggle()">&#x2715;</div>
+      </div>
+      <div class="lf-msgs" id="lf-msgs"></div>
+      <div class="lf-chips" id="lf-chips">
+        <button class="lf-chip" onclick="lfChip('Tell me about LAAP Suite')">&#x1F4CB; LAAP Suite</button>
+        <button class="lf-chip" onclick="lfChip('What are your AI Agent services?')">&#x1F916; AI Agents</button>
+        <button class="lf-chip" onclick="lfChip('What free tools do you offer?')">&#x1F193; Free Tools</button>
+        <button class="lf-chip" onclick="lfChip('I want to book a call')">&#x1F4C5; Book a Call</button>
+      </div>
+      <div class="lf-input-row">
+        <input type="text" id="lf-input" placeholder="Ask me anything…"
+          onkeydown="if(event.key==='Enter') lfSend()"/>
+        <button class="lf-send-btn" onclick="lfSend()">
+          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+      <div class="lf-widget-footer">
+        Powered by <a href="https://lafariesmortimerllc.com">LaFaries Mortimer LLC</a> · AI Assistant
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', html);
+
+  /* ── Widget Logic ── */
+  const LF_SYSTEM = `You are LaFaries, the friendly AI assistant for LaFaries Mortimer LLC — an Administrative & IT Services company based in Miami, FL providing virtual support nationwide.
 
 COMPANY INFO:
 LaFaries Mortimer LLC specializes in business formation, compliance systems, administrative automation, AI-powered support, custom websites, and ongoing IT/admin management. Mission: Organize businesses with clarity, credibility, and automated systems.
@@ -223,73 +270,88 @@ TONE & STYLE:
 - Emphasize that LAAP Suite is currently $79/month (promo price)
 - Highlight that free tools are available with no account required`;
 
-let history = [];
+  let lfHistory = [];
+  let lfOpen = false;
 
-function toggleChat() {
-  const panel = document.getElementById('lf-panel');
-  const isOpen = panel.classList.toggle('open');
-  if (isOpen && history.length === 0) {
-    addMsg('bot', "Hi! I'm <strong>LaFaries</strong>, your virtual assistant for LaFaries Mortimer LLC. Whether it's the LAAP Suite™, AI Agents, free tools, or booking a call — I'm here to help! 👇");
+  window.lfToggle = function () {
+    lfOpen = !lfOpen;
+    const panel = document.getElementById('lf-panel');
+    if (lfOpen) {
+      panel.classList.add('lf-open');
+      if (lfHistory.length === 0) lfWelcome();
+    } else {
+      panel.classList.remove('lf-open');
+    }
+  };
+
+  function lfWelcome() {
+    lfAddMsg('bot', "Hi! I'm <strong>LaFaries</strong> — your virtual assistant for LaFaries Mortimer LLC. I can help with LAAP Suite™, AI Agents, free tools, or getting you booked for a call. What can I help you with today? 👇");
   }
-}
 
-function addMsg(role, html) {
-  const c = document.getElementById('lf-messages');
-  const d = document.createElement('div');
-  d.className = `msg ${role}`;
-  d.innerHTML = role === 'bot'
-    ? `<div class="m-avatar"><img src="/assets/img/lafaries-avatar.jpg"/></div><div class="bubble">${html}</div>`
-    : `<div class="bubble">${html}</div>`;
-  c.appendChild(d);
-  c.scrollTop = c.scrollHeight;
-}
-
-function showTyping() {
-  const c = document.getElementById('lf-messages');
-  const d = document.createElement('div');
-  d.className = 'msg bot'; d.id = 'typing-msg';
-  d.innerHTML = `<div class="m-avatar"><img src="/assets/img/lafaries-avatar.jpg"/></div><div class="typing-indicator"><span></span><span></span><span></span></div>`;
-  c.appendChild(d); c.scrollTop = c.scrollHeight;
-}
-
-function removeTyping() { document.getElementById('typing-msg')?.remove(); }
-
-async function sendMessage() {
-  const inp = document.getElementById('lf-input');
-  const text = inp.value.trim(); if (!text) return;
-  inp.value = ''; doSend(text);
-}
-
-function sendChip(text) {
-  document.getElementById('quick-chips').style.display = 'none';
-  doSend(text);
-}
-
-async function doSend(text) {
-  addMsg('user', text);
-  history.push({ role: 'user', content: text });
-  showTyping();
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: SYSTEM_PROMPT,
-        messages: history
-      })
-    });
-    const data = await res.json();
-    const reply = data.content?.[0]?.text || "Sorry, try again!";
-    removeTyping();
-    addMsg('bot', reply.replace(/\n/g,'<br>'));
-    history.push({ role: 'assistant', content: reply });
-  } catch(e) {
-    removeTyping();
-    addMsg('bot', "I'm having a moment — please visit <a href='https://lafariesmortimerllc.com/contact' style='color:#c9a84c'>our contact page</a>!");
+  function lfAddMsg(role, html) {
+    const c = document.getElementById('lf-msgs');
+    const d = document.createElement('div');
+    d.className = `lf-msg lf-${role}`;
+    if (role === 'bot') {
+      d.innerHTML = `<div class="lf-msg-av"><img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/></div><div class="lf-bbl">${html}</div>`;
+    } else {
+      d.innerHTML = `<div class="lf-bbl">${html}</div>`;
+    }
+    c.appendChild(d);
+    c.scrollTop = c.scrollHeight;
   }
-}
-</script>
-</body>
-</html>
+
+  function lfShowTyping() {
+    const c = document.getElementById('lf-msgs');
+    const d = document.createElement('div');
+    d.className = 'lf-msg lf-bot';
+    d.id = 'lf-typing';
+    d.innerHTML = `<div class="lf-msg-av"><img src="/assets/img/lafaries-avatar.jpg" alt="LaFaries"/></div><div class="lf-typing"><span></span><span></span><span></span></div>`;
+    c.appendChild(d);
+    c.scrollTop = c.scrollHeight;
+  }
+
+  function lfRemoveTyping() {
+    document.getElementById('lf-typing')?.remove();
+  }
+
+  window.lfSend = function () {
+    const inp = document.getElementById('lf-input');
+    const text = inp.value.trim();
+    if (!text) return;
+    inp.value = '';
+    lfDoSend(text);
+  };
+
+  window.lfChip = function (text) {
+    document.getElementById('lf-chips').style.display = 'none';
+    lfDoSend(text);
+  };
+
+  async function lfDoSend(text) {
+    lfAddMsg('user', text);
+    lfHistory.push({ role: 'user', content: text });
+    lfShowTyping();
+    try {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          system: LF_SYSTEM,
+          messages: lfHistory
+        })
+      });
+      const data = await res.json();
+      const reply = data.content?.[0]?.text || "Sorry, I hit a snag — please try again!";
+      lfRemoveTyping();
+      lfAddMsg('bot', reply.replace(/\n/g, '<br>'));
+      lfHistory.push({ role: 'assistant', content: reply });
+    } catch (e) {
+      lfRemoveTyping();
+      lfAddMsg('bot', "I'm having a moment! Please visit <a href='https://lafariesmortimerllc.com/contact' style='color:#DAB85C'>our contact page</a> directly.");
+    }
+  }
+
+})();
