@@ -1,6 +1,6 @@
 /* ================================================
-   LAFARIES AI CHAT WIDGET - DEBUG VERSION
-   This version will show you the actual error
+   LAFARIES AI CHAT WIDGET - FAQ FALLBACK VERSION
+   Works without API - uses keyword matching
    ================================================ */
 
 (function () {
@@ -203,73 +203,34 @@
   `;
   document.body.insertAdjacentHTML('beforeend', html);
 
-  /* ── Widget Logic ── */
-  const LF_SYSTEM = `You are LaFaries, the friendly AI assistant for LaFaries Mortimer LLC — an Administrative & IT Services company based in Miami, FL providing virtual support nationwide.
+  /* ── Knowledge Base ── */
+  const KNOWLEDGE = {
+    "laap|suite|laap suite": {
+      answer: "LAAP Suite™ is our complete business operating system at <strong>$79/month</strong> (promo price, normally $99). It includes a guided 10-step formation wizard, automated filings, compliance tracking for all 50 states, annual maintenance, and document management.<br><br>Ready to organize your business? <a href='/laap.html' style='color:#DAB85C'>Learn more about LAAP →</a>",
+    },
+    "ai agent|ai|chatbot|automated": {
+      answer: "Our AI Agent Services provide 24/7 automated customer support that answers calls, follows up on leads, and guides customers automatically. Custom pricing based on your needs.<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call</a> to discuss AI agent deployment for your business!",
+    },
+    "website|web design|custom site": {
+      answer: "We build custom, professional websites with strategic design, mobile optimization, and optional LAAP Suite integration. Each site is hosted and maintained by us.<br><br>Pricing is custom based on your needs. <a href='/contact.html' style='color:#DAB85C'>Book a call</a> to discuss your project!",
+    },
+    "free|tools|calculator|invoice": {
+      answer: "We offer FREE tools with no account required!<br><br>• Invoice Generator<br>• Business Name Checker<br>• LLC Operating Agreement template<br>• Meeting Minutes Maker<br>• EIN Checklist<br>• Legacy & Family Tools app<br><br><a href='/apps.html' style='color:#DAB85C'>Access free tools →</a>",
+    },
+    "price|pricing|cost|how much": {
+      answer: "<strong>Our Services:</strong><br><br>• <strong>LAAP Suite™:</strong> $79/month (promo)<br>• <strong>AI Agents:</strong> Custom quote<br>• <strong>Custom Websites:</strong> Custom quote<br>• <strong>Managed Support:</strong> Custom quote<br>• <strong>Free Tools:</strong> $0<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call</a> for detailed pricing!",
+    },
+    "contact|call|email|location|where": {
+      answer: "We're based in <strong>Miami, FL</strong> providing virtual support nationwide.<br><br>📧 Email: support@lafariesmortimerllc.com<br>⏰ Response time: 24-48 hours<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call →</a>",
+    },
+    "about|who|company|what do you do": {
+      answer: "LaFaries Mortimer LLC is an Administrative & IT Services company specializing in:<br><br>• Business formation & compliance<br>• Administrative automation (LAAP Suite™)<br>• AI-powered customer support<br>• Custom website development<br>• Ongoing IT & admin management<br><br>Based in Miami, FL • Serving businesses nationwide",
+    },
+    "service|services|offer": {
+      answer: "<strong>Our Services:</strong><br><br>1. <strong>LAAP Suite™</strong> ($79/mo) - Business operating system<br>2. <strong>AI Agents</strong> - 24/7 automated support<br>3. <strong>Custom Websites</strong> - Professional design<br>4. <strong>Managed Support</strong> - IT & admin help<br>5. <strong>Free Tools</strong> - No cost, no account needed<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call to learn more →</a>",
+    }
+  };
 
-COMPANY INFO:
-LaFaries Mortimer LLC specializes in business formation, compliance systems, administrative automation, AI-powered support, custom websites, and ongoing IT/admin management. Mission: Organize businesses with clarity, credibility, and automated systems.
-
-SERVICES & PRICING:
-
-1. LAAP Suite™ - $79/month (promo, normally $99)
-   - Complete business operating system
-   - Guided 10-step formation wizard
-   - Automated filings & documentation
-   - Compliance tracking (all 50 states)
-   - Annual maintenance & renewals
-   - Document & record management
-   - AI-assisted guidance
-   URL: lafariesmortimerllc.com/laap
-
-2. AI Agent Services - Custom quote
-   - 24/7 automated customer support
-   - Answer calls automatically
-   - Follow up on leads
-   - Guide customers through processes
-   - Schedule appointments
-   - Professional representation
-   URL: lafariesmortimerllc.com/contact
-
-3. Custom Websites - Custom quote
-   - Strategic website design
-   - Custom layout & branding
-   - Mobile-optimized responsive design
-   - Integrated with LAAP Suite (optional)
-   - Hosted & maintained
-   - SEO-friendly
-   URL: lafariesmortimerllc.com/contact
-
-4. Managed Support - Custom quote
-   - Administrative support
-   - IT setup & troubleshooting
-   - AI agent deployment
-   - Ongoing guidance & maintenance
-   URL: lafariesmortimerllc.com/contact
-
-5. Free Tools - $0
-   - Invoice Generator, Business Name Checker
-   - LLC Operating Agreement template
-   - Meeting Minutes Maker, EIN Checklist
-   - Legacy & Family Tools (desktop app)
-   - Tutorial library with PDF/Word downloads
-   - Family tree builder, legacy letter generator
-   URL: lafariesmortimerllc.com/apps or /free
-
-CONTACT:
-Location: Miami, FL (virtual support)
-Email: support@lafariesmortimerllc.com
-Response time: 24-48 hours
-Book a call: lafariesmortimerllc.com/contact
-
-TONE & STYLE:
-- Keep replies concise: 2-4 sentences maximum
-- Be warm, confident, and professional
-- Always guide visitors toward booking a call or the right service page
-- For detailed pricing on custom services, invite them to book a call
-- Emphasize that LAAP Suite is currently $79/month (promo price)
-- Highlight that free tools are available with no account required`;
-
-  let lfHistory = [];
   let lfOpen = false;
 
   window.lfToggle = function () {
@@ -277,14 +238,14 @@ TONE & STYLE:
     const panel = document.getElementById('lf-panel');
     if (lfOpen) {
       panel.classList.add('lf-open');
-      if (lfHistory.length === 0) lfWelcome();
+      if (document.getElementById('lf-msgs').children.length === 0) lfWelcome();
     } else {
       panel.classList.remove('lf-open');
     }
   };
 
   function lfWelcome() {
-    lfAddMsg('bot', "Hi! I'm <strong>LaFaries</strong> — your virtual assistant for LaFaries Mortimer LLC. I can help with LAAP Suite™, AI Agents, free tools, or getting you booked for a call. What can I help you with today? 👇");
+    lfAddMsg('bot', "Hi! I'm <strong>LaFaries</strong>, your virtual assistant for LaFaries Mortimer LLC. I can help with:<br><br>• LAAP Suite™ ($79/month)<br>• AI Agent Services<br>• Custom Websites<br>• Free Business Tools<br>• Booking a consultation<br><br>What can I help you with? 👇");
   }
 
   function lfAddMsg(role, html) {
@@ -327,57 +288,31 @@ TONE & STYLE:
     lfDoSend(text);
   };
 
-  async function lfDoSend(text) {
+  function lfDoSend(text) {
     lfAddMsg('user', text);
-    lfHistory.push({ role: 'user', content: text });
     lfShowTyping();
     
-    // Log to console for debugging
-    console.log('Widget: Sending message:', text);
-    console.log('Widget: History:', lfHistory);
-    
-    try {
-      console.log('Widget: Calling Anthropic API...');
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: LF_SYSTEM,
-          messages: lfHistory
-        })
-      });
+    setTimeout(() => {
+      const query = text.toLowerCase();
+      let response = null;
       
-      console.log('Widget: Response status:', res.status);
-      const data = await res.json();
-      console.log('Widget: Response data:', data);
-      
-      if (data.error) {
-        throw new Error(`API Error: ${data.error.type} - ${data.error.message}`);
+      // Match against knowledge base
+      for (const [keywords, data] of Object.entries(KNOWLEDGE)) {
+        const patterns = keywords.split('|');
+        if (patterns.some(pattern => query.includes(pattern))) {
+          response = data.answer;
+          break;
+        }
       }
       
-      const reply = data.content?.[0]?.text || "Sorry, I hit a snag — please try again!";
-      lfRemoveTyping();
-      lfAddMsg('bot', reply.replace(/\n/g, '<br>'));
-      lfHistory.push({ role: 'assistant', content: reply });
-    } catch (e) {
-      console.error('Widget error:', e);
-      lfRemoveTyping();
-      
-      // Show detailed error in chat
-      let errorMsg = "I'm having trouble connecting. ";
-      if (e.message.includes('Failed to fetch')) {
-        errorMsg += "Network error - the API might be blocked by CORS policy. ";
-      } else if (e.message.includes('API Error')) {
-        errorMsg += "API error: " + e.message + ". ";
-      } else {
-        errorMsg += "Error: " + e.message + ". ";
+      // Default response
+      if (!response) {
+        response = "I can help you with information about:<br><br>• <strong>LAAP Suite™</strong> - Our business operating system<br>• <strong>AI Agents</strong> - 24/7 automated support<br>• <strong>Custom Websites</strong> - Professional design<br>• <strong>Free Tools</strong> - Business resources<br>• <strong>Pricing & Services</strong><br>• <strong>Contact Information</strong><br><br>What would you like to know? Or <a href='/contact.html' style='color:#DAB85C'>book a call</a> to speak with us directly!";
       }
-      errorMsg += "Please visit <a href='https://lafariesmortimerllc.com/contact' style='color:#DAB85C'>our contact page</a> directly or check the browser console for details.";
       
-      lfAddMsg('bot', errorMsg);
-    }
+      lfRemoveTyping();
+      lfAddMsg('bot', response);
+    }, 800);
   }
 
 })();
