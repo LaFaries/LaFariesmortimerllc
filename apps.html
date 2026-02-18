@@ -1,511 +1,329 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Apps | LaFaries Mortimer LLC</title>
-  <meta name="description" content="A growing ecosystem of intelligent tools designed for legacy, insight, automation, and modern business operations.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Apps & Tools | LaFaries Mortimer LLC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b18;
+  --panel:#0e0f12;
+  --text:#f5f5f5;
+  --muted:#b7b7b7;
+  --line:rgba(255,255,255,.10);
+  --gold:#f6c453;
+  --gold2:#c89222;
+  --shadow:0 18px 45px rgba(0,0,0,.55);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:radial-gradient(circle at 20% 10%,rgba(246,196,83,.10),transparent 45%),
+             radial-gradient(circle at 85% 30%,rgba(200,146,34,.08),transparent 45%),
+             var(--bg);
+  color:var(--text);
+}
+.wrap{max-width:1200px;margin:0 auto;padding:60px 20px}
+h1{font-family:"Cormorant Garamond",serif;font-size:52px;margin-bottom:16px;letter-spacing:-1px}
+.lead{font-size:18px;color:var(--muted);margin-bottom:48px;max-width:70ch;line-height:1.6}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+.section{margin-bottom:80px}
+.section-header{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:32px;flex-wrap:wrap;gap:16px;
+}
+.section-header h2{
+  font-family:"Cormorant Garamond",serif;
+  font-size:38px;color:var(--gold);
+}
 
-  <!-- ============================= -->
-  <!-- Global Styles -->
-  <!-- ============================= -->
-  <style>
-    :root {
-      --ivory:#F8F6F1;
-      --gold:#DAB85C;
-      --dark:#0F1115;
-      --charcoal:#1D1D1D;
-      --border:rgba(255,255,255,.12);
-      --glow:0 0 25px rgba(218,184,92,.55);
-      --h:"Cormorant Garamond",serif;
-      --b:"Inter",system-ui;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  gap:24px;
+}
 
-    * { box-sizing: border-box; }
+.card{
+  background:rgba(14,15,18,.72);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+  transition:all .3s;
+}
 
-    body {
-      margin: 0;
-      font-family: var(--b);
-      background:
-        radial-gradient(900px 500px at 50% -200px, rgba(218,184,92,.35), transparent 60%),
-        linear-gradient(180deg, #0b0c0f, var(--charcoal));
-      color: var(--ivory);
-    }
+.card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(246,196,83,.3);
+  box-shadow:0 24px 60px rgba(0,0,0,.65);
+}
 
-    a { text-decoration: none; color: inherit; }
+.card-icon{
+  width:56px;height:56px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;
+  margin-bottom:20px;
+  box-shadow:0 8px 20px rgba(246,196,83,.25);
+}
 
-    /* ============================= */
-    /* Sticky Navigation Header */
-    /* ============================= */
-    header.topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(15,17,21,.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
+.card h3{
+  font-size:24px;
+  font-weight:700;
+  margin-bottom:12px;
+}
 
-    .nav {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 24px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
+.card p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:20px;
+  font-size:15px;
+}
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+.card-features{
+  margin:20px 0;
+  padding:16px;
+  background:rgba(7,7,8,.45);
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.06);
+}
 
-    .brand-logo {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-      box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
-    }
+.card-features ul{
+  list-style:none;
+  padding:0;
+}
 
-    .brand strong {
-      font-family: var(--h);
-      font-size: 18px;
-      color: #fff;
-    }
+.card-features li{
+  padding:6px 0;
+  color:var(--muted);
+  font-size:14px;
+}
 
-    .brand span {
-      font-size: 11px;
-      color: rgba(255,255,255,.6);
-      display: block;
-      letter-spacing: 0.08em;
-    }
+.card-features li::before{
+  content:"✓";
+  color:var(--gold);
+  margin-right:10px;
+  font-weight:700;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 24px;
+  border-radius:12px;
+  border:none;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#0b0b0c;
+  font-weight:700;
+  font-size:15px;
+  text-decoration:none;
+  box-shadow:0 10px 26px rgba(0,0,0,.45);
+  transition:all .2s;
+  cursor:pointer;
+}
 
-    .nav-pill {
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 14px;
-      color: rgba(255,255,255,.8);
-      transition: all .2s ease;
-    }
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(0,0,0,.55);
+}
 
-    .nav-pill:hover {
-      background: rgba(255,255,255,.08);
-      box-shadow:0 0 18px rgba(218,184,92,.35);
-      color: #fff;
-    }
+.btn-secondary{
+  background:rgba(255,255,255,.08);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.12);
+}
 
-    .ctaTop {
-      display: flex;
-      gap: 10px;
-    }
+.btn-secondary:hover{
+  background:rgba(255,255,255,.12);
+}
 
-    .btn {
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
+.badge{
+  display:inline-block;
+  padding:6px 12px;
+  border-radius:999px;
+  background:rgba(246,196,83,.15);
+  border:1px solid rgba(246,196,83,.25);
+  color:var(--gold);
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:12px;
+}
 
-    .btnGold { background: var(--gold); color: #1a1a1a; }
-    .btnGhost { border: 1px solid rgba(255,255,255,.35); color: #fff; }
+.hero-card{
+  grid-column:1/-1;
+  background:linear-gradient(135deg,rgba(246,196,83,.12),rgba(200,146,34,.08));
+  border:1px solid rgba(246,196,83,.25);
+  padding:40px;
+}
 
-    /* ============================= */
-    /* Hero Section */
-    /* ============================= */
-    .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 90px 24px;
-    }
+.hero-card h3{font-size:32px;margin-bottom:16px}
 
-    .hero {
-      text-align: center;
-      margin-bottom: 70px;
-      margin-top: 40px;
-    }
-
-    .hero h1 {
-      font-family: var(--h);
-      font-size: 56px;
-      margin: 0 0 14px;
-      color: #fff;
-    }
-
-    .hero p {
-      max-width: 720px;
-      margin: 0 auto;
-      opacity: .8;
-      font-size: 18px;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.85);
-    }
-
-    /* ============================= */
-    /* Grid & Cards */
-    /* ============================= */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-      gap: 36px;
-    }
-
-    .card {
-      background: linear-gradient(180deg,#15161a,#0e0f13);
-      border-radius: 28px;
-      padding: 36px;
-      border: 1px solid var(--border);
-      box-shadow: 0 30px 100px rgba(0,0,0,.7);
-      position: relative;
-    }
-
-    .card h3 {
-      font-family: var(--h);
-      font-size: 30px;
-      margin: 0 0 12px;
-      color: #fff;
-    }
-
-    .card p {
-      opacity: .85;
-      line-height: 1.6;
-      color: rgba(255,255,255,0.9);
-    }
-
-    .card ul {
-      margin: 18px 0 0;
-      padding-left: 18px;
-    }
-
-    .card li {
-      margin: 10px 0;
-      opacity: .85;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 26px;
-      padding: 12px 26px;
-      border-radius: 999px;
-      background: var(--gold);
-      color: #1a1a1a;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-
-    .cta:hover { filter: brightness(.95); }
-
-    .highlight {
-      border: 1px solid rgba(218,184,92,.55);
-      box-shadow: var(--glow), 0 40px 120px rgba(0,0,0,.85);
-    }
-
-    .badge {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: rgba(218,184,92,.15);
-      color: var(--gold);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    @media(max-width:700px) {
-      .hero h1 { font-size: 42px; }
-      nav { display: none; } /* optional: hide nav links on small screens */
-    }
-
-    /* ============================= */
-    /* Agreement Generator Styling */
-    /* ============================= */
-    .agreement-container {
-      max-width: 720px;
-      margin: 3rem auto;
-      padding: 2.5rem;
-      background: #f9f7f3;
-      border-radius: 16px;
-      border: 2px solid #c9a44c;
-      font-family: Inter, system-ui, sans-serif;
-      color: #1f2937;
-    }
-
-    .agreement-container h2 {
-      color: #0b1f3a;
-      margin-bottom: .75rem;
-    }
-
-    .agreement-intro {
-      color: #374151;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
-
-    .agreement-fields label {
-      display: block;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-      color: #111827;
-    }
-
-    .agreement-fields input {
-      width: 100%;
-      margin-top: .5rem;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #cbd5e1;
-      font-size: .95rem;
-      color: #111827;
-      background: #ffffff;
-    }
-
-    .agreement-fields input::placeholder { color: #9ca3af; }
-
-    .agreement-acknowledgment {
-      margin: 2rem 0;
-      padding: 1.25rem;
-      background: #fffdf8;
-      border-radius: 12px;
-      border: 1px dashed #c9a44c;
-      color: #1f2937;
-    }
-
-    .ack-check {
-      display: flex;
-      gap: .75rem;
-      font-size: .95rem;
-      line-height: 1.5;
-      color: #1f2937;
-    }
-
-    .ack-check strong { color: #0b1f3a; }
-
-    .ack-warning {
-      display: none;
-      margin-top: .75rem;
-      color: #b91c1c;
-      font-weight: 600;
-    }
-
-    .generate-btn {
-      width: 100%;
-      padding: 14px;
-      font-size: 1rem;
-      border-radius: 10px;
-      border: none;
-      cursor: pointer;
-      color: #ffffff;
-      background: linear-gradient(135deg, #c9a44c, #9b7a2f);
-      transition: transform .15s ease, box-shadow .15s ease;
-    }
-
-    .generate-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(0,0,0,.15);
-    }
-  </style>
+.notice{
+  background:rgba(14,15,18,.55);
+  border:1px solid rgba(246,196,83,.22);
+  border-radius:12px;
+  padding:20px;
+  margin-top:24px;
+  font-size:14px;
+  line-height:1.6;
+}
+</style>
 </head>
-
 <body>
 
-  <!-- Sticky Top Navigation -->
-  <header class="topbar">
-    <div class="nav">
-      <div class="brand">
-        <div class="brand-logo"></div>
-        <div>
-          <strong>LaFaries Mortimer LLC</strong>
-          <span>Innovation • Legacy • Automation</span>
+<div class="wrap">
+  <h1>Apps & Tools</h1>
+  <p class="lead">
+    Download standalone applications and access integrated tools. Everything designed to streamline your business operations and preserve your legacy.
+  </p>
+
+  <!-- FEATURED: LEGACY & FAMILY TOOLS -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Legacy & Family Tools</h2>
+      <span class="badge">NEW - Desktop App Available</span>
+    </div>
+
+    <div class="grid">
+      <div class="hero-card">
+        <div class="card-icon">📁</div>
+        <h3>Legacy & Family Tools Desktop App</h3>
+        <p>
+          A complete suite for managing family legacy, memories, and estate planning. Runs entirely on your computer — no internet required, no data uploaded to servers.
+        </p>
+
+        <div class="card-features">
+          <strong style="color:var(--gold);display:block;margin-bottom:12px">Included Tools:</strong>
+          <ul>
+            <li>Family Tree Builder — Create and export family genealogy</li>
+            <li>Legacy Letter Generator — Write heartfelt messages to family</li>
+            <li>Memory Vault — Store and organize personal memories privately</li>
+            <li>Estate Planning Checklist — 10-step preparation guide</li>
+          </ul>
         </div>
-      </div>
 
-      <nav>
-        <a href="#apps" class="nav-pill">Apps</a>
-        <a href="#agreement" class="nav-pill">Agreements</a>
-        <a href="https://lafariescustom.com" class="nav-pill">Custom</a>
-      </nav>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px">
+          <a href="legacy-family-tools-app.html" download class="btn">
+            ⬇️ Download App (.html file)
+          </a>
+          <a href="legacy-tools-installation-guide.md" download class="btn btn-secondary">
+            📄 Installation Guide
+          </a>
+        </div>
 
-      <div class="ctaTop">
-        <a href="/contact.html" class="btn btnGhost">Contact</a>
-        <a href="/signup.html" class="btn btnGold">Join</a>
+        <div class="notice">
+          <strong>🔒 Privacy First:</strong> All data stays on your device. Nothing is uploaded. Works offline. Download the app once, use forever.
+          <br><br>
+          <strong>💾 How to Install:</strong> Download the .html file → Open with your browser (Chrome, Edge, Firefox) → Bookmark for easy access. See installation guide for desktop shortcuts.
+        </div>
       </div>
     </div>
-  </header>
+  </div>
 
-  <main class="wrap">
+  <!-- LAAP BUILDER TOOLS -->
+  <div class="section">
+    <div class="section-header">
+      <h2>LAAP Builder Tools</h2>
+    </div>
 
-    <section class="hero" id="apps">
-      <h1>Apps & Digital Tools</h1>
-      <p>
-        A growing ecosystem of intelligent tools designed for legacy, insight,
-        automation, and modern business operations.
-      </p>
-    </section>
-
-    <section class="grid">
-      <div class="card highlight">
-        <span class="badge">Flagship</span>
-        <h3>Custom AI Agent</h3>
-        <p>
-          A fully customized AI agent built specifically for your business needs.
-          Designed to answer calls, follow up with leads, handle inquiries,
-          and operate 24/7 without rest.
-        </p>
-        <ul>
-          <li>✔ Never miss calls or leads again</li>
-          <li>✔ Custom-built for your workflows</li>
-          <li>✔ Lead follow-up, intake, and automation</li>
-          <li>✔ Scales without increasing payroll</li>
-        </ul>
-        <a href="/contact.html" class="cta">Request AI Agent</a>
-      </div>
-
+    <div class="grid">
       <div class="card">
-        <h3>Legacy Roots</h3>
-        <p>
-          A digital legacy system designed to document relationships,
-          lineage, and impact across generations.
-        </p>
-        <ul>
-          <li>✔ Track relationships & history</li>
-          <li>✔ Build a living legacy archive</li>
-        </ul>
-        <a href="https://lafariescustom.com" class="cta">Open App</a>
-      </div>
+        <div class="card-icon">⚙️</div>
+        <h3>Business Tools Suite</h3>
+        <p>Essential tools for business operations, available inside the LAAP Builder platform.</p>
 
-      <div class="card">
-        <h3>Dream Journal</h3>
-        <p>
-          A guided digital journal to log dreams, track patterns, and reflect on insights.
-        </p>
-        <ul>
-          <li>✔ Dream logging & reflection</li>
-          <li>✔ Pattern recognition</li>
-        </ul>
-        <a href="https://lafarieslm.com" class="cta">Open App</a>
-      </div>
-
-      <div class="card">
-        <h3>LaFaries Family Adventures</h3>
-        <p>
-          An interactive family storytelling and memory-keeping experience.
-        </p>
-        <a href="https://lafariesfamilyadv.org" class="cta">Visit Website</a>
-      </div>
-    </section>
-
-    <!-- Agreement Generator -->
-    <section class="agreement-container" id="agreement">
-      <h2>Service Agreement Confirmation</h2>
-      <p class="agreement-intro">
-        To proceed, please complete the information below and confirm your acknowledgment
-        of the LaFaries Mortimer LLC Service Agreement.
-      </p>
-
-      <div class="agreement-fields">
-        <label>
-          Client Name
-          <input type="text" id="client_name" placeholder="Full legal name" />
-        </label>
-
-        <label>
-          Service Fee
-          <input type="text" id="service_fee" placeholder="$____" />
-        </label>
-      </div>
-
-      <div class="agreement-acknowledgment">
-        <label class="ack-check">
-          <input type="checkbox" id="agree" />
-          <span>
-            I have read and agree to the
-            <strong>LaFaries Mortimer LLC Service Agreement</strong>.
-          </span>
-        </label>
-
-        <div id="agreeWarning" class="ack-warning">
-          Please check the box above to continue.
+        <div class="card-features">
+          <ul>
+            <li>Invoice Generator</li>
+            <li>Business Name Checker</li>
+            <li>LLC Operating Agreement Template</li>
+            <li>Meeting Minutes Maker</li>
+            <li>EIN Application Checklist</li>
+          </ul>
         </div>
+
+        <a href="https://scintillating-fairy.netlify.app" class="btn">Access LAAP Builder →</a>
       </div>
 
-      <button type="button" id="generateAgreement" class="generate-btn">
-        Generate My Agreement
-      </button>
-    </section>
+      <div class="card">
+        <div class="card-icon">📅</div>
+        <h3>Compliance Dashboard</h3>
+        <p>Never miss a tax or filing deadline. Track federal and state requirements for all 50 states.</p>
 
-  </main>
+        <div class="card-features">
+          <ul>
+            <li>Federal tax deadlines (941, 1040, 1120, W-2)</li>
+            <li>State-specific annual reports & sales tax</li>
+            <li>Email & SMS reminders</li>
+            <li>Color-coded urgency indicators</li>
+            <li>Direct links to IRS forms & state portals</li>
+          </ul>
+        </div>
 
-  <script>
-    (function () {
-      const button = document.getElementById("generateAgreement");
-      const warning = document.getElementById("agreeWarning");
+        <span class="badge">Full Tier Only ($79/month)</span>
+        <br>
+        <a href="https://scintillating-fairy.netlify.app" class="btn">Access in LAAP Builder →</a>
+      </div>
+    </div>
+  </div>
 
-      if (!button) return;
+  <!-- TUTORIAL & RESOURCES -->
+  <div class="section">
+    <div class="section-header">
+      <h2>Tutorials & Resources</h2>
+    </div>
 
-      button.addEventListener("click", function () {
-        const client = document.getElementById("client_name").value.trim();
-        const fee = document.getElementById("service_fee").value.trim();
-        const agreed = document.getElementById("agree").checked;
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">📚</div>
+        <h3>Tutorial Library</h3>
+        <p>Complete library of guides, templates, and video tutorials for business formation and operations.</p>
 
-        if (!client || !fee) {
-          alert("Please complete all required fields.");
-          return;
-        }
+        <div class="card-features">
+          <ul>
+            <li>Getting Started Guide</li>
+            <li>Formation walkthroughs</li>
+            <li>Troubleshooting resources</li>
+            <li>3-minute overview video</li>
+            <li>PDF & Word formats</li>
+          </ul>
+        </div>
 
-        if (!agreed) {
-          warning.style.display = "block";
-          return;
-        }
+        <a href="https://regal-pavlova-a4be80.netlify.app" class="btn">Browse Tutorials →</a>
+      </div>
 
-        warning.style.display = "none";
+      <div class="card">
+        <div class="card-icon">📖</div>
+        <h3>Consumer Manual</h3>
+        <p>Complete user guide covering all LAAP features so you don't miss anything.</p>
 
-        const date = new Date().toLocaleDateString();
+        <div class="card-features">
+          <ul>
+            <li>Feature directory</li>
+            <li>Step-by-step tutorials</li>
+            <li>Troubleshooting guide</li>
+            <li>Quick reference</li>
+          </ul>
+        </div>
 
-        const contractText = `SERVICE AGREEMENT
-LaFaries Mortimer LLC
+        <a href="#" download class="btn btn-secondary">Download Manual (PDF)</a>
+      </div>
+    </div>
+  </div>
 
-Date: ${date}
-Client: ${client}
-Service Fee: ${fee}
+  <!-- SYSTEM REQUIREMENTS -->
+  <div class="notice" style="max-width:900px">
+    <strong>📋 System Requirements:</strong><br><br>
+    <strong>For Desktop Apps:</strong> Any modern browser (Chrome, Edge, Firefox, Safari) • Windows, Mac, or Linux • No installation needed<br><br>
+    <strong>For LAAP Builder:</strong> Internet connection required • Works on desktop, tablet, and mobile • Chrome or Edge recommended
+  </div>
 
-This Service Agreement confirms the electronic acknowledgment of the
-Client and governs the administrative and IT services provided by
-LaFaries Mortimer LLC.
-
-— LaFaries Mortimer LLC
-Administrative & IT Services`;
-
-        const blob = new Blob([contractText], { type: "text/plain" });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "LaFaries-Mortimer-Service-Agreement.txt";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-      });
-    })();
-  </script>
+</div>
 
 </body>
 </html>
