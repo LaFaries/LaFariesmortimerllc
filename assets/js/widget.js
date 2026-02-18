@@ -1,7 +1,6 @@
 /* ================================================
-   LAFARIES AI CHAT WIDGET
-   Load this on any page with:
-   <script src="/assets/js/widget.js"></script>
+   LAFARIES AI CHAT WIDGET - DEBUG VERSION
+   This version will show you the actual error
    ================================================ */
 
 (function () {
@@ -332,7 +331,13 @@ TONE & STYLE:
     lfAddMsg('user', text);
     lfHistory.push({ role: 'user', content: text });
     lfShowTyping();
+    
+    // Log to console for debugging
+    console.log('Widget: Sending message:', text);
+    console.log('Widget: History:', lfHistory);
+    
     try {
+      console.log('Widget: Calling Anthropic API...');
       const res = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -343,14 +348,35 @@ TONE & STYLE:
           messages: lfHistory
         })
       });
+      
+      console.log('Widget: Response status:', res.status);
       const data = await res.json();
+      console.log('Widget: Response data:', data);
+      
+      if (data.error) {
+        throw new Error(`API Error: ${data.error.type} - ${data.error.message}`);
+      }
+      
       const reply = data.content?.[0]?.text || "Sorry, I hit a snag — please try again!";
       lfRemoveTyping();
       lfAddMsg('bot', reply.replace(/\n/g, '<br>'));
       lfHistory.push({ role: 'assistant', content: reply });
     } catch (e) {
+      console.error('Widget error:', e);
       lfRemoveTyping();
-      lfAddMsg('bot', "I'm having a moment! Please visit <a href='https://lafariesmortimerllc.com/contact' style='color:#DAB85C'>our contact page</a> directly.");
+      
+      // Show detailed error in chat
+      let errorMsg = "I'm having trouble connecting. ";
+      if (e.message.includes('Failed to fetch')) {
+        errorMsg += "Network error - the API might be blocked by CORS policy. ";
+      } else if (e.message.includes('API Error')) {
+        errorMsg += "API error: " + e.message + ". ";
+      } else {
+        errorMsg += "Error: " + e.message + ". ";
+      }
+      errorMsg += "Please visit <a href='https://lafariesmortimerllc.com/contact' style='color:#DAB85C'>our contact page</a> directly or check the browser console for details.";
+      
+      lfAddMsg('bot', errorMsg);
     }
   }
 
