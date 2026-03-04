@@ -1,4 +1,55 @@
+# LaFaries Mortimer LLC — robots.txt
+# Last updated: March 2026
+
+# ── Allow all crawlers ──────────────────────────────────────────
 User-agent: *
 Allow: /
 
+# ── Google ──────────────────────────────────────────────────────
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+# ── Bing / Microsoft ────────────────────────────────────────────
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# ── Yahoo ───────────────────────────────────────────────────────
+User-agent: Slurp
+Allow: /
+
+# ── DuckDuckGo ──────────────────────────────────────────────────
+User-agent: DuckDuckBot
+Allow: /
+
+# ── Yandex ──────────────────────────────────────────────────────
+User-agent: YandexBot
+Allow: /
+
+# ── Baidu ───────────────────────────────────────────────────────
+User-agent: Baiduspider
+Allow: /
+
+# ── SEO tools (Ahrefs, Semrush, Moz) ────────────────────────────
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+# ── Block only these specific files ─────────────────────────────
+User-agent: *
+Disallow: /lafariesmortimer-website.tar.gz
+Disallow: /zimgmmiG
+Disallow: /.gitkeep
+
+# ── Sitemap location ─────────────────────────────────────────────
 Sitemap: https://lafariesmortimerllc.com/sitemap.xml
