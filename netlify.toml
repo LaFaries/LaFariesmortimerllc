@@ -1,7 +1,31 @@
 [build]
   publish = "."
 
+# ── 404 fixes — broken URLs Google found ──────────────────────
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  from = "/docs/it-cybersecurity-basics.docx"
+  to = "/docs/Basic_Cyber_Hygiene_LaFaries_Mortimer_LLC.pdf"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/templates/meeting-agenda.docx"
+  to = "/templates.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/consultation.html"
+  to = "/contact.html"
+  status = 301
+  force = true
+
+# ── www → non-www canonical ────────────────────────────────────
+[[redirects]]
+  from = "https://www.lafariesmortimerllc.com/*"
+  to = "https://lafariesmortimerllc.com/:splat"
+  status = 301
+  force = true
+
+# ── Remove the wildcard 200 rewrite — this was the main problem ─
+# (deleted — it was causing duplicate content across all pages)
