@@ -1,31 +1,26 @@
-[build]
-  publish = "."
+# Fix trailing slash on LAAP Suite
+[[redirects]]
+  from = "/laap-suite/"
+  to = "/laap-suite"
+  status = 301
+  force = true
 
-# ── 404 fixes — broken URLs Google found ──────────────────────
+# Fix /tutorial redirect
+[[redirects]]
+  from = "/tutorial"
+  to = "/"
+  status = 301
+  force = true
+
+# Remove dead .docx links — point to a real page
 [[redirects]]
   from = "/docs/it-cybersecurity-basics.docx"
-  to = "/docs/Basic_Cyber_Hygiene_LaFaries_Mortimer_LLC.pdf"
+  to = "/laap-suite"
   status = 301
   force = true
 
 [[redirects]]
   from = "/templates/meeting-agenda.docx"
-  to = "/templates.html"
+  to = "/laap-suite"
   status = 301
   force = true
-
-[[redirects]]
-  from = "/consultation.html"
-  to = "/contact.html"
-  status = 301
-  force = true
-
-# ── www → non-www canonical ────────────────────────────────────
-[[redirects]]
-  from = "https://www.lafariesmortimerllc.com/*"
-  to = "https://lafariesmortimerllc.com/:splat"
-  status = 301
-  force = true
-
-# ── Remove the wildcard 200 rewrite — this was the main problem ─
-# (deleted — it was causing duplicate content across all pages)
