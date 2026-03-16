@@ -145,6 +145,7 @@ button.danger{
  font-size:14px;
  margin-top:8px;
  transition:all .2s;
+ cursor:pointer;
 }
 
 .download-link:hover{
@@ -179,6 +180,35 @@ button.danger{
 
 .tab-content{display:none}
 .tab-content.active{display:block}
+
+/* Footer */
+.site-footer{
+ text-align:center;
+ padding:32px 22px;
+ border-top:1px solid var(--line);
+ margin-top:40px;
+ font-size:13px;
+ color:var(--muted);
+ line-height:1.8;
+}
+
+.site-footer a{
+ color:var(--gold);
+ text-decoration:none;
+}
+
+.site-footer a:hover{
+ text-decoration:underline;
+}
+
+.footer-logo{
+ font-family:"Cormorant Garamond",serif;
+ color:var(--gold);
+ font-size:18px;
+ font-weight:600;
+ display:block;
+ margin-bottom:6px;
+}
 </style>
 </head>
 
@@ -195,10 +225,10 @@ button.danger{
 </div>
 
 <div class="tabs">
-  <button class="tab active" onclick="switchTab('familyTree')">Family Tree</button>
-  <button class="tab" onclick="switchTab('legacyLetter')">Legacy Letter</button>
-  <button class="tab" onclick="switchTab('memoryVault')">Memory Vault</button>
-  <button class="tab" onclick="switchTab('estatePlanning')">Estate Planning</button>
+  <button class="tab active" onclick="switchTab('familyTree', event)">Family Tree</button>
+  <button class="tab" onclick="switchTab('legacyLetter', event)">Legacy Letter</button>
+  <button class="tab" onclick="switchTab('memoryVault', event)">Memory Vault</button>
+  <button class="tab" onclick="switchTab('estatePlanning', event)">Estate Planning</button>
 </div>
 
 <!-- FAMILY TREE TAB -->
@@ -206,43 +236,44 @@ button.danger{
   <div class="grid">
     <div class="card">
       <h2>Family Tree Template</h2>
-      <p class="card-desc">Download a ready-formatted family tree template you can edit and customize for your family.</p>
-      
+      <p class="card-desc">Download a ready-formatted family tree template you can print and fill in by hand or save digitally.</p>
+
       <div class="small" style="margin-top:16px">
-        <strong>Available Formats:</strong><br>
-        • PDF - Print and fill by hand<br>
-        • Google Sheets - Digital editing<br>
-        • Excel - Desktop editing
+        <strong>What's included:</strong><br>
+        • 4-generation family tree layout<br>
+        • Name, birth date & birthplace fields<br>
+        • Notes section for each family member<br>
+        • LaFaries Mortimer LLC branded header
       </div>
-      
+
       <div style="margin-top:20px">
-        <a href="#" class="download-link" onclick="downloadFamilyTreePDF()">📄 Download PDF Template</a>
+        <a class="download-link" onclick="downloadFamilyTreePDF()">📄 Download PDF Template</a>
       </div>
-      
+
       <div class="notice" style="margin-top:16px">
-        <strong>How to use:</strong> Open the template, fill in family names, dates, and relationships. Add photos if using digital format. Print or save for family records.
+        <strong>How to use:</strong> Click Download to save the PDF. Open in Adobe Reader or your browser, fill in family names and dates, then print or save for your records.
       </div>
     </div>
-    
+
     <div class="card">
       <h2>Quick Family Tree Builder</h2>
       <p class="card-desc">Create a simple text-based family tree that you can save or print.</p>
-      
+
       <label>Family Name</label>
       <input id="familyName" placeholder="The Smith Family">
-      
+
       <label>Generation 1 (Grandparents)</label>
       <textarea id="gen1" placeholder="Example: John Smith (1930-2010) & Mary Smith (1932-2015)"></textarea>
-      
+
       <label>Generation 2 (Parents)</label>
       <textarea id="gen2" placeholder="Example: Robert Smith (1955-) & Sarah Smith (1958-)"></textarea>
-      
+
       <label>Generation 3 (Children)</label>
       <textarea id="gen3" placeholder="Example: Michael (1980-), Jennifer (1982-), David (1985-)"></textarea>
-      
+
       <button onclick="generateFamilyTree()">Generate Tree</button>
       <button onclick="downloadFamilyTreeText()">Download as Text</button>
-      
+
       <div id="treeOutput" class="small" style="margin-top:16px;white-space:pre-wrap"></div>
     </div>
   </div>
@@ -273,29 +304,22 @@ button.danger{
 
       <div id="legacyOutput" class="small" style="margin-top:16px;white-space:pre-wrap"></div>
     </div>
-    
+
     <div class="card">
       <h2>Letter Writing Guide</h2>
       <p class="card-desc">Tips for writing a meaningful legacy letter:</p>
-      
+
       <div class="small">
         <strong>What to include:</strong><br><br>
-        
         <strong>Personal Stories:</strong> Share defining moments from your life<br><br>
-        
         <strong>Family History:</strong> Pass down stories about ancestors<br><br>
-        
         <strong>Values & Beliefs:</strong> What guided your decisions in life?<br><br>
-        
         <strong>Gratitude:</strong> Thank those who shaped your journey<br><br>
-        
         <strong>Forgiveness:</strong> Heal relationships and let go<br><br>
-        
         <strong>Blessings:</strong> Give your blessing for their future<br><br>
-        
         <strong>Practical Wisdom:</strong> Advice you wish you'd received
       </div>
-      
+
       <div class="notice" style="margin-top:16px">
         💡 <strong>Tip:</strong> Write from the heart. This isn't about perfection — it's about connection.
       </div>
@@ -312,10 +336,10 @@ button.danger{
 
       <label>Memory or Note</label>
       <textarea id="vaultNote" placeholder="Write a memory, reflection, or note to preserve..."></textarea>
-      
+
       <label>Date (optional)</label>
       <input type="date" id="vaultDate">
-      
+
       <label>Category (optional)</label>
       <input id="vaultCategory" placeholder="e.g., Childhood, Travel, Family">
 
@@ -324,18 +348,18 @@ button.danger{
       <button onclick="exportVault()">Export All as Text</button>
 
       <div id="vaultList" class="small" style="margin-top:20px"></div>
-      
+
       <div class="notice" style="margin-top:16px">
         🔒 Memories are stored in your browser. Export regularly to keep permanent copies.
       </div>
     </div>
-    
+
     <div class="card">
       <h2>Saved Memories</h2>
       <p class="card-desc">Your stored memories appear here. Click to view or delete individual items.</p>
-      
+
       <div id="vaultDisplay" class="small"></div>
-      
+
       <div class="notice" style="margin-top:16px">
         💾 <strong>Backup Reminder:</strong> Your memories are safe as long as you don't clear your browser data. Download exports regularly for safekeeping.
       </div>
@@ -355,7 +379,7 @@ button.danger{
       <button onclick="saveEstate()">Save Progress</button>
       <button onclick="printEstate()">Print Checklist</button>
       <button class="danger" onclick="resetEstate()">Reset Checklist</button>
-      
+
       <div class="notice" style="margin-top:20px">
         ⚠️ <strong>Important:</strong> This is a preparation checklist, not legal advice. Consult with an estate planning attorney for your specific situation.
       </div>
@@ -363,15 +387,23 @@ button.danger{
   </div>
 </div>
 
-</div>
+</div><!-- end .wrapper -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <span class="footer-logo">LaFaries Mortimer LLC</span>
+  Administrative &amp; IT Services &nbsp;•&nbsp; Miami, FL &nbsp;•&nbsp; Virtual Support<br>
+  <a href="mailto:support@lafariesmortimerllc.com">support@lafariesmortimerllc.com</a><br><br>
+  © 2026 LaFaries Mortimer LLC. All rights reserved.<br>
+  <span style="font-size:12px">Legacy &amp; Family Tools — for personal use only. Not legal or financial advice.</span>
+</footer>
 
 <script>
 // TAB SWITCHING
-function switchTab(tabName){
+function switchTab(tabName, e){
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  
-  event.target.classList.add('active');
+  if(e && e.target) e.target.classList.add('active');
   document.getElementById(tabName).classList.add('active');
 }
 
@@ -383,9 +415,8 @@ function generateFamilyTree(){
   const gen1 = document.getElementById('gen1').value || "[Generation 1]";
   const gen2 = document.getElementById('gen2').value || "[Generation 2]";
   const gen3 = document.getElementById('gen3').value || "[Generation 3]";
-  
-  familyTreeText = `
-${name}
+
+  familyTreeText = `${name}
 ${"=".repeat(name.length + 10)}
 
 Generation 1 (Grandparents):
@@ -398,18 +429,13 @@ Generation 3 (Children):
 ${gen3}
 
 Created with LaFaries Mortimer LLC Legacy Tools
-${new Date().toLocaleDateString()}
-  `;
-  
+${new Date().toLocaleDateString()}`;
+
   document.getElementById('treeOutput').textContent = familyTreeText;
 }
 
 function downloadFamilyTreeText(){
-  if(!familyTreeText){
-    alert("Please generate the tree first");
-    return;
-  }
-  
+  if(!familyTreeText){ alert("Please generate the tree first"); return; }
   const blob = new Blob([familyTreeText], {type:"text/plain"});
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
@@ -417,8 +443,142 @@ function downloadFamilyTreeText(){
   link.click();
 }
 
+// PDF FAMILY TREE TEMPLATE — generates a real printable HTML page saved as PDF
 function downloadFamilyTreePDF(){
-  alert("PDF template download: In a production version, this would download a formatted PDF template. For now, use the Quick Builder to create a text version.");
+  const content = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Family Tree Template — LaFaries Mortimer LLC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,sans-serif;color:#1a1a1a;background:#fff;padding:40px}
+  h1{font-family:"Cormorant Garamond",serif;font-size:32px;color:#8B6914;text-align:center;margin-bottom:4px}
+  .brand{text-align:center;font-size:12px;color:#888;margin-bottom:32px;letter-spacing:1px;text-transform:uppercase}
+  .gen-block{margin-bottom:28px;page-break-inside:avoid}
+  .gen-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:#8B6914;margin-bottom:12px;border-bottom:1px solid #DAB85C;padding-bottom:6px}
+  .member-row{display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap}
+  .member-box{flex:1;min-width:200px;border:1px solid #ddd;border-radius:8px;padding:14px}
+  .field-label{font-size:10px;color:#999;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+  .field-line{border-bottom:1px solid #ccc;height:22px;margin-bottom:10px}
+  .notes-box{border:1px solid #ddd;border-radius:8px;padding:14px;margin-top:8px}
+  .notes-lines .field-line{margin-bottom:8px}
+  .footer{text-align:center;margin-top:40px;font-size:11px;color:#aaa;border-top:1px solid #eee;padding-top:16px}
+  @media print{body{padding:20px}.member-box{min-width:160px}}
+</style>
+</head>
+<body>
+<h1>Family Tree</h1>
+<div class="brand">LaFaries Mortimer LLC &nbsp;•&nbsp; Legacy &amp; Family Tools</div>
+
+<div class="gen-block">
+  <div class="gen-label">Generation 1 — Great-Grandparents</div>
+  <div class="member-row">
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+    </div>
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+    </div>
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+    </div>
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+    </div>
+  </div>
+</div>
+
+<div class="gen-block">
+  <div class="gen-label">Generation 2 — Grandparents</div>
+  <div class="member-row">
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+      <div class="field-label">Marriage Date</div><div class="field-line"></div>
+    </div>
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+      <div class="field-label">Marriage Date</div><div class="field-line"></div>
+    </div>
+  </div>
+</div>
+
+<div class="gen-block">
+  <div class="gen-label">Generation 3 — Parents</div>
+  <div class="member-row">
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+      <div class="field-label">Occupation</div><div class="field-line"></div>
+    </div>
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+      <div class="field-label">Occupation</div><div class="field-line"></div>
+    </div>
+  </div>
+</div>
+
+<div class="gen-block">
+  <div class="gen-label">Generation 4 — Children / Current Generation</div>
+  <div class="member-row">
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+    </div>
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+    </div>
+    <div class="member-box">
+      <div class="field-label">Full Name</div><div class="field-line"></div>
+      <div class="field-label">Birth Date</div><div class="field-line"></div>
+      <div class="field-label">Birthplace</div><div class="field-line"></div>
+    </div>
+  </div>
+</div>
+
+<div class="notes-box">
+  <div class="gen-label" style="margin-bottom:12px">Family Notes &amp; Additional History</div>
+  <div class="notes-lines">
+    <div class="field-line"></div>
+    <div class="field-line"></div>
+    <div class="field-line"></div>
+    <div class="field-line"></div>
+    <div class="field-line"></div>
+  </div>
+</div>
+
+<div class="footer">
+  Created with LaFaries Mortimer LLC Legacy &amp; Family Tools &nbsp;•&nbsp; lafariesmortimerllc.com &nbsp;•&nbsp; © 2026
+</div>
+
+<script>window.onload=function(){window.print();}<\/script>
+</body>
+</html>`;
+
+  const blob = new Blob([content], {type:"text/html"});
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "family-tree-template.html";
+  link.click();
 }
 
 // LEGACY LETTER
@@ -430,12 +590,11 @@ function generateLegacy(){
   const values = document.getElementById('legacyValues').value || "";
   const hopes = document.getElementById('legacyHopes').value || "";
 
-  legacyText = `
-Legacy Letter
+  legacyText = `Legacy Letter
 From: ${name}
 Date: ${new Date().toLocaleDateString()}
 
-═══════════════════════════════════════
+${"═".repeat(50)}
 
 TO MY BELOVED FAMILY,
 
@@ -444,25 +603,20 @@ ${msg}
 VALUES & LIFE LESSONS
 
 ${values}
-
 ${hopes ? `\nHOPES FOR YOUR FUTURE\n\n${hopes}` : ''}
 
 With all my love,
 ${name}
 
-═══════════════════════════════════════
+${"═".repeat(50)}
 Created with LaFaries Mortimer LLC Legacy Tools
-  `;
+lafariesmortimerllc.com`;
 
   document.getElementById('legacyOutput').textContent = legacyText;
 }
 
 function downloadLegacy(){
-  if(!legacyText){
-    alert("Generate letter first");
-    return;
-  }
-  
+  if(!legacyText){ alert("Generate letter first"); return; }
   const blob = new Blob([legacyText], {type:"text/plain"});
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
@@ -472,10 +626,7 @@ function downloadLegacy(){
 
 function clearLegacy(){
   if(confirm("Clear the legacy letter?")){
-    document.getElementById('legacyName').value = "";
-    document.getElementById('legacyMessage').value = "";
-    document.getElementById('legacyValues').value = "";
-    document.getElementById('legacyHopes').value = "";
+    ['legacyName','legacyMessage','legacyValues','legacyHopes'].forEach(id => document.getElementById(id).value = "");
     document.getElementById('legacyOutput').textContent = "";
     legacyText = "";
   }
@@ -486,14 +637,14 @@ function loadVault(){
   const data = JSON.parse(localStorage.getItem("lm_vault") || "[]");
   const list = document.getElementById("vaultList");
   const display = document.getElementById("vaultDisplay");
-  
+
   list.innerHTML = `<strong>Total Memories: ${data.length}</strong>`;
-  
+
   if(data.length === 0){
     display.innerHTML = "<p style='color:var(--muted)'>No memories saved yet. Add your first memory in the left panel.</p>";
     return;
   }
-  
+
   display.innerHTML = "";
   data.forEach((v, idx) => {
     const div = document.createElement("div");
@@ -509,22 +660,18 @@ function loadVault(){
 
 function saveVault(){
   const note = document.getElementById('vaultNote').value;
-  const date = document.getElementById('vaultDate').value;
-  const category = document.getElementById('vaultCategory').value;
-  
-  if(!note){
-    alert("Please write a memory first");
-    return;
-  }
-  
+  if(!note){ alert("Please write a memory first"); return; }
+
   const data = JSON.parse(localStorage.getItem("lm_vault") || "[]");
-  data.push({text: note, date, category, timestamp: new Date().toISOString()});
+  data.push({
+    text: note,
+    date: document.getElementById('vaultDate').value,
+    category: document.getElementById('vaultCategory').value,
+    timestamp: new Date().toISOString()
+  });
   localStorage.setItem("lm_vault", JSON.stringify(data));
-  
-  document.getElementById('vaultNote').value = "";
-  document.getElementById('vaultDate').value = "";
-  document.getElementById('vaultCategory').value = "";
-  
+
+  ['vaultNote','vaultDate','vaultCategory'].forEach(id => document.getElementById(id).value = "");
   loadVault();
   alert("Memory saved!");
 }
@@ -547,22 +694,21 @@ function clearVault(){
 
 function exportVault(){
   const data = JSON.parse(localStorage.getItem("lm_vault") || "[]");
-  if(data.length === 0){
-    alert("No memories to export");
-    return;
-  }
-  
+  if(data.length === 0){ alert("No memories to export"); return; }
+
   let text = "MEMORY VAULT EXPORT\n";
   text += "═".repeat(50) + "\n\n";
-  
+
   data.forEach((v, idx) => {
     text += `Memory ${idx + 1}\n`;
     text += `Category: ${v.category || 'General'}\n`;
-    text += `Date: ${v.date || v.timestamp}\n`;
-    text += `\n${v.text}\n`;
+    text += `Date: ${v.date || v.timestamp}\n\n`;
+    text += `${v.text}\n`;
     text += "\n" + "─".repeat(50) + "\n\n";
   });
-  
+
+  text += "\nLaFaries Mortimer LLC Legacy Tools • lafariesmortimerllc.com";
+
   const blob = new Blob([text], {type:"text/plain"});
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
@@ -574,31 +720,30 @@ loadVault();
 
 // ESTATE PLANNING
 const estateSteps = [
-  {id:"will", title:"Create or update a will", detail:"Specify how assets should be distributed"},
-  {id:"accounts", title:"Organize financial account list", detail:"Bank accounts, investments, retirement accounts"},
-  {id:"beneficiaries", title:"Designate beneficiaries", detail:"Life insurance, 401k, IRA, bank accounts"},
-  {id:"contacts", title:"Prepare emergency contact sheet", detail:"Family, attorney, financial advisor, doctors"},
-  {id:"digital", title:"Document digital accounts", detail:"Email, social media, cloud storage, subscriptions"},
-  {id:"passwords", title:"Set up password manager access", detail:"Trusted person should have emergency access"},
-  {id:"property", title:"List physical property & valuables", detail:"Real estate, vehicles, jewelry, collections"},
-  {id:"healthcare", title:"Create healthcare directives", detail:"Living will, healthcare power of attorney"},
-  {id:"funeral", title:"Document funeral/burial preferences", detail:"Prepaid arrangements, specific wishes"},
-  {id:"discuss", title:"Discuss wishes with trusted family", detail:"Ensure they know your intentions"}
+  {id:"will",          title:"Create or update a will",           detail:"Specify how assets should be distributed"},
+  {id:"accounts",      title:"Organize financial account list",    detail:"Bank accounts, investments, retirement accounts"},
+  {id:"beneficiaries", title:"Designate beneficiaries",           detail:"Life insurance, 401k, IRA, bank accounts"},
+  {id:"contacts",      title:"Prepare emergency contact sheet",   detail:"Family, attorney, financial advisor, doctors"},
+  {id:"digital",       title:"Document digital accounts",         detail:"Email, social media, cloud storage, subscriptions"},
+  {id:"passwords",     title:"Set up password manager access",    detail:"Trusted person should have emergency access"},
+  {id:"property",      title:"List physical property & valuables",detail:"Real estate, vehicles, jewelry, collections"},
+  {id:"healthcare",    title:"Create healthcare directives",      detail:"Living will, healthcare power of attorney"},
+  {id:"funeral",       title:"Document funeral/burial preferences",detail:"Prepaid arrangements, specific wishes"},
+  {id:"discuss",       title:"Discuss wishes with trusted family", detail:"Ensure they know your intentions"}
 ];
 
 function renderEstate(){
   const container = document.getElementById('estateChecklist');
   container.innerHTML = "";
-  
   const saved = JSON.parse(localStorage.getItem("lm_estate") || "{}");
-  
+
   estateSteps.forEach(step => {
     const card = document.createElement("div");
     card.className = "card";
     card.style.marginBottom = "16px";
     card.innerHTML = `
       <label style="display:flex;align-items:center;gap:12px;cursor:pointer">
-        <input type="checkbox" data-id="${step.id}" ${saved[step.id] ? "checked" : ""} 
+        <input type="checkbox" data-id="${step.id}" ${saved[step.id] ? "checked" : ""}
                style="width:20px;height:20px;cursor:pointer">
         <div>
           <strong style="font-size:16px;color:var(--gold)">${step.title}</strong><br>
@@ -608,25 +753,24 @@ function renderEstate(){
     `;
     container.appendChild(card);
   });
-  
+
   container.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', saveEstate);
+    cb.addEventListener('change', () => autoSaveEstate());
   });
 }
 
-function saveEstate(){
+function autoSaveEstate(){
   const boxes = document.querySelectorAll("#estateChecklist input[type='checkbox']");
   const state = {};
   boxes.forEach(b => state[b.dataset.id] = b.checked);
   localStorage.setItem("lm_estate", JSON.stringify(state));
-  
-  const completed = Object.values(state).filter(Boolean).length;
-  if(event && event.type === 'click'){
-    // Only show alert if manually clicked save button
-    if(event.target.tagName === 'BUTTON'){
-      alert(`Progress saved! ${completed} of ${estateSteps.length} items completed.`);
-    }
-  }
+}
+
+function saveEstate(){
+  autoSaveEstate();
+  const saved = JSON.parse(localStorage.getItem("lm_estate") || "{}");
+  const completed = Object.values(saved).filter(Boolean).length;
+  alert(`Progress saved! ${completed} of ${estateSteps.length} items completed.`);
 }
 
 function resetEstate(){
@@ -639,28 +783,27 @@ function resetEstate(){
 function printEstate(){
   const saved = JSON.parse(localStorage.getItem("lm_estate") || "{}");
   const completed = Object.values(saved).filter(Boolean).length;
-  
+
   let text = "ESTATE PREPARATION CHECKLIST\n";
   text += "═".repeat(60) + "\n\n";
   text += `Progress: ${completed} of ${estateSteps.length} items completed\n\n`;
-  
+
   estateSteps.forEach(step => {
     text += `[${saved[step.id] ? '✓' : ' '}] ${step.title}\n`;
     text += `    ${step.detail}\n\n`;
   });
-  
+
   text += "\nCreated with LaFaries Mortimer LLC Legacy Tools\n";
   text += new Date().toLocaleDateString();
-  
+
   const w = window.open("", "_blank");
-  w.document.write(`
-    <html><head><title>Estate Planning Checklist</title>
+  w.document.write(`<html><head><title>Estate Planning Checklist</title>
     <style>body{font-family:Arial;padding:40px;max-width:800px;margin:auto}
-    pre{white-space:pre-wrap;line-height:1.6}</style>
+    pre{white-space:pre-wrap;line-height:1.6}
+    button{margin-top:20px;padding:10px 20px;font-size:14px;cursor:pointer}</style>
     </head><body><pre>${text}</pre>
     <button onclick="window.print()">Print</button>
-    </body></html>
-  `);
+    </body></html>`);
   w.document.close();
 }
 
