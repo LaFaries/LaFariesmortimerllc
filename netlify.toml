@@ -1,26 +1,38 @@
-# Fix trailing slash on LAAP Suite
+# Redirect old LAAP Suite URLs to actual LAAP page
+[[redirects]]
+  from = "/laap-suite"
+  to = "/laap"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/laap-suite/"
-  to = "/laap-suite"
+  to = "/laap"
   status = 301
   force = true
 
-# Fix /tutorial redirect
+# Fix /tutorial → /tutorials (the real page)
 [[redirects]]
   from = "/tutorial"
-  to = "/"
+  to = "/tutorials"
   status = 301
   force = true
 
-# Remove dead .docx links — point to a real page
+# Dead .docx files → relevant real pages
 [[redirects]]
   from = "/docs/it-cybersecurity-basics.docx"
-  to = "/laap-suite"
+  to = "/tutorials"
   status = 301
   force = true
 
 [[redirects]]
   from = "/templates/meeting-agenda.docx"
-  to = "/laap-suite"
+  to = "/templates"
   status = 301
   force = true
+
+# Wildcard SPA fallback — MUST be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
