@@ -31,6 +31,12 @@
   status = 301
   force = true
 
+# Annual Maintenance clean URL
+[[redirects]]
+  from = "/annual-maintenance"
+  to = "/annual-maintenance.html"
+  status = 200
+
 # Wildcard SPA fallback — MUST be last
 [[redirects]]
   from = "/*"
