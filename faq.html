@@ -3,296 +3,590 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ | LaFaries Mortimer LLC</title>
-  <meta name="description" content="Frequently asked questions about services, free tutorials, templates, and optional administrative and IT support.">
-<link rel="canonical" href="https://lafariesmortimerllc.com/faq.html">
+  <title>Frequently Asked Questions | Administrative & IT Services | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Get answers about LaFaries Mortimer LLC — free tutorials, DIY templates, LAAP Suite™, business formation, annual maintenance, ministry support, and when paid help makes sense.">
+  <link rel="canonical" href="https://lafariesmortimerllc.com/faq">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#0b0b0c;
-      --panel:#111115;
+      --black:#0a0b0e;
+      --dark:#0f1115;
+      --charcoal:#141720;
+      --ivory:#F8F6F1;
+      --gold:#DAB85C;
+      --gold-light:#f0d98a;
+      --gold-deep:#b79a45;
+      --muted:rgba(248,246,241,.6);
+      --line:rgba(218,184,92,.18);
       --card:#141418;
-      --gold:#d4af37;
-      --text:#f2f2f2;
-      --muted:#a3a3a3;
-      --line:rgba(212,175,55,.25);
-      --radius:18px;
+      --h:"Cormorant Garamond",serif;
+      --b:"Inter",system-ui;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
 
     body{
-      font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      font-family:var(--b);
       background:linear-gradient(180deg,#0b0b0c,#0f0f12);
-      color:var(--text);
-      line-height:1.9;
+      color:var(--ivory);
+      line-height:1.8;
     }
 
     a{color:var(--gold);text-decoration:none}
     a:hover{text-decoration:underline}
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
 
-    .wrapper{
-      max-width:960px;
-      margin:0 auto;
-      padding:3rem 1.75rem;
-    }
-
-    /* Header */
+    /* ── HEADER ── */
     header{
-      background:rgba(11,11,12,.85);
-      backdrop-filter:blur(10px);
+      position:sticky;top:0;z-index:100;
+      background:rgba(10,11,14,.92);
+      backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line);
-      margin-bottom:3.5rem;
     }
-    .header-inner{
-      display:flex;
-      justify-content:space-between;
+    .nav{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
       align-items:center;
-      flex-wrap:wrap;
-      gap:1.25rem;
+      gap:16px;
+      padding:14px 0;
     }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:.75rem;
-      font-weight:600;
-    }
+    .brand{display:flex;align-items:center;gap:12px}
     .brand-logo{
-      width:38px;height:38px;
-      border-radius:999px;
-      background:linear-gradient(180deg,var(--gold),#b99425);
-      color:#111;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:.8rem;
+      width:44px;height:44px;border-radius:50%;padding:3px;
+      background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
+      box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.4);
     }
-    nav{
-      display:flex;
-      gap:1.5rem;
-      font-size:1rem;
-    }
-    nav a{color:var(--muted)}
-    nav a:hover{color:var(--gold)}
+    .brand strong{font-family:var(--h);font-size:18px;color:#fff}
+    .brand span{font-size:11px;color:rgba(255,255,255,.5);display:block}
+    nav{display:flex;gap:14px;justify-content:center}
+    nav a{padding:8px 14px;border-radius:999px;font-size:14px;color:rgba(255,255,255,.75);transition:all .2s;text-decoration:none}
+    nav a:hover{background:rgba(255,255,255,.08);color:#fff;text-decoration:none}
+    .ctaTop{display:flex;gap:10px}
+    .btn{padding:11px 18px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:all .2s}
+    .btnGold{background:var(--gold);color:#1a1a1a}
+    .btnGold:hover{filter:brightness(1.1)}
+    .btnGhost{border:1px solid rgba(255,255,255,.3);color:#fff}
+    .btnGhost:hover{background:rgba(255,255,255,.08)}
 
-    /* Title */
-    h1{
-      font-size:2.8rem;
-      margin-bottom:1.25rem;
-      font-family:"Cormorant Garamond", Georgia, serif;
-      font-weight:600;
-      letter-spacing:.3px;
+    /* ── HERO ── */
+    .hero{
+      padding:80px 0 60px;
+      background:radial-gradient(900px 400px at 50% -10%,rgba(218,184,92,.18),transparent 55%);
     }
-    h1 span{color:var(--gold)}
+    .hero-eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(218,184,92,.1);
+      border:1px solid rgba(218,184,92,.3);
+      color:var(--gold);
+      padding:6px 14px;border-radius:999px;
+      font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+      margin-bottom:22px;
+    }
+    .hero h1{
+      font-family:var(--h);
+      font-size:58px;line-height:1.05;
+      margin-bottom:16px;
+    }
+    .hero h1 em{
+      font-style:normal;
+      background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-deep));
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+    }
+    .hero p{font-size:17px;color:var(--muted);max-width:58ch;line-height:1.7}
 
-    .intro{
-      margin-bottom:3.5rem;
+    /* ── CATEGORY TABS ── */
+    .cat-tabs{
+      display:flex;gap:10px;flex-wrap:wrap;
+      margin:48px 0 40px;
+    }
+    .cat-tab{
+      padding:9px 20px;border-radius:999px;
+      border:1px solid var(--line);
+      background:transparent;
       color:var(--muted);
-      font-size:1.15rem;
-      max-width:72ch;
+      font-size:13px;font-weight:500;
+      cursor:pointer;font-family:var(--b);
+      transition:all .2s;
+    }
+    .cat-tab:hover{border-color:rgba(218,184,92,.4);color:var(--ivory)}
+    .cat-tab.active{background:rgba(218,184,92,.12);border-color:rgba(218,184,92,.5);color:var(--gold)}
+
+    /* ── FAQ SECTIONS ── */
+    .faq-section{margin-bottom:56px}
+    .faq-section-title{
+      font-family:var(--h);font-size:30px;color:var(--gold);
+      margin-bottom:20px;
+      padding-bottom:12px;
+      border-bottom:1px solid var(--line);
     }
 
-    /* FAQ Accordion */
-    .faq{
-      display:flex;
-      flex-direction:column;
-      gap:1.75rem;
-    }
+    .faq-list{display:flex;flex-direction:column;gap:12px}
 
     details{
-      background:var(--card);
+      background:linear-gradient(180deg,#15161a,#0e0f13);
       border:1px solid rgba(255,255,255,.08);
-      border-radius:var(--radius);
-      padding:1.75rem 2rem;
+      border-radius:16px;
+      transition:border-color .2s;
     }
-
-    details[open]{
-      border-color:var(--gold);
-      box-shadow:0 0 0 1px rgba(212,175,55,.25);
-    }
+    details[open]{border-color:rgba(218,184,92,.4)}
 
     summary{
-      cursor:pointer;
-      list-style:none;
-      font-size:1.3rem;
-      font-weight:600;
-      color:var(--gold);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+      cursor:pointer;list-style:none;
+      padding:20px 24px;
+      font-size:16px;font-weight:500;
+      color:var(--ivory);
+      display:flex;align-items:center;justify-content:space-between;
+      gap:16px;
     }
-
     summary::-webkit-details-marker{display:none}
-
     summary::after{
-      content:"+";
-      font-size:1.5rem;
-      color:var(--gold);
-      transition:transform .2s ease;
+      content:"+";font-size:20px;color:var(--gold);
+      flex-shrink:0;transition:transform .2s;
     }
+    details[open] summary::after{content:"–"}
+    details[open] summary{color:var(--gold)}
 
-    details[open] summary::after{
-      content:"–";
+    .faq-body{
+      padding:0 24px 20px;
+      font-size:15px;color:rgba(248,246,241,.8);
+      line-height:1.75;
+      border-top:1px solid rgba(255,255,255,.06);
     }
+    .faq-body p{margin-top:14px}
+    .faq-body ul{margin:12px 0 0 20px}
+    .faq-body li{margin-bottom:8px}
+    .faq-body a{color:var(--gold)}
 
-    details p{
-      margin-top:1.25rem;
-      font-size:1.1rem;
-      color:var(--text);
-      max-width:78ch;
-    }
-
-    /* CTA */
-    .cta{
-      margin-top:5rem;
-      padding:3rem;
-      background:linear-gradient(180deg,#111115,#0f0f12);
-      border:1px solid var(--gold);
-      border-radius:2rem;
+    /* ── CTA STRIP ── */
+    .cta-strip{
+      margin:60px 0;
+      padding:48px;
+      background:linear-gradient(180deg,rgba(20,23,32,.95),rgba(10,11,14,.98));
+      border:1px solid rgba(218,184,92,.35);
+      border-radius:28px;
       text-align:center;
     }
-    .cta h3{
-      font-size:2rem;
-      margin-bottom:1rem;
-      font-family:"Cormorant Garamond", Georgia, serif;
+    .cta-strip h2{font-family:var(--h);font-size:40px;margin-bottom:12px}
+    .cta-strip p{color:var(--muted);font-size:16px;margin-bottom:28px;max-width:52ch;margin-left:auto;margin-right:auto}
+    .cta-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .cta-btn{
+      padding:12px 24px;border-radius:999px;
+      font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      transition:all .2s;text-decoration:none;display:inline-block;
     }
-    .cta p{
-      color:var(--muted);
-      margin-bottom:1.75rem;
-      font-size:1.1rem;
-    }
-    .cta a{
-      display:inline-block;
-      margin:.4rem;
-      padding:.9rem 1.7rem;
-      border-radius:999px;
-      font-size:.95rem;
-      font-weight:600;
-      border:1px solid var(--gold);
-    }
-    .cta a.primary{
-      background:var(--gold);
-      color:#111;
-    }
+    .cta-btn-gold{background:var(--gold);color:#1a1a1a}
+    .cta-btn-gold:hover{filter:brightness(1.1);text-decoration:none}
+    .cta-btn-ghost{border:1px solid var(--line);color:var(--ivory)}
+    .cta-btn-ghost:hover{border-color:rgba(218,184,92,.4);background:rgba(218,184,92,.06);text-decoration:none}
 
-    /* Footer */
+    /* ── FOOTER ── */
     footer{
-      margin-top:5rem;
-      border-top:1px solid rgba(255,255,255,.12);
-      padding:2rem 0;
-      font-size:.95rem;
-      color:var(--muted);
-      text-align:center;
+      border-top:1px solid var(--line);
+      padding:22px 0;text-align:center;
+      font-size:12px;color:var(--muted);
+    }
+    footer a{color:var(--gold)}
+
+    @media(max-width:768px){
+      .hero h1{font-size:40px}
+      nav{display:none}
+      .nav{grid-template-columns:auto auto}
+      .ctaTop .btnGhost{display:none}
+      .cta-strip{padding:28px 20px}
+      .cta-strip h2{font-size:30px}
     }
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
-  <div class="wrapper header-inner">
-    <div class="brand">
-      <div class="brand-logo">LM</div>
-      <span>LaFaries Mortimer LLC</span>
-    </div>
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <img src="/assets/img/logo-2026.png" class="brand-logo" alt="LaFaries Mortimer LLC">
+      <div>
+        <strong>LaFaries Mortimer LLC</strong>
+        <span>Administrative & IT Services</span>
+      </div>
+    </a>
     <nav>
-      <a href="/">Home</a>
-      <a href="/#tutorials">Tutorials</a>
-      <a href="/#templates">Templates</a>
-      <a href="/#contact">Contact</a>
+      <a href="/index.html">Home</a>
+      <a href="/laap.html">LAAP Suite</a>
+      <a href="/services.html">Services</a>
+      <a href="/annual-maintenance.html">Maintenance</a>
+      <a href="/contact.html">Contact</a>
     </nav>
+    <div class="ctaTop">
+      <a class="btn btnGhost" href="/free.html">Free Tools</a>
+      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+    </div>
   </div>
 </header>
 
-<main class="wrapper">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-eyebrow">Frequently asked questions</div>
+    <h1>Everything you need to <em>know</em></h1>
+    <p>Clear answers about our services, tools, pricing, and how we help small businesses, ministries, and entrepreneurs stay organized and compliant.</p>
+  </div>
+</section>
 
-  <h1>Clear <span>Answers</span></h1>
-  <p class="intro">
-    This page explains what LaFaries Mortimer LLC offers, how our free resources work,
-    and when paid support may be helpful.
-  </p>
+<div class="wrap">
 
-  <section class="faq">
-
-    <details>
-      <summary>What is LaFaries Mortimer LLC?</summary>
-      <p>
-        LaFaries Mortimer LLC is a support-based service that provides free tutorials,
-        downloadable templates, and affordable administrative and IT assistance.
-        Our goal is to help individuals, small businesses, and ministries get organized
-        and move forward without unnecessary costs.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do you really offer free resources?</summary>
-      <p>
-        Yes. We intentionally provide free tutorials and guides as a way to give back.
-        These resources show you step by step how to complete common tasks on your own.
-      </p>
-    </details>
-
-    <details>
-      <summary>What kinds of tutorials do you provide?</summary>
-      <p>
-        Tutorials cover real-world topics such as basic IT setup, cybersecurity awareness,
-        file organization, administrative workflows, EIN guidance, LLC basics,
-        meeting documentation, and modern office tools.
-      </p>
-    </details>
-
-    <details>
-      <summary>Are all services paid?</summary>
-      <p>
-        No. Tutorials and learning resources are free.
-        Paid services are optional and are for those who want hands-on,
-        personalized assistance or prefer not to do everything themselves.
-      </p>
-    </details>
-
-    <details>
-      <summary>Who is this service for?</summary>
-      <p>
-        This service is for entrepreneurs, ministries, nonprofits, families,
-        and individuals who want clarity and structure without being overwhelmed
-        or overcharged.
-      </p>
-    </details>
-
-    <details>
-      <summary>Do you provide legal, tax, or financial advice?</summary>
-      <p>
-        No. We do not replace licensed professionals.
-        Our role is educational and administrative support,
-        helping you understand processes and stay organized.
-      </p>
-    </details>
-
-    <details>
-      <summary>How do I know if I need paid support?</summary>
-      <p>
-        If you’re comfortable following a guide, the free tutorials may be enough.
-        If you need help applying the steps, organizing systems, or troubleshooting,
-        paid support may be helpful.
-      </p>
-    </details>
-
-  </section>
-
-  <div class="cta">
-    <h3>Ready to Get Started?</h3>
-    <p>Begin with the free tutorials, then explore templates or reach out if you need help.</p>
-    <a href="/#tutorials" class="primary">Free Tutorials</a>
-    <a href="/#templates">Browse Templates</a>
-    <a href="/#contact">Contact</a>
+  <!-- CATEGORY TABS -->
+  <div class="cat-tabs">
+    <button class="cat-tab active" onclick="scrollTo('general')">General</button>
+    <button class="cat-tab" onclick="scrollTo('laap')">LAAP Suite™</button>
+    <button class="cat-tab" onclick="scrollTo('maintenance')">Annual Maintenance</button>
+    <button class="cat-tab" onclick="scrollTo('free')">Free Resources</button>
+    <button class="cat-tab" onclick="scrollTo('formation')">Business Formation</button>
+    <button class="cat-tab" onclick="scrollTo('ministries')">Ministries</button>
+    <button class="cat-tab" onclick="scrollTo('pricing')">Pricing</button>
   </div>
 
-</main>
+  <!-- GENERAL -->
+  <div class="faq-section" id="general">
+    <div class="faq-section-title">General</div>
+    <div class="faq-list">
 
+      <details>
+        <summary>What is LaFaries Mortimer LLC?</summary>
+        <div class="faq-body">
+          <p>LaFaries Mortimer LLC is a Miami-based Administrative & IT Services firm that helps small businesses, ministries, nonprofits, and individuals get organized, stay compliant, and grow with confidence.</p>
+          <p>We offer a full range of services — from free tutorials and DIY templates to the LAAP Suite™ business operating system, annual compliance maintenance, IT support, and business formation guidance. Whether you need to do it yourself or want us to handle it, we have an option for you.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Who do you serve?</summary>
+        <div class="faq-body">
+          <p>We serve:</p>
+          <ul>
+            <li>Small businesses and LLCs across all 50 states</li>
+            <li>Ministries, churches, and faith-based organizations</li>
+            <li>Nonprofits and community organizations</li>
+            <li>Entrepreneurs and solo founders</li>
+            <li>Families planning for legacy and estate organization</li>
+            <li>Individuals who need administrative clarity without the corporate price tag</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Are you based in Miami? Do you work with clients outside Florida?</summary>
+        <div class="faq-body">
+          <p>Yes, we are based in Miami, FL — but we operate virtually and serve clients across all 50 states. Our compliance and maintenance services cover every state's requirements, and all of our tools, tutorials, and LAAP Suite™ are accessible from anywhere.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do you provide legal, tax, or financial advice?</summary>
+        <div class="faq-body">
+          <p>No. We are an administrative and IT services firm, not a law firm or accounting practice. We help you understand processes, stay organized, and meet deadlines — but we do not replace licensed attorneys, CPAs, or financial advisors. We always recommend consulting a licensed professional for legal and tax decisions specific to your situation.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I get started?</summary>
+        <div class="faq-body">
+          <p>There are several ways to start depending on where you are:</p>
+          <ul>
+            <li><strong>Just exploring:</strong> Browse our <a href="/tutorials.html">free tutorials</a> and <a href="/templates.html">DIY templates</a> — no account required</li>
+            <li><strong>Need a system:</strong> Explore the <a href="/laap.html">LAAP Suite™</a> — our guided business operating system</li>
+            <li><strong>Need compliance help:</strong> Visit our <a href="/annual-maintenance.html">Annual Maintenance</a> page</li>
+            <li><strong>Need hands-on support:</strong> <a href="/contact.html">Book a free consultation</a></li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- LAAP SUITE -->
+  <div class="faq-section" id="laap">
+    <div class="faq-section-title">LAAP Suite™</div>
+    <div class="faq-list">
+
+      <details>
+        <summary>What is the LAAP Suite™?</summary>
+        <div class="faq-body">
+          <p>LAAP Suite™ is our Business Operating System — a guided, all-in-one platform that handles business formation, compliance filings, documentation, records management, and annual maintenance. It replaces scattered admin work with a structured, automated system designed to grow with your business.</p>
+          <p>LAAP stands for: <strong>L</strong>egacy, <strong>A</strong>dministration, <strong>A</strong>utomation, and <strong>P</strong>rotection.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What does LAAP Suite™ include?</summary>
+        <div class="faq-body">
+          <p>LAAP Suite™ covers:</p>
+          <ul>
+            <li>Business formation guidance (LLC, nonprofit, ministry setup)</li>
+            <li>EIN application support</li>
+            <li>Operating agreement framework</li>
+            <li>Compliance tracking and annual filings</li>
+            <li>Document organization and records management</li>
+            <li>Annual Maintenance (Standard tier included)</li>
+            <li>Access to AI-powered business tools and agents</li>
+            <li>Ongoing support and updates</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>How is LAAP Suite™ different from other business tools?</summary>
+        <div class="faq-body">
+          <p>Most business tools handle one thing — an LLC filing service, a document storage app, or a compliance reminder tool. LAAP Suite™ connects all of these into one guided system with a human support layer behind it. You're not just buying software — you're getting a structured system with someone who knows your business.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is LAAP Suite™ right for me if I'm just starting out?</summary>
+        <div class="faq-body">
+          <p>Yes — in fact, starting with LAAP from day one is ideal. It helps you form your business correctly, build the right foundation, and avoid the compliance gaps that catch most new businesses off guard in years two and three.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I access LAAP Suite™ on mobile?</summary>
+        <div class="faq-body">
+          <p>Yes. LAAP Suite™ is web-based and works on desktop, tablet, and mobile. Chrome or Edge are recommended for the best experience.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- ANNUAL MAINTENANCE -->
+  <div class="faq-section" id="maintenance">
+    <div class="faq-section-title">Annual Maintenance</div>
+    <div class="faq-list">
+
+      <details>
+        <summary>What is Annual Maintenance?</summary>
+        <div class="faq-body">
+          <p>Annual Maintenance is our ongoing compliance support service. We track your state and federal filing deadlines, send you reminders before they're due, provide filing guidance, and keep your business documents organized — so you never miss a deadline or fall out of good standing.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Which states does Annual Maintenance cover?</summary>
+        <div class="faq-body">
+          <p>All 50 states. Every state has different annual report requirements, due dates, and fees. We track the specific requirements for your state and notify you in advance so you're always prepared.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What happens if I miss an annual report deadline?</summary>
+        <div class="faq-body">
+          <p>Missing a deadline can result in late fees, penalties, and in some states your LLC can be administratively dissolved — meaning it loses its good standing and legal protections. Annual Maintenance is specifically designed to prevent this from happening.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is Annual Maintenance included in LAAP Suite™?</summary>
+        <div class="faq-body">
+          <p>Yes — the Standard tier of Annual Maintenance is included in LAAP Suite™ subscriptions. It is also available as a standalone service for businesses that don't need the full LAAP system. See our <a href="/annual-maintenance.html">Annual Maintenance page</a> for pricing details.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Does Annual Maintenance apply to ministries and nonprofits?</summary>
+        <div class="faq-body">
+          <p>Yes. Ministries and nonprofits have their own unique compliance requirements — annual filings, 501(c)(3) maintenance, state charitable registrations. Our Annual Maintenance service covers these requirements and keeps your organization in good standing.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- FREE RESOURCES -->
+  <div class="faq-section" id="free">
+    <div class="faq-section-title">Free resources</div>
+    <div class="faq-list">
+
+      <details>
+        <summary>What free resources do you offer?</summary>
+        <div class="faq-body">
+          <p>We offer three categories of free resources:</p>
+          <ul>
+            <li><strong><a href="/tutorials.html">Free Tutorials</a></strong> — Step-by-step PDF guides covering IT basics, cybersecurity, cloud organization, LLC setup, meeting documentation, EIN applications, and more</li>
+            <li><strong><a href="/templates.html">DIY Templates</a></strong> — Downloadable templates for meeting agendas, operating agreements, client intake forms, church visitor forms, prayer request forms, and more</li>
+            <li><strong><a href="/free.html">Free Tools</a></strong> — Online tools including currency converter, QR code generator, percentage calculator, language translator, and email length checker</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do I need to create an account to use the free resources?</summary>
+        <div class="faq-body">
+          <p>No account required. All free tutorials, templates, and tools are accessible immediately with no sign-up, no email required, and no strings attached. We offer them because we believe everyone deserves access to clear information.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Are the free tutorials really comprehensive?</summary>
+        <div class="faq-body">
+          <p>Yes. Our tutorials are practical, step-by-step guides written for real people — not tech experts. Topics include password management, phishing awareness, cloud file organization, basic cyber hygiene, device setup, LLC setup, meeting minutes, professional email writing, and more. Each one is downloadable as a PDF.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- BUSINESS FORMATION -->
+  <div class="faq-section" id="formation">
+    <div class="faq-section-title">Business formation</div>
+    <div class="faq-list">
+
+      <details>
+        <summary>Can you help me form an LLC?</summary>
+        <div class="faq-body">
+          <p>Yes. We provide guided LLC formation support — walking you through the process of choosing a business name, filing articles of organization, obtaining your EIN, setting up an operating agreement, and opening a business bank account. This is a core part of the LAAP Suite™.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What states can you help me form an LLC in?</summary>
+        <div class="faq-body">
+          <p>All 50 states. While we are based in Miami, Florida, we assist clients with LLC formation in every state. We understand that different states have different requirements, fees, and processing times.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What's the difference between an LLC and a nonprofit?</summary>
+        <div class="faq-body">
+          <p>An LLC (Limited Liability Company) is a for-profit business structure that provides personal liability protection and flexible tax treatment. A nonprofit is a tax-exempt organization formed to serve a public or charitable purpose — it cannot distribute profits to members. Ministries and churches typically operate as nonprofits. We assist with both structures.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can you help me get an EIN?</summary>
+        <div class="faq-body">
+          <p>Yes. We provide step-by-step EIN application guidance. An EIN (Employer Identification Number) is required for opening a business bank account, hiring employees, filing taxes, and many other business activities. Our free tutorials include an EIN walkthrough, and LAAP Suite™ includes hands-on EIN support.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- MINISTRIES -->
+  <div class="faq-section" id="ministries">
+    <div class="faq-section-title">Ministries & faith-based organizations</div>
+    <div class="faq-list">
+
+      <details>
+        <summary>Do you work with churches and ministries?</summary>
+        <div class="faq-body">
+          <p>Yes — and this is a specialty of ours. We understand the unique administrative and compliance needs of faith-based organizations. From church incorporation and 501(c)(3) guidance to visitor forms, volunteer sign-up templates, and member records — we have resources built specifically for ministries.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What templates do you offer for churches?</summary>
+        <div class="faq-body">
+          <p>Our free church templates include:</p>
+          <ul>
+            <li>Visitor Information Form</li>
+            <li>Prayer Request Form</li>
+            <li>Volunteer Signup Form</li>
+            <li>Member Information Form</li>
+          </ul>
+          <p>All are available free at <a href="/templates.html">lafariesmortimerllc.com/templates</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can you help a ministry stay compliant year after year?</summary>
+        <div class="faq-body">
+          <p>Yes. Our Annual Maintenance service covers faith-based organizations including annual state filings, 501(c)(3) compliance reminders, and document organization. We keep your ministry in good standing so your leadership can focus on mission rather than paperwork.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="faq-section" id="pricing">
+    <div class="faq-section-title">Pricing</div>
+    <div class="faq-list">
+
+      <details>
+        <summary>How much does Annual Maintenance cost?</summary>
+        <div class="faq-body">
+          <p>Annual Maintenance is available in three tiers:</p>
+          <ul>
+            <li><strong>Essential</strong> — $197/year: Deadline tracking, email reminders, compliance calendar, IRS & state links</li>
+            <li><strong>Standard</strong> — $397/year: Everything in Essential + filing assistance, quarterly check-ins, SMS reminders, document review</li>
+            <li><strong>Complete</strong> — $597/year: Everything in Standard + priority support, document storage, LAAP Suite™ access, annual consultation</li>
+          </ul>
+          <p>LAAP Suite™ subscribers receive Standard tier included. See full details at <a href="/annual-maintenance.html">our Annual Maintenance page</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Are the tutorials and templates really free?</summary>
+        <div class="faq-body">
+          <p>Yes — completely free with no hidden costs, no account required, and no upsell required to access them. We provide them as a genuine resource for people who want to handle things themselves.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I know which service is right for me?</summary>
+        <div class="faq-body">
+          <p>A simple way to think about it:</p>
+          <ul>
+            <li>If you want to learn and do it yourself — start with free tutorials and templates</li>
+            <li>If you want a complete business system — explore LAAP Suite™</li>
+            <li>If your business is already formed and you just need to stay compliant — Annual Maintenance is your answer</li>
+            <li>If you're not sure — <a href="/contact.html">book a free consultation</a> and we'll point you in the right direction</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do you offer refunds?</summary>
+        <div class="faq-body">
+          <p>Please <a href="/contact.html">contact us</a> directly to discuss your situation. We handle refund requests on a case-by-case basis and are committed to making sure every client feels confident in their investment.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Still have questions?</h2>
+    <p>We're happy to help. Book a free consultation and we'll point you in the right direction — no pressure, no pitch.</p>
+    <div class="cta-actions">
+      <a href="/contact.html" class="cta-btn cta-btn-gold">Book a free consultation</a>
+      <a href="/laap.html" class="cta-btn cta-btn-ghost">Explore LAAP Suite™</a>
+      <a href="/tutorials.html" class="cta-btn cta-btn-ghost">Browse free tutorials</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
 <footer>
-  © 2025 LaFaries Mortimer LLC • All rights reserved
+  <div class="wrap">
+    © 2026 LaFaries Mortimer LLC &nbsp;•&nbsp; Miami, FL &nbsp;•&nbsp; Virtual Support &nbsp;•&nbsp;
+    <a href="mailto:support@lafariesmortimerllc.com">support@lafariesmortimerllc.com</a>
+  </div>
 </footer>
+
+<script>
+function scrollTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+}
+</script>
 <script src="/assets/js/widget.js"></script>
 </body>
 </html>
