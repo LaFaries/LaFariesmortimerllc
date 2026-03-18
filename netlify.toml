@@ -42,3 +42,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+  [[redirects]]
+  from = "/review"
+  to = "https://g.page/r/CcK63XJnvZRzEAE/review"
+  status = 302
+  force = true
