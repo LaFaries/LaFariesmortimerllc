@@ -65,7 +65,7 @@ nav a.active{background:rgba(218,184,92,.1);color:var(--gold);border:1px solid r
 .hero h1 em{font-style:italic;background:linear-gradient(135deg,var(--gold-light) 0%,var(--gold) 40%,var(--gold-deep) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-sub{font-size:17px;color:var(--muted);max-width:46ch;margin:0 auto 52px;line-height:1.8;font-weight:300;animation:fadeUp .6s .2s ease both}
 .methods{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;animation:fadeUp .6s .3s ease both;position:relative;z-index:1}
-.method{display:flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.025);font-size:13px;color:var(--muted);transition:all .28s;backdrop-filter:blur(8px)}
+.method{display:flex;align-items:center;gap:10px;padding:13px 24px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.025);font-size:13px;color:var(--muted);transition:all .28s;backdrop-filter:blur(8px);cursor:pointer}
 .method:hover{border-color:var(--border-hover);color:var(--gold);background:rgba(218,184,92,.05);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
 .method-icon{width:34px;height:34px;border-radius:50%;background:rgba(218,184,92,.08);border:1px solid rgba(218,184,92,.18);display:flex;align-items:center;justify-content:center;font-size:15px}
 
@@ -208,20 +208,19 @@ footer a:hover{text-decoration:underline}
   <h1>Let's build<br>your <em>legacy.</em></h1>
   <p class="hero-sub">Whether you're launching a business, staying compliant, or scaling with AI — we're your virtual partner, every step of the way.</p>
   <div class="methods">
-  <a href="mailto:support@lafariesmortimerllc.com" class="method" id="emailPill"
-     onclick="copyEmail(event)">
-    <div class="method-icon">✉️</div>
-    <span id="emailText">support@lafariesmortimerllc.com</span>
-  </a>
-  <a href="/review" target="_blank" class="method">
-    <div class="method-icon">⭐</div>
-    Leave a Google Review
-  </a>
-  <a href="https://scintillating-fairy.netlify.app" target="_blank" class="method">
-    <div class="method-icon">🚀</div>
-    Launch LAAP Suite™
-  </a>
-</div>
+    <a href="mailto:support@lafariesmortimerllc.com" class="method" id="emailPill" onclick="copyEmail(event)">
+      <div class="method-icon">✉️</div>
+      <span id="emailText">support@lafariesmortimerllc.com</span>
+    </a>
+    <a href="/review" target="_blank" class="method">
+      <div class="method-icon">⭐</div>
+      Leave a Google Review
+    </a>
+    <a href="https://scintillating-fairy.netlify.app" target="_blank" class="method">
+      <div class="method-icon">🚀</div>
+      Launch LAAP Suite™
+    </a>
+  </div>
 </section>
 
 <div class="section-divider">
@@ -355,7 +354,29 @@ footer a:hover{text-decoration:underline}
 <script src="/assets/js/widget.js"></script>
 
 <script>
-/* PARTICLES */
+/* ── COPY EMAIL ── */
+function copyEmail(e) {
+  e.preventDefault();
+  navigator.clipboard.writeText('support@lafariesmortimerllc.com').then(() => {
+    const text = document.getElementById('emailText');
+    const pill = document.getElementById('emailPill');
+    const original = text.textContent;
+    text.textContent = '✓ Copied to clipboard!';
+    pill.style.borderColor = 'rgba(218,184,92,.7)';
+    pill.style.color = '#DAB85C';
+    pill.style.background = 'rgba(218,184,92,.08)';
+    setTimeout(() => {
+      text.textContent = original;
+      pill.style.borderColor = '';
+      pill.style.color = '';
+      pill.style.background = '';
+    }, 2500);
+  }).catch(() => {
+    window.location.href = 'mailto:support@lafariesmortimerllc.com';
+  });
+}
+
+/* ── PARTICLES ── */
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let W, H, pts = [];
@@ -370,17 +391,17 @@ class P{
 for(let i=0;i<120;i++) pts.push(new P());
 (function loop(){ ctx.clearRect(0,0,W,H); pts.forEach(p=>{p.update();p.draw()}); requestAnimationFrame(loop) })();
 
-/* SCROLL REVEAL */
+/* ── SCROLL REVEAL ── */
 const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting) e.target.classList.add('on')}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* SERVICE TAGS */
+/* ── SERVICE TAGS ── */
 function toggleTag(el, val){
   el.classList.toggle('selected');
   document.getElementById('topicField').value = [...document.querySelectorAll('.stag.selected')].map(t=>t.textContent.trim()).join(', ');
 }
 
-/* CARD MOUSE GLOW */
+/* ── CARD MOUSE GLOW ── */
 document.querySelectorAll('.info-card').forEach(card=>{
   card.addEventListener('mousemove', e=>{
     const r = card.getBoundingClientRect();
