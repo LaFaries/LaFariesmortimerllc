@@ -8,7 +8,7 @@
 <link rel="canonical" href="https://lafariesmortimerllc.com/about">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
@@ -48,7 +48,7 @@ header{
 .brand strong{font-family:var(--h);font-size:18px;color:#fff}
 .brand span{font-size:11px;color:rgba(255,255,255,.5);display:block}
 nav{display:flex;gap:14px;justify-content:center}
-nav a{padding:8px 14px;border-radius:999px;font-size:14px;color:rgba(255,255,255,.75);transition:all .2s}
+nav a{padding:8px 14px;border-radius:999px;font-size:13px;color:rgba(255,255,255,.75);transition:all .2s}
 nav a:hover{background:rgba(255,255,255,.08);color:#fff}
 nav a.active{background:rgba(218,184,92,.12);color:var(--gold)}
 .ctaTop{display:flex;gap:10px}
@@ -57,6 +57,57 @@ nav a.active{background:rgba(218,184,92,.12);color:var(--gold)}
 .btnGold:hover{filter:brightness(1.1)}
 .btnGhost{border:1px solid rgba(255,255,255,.3);color:#fff}
 .btnGhost:hover{background:rgba(255,255,255,.08)}
+
+/* ── HAMBURGER ── */
+.mobile-menu-btn{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  padding:6px;
+  margin-left:auto;
+}
+.mobile-menu-btn span{
+  display:block;
+  width:22px;height:2px;
+  background:#DAB85C;
+  transition:all 0.3s;
+}
+.mobile-menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-menu-btn.open span:nth-child(2){opacity:0}
+.mobile-menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE DRAWER ── */
+.mobile-drawer{
+  display:none;
+  position:fixed;
+  top:72px;left:0;right:0;
+  background:#0a0a0a;
+  border-bottom:1px solid rgba(218,184,92,0.15);
+  flex-direction:column;
+  z-index:9998;
+  padding:8px 0 20px;
+}
+.mobile-drawer a{
+  font-family:'Inter',sans-serif;
+  font-size:0.82rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(240,235,224,0.7);
+  padding:14px 28px;
+  border-bottom:1px solid rgba(218,184,92,0.06);
+  text-decoration:none;
+  display:block;
+}
+.mobile-drawer a:hover{color:#DAB85C;background:rgba(218,184,92,0.04)}
+.mobile-drawer .drawer-ctas{display:flex;gap:12px;padding:20px 28px 0;}
+.mobile-drawer .drawer-ctas a{
+  flex:1;text-align:center;
+  padding:12px;border-radius:999px;
+  font-size:0.72rem;letter-spacing:0.14em;font-weight:600;
+}
 
 /* ── HERO ── */
 .hero{
@@ -67,30 +118,19 @@ nav a.active{background:rgba(218,184,92,.12);color:var(--gold)}
     radial-gradient(600px 400px at 90% 60%,rgba(43,21,71,.25),transparent 60%),
     var(--dark);
 }
-
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   background:rgba(218,184,92,.1);border:1px solid rgba(218,184,92,.3);
   color:var(--gold);padding:7px 16px;border-radius:999px;
   font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:26px;
 }
-
-.hero h1{
-  font-family:var(--h);font-size:64px;line-height:1.0;
-  margin-bottom:24px;max-width:16ch;
-}
-
+.hero h1{font-family:var(--h);font-size:64px;line-height:1.0;margin-bottom:24px;max-width:16ch;}
 .hero h1 em{
   font-style:normal;
   background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-deep));
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-
-.hero-lead{
-  font-size:18px;color:var(--muted);max-width:62ch;
-  line-height:1.8;margin-bottom:48px;
-}
-
+.hero-lead{font-size:18px;color:var(--muted);max-width:62ch;line-height:1.8;margin-bottom:48px;}
 .hero-stats{
   display:grid;grid-template-columns:repeat(4,auto);
   gap:48px;width:fit-content;
@@ -98,184 +138,130 @@ nav a.active{background:rgba(218,184,92,.12);color:var(--gold)}
   background:rgba(255,255,255,.03);
   border:1px solid var(--line);border-radius:20px;
 }
-
 .stat-num{font-family:var(--h);font-size:42px;color:var(--gold);line-height:1}
 .stat-label{font-size:12px;color:var(--muted);letter-spacing:.08em;margin-top:5px}
 
 /* ── STORY ── */
-.story{
-  padding:100px 0;
-  background:linear-gradient(180deg,var(--dark),var(--charcoal));
-}
-
-.story-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:80px;
-  align-items:start;
-}
-
+.story{padding:100px 0;background:linear-gradient(180deg,var(--dark),var(--charcoal));}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
 .story-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-
-.story-title{
-  font-family:var(--h);font-size:46px;line-height:1.1;margin-bottom:28px;
-}
-
-.story-body{
-  font-size:16px;color:rgba(248,246,241,.78);line-height:1.85;
-}
-
+.story-title{font-family:var(--h);font-size:46px;line-height:1.1;margin-bottom:28px;}
+.story-body{font-size:16px;color:rgba(248,246,241,.78);line-height:1.85;}
 .story-body p{margin-bottom:20px}
 .story-body p:last-child{margin-bottom:0}
-
 .story-body strong{color:var(--gold);font-weight:500}
-
 .story-aside{padding-top:8px}
-
 .pull-quote{
-  padding:32px;
-  background:rgba(218,184,92,.06);
-  border-left:3px solid var(--gold);
-  border-radius:0 16px 16px 0;
-  margin-bottom:32px;
+  padding:32px;background:rgba(218,184,92,.06);
+  border-left:3px solid var(--gold);border-radius:0 16px 16px 0;margin-bottom:32px;
 }
-
-.pull-quote p{
-  font-family:var(--h);
-  font-size:24px;
-  line-height:1.45;
-  color:var(--ivory);
-}
-
-.pull-quote cite{
-  display:block;
-  margin-top:12px;
-  font-size:13px;
-  color:var(--gold);
-  font-style:normal;
-  letter-spacing:.08em;
-}
-
-.values-list{
-  display:flex;flex-direction:column;gap:16px;
-}
-
+.pull-quote p{font-family:var(--h);font-size:24px;line-height:1.45;color:var(--ivory);}
+.pull-quote cite{display:block;margin-top:12px;font-size:13px;color:var(--gold);font-style:normal;letter-spacing:.08em;}
+.values-list{display:flex;flex-direction:column;gap:16px;}
 .value-item{
   display:flex;gap:16px;align-items:flex-start;
-  padding:18px 20px;
-  background:rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  border-radius:14px;
-  transition:border-color .2s;
+  padding:18px 20px;background:rgba(255,255,255,.03);
+  border:1px solid var(--line);border-radius:14px;transition:border-color .2s;
 }
-
 .value-item:hover{border-color:rgba(218,184,92,.3)}
-
 .value-icon{
-  width:40px;height:40px;flex-shrink:0;
-  border-radius:10px;
-  background:rgba(218,184,92,.1);
-  border:1px solid rgba(218,184,92,.2);
+  width:40px;height:40px;flex-shrink:0;border-radius:10px;
+  background:rgba(218,184,92,.1);border:1px solid rgba(218,184,92,.2);
   display:flex;align-items:center;justify-content:center;
 }
-
 .value-text h4{font-size:15px;font-weight:500;color:var(--ivory);margin-bottom:4px}
 .value-text p{font-size:13px;color:var(--muted);line-height:1.5}
 
 /* ── LAAP ORIGIN ── */
 .laap-origin{
   padding:100px 0;
-  background:
-    radial-gradient(800px 400px at 50% 0%,rgba(218,184,92,.1),transparent 55%),
-    var(--dark);
+  background:radial-gradient(800px 400px at 50% 0%,rgba(218,184,92,.1),transparent 55%),var(--dark);
 }
-
-.origin-inner{
-  max-width:800px;margin:0 auto;text-align:center;
-}
-
+.origin-inner{max-width:800px;margin:0 auto;text-align:center;}
 .origin-inner .section-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .origin-inner h2{font-family:var(--h);font-size:48px;margin-bottom:20px;line-height:1.1}
 .origin-inner p{font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:20px}
 .origin-inner p strong{color:var(--ivory);font-weight:500}
-
-.laap-pillars{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:16px;margin-top:48px;
-}
-
+.laap-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
 .pillar{
-  background:rgba(218,184,92,.06);
-  border:1px solid var(--line);
-  border-radius:16px;
-  padding:24px 16px;
-  text-align:center;
-  transition:all .25s;
+  background:rgba(218,184,92,.06);border:1px solid var(--line);
+  border-radius:16px;padding:24px 16px;text-align:center;transition:all .25s;
 }
-
 .pillar:hover{background:rgba(218,184,92,.1);border-color:rgba(218,184,92,.35)}
-
-.pillar-letter{
-  font-family:var(--h);font-size:52px;color:var(--gold);line-height:1;margin-bottom:8px;
-}
-
+.pillar-letter{font-family:var(--h);font-size:52px;color:var(--gold);line-height:1;margin-bottom:8px;}
 .pillar-word{font-size:13px;font-weight:500;color:var(--ivory);margin-bottom:6px}
 .pillar-desc{font-size:12px;color:var(--muted);line-height:1.5}
 
 /* ── WHO WE SERVE ── */
-.serve-section{
-  padding:100px 0;
-  background:linear-gradient(180deg,var(--charcoal),var(--dark));
-}
-
+.serve-section{padding:100px 0;background:linear-gradient(180deg,var(--charcoal),var(--dark));}
 .serve-section .section-label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
 .serve-section h2{font-family:var(--h);font-size:46px;margin-bottom:16px}
 .serve-section .section-sub{color:var(--muted);font-size:16px;max-width:58ch;margin-bottom:48px}
-
 .serve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-
 .serve-card{
   background:linear-gradient(180deg,rgba(20,23,32,.9),rgba(10,11,14,.95));
-  border:1px solid var(--line);border-radius:22px;padding:28px;
-  transition:all .3s;
+  border:1px solid var(--line);border-radius:22px;padding:28px;transition:all .3s;
 }
-
-.serve-card:hover{
-  transform:translateY(-5px);
-  border-color:rgba(218,184,92,.35);
-  box-shadow:0 20px 60px rgba(0,0,0,.4);
-}
-
+.serve-card:hover{transform:translateY(-5px);border-color:rgba(218,184,92,.35);box-shadow:0 20px 60px rgba(0,0,0,.4);}
 .serve-icon{
   width:48px;height:48px;border-radius:12px;
   background:rgba(218,184,92,.08);border:1px solid rgba(218,184,92,.2);
   display:flex;align-items:center;justify-content:center;margin-bottom:18px;
 }
-
 .serve-card h3{font-family:var(--h);font-size:24px;color:#fff;margin-bottom:10px}
 .serve-card p{font-size:14px;color:var(--muted);line-height:1.65}
 
 /* ── CTA ── */
 .cta-strip{
-  padding:100px 0;
-  text-align:center;
-  background:
-    radial-gradient(900px 400px at 50% 50%,rgba(218,184,92,.12),transparent 60%),
-    var(--black);
+  padding:100px 0;text-align:center;
+  background:radial-gradient(900px 400px at 50% 50%,rgba(218,184,92,.12),transparent 60%),var(--black);
 }
-
 .cta-strip h2{font-family:var(--h);font-size:52px;margin-bottom:16px}
 .cta-strip p{color:var(--muted);font-size:17px;max-width:52ch;margin:0 auto 36px}
 .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* ── FOOTER ── */
-footer{
-  background:rgba(10,11,14,.95);border-top:1px solid var(--line);
-  padding:22px 0;text-align:center;font-size:12px;color:var(--muted);
+#lm-footer{
+  background:#080808;
+  border-top:1px solid rgba(218,184,92,0.15);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  color:#f0ebe0;
 }
-footer a{color:var(--gold)}
-footer a:hover{text-decoration:underline}
+.lm-footer-cols{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  max-width:1100px;
+  margin:0 auto;
+  padding:48px 48px 40px;
+  border-bottom:1px solid rgba(218,184,92,0.08);
+}
+.lm-footer-col h4{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.9rem;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:#DAB85C;margin-bottom:16px;
+}
+.lm-footer-col ul{list-style:none;padding:0;margin:0;}
+.lm-footer-col ul li{margin-bottom:11px;}
+.lm-footer-col ul li a{
+  font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:300;
+  color:rgba(240,235,224,0.45);text-decoration:none;transition:color 0.2s;
+}
+.lm-footer-col ul li a:hover{color:#DAB85C;}
+.lm-footer-bottom{
+  max-width:1100px;margin:0 auto;padding:20px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.lm-footer-copy{font-size:0.72rem;color:rgba(240,235,224,0.2);font-family:'Inter',sans-serif;letter-spacing:0.08em;}
+.lm-footer-legal{display:flex;gap:24px;}
+.lm-footer-legal a{
+  font-family:'Inter',sans-serif;font-size:0.62rem;letter-spacing:0.15em;
+  text-transform:uppercase;color:rgba(240,235,224,0.2);text-decoration:none;transition:color 0.2s;
+}
+.lm-footer-legal a:hover{color:rgba(218,184,92,0.6);}
 
+/* ── MOBILE ── */
 @media(max-width:980px){
   .hero h1{font-size:46px}
   .story-grid{grid-template-columns:1fr;gap:48px}
@@ -283,8 +269,14 @@ footer a:hover{text-decoration:underline}
   .serve-grid{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:repeat(2,auto);gap:28px}
   nav{display:none}
-  .nav{grid-template-columns:auto auto}
-  .ctaTop .btnGhost{display:none}
+  .ctaTop{display:none}
+  .mobile-menu-btn{display:flex}
+  .mobile-drawer.open{display:flex}
+  .lm-footer-cols{grid-template-columns:1fr 1fr;padding:36px 24px 28px;gap:28px;}
+  .lm-footer-bottom{flex-direction:column;gap:10px;text-align:center;padding:16px 24px;}
+}
+@media(max-width:560px){
+  .lm-footer-cols{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -302,19 +294,42 @@ footer a:hover{text-decoration:underline}
       </div>
     </a>
     <nav>
-      <a href="/index.html">Home</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/services.html">Services</a>
-      <a href="/annual-maintenance.html">Maintenance</a>
-      <a href="/about.html" class="active">About</a>
-      <a href="/contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="laap.html">LAAP Suite™</a>
+      <a href="services.html">Services</a>
+      <a href="apps.html">Apps</a>
+      <a href="annual-maintenance.html">Maintenance</a>
+      <a href="compare.html">Compare</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="ctaTop">
-      <a class="btn btnGhost" href="/free.html">Free Tools</a>
-      <a class="btn btnGold" href="/contact.html">Book a Call</a>
+      <a class="btn btnGhost" href="free.html">Free Tools</a>
+      <a class="btn btnGold" href="contact.html">Book a Call</a>
     </div>
+    <button class="mobile-menu-btn" id="mob-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mob-drawer">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="laap.html">LAAP Suite™</a>
+  <a href="services.html">Services</a>
+  <a href="apps.html">Apps</a>
+  <a href="annual-maintenance.html">Maintenance</a>
+  <a href="compare.html">Compare</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <div class="drawer-ctas">
+    <a class="btnGhost" href="free.html">Free Tools</a>
+    <a class="btnGold" href="contact.html">Book a Call</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -328,22 +343,10 @@ footer a:hover{text-decoration:underline}
       we serve, without the corporate price tag.
     </p>
     <div class="hero-stats">
-      <div>
-        <div class="stat-num">39</div>
-        <div class="stat-label">Years of experience</div>
-      </div>
-      <div>
-        <div class="stat-num">50</div>
-        <div class="stat-label">States served</div>
-      </div>
-      <div>
-        <div class="stat-num">3</div>
-        <div class="stat-label">Core service areas</div>
-      </div>
-      <div>
-        <div class="stat-num">1</div>
-        <div class="stat-label">Mission — your success</div>
-      </div>
+      <div><div class="stat-num">39</div><div class="stat-label">Years of experience</div></div>
+      <div><div class="stat-num">50</div><div class="stat-label">States served</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">Core service areas</div></div>
+      <div><div class="stat-num">1</div><div class="stat-label">Mission — your success</div></div>
     </div>
   </div>
 </section>
@@ -372,37 +375,25 @@ footer a:hover{text-decoration:underline}
             <div class="value-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <div class="value-text">
-              <h4>Integrity first</h4>
-              <p>We do what we say, say what we mean, and protect your information like it's our own.</p>
-            </div>
+            <div class="value-text"><h4>Integrity first</h4><p>We do what we say, say what we mean, and protect your information like it's our own.</p></div>
           </div>
           <div class="value-item">
             <div class="value-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
             </div>
-            <div class="value-text">
-              <h4>People over profit</h4>
-              <p>Our free resources exist because not everyone can afford to pay — and they still deserve access to clear information.</p>
-            </div>
+            <div class="value-text"><h4>People over profit</h4><p>Our free resources exist because not everyone can afford to pay — and they still deserve access to clear information.</p></div>
           </div>
           <div class="value-item">
             <div class="value-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
-            <div class="value-text">
-              <h4>Built for the long term</h4>
-              <p>We don't just help you start — we stay with you through formation, compliance, and every year that follows.</p>
-            </div>
+            <div class="value-text"><h4>Built for the long term</h4><p>We don't just help you start — we stay with you through formation, compliance, and every year that follows.</p></div>
           </div>
           <div class="value-item">
             <div class="value-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <div class="value-text">
-              <h4>Community-rooted</h4>
-              <p>From Miami to ministries across the country — we understand the communities we serve because we are part of them.</p>
-            </div>
+            <div class="value-text"><h4>Community-rooted</h4><p>From Miami to ministries across the country — we understand the communities we serve because we are part of them.</p></div>
           </div>
         </div>
       </div>
@@ -416,43 +407,14 @@ footer a:hover{text-decoration:underline}
     <div class="origin-inner">
       <div class="section-label">The LAAP Suite™ story</div>
       <h2>One system to replace the chaos</h2>
-      <p>
-        After years of watching businesses struggle with the same preventable problems —
-        missed annual report deadlines, disorganized formation documents, compliance gaps that
-        appeared years after launch — it became clear that what was needed wasn't just
-        another tool. What was needed was a <strong>complete operating system</strong>.
-      </p>
-      <p>
-        The LAAP Suite™ was built from the ground up to do exactly that. It brings together
-        business formation, documentation, compliance tracking, annual maintenance, and
-        administrative automation into one guided system — backed by nearly four decades
-        of experience in what actually causes businesses to succeed or fail.
-      </p>
-      <p>
-        LAAP isn't software. It's a structure. And every business deserves one.
-      </p>
-
+      <p>After years of watching businesses struggle with the same preventable problems — missed annual report deadlines, disorganized formation documents, compliance gaps that appeared years after launch — it became clear that what was needed wasn't just another tool. What was needed was a <strong>complete operating system</strong>.</p>
+      <p>The LAAP Suite™ was built from the ground up to do exactly that. It brings together business formation, documentation, compliance tracking, annual maintenance, and administrative automation into one guided system — backed by nearly four decades of experience in what actually causes businesses to succeed or fail.</p>
+      <p>LAAP isn't software. It's a structure. And every business deserves one.</p>
       <div class="laap-pillars">
-        <div class="pillar">
-          <div class="pillar-letter">L</div>
-          <div class="pillar-word">Legacy</div>
-          <div class="pillar-desc">Build something that lasts beyond today</div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-letter">A</div>
-          <div class="pillar-word">Administration</div>
-          <div class="pillar-desc">Structure that keeps everything in order</div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-letter">A</div>
-          <div class="pillar-word">Automation</div>
-          <div class="pillar-desc">Systems that work while you focus on growth</div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-letter">P</div>
-          <div class="pillar-word">Protection</div>
-          <div class="pillar-desc">Compliance and coverage that shields your work</div>
-        </div>
+        <div class="pillar"><div class="pillar-letter">L</div><div class="pillar-word">Legacy</div><div class="pillar-desc">Build something that lasts beyond today</div></div>
+        <div class="pillar"><div class="pillar-letter">A</div><div class="pillar-word">Administration</div><div class="pillar-desc">Structure that keeps everything in order</div></div>
+        <div class="pillar"><div class="pillar-letter">A</div><div class="pillar-word">Automation</div><div class="pillar-desc">Systems that work while you focus on growth</div></div>
+        <div class="pillar"><div class="pillar-letter">P</div><div class="pillar-word">Protection</div><div class="pillar-desc">Compliance and coverage that shields your work</div></div>
       </div>
     </div>
   </div>
@@ -464,26 +426,19 @@ footer a:hover{text-decoration:underline}
     <div class="section-label">Who we serve</div>
     <h2>Every client we serve has something worth protecting.</h2>
     <p class="section-sub">We built our services around the people who need them most — not the ones who already have everything figured out.</p>
-
     <div class="serve-grid">
       <div class="serve-card">
-        <div class="serve-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        </div>
+        <div class="serve-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
         <h3>Small businesses</h3>
         <p>LLCs, S-corps, sole proprietors, and startups who need a real administrative foundation — not just a filing number and a prayer that the paperwork takes care of itself.</p>
       </div>
       <div class="serve-card">
-        <div class="serve-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
+        <div class="serve-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
         <h3>Ministries & churches</h3>
         <p>Faith-based organizations that deserve the same level of professional administrative support as any nonprofit — from formation and 501(c)(3) guidance to ongoing compliance and member management tools.</p>
       </div>
       <div class="serve-card">
-        <div class="serve-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
+        <div class="serve-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <h3>Entrepreneurs</h3>
         <p>First-time founders and solo operators who are building something real and need a trusted partner to handle the compliance, documentation, and administrative backbone so they can focus on growth.</p>
       </div>
@@ -505,12 +460,57 @@ footer a:hover{text-decoration:underline}
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="wrap">
-    © 2026 LaFaries Mortimer LLC &nbsp;•&nbsp; Miami, FL &nbsp;•&nbsp; Virtual Support &nbsp;•&nbsp;
-    <a href="mailto:support@lafariesmortimerllc.com">support@lafariesmortimerllc.com</a>
+<footer id="lm-footer">
+  <div class="lm-footer-cols">
+    <div class="lm-footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="lm-footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="laap.html">LAAP Suite™</a></li>
+        <li><a href="annual-maintenance.html">Annual Maintenance</a></li>
+        <li><a href="apps.html">Apps & Tools</a></li>
+        <li><a href="free.html">Free Tools</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="lm-footer-col">
+      <h4>Get Started</h4>
+      <ul>
+        <li><a href="contact.html">Book a Free Call</a></li>
+        <li><a href="free.html">Start with Free Tools</a></li>
+        <li><a href="laap.html">Explore LAAP Suite™</a></li>
+        <li><a href="/review">Leave a Review</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lm-footer-bottom">
+    <p class="lm-footer-copy">© 2026 LaFaries Mortimer LLC · All rights reserved.</p>
+    <div class="lm-footer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:support@lafariesmortimerllc.com">Support</a>
+    </div>
   </div>
 </footer>
+
+<script>
+  const mobBtn = document.getElementById('mob-btn');
+  const mobDrawer = document.getElementById('mob-drawer');
+  mobBtn.addEventListener('click', () => {
+    mobBtn.classList.toggle('open');
+    mobDrawer.classList.toggle('open');
+  });
+</script>
 
 <script src="/assets/js/widget.js"></script>
 </body>
