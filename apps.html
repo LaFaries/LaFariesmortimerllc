@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://lafariesmortimerllc.com/apps.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --ivory:#F8F6F1;
@@ -24,22 +24,37 @@
     body{margin:0;font-family:var(--b);background:radial-gradient(900px 500px at 50% -200px,rgba(218,184,92,.35),transparent 60%),linear-gradient(180deg,#0b0c0f,var(--charcoal));color:var(--ivory)}
     a{text-decoration:none;color:inherit}
 
-    /* NAV */
-    header.topbar{position:sticky;top:0;z-index:50;background:rgba(15,17,21,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:16px 24px;max-width:1280px;margin:0 auto}
+    /* ── HEADER ── */
+    header.topbar{position:sticky;top:0;z-index:100;background:rgba(15,17,21,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:14px 24px;max-width:1280px;margin:0 auto}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand-logo{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55)}
+    .brand-logo{width:44px;height:44px;border-radius:50%;padding:3px;background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55)}
     .brand strong{font-family:var(--h);font-size:18px;color:#fff}
     .brand span{font-size:11px;color:rgba(255,255,255,.6);display:block;letter-spacing:.08em}
-    nav{display:flex;justify-content:center;gap:20px}
-    .nav-pill{padding:8px 14px;border-radius:999px;font-size:14px;color:rgba(255,255,255,.8);transition:all .2s ease}
-    .nav-pill:hover{background:rgba(255,255,255,.08);box-shadow:0 0 18px rgba(218,184,92,.35);color:#fff}
+    nav{display:flex;justify-content:center;gap:8px}
+    nav a{padding:7px 12px;border-radius:999px;font-size:13px;color:rgba(255,255,255,.75);transition:all .2s}
+    nav a:hover{background:rgba(255,255,255,.08);color:#fff}
+    nav a.active{background:rgba(218,184,92,.12);color:var(--gold)}
     .ctaTop{display:flex;gap:10px}
-    .btn{padding:10px 16px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+    .btn{padding:10px 16px;border-radius:999px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:all .2s}
     .btnGold{background:var(--gold);color:#1a1a1a}
     .btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
 
-    /* LAYOUT */
+    /* ── HAMBURGER ── */
+    .mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;}
+    .mobile-menu-btn span{display:block;width:22px;height:2px;background:#DAB85C;transition:all 0.3s;}
+    .mobile-menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .mobile-menu-btn.open span:nth-child(2){opacity:0}
+    .mobile-menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    /* ── MOBILE DRAWER ── */
+    .mobile-drawer{display:none;position:fixed;top:72px;left:0;right:0;background:#0a0a0a;border-bottom:1px solid rgba(218,184,92,0.15);flex-direction:column;z-index:9998;padding:8px 0 20px;}
+    .mobile-drawer a{font-family:'Inter',sans-serif;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,235,224,0.7);padding:14px 28px;border-bottom:1px solid rgba(218,184,92,0.06);text-decoration:none;display:block;}
+    .mobile-drawer a:hover{color:#DAB85C;background:rgba(218,184,92,0.04)}
+    .mobile-drawer .drawer-ctas{display:flex;gap:12px;padding:20px 28px 0;}
+    .mobile-drawer .drawer-ctas a{flex:1;text-align:center;padding:12px;border-radius:999px;font-size:0.72rem;letter-spacing:0.14em;font-weight:600;}
+
+    /* ── LAYOUT ── */
     .wrap{max-width:1200px;margin:0 auto;padding:90px 24px}
     .hero{text-align:center;margin-bottom:70px;margin-top:40px}
     .hero h1{font-family:var(--h);font-size:56px;margin:0 0 14px;color:#fff}
@@ -47,7 +62,7 @@
     .section-title{font-family:var(--h);font-size:42px;color:#fff;margin:80px 0 12px;text-align:center}
     .section-sub{text-align:center;color:rgba(255,255,255,.45);font-size:15px;margin-bottom:40px;letter-spacing:.05em}
 
-    /* STANDARD CARDS */
+    /* ── CARDS ── */
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:36px;margin-bottom:60px}
     .card{background:linear-gradient(180deg,#15161a,#0e0f13);border-radius:28px;padding:36px;border:1px solid var(--border);box-shadow:0 30px 100px rgba(0,0,0,.7);position:relative;transition:all .3s ease}
     .card:hover{transform:translateY(-6px);box-shadow:var(--glow),0 40px 120px rgba(0,0,0,.85);border-color:rgba(218,184,92,.45)}
@@ -68,25 +83,19 @@
     .notice{background:rgba(218,184,92,.08);border:1px solid rgba(218,184,92,.25);border-radius:16px;padding:20px;margin-top:24px;font-size:14px;line-height:1.6}
     .notice strong{color:var(--gold)}
 
-    /* ── PORTFOLIO SHOWCASE ── */
+    /* ── PORTFOLIO ── */
     .portfolio-section{margin:0 0 80px}
     .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-
     .pcard{background:linear-gradient(180deg,#15161a,#0e0f13);border-radius:24px;border:1px solid var(--border);overflow:hidden;transition:all .35s ease;position:relative}
     .pcard:hover{transform:translateY(-5px);box-shadow:var(--glow),0 40px 120px rgba(0,0,0,.85);border-color:rgba(218,184,92,.4)}
-
-    /* iframe embed */
     .pcard-embed{width:100%;height:320px;position:relative;overflow:hidden;background:#0a0a0c}
     .pcard-embed iframe{width:160%;height:160%;border:none;transform:scale(0.625);transform-origin:top left;pointer-events:none}
     .pcard-embed-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,#15161a 100%);z-index:1}
     .pcard-embed-click{position:absolute;inset:0;z-index:2;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
     .pcard-embed:hover .pcard-embed-click{opacity:1}
     .pcard-embed-click span{background:rgba(218,184,92,.9);color:#1a1a1a;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:10px 24px;border-radius:999px}
-
-    /* youtube embed */
     .pcard-video{width:100%;height:300px;position:relative;overflow:hidden;background:#000}
     .pcard-video iframe{width:100%;height:100%;border:none}
-
     .pcard-body{padding:24px 28px 28px}
     .pcard-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
     .pcard-label{font-family:var(--h);font-size:22px;font-weight:500;color:#fff}
@@ -100,7 +109,7 @@
     .pcard-btn-ghost:hover{background:rgba(255,255,255,.08);color:#fff}
     .pcard-btn svg{flex-shrink:0}
 
-    /* FitVitalize — app store card */
+    /* ── APP CARD ── */
     .app-card{background:linear-gradient(135deg,#15161a 0%,#0e0f13 60%,#12141a 100%);border-radius:24px;border:1px solid var(--border);overflow:hidden;transition:all .35s ease}
     .app-card:hover{transform:translateY(-5px);box-shadow:var(--glow),0 40px 120px rgba(0,0,0,.85);border-color:rgba(218,184,92,.4)}
     .app-card-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
@@ -112,14 +121,23 @@
     .app-status{display:inline-flex;align-items:center;gap:8px;background:rgba(110,232,122,.08);border:1px solid rgba(110,232,122,.2);color:#6ee87a;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px;width:fit-content}
     .app-status::before{content:'';width:7px;height:7px;border-radius:50%;background:#6ee87a;box-shadow:0 0 8px #6ee87a;animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-    .app-store-btn{display:inline-flex;align-items:center;gap:10px;background:#fff;color:#000;padding:12px 22px;border-radius:14px;font-size:13px;font-weight:600;transition:all .2s;width:fit-content;margin-top:4px}
-    .app-store-btn:hover{transform:scale(1.03);box-shadow:0 8px 24px rgba(255,255,255,.15)}
-    .app-store-btn svg{flex-shrink:0}
-    .app-store-btn .asl{display:flex;flex-direction:column;line-height:1.2}
-    .app-store-btn .asl span:first-child{font-size:10px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;opacity:.7}
-    .app-store-btn .asl span:last-child{font-size:16px;font-weight:700}
     .coming-soon-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(218,184,92,.12);border:1px solid rgba(218,184,92,.3);color:var(--gold);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border-radius:999px;width:fit-content}
 
+    /* ── FOOTER ── */
+    #lm-footer{background:#080808;border-top:1px solid rgba(218,184,92,0.15);font-family:'Inter',sans-serif;font-weight:300;color:#f0ebe0;}
+    .lm-footer-cols{display:grid;grid-template-columns:repeat(3,1fr);max-width:1100px;margin:0 auto;padding:48px 48px 40px;border-bottom:1px solid rgba(218,184,92,0.08);}
+    .lm-footer-col h4{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#DAB85C;margin-bottom:16px;}
+    .lm-footer-col ul{list-style:none;padding:0;margin:0;}
+    .lm-footer-col ul li{margin-bottom:11px;}
+    .lm-footer-col ul li a{font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:300;color:rgba(240,235,224,0.45);text-decoration:none;transition:color 0.2s;}
+    .lm-footer-col ul li a:hover{color:#DAB85C;}
+    .lm-footer-bottom{max-width:1100px;margin:0 auto;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;}
+    .lm-footer-copy{font-size:0.72rem;color:rgba(240,235,224,0.2);font-family:'Inter',sans-serif;letter-spacing:0.08em;}
+    .lm-footer-legal{display:flex;gap:24px;}
+    .lm-footer-legal a{font-family:'Inter',sans-serif;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.2);text-decoration:none;transition:color 0.2s;}
+    .lm-footer-legal a:hover{color:rgba(218,184,92,0.6);}
+
+    /* ── MOBILE ── */
     @media(max-width:900px){
       .portfolio-grid{grid-template-columns:1fr}
       .app-card-inner{grid-template-columns:1fr}
@@ -129,37 +147,68 @@
     @media(max-width:768px){
       .hero h1{font-size:42px}
       nav{display:none}
+      .ctaTop{display:none}
+      .mobile-menu-btn{display:flex}
+      .mobile-drawer.open{display:flex}
       .grid{grid-template-columns:1fr}
-      .ctaTop{flex-direction:column;width:100%}
-      .btn{width:100%;text-align:center}
       .pcard-embed{height:220px}
+      .lm-footer-cols{grid-template-columns:1fr 1fr;padding:36px 24px 28px;gap:28px;}
+      .lm-footer-bottom{flex-direction:column;gap:10px;text-align:center;padding:16px 24px;}
+    }
+    @media(max-width:560px){
+      .lm-footer-cols{grid-template-columns:1fr;}
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="topbar">
     <div class="nav">
-      <div class="brand">
-        <div class="brand-logo"></div>
+      <a class="brand" href="/">
+        <img src="/assets/img/logo-2026.png" class="brand-logo" alt="LaFaries Mortimer LLC">
         <div>
           <strong>LaFaries Mortimer LLC</strong>
-          <span>Innovation • Legacy • Automation</span>
+          <span>Administrative & IT Services</span>
         </div>
-      </div>
+      </a>
       <nav>
-        <a href="index.html" class="nav-pill">Home</a>
-        <a href="laap.html" class="nav-pill">LAAP Suite</a>
-        <a href="apps.html" class="nav-pill" style="background:rgba(218,184,92,.15);color:var(--gold)">Apps</a>
-        <a href="pricing.html" class="nav-pill">Pricing</a>
-        <a href="contact.html" class="nav-pill">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="laap.html">LAAP Suite™</a>
+        <a href="services.html">Services</a>
+        <a href="apps.html" class="active">Apps</a>
+        <a href="annual-maintenance.html">Maintenance</a>
+        <a href="compare.html">Compare</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="ctaTop">
-        <a href="contact.html" class="btn btnGhost">Contact</a>
-        <a href="https://scintillating-fairy.netlify.app" class="btn btnGold">Get Started</a>
+        <a href="free.html" class="btn btnGhost">Free Tools</a>
+        <a href="contact.html" class="btn btnGold">Book a Call</a>
       </div>
+      <button class="mobile-menu-btn" id="mob-btn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mob-drawer">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="laap.html">LAAP Suite™</a>
+    <a href="services.html">Services</a>
+    <a href="apps.html">Apps</a>
+    <a href="annual-maintenance.html">Maintenance</a>
+    <a href="compare.html">Compare</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <div class="drawer-ctas">
+      <a class="btnGhost" href="free.html">Free Tools</a>
+      <a class="btnGold" href="contact.html">Book a Call</a>
+    </div>
+  </div>
 
   <div class="wrap">
 
@@ -169,25 +218,17 @@
       <p>A growing ecosystem of intelligent tools designed for legacy planning, business operations, and automation. Download standalone applications or access integrated tools directly in LAAP Builder.</p>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         FEATURED BUILDS — PORTFOLIO SHOWCASE
-    ══════════════════════════════════════════ -->
+    <!-- FEATURED BUILDS -->
     <h2 class="section-title">Featured Builds</h2>
     <p class="section-sub">Live sites and applications built by LaFaries Mortimer LLC</p>
 
     <div class="portfolio-section">
       <div class="portfolio-grid">
 
-        <!-- STURRUP-MINNS-ROLLE — YouTube embed -->
         <div class="pcard">
           <span class="badge">Featured Build</span>
           <div class="pcard-video">
-            <iframe
-              src="https://www.youtube.com/embed/Yvgd9p58H-U?rel=0&modestbranding=1&showinfo=0"
-              title="Sturrup-Minns-Rolle Legacy Site Demo"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+            <iframe src="https://www.youtube.com/embed/Yvgd9p58H-U?rel=0&modestbranding=1&showinfo=0" title="Sturrup-Minns-Rolle Legacy Site Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="pcard-body">
             <div class="pcard-meta">
@@ -204,7 +245,6 @@
           </div>
         </div>
 
-        <!-- ZAGODDESS — iframe embed + click through -->
         <div class="pcard">
           <span class="badge badge-green">Live Site</span>
           <div class="pcard-embed">
@@ -229,7 +269,6 @@
           </div>
         </div>
 
-        <!-- LAFARIES FAMILY ADVENTURES — direct link card -->
         <div class="pcard">
           <span class="badge badge-blue">Live Site</span>
           <div style="height:300px;background:linear-gradient(135deg,#0a1628 0%,#0f2040 40%,#1a3a5c 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:32px;text-align:center;position:relative;overflow:hidden">
@@ -241,7 +280,7 @@
               <div style="font-family:var(--h);font-size:22px;color:#fff;margin-bottom:6px">LaFaries Family Adventures</div>
               <div style="font-size:13px;color:rgba(255,255,255,.45);letter-spacing:.06em">lafariesfamilyadv.org</div>
             </div>
-            <a href="https://lafariesfamilyadv.org/" target="_blank" style="position:relative;z-index:1;background:rgba(218,184,92,.15);border:1px solid rgba(218,184,92,.35);color:var(--gold);padding:10px 24px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all .2s;text-decoration:none" onmouseover="this.style.background='rgba(218,184,92,.25)'" onmouseout="this.style.background='rgba(218,184,92,.15)'">Preview Site ↗</a>
+            <a href="https://lafariesfamilyadv.org/" target="_blank" style="position:relative;z-index:1;background:rgba(218,184,92,.15);border:1px solid rgba(218,184,92,.35);color:var(--gold);padding:10px 24px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all .2s;text-decoration:none">Preview Site ↗</a>
           </div>
           <div class="pcard-body">
             <div class="pcard-meta">
@@ -261,21 +300,14 @@
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         FITVITALIZE PRO — APP SHOWCASE
-    ══════════════════════════════════════════ -->
+    <!-- MOBILE APPLICATION -->
     <h2 class="section-title">Mobile Application</h2>
     <p class="section-sub">Built and developed by LaFaries Mortimer LLC</p>
 
     <div class="app-card" style="margin-bottom:80px">
       <div class="app-card-inner">
         <div class="app-video">
-          <iframe
-            src="https://www.youtube.com/embed/HmIDMgqVMXU?rel=0&modestbranding=1&showinfo=0"
-            title="FitVitalize Pro App Demo"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://www.youtube.com/embed/HmIDMgqVMXU?rel=0&modestbranding=1&showinfo=0" title="FitVitalize Pro App Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="app-info">
           <div class="app-status">Live on App Store</div>
@@ -290,9 +322,7 @@
       </div>
     </div>
 
-    <!-- ══════════════════════════════════════════
-         EXISTING TOOLS SECTIONS
-    ══════════════════════════════════════════ -->
+    <!-- LEGACY & FAMILY TOOLS -->
     <h2 class="section-title">Legacy &amp; Family Tools</h2>
     <div class="grid">
       <div class="card">
@@ -310,12 +340,11 @@
         </div>
         <a href="legacy-family-tools-app.html" download class="cta">Download App</a>
         <a href="legacy-tools-installation-guide.md" download class="cta cta-secondary">Installation Guide</a>
-        <div class="notice">
-          <strong>🔒 Privacy First:</strong> All data stays on your device. Nothing is uploaded. Works offline. Download once, use forever.
-        </div>
+        <div class="notice"><strong>🔒 Privacy First:</strong> All data stays on your device. Nothing is uploaded. Works offline. Download once, use forever.</div>
       </div>
     </div>
 
+    <!-- LAAP BUILDER TOOLS -->
     <h2 class="section-title">LAAP Builder Tools</h2>
     <div class="grid">
       <div class="card">
@@ -351,6 +380,7 @@
       </div>
     </div>
 
+    <!-- TUTORIALS -->
     <h2 class="section-title">Tutorials &amp; Resources</h2>
     <div class="grid">
       <div class="card">
@@ -391,6 +421,60 @@
     </div>
 
   </div>
+
+  <!-- FOOTER -->
+  <footer id="lm-footer">
+    <div class="lm-footer-cols">
+      <div class="lm-footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="compare.html">Compare</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="lm-footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="laap.html">LAAP Suite™</a></li>
+          <li><a href="annual-maintenance.html">Annual Maintenance</a></li>
+          <li><a href="apps.html">Apps & Tools</a></li>
+          <li><a href="free.html">Free Tools</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="lm-footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="contact.html">Book a Free Call</a></li>
+          <li><a href="free.html">Start with Free Tools</a></li>
+          <li><a href="laap.html">Explore LAAP Suite™</a></li>
+          <li><a href="/review">Leave a Review</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lm-footer-bottom">
+      <p class="lm-footer-copy">© 2026 LaFaries Mortimer LLC · All rights reserved.</p>
+      <div class="lm-footer-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:support@lafariesmortimerllc.com">Support</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const mobBtn = document.getElementById('mob-btn');
+    const mobDrawer = document.getElementById('mob-drawer');
+    mobBtn.addEventListener('click', () => {
+      mobBtn.classList.toggle('open');
+      mobDrawer.classList.toggle('open');
+    });
+  </script>
+
   <script src="/assets/js/widget.js"></script>
 </body>
 </html>
