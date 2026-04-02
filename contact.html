@@ -3,25 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | LaFaries Mortimer LLC</title>
+<title>Book a Free Consultation | LaFaries Mortimer LLC</title>
+<meta name="description" content="Ready to get your business organized? Book a free consultation with LaFaries Mortimer LLC. We'll point you in the right direction — whether you need LLC formation, compliance help, or a complete business operating system. No pressure, no pitch.">
 <link rel="canonical" href="https://lafariesmortimerllc.com/contact.html">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --gold:#DAB85C;
-  --gold-light:#f0d98a;
-  --gold-deep:#b79a45;
-  --black:#05060a;
-  --dark:#0a0c12;
-  --panel:#0f1219;
-  --panel2:#141824;
-  --border:rgba(218,184,92,.14);
-  --border-hover:rgba(218,184,92,.35);
-  --text:#F8F6F1;
-  --muted:rgba(248,246,241,.5);
-  --h:"Cormorant Garamond",serif;
-  --b:"Inter",sans-serif;
+  --gold:#DAB85C;--gold-light:#f0d98a;--gold-deep:#b79a45;
+  --black:#05060a;--dark:#0a0c12;--panel:#0f1219;--panel2:#141824;
+  --border:rgba(218,184,92,.14);--border-hover:rgba(218,184,92,.35);
+  --text:#F8F6F1;--muted:rgba(248,246,241,.5);
+  --h:"Cormorant Garamond",serif;--b:"Inter",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -29,14 +22,9 @@ body{font-family:var(--b);background:var(--black);color:var(--text);min-height:1
 a{text-decoration:none;color:inherit}
 
 #particles{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.55}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;}
 
-body::before{
-  content:"";position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:0;
-}
-
-/* HEADER */
+/* ── HEADER ── */
 header{position:sticky;top:0;z-index:200;background:rgba(5,6,10,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;padding:14px 36px;max-width:1360px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px}
@@ -44,17 +32,31 @@ header{position:sticky;top:0;z-index:200;background:rgba(5,6,10,.92);backdrop-fi
 .brand strong{font-family:var(--h);font-size:18px;color:#fff}
 .brand span{font-size:10px;color:var(--muted);display:block;letter-spacing:.14em;text-transform:uppercase}
 nav{display:flex;justify-content:center;gap:4px}
-nav a{padding:8px 16px;border-radius:999px;font-size:13px;color:rgba(255,255,255,.6);transition:all .2s}
+nav a{padding:7px 12px;border-radius:999px;font-size:13px;color:rgba(255,255,255,.6);transition:all .2s}
 nav a:hover{background:rgba(255,255,255,.06);color:#fff}
 nav a.active{background:rgba(218,184,92,.1);color:var(--gold);border:1px solid rgba(218,184,92,.2)}
 .ctaTop{display:flex;gap:10px}
-.btn{padding:10px 20px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all .22s;cursor:pointer;border:none}
+.btn{padding:10px 20px;border-radius:999px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:all .22s;cursor:pointer;border:none;font-family:var(--b);}
 .btnGold{background:linear-gradient(135deg,var(--gold),var(--gold-light),var(--gold));color:#1a1a1a;box-shadow:0 4px 16px rgba(218,184,92,.28)}
 .btnGold:hover{box-shadow:0 6px 26px rgba(218,184,92,.5);transform:translateY(-1px)}
 .btnGhost{border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75)}
 .btnGhost:hover{border-color:var(--gold);color:var(--gold)}
 
-/* HERO */
+/* ── HAMBURGER ── */
+.mobile-menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto;}
+.mobile-menu-btn span{display:block;width:22px;height:2px;background:#DAB85C;transition:all 0.3s;}
+.mobile-menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-menu-btn.open span:nth-child(2){opacity:0}
+.mobile-menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ── MOBILE DRAWER ── */
+.mobile-drawer{display:none;position:fixed;top:72px;left:0;right:0;background:#0a0a0a;border-bottom:1px solid rgba(218,184,92,0.15);flex-direction:column;z-index:9998;padding:8px 0 20px;}
+.mobile-drawer a{font-family:'Inter',sans-serif;font-size:0.82rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,235,224,0.7);padding:14px 28px;border-bottom:1px solid rgba(218,184,92,0.06);text-decoration:none;display:block;}
+.mobile-drawer a:hover{color:#DAB85C;background:rgba(218,184,92,0.04)}
+.mobile-drawer .drawer-ctas{display:flex;gap:12px;padding:20px 28px 0;}
+.mobile-drawer .drawer-ctas a{flex:1;text-align:center;padding:12px;border-radius:999px;font-size:0.72rem;letter-spacing:0.14em;font-weight:600;}
+
+/* ── HERO ── */
 .hero{position:relative;z-index:1;padding:130px 36px 80px;text-align:center;overflow:hidden}
 .hero::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:50%;height:1px;background:linear-gradient(90deg,transparent,rgba(218,184,92,.6),transparent)}
 .hero-bg-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--h);font-size:260px;font-weight:700;color:rgba(218,184,92,.025);letter-spacing:-.04em;white-space:nowrap;pointer-events:none;line-height:1}
@@ -69,12 +71,12 @@ nav a.active{background:rgba(218,184,92,.1);color:var(--gold);border:1px solid r
 .method:hover{border-color:var(--border-hover);color:var(--gold);background:rgba(218,184,92,.05);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
 .method-icon{width:34px;height:34px;border-radius:50%;background:rgba(218,184,92,.08);border:1px solid rgba(218,184,92,.18);display:flex;align-items:center;justify-content:center;font-size:15px}
 
-/* DIVIDER */
+/* ── DIVIDER ── */
 .section-divider{position:relative;z-index:1;height:100px;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .divider-line{position:absolute;width:100%;height:1px;background:linear-gradient(90deg,transparent 0%,var(--border) 30%,var(--border) 70%,transparent 100%)}
 .divider-diamond{position:relative;z-index:2;width:12px;height:12px;background:var(--gold);transform:rotate(45deg);box-shadow:0 0 20px rgba(218,184,92,.6),0 0 40px rgba(218,184,92,.3)}
 
-/* MAIN GRID */
+/* ── MAIN GRID ── */
 .page-grid{display:grid;grid-template-columns:400px 1fr;gap:28px;max-width:1280px;margin:0 auto;padding:0 36px 120px;position:relative;z-index:1}
 .info-col{display:flex;flex-direction:column;gap:20px}
 
@@ -135,12 +137,9 @@ nav a.active{background:rgba(218,184,92,.1);color:var(--gold);border:1px solid r
 .field input::placeholder,.field textarea::placeholder{color:rgba(248,246,241,.18)}
 .field textarea{min-height:140px;resize:vertical}
 .field select option{background:var(--dark);color:var(--text)}
-
-/* SERVICE TAGS */
 .service-tags{display:flex;flex-wrap:wrap;gap:8px;grid-column:1/-1}
 .stag{padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s;font-family:var(--b)}
 .stag:hover,.stag.selected{border-color:rgba(218,184,92,.4);background:rgba(218,184,92,.07);color:var(--gold)}
-
 .submit-row{margin-top:30px;display:flex;align-items:center;gap:18px}
 .submit-btn{flex:1;padding:17px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 50%,var(--gold) 100%);background-size:200% auto;color:#1a1a1a;font-family:var(--b);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:all .28s;box-shadow:0 8px 32px rgba(218,184,92,.32)}
 .submit-btn:hover{background-position:right center;box-shadow:0 14px 44px rgba(218,184,92,.55);transform:translateY(-2px)}
@@ -154,22 +153,49 @@ nav a.active{background:rgba(218,184,92,.1);color:var(--gold);border:1px solid r
 .band-text span{color:var(--gold);font-style:italic}
 .band-actions{display:flex;gap:12px;flex-wrap:wrap}
 
-/* FOOTER */
-footer{position:relative;z-index:1;background:rgba(5,6,10,.95);border-top:1px solid var(--border);padding:22px 36px;text-align:center;font-size:12px;color:var(--muted)}
-footer a{color:var(--gold);font-weight:600}
-footer a:hover{text-decoration:underline}
+/* ── FOOTER ── */
+#lm-footer{background:#080808;border-top:1px solid rgba(218,184,92,0.15);font-family:'Inter',sans-serif;font-weight:300;color:#f0ebe0;position:relative;z-index:1;}
+.lm-footer-cols{display:grid;grid-template-columns:repeat(3,1fr);max-width:1100px;margin:0 auto;padding:48px 48px 40px;border-bottom:1px solid rgba(218,184,92,0.08);}
+.lm-footer-col h4{font-family:'Cormorant Garamond',serif;font-size:0.9rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:#DAB85C;margin-bottom:16px;}
+.lm-footer-col ul{list-style:none;padding:0;margin:0;}
+.lm-footer-col ul li{margin-bottom:11px;}
+.lm-footer-col ul li a{font-family:'Inter',sans-serif;font-size:0.82rem;font-weight:300;color:rgba(240,235,224,0.45);text-decoration:none;transition:color 0.2s;}
+.lm-footer-col ul li a:hover{color:#DAB85C;}
+.lm-footer-bottom{max-width:1100px;margin:0 auto;padding:20px 48px;display:flex;align-items:center;justify-content:space-between;}
+.lm-footer-copy{font-size:0.72rem;color:rgba(240,235,224,0.2);font-family:'Inter',sans-serif;letter-spacing:0.08em;}
+.lm-footer-legal{display:flex;gap:24px;}
+.lm-footer-legal a{font-family:'Inter',sans-serif;font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,235,224,0.2);text-decoration:none;transition:color 0.2s;}
+.lm-footer-legal a:hover{color:rgba(218,184,92,0.6);}
 
-/* ANIMATIONS */
+/* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
 .reveal.on{opacity:1;transform:translateY(0)}
 .reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}
 .reveal-d3{transition-delay:.24s}.reveal-d4{transition-delay:.32s}
 
-/* MOBILE */
+/* ── MOBILE ── */
 @media(max-width:1100px){.page-grid{grid-template-columns:1fr}.form-panel{padding:40px 30px}}
-@media(max-width:768px){nav{display:none}.hero h1{font-size:56px}.hero-bg-text{display:none}.form-grid{grid-template-columns:1fr}.nav{padding:14px 20px}.page-grid{padding:0 20px 80px}}
-@media(max-width:480px){.hero h1{font-size:44px}.stats-trio{grid-template-columns:1fr}.stat-box{border-right:none;border-bottom:1px solid var(--border)}.stat-box:last-child{border-bottom:none}}
+@media(max-width:768px){
+  nav{display:none}
+  .ctaTop{display:none}
+  .mobile-menu-btn{display:flex}
+  .mobile-drawer.open{display:flex}
+  .hero h1{font-size:56px}
+  .hero-bg-text{display:none}
+  .form-grid{grid-template-columns:1fr}
+  .nav{padding:14px 20px}
+  .page-grid{padding:0 20px 80px}
+  .lm-footer-cols{grid-template-columns:1fr 1fr;padding:36px 24px 28px;gap:28px;}
+  .lm-footer-bottom{flex-direction:column;gap:10px;text-align:center;padding:16px 24px;}
+}
+@media(max-width:480px){
+  .hero h1{font-size:44px}
+  .stats-trio{grid-template-columns:1fr}
+  .stat-box{border-right:none;border-bottom:1px solid var(--border)}
+  .stat-box:last-child{border-bottom:none}
+  .lm-footer-cols{grid-template-columns:1fr;}
+}
 </style>
 </head>
 <body>
@@ -183,23 +209,46 @@ footer a:hover{text-decoration:underline}
       <img src="/assets/img/logo-2026.png" class="brand-logo" alt="LaFaries Mortimer LLC">
       <div>
         <strong>LaFaries Mortimer LLC</strong>
-        <span>Innovation • Legacy • Automation</span>
+        <span>Administrative & IT Services</span>
       </div>
     </a>
     <nav>
-      <a href="/index.html">Home</a>
-      <a href="/laap.html">LAAP Suite</a>
-      <a href="/apps.html">Apps</a>
-      <a href="/services.html">Services</a>
-      <a href="/annual-maintenance.html">Maintenance</a>
-      <a href="/contact.html" class="active">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="laap.html">LAAP Suite™</a>
+      <a href="services.html">Services</a>
+      <a href="apps.html">Apps</a>
+      <a href="annual-maintenance.html">Maintenance</a>
+      <a href="compare.html">Compare</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
     <div class="ctaTop">
-      <a href="/free.html" class="btn btnGhost">Free Tools</a>
-      <a href="https://scintillating-fairy.netlify.app" class="btn btnGold">Get Started</a>
+      <a href="free.html" class="btn btnGhost">Free Tools</a>
+      <a href="contact.html" class="btn btnGold">Book a Call</a>
     </div>
+    <button class="mobile-menu-btn" id="mob-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mob-drawer">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="laap.html">LAAP Suite™</a>
+  <a href="services.html">Services</a>
+  <a href="apps.html">Apps</a>
+  <a href="annual-maintenance.html">Maintenance</a>
+  <a href="compare.html">Compare</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <div class="drawer-ctas">
+    <a class="btnGhost" href="free.html">Free Tools</a>
+    <a class="btnGold" href="contact.html">Book a Call</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -216,7 +265,7 @@ footer a:hover{text-decoration:underline}
       <div class="method-icon">⭐</div>
       Leave a Google Review
     </a>
-    <a href="https://scintillating-fairy.netlify.app" target="_blank" class="method">
+    <a href="https://laaplm.netlify.app" target="_blank" class="method">
       <div class="method-icon">🚀</div>
       Launch LAAP Suite™
     </a>
@@ -230,21 +279,17 @@ footer a:hover{text-decoration:underline}
 
 <!-- MAIN GRID -->
 <div class="page-grid">
-
-  <!-- LEFT -->
   <div class="info-col">
     <div class="info-card reveal reveal-d1">
       <div class="card-label">Who We Serve</div>
       <h3>Small businesses, ministries & individuals.</h3>
       <p>Based in Miami, FL — serving clients virtually across the U.S. and beyond. We replace scattered admin work with clarity, structure, and confidence.</p>
     </div>
-
     <div class="stats-trio reveal reveal-d2">
       <div class="stat-box"><div class="stat-num">50</div><div class="stat-label">States</div></div>
       <div class="stat-box"><div class="stat-num">365</div><div class="stat-label">Days Support</div></div>
       <div class="stat-box"><div class="stat-num">24h</div><div class="stat-label">Response</div></div>
     </div>
-
     <div class="geo-card reveal reveal-d2">
       <div class="geo-icon">🌍</div>
       <div class="geo-text">
@@ -252,25 +297,14 @@ footer a:hover{text-decoration:underline}
         <span>100% virtual support — no matter where you are in the U.S.</span>
       </div>
     </div>
-
     <div class="info-card reveal reveal-d3">
       <div class="card-label">What Happens After You Submit</div>
       <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-text"><strong>Confirmation Sent</strong><span>You'll receive an email confirming your request.</span></div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-text"><strong>We Review Your Message</strong><span>We read every request personally within 24 hours.</span></div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-text"><strong>Next Steps Delivered</strong><span>A call, proposal, or LAAP™ walkthrough — tailored to you.</span></div>
-        </div>
+        <div class="step"><div class="step-num">1</div><div class="step-text"><strong>Confirmation Sent</strong><span>You'll receive an email confirming your request.</span></div></div>
+        <div class="step"><div class="step-num">2</div><div class="step-text"><strong>We Review Your Message</strong><span>We read every request personally within 24 hours.</span></div></div>
+        <div class="step"><div class="step-num">3</div><div class="step-text"><strong>Next Steps Delivered</strong><span>A call, proposal, or LAAP™ walkthrough — tailored to you.</span></div></div>
       </div>
     </div>
-
     <div class="review-card reveal reveal-d4">
       <div class="review-card-text">
         <strong>Already a client?</strong>
@@ -280,29 +314,18 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <!-- RIGHT: FORM -->
+  <!-- FORM -->
   <div class="form-panel reveal">
     <div class="form-eyebrow">Send a Message</div>
     <div class="form-title">Let's talk<br><em>business.</em></div>
     <p class="form-sub">Tell us what you need. We'll handle the rest within one business day.</p>
-
     <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact">
       <p hidden><label>Don't fill this out:<input name="bot-field"></label></p>
-
       <div class="form-grid">
-        <div class="field">
-          <label>First Name</label>
-          <input type="text" name="first_name" placeholder="Your first name" required>
-        </div>
-        <div class="field">
-          <label>Last Name</label>
-          <input type="text" name="last_name" placeholder="Your last name">
-        </div>
-        <div class="field full">
-          <label>Email Address</label>
-          <input type="email" name="email" placeholder="you@yourcompany.com" required>
-        </div>
+        <div class="field"><label>First Name</label><input type="text" name="first_name" placeholder="Your first name" required></div>
+        <div class="field"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name"></div>
+        <div class="field full"><label>Email Address</label><input type="email" name="email" placeholder="you@yourcompany.com" required></div>
         <div class="field full">
           <label>I'm interested in…</label>
           <div class="service-tags">
@@ -316,19 +339,14 @@ footer a:hover{text-decoration:underline}
           </div>
           <input type="hidden" name="topic" id="topicField">
         </div>
-        <div class="field full">
-          <label>Message</label>
-          <textarea name="message" placeholder="Tell us about your business and what you need help with…" required></textarea>
-        </div>
+        <div class="field full"><label>Message</label><textarea name="message" placeholder="Tell us about your business and what you need help with…" required></textarea></div>
       </div>
-
       <div class="submit-row">
         <button type="submit" class="submit-btn">Send Request →</button>
         <p class="submit-note">We respond within 24 hours</p>
       </div>
     </form>
   </div>
-
 </div>
 
 <!-- BOTTOM BAND -->
@@ -338,23 +356,57 @@ footer a:hover{text-decoration:underline}
     <div class="band-actions">
       <a href="/laap.html" class="btn btnGhost">Explore LAAP Suite™</a>
       <a href="/free.html" class="btn btnGhost">Try Free Tools</a>
-      <a href="https://scintillating-fairy.netlify.app" class="btn btnGold">Get Started Now</a>
+      <a href="https://laaplm.netlify.app" class="btn btnGold">Get Started Now</a>
     </div>
   </div>
 </div>
 
 <!-- FOOTER -->
-<footer>
-  © 2026 LaFaries Mortimer LLC &nbsp;•&nbsp; Miami, FL &nbsp;•&nbsp; Virtual Support &nbsp;•&nbsp;
-  <a href="mailto:support@lafariesmortimerllc.com">support@lafariesmortimerllc.com</a>
-  &nbsp;|&nbsp;
-  <a href="/review" target="_blank">⭐ Leave Us a Google Review</a>
+<footer id="lm-footer">
+  <div class="lm-footer-cols">
+    <div class="lm-footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="compare.html">Compare</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="lm-footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="laap.html">LAAP Suite™</a></li>
+        <li><a href="annual-maintenance.html">Annual Maintenance</a></li>
+        <li><a href="apps.html">Apps & Tools</a></li>
+        <li><a href="free.html">Free Tools</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+      </ul>
+    </div>
+    <div class="lm-footer-col">
+      <h4>Get Started</h4>
+      <ul>
+        <li><a href="contact.html">Book a Free Call</a></li>
+        <li><a href="free.html">Start with Free Tools</a></li>
+        <li><a href="laap.html">Explore LAAP Suite™</a></li>
+        <li><a href="/review">Leave a Review</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lm-footer-bottom">
+    <p class="lm-footer-copy">© 2026 LaFaries Mortimer LLC · All rights reserved.</p>
+    <div class="lm-footer-legal">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:support@lafariesmortimerllc.com">Support</a>
+    </div>
+  </div>
 </footer>
 
 <script src="/assets/js/widget.js"></script>
-
 <script>
-/* ── COPY EMAIL ── */
 function copyEmail(e) {
   e.preventDefault();
   navigator.clipboard.writeText('support@lafariesmortimerllc.com').then(() => {
@@ -365,18 +417,10 @@ function copyEmail(e) {
     pill.style.borderColor = 'rgba(218,184,92,.7)';
     pill.style.color = '#DAB85C';
     pill.style.background = 'rgba(218,184,92,.08)';
-    setTimeout(() => {
-      text.textContent = original;
-      pill.style.borderColor = '';
-      pill.style.color = '';
-      pill.style.background = '';
-    }, 2500);
-  }).catch(() => {
-    window.location.href = 'mailto:support@lafariesmortimerllc.com';
-  });
+    setTimeout(() => { text.textContent = original; pill.style.borderColor = ''; pill.style.color = ''; pill.style.background = ''; }, 2500);
+  }).catch(() => { window.location.href = 'mailto:support@lafariesmortimerllc.com'; });
 }
 
-/* ── PARTICLES ── */
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
 let W, H, pts = [];
@@ -391,23 +435,27 @@ class P{
 for(let i=0;i<120;i++) pts.push(new P());
 (function loop(){ ctx.clearRect(0,0,W,H); pts.forEach(p=>{p.update();p.draw()}); requestAnimationFrame(loop) })();
 
-/* ── SCROLL REVEAL ── */
 const obs = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting) e.target.classList.add('on')}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-/* ── SERVICE TAGS ── */
 function toggleTag(el, val){
   el.classList.toggle('selected');
   document.getElementById('topicField').value = [...document.querySelectorAll('.stag.selected')].map(t=>t.textContent.trim()).join(', ');
 }
 
-/* ── CARD MOUSE GLOW ── */
 document.querySelectorAll('.info-card').forEach(card=>{
   card.addEventListener('mousemove', e=>{
     const r = card.getBoundingClientRect();
     card.style.setProperty('--mx',`${e.clientX-r.left}px`);
     card.style.setProperty('--my',`${e.clientY-r.top}px`);
   });
+});
+
+const mobBtn = document.getElementById('mob-btn');
+const mobDrawer = document.getElementById('mob-drawer');
+mobBtn.addEventListener('click', () => {
+  mobBtn.classList.toggle('open');
+  mobDrawer.classList.toggle('open');
 });
 </script>
 </body>
