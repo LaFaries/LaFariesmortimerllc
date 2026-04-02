@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LaFaries Mortimer LLC | Business Formation & Admin Services Miami</title>
-<meta name="description" content="Miami-based administrative and IT services firm helping small businesses, ministries, and individuals form, stay compliant, and grow. Explore the LAAP Suite™.">
+<title>LaFaries Mortimer LLC | Business Formation & Compliance — All 50 States</title>
+<meta name="description" content="Stop missing deadlines and scrambling through paperwork. LaFaries Mortimer LLC handles LLC formation, annual compliance, and business administration for small businesses, ministries, and entrepreneurs — virtually, across all 50 states.">
 <link rel="canonical" href="https://lafariesmortimerllc.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -139,7 +139,7 @@ a{text-decoration:none;color:inherit}
 .text-slide{
   position:absolute;inset:0;
   opacity:0;transform:translateY(10px);
-transition:opacity .8s ease,transform .8s ease;
+  transition:opacity .6s ease,transform .6s ease;
 }
 .text-slide.active{opacity:1;transform:translateY(0);}
 .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#555;}
@@ -451,15 +451,11 @@ transition:opacity .8s ease,transform .8s ease;
     /* Hero text & video rotation */
     const textSlides = document.querySelectorAll('.text-slide');
     let textIndex = 0;
-   setInterval(() => {
-  const current = textSlides[textIndex];
-  textIndex = (textIndex + 1) % textSlides.length;
-  const next = textSlides[textIndex];
-  next.classList.add('active');
-  setTimeout(() => {
-    current.classList.remove('active');
-  }, 400);
-}, 10000);
+    setInterval(() => {
+      textSlides[textIndex].classList.remove('active');
+      textIndex = (textIndex + 1) % textSlides.length;
+      textSlides[textIndex].classList.add('active');
+    }, 10000);
 
     const videos = [
       "/assets/img/hero-ai-agent.mp4",
