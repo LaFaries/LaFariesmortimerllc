@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corporate Filing Service — Client Intake | LaFaries Mortimer LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #DAB85C;
+      --gold-light: #e8cc7e;
+      --gold-dim: rgba(218,184,92,0.15);
+      --black: #0d0d0d;
+      --charcoal: #1a1a1a;
+      --dark: #222222;
+      --text: #e8e0d0;
+      --text-muted: #999;
+      --border: rgba(218,184,92,0.2);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--black);
+      background-image: radial-gradient(ellipse at 20% 20%, rgba(218,184,92,0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(218,184,92,0.03) 0%, transparent 60%);
+      min-height: 100vh;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      padding: 40px 16px 80px;
+    }
+    .container { max-width: 640px; margin: 0 auto; animation: fadeUp 0.8s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .header { text-align: center; margin-bottom: 36px; animation: fadeUp 0.8s ease 0.1s both; }
+    .brand-line { font-size: 10px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .header h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 6vw, 42px); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 12px; }
+    .header h1 span { color: var(--gold); }
+    .header p { font-size: 14px; color: var(--text-muted); line-height: 1.7; max-width: 480px; margin: 0 auto; }
+    .gold-divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 20px auto; }
+    .deadline-banner { background: rgba(192,57,43,0.12); border: 1px solid rgba(192,57,43,0.3); border-radius: 4px; padding: 14px 20px; text-align: center; margin-bottom: 24px; animation: fadeUp 0.8s ease 0.2s both; }
+    .deadline-banner p { font-size: 13px; color: #e74c3c; font-weight: 500; }
+    .price-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-dim); border: 1px solid var(--border); border-radius: 40px; padding: 8px 20px; margin-bottom: 36px; animation: fadeUp 0.8s ease 0.25s both; }
+    .price-badge span { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--gold); }
+    .price-badge p { font-size: 12px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+    .form-card { background: var(--charcoal); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; animation: fadeUp 0.8s ease 0.3s both; }
+    .form-card-header { background: linear-gradient(135deg, var(--dark), var(--charcoal)); border-bottom: 1px solid var(--border); padding: 24px 32px; }
+    .form-card-header h2 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--gold); margin-bottom: 4px; }
+    .form-card-header p { font-size: 12px; color: var(--text-muted); letter-spacing: 1px; }
+    .form-body { padding: 32px; }
+    .form-group { margin-bottom: 24px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .form-group label .required { color: #c0392b; margin-left: 3px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: var(--dark); border: 1px solid var(--border); border-radius: 4px;
+      padding: 14px 16px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text);
+      outline: none; transition: border-color 0.2s, background 0.2s; -webkit-appearance: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); font-size: 13px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: #2a2a2a; }
+    .form-group select option { background: var(--dark); color: var(--text); }
+    .form-group textarea { resize: vertical; min-height: 90px; line-height: 1.6; }
+    .form-hint { font-size: 11px; color: var(--text-muted); margin-top: 6px; line-height: 1.5; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } .form-body { padding: 24px 20px; } .form-card-header { padding: 20px; } }
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; position: relative; }
+    .section-divider::after { content: attr(data-label); position: absolute; top: -10px; left: 0; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); background: var(--charcoal); padding-right: 12px; }
+    .service-options { display: flex; flex-direction: column; gap: 10px; }
+    .service-option { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; background: var(--dark); border: 1px solid var(--border); border-radius: 4px; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .service-option:hover { border-color: var(--gold); background: #2a2a2a; }
+    .service-option input[type="checkbox"] { width: 16px; height: 16px; min-width: 16px; margin-top: 2px; accent-color: var(--gold); cursor: pointer; }
+    .service-option-text strong { display: block; font-size: 13px; color: var(--text); margin-bottom: 2px; }
+    .service-option-text span { font-size: 11px; color: var(--text-muted); }
+    .submit-section { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .submit-btn { width: 100%; background: var(--gold); color: var(--black); border: none; border-radius: 4px; padding: 18px 32px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.1s; }
+    .submit-btn:hover { background: var(--gold-light); }
+    .submit-btn:active { transform: scale(0.99); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .submit-note { text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 12px; line-height: 1.6; }
+    .success-screen { display: none; text-align: center; padding: 48px 32px; animation: fadeUp 0.6s ease both; }
+    .success-icon { width: 64px; height: 64px; background: rgba(39,174,96,0.15); border: 1px solid rgba(39,174,96,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 28px; }
+    .success-screen h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: #fff; margin-bottom: 12px; }
+    .success-screen p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .countdown { background: var(--gold-dim); border: 1px solid var(--border); border-radius: 4px; padding: 16px; text-align: center; margin-bottom: 24px; }
+    .countdown p { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+    .countdown span { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--gold); }
+    .pay-btn { display: block; background: var(--gold); color: var(--black); text-decoration: none; padding: 18px 40px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; transition: background 0.2s; margin-bottom: 12px; }
+    .pay-btn:hover { background: var(--gold-light); }
+    .pay-note { font-size: 11px; color: var(--text-muted); }
+    .footer { text-align: center; margin-top: 40px; animation: fadeUp 0.8s ease 0.5s both; }
+    .footer p { font-size: 11px; color: #555; letter-spacing: 1px; }
+    .footer a { color: var(--gold); text-decoration: none; }
+    input.error, select.error, textarea.error { border-color: #c0392b; }
+    .error-msg { font-size: 11px; color: #e74c3c; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="header">
+      <p class="brand-line">LaFaries Mortimer LLC</p>
+      <h1>Corporate Filing<br/><span>Client Intake Form</span></h1>
+      <div class="gold-divider"></div>
+      <p>Please complete the form below so we can begin processing your Florida business filings. All information is kept strictly confidential.</p>
+    </div>
+
+    <div class="deadline-banner">
+      <p>⚠️ Florida Sunbiz Annual Report Deadline: May 1, 2026 — Late filing results in a mandatory $400 fee that cannot be waived</p>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="price-badge">
+        <span>$197</span>
+        <p>All-Inclusive Filing Service</p>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <div class="form-card-header">
+        <h2>Client Information</h2>
+        <p>Fields marked with * are required · Takes less than 2 minutes</p>
+      </div>
+
+      <div class="form-body">
+        <form id="intakeForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name <span class="required">*</span></label>
+              <input type="text" id="firstName" placeholder="e.g. Jane" required/>
+            </div>
+            <div class="form-group">
+              <label>Last Name <span class="required">*</span></label>
+              <input type="text" id="lastName" placeholder="e.g. Doe" required/>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address <span class="required">*</span></label>
+              <input type="email" id="email" placeholder="janedoe@email.com" required/>
+            </div>
+            <div class="form-group">
+              <label>Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" placeholder="(305) 000-0000" required/>
+            </div>
+          </div>
+
+          <hr class="section-divider" data-label="Business Details"/>
+
+          <div class="form-group">
+            <label>Business Name (as it appears on Sunbiz) <span class="required">*</span></label>
+            <input type="text" id="businessName" placeholder="e.g. JANE DOE ENTERPRISES LLC" required/>
+            <p class="form-hint">Enter your business name exactly as registered with the Florida Division of Corporations</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Sunbiz Document Number</label>
+              <input type="text" id="documentNumber" placeholder="e.g. L22000012345"/>
+              <p class="form-hint">Found at sunbiz.org under your business record</p>
+            </div>
+            <div class="form-group">
+              <label>Business Type <span class="required">*</span></label>
+              <select id="businessType" required>
+                <option value="" disabled selected>Select type</option>
+                <option value="LLC">LLC</option>
+                <option value="Corporation">For-Profit Corporation</option>
+                <option value="Non-Profit">Non-Profit Corporation</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Business Address</label>
+            <input type="text" id="businessAddress" placeholder="e.g. 123 Main Street, Miami, FL 33101"/>
+          </div>
+
+          <hr class="section-divider" data-label="Services Requested"/>
+
+          <div class="form-group">
+            <label>Select Services <span class="required">*</span></label>
+            <div class="service-options">
+              <label class="service-option">
+                <input type="checkbox" name="services" value="annual_report" checked/>
+                <div class="service-option-text">
+                  <strong>Florida Sunbiz Annual Report Filing</strong>
+                  <span>File before May 1, 2026 — avoid the mandatory $400 late fee</span>
+                </div>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="services" value="boi"/>
+                <div class="service-option-text">
+                  <strong>BOI Filing Documentation</strong>
+                  <span>No longer legally required for U.S. companies, but recommended for clean compliance records</span>
+                </div>
+              </label>
+              <label class="service-option">
+                <input type="checkbox" name="services" value="both"/>
+                <div class="service-option-text">
+                  <strong>Both Services</strong>
+                  <span>Annual Report + BOI Filing — complete compliance package</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea id="notes" placeholder="Any additional information we should know about your business or filing..."></textarea>
+          </div>
+
+          <div class="submit-section">
+            <button type="submit" class="submit-btn" id="submitBtn">
+              Continue to Secure Payment — $197 →
+            </button>
+            <p class="submit-note">
+              By submitting this form you agree to our service terms.<br/>
+              Your information is encrypted and never shared.
+            </p>
+          </div>
+
+        </form>
+
+        <!-- Success Screen -->
+        <div class="success-screen" id="successScreen">
+          <div class="success-icon">✓</div>
+          <h2>Thank You</h2>
+          <p>Your intake form has been received. Please complete your secure payment below to confirm your filing service. Once payment is received, we will begin processing your filing immediately.</p>
+          <div class="countdown">
+            <p>Redirecting to payment in</p>
+            <span id="countdownTimer">5</span>
+            <p>seconds — or tap the button below</p>
+          </div>
+          <a href="https://buy.stripe.com/aFa00k93SdrJ7gN4MW7Zu0d" class="pay-btn">
+            Complete Secure Payment — $197
+          </a>
+          <p class="pay-note">Secured by Stripe · Accepts all major cards, Apple Pay, Cash App &amp; Amazon Pay</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>LaFaries Mortimer LLC · Administrative &amp; IT Services<br/>
+      <a href="mailto:support@lafariesmortimerllc.com">support@lafariesmortimerllc.com</a> ·
+      <a href="https://www.lafariesmortimerllc.com">lafariesmortimerllc.com</a></p>
+    </div>
+
+  </div>
+
+  <script>
+    const form = document.getElementById('intakeForm');
+    const successScreen = document.getElementById('successScreen');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function validateEmail(e) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e); }
+
+    function showError(input, msg) {
+      input.classList.add('error');
+      let err = input.parentNode.querySelector('.error-msg');
+      if (!err) { err = document.createElement('p'); err.className = 'error-msg'; input.parentNode.appendChild(err); }
+      err.textContent = msg;
+    }
+
+    function clearError(input) {
+      input.classList.remove('error');
+      const err = input.parentNode.querySelector('.error-msg');
+      if (err) err.remove();
+    }
+
+    document.querySelectorAll('input, select, textarea').forEach(el => el.addEventListener('input', () => clearError(el)));
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      const fields = [
+        { id: 'firstName', msg: 'Please enter your first name' },
+        { id: 'lastName', msg: 'Please enter your last name' },
+        { id: 'email', msg: 'Please enter a valid email address', validate: validateEmail },
+        { id: 'phone', msg: 'Please enter your phone number' },
+        { id: 'businessName', msg: 'Please enter your business name as it appears on Sunbiz' },
+        { id: 'businessType', msg: 'Please select your business type' },
+      ];
+
+      fields.forEach(({ id, msg, validate }) => {
+        const el = document.getElementById(id);
+        const val = el.value.trim();
+        if (!val || (validate && !validate(val))) { showError(el, msg); valid = false; }
+        else clearError(el);
+      });
+
+      const checked = document.querySelectorAll('input[name="services"]:checked');
+      if (checked.length === 0) { valid = false; alert('Please select at least one service.'); }
+      if (!valid) return;
+
+      submitBtn.disabled = true;
+      form.style.display = 'none';
+      successScreen.style.display = 'block';
+
+      let count = 5;
+      const timer = document.getElementById('countdownTimer');
+      const interval = setInterval(() => {
+        count--;
+        timer.textContent = count;
+        if (count <= 0) { clearInterval(interval); window.location.href = 'https://buy.stripe.com/aFa00k93SdrJ7gN4MW7Zu0d'; }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
