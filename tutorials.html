@@ -2,340 +2,591 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Free Business & IT Tutorials | LaFaries Mortimer LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Free IT and Administrative tutorials from LaFaries Mortimer LLC. Step-by-step guides you can download, use, and share at no cost." />
-<link rel="canonical" href="https://lafariesmortimerllc.com/tutorials.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Tutorials | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Free step-by-step tutorials for small businesses, ministries, and entrepreneurs. IT basics, cybersecurity, LLC setup, recordkeeping, and more — no account required." />
+  <link rel="canonical" href="https://lafariesmortimerllc.com/tutorials" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:#050608;
-      --panel:#020617;
-      --card:#111827;
-      --gold:#d4af37;
-      --gold-soft:#facc15;
-      --text:#f9fafb;
-      --muted:#9ca3af;
-      --border:rgba(212,175,55,.35);
+      --gold: #DAB85C;
+      --gold-light: #e8cc80;
+      --gold-dim: rgba(218,184,92,0.12);
+      --gold-border: rgba(218,184,92,0.22);
+      --black: #080808;
+      --surface: #111111;
+      --surface-2: #161616;
+      --offwhite: #F8F6F1;
+      --text: rgba(248,246,241,0.88);
+      --muted: rgba(248,246,241,0.48);
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-      background:radial-gradient(circle at top,#111827 0,#050608 55%,#000 100%);
-      color:var(--text);
-      line-height:1.6;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { background: #080808; }
+
+    body {
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    a{text-decoration:none;color:inherit}
-    .wrapper{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+    /* NAV */
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-brand img { height: 36px; width: auto; }
+    .nav-brand span { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--offwhite); font-weight: 600; line-height: 1.2; }
+    .nav-brand small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.65rem; color: var(--gold); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-ctas { display: flex; gap: 0.75rem; }
+    .nav-ctas a { font-size: 0.8rem; font-weight: 500; text-decoration: none; padding: 0.4rem 1rem; border-radius: 3px; transition: all 0.2s; }
+    .btn-ghost { color: var(--gold); border: 1px solid var(--gold-border); }
+    .btn-ghost:hover { background: var(--gold-dim); border-color: var(--gold); }
+    .btn-solid { background: var(--gold); color: var(--black); font-weight: 600; }
+    .btn-solid:hover { background: var(--gold-light); }
 
-    header{
-      position:sticky;top:0;z-index:10;
-      background:#050608e6;
-      border-bottom:1px solid rgba(148,163,184,.25);
-      backdrop-filter:blur(8px);
+    /* HERO — editorial masthead style */
+    .hero {
+      background: #080808;
+      border-bottom: 1px solid var(--gold-border);
+      padding: 5rem 2rem 0;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .header-inner{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:.85rem 0;gap:1rem;flex-wrap:wrap;
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      padding-bottom: 3rem;
+      border-bottom: 2px solid var(--gold);
     }
-    .brand{display:flex;align-items:center;gap:.6rem}
-    .brand-logo{
-      width:38px;height:38px;border-radius:999px;
-      background:radial-gradient(circle at 30% 0%,#fef3c7,#d4af37 45%,#4b3a12);
-      color:#111827;font-weight:700;font-size:.8rem;
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 0 18px rgba(212,175,55,.6);
+    .hero-left .hero-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    nav{display:flex;gap:1.5rem;font-size:.95rem}
-    nav a{color:var(--muted)}
-    nav a:hover{color:var(--gold-soft)}
-
-    main{padding:3rem 0}
-
-    .page-intro{
-      max-width:720px;
-      margin-bottom:2.5rem;
+    .hero-left .hero-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
     }
-    .page-intro h1{
-      font-size:2.3rem;
-      line-height:1.15;
-      margin-bottom:.75rem;
+    .hero-left h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 400;
+      color: var(--offwhite);
+      line-height: 1.05;
     }
-    .page-intro h1 span{color:var(--gold-soft)}
-    .page-intro p{color:var(--muted);font-size:1rem}
-
-    section{margin-bottom:3rem}
-    .section-header{
-      margin-bottom:1.5rem;
-      display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;
-      gap:1rem;
+    .hero-left h1 em { font-style: italic; color: var(--gold); }
+    .hero-right {
+      padding-bottom: 0.5rem;
     }
-    .section-header h2{
-      font-size:1.4rem;
-      display:flex;align-items:center;gap:.5rem;
+    .hero-right p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
     }
-    .section-header h2::before{
-      content:"";
-      width:10px;height:10px;border-radius:999px;
-      background:radial-gradient(circle,#facc15,#d4af37);
-      box-shadow:0 0 10px rgba(212,175,55,.7);
+    .hero-meta {
+      display: flex;
+      gap: 2rem;
     }
-    .section-header p{color:var(--muted);max-width:520px;font-size:.9rem}
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:1.25rem;
+    .hero-stat .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
     }
-
-    .card{
-      background:linear-gradient(145deg,#0f172a,#020617);
-      border-radius:1.15rem;
-      padding:1.25rem 1.15rem 1.3rem;
-      border:1px solid var(--border);
-      box-shadow:0 16px 38px rgba(15,23,42,.9);
-      display:flex;flex-direction:column;gap:.6rem;
-    }
-    .card h3{font-size:1.05rem}
-    .card p{font-size:.9rem;color:var(--muted);flex-grow:1}
-
-    .download-row{
-      display:flex;gap:.5rem;flex-wrap:wrap;
-    }
-    .btn{
-      padding:.45rem .9rem;
-      border-radius:999px;
-      font-size:.75rem;
-      font-weight:600;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      border:1px solid var(--gold);
-      color:var(--gold);
-      transition:.15s ease;
-    }
-    .btn:hover{
-      background:rgba(212,175,55,.15);
-      box-shadow:0 0 12px rgba(212,175,55,.45);
-    }
-
-    footer{
-      border-top:1px solid rgba(31,41,55,.9);
-      background:#020617;
-      padding:1.75rem 0;
-      font-size:.8rem;
-      color:var(--muted);
+    .hero-stat .stat-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0.2rem;
     }
 
-    @media(max-width:768px){
-      .page-intro h1{font-size:1.9rem}
+    /* SECTION WRAP */
+    .wrap { background: #080808; width: 100%; padding: 4rem 2rem; }
+    .wrap-alt { background: var(--surface); width: 100%; padding: 4rem 2rem; border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+    .inner { max-width: 1100px; margin: 0 auto; }
+
+    /* CATEGORY HEADER */
+    .cat-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .cat-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .cat-count {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .cat-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 400;
+      color: var(--offwhite);
+      margin-bottom: 2.5rem;
+      line-height: 1.2;
+    }
+    .cat-title em { font-style: italic; color: var(--gold); }
+
+    /* SPLIT ROW — the editorial two-column layout */
+    .tutorial-list { display: flex; flex-direction: column; }
+
+    .tutorial-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid rgba(218,184,92,0.1);
+      transition: background 0.2s;
+    }
+    .tutorial-row:last-child { border-bottom: none; }
+    .tutorial-row:hover { background: rgba(218,184,92,0.02); margin: 0 -1rem; padding: 1.75rem 1rem; border-radius: 4px; }
+
+    .tutorial-left {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .tutorial-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: rgba(218,184,92,0.3);
+      line-height: 1;
+      padding-top: 0.15rem;
+      text-align: right;
+    }
+
+    .tutorial-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--offwhite);
+      margin-bottom: 0.3rem;
+      line-height: 1.2;
+    }
+    .tutorial-info p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.55;
+      max-width: 540px;
+    }
+
+    .tutorial-right { flex-shrink: 0; }
+
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--gold);
+      border: 1px solid var(--gold-border);
+      padding: 0.55rem 1.15rem;
+      border-radius: 3px;
+      transition: all 0.2s;
+      white-space: nowrap;
+      letter-spacing: 0.03em;
+    }
+    .btn-download:hover { background: var(--gold-dim); border-color: var(--gold); }
+    .btn-download .icon { font-size: 0.9rem; }
+
+    /* CTA BAND */
+    .cta-band {
+      background: #080808 radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.06) 0%, transparent 70%);
+      border-top: 1px solid var(--gold-border);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; color: var(--offwhite); margin-bottom: 0.75rem; }
+    .cta-band h2 em { color: var(--gold); font-style: italic; }
+    .cta-band p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2.25rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-buttons a { padding: 0.85rem 1.85rem; font-size: 0.875rem; font-weight: 600; text-decoration: none; border-radius: 4px; transition: all 0.2s; letter-spacing: 0.03em; }
+    .cta-primary { background: var(--gold); color: var(--black); }
+    .cta-primary:hover { background: var(--gold-light); }
+    .cta-secondary { border: 1px solid var(--gold-border); color: var(--gold); }
+    .cta-secondary:hover { background: var(--gold-dim); border-color: var(--gold); }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid var(--gold-border); padding: 3.5rem 2rem 2rem; }
+    .footer-grid { max-width: 1100px; margin: 0 auto 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; }
+    .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.85rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.45rem; }
+    .footer-col ul li a { color: var(--muted); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(218,184,92,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; color: var(--muted); opacity: 0.6; }
+    .footer-bottom a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .tutorial-row { grid-template-columns: 1fr; gap: 1rem; }
+      .tutorial-left { grid-template-columns: 36px 1fr; gap: 0.75rem; }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <div class="wrapper header-inner">
-    <div class="brand">
-      <div class="brand-logo">LM</div>
-      <strong>LaFaries Mortimer LLC</strong>
-    </div>
-    <nav>
-      <a href="/index.html">Services</a>
-      <a href="/tutorials.html">Tutorials</a>
-      <a href="/templates.html">Templates</a>
-      <a href="/index.html#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrapper">
-
-  <div class="page-intro">
-    <h1>Free Tutorials<br><span>Because Everyone Deserves Help</span></h1>
-    <p>
-      This page is intentionally free. These tutorials are here to help individuals,
-      small businesses, ministries, and organizations take real steps forward —
-      even if you never purchase a service.
-    </p>
-  </div>
-
-<!-- IT TUTORIALS -->
-<section>
-  <div class="section-header">
-    <h2>IT & Digital Basics</h2>
-    <p>Modern, practical guides for today’s digital environment.</p>
-  </div>
-
-  <div class="grid">
-
-    <!-- Password Management -->
-    <div class="card">
-      <h3>Password Management & Security</h3>
-      <p>Create, store, and manage strong passwords safely.</p>
-      <div class="download-row">
-        <a class="btn"
-           href="/docs/Password_Management_and_Security_LaFaries_Mortimer_LLC.pdf"
-           target="_blank">
-          Download PDF
-        </a>
-      </div>
-    </div>
-
-    <!-- Email Safety -->
-    <div class="card">
-      <h3>Email Safety & Phishing Awareness</h3>
-      <p>How to recognize scams and protect your inbox.</p>
-      <div class="download-row">
-        <a class="btn"
-           href="/docs/Email_Safety_and_Phishing_Awareness_LaFaries_Mortimer_LLC.pdf"
-           target="_blank">
-          Download PDF
-        </a>
-      </div>
-    </div>
-
-    <!-- Cloud File Organization -->
-    <div class="card">
-      <h3>Cloud File Organization</h3>
-      <p>Organize Google Drive / OneDrive files correctly.</p>
-      <div class="download-row">
-        <a class="btn"
-           href="/docs/Cloud_File_Organization_Guide_LaFaries_Mortimer_LLC.pdf"
-           target="_blank">
-          Download PDF
-        </a>
-      </div>
-    </div>
-
-    <!-- Cyber Hygiene -->
-    <div class="card">
-      <h3>Basic Cyber Hygiene</h3>
-      <p>Everyday habits that reduce digital risk.</p>
-      <div class="download-row">
-        <a class="btn"
-           href="/docs/Basic_Cyber_Hygiene_LaFaries_Mortimer_LLC.pdf"
-           target="_blank">
-          Download PDF
-        </a>
-      </div>
-    </div>
-
-    <!-- Device Setup -->
-    <div class="card">
-      <h3>Device Setup Checklist</h3>
-      <p>Secure a new laptop or phone from day one.</p>
-      <div class="download-row">
-        <a class="btn"
-           href="/docs/Device_Setup_Checklist_LaFaries_Mortimer_LLC.pdf"
-           target="_blank">
-          Download PDF
-        </a>
-      </div>
-    </div>
-
-    <!-- Backups -->
-    <div class="card">
-      <h3>Backing Up Your Data</h3>
-      <p>Simple backup strategies for non-technical users.</p>
-      <div class="download-row">
-        <a class="btn"
-           href="/docs/Backing_Up_Your_Data_LaFaries_Mortimer_LLC.pdf"
-           target="_blank">
-          Download PDF
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    </div>
-
-    <!-- Backups -->
-<div class="card">
-  <h3>Backing Up Your Data</h3>
-  <p>Simple backup strategies for non-technical users.</p>
-  <div class="download-row">
-    <a class="btn"
-       href="/docs/Backing_Up_Your_Data_LaFaries_Mortimer_LLC.pdf"
-       target="_blank">
-       Download Guide (PDF)
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC Logo" />
+      <span>LaFaries Mortimer LLC <small>Administrative & IT Services</small></span>
     </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/laap">LAAP Suite™</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/apps">Apps</a></li>
+      <li><a href="/annual-maintenance">Maintenance</a></li>
+      <li><a href="/compare">Compare</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="/free" class="btn-ghost">Free Tools</a>
+      <a href="/contact" class="btn-solid">Book a Call</a>
+    </div>
+  </nav>
+
+  <!-- HERO — editorial masthead -->
+  <div style="background:#080808; border-bottom: 1px solid rgba(218,184,92,0.22);">
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-label">Free Resource Library</div>
+          <h1>Free tutorials.<br><em>Real guidance.</em></h1>
+        </div>
+        <div class="hero-right">
+          <p>Step-by-step guides for small businesses, ministries, and entrepreneurs — written for real people, not tech experts. Every tutorial is free, downloadable, and yours to keep.</p>
+          <div class="hero-meta">
+            <div class="hero-stat">
+              <div class="stat-num">12</div>
+              <div class="stat-label">Guides</div>
+            </div>
+            <div class="hero-stat">
+              <div class="stat-num">2</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="hero-stat">
+              <div class="stat-num">$0</div>
+              <div class="stat-label">Cost</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-</div>
-</section>
+  <!-- IT TUTORIALS -->
+  <div class="wrap">
+    <div class="inner">
+      <div class="cat-header">
+        <span class="cat-label">Category 01</span>
+        <span class="cat-count">6 guides</span>
+      </div>
+      <h2 class="cat-title">IT & Digital Basics — <em>Stay safe online</em></h2>
 
-<!-- ADMIN TUTORIALS -->
-<section>
-  <div class="section-header">
-    <h2>Administrative Basics</h2>
-    <p>Clear, usable guides for running things properly.</p>
+      <div class="tutorial-list">
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">01</div>
+            <div class="tutorial-info">
+              <h3>Password Management & Security</h3>
+              <p>Create, store, and manage strong passwords safely. Learn which password managers to use and how to protect your accounts from unauthorized access.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/docs/Password_Management_and_Security_LaFaries_Mortimer_LLC.pdf" class="btn-download" target="_blank">
+              <span class="icon">↓</span> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">02</div>
+            <div class="tutorial-info">
+              <h3>Email Safety & Phishing Awareness</h3>
+              <p>How to recognize scams and protect your inbox. Practical examples of phishing attempts and step-by-step guidance for staying safe.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/docs/Email_Safety_and_Phishing_Awareness_LaFaries_Mortimer_LLC.pdf" class="btn-download" target="_blank">
+              <span class="icon">↓</span> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">03</div>
+            <div class="tutorial-info">
+              <h3>Cloud File Organization</h3>
+              <p>Organize Google Drive and OneDrive correctly from day one. Folder structures, naming conventions, and sharing best practices for businesses.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/docs/Cloud_File_Organization_Guide_LaFaries_Mortimer_LLC.pdf" class="btn-download" target="_blank">
+              <span class="icon">↓</span> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">04</div>
+            <div class="tutorial-info">
+              <h3>Basic Cyber Hygiene</h3>
+              <p>Everyday habits that reduce digital risk. Simple actions you can take today to protect your business, ministry, or personal accounts.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/docs/Basic_Cyber_Hygiene_LaFaries_Mortimer_LLC.pdf" class="btn-download" target="_blank">
+              <span class="icon">↓</span> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">05</div>
+            <div class="tutorial-info">
+              <h3>Device Setup Checklist</h3>
+              <p>Secure a new laptop or phone from day one. A step-by-step checklist covering updates, settings, accounts, and security basics.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/docs/Device_Setup_Checklist_LaFaries_Mortimer_LLC.pdf" class="btn-download" target="_blank">
+              <span class="icon">↓</span> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">06</div>
+            <div class="tutorial-info">
+              <h3>Backing Up Your Data</h3>
+              <p>Simple backup strategies for non-technical users. Learn the 3-2-1 backup rule and how to protect your business files from loss.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/docs/Backing_Up_Your_Data_LaFaries_Mortimer_LLC.pdf" class="btn-download" target="_blank">
+              <span class="icon">↓</span> Download PDF
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 
-  <div class="grid">
+  <!-- ADMIN TUTORIALS -->
+  <div class="wrap-alt">
+    <div class="inner">
+      <div class="cat-header">
+        <span class="cat-label">Category 02</span>
+        <span class="cat-count">6 guides</span>
+      </div>
+      <h2 class="cat-title">Administrative Basics — <em>Run things properly</em></h2>
 
-    <div class="card">
-      <h3>How to Apply for an EIN</h3>
-      <p>Step-by-step IRS EIN walkthrough.</p>
-      <div class="download-row">
-        <a class="btn" href="/templates/client-intake-form.html">Open Guide</a>
+      <div class="tutorial-list">
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">01</div>
+            <div class="tutorial-info">
+              <h3>How to Apply for an EIN</h3>
+              <p>Step-by-step IRS EIN walkthrough. Your Employer Identification Number is required for bank accounts, taxes, and hiring — here's exactly how to get it.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/templates/llc-setup-notes" class="btn-download">
+              <span class="icon">→</span> Open Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">02</div>
+            <div class="tutorial-info">
+              <h3>LLC Organization Checklist</h3>
+              <p>What documents to keep and why. A practical checklist of every formation document your LLC needs — and where to store them safely.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/templates/llc-setup-notes" class="btn-download">
+              <span class="icon">→</span> Open Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">03</div>
+            <div class="tutorial-info">
+              <h3>Meeting Minutes 101</h3>
+              <p>How to properly document meetings. Learn what to include, how to format them, and why accurate minutes protect your business legally.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/templates/meeting-minutes" class="btn-download">
+              <span class="icon">→</span> Open Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">04</div>
+            <div class="tutorial-info">
+              <h3>Professional Email Writing</h3>
+              <p>Clear, respectful, effective communication. Templates and guidance for writing business emails that represent your brand with confidence.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/templates/professional-email" class="btn-download">
+              <span class="icon">→</span> Open Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">05</div>
+            <div class="tutorial-info">
+              <h3>Basic Recordkeeping</h3>
+              <p>What to keep, where to keep it, and for how long. A simple guide to business recordkeeping that protects you at tax time and beyond.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/templates/task-checklist" class="btn-download">
+              <span class="icon">→</span> Open Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="tutorial-row">
+          <div class="tutorial-left">
+            <div class="tutorial-num">06</div>
+            <div class="tutorial-info">
+              <h3>Using Templates Effectively</h3>
+              <p>How to customize templates without breaking them. Learn how to adapt our free templates to your specific business or ministry needs.</p>
+            </div>
+          </div>
+          <div class="tutorial-right">
+            <a href="/templates/operating-agreement-outline" class="btn-download">
+              <span class="icon">→</span> Open Guide
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="card">
-      <h3>LLC Organization Checklist</h3>
-      <p>What documents to keep and why.</p>
-      <div class="download-row">
-        <a class="btn" href="/templates/llc-setup-notes.html">Open Guide</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Meeting Minutes 101</h3>
-      <p>How to properly document meetings.</p>
-      <div class="download-row">
-        <a class="btn" href="/templates/meeting-minutes.html">Open Guide</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Professional Email Writing</h3>
-      <p>Clear, respectful, effective communication.</p>
-      <div class="download-row">
-        <a class="btn" href="/templates/professional-email.html">Open Guide</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Basic Recordkeeping</h3>
-      <p>What to keep, where, and for how long.</p>
-      <div class="download-row">
-        <a class="btn" href="/templates/task-checklist.html">Open Guide</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Using Templates Effectively</h3>
-      <p>How to customize templates without breaking them.</p>
-      <div class="download-row">
-        <a class="btn" href="/templates/operating-agreement-outline.html">Open Guide</a>
-      </div>
-    </div>
-
   </div>
-</section>
 
-</main>
-
-<footer>
-  <div class="wrapper">
-    © 2023 LaFaries Mortimer LLC • Free resources provided as-is
+  <!-- CTA -->
+  <div class="cta-band">
+    <h2>Want more than <em>tutorials?</em></h2>
+    <p>Explore our free templates, interactive tools, or get a complete business operating system with LAAP Suite™.</p>
+    <div class="cta-buttons">
+      <a href="/templates" class="cta-primary">Browse Free Templates</a>
+      <a href="/free" class="cta-secondary">Free Tools</a>
+      <a href="/laap" class="cta-secondary">Explore LAAP Suite™</a>
+    </div>
   </div>
-</footer>
-<script src="/assets/js/widget.js"></script>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/compare">Compare</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/laap">LAAP Suite™</a></li>
+          <li><a href="/annual-maintenance">Annual Maintenance</a></li>
+          <li><a href="/apps">Apps & Tools</a></li>
+          <li><a href="/free">Free Tools</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Free Resources</h4>
+        <ul>
+          <li><a href="/tutorials">Free Tutorials</a></li>
+          <li><a href="/templates">DIY Templates</a></li>
+          <li><a href="/free">Free Tools</a></li>
+          <li><a href="/contact">Book a Free Call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2023–2026 LaFaries Mortimer LLC · All rights reserved.</span>
+      <div>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:support@lafariesmortimerllc.com">Support</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
