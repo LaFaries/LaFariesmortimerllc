@@ -53,9 +53,26 @@ status = 200
 # Google Review link
 [[redirects]]
 from = "/review"
-to = "to = "https://g.page/r/CcK63XJnvZRzEBM/review""
+to = "https://g.page/r/CcK63XJnvZRzEBM/review"
 status = 302
 force = true
+
+# Blog index
+[[redirects]]
+from = "/blog"
+to = "/blog.html"
+status = 200
+
+# Blog articles — clean URLs
+[[redirects]]
+from = "/blog/llc-mistakes-florida-business-owners"
+to = "/blog/llc-mistakes-florida-business-owners.html"
+status = 200
+
+[[redirects]]
+from = "/blog/what-every-church-needs-to-stay-legally-compliant"
+to = "/blog/what-every-church-needs-to-stay-legally-compliant.html"
+status = 200
 
 # Wildcard SPA fallback — MUST be last
 [[redirects]]
