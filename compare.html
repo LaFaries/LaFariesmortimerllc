@@ -1,719 +1,695 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LAAP Suite vs. Generic AI Tools | LaFaries Mortimer LLC</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --gold: #DAB85C;
-    --gold-light: #e8cc80;
-    --gold-dim: rgba(218,184,92,0.15);
-    --gold-border: rgba(218,184,92,0.3);
-    --black: #0a0a0a;
-    --dark: #111111;
-    --dark2: #181818;
-    --dark3: #222222;
-    --white: #f5f0e8;
-    --white-dim: rgba(245,240,232,0.6);
-    --white-faint: rgba(245,240,232,0.08);
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  html {
-    background: #0a0a0a;
-  }
-
-  body {
-    background: #0a0a0a;
-    color: #f5f0e8;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-    line-height: 1.7;
-  }
-
-  /* ── GRAIN OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  .nav-cta {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid var(--gold-border);
-    padding: 8px 20px;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-  .nav-cta:hover {
-    background: var(--gold-dim);
-    border-color: var(--gold);
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 120px 40px 80px;
-    position: relative;
-    overflow: hidden;
-    background: #0a0a0a;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 700px; height: 700px;
-    background: radial-gradient(ellipse, rgba(218,184,92,0.06) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.2s ease forwards;
-  }
-
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.1;
-    max-width: 820px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.4s ease forwards;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-sub {
-    margin-top: 28px;
-    font-size: 1.05rem;
-    color: var(--white-dim);
-    max-width: 560px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.6s ease forwards;
-    line-height: 1.8;
-  }
-
-  .hero-divider {
-    width: 60px;
-    height: 1px;
-    background: var(--gold);
-    margin: 40px auto;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.8s ease forwards;
-  }
-
-  .hero-scroll {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--white-dim);
-    opacity: 0;
-    animation: fadeUp 0.8s 1s ease forwards;
-  }
-
-  /* ── STORY SECTION ── */
-  .story {
-    padding: 100px 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-    background: #0a0a0a;
-  }
-
-  .story-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-
-  .story-col-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .story-col-label.generic { color: rgba(255,255,255,0.3); }
-  .story-col-label.laap { color: var(--gold); }
-
-  .story-col h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 300;
-    line-height: 1.25;
-    margin-bottom: 20px;
-  }
-
-  .story-col.generic h2 { color: rgba(255,255,255,0.5); }
-  .story-col.laap h2 { color: #f5f0e8; }
-
-  .story-col p {
-    color: rgba(245,240,232,0.6);
-    font-size: 0.95rem;
-    margin-bottom: 16px;
-  }
-
-  .story-divider-v {
-    display: none;
-  }
-
-  /* ── COMPARISON TABLE ── */
-  .compare-section {
-    padding: 80px 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #0a0a0a;
-  }
-
-  .section-label {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: 60px;
-    line-height: 1.2;
-  }
-
-  .compare-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .compare-table thead tr {
-    border-bottom: 1px solid var(--gold-border);
-  }
-
-  .compare-table th {
-    padding: 20px 24px;
-    text-align: left;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  .compare-table th.col-feature { color: var(--white-dim); width: 40%; }
-  .compare-table th.col-generic { color: rgba(255,255,255,0.3); width: 30%; }
-  .compare-table th.col-laap { color: var(--gold); width: 30%; }
-
-  .compare-table tbody tr {
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    transition: background 0.2s;
-    background: #0a0a0a;
-  }
-
-  .compare-table tbody tr:hover {
-    background: #151515;
-  }
-
-  .compare-table td {
-    padding: 22px 24px;
-    font-size: 0.9rem;
-    vertical-align: top;
-  }
-
-  .compare-table td.feature-name {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 600;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-    color: #f5f0e8;
-  }
-
-  .compare-table td.feature-name span {
-    display: block;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.78rem;
-    color: rgba(245,240,232,0.6);
-    margin-top: 4px;
-    letter-spacing: 0;
-  }
-
-  .compare-table td.generic-val {
-    color: rgba(255,255,255,0.35);
-    font-size: 0.88rem;
-  }
-
-  .compare-table td.laap-val {
-    color: #f5f0e8;
-    font-size: 0.88rem;
-  }
-
-  .check { color: var(--gold); margin-right: 6px; }
-  .cross { color: rgba(255,255,255,0.2); margin-right: 6px; }
-
-  .highlight-row td {
-    background: #0d0d0d !important;
-  }
-
-  /* ── CALLOUT STRIP ── */
-  .callout {
-    margin: 60px 40px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid var(--gold-border);
-    padding: 56px 64px;
-    position: relative;
-    overflow: hidden;
-    background: #0a0a0a;
-  }
-
-  .callout::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--gold);
-  }
-
-  .callout::after {
-    content: '';
-    position: absolute;
-    top: -50%; right: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(ellipse, rgba(218,184,92,0.05) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .callout-quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.5;
-    color: var(--white);
-    max-width: 700px;
-    margin-bottom: 24px;
-  }
-
-  .callout-quote em { color: var(--gold); font-style: normal; }
-
-  .callout-attr {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  /* ── AGENTS ── */
-  .agents-section {
-    padding: 80px 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #0a0a0a;
-  }
-
-  .agents-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 48px;
-  }
-
-  .agent-card {
-    border: 1px solid var(--gold-border);
-    padding: 28px;
-    position: relative;
-    transition: border-color 0.3s, transform 0.3s;
-    background: #050505;
-  }
-
-  .agent-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-4px);
-  }
-
-  .agent-initial {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem;
-    font-weight: 600;
-    color: var(--black);
-    background: var(--gold);
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
-    margin-bottom: 16px;
-  }
-
-  .agent-name {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .agent-role {
-    font-size: 0.82rem;
-    color: var(--white-dim);
-    line-height: 1.5;
-  }
-
-  /* ── CTA SECTION ── */
-  .cta-section {
-    padding: 100px 40px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    background: #0a0a0a;
-  }
-
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px; height: 300px;
-    background: radial-gradient(ellipse, rgba(218,184,92,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .cta-section h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 5vw, 3.8rem);
-    font-weight: 300;
-    line-height: 1.15;
-    margin-bottom: 24px;
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-section p {
-    color: var(--white-dim);
-    max-width: 500px;
-    margin: 0 auto 40px;
-    font-size: 0.95rem;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--black);
-    background: var(--gold);
-    padding: 16px 44px;
-    text-decoration: none;
-    transition: all 0.3s;
-    margin-right: 16px;
-  }
-
-  .btn-primary:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-  }
-
-  .btn-secondary {
-    display: inline-block;
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid var(--gold-border);
-    padding: 16px 44px;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-
-  .btn-secondary:hover {
-    background: var(--gold-dim);
-    border-color: var(--gold);
-    transform: translateY(-2px);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 40px;
-    text-align: center;
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.2);
-    font-family: 'Rajdhani', sans-serif;
-    letter-spacing: 0.1em;
-    background: #0a0a0a;
-  }
-
-  footer a { color: var(--gold); text-decoration: none; }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    nav { padding: 16px 20px; }
-    .hero { padding: 100px 24px 60px; }
-    .story { padding: 60px 24px; }
-    .story-grid { grid-template-columns: 1fr; gap: 40px; }
-    .compare-section { padding: 60px 20px; }
-    .compare-table th, .compare-table td { padding: 14px 12px; font-size: 0.8rem; }
-    .callout { padding: 36px 28px; margin: 40px 20px; }
-    .agents-grid { grid-template-columns: 1fr 1fr; }
-    .agents-section { padding: 60px 24px; }
-    .cta-section { padding: 80px 24px; }
-    .btn-primary, .btn-secondary { display: block; margin: 0 auto 16px; max-width: 260px; text-align: center; }
-  }
-
-  @media (max-width: 480px) {
-    .agents-grid { grid-template-columns: 1fr; }
-    .compare-table th.col-generic, .compare-table td.generic-val { display: none; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAAP Suite™ vs. Generic AI Tools | LaFaries Mortimer LLC</title>
+  <meta name="description" content="See how LAAP Suite™ compares to generic AI tools. Built specifically for small businesses, ministries, and entrepreneurs — formation, compliance, automation, and legacy in one system." />
+  <link rel="canonical" href="https://lafariesmortimerllc.com/compare" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #DAB85C;
+      --gold-light: #e8cc80;
+      --gold-dim: rgba(218,184,92,0.12);
+      --gold-border: rgba(218,184,92,0.22);
+      --black: #080808;
+      --surface: #111111;
+      --surface-2: #161616;
+      --offwhite: #F8F6F1;
+      --text: rgba(248,246,241,0.88);
+      --muted: rgba(248,246,241,0.48);
+      --red: rgba(255,80,80,0.85);
+      --green: rgba(218,184,92,1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { background: #080808; }
+
+    body {
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--black);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+    .nav-brand img { height: 36px; width: auto; }
+    .nav-brand span { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--offwhite); font-weight: 600; line-height: 1.2; }
+    .nav-brand small { display: block; font-family: 'DM Sans', sans-serif; font-size: 0.65rem; color: var(--gold); font-weight: 400; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-ctas { display: flex; gap: 0.75rem; }
+    .nav-ctas a { font-size: 0.8rem; font-weight: 500; text-decoration: none; padding: 0.4rem 1rem; border-radius: 3px; transition: all 0.2s; }
+    .btn-ghost { color: var(--gold); border: 1px solid var(--gold-border); }
+    .btn-ghost:hover { background: var(--gold-dim); border-color: var(--gold); }
+    .btn-solid { background: var(--gold); color: var(--black); font-weight: 600; }
+    .btn-solid:hover { background: var(--gold-light); }
+
+    /* HERO */
+    .hero {
+      background: #080808 radial-gradient(ellipse at 50% 0%, rgba(218,184,92,0.09) 0%, transparent 65%);
+      text-align: center;
+      padding: 6rem 2rem 5rem;
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+      border: 1px solid var(--gold-border);
+      padding: 0.3rem 0.9rem;
+      border-radius: 20px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 400;
+      color: var(--offwhite);
+      line-height: 1.08;
+      margin-bottom: 1.25rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.65;
+    }
+    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-ctas a {
+      padding: 0.9rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .cta-gold { background: var(--gold); color: var(--black); }
+    .cta-gold:hover { background: var(--gold-light); }
+    .cta-outline { border: 1px solid var(--gold-border); color: var(--gold); }
+    .cta-outline:hover { background: var(--gold-dim); border-color: var(--gold); }
+
+    /* WRAPS */
+    .wrap { background: #080808; width: 100%; padding: 5rem 2rem; }
+    .wrap-alt { background: var(--surface); width: 100%; padding: 5rem 2rem; border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+    .inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; color: var(--offwhite); margin-bottom: 0.6rem; line-height: 1.15; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-sub { color: var(--muted); font-size: 0.92rem; max-width: 560px; margin-bottom: 3rem; }
+
+    /* TWO COL INTRO */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 4rem; }
+    .col-card {
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid var(--gold-border);
+    }
+    .col-card.generic { background: var(--surface-2); opacity: 0.75; }
+    .col-card.laap { background: var(--surface); border-color: var(--gold); }
+    .col-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .col-tag.generic-tag { background: rgba(255,255,255,0.06); color: var(--muted); }
+    .col-tag.laap-tag { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); }
+    .col-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--offwhite); margin-bottom: 0.75rem; line-height: 1.2; }
+    .col-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+    /* COMPARISON TABLE */
+    .compare-table { width: 100%; border-collapse: collapse; }
+    .compare-table thead tr { border-bottom: 2px solid var(--gold-border); }
+    .compare-table thead th {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--gold);
+    }
+    .compare-table thead th:nth-child(2) { text-align: center; color: var(--muted); }
+    .compare-table thead th:nth-child(3) { text-align: center; color: var(--gold); }
+
+    .compare-table tbody tr {
+      border-bottom: 1px solid rgba(218,184,92,0.08);
+      transition: background 0.15s;
+    }
+    .compare-table tbody tr:hover { background: rgba(218,184,92,0.03); }
+    .compare-table tbody tr:last-child { border-bottom: none; }
+
+    .compare-table td { padding: 1.1rem 1.25rem; vertical-align: top; }
+    .compare-table td:first-child { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .compare-table td:first-child span { display: block; font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 0.15rem; }
+    .compare-table td:nth-child(2),
+    .compare-table td:nth-child(3) { text-align: center; font-size: 0.82rem; vertical-align: middle; }
+
+    .check { color: var(--gold); font-size: 1rem; font-weight: 700; }
+    .cross { color: rgba(255,80,80,0.7); font-size: 1rem; }
+    .check-sub { display: block; font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; font-weight: 400; }
+    .cross-sub { display: block; font-size: 0.72rem; color: rgba(255,80,80,0.5); margin-top: 0.2rem; font-weight: 400; }
+
+    /* QUOTE STRIP */
+    .quote-strip {
+      background: var(--gold-dim);
+      border-top: 1px solid var(--gold-border);
+      border-bottom: 1px solid var(--gold-border);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .quote-strip blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 400;
+      color: var(--offwhite);
+      max-width: 760px;
+      margin: 0 auto 0.75rem;
+      line-height: 1.4;
+      font-style: italic;
+    }
+    .quote-strip blockquote em { color: var(--gold); font-style: normal; }
+    .quote-strip cite { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+
+    /* AGENTS */
+    .agents-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; }
+    .agent-card {
+      background: #080808;
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .agent-card:hover { border-color: rgba(218,184,92,0.4); }
+    .agent-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      border: 1px solid var(--gold-border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .agent-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--offwhite); margin-bottom: 0.15rem; }
+    .agent-role { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.35rem; }
+    .agent-info p { font-size: 0.845rem; color: var(--muted); line-height: 1.5; }
+
+    /* TIER TEASER — forces click to pricing */
+    .tier-teaser { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+    .teaser-card {
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      position: relative;
+      text-align: center;
+    }
+    .teaser-card.featured { border-color: var(--gold); }
+    .teaser-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--black);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.85rem;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .teaser-card .t-label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.3rem; }
+    .teaser-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--offwhite); margin-bottom: 0.5rem; }
+    .teaser-price {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--gold-border);
+    }
+    .teaser-price strong { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); font-weight: 600; }
+    .teaser-features { list-style: none; margin-bottom: 1.5rem; text-align: left; }
+    .teaser-features li { font-size: 0.845rem; color: var(--text); padding: 0.35rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; gap: 0.5rem; }
+    .teaser-features li:last-child { border-bottom: none; }
+    .teaser-features li::before { content: "✓"; color: var(--gold); font-weight: 700; font-size: 0.78rem; flex-shrink: 0; margin-top: 2px; }
+    .teaser-blur {
+      background: linear-gradient(to bottom, transparent 0%, #111111 70%);
+      height: 60px;
+      margin-top: -60px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+    .teaser-card .see-more {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .pricing-force {
+      background: var(--gold);
+      color: var(--black);
+      display: block;
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 1.1rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .pricing-force:hover { background: var(--gold-light); }
+    .pricing-force-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+    .pricing-force-note a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-border); }
+    .pricing-force-note a:hover { border-color: var(--gold); }
+
+    /* FINAL CTA BAND */
+    .cta-band {
+      background: #080808 radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.07) 0%, transparent 70%);
+      border-top: 1px solid var(--gold-border);
+      text-align: center;
+      padding: 5.5rem 2rem;
+    }
+    .cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 400; color: var(--offwhite); margin-bottom: 0.75rem; }
+    .cta-band h2 em { color: var(--gold); font-style: italic; }
+    .cta-band p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    .final-cta-stack { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+    .btn-final-primary {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      padding: 1.1rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      background: var(--gold);
+      color: var(--black);
+      transition: background 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .btn-final-primary:hover { background: var(--gold-light); }
+    .btn-final-secondary {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      padding: 0.9rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+      border: 1px solid var(--gold-border);
+      color: var(--gold);
+      transition: all 0.2s;
+    }
+    .btn-final-secondary:hover { background: var(--gold-dim); border-color: var(--gold); }
+    .btn-final-tertiary {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(218,184,92,0.2);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+    .btn-final-tertiary:hover { color: var(--gold); }
+
+    /* FOOTER */
+    footer { background: var(--black); border-top: 1px solid var(--gold-border); padding: 3.5rem 2rem 2rem; }
+    .footer-grid { max-width: 1100px; margin: 0 auto 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; }
+    .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.85rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.45rem; }
+    .footer-col ul li a { color: var(--muted); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(218,184,92,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; color: var(--muted); opacity: 0.6; }
+    .footer-bottom a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; transition: color 0.2s; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .two-col { grid-template-columns: 1fr; }
+      .tier-teaser { grid-template-columns: 1fr; }
+      .agents-grid { grid-template-columns: 1fr; }
+      .compare-table thead th:first-child { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="https://www.lafariesmortimerllc.com" class="nav-logo">LaFaries Mortimer LLC</a>
-  <a href="https://laaplm.netlify.app" class="nav-cta">Explore LAAP Suite</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">LAAP Suite™ vs. Generic AI Tools</p>
-  <h1>Most AI tools help you<br><em>work faster.</em><br>LAAP helps you<br>build something <em>that lasts.</em></h1>
-  <p class="hero-sub">There's no shortage of AI tools that can draft, generate, and automate. But none of them know your business, your compliance needs, or your legacy goals. LAAP does.</p>
-  <div class="hero-divider"></div>
-  <p class="hero-scroll">Scroll to see the difference</p>
-</section>
-
-<!-- STORY SECTION -->
-<section class="story">
-  <div class="story-grid reveal">
-    <div class="story-col generic">
-      <p class="story-col-label generic">Generic AI Tools</p>
-      <h2>Built for everyone.<br>Optimized for no one.</h2>
-      <p>Generic AI platforms are powerful — there's no denying it. They can write 50 resumes overnight, build websites in minutes, and search the entire web on command.</p>
-      <p>But when you ask them "Am I legally compliant?" or "What do I need to do to protect my business legacy?" — they go quiet. They weren't built for that conversation.</p>
-      <p>They're tools. Impressive tools. But tools without a roadmap for your business.</p>
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/assets/img/logo-2026.png" alt="LaFaries Mortimer LLC Logo" />
+      <span>LaFaries Mortimer LLC <small>Administrative & IT Services</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/laap">LAAP Suite™</a></li>
+      <li><a href="/services">Services</a></li>
+      <li><a href="/apps">Apps</a></li>
+      <li><a href="/annual-maintenance">Maintenance</a></li>
+      <li><a href="/compare" class="active">Compare</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="/free" class="btn-ghost">Free Tools</a>
+      <a href="/contact" class="btn-solid">Book a Call</a>
     </div>
-    <div class="story-col laap">
-      <p class="story-col-label laap">LAAP Suite™</p>
-      <h2>Built for your business.<br>From day one to legacy.</h2>
-      <p>LAAP is the guided business operating system built specifically for small businesses, solopreneurs, and ministries navigating the real complexities of running an organization in America.</p>
-      <p>Formation. Compliance. Operations. Legacy planning. LAAP walks you through every phase — not as a chatbot that guesses, but as a structured system backed by six specialized AI agents who know your context.</p>
-      <p>It's not just what you can do. It's what you <em>need</em> to do — and LAAP knows the difference.</p>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<!-- COMPARISON TABLE -->
-<section class="compare-section">
-  <p class="section-label reveal">Side by Side</p>
-  <h2 class="section-title reveal">What separates LAAP<br>from everything else</h2>
-
-  <table class="compare-table reveal">
-    <thead>
-      <tr>
-        <th class="col-feature">Capability</th>
-        <th class="col-generic">Generic AI Tools</th>
-        <th class="col-laap">LAAP Suite™</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="feature-name">Business Formation Guidance<span>Step-by-step LLC, corp, or nonprofit setup</span></td>
-        <td class="generic-val"><span class="cross">✕</span>General info only</td>
-        <td class="laap-val"><span class="check">✓</span>Guided workflow with agent support</td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="feature-name">Compliance Tracking<span>Ongoing regulatory and filing requirements</span></td>
-        <td class="generic-val"><span class="cross">✕</span>Not applicable</td>
-        <td class="laap-val"><span class="check">✓</span>Built into the platform, state-aware</td>
-      </tr>
-      <tr>
-        <td class="feature-name">Legacy Planning Tools<span>Succession, asset documentation, continuity</span></td>
-        <td class="generic-val"><span class="cross">✕</span>Not available</td>
-        <td class="laap-val"><span class="check">✓</span>Core feature of every LAAP tier</td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="feature-name">Specialized AI Agents<span>Context-aware agents assigned to specific roles</span></td>
-        <td class="generic-val"><span class="cross">✕</span>Generic chat only</td>
-        <td class="laap-val"><span class="check">✓</span>Francis, Aria, Grace, Rex, Lex, Nova</td>
-      </tr>
-      <tr>
-        <td class="feature-name">Ministry & Nonprofit Support<span>Tax-exempt status, reporting, structure</span></td>
-        <td class="generic-val"><span class="cross">✕</span>Not specialized</td>
-        <td class="laap-val"><span class="check">✓</span>Dedicated ministry track</td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="feature-name">Operational Workflow System<span>SOPs, task management, process documentation</span></td>
-        <td class="generic-val"><span class="cross">✕</span>Requires setup from scratch</td>
-        <td class="laap-val"><span class="check">✓</span>Pre-built into the OS structure</td>
-      </tr>
-      <tr>
-        <td class="feature-name">Task Automation<span>Bulk tasks, document generation, research</span></td>
-        <td class="generic-val"><span class="check" style="color:rgba(255,255,255,0.35)">✓</span>Strong, flexible</td>
-        <td class="laap-val"><span class="check">✓</span>Business-specific automation</td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="feature-name">Knows Your Business Context<span>Remembers your entity, goals, and history</span></td>
-        <td class="generic-val"><span class="cross">✕</span>Stateless by default</td>
-        <td class="laap-val"><span class="check">✓</span>Context-persistent across your workflow</td>
-      </tr>
-      <tr>
-        <td class="feature-name">Guided Onboarding Path<span>Structured roadmap vs. blank chat interface</span></td>
-        <td class="generic-val"><span class="cross">✕</span>You figure it out</td>
-        <td class="laap-val"><span class="check">✓</span>Phase-by-phase operating roadmap</td>
-      </tr>
-      <tr class="highlight-row">
-        <td class="feature-name">Annual Maintenance Support<span>Recurring tasks to keep your business current</span></td>
-        <td class="generic-val"><span class="cross">✕</span>No guidance</td>
-        <td class="laap-val"><span class="check">✓</span>Included in maintenance plans</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<!-- CALLOUT STRIP -->
-<div class="callout reveal">
-  <p class="callout-quote">"Generic AI tools are built for the world. <em>LAAP was built for your business</em> — the one you're trying to protect, grow, and one day hand down."</p>
-  <p class="callout-attr">— LaFaries Mortimer LLC · Miami, FL</p>
-</div>
-
-<!-- AGENTS SECTION -->
-<section class="agents-section">
-  <p class="section-label reveal">Meet Your Team</p>
-  <h2 class="section-title reveal">Six agents. One mission.<br>Your business, fully supported.</h2>
-
-  <div class="agents-grid">
-    <div class="agent-card reveal">
-      <div class="agent-initial">F</div>
-      <p class="agent-name">Francis</p>
-      <p class="agent-role">Formation & compliance guidance. Knows the rules so you don't have to learn them the hard way.</p>
-    </div>
-    <div class="agent-card reveal">
-      <div class="agent-initial">A</div>
-      <p class="agent-name">Aria</p>
-      <p class="agent-role">Administrative operations and workflow management. Keeps your business running like a system.</p>
-    </div>
-    <div class="agent-card reveal">
-      <div class="agent-initial">G</div>
-      <p class="agent-name">Grace</p>
-      <p class="agent-role">Ministry and nonprofit support. Understands the unique structure of faith-based and community organizations.</p>
-    </div>
-    <div class="agent-card reveal">
-      <div class="agent-initial">R</div>
-      <p class="agent-name">Rex</p>
-      <p class="agent-role">Research and strategic intelligence. Finds what you need to make smarter business decisions.</p>
-    </div>
-    <div class="agent-card reveal">
-      <div class="agent-initial">L</div>
-      <p class="agent-name">Lex</p>
-      <p class="agent-role">Legal documentation and structure. Helps you draft, organize, and understand your business agreements.</p>
-    </div>
-    <div class="agent-card reveal">
-      <div class="agent-initial">N</div>
-      <p class="agent-name">Nova</p>
-      <p class="agent-role">Legacy and succession planning. Ensures what you build today can be protected and passed forward.</p>
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-eyebrow">LAAP Suite™ vs. Generic AI Tools</span>
+    <h1>Most AI tools help you work faster.<br><em>LAAP helps you build something that lasts.</em></h1>
+    <p>Generic AI is powerful. But it was never designed for your compliance deadlines, your formation needs, or your legacy goals. LAAP was.</p>
+    <div class="hero-ctas">
+      <a href="https://laaplm.netlify.app" class="cta-gold">Get Started with LAAP Suite™ →</a>
+      <a href="/pricing" class="cta-outline">See Pricing First</a>
     </div>
   </div>
-</section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <h2 class="reveal">Ready to run your business<br>like a <em style="font-family:'Cormorant Garamond',serif; color:var(--gold); font-style:italic;">real system?</em></h2>
-  <p class="reveal">Start with the LAAP Suite™ and get the structure, compliance, and legacy planning that generic AI tools were never designed to give you.</p>
-  <div class="reveal">
-    <a href="https://laaplm.netlify.app" class="btn-primary">Explore LAAP Suite</a>
-    <a href="https://www.lafariesmortimerllc.com" class="btn-secondary">Learn More</a>
+  <!-- TWO COL INTRO -->
+  <div class="wrap">
+    <div class="inner">
+      <p class="section-label">The Core Difference</p>
+      <h2 class="section-title">Built for everyone <em>vs.</em> built for your business</h2>
+      <p class="section-sub">There's a fundamental difference between a tool that can help anyone and a system built specifically for you.</p>
+      <div class="two-col">
+        <div class="col-card generic">
+          <span class="col-tag generic-tag">Generic AI Tools</span>
+          <h3>Built for everyone.<br>Optimized for no one.</h3>
+          <p>Generic AI platforms are powerful — they can write, generate, and automate almost anything. But when you ask "Am I legally compliant?" or "What do I need to protect my business legacy?" — they go quiet. They weren't built for that conversation. They're tools. Impressive tools. But tools without a roadmap for your business.</p>
+        </div>
+        <div class="col-card laap">
+          <span class="col-tag laap-tag">LAAP Suite™</span>
+          <h3>Built for your business.<br>From day one to legacy.</h3>
+          <p>LAAP is the guided business operating system built specifically for small businesses, solopreneurs, and ministries navigating the real complexities of running an organization in America. Formation. Compliance. Operations. Legacy planning. LAAP walks you through every phase — not as a chatbot that guesses, but as a structured system backed by six specialized AI agents who know your context.</p>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 <a href="https://www.lafariesmortimerllc.com">LaFaries Mortimer LLC</a> · Miami, FL · Administrative & IT Services · <a href="/cdn-cgi/l/email-protection#9cefe9ececf3eee8dcf0fdfafdeef5f9eff1f3eee8f5f1f9eef0f0ffb2fff3f1"><span class="__cf_email__" data-cfemail="cebdbbbebea1bcba8ea2afa8afbca7abbda3a1bcbaa7a3abbca2a2ade0ada1a3">[email&#160;protected]</span></a></p>
-</footer>
+  <!-- COMPARISON TABLE -->
+  <div class="wrap-alt">
+    <div class="inner">
+      <p class="section-label">Side by Side</p>
+      <h2 class="section-title">What separates LAAP <em>from everything else</em></h2>
+      <p class="section-sub">Ten capabilities that matter to your business — and how each solution handles them.</p>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Generic AI Tools</th>
+            <th>LAAP Suite™</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Business Formation Guidance <span>Step-by-step LLC, corp, or nonprofit setup</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">General info only</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Guided workflow with agent support</span></td>
+          </tr>
+          <tr>
+            <td>Compliance Tracking <span>Ongoing regulatory and filing requirements</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">Not applicable</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Built-in, state-aware tracking</span></td>
+          </tr>
+          <tr>
+            <td>Legacy Planning Tools <span>Succession, asset documentation, continuity</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">Not available</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Core feature of every tier</span></td>
+          </tr>
+          <tr>
+            <td>Specialized AI Agents <span>Context-aware agents assigned to specific roles</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">Generic chat only</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Francis, Aria, Grace, Rex, Lex, Nova</span></td>
+          </tr>
+          <tr>
+            <td>Ministry & Nonprofit Support <span>Tax-exempt status, reporting, structure</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">Not specialized</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Dedicated ministry track</span></td>
+          </tr>
+          <tr>
+            <td>Operational Workflow System <span>SOPs, task management, process documentation</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">Requires setup from scratch</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Pre-built into the OS structure</span></td>
+          </tr>
+          <tr>
+            <td>Task Automation <span>Bulk tasks, document generation, research</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Strong, flexible</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Business-specific automation</span></td>
+          </tr>
+          <tr>
+            <td>Knows Your Business Context <span>Remembers your entity, goals, and history</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">Stateless by default</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Context-persistent across workflow</span></td>
+          </tr>
+          <tr>
+            <td>Guided Onboarding Path <span>Structured roadmap vs. blank chat interface</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">You figure it out</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Phase-by-phase operating roadmap</span></td>
+          </tr>
+          <tr>
+            <td>Annual Maintenance Support <span>Recurring tasks to keep your business current</span></td>
+            <td><span class="cross">✕</span><span class="cross-sub">No guidance</span></td>
+            <td><span class="check">✓</span><span class="check-sub">Included in maintenance plans</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- QUOTE STRIP -->
+  <div class="quote-strip">
+    <blockquote>"Generic AI tools are built for the world. <em>LAAP was built for your business</em> — the one you're trying to protect, grow, and one day hand down."</blockquote>
+    <cite>— LaFaries Mortimer LLC · Miami, FL</cite>
+  </div>
+
+  <!-- AGENTS -->
+  <div class="wrap">
+    <div class="inner">
+      <p class="section-label">Your AI Team</p>
+      <h2 class="section-title">Six agents. <em>One mission.</em></h2>
+      <p class="section-sub">Every LAAP subscriber gets a dedicated team of specialized AI agents — not a generic chatbot. Each one knows its role inside your business.</p>
+      <div class="agents-grid">
+        <div class="agent-card">
+          <div class="agent-avatar">F</div>
+          <div class="agent-info">
+            <h3>Francis</h3>
+            <div class="agent-role">Formation & Compliance</div>
+            <p>Knows the rules so you don't have to learn them the hard way.</p>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-avatar">A</div>
+          <div class="agent-info">
+            <h3>Aria</h3>
+            <div class="agent-role">Administrative Operations</div>
+            <p>Keeps your business running like a system, not a side project.</p>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-avatar">G</div>
+          <div class="agent-info">
+            <h3>Grace</h3>
+            <div class="agent-role">Ministry & Client Services</div>
+            <p>Built for faith-based and community organizations specifically.</p>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-avatar">R</div>
+          <div class="agent-info">
+            <h3>Rex</h3>
+            <div class="agent-role">Research & Records</div>
+            <p>Finds what you need to make smarter business decisions, faster.</p>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-avatar">L</div>
+          <div class="agent-info">
+            <h3>Lex</h3>
+            <div class="agent-role">Legal & Compliance</div>
+            <p>Helps you understand and organize your business agreements.</p>
+          </div>
+        </div>
+        <div class="agent-card">
+          <div class="agent-avatar">N</div>
+          <div class="agent-info">
+            <h3>Nova</h3>
+            <div class="agent-role">Analytics & Legacy</div>
+            <p>Protects what you build and plans for what comes next.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIER TEASER — forces click to pricing -->
+  <div class="wrap-alt">
+    <div class="inner">
+      <p class="section-label">Plans & Pricing</p>
+      <h2 class="section-title">Three tiers. <em>One system.</em></h2>
+      <p class="section-sub">Every plan includes full LAAP Console access. Pick the tier that matches where your business is today.</p>
+
+      <div class="tier-teaser">
+
+        <div class="teaser-card">
+          <p class="t-label">Tier I</p>
+          <h3>LAAP Builder</h3>
+          <div class="teaser-price"><strong>$79</strong> / month</div>
+          <ul class="teaser-features">
+            <li>Full LAAP Console access</li>
+            <li>Business formation guidance</li>
+            <li>Compliance tracking (all 50 states)</li>
+          </ul>
+          <div class="teaser-blur"></div>
+          <span class="see-more">+ 4 more features included →</span>
+        </div>
+
+        <div class="teaser-card featured">
+          <div class="teaser-badge">Most Popular</div>
+          <p class="t-label">Tier II</p>
+          <h3>LAAP Growth</h3>
+          <div class="teaser-price"><strong>$149</strong> / month</div>
+          <ul class="teaser-features">
+            <li>Everything in Builder</li>
+            <li>AI Business Agents — 24/7 (4 agents)</li>
+            <li>Deadline reminder system</li>
+          </ul>
+          <div class="teaser-blur"></div>
+          <span class="see-more">+ 4 more features included →</span>
+        </div>
+
+        <div class="teaser-card">
+          <p class="t-label">Tier III</p>
+          <h3>LAAP Elite</h3>
+          <div class="teaser-price"><strong>$199</strong> / month</div>
+          <ul class="teaser-features">
+            <li>Everything in Growth</li>
+            <li>All 6 AI Agents — full access</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <div class="teaser-blur"></div>
+          <span class="see-more">+ 5 more features included →</span>
+        </div>
+
+      </div>
+
+      <a href="/pricing" class="pricing-force">See Full Pricing & Feature Breakdown →</a>
+      <p class="pricing-force-note">Cancel anytime · No setup fee · Or <a href="/contact">book a free call</a> first</p>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="cta-band">
+    <h2>You've seen the difference.<br><em>Now make the move.</em></h2>
+    <p>Start building a real business operating system — one built for your compliance, your legacy, and your growth.</p>
+    <div class="final-cta-stack">
+      <a href="https://laaplm.netlify.app" class="btn-final-primary">Get Started with LAAP Suite™ →</a>
+      <a href="/pricing" class="btn-final-secondary">View Full Pricing & Features</a>
+      <a href="/contact" class="btn-final-tertiary">Not ready yet? Book a free call first</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/compare">Compare</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/laap">LAAP Suite™</a></li>
+          <li><a href="/annual-maintenance">Annual Maintenance</a></li>
+          <li><a href="/apps">Apps & Tools</a></li>
+          <li><a href="/free">Free Tools</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="/contact">Book a Free Call</a></li>
+          <li><a href="/free">Start with Free Tools</a></li>
+          <li><a href="https://laaplm.netlify.app">Open LAAP Suite™</a></li>
+          <li><a href="/review">Leave a Review</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2023–2026 LaFaries Mortimer LLC · All rights reserved.</span>
+      <div>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+        <a href="mailto:support@lafariesmortimerllc.com">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
