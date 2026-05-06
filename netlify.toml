@@ -53,7 +53,7 @@ status = 200
 # Google Review link
 [[redirects]]
 from = "/review"
-to = "https://g.page/r/CcK63XJnvZRzEAE/review"
+to = "to = "https://g.page/r/CcK63XJnvZRzEBM/review""
 status = 302
 force = true
 
