@@ -1,51 +1,64 @@
 # Redirect old LAAP Suite URLs to actual LAAP page
 [[redirects]]
-  from = "/laap-suite"
-  to = "/laap"
-  status = 301
-  force = true
+from = "/laap-suite"
+to = "/laap"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/laap-suite/"
-  to = "/laap"
-  status = 301
-  force = true
+from = "/laap-suite/"
+to = "/laap"
+status = 301
+force = true
 
 # Fix /tutorial → /tutorials (the real page)
 [[redirects]]
-  from = "/tutorial"
-  to = "/tutorials"
-  status = 301
-  force = true
+from = "/tutorial"
+to = "/tutorials"
+status = 301
+force = true
+
+# Fix /wizard/ → actual LAAP app (was a broken 404)
+[[redirects]]
+from = "/wizard"
+to = "https://laaplm.netlify.app"
+status = 302
+force = true
+
+[[redirects]]
+from = "/wizard/"
+to = "https://laaplm.netlify.app"
+status = 302
+force = true
 
 # Dead .docx files → relevant real pages
 [[redirects]]
-  from = "/docs/it-cybersecurity-basics.docx"
-  to = "/tutorials"
-  status = 301
-  force = true
+from = "/docs/it-cybersecurity-basics.docx"
+to = "/tutorials"
+status = 301
+force = true
 
 [[redirects]]
-  from = "/templates/meeting-agenda.docx"
-  to = "/templates"
-  status = 301
-  force = true
+from = "/templates/meeting-agenda.docx"
+to = "/templates"
+status = 301
+force = true
 
 # Annual Maintenance clean URL
 [[redirects]]
-  from = "/annual-maintenance"
-  to = "/annual-maintenance.html"
-  status = 200
+from = "/annual-maintenance"
+to = "/annual-maintenance.html"
+status = 200
 
 # Google Review link
 [[redirects]]
-  from = "/review"
-  to = "https://g.page/r/CcK63XJnvZRzEAE/review"
-  status = 302
-  force = true
+from = "/review"
+to = "https://g.page/r/CcK63XJnvZRzEAE/review"
+status = 302
+force = true
 
 # Wildcard SPA fallback — MUST be last
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
