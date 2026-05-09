@@ -24,281 +24,153 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { background: #080808; }
     body { color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    /* ================= HEADER ================= */
-    header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(15,17,21,.95);
-      backdrop-filter: blur(10px);
-    }
-    .nav {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 16px;
-      padding: 14px 0;
-    }
+    /* ── HEADER ── */
+    header { position: sticky; top: 0; z-index: 100; background: rgba(15,17,21,.95); backdrop-filter: blur(10px); }
+    .nav { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px; padding: 14px 0; }
     .brand { display: flex; align-items: center; gap: 12px; }
     .brand-logo {
       width: 44px; height: 44px; border-radius: 50%; padding: 3px;
       background: radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-      box-shadow: 0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
+      box-shadow: 0 0 0 2px rgba(218,184,92,.6), 0 8px 22px rgba(218,184,92,.55);
     }
     .brand strong { font-family: 'Cormorant Garamond', serif; color: #fff; }
     .brand span { font-size: 11px; color: rgba(255,255,255,.6); }
     nav { display: flex; gap: 14px; justify-content: center; }
-    header nav a { color: #ffffff !important; font-size: 13px; text-decoration: none; }
+    header nav a { color: #ffffff !important; font-size: 13px; }
     header nav a:hover { color: var(--gold) !important; }
     .ctaTop { display: flex; gap: 10px; }
     .btn { padding: 12px 16px; border-radius: 999px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; text-decoration: none; }
     .btnGold { background: var(--gold); color: #1a1a1a; }
     .btnGhost { border: 1px solid rgba(255,255,255,.35); color: #fff; }
-    a { text-decoration: none; color: inherit; }
     .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
 
-    /* HAMBURGER */
-    .mobile-menu-btn {
-      display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; cursor: pointer; padding: 6px; margin-left: auto;
-    }
+    /* ── HAMBURGER ── */
+    .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; margin-left: auto; }
     .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: #DAB85C; transition: all 0.3s; }
     .mobile-menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
     .mobile-menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* MOBILE DRAWER */
-    .mobile-drawer {
-      display: none; position: fixed; top: 72px; left: 0; right: 0;
-      background: #0a0a0a; border-bottom: 1px solid rgba(218,184,92,0.15);
-      flex-direction: column; z-index: 9998; padding: 8px 0 20px;
-    }
-    .mobile-drawer a {
-      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: rgba(240,235,224,0.7); padding: 14px 28px;
-      border-bottom: 1px solid rgba(218,184,92,0.06); display: block;
-    }
+    /* ── MOBILE DRAWER ── */
+    .mobile-drawer { display: none; position: fixed; top: 72px; left: 0; right: 0; background: #0a0a0a; border-bottom: 1px solid rgba(218,184,92,0.15); flex-direction: column; z-index: 9998; padding: 8px 0 20px; }
+    .mobile-drawer a { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(240,235,224,0.7); padding: 14px 28px; border-bottom: 1px solid rgba(218,184,92,0.06); display: block; }
     .mobile-drawer a:hover { color: #DAB85C; background: rgba(218,184,92,0.04); }
     .mobile-drawer .drawer-ctas { display: flex; gap: 12px; padding: 20px 28px 0; }
-    .mobile-drawer .drawer-ctas a {
-      flex: 1; text-align: center; border: none; padding: 12px;
-      border-radius: 999px; font-size: 0.72rem; letter-spacing: 0.14em; font-weight: 600;
-    }
-    @media(max-width:980px) {
-      nav { display: none; }
-      .ctaTop { display: none; }
-      .mobile-menu-btn { display: flex; }
-      .mobile-drawer.open { display: flex; }
-    }
+    .mobile-drawer .drawer-ctas a { flex: 1; text-align: center; border: none; padding: 12px; border-radius: 999px; font-size: 0.72rem; letter-spacing: 0.14em; font-weight: 600; }
+    @media(max-width:980px) { nav { display: none; } .ctaTop { display: none; } .mobile-menu-btn { display: flex; } .mobile-drawer.open { display: flex; } }
 
-    /* HERO */
-    .hero {
-      background: #080808 radial-gradient(ellipse at 50% 0%, rgba(218,184,92,0.08) 0%, transparent 65%);
-      padding: 5rem 2rem 4rem; border-bottom: 1px solid var(--gold-border); text-align: center;
-    }
+    /* ── HERO ── */
+    .hero { background: #080808 radial-gradient(ellipse at 50% 0%, rgba(218,184,92,0.08) 0%, transparent 65%); padding: 5rem 2rem 4rem; border-bottom: 1px solid var(--gold-border); text-align: center; }
     .hero-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
     .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 400; color: var(--offwhite); line-height: 1.1; margin-bottom: 1rem; }
     .hero h1 em { font-style: italic; color: var(--gold); }
     .hero p { font-size: 1rem; color: var(--muted); max-width: 560px; margin: 0 auto; line-height: 1.65; }
 
-    /* CATEGORY FILTER */
+    /* ── FILTER ── */
     .filter-wrap { background: #080808; border-bottom: 1px solid var(--gold-border); padding: 1.25rem 2rem; }
     .filter-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
     .filter-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-right: 0.5rem; }
     .filter-btn {
-      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 0.35rem 0.9rem;
-      border-radius: 20px; border: 1px solid var(--gold-border);
-      color: var(--muted); background: transparent;
-      cursor: pointer; transition: all 0.2s;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 20px; border: 1px solid var(--gold-border);
+      color: var(--muted); background: transparent; cursor: pointer; transition: all 0.2s;
       font-family: 'DM Sans', sans-serif;
-      /* KEY FIX: these are buttons, not links */
     }
     .filter-btn:hover, .filter-btn.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
 
-    /* Hidden state for filtering */
-    .blog-card.hidden,
-    .featured-post.hidden,
-    .card-coming.hidden,
-    .featured-section.hidden { display: none !important; }
+    /* ── HIDDEN / EMPTY ── */
+    .blog-card.hidden, .card-coming.hidden, .featured-section.hidden { display: none !important; }
+    .empty-state { display: none; grid-column: 1/-1; text-align: center; padding: 4rem 2rem; color: var(--muted); }
+    .empty-state.visible { display: block; }
+    .empty-state p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; }
 
-    /* CONTENT WRAPS */
+    /* ── CONTENT WRAP ── */
     .content-wrap { background: #080808; width: 100%; padding: 5rem 2rem; }
     .inner { max-width: 1100px; margin: 0 auto; }
-
     .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; }
     .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; color: var(--offwhite); margin-bottom: 0.5rem; line-height: 1.15; }
     .section-title em { font-style: italic; color: var(--gold); }
     .section-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 2.5rem; }
 
-    /* FEATURED POST */
+    /* ── FEATURED ── */
     .featured-section { margin-bottom: 4rem; }
-    .featured-post {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      background: var(--surface); border: 1px solid var(--gold-border);
-      border-radius: 8px; overflow: hidden; transition: border-color 0.25s;
-    }
+    .featured-post { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--surface); border: 1px solid var(--gold-border); border-radius: 8px; overflow: hidden; transition: border-color 0.25s; }
     .featured-post:hover { border-color: rgba(218,184,92,0.45); }
-    .featured-image {
-      background: linear-gradient(135deg, #0a1628 0%, #0f2040 50%, #1a1a2e 100%);
-      min-height: 420px; display: flex; flex-direction: column;
-      align-items: flex-start; justify-content: flex-end;
-      padding: 2.5rem; position: relative; overflow: hidden;
-    }
-    .featured-image::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(600px circle at 30% 30%, rgba(218,184,92,0.1), transparent 60%);
-    }
-    .featured-number {
-      position: absolute; top: 2rem; right: 2rem;
-      font-family: 'Cormorant Garamond', serif; font-size: 8rem;
-      font-weight: 600; color: rgba(218,184,92,0.06); line-height: 1; z-index: 0;
-    }
-    .featured-category-badge {
-      position: relative; z-index: 1; display: inline-block;
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 0.3rem 0.85rem; border-radius: 20px; margin-bottom: 1rem;
-      background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--gold);
-    }
-    .featured-title-bg {
-      position: relative; z-index: 1;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400;
-      color: var(--offwhite); line-height: 1.15;
-    }
+    .featured-image { background: linear-gradient(135deg, #0a1628 0%, #0f2040 50%, #1a1a2e 100%); min-height: 420px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 2.5rem; position: relative; overflow: hidden; }
+    .featured-image::before { content: ''; position: absolute; inset: 0; background: radial-gradient(600px circle at 30% 30%, rgba(218,184,92,0.1), transparent 60%); }
+    .featured-number { position: absolute; top: 2rem; right: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 8rem; font-weight: 600; color: rgba(218,184,92,0.06); line-height: 1; z-index: 0; }
+    .featured-category-badge { position: relative; z-index: 1; display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 0.85rem; border-radius: 20px; margin-bottom: 1rem; background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--gold); }
+    .featured-title-bg { position: relative; z-index: 1; font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; color: var(--offwhite); line-height: 1.15; }
     .featured-title-bg em { font-style: italic; color: var(--gold); }
-    .featured-content {
-      padding: 2.5rem; display: flex; flex-direction: column;
-      justify-content: center; gap: 1.25rem; border-left: 1px solid var(--gold-border);
-    }
-    .featured-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold); font-weight: 600;
-    }
+    .featured-content { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; border-left: 1px solid var(--gold-border); }
+    .featured-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
     .featured-badge::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
     .featured-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 600; color: var(--offwhite); line-height: 1.2; }
     .featured-excerpt { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
     .featured-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.75rem; color: rgba(248,246,241,0.3); letter-spacing: 0.05em; flex-wrap: wrap; }
-    .btn-read {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      font-size: 0.85rem; font-weight: 600; text-decoration: none;
-      color: var(--black); background: var(--gold);
-      padding: 0.75rem 1.5rem; border-radius: 4px; transition: background 0.2s;
-      align-self: flex-start; letter-spacing: 0.03em;
-    }
+    .btn-read { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; color: var(--black); background: var(--gold); padding: 0.75rem 1.5rem; border-radius: 4px; transition: background 0.2s; align-self: flex-start; }
     .btn-read:hover { background: var(--gold-light); }
 
-    /* BLOG CARD GRID */
+    /* ── BLOG GRID ── */
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
-
-    .blog-card {
-      background: var(--surface); border: 1px solid var(--gold-border);
-      border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
+    .blog-card { background: var(--surface); border: 1px solid var(--gold-border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.25s, box-shadow 0.25s; }
     .blog-card:hover { border-color: rgba(218,184,92,0.45); box-shadow: 0 8px 40px rgba(218,184,92,0.07); }
-    .card-image {
-      height: 180px; display: flex; align-items: flex-end;
-      padding: 1.25rem; position: relative; overflow: hidden;
-    }
+    .card-image { height: 180px; display: flex; align-items: flex-end; padding: 1.25rem; position: relative; overflow: hidden; }
     .card-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, #0a1628, #0f2040); }
     .card-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(400px circle at 30% 30%, rgba(218,184,92,0.08), transparent 60%); }
-    .card-cat {
-      position: relative; z-index: 1; display: inline-block;
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
-      padding: 0.25rem 0.7rem; border-radius: 20px;
-      background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--gold);
-    }
+    .card-cat { position: relative; z-index: 1; display: inline-block; font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 20px; background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--gold); }
     .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; gap: 0.75rem; }
-    .card-title {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600;
-      color: var(--offwhite); line-height: 1.25; text-decoration: none; transition: color 0.2s;
-    }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--offwhite); line-height: 1.25; transition: color 0.2s; }
     .card-title:hover { color: var(--gold); }
     .card-excerpt { font-size: 0.855rem; color: var(--muted); line-height: 1.6; flex: 1; }
-    .card-meta {
-      display: flex; align-items: center; justify-content: space-between;
-      padding-top: 0.75rem; border-top: 1px solid rgba(218,184,92,0.08);
-    }
+    .card-meta { display: flex; align-items: center; justify-content: space-between; padding-top: 0.75rem; border-top: 1px solid rgba(218,184,92,0.08); }
     .card-date { font-size: 0.72rem; color: rgba(248,246,241,0.3); letter-spacing: 0.05em; }
     .card-read-time { font-size: 0.72rem; color: rgba(248,246,241,0.3); letter-spacing: 0.05em; }
-    .btn-card-read {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.78rem; font-weight: 600; text-decoration: none;
-      color: var(--gold); border-bottom: 1px solid var(--gold-border);
-      padding-bottom: 1px; transition: border-color 0.2s;
-      margin-top: 0.5rem; align-self: flex-start;
-    }
+    .btn-card-read { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.78rem; font-weight: 600; color: var(--gold); border-bottom: 1px solid var(--gold-border); padding-bottom: 1px; transition: border-color 0.2s; margin-top: 0.5rem; align-self: flex-start; }
     .btn-card-read:hover { border-color: var(--gold); }
 
-    /* COMING SOON CARD */
-    .card-coming {
-      background: #080808; border: 1px dashed rgba(218,184,92,0.2);
-      border-radius: 8px; padding: 2rem;
-      display: flex; flex-direction: column; align-items: center;
-      justify-content: center; text-align: center; min-height: 280px; gap: 0.75rem;
-    }
+    /* ── COMING SOON CARD ── */
+    .card-coming { background: #080808; border: 1px dashed rgba(218,184,92,0.2); border-radius: 8px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; min-height: 280px; gap: 0.75rem; }
     .card-coming .coming-icon { font-size: 1.75rem; opacity: 0.4; }
     .card-coming h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: rgba(248,246,241,0.3); font-style: italic; }
     .card-coming p { font-size: 0.8rem; color: rgba(248,246,241,0.2); }
 
-    /* EMPTY STATE */
-    .empty-state {
-      display: none; grid-column: 1/-1; text-align: center;
-      padding: 4rem 2rem; color: var(--muted);
-    }
-    .empty-state.visible { display: block; }
-    .empty-state p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; }
-
-    /* NEWSLETTER */
-    .newsletter {
-      border: 1px solid var(--gold-border); border-radius: 8px; padding: 3rem;
-      text-align: center; margin-top: 4rem;
-      background: radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.06) 0%, transparent 70%), var(--surface);
-    }
+    /* ── NEWSLETTER ── */
+    .newsletter { border: 1px solid var(--gold-border); border-radius: 8px; padding: 3rem; text-align: center; margin-top: 4rem; background: radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.06) 0%, transparent 70%), var(--surface); }
     .newsletter h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--offwhite); margin-bottom: 0.5rem; }
     .newsletter h3 em { font-style: italic; color: var(--gold); }
     .newsletter p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.75rem; }
     .newsletter-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
-    .newsletter-form input {
-      padding: 0.75rem 1.25rem; background: #080808; border: 1px solid var(--gold-border);
-      border-radius: 4px; color: var(--offwhite); font-family: 'DM Sans', sans-serif;
-      font-size: 0.875rem; width: 280px; outline: none; transition: border-color 0.2s;
-    }
+    .newsletter-form input { padding: 0.75rem 1.25rem; background: #080808; border: 1px solid var(--gold-border); border-radius: 4px; color: var(--offwhite); font-family: 'DM Sans', sans-serif; font-size: 0.875rem; width: 280px; outline: none; transition: border-color 0.2s; }
     .newsletter-form input:focus { border-color: var(--gold); }
     .newsletter-form input::placeholder { color: var(--muted); }
-    .newsletter-form button {
-      padding: 0.75rem 1.5rem; background: var(--gold); color: var(--black);
-      border: none; border-radius: 4px; font-family: 'DM Sans', sans-serif;
-      font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background 0.2s;
-    }
+    .newsletter-form button { padding: 0.75rem 1.5rem; background: var(--gold); color: var(--black); border: none; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background 0.2s; }
     .newsletter-form button:hover { background: var(--gold-light); }
 
-    /* CTA BAND */
-    .cta-band {
-      background: #080808 radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.06) 0%, transparent 70%);
-      border-top: 1px solid var(--gold-border); text-align: center; padding: 5rem 2rem;
-    }
+    /* ── CTA BAND ── */
+    .cta-band { background: #080808 radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.06) 0%, transparent 70%); border-top: 1px solid var(--gold-border); text-align: center; padding: 5rem 2rem; }
     .cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; color: var(--offwhite); margin-bottom: 0.75rem; }
     .cta-band h2 em { color: var(--gold); font-style: italic; }
     .cta-band p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2.25rem; }
     .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .cta-buttons a { padding: 0.85rem 1.85rem; font-size: 0.875rem; font-weight: 600; text-decoration: none; border-radius: 4px; transition: all 0.2s; }
+    .cta-buttons a { padding: 0.85rem 1.85rem; font-size: 0.875rem; font-weight: 600; border-radius: 4px; transition: all 0.2s; }
     .cta-primary { background: var(--gold); color: var(--black); }
     .cta-primary:hover { background: var(--gold-light); }
     .cta-secondary { border: 1px solid var(--gold-border); color: var(--gold); }
     .cta-secondary:hover { background: var(--gold-dim); border-color: var(--gold); }
 
-    /* FOOTER */
+    /* ── FOOTER ── */
     footer { background: var(--black); border-top: 1px solid var(--gold-border); padding: 3.5rem 2rem 2rem; }
     .footer-grid { max-width: 1100px; margin: 0 auto 2.5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; }
     .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.85rem; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 0.45rem; }
-    .footer-col ul li a { color: var(--muted); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    .footer-col ul li a { color: var(--muted); font-size: 0.83rem; transition: color 0.2s; }
     .footer-col ul li a:hover { color: var(--gold); }
     .footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(218,184,92,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.78rem; color: var(--muted); opacity: 0.6; }
-    .footer-bottom a { color: var(--muted); text-decoration: none; margin-left: 1.25rem; transition: color 0.2s; }
+    .footer-bottom a { color: var(--muted); margin-left: 1.25rem; transition: color 0.2s; }
     .footer-bottom a:hover { color: var(--gold); }
 
     @media (max-width: 768px) {
@@ -369,7 +241,7 @@
     <p>Practical guides, compliance tips, AI insights, and ministry administration advice — written for real people building real things.</p>
   </div>
 
-  <!-- CATEGORY FILTER — buttons only, no href navigation -->
+  <!-- FILTER -->
   <div class="filter-wrap">
     <div class="filter-inner">
       <span class="filter-label">Filter:</span>
@@ -383,104 +255,162 @@
     </div>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- CONTENT -->
   <div class="content-wrap">
     <div class="inner">
 
-      <!-- FEATURED POST -->
-      <div class="featured-section" data-categories="business-formation">
+      <!-- FEATURED — post #8: flagship thought leadership -->
+      <div class="featured-section" data-categories="entrepreneurship">
         <p class="section-label">Featured Article</p>
         <div class="featured-post">
           <div class="featured-image">
-            <div class="featured-number">01</div>
-            <span class="featured-category-badge">Business Formation</span>
-            <h2 class="featured-title-bg">How to Form an LLC<br>in Florida <em>in 2026</em></h2>
+            <div class="featured-number">★</div>
+            <span class="featured-category-badge">Entrepreneurship</span>
+            <h2 class="featured-title-bg">Failing From Lack of <em>Structure,</em><br>Not Vision</h2>
           </div>
           <div class="featured-content">
-            <span class="featured-badge">Featured Article</span>
-            <h2 class="featured-title">5 LLC Mistakes That Cost Florida Business Owners Thousands</h2>
-            <p class="featured-excerpt">Most Florida LLC owners don't realize they're out of compliance until it's too late. Here are the 5 most costly mistakes — and what to do before they catch up with you.</p>
+            <span class="featured-badge">Featured Essay</span>
+            <h2 class="featured-title">Why Most Small Businesses Are Not Failing From Lack of Vision — They're Failing From Lack of Structure</h2>
+            <p class="featured-excerpt">Many small businesses do not fail because they lack talent, passion, or ideas. They fail because they lack operational structure. The greatest operational cost is often not financial — it is not knowing.</p>
             <div class="featured-meta">
               <span>📅 May 2026</span>
-              <span>⏱ 8 min read</span>
-              <span>🏢 Business Formation</span>
+              <span>⏱ 6 min read</span>
+              <span>✍️ Essay</span>
             </div>
-            <a href="/blog/llc-mistakes-florida-business-owners" class="btn-read">Read Article →</a>
+            <a href="/blog/failing-from-lack-of-structure-not-vision" class="btn-read">Read Article →</a>
           </div>
         </div>
       </div>
 
-      <!-- BLOG GRID -->
+      <!-- ALL ARTICLES -->
       <p class="section-label">All Articles</p>
       <h2 class="section-title">Latest from <em>the blog</em></h2>
-      <p class="section-sub">Practical guides written for small business owners, ministry leaders, and entrepreneurs across all 50 states.</p>
+      <p class="section-sub">11 articles covering business formation, AI automation, compliance, ministry operations, and entrepreneurship.</p>
 
       <div class="blog-grid" id="blog-grid">
 
-        <!-- LAAP Suite Article — AI & Automation -->
+        <!-- 1. How LAAP Suite™ Is Reimagining Admin Infrastructure -->
         <div class="blog-card" data-categories="ai-automation">
-          <div class="card-image">
-            <span class="card-cat">AI &amp; Automation</span>
-          </div>
+          <div class="card-image"><span class="card-cat">AI &amp; Automation</span></div>
           <div class="card-body">
             <a href="/blog/laap-suite-reimagining-admin-infrastructure" class="card-title">How LAAP Suite™ Is Reimagining Administrative Infrastructure for Ministries, Nonprofits &amp; Small Businesses</a>
-            <p class="card-excerpt">Most organizations don't fail because they lack vision — they fail because they lack structure. See how LAAP Suite™ is solving that through an AI-powered operational ecosystem.</p>
+            <p class="card-excerpt">Most organizations don't fail because they lack vision — they fail because they lack structure. See how LAAP Suite™ is solving that through a guided AI-powered operational ecosystem.</p>
             <a href="/blog/laap-suite-reimagining-admin-infrastructure" class="btn-card-read">Read Article →</a>
-            <div class="card-meta">
-              <span class="card-date">May 2026</span>
-              <span class="card-read-time">10 min read</span>
-            </div>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">10 min read</span></div>
           </div>
         </div>
 
-        <!-- Ministry Article -->
-        <div class="blog-card" data-categories="ministry">
-          <div class="card-image">
-            <span class="card-cat">Ministry</span>
+        <!-- 2. What AI Should Actually Be Doing -->
+        <div class="blog-card" data-categories="ai-automation">
+          <div class="card-image"><span class="card-cat">AI &amp; Automation</span></div>
+          <div class="card-body">
+            <a href="/blog/what-ai-should-actually-be-doing-for-your-business" class="card-title">What AI Should Actually Be Doing for Your Business</a>
+            <p class="card-excerpt">AI is not supposed to replace leadership. AI is supposed to reduce operational burden. Here's the philosophy behind LAAP Suite™ — and what AI should actually be doing inside your organization.</p>
+            <a href="/blog/what-ai-should-actually-be-doing-for-your-business" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">5 min read</span></div>
           </div>
+        </div>
+
+        <!-- 3. AI Agents at Work -->
+        <div class="blog-card" data-categories="ai-automation">
+          <div class="card-image"><span class="card-cat">AI &amp; Automation</span></div>
+          <div class="card-body">
+            <a href="/blog/laap-ai-agents-at-work" class="card-title">AI Agents at Work — Meet the LAAP Suite™ Team</a>
+            <p class="card-excerpt">Meet Francis, Aria, Grace, Rex, Lex, and Nova — six specialized AI agents, each handling a distinct operational domain for your business or ministry.</p>
+            <a href="/blog/laap-ai-agents-at-work" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">5 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 4. The 10-Step LAAP Formation Wizard -->
+        <div class="blog-card" data-categories="ai-automation business-formation">
+          <div class="card-image"><span class="card-cat">AI &amp; Automation</span></div>
+          <div class="card-body">
+            <a href="/blog/laap-formation-wizard" class="card-title">The 10-Step LAAP Formation Wizard</a>
+            <p class="card-excerpt">This is not just a checklist — it generates the documents and guidance the client needs at each step. A guided organizational formation sequence that builds operational maturity.</p>
+            <a href="/blog/laap-formation-wizard" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">4 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 5. Ongoing Compliance & Maintenance -->
+        <div class="blog-card" data-categories="compliance">
+          <div class="card-image"><span class="card-cat">Compliance</span></div>
+          <div class="card-body">
+            <a href="/blog/ongoing-compliance-maintenance-laap-suite" class="card-title">Ongoing Compliance &amp; Maintenance — How LAAP Suite™ Keeps You Current</a>
+            <p class="card-excerpt">Most business formation companies stop after setup. LAAP Suite™ continues into long-term operational continuity — compliance dashboards, automated reminders, document vault, and more.</p>
+            <a href="/blog/ongoing-compliance-maintenance-laap-suite" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">4 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 6. The Complete Digital Infrastructure Checklist -->
+        <div class="blog-card" data-categories="business-formation entrepreneurship">
+          <div class="card-image"><span class="card-cat">Business Formation</span></div>
+          <div class="card-body">
+            <a href="/blog/digital-infrastructure-checklist-small-business-2026" class="card-title">The Complete Digital Infrastructure Checklist for Small Businesses in 2026</a>
+            <p class="card-excerpt">Digital infrastructure is more than a website. Here is the complete 15-point checklist every small business should have in place — interactive and ready to audit your own operations.</p>
+            <a href="/blog/digital-infrastructure-checklist-small-business-2026" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">10 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 7. What Is Digital Infrastructure? -->
+        <div class="blog-card" data-categories="business-formation entrepreneurship">
+          <div class="card-image"><span class="card-cat">Business Operations</span></div>
+          <div class="card-body">
+            <a href="/blog/what-is-digital-infrastructure-small-business" class="card-title">What Is Digital Infrastructure for Small Businesses?</a>
+            <p class="card-excerpt">Many business owners hear the term and think it only means having a website. It is much bigger than that — here is a quick, clear explanation of what it actually includes.</p>
+            <a href="/blog/what-is-digital-infrastructure-small-business" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">3 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 8. The Hidden Cost of Disorganization -->
+        <div class="blog-card" data-categories="entrepreneurship">
+          <div class="card-image"><span class="card-cat">Business Operations</span></div>
+          <div class="card-body">
+            <a href="/blog/hidden-cost-of-disorganization-in-business" class="card-title">The Hidden Cost of Disorganization in Business</a>
+            <p class="card-excerpt">Most people think disorganization only costs time. In reality it costs money, credibility, opportunities, growth, and peace of mind — and those costs compound over time.</p>
+            <a href="/blog/hidden-cost-of-disorganization-in-business" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">5 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 9. Why Small Businesses Stay Disorganized -->
+        <div class="blog-card" data-categories="entrepreneurship">
+          <div class="card-image"><span class="card-cat">Entrepreneurship</span></div>
+          <div class="card-body">
+            <a href="/blog/why-small-businesses-stay-disorganized" class="card-title">Why Small Businesses Stay Disorganized</a>
+            <p class="card-excerpt">Most small businesses are not intentionally disorganized. Many simply do not know where to start — and that hesitation creates larger operational problems over time.</p>
+            <a href="/blog/why-small-businesses-stay-disorganized" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">3 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 10. Why Ministries Need Digital Infrastructure -->
+        <div class="blog-card" data-categories="ministry">
+          <div class="card-image"><span class="card-cat">Ministry</span></div>
+          <div class="card-body">
+            <a href="/blog/why-ministries-need-digital-infrastructure-2026" class="card-title">Why Ministries Need Digital Infrastructure in 2026</a>
+            <p class="card-excerpt">Ministry is spiritual. But ministry operations are administrative. Modernization does not mean losing the human aspect of ministry — it means strengthening the mission through structure.</p>
+            <a href="/blog/why-ministries-need-digital-infrastructure-2026" class="btn-card-read">Read Article →</a>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">5 min read</span></div>
+          </div>
+        </div>
+
+        <!-- 11. What Every Church Needs to Stay Legally Compliant -->
+        <div class="blog-card" data-categories="ministry compliance">
+          <div class="card-image"><span class="card-cat">Ministry</span></div>
           <div class="card-body">
             <a href="/blog/what-every-church-needs-to-stay-legally-compliant" class="card-title">What Happens When a Church Loses Its Legal Standing</a>
             <p class="card-excerpt">Most churches operate with good intentions but incomplete legal structure. Here's exactly what your ministry needs to stay protected, compliant, and credible.</p>
             <a href="/blog/what-every-church-needs-to-stay-legally-compliant" class="btn-card-read">Read Article →</a>
-            <div class="card-meta">
-              <span class="card-date">May 2026</span>
-              <span class="card-read-time">6 min read</span>
-            </div>
+            <div class="card-meta"><span class="card-date">May 2026</span><span class="card-read-time">6 min read</span></div>
           </div>
         </div>
 
-        <!-- Coming Soon Cards -->
-        <div class="card-coming" data-categories="business-formation compliance">
-          <div class="coming-icon">✍️</div>
-          <h3>Coming Soon</h3>
-          <p>What Is an EIN and Does My Business Need One?</p>
-        </div>
-
-        <div class="card-coming" data-categories="compliance business-formation">
-          <div class="coming-icon">✍️</div>
-          <h3>Coming Soon</h3>
-          <p>The 5 Most Common LLC Compliance Mistakes — And How to Avoid Them</p>
-        </div>
-
-        <div class="card-coming" data-categories="ai-automation">
-          <div class="coming-icon">✍️</div>
-          <h3>Coming Soon</h3>
-          <p>How AI Agents Are Changing Small Business Administration</p>
-        </div>
-
-        <div class="card-coming" data-categories="compliance">
-          <div class="coming-icon">✍️</div>
-          <h3>Coming Soon</h3>
-          <p>Annual Report Deadlines by State — The Complete 2026 Guide</p>
-        </div>
-
-        <div class="card-coming" data-categories="legacy entrepreneurship">
-          <div class="coming-icon">✍️</div>
-          <h3>Coming Soon</h3>
-          <p>How to Build a Legacy Plan for Your Small Business</p>
-        </div>
-
-        <!-- Empty state (shown when no cards match) -->
+        <!-- Empty state -->
         <div class="empty-state" id="empty-state">
           <p>No articles in this category yet — check back soon.</p>
         </div>
@@ -557,7 +487,7 @@
   </footer>
 
   <script>
-    // ── MOBILE MENU ──
+    // Mobile menu
     const mobBtn = document.getElementById('mob-btn');
     const mobDrawer = document.getElementById('mob-drawer');
     mobBtn.addEventListener('click', () => {
@@ -565,7 +495,7 @@
       mobDrawer.classList.toggle('open');
     });
 
-    // ── CATEGORY FILTER ──
+    // Category filter
     const filterBtns = document.querySelectorAll('.filter-btn');
     const featuredSection = document.querySelector('.featured-section');
     const allCards = document.querySelectorAll('#blog-grid .blog-card, #blog-grid .card-coming');
@@ -573,36 +503,34 @@
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active state
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
 
-        // Handle featured section
+        // Featured section
         if (filter === 'all') {
           featuredSection.classList.remove('hidden');
         } else {
-          const featCats = featuredSection.getAttribute('data-categories') || '';
-          featuredSection.classList.toggle('hidden', !featCats.split(' ').includes(filter));
+          const cats = (featuredSection.getAttribute('data-categories') || '').split(' ');
+          featuredSection.classList.toggle('hidden', !cats.includes(filter));
         }
 
-        // Handle grid cards
-        let visibleCount = 0;
+        // Grid cards
+        let visible = 0;
         allCards.forEach(card => {
           if (filter === 'all') {
             card.classList.remove('hidden');
-            visibleCount++;
+            visible++;
           } else {
-            const cardCats = (card.getAttribute('data-categories') || '').split(' ');
-            const matches = cardCats.includes(filter);
-            card.classList.toggle('hidden', !matches);
-            if (matches) visibleCount++;
+            const cats = (card.getAttribute('data-categories') || '').split(' ');
+            const match = cats.includes(filter);
+            card.classList.toggle('hidden', !match);
+            if (match) visible++;
           }
         });
 
-        // Show empty state only if zero real cards visible
-        emptyState.classList.toggle('visible', visibleCount === 0);
+        emptyState.classList.toggle('visible', visible === 0);
       });
     });
   </script>
