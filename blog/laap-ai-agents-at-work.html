@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Agents at Work — Meet the LAAP Suite™ Team | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Meet Francis, Aria, Grace, Rex, Lex, and Nova — the six specialized AI agents inside LAAP Suite™, each handling a distinct operational domain for your business or ministry." />
+  <link rel="canonical" href="https://www.lafariesmortimerllc.com/blog/laap-ai-agents-at-work" />
+
+  <meta property="og:title" content="AI Agents at Work — Meet the LAAP Suite™ Team" />
+  <meta property="og:description" content="These agents are not designed to replace people. They are designed to reduce operational burden." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.lafariesmortimerllc.com/blog/laap-ai-agents-at-work" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI Agents at Work — Meet the LAAP Suite™ Team",
+    "description": "Meet the six specialized AI agents inside LAAP Suite™. Each handles a distinct operational domain — from compliance and legal to ministry support and legacy planning.",
+    "author": { "@type": "Organization", "name": "LaFaries Mortimer LLC", "url": "https://www.lafariesmortimerllc.com" },
+    "publisher": { "@type": "Organization", "name": "LaFaries Mortimer LLC", "url": "https://www.lafariesmortimerllc.com" },
+    "datePublished": "2026-05-09",
+    "mainEntityOfPage": "https://www.lafariesmortimerllc.com/blog/laap-ai-agents-at-work"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --gold: #DAB85C;
+      --gold-light: #e8cc80;
+      --gold-dim: rgba(218,184,92,0.15);
+      --gold-dim2: rgba(218,184,92,0.07);
+      --black: #080808;
+      --off-white: #F8F6F1;
+      --off-white-dim: rgba(248,246,241,0.6);
+      --mid: #1a1a1a;
+      --mid2: #141414;
+      --border: rgba(218,184,92,0.2);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--off-white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0;
+      background: rgba(8,8,8,0.96);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .site-logo {
+      font-family: 'Cormorant Garamond', serif; font-weight: 600;
+      font-size: 1.1rem; letter-spacing: 0.04em; color: var(--gold); text-decoration: none;
+    }
+    .site-logo span { color: var(--off-white); font-weight: 300; }
+    .header-nav { display: flex; align-items: center; gap: 1.5rem; }
+    .header-nav a { font-size: 0.8rem; color: var(--off-white-dim); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
+    .header-nav a:hover { color: var(--gold); }
+    .header-cta {
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); text-decoration: none; border: 1px solid var(--border);
+      padding: 0.45rem 1.1rem; transition: background 0.25s, color 0.25s;
+    }
+    .header-cta:hover { background: var(--gold); color: var(--black); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      max-width: 860px; margin: 2rem auto 0; padding: 0 2rem;
+      font-size: 0.78rem; color: var(--off-white-dim); letter-spacing: 0.04em;
+    }
+    .breadcrumb a { color: var(--gold); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 0.5rem; opacity: 0.4; }
+
+    /* ── HERO ── */
+    .article-hero {
+      max-width: 860px; margin: 2.5rem auto 0; padding: 0 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .explainer-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      background: var(--gold-dim); border: 1px solid var(--border);
+      color: var(--gold); padding: 0.3rem 0.85rem; border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+    .article-category {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .article-category::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+    .article-title {
+      font-family: 'Cormorant Garamond', serif; font-weight: 600;
+      font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.12;
+      color: var(--off-white); margin-bottom: 1.5rem; letter-spacing: -0.01em;
+    }
+    .article-title em { font-style: italic; color: var(--gold); }
+    .article-meta {
+      display: flex; align-items: center; gap: 1.25rem;
+      font-size: 0.82rem; color: var(--off-white-dim);
+      padding-bottom: 2.5rem; border-bottom: 1px solid var(--border); flex-wrap: wrap;
+    }
+    .article-meta .author { font-weight: 500; color: var(--off-white); }
+    .article-meta .dot { opacity: 0.3; }
+
+    /* ── BODY ── */
+    .article-body {
+      max-width: 860px; margin: 0 auto; padding: 2.5rem 2rem 5rem;
+    }
+    .article-body p {
+      font-size: 1.05rem; color: rgba(248,246,241,0.88); margin-bottom: 1.6rem;
+    }
+
+    /* ── AGENT ROSTER HEADER ── */
+    .roster-intro {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .roster-label {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .roster-line { flex: 1; height: 1px; background: var(--border); }
+    .roster-count {
+      font-size: 0.7rem; letter-spacing: 0.1em; color: var(--off-white-dim);
+    }
+
+    /* ── AGENT CARDS ── */
+    .agent-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: 1rem 0 3rem;
+    }
+    .agent-card {
+      background: var(--mid);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .agent-card:hover { background: #1e1e1e; }
+    .agent-card::after {
+      content: attr(data-initial);
+      position: absolute;
+      bottom: -0.5rem; right: 0.75rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      font-weight: 700;
+      color: rgba(218,184,92,0.04);
+      line-height: 1;
+      pointer-events: none;
+      transition: color 0.2s;
+    }
+    .agent-card:hover::after { color: rgba(218,184,92,0.07); }
+
+    .agent-header {
+      padding: 1.5rem 1.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 1rem;
+    }
+    .agent-name-block {}
+    .agent-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .agent-role {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--off-white-dim);
+    }
+    .agent-tier {
+      font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid var(--border);
+      padding: 0.2rem 0.6rem; border-radius: 20px;
+      white-space: nowrap; flex-shrink: 0;
+      background: var(--gold-dim2);
+    }
+
+    .agent-body { padding: 1.25rem 1.75rem 1.5rem; flex: 1; }
+    .agent-desc {
+      font-size: 0.9rem; color: rgba(248,246,241,0.75);
+      line-height: 1.6; margin-bottom: 1rem;
+    }
+    .agent-tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+    }
+    .agent-tag {
+      font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: rgba(218,184,92,0.7); border: 1px solid rgba(218,184,92,0.12);
+      padding: 0.2rem 0.55rem; border-radius: 3px;
+      background: rgba(218,184,92,0.04);
+    }
+
+    /* ── PHILOSOPHY SECTION ── */
+    .philosophy-wrap {
+      border-top: 1px solid var(--border);
+      padding-top: 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 400; font-style: italic; line-height: 1.55;
+      color: var(--gold-light); text-align: center;
+      padding: 2.5rem 2rem; margin: 0 -2rem 2.5rem;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      background: var(--gold-dim2);
+    }
+
+    /* ── AI vs HUMAN SPLIT ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin: 1.5rem 0 2.5rem;
+    }
+    .split-col { padding: 1.75rem; background: var(--mid2); }
+    .split-col-label {
+      font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+    }
+    .split-col.ai .split-col-label { color: var(--gold); }
+    .split-col.human .split-col-label { color: rgba(248,246,241,0.4); }
+    .split-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .split-list li {
+      font-size: 0.9rem; color: rgba(248,246,241,0.78);
+      padding-left: 1.35rem; position: relative; line-height: 1.45;
+    }
+    .split-col.ai .split-list li::before { content: '⚡'; position: absolute; left: 0; font-size: 0.7rem; top: 0.15rem; }
+    .split-col.human .split-list li::before { content: '♡'; position: absolute; left: 0; font-size: 0.8rem; top: 0.1rem; color: rgba(248,246,241,0.35); }
+    .split-col.human .split-list li { color: rgba(248,246,241,0.88); }
+
+    /* ── CTA BLOCK ── */
+    .cta-block {
+      background: linear-gradient(135deg, #0f0e08 0%, #111 100%);
+      border: 1px solid var(--border);
+      padding: 3rem 2.5rem;
+      margin: 3rem 0 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .cta-block::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 200px; height: 200px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(218,184,92,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600;
+      color: var(--off-white); margin-bottom: 0.75rem;
+    }
+    .cta-block p {
+      font-size: 0.95rem; color: var(--off-white-dim);
+      max-width: 460px; margin: 0 auto 2rem;
+    }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-btn {
+      display: inline-block; background: var(--gold); color: var(--black);
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; padding: 0.9rem 2.2rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .cta-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .cta-btn-ghost {
+      display: inline-block; color: var(--gold); border: 1px solid var(--border);
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      text-decoration: none; padding: 0.9rem 2.2rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .cta-btn-ghost:hover { background: var(--gold-dim); border-color: var(--gold); }
+
+    /* ── RELATED ── */
+    .related-section { max-width: 860px; margin: 0 auto; padding: 0 2rem 4rem; }
+    .related-label {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .related-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--gold); }
+    .related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .related-card { background: var(--mid); padding: 1.5rem; text-decoration: none; transition: background 0.2s; }
+    .related-card:hover { background: #1f1f1f; }
+    .related-cat { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    .related-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--off-white); line-height: 1.3; }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      border-top: 1px solid var(--border); padding: 2.5rem 2rem;
+      text-align: center; font-size: 0.8rem;
+      color: rgba(248,246,241,0.35); letter-spacing: 0.04em;
+    }
+    .site-footer a { color: var(--gold); text-decoration: none; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .site-header { padding: 1rem 1.25rem; }
+      .header-nav { display: none; }
+      .article-hero, .article-body, .related-section { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .agent-grid { grid-template-columns: 1fr; }
+      .split-grid { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .pull-quote { margin: 0 -1.25rem 2.5rem; }
+      .agent-card::after { font-size: 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="https://www.lafariesmortimerllc.com" class="site-logo">LaFaries Mortimer <span>LLC</span></a>
+    <nav class="header-nav">
+      <a href="/blog">← Back to Blog</a>
+      <a href="/laap">LAAP Suite™</a>
+      <a href="/free">Free Tools</a>
+    </nav>
+    <a href="/contact" class="header-cta">Book a Call</a>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/blog">Blog</a>
+    <span>›</span>
+    AI Agents at Work
+  </div>
+
+  <!-- HERO -->
+  <div class="article-hero">
+    <div class="explainer-badge">🤖 Product Feature</div>
+    <div class="article-category">LAAP Suite™</div>
+    <h1 class="article-title">
+      <em>AI Agents</em> at Work
+    </h1>
+    <div class="article-meta">
+      <span class="author">LaFaries Mortimer LLC</span>
+      <span class="dot">·</span>
+      <span>5 min read</span>
+      <span class="dot">·</span>
+      <span>May 2026</span>
+      <span class="dot">·</span>
+      <span>6 Agents</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <article class="article-body">
+
+    <p>Once onboarded, organizations gain access to specialized AI agents based on their service tier. Each agent handles a distinct operational domain — working together as a complete administrative support system behind your business or ministry.</p>
+
+    <!-- AGENT ROSTER -->
+    <div class="roster-intro">
+      <span class="roster-label">Meet the Team</span>
+      <div class="roster-line"></div>
+      <span class="roster-count">6 Agents</span>
+    </div>
+
+    <div class="agent-grid">
+
+      <!-- FRANCIS -->
+      <div class="agent-card" data-initial="F">
+        <div class="agent-header">
+          <div class="agent-name-block">
+            <div class="agent-name">Francis</div>
+            <div class="agent-role">Formation &amp; Compliance</div>
+          </div>
+          <div class="agent-tier">All Tiers</div>
+        </div>
+        <div class="agent-body">
+          <p class="agent-desc">Guides clients through filings, annual reports, compliance requirements, and state-specific regulations across all 50 states.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">State Filings</span>
+            <span class="agent-tag">Annual Reports</span>
+            <span class="agent-tag">Compliance</span>
+            <span class="agent-tag">All 50 States</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARIA -->
+      <div class="agent-card" data-initial="A">
+        <div class="agent-header">
+          <div class="agent-name-block">
+            <div class="agent-name">Aria</div>
+            <div class="agent-role">Administrative Operations</div>
+          </div>
+          <div class="agent-tier">All Tiers</div>
+        </div>
+        <div class="agent-body">
+          <p class="agent-desc">Handles workflows, automation, scheduling, document organization, correspondence systems, and operational management.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">Workflows</span>
+            <span class="agent-tag">Scheduling</span>
+            <span class="agent-tag">Automation</span>
+            <span class="agent-tag">Document Org</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRACE -->
+      <div class="agent-card" data-initial="G">
+        <div class="agent-header">
+          <div class="agent-name-block">
+            <div class="agent-name">Grace</div>
+            <div class="agent-role">Ministry &amp; Nonprofit Support</div>
+          </div>
+          <div class="agent-tier">Growth &amp; Elite</div>
+        </div>
+        <div class="agent-body">
+          <p class="agent-desc">Designed specifically for churches and nonprofit organizations, including donor reporting, ministry administration, ordination tracking, and ministry logistics.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">Donor Reporting</span>
+            <span class="agent-tag">Ordination Tracking</span>
+            <span class="agent-tag">Ministry Admin</span>
+            <span class="agent-tag">Nonprofits</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- REX -->
+      <div class="agent-card" data-initial="R">
+        <div class="agent-header">
+          <div class="agent-name-block">
+            <div class="agent-name">Rex</div>
+            <div class="agent-role">Research &amp; Strategic Intelligence</div>
+          </div>
+          <div class="agent-tier">Growth &amp; Elite</div>
+        </div>
+        <div class="agent-body">
+          <p class="agent-desc">Provides research, grant opportunities, competitor analysis, market intelligence, and strategic insights to inform organizational decisions.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">Grant Research</span>
+            <span class="agent-tag">Market Intel</span>
+            <span class="agent-tag">Competitor Analysis</span>
+            <span class="agent-tag">Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEX -->
+      <div class="agent-card" data-initial="L">
+        <div class="agent-header">
+          <div class="agent-name-block">
+            <div class="agent-name">Lex</div>
+            <div class="agent-role">Legal Documentation &amp; Structure</div>
+          </div>
+          <div class="agent-tier">Elite</div>
+        </div>
+        <div class="agent-body">
+          <p class="agent-desc">Assists with organizational documents, contracts, bylaws, operating agreements, policy structures, and internal documentation frameworks.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">Contracts</span>
+            <span class="agent-tag">Bylaws</span>
+            <span class="agent-tag">Operating Agreements</span>
+            <span class="agent-tag">Policy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOVA -->
+      <div class="agent-card" data-initial="N">
+        <div class="agent-header">
+          <div class="agent-name-block">
+            <div class="agent-name">Nova</div>
+            <div class="agent-role">Legacy &amp; Succession Planning</div>
+          </div>
+          <div class="agent-tier">Elite</div>
+        </div>
+        <div class="agent-body">
+          <p class="agent-desc">Focuses on continuity, succession, organizational preservation, and long-term legacy strategy — so what you've built endures beyond today.</p>
+          <div class="agent-tags">
+            <span class="agent-tag">Succession</span>
+            <span class="agent-tag">Continuity</span>
+            <span class="agent-tag">Preservation</span>
+            <span class="agent-tag">Legacy Strategy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <div class="philosophy-wrap">
+
+      <div class="pull-quote">
+        "These agents are not designed to replace people. They are designed to reduce operational burden."
+      </div>
+
+      <p>My philosophy has always been that AI should automate repetitive administrative tasks that consume time and attention away from leadership, growth, and vision. The right things to systemize are the ones that drain focus without requiring human judgment.</p>
+
+      <!-- AI vs HUMAN SPLIT -->
+      <div class="split-grid">
+        <div class="split-col ai">
+          <div class="split-col-label">What AI Handles</div>
+          <ul class="split-list">
+            <li>Scheduling and calendar management</li>
+            <li>Email follow-ups and confirmations</li>
+            <li>Compliance reminders and deadline tracking</li>
+            <li>Reporting and document organization</li>
+            <li>Administrative workflows and task sequencing</li>
+            <li>Research, grant finding, and market intelligence</li>
+          </ul>
+        </div>
+        <div class="split-col human">
+          <div class="split-col-label">What Stays Human</div>
+          <ul class="split-list">
+            <li>Leadership and vision-setting</li>
+            <li>Discernment and spiritual guidance</li>
+            <li>Empathy and relationship building</li>
+            <li>Pastoral care and community connection</li>
+            <li>Wisdom and long-term strategic decisions</li>
+            <li>Human presence that technology cannot replicate</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>There will always be a human aspect that technology cannot replace. Leadership, discernment, empathy, relationships, wisdom, and human connection should always remain human-led. LAAP Suite™ was built with that boundary in mind — not to diminish the human role, but to protect it.</p>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <h3>Ready to Put Your Agents to Work?</h3>
+      <p>Explore LAAP Suite™ and discover which agents are available at each subscription tier — Builder, Growth, and Elite.</p>
+      <div class="cta-buttons">
+        <a href="https://www.lafariesmortimerllc.com/laap" class="cta-btn">Explore LAAP Suite™</a>
+        <a href="/contact" class="cta-btn-ghost">Book a Free Call</a>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- RELATED -->
+  <div class="related-section">
+    <div class="related-label">Continue Reading</div>
+    <div class="related-grid">
+      <a href="/blog/laap-formation-wizard" class="related-card">
+        <div class="related-cat">LAAP Suite™</div>
+        <div class="related-title">The 10-Step LAAP Formation Wizard</div>
+      </a>
+      <a href="/blog/laap-suite-reimagining-admin-infrastructure" class="related-card">
+        <div class="related-cat">AI &amp; Automation</div>
+        <div class="related-title">How LAAP Suite™ Is Reimagining Administrative Infrastructure</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 <a href="https://www.lafariesmortimerllc.com">LaFaries Mortimer LLC</a> &nbsp;·&nbsp; All rights reserved &nbsp;·&nbsp; Miami, FL</p>
+  </footer>
+
+</body>
+</html>
