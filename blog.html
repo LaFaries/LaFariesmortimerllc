@@ -26,125 +26,74 @@
     body { color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; }
 
     /* ================= HEADER ================= */
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:rgba(15,17,21,.95);
-  backdrop-filter:blur(10px);
-}
-.nav{
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  align-items:center;
-  gap:16px;
-  padding:14px 0;
-}
-.brand{display:flex;align-items:center;gap:12px}
-.brand-logo{
-  width:44px;height:44px;border-radius:50%;padding:3px;
-  background:radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
-  box-shadow:0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
-}
-.brand strong{font-family:var(--h);color:#fff}
-.brand span{font-size:11px;color:rgba(255,255,255,.6)}
-nav{display:flex;gap:14px;justify-content:center}
-.nav-pill{
-  padding:8px 14px;
-  border-radius:999px;
-  font-size:14px;
-  color:rgba(255,255,255,.8);
-}
-header nav a{color:#ffffff !important;font-size:13px;}
-header nav a:hover{color:var(--gold) !important;}
-.nav-pill:hover{
-  background:rgba(255,255,255,.08);
-  box-shadow:0 0 18px rgba(218,184,92,.35);
-}
-.ctaTop{display:flex;gap:10px}
-.btn{
-  padding:12px 16px;
-  border-radius:999px;
-  font-size:12px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-weight:600;
-}
-.btnGold{background:var(--gold);color:#1a1a1a}
-.btnGhost{border:1px solid rgba(255,255,255,.35);color:#fff}
-a{text-decoration:none;color:inherit}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,17,21,.95);
+      backdrop-filter: blur(10px);
+    }
+    .nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      width: 44px; height: 44px; border-radius: 50%; padding: 3px;
+      background: radial-gradient(circle at top left,#fff,#d8c27a 40%,#b89b4a 70%);
+      box-shadow: 0 0 0 2px rgba(218,184,92,.6),0 8px 22px rgba(218,184,92,.55);
+    }
+    .brand strong { font-family: 'Cormorant Garamond', serif; color: #fff; }
+    .brand span { font-size: 11px; color: rgba(255,255,255,.6); }
+    nav { display: flex; gap: 14px; justify-content: center; }
+    header nav a { color: #ffffff !important; font-size: 13px; text-decoration: none; }
+    header nav a:hover { color: var(--gold) !important; }
+    .ctaTop { display: flex; gap: 10px; }
+    .btn { padding: 12px 16px; border-radius: 999px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; text-decoration: none; }
+    .btnGold { background: var(--gold); color: #1a1a1a; }
+    .btnGhost { border: 1px solid rgba(255,255,255,.35); color: #fff; }
+    a { text-decoration: none; color: inherit; }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
 
-/* ================= HAMBURGER ================= */
-.mobile-menu-btn{
-  display:none;
-  flex-direction:column;
-  gap:5px;
-  background:none;
-  border:none;
-  cursor:pointer;
-  padding:6px;
-  margin-left:auto;
-}
-.mobile-menu-btn span{
-  display:block;
-  width:22px;height:2px;
-  background:#DAB85C;
-  transition:all 0.3s;
-}
-.mobile-menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.mobile-menu-btn.open span:nth-child(2){opacity:0}
-.mobile-menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    /* HAMBURGER */
+    .mobile-menu-btn {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px; margin-left: auto;
+    }
+    .mobile-menu-btn span { display: block; width: 22px; height: 2px; background: #DAB85C; transition: all 0.3s; }
+    .mobile-menu-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ================= MOBILE DRAWER ================= */
-.mobile-drawer{
-  display:none;
-  position:fixed;
-  top:72px;left:0;right:0;
-  background:#0a0a0a;
-  border-bottom:1px solid rgba(218,184,92,0.15);
-  flex-direction:column;
-  z-index:9998;
-  padding:8px 0 20px;
-}
-.mobile-drawer a{
-  font-family:'Inter',sans-serif;
-  font-size:0.82rem;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:rgba(240,235,224,0.7);
-  padding:14px 28px;
-  border-bottom:1px solid rgba(218,184,92,0.06);
-  text-decoration:none;
-  display:block;
-}
-.mobile-drawer a:hover{color:#DAB85C;background:rgba(218,184,92,0.04)}
-.mobile-drawer .drawer-ctas{
-  display:flex;gap:12px;padding:20px 28px 0;
-}
-.mobile-drawer .drawer-ctas a{
-  flex:1;text-align:center;
-  border:none;padding:12px;
-  border-radius:999px;
-  font-size:0.72rem;
-  letter-spacing:0.14em;
-  font-weight:600;
-}
-@media(max-width:980px){
-  nav{display:none}
-  .ctaTop{display:none}
-  .mobile-menu-btn{display:flex}
-  .mobile-drawer.open{display:flex}
-}
-
-    
+    /* MOBILE DRAWER */
+    .mobile-drawer {
+      display: none; position: fixed; top: 72px; left: 0; right: 0;
+      background: #0a0a0a; border-bottom: 1px solid rgba(218,184,92,0.15);
+      flex-direction: column; z-index: 9998; padding: 8px 0 20px;
+    }
+    .mobile-drawer a {
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(240,235,224,0.7); padding: 14px 28px;
+      border-bottom: 1px solid rgba(218,184,92,0.06); display: block;
+    }
+    .mobile-drawer a:hover { color: #DAB85C; background: rgba(218,184,92,0.04); }
+    .mobile-drawer .drawer-ctas { display: flex; gap: 12px; padding: 20px 28px 0; }
+    .mobile-drawer .drawer-ctas a {
+      flex: 1; text-align: center; border: none; padding: 12px;
+      border-radius: 999px; font-size: 0.72rem; letter-spacing: 0.14em; font-weight: 600;
+    }
+    @media(max-width:980px) {
+      nav { display: none; }
+      .ctaTop { display: none; }
+      .mobile-menu-btn { display: flex; }
+      .mobile-drawer.open { display: flex; }
+    }
 
     /* HERO */
     .hero {
       background: #080808 radial-gradient(ellipse at 50% 0%, rgba(218,184,92,0.08) 0%, transparent 65%);
-      padding: 5rem 2rem 4rem;
-      border-bottom: 1px solid var(--gold-border);
-      text-align: center;
+      padding: 5rem 2rem 4rem; border-bottom: 1px solid var(--gold-border); text-align: center;
     }
     .hero-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
     .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 400; color: var(--offwhite); line-height: 1.1; margin-bottom: 1rem; }
@@ -160,15 +109,20 @@ a{text-decoration:none;color:inherit}
       text-transform: uppercase; padding: 0.35rem 0.9rem;
       border-radius: 20px; border: 1px solid var(--gold-border);
       color: var(--muted); background: transparent;
-      cursor: pointer; transition: all 0.2s; text-decoration: none;
+      cursor: pointer; transition: all 0.2s;
       font-family: 'DM Sans', sans-serif;
+      /* KEY FIX: these are buttons, not links */
     }
     .filter-btn:hover, .filter-btn.active { background: var(--gold-dim); border-color: var(--gold); color: var(--gold); }
-    .blog-card.hidden, .featured-post.hidden, .card-coming.hidden { display: none; }
 
-    /* WRAPS */
-    .wrap { background: #080808; width: 100%; padding: 5rem 2rem; }
-    .wrap-alt { background: var(--surface); width: 100%; padding: 5rem 2rem; border-top: 1px solid var(--gold-border); border-bottom: 1px solid var(--gold-border); }
+    /* Hidden state for filtering */
+    .blog-card.hidden,
+    .featured-post.hidden,
+    .card-coming.hidden,
+    .featured-section.hidden { display: none !important; }
+
+    /* CONTENT WRAPS */
+    .content-wrap { background: #080808; width: 100%; padding: 5rem 2rem; }
     .inner { max-width: 1100px; margin: 0 auto; }
 
     .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 0.5rem; }
@@ -177,132 +131,60 @@ a{text-decoration:none;color:inherit}
     .section-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 2.5rem; }
 
     /* FEATURED POST */
+    .featured-section { margin-bottom: 4rem; }
     .featured-post {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: border-color 0.25s;
-      margin-bottom: 5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      background: var(--surface); border: 1px solid var(--gold-border);
+      border-radius: 8px; overflow: hidden; transition: border-color 0.25s;
     }
     .featured-post:hover { border-color: rgba(218,184,92,0.45); }
-
     .featured-image {
       background: linear-gradient(135deg, #0a1628 0%, #0f2040 50%, #1a1a2e 100%);
-      min-height: 420px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
-      padding: 2.5rem;
-      position: relative;
-      overflow: hidden;
+      min-height: 420px; display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: flex-end;
+      padding: 2.5rem; position: relative; overflow: hidden;
     }
     .featured-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(600px circle at 30% 30%, rgba(218,184,92,0.1), transparent 60%);
     }
     .featured-number {
-      position: absolute;
-      top: 2rem; right: 2rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 8rem;
-      font-weight: 600;
-      color: rgba(218,184,92,0.06);
-      line-height: 1;
-      z-index: 0;
+      position: absolute; top: 2rem; right: 2rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 8rem;
+      font-weight: 600; color: rgba(218,184,92,0.06); line-height: 1; z-index: 0;
     }
     .featured-category-badge {
-      position: relative;
-      z-index: 1;
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.85rem;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-      background: var(--gold-dim);
-      border: 1px solid var(--gold-border);
-      color: var(--gold);
+      position: relative; z-index: 1; display: inline-block;
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.3rem 0.85rem; border-radius: 20px; margin-bottom: 1rem;
+      background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--gold);
     }
     .featured-title-bg {
-      position: relative;
-      z-index: 1;
+      position: relative; z-index: 1;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      font-weight: 400;
-      color: var(--offwhite);
-      line-height: 1.15;
+      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400;
+      color: var(--offwhite); line-height: 1.15;
     }
     .featured-title-bg em { font-style: italic; color: var(--gold); }
-
     .featured-content {
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1.25rem;
-      border-left: 1px solid var(--gold-border);
+      padding: 2.5rem; display: flex; flex-direction: column;
+      justify-content: center; gap: 1.25rem; border-left: 1px solid var(--gold-border);
     }
     .featured-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); font-weight: 600;
     }
-    .featured-badge::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .featured-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 600;
-      color: var(--offwhite);
-      line-height: 1.2;
-    }
-    .featured-excerpt {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-    .featured-meta {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.75rem;
-      color: rgba(248,246,241,0.3);
-      letter-spacing: 0.05em;
-    }
-    .featured-meta span { display: flex; align-items: center; gap: 0.3rem; }
+    .featured-badge::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
+    .featured-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 600; color: var(--offwhite); line-height: 1.2; }
+    .featured-excerpt { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+    .featured-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.75rem; color: rgba(248,246,241,0.3); letter-spacing: 0.05em; flex-wrap: wrap; }
     .btn-read {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--black);
-      background: var(--gold);
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      transition: background 0.2s;
-      align-self: flex-start;
-      letter-spacing: 0.03em;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; font-weight: 600; text-decoration: none;
+      color: var(--black); background: var(--gold);
+      padding: 0.75rem 1.5rem; border-radius: 4px; transition: background 0.2s;
+      align-self: flex-start; letter-spacing: 0.03em;
     }
     .btn-read:hover { background: var(--gold-light); }
 
@@ -310,113 +192,68 @@ a{text-decoration:none;color:inherit}
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
 
     .blog-card {
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
-      border-radius: 8px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      background: var(--surface); border: 1px solid var(--gold-border);
+      border-radius: 8px; overflow: hidden; display: flex; flex-direction: column;
       transition: border-color 0.25s, box-shadow 0.25s;
     }
     .blog-card:hover { border-color: rgba(218,184,92,0.45); box-shadow: 0 8px 40px rgba(218,184,92,0.07); }
-
     .card-image {
-      height: 180px;
-      display: flex;
-      align-items: flex-end;
-      padding: 1.25rem;
-      position: relative;
-      overflow: hidden;
+      height: 180px; display: flex; align-items: flex-end;
+      padding: 1.25rem; position: relative; overflow: hidden;
     }
-    .card-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #0a1628, #0f2040);
-    }
-    .card-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(400px circle at 30% 30%, rgba(218,184,92,0.08), transparent 60%);
-    }
+    .card-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, #0a1628, #0f2040); }
+    .card-image::after { content: ''; position: absolute; inset: 0; background: radial-gradient(400px circle at 30% 30%, rgba(218,184,92,0.08), transparent 60%); }
     .card-cat {
-      position: relative;
-      z-index: 1;
-      display: inline-block;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.7rem;
-      border-radius: 20px;
-      background: var(--gold-dim);
-      border: 1px solid var(--gold-border);
-      color: var(--gold);
+      position: relative; z-index: 1; display: inline-block;
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.25rem 0.7rem; border-radius: 20px;
+      background: var(--gold-dim); border: 1px solid var(--gold-border); color: var(--gold);
     }
     .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; gap: 0.75rem; }
     .card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--offwhite);
-      line-height: 1.25;
-      text-decoration: none;
-      transition: color 0.2s;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600;
+      color: var(--offwhite); line-height: 1.25; text-decoration: none; transition: color 0.2s;
     }
     .card-title:hover { color: var(--gold); }
     .card-excerpt { font-size: 0.855rem; color: var(--muted); line-height: 1.6; flex: 1; }
     .card-meta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(218,184,92,0.08);
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 0.75rem; border-top: 1px solid rgba(218,184,92,0.08);
     }
     .card-date { font-size: 0.72rem; color: rgba(248,246,241,0.3); letter-spacing: 0.05em; }
     .card-read-time { font-size: 0.72rem; color: rgba(248,246,241,0.3); letter-spacing: 0.05em; }
     .btn-card-read {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--gold);
-      border-bottom: 1px solid var(--gold-border);
-      padding-bottom: 1px;
-      transition: border-color 0.2s;
-      margin-top: 0.5rem;
-      align-self: flex-start;
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      font-size: 0.78rem; font-weight: 600; text-decoration: none;
+      color: var(--gold); border-bottom: 1px solid var(--gold-border);
+      padding-bottom: 1px; transition: border-color 0.2s;
+      margin-top: 0.5rem; align-self: flex-start;
     }
     .btn-card-read:hover { border-color: var(--gold); }
 
     /* COMING SOON CARD */
     .card-coming {
-      background: #080808;
-      border: 1px dashed rgba(218,184,92,0.2);
-      border-radius: 8px;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 280px;
-      gap: 0.75rem;
+      background: #080808; border: 1px dashed rgba(218,184,92,0.2);
+      border-radius: 8px; padding: 2rem;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; text-align: center; min-height: 280px; gap: 0.75rem;
     }
     .card-coming .coming-icon { font-size: 1.75rem; opacity: 0.4; }
     .card-coming h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: rgba(248,246,241,0.3); font-style: italic; }
     .card-coming p { font-size: 0.8rem; color: rgba(248,246,241,0.2); }
 
+    /* EMPTY STATE */
+    .empty-state {
+      display: none; grid-column: 1/-1; text-align: center;
+      padding: 4rem 2rem; color: var(--muted);
+    }
+    .empty-state.visible { display: block; }
+    .empty-state p { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; }
+
     /* NEWSLETTER */
     .newsletter {
-      background: var(--surface-2);
-      border: 1px solid var(--gold-border);
-      border-radius: 8px;
-      padding: 3rem;
-      text-align: center;
-      margin-top: 4rem;
+      border: 1px solid var(--gold-border); border-radius: 8px; padding: 3rem;
+      text-align: center; margin-top: 4rem;
       background: radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.06) 0%, transparent 70%), var(--surface);
     }
     .newsletter h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--offwhite); margin-bottom: 0.5rem; }
@@ -424,40 +261,23 @@ a{text-decoration:none;color:inherit}
     .newsletter p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.75rem; }
     .newsletter-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
     .newsletter-form input {
-      padding: 0.75rem 1.25rem;
-      background: #080808;
-      border: 1px solid var(--gold-border);
-      border-radius: 4px;
-      color: var(--offwhite);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.875rem;
-      width: 280px;
-      outline: none;
-      transition: border-color 0.2s;
+      padding: 0.75rem 1.25rem; background: #080808; border: 1px solid var(--gold-border);
+      border-radius: 4px; color: var(--offwhite); font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem; width: 280px; outline: none; transition: border-color 0.2s;
     }
     .newsletter-form input:focus { border-color: var(--gold); }
     .newsletter-form input::placeholder { color: var(--muted); }
     .newsletter-form button {
-      padding: 0.75rem 1.5rem;
-      background: var(--gold);
-      color: var(--black);
-      border: none;
-      border-radius: 4px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.875rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-      letter-spacing: 0.03em;
+      padding: 0.75rem 1.5rem; background: var(--gold); color: var(--black);
+      border: none; border-radius: 4px; font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background 0.2s;
     }
     .newsletter-form button:hover { background: var(--gold-light); }
 
     /* CTA BAND */
     .cta-band {
       background: #080808 radial-gradient(ellipse at 50% 50%, rgba(218,184,92,0.06) 0%, transparent 70%);
-      border-top: 1px solid var(--gold-border);
-      text-align: center;
-      padding: 5rem 2rem;
+      border-top: 1px solid var(--gold-border); text-align: center; padding: 5rem 2rem;
     }
     .cta-band h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; color: var(--offwhite); margin-bottom: 0.75rem; }
     .cta-band h2 em { color: var(--gold); font-style: italic; }
@@ -482,7 +302,6 @@ a{text-decoration:none;color:inherit}
     .footer-bottom a:hover { color: var(--gold); }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
       .featured-post { grid-template-columns: 1fr; }
       .featured-content { border-left: none; border-top: 1px solid var(--gold-border); }
       .blog-grid { grid-template-columns: 1fr; }
@@ -492,6 +311,7 @@ a{text-decoration:none;color:inherit}
   </style>
 </head>
 <body>
+
   <!-- HEADER -->
   <header>
     <div class="wrap nav" style="position:relative;z-index:9999;">
@@ -549,41 +369,44 @@ a{text-decoration:none;color:inherit}
     <p>Practical guides, compliance tips, AI insights, and ministry administration advice — written for real people building real things.</p>
   </div>
 
-  <!-- CATEGORY FILTER -->
+  <!-- CATEGORY FILTER — buttons only, no href navigation -->
   <div class="filter-wrap">
     <div class="filter-inner">
       <span class="filter-label">Filter:</span>
-      <a href="/blog" class="filter-btn active">All</a>
-      <a href="/blog/category/business-formation" class="filter-btn">Business Formation</a>
-      <a href="/blog/category/compliance" class="filter-btn">Compliance</a>
-      <a href="/blog/category/ministry" class="filter-btn">Ministry</a>
-      <a href="/blog/category/ai-automation" class="filter-btn">AI & Automation</a>
-      <a href="/blog/category/legacy" class="filter-btn">Legacy Planning</a>
-      <a href="/blog/category/entrepreneurship" class="filter-btn">Entrepreneurship</a>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="business-formation">Business Formation</button>
+      <button class="filter-btn" data-filter="compliance">Compliance</button>
+      <button class="filter-btn" data-filter="ministry">Ministry</button>
+      <button class="filter-btn" data-filter="ai-automation">AI &amp; Automation</button>
+      <button class="filter-btn" data-filter="legacy">Legacy Planning</button>
+      <button class="filter-btn" data-filter="entrepreneurship">Entrepreneurship</button>
     </div>
   </div>
 
-  <!-- FEATURED POST -->
-  <div class="wrap">
+  <!-- MAIN CONTENT -->
+  <div class="content-wrap">
     <div class="inner">
-      <p class="section-label">Featured Article</p>
 
-      <div class="featured-post" data-category="business-formation">
-        <div class="featured-image">
-          <div class="featured-number">01</div>
-          <span class="featured-category-badge">Business Formation</span>
-          <h2 class="featured-title-bg">How to Form an LLC<br>in Florida <em>in 2026</em></h2>
-        </div>
-        <div class="featured-content">
-          <span class="featured-badge">Featured Article</span>
-          <h2 class="featured-title">5 LLC Mistakes That Cost Florida Business Owners Thousands</h2>
-          <p class="featured-excerpt">Most Florida LLC owners don't realize they're out of compliance until it's too late. Here are the 5 most costly mistakes — and what to do before they catch up with you.'t miss anything critical.</p>
-          <div class="featured-meta">
-            <span>📅 May 2026</span>
-            <span>⏱ 8 min read</span>
-            <span>🏢 Business Formation</span>
+      <!-- FEATURED POST -->
+      <div class="featured-section" data-categories="business-formation">
+        <p class="section-label">Featured Article</p>
+        <div class="featured-post">
+          <div class="featured-image">
+            <div class="featured-number">01</div>
+            <span class="featured-category-badge">Business Formation</span>
+            <h2 class="featured-title-bg">How to Form an LLC<br>in Florida <em>in 2026</em></h2>
           </div>
-          <a href="/blog/llc-mistakes-florida-business-owners" class="btn-read">Read Article →</a>
+          <div class="featured-content">
+            <span class="featured-badge">Featured Article</span>
+            <h2 class="featured-title">5 LLC Mistakes That Cost Florida Business Owners Thousands</h2>
+            <p class="featured-excerpt">Most Florida LLC owners don't realize they're out of compliance until it's too late. Here are the 5 most costly mistakes — and what to do before they catch up with you.</p>
+            <div class="featured-meta">
+              <span>📅 May 2026</span>
+              <span>⏱ 8 min read</span>
+              <span>🏢 Business Formation</span>
+            </div>
+            <a href="/blog/llc-mistakes-florida-business-owners" class="btn-read">Read Article →</a>
+          </div>
         </div>
       </div>
 
@@ -592,16 +415,32 @@ a{text-decoration:none;color:inherit}
       <h2 class="section-title">Latest from <em>the blog</em></h2>
       <p class="section-sub">Practical guides written for small business owners, ministry leaders, and entrepreneurs across all 50 states.</p>
 
-      <div class="blog-grid">
+      <div class="blog-grid" id="blog-grid">
 
-        <!-- Article 2 -->
-        <div class="blog-card" data-category="ministry">
+        <!-- LAAP Suite Article — AI & Automation -->
+        <div class="blog-card" data-categories="ai-automation">
+          <div class="card-image">
+            <span class="card-cat">AI &amp; Automation</span>
+          </div>
+          <div class="card-body">
+            <a href="/blog/laap-suite-reimagining-admin-infrastructure" class="card-title">How LAAP Suite™ Is Reimagining Administrative Infrastructure for Ministries, Nonprofits &amp; Small Businesses</a>
+            <p class="card-excerpt">Most organizations don't fail because they lack vision — they fail because they lack structure. See how LAAP Suite™ is solving that through an AI-powered operational ecosystem.</p>
+            <a href="/blog/laap-suite-reimagining-admin-infrastructure" class="btn-card-read">Read Article →</a>
+            <div class="card-meta">
+              <span class="card-date">May 2026</span>
+              <span class="card-read-time">10 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ministry Article -->
+        <div class="blog-card" data-categories="ministry">
           <div class="card-image">
             <span class="card-cat">Ministry</span>
           </div>
           <div class="card-body">
             <a href="/blog/what-every-church-needs-to-stay-legally-compliant" class="card-title">What Happens When a Church Loses Its Legal Standing</a>
-            <p class="card-excerpt">Most churches operate with good intentions but incomplete legal structure. Here's exactly what your ministry needs to stay protected, compliant, and credible in the eyes of the IRS and your state.</p>
+            <p class="card-excerpt">Most churches operate with good intentions but incomplete legal structure. Here's exactly what your ministry needs to stay protected, compliant, and credible.</p>
             <a href="/blog/what-every-church-needs-to-stay-legally-compliant" class="btn-card-read">Read Article →</a>
             <div class="card-meta">
               <span class="card-date">May 2026</span>
@@ -611,34 +450,39 @@ a{text-decoration:none;color:inherit}
         </div>
 
         <!-- Coming Soon Cards -->
-        <div class="card-coming" data-category="coming-soon">
+        <div class="card-coming" data-categories="business-formation compliance">
           <div class="coming-icon">✍️</div>
           <h3>Coming Soon</h3>
           <p>What Is an EIN and Does My Business Need One?</p>
         </div>
 
-        <div class="card-coming" data-category="coming-soon">
+        <div class="card-coming" data-categories="compliance business-formation">
           <div class="coming-icon">✍️</div>
           <h3>Coming Soon</h3>
           <p>The 5 Most Common LLC Compliance Mistakes — And How to Avoid Them</p>
         </div>
 
-        <div class="card-coming" data-category="coming-soon">
+        <div class="card-coming" data-categories="ai-automation">
           <div class="coming-icon">✍️</div>
           <h3>Coming Soon</h3>
           <p>How AI Agents Are Changing Small Business Administration</p>
         </div>
 
-        <div class="card-coming" data-category="coming-soon">
+        <div class="card-coming" data-categories="compliance">
           <div class="coming-icon">✍️</div>
           <h3>Coming Soon</h3>
           <p>Annual Report Deadlines by State — The Complete 2026 Guide</p>
         </div>
 
-        <div class="card-coming" data-category="coming-soon">
+        <div class="card-coming" data-categories="legacy entrepreneurship">
           <div class="coming-icon">✍️</div>
           <h3>Coming Soon</h3>
           <p>How to Build a Legacy Plan for Your Small Business</p>
+        </div>
+
+        <!-- Empty state (shown when no cards match) -->
+        <div class="empty-state" id="empty-state">
+          <p>No articles in this category yet — check back soon.</p>
         </div>
 
       </div>
@@ -686,7 +530,7 @@ a{text-decoration:none;color:inherit}
         <ul>
           <li><a href="/laap">LAAP Suite™</a></li>
           <li><a href="/annual-maintenance">Annual Maintenance</a></li>
-          <li><a href="/apps">Apps & Tools</a></li>
+          <li><a href="/apps">Apps &amp; Tools</a></li>
           <li><a href="/free">Free Tools</a></li>
           <li><a href="/pricing">Pricing</a></li>
         </ul>
@@ -712,44 +556,53 @@ a{text-decoration:none;color:inherit}
     </div>
   </footer>
 
-
   <script>
-    // Category filter functionality
+    // ── MOBILE MENU ──
+    const mobBtn = document.getElementById('mob-btn');
+    const mobDrawer = document.getElementById('mob-drawer');
+    mobBtn.addEventListener('click', () => {
+      mobBtn.classList.toggle('open');
+      mobDrawer.classList.toggle('open');
+    });
+
+    // ── CATEGORY FILTER ──
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const featuredPost = document.querySelector('.featured-post');
-    const blogCards = document.querySelectorAll('.blog-card, .card-coming');
-    const featuredSection = document.querySelector('.featured-post').parentElement;
+    const featuredSection = document.querySelector('.featured-section');
+    const allCards = document.querySelectorAll('#blog-grid .blog-card, #blog-grid .card-coming');
+    const emptyState = document.getElementById('empty-state');
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        // Update active button
+        // Update active state
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
 
-        // Filter featured post
+        // Handle featured section
         if (filter === 'all') {
-          featuredPost.classList.remove('hidden');
-        } else if (featuredPost.getAttribute('data-category') === filter) {
-          featuredPost.classList.remove('hidden');
+          featuredSection.classList.remove('hidden');
         } else {
-          featuredPost.classList.add('hidden');
+          const featCats = featuredSection.getAttribute('data-categories') || '';
+          featuredSection.classList.toggle('hidden', !featCats.split(' ').includes(filter));
         }
 
-        // Filter blog cards
-        blogCards.forEach(card => {
+        // Handle grid cards
+        let visibleCount = 0;
+        allCards.forEach(card => {
           if (filter === 'all') {
             card.classList.remove('hidden');
+            visibleCount++;
           } else {
-            const cardCat = card.getAttribute('data-category');
-            if (cardCat === filter) {
-              card.classList.remove('hidden');
-            } else {
-              card.classList.add('hidden');
-            }
+            const cardCats = (card.getAttribute('data-categories') || '').split(' ');
+            const matches = cardCats.includes(filter);
+            card.classList.toggle('hidden', !matches);
+            if (matches) visibleCount++;
           }
         });
+
+        // Show empty state only if zero real cards visible
+        emptyState.classList.toggle('visible', visibleCount === 0);
       });
     });
   </script>
