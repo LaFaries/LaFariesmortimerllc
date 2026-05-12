@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Ministries Need Donation Reporting Systems in 2026 | LaFaries Mortimer LLC</title>
+  <meta name="description" content="Many ministries still manage donations manually. The LaFaries Donation Report System was built to give ministries financial visibility, centralized reporting, and organized giving records — without requiring technical expertise." />
+  <meta name="author" content="LaFaries Mortimer LLC" />
+  <link rel="canonical" href="https://lafariesmortimerllc.com/blog/ministry-donation-reporting.html" />
+  <meta property="og:title" content="Why Ministries Need Donation Reporting Systems in 2026" />
+  <meta property="og:description" content="Financial accountability for ministries starts with the right reporting infrastructure. Discover the LaFaries Donation Report System." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://lafariesmortimerllc.com/blog/ministry-donation-reporting.html" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why Ministries Need Donation Reporting Systems in 2026",
+    "author": { "@type": "Organization", "name": "LaFaries Mortimer LLC" },
+    "publisher": { "@type": "Organization", "name": "LaFaries Mortimer LLC", "url": "https://lafariesmortimerllc.com" },
+    "datePublished": "2026-05-12"
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --gold: #DAB85C;
+      --gold-light: #e8cc85;
+      --gold-dim: rgba(218,184,92,0.12);
+      --black: #080808;
+      --off-white: #F8F6F1;
+      --text: #1a1a1a;
+      --muted: #6b6660;
+      --border: rgba(218,184,92,0.22);
+      --cream: #f0ede6;
+
+      /* ministry palette for mockups */
+      --m-green: #1A2E1A;
+      --m-gold: #C9A227;
+      --m-light: #F9F4E8;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--off-white); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 17px; line-height: 1.75; }
+
+    /* ── HEADER ── */
+    .site-header { background: var(--black); padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+    .site-header .logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--gold); text-decoration: none; }
+    .site-header nav a { color: #ccc; text-decoration: none; font-size: 13px; font-weight: 500; margin-left: 28px; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .site-header nav a:hover { color: var(--gold); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { background: var(--black); padding: 10px 40px; border-bottom: 1px solid var(--border); }
+    .breadcrumb a, .breadcrumb span { font-size: 12px; color: #888; text-decoration: none; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb .sep { margin: 0 8px; color: #555; }
+    .breadcrumb .current { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero { background: var(--black); padding: 72px 40px 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(218,184,92,0.07) 0%, transparent 70%); pointer-events: none; }
+    .hero-category { display: inline-block; background: var(--gold-dim); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 16px; border: 1px solid var(--border); border-radius: 2px; margin-bottom: 28px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 5vw, 52px); font-weight: 600; color: #fff; line-height: 1.15; max-width: 760px; margin: 0 auto 24px; }
+    .hero h1 em { font-style: italic; color: var(--gold); }
+    .hero-meta { display: flex; align-items: center; justify-content: center; gap: 24px; font-size: 13px; color: #888; flex-wrap: wrap; }
+    .hero-meta .divider { color: #444; }
+
+    /* ── CONTENT ── */
+    .content-wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px 80px; }
+    .content-wrap p { margin-bottom: 22px; color: #2a2622; }
+    .intro-pull { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; font-style: italic; color: var(--text); line-height: 1.55; border-left: 3px solid var(--gold); padding-left: 24px; margin-bottom: 40px; }
+    .content-wrap h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--black); margin: 52px 0 18px; position: relative; padding-bottom: 12px; }
+    .content-wrap h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 2px; background: var(--gold); }
+
+    /* ── PROBLEM LIST ── */
+    .problem-list { background: var(--black); border-left: 4px solid var(--gold); border-radius: 4px; padding: 28px 32px; margin: 32px 0; }
+    .problem-list p.label { color: #aaa; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px !important; }
+    .problem-list ul { list-style: none; padding: 0; }
+    .problem-list ul li { color: #e8e4dc; font-size: 16px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 12px; }
+    .problem-list ul li:last-child { border-bottom: none; }
+    .problem-list ul li::before { content: '✕'; color: #c0392b; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+
+    /* ── SOLUTION LIST ── */
+    .solution-list { background: var(--black); border-left: 4px solid var(--gold); border-radius: 4px; padding: 28px 32px; margin: 32px 0; }
+    .solution-list p.label { color: #aaa; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 16px !important; }
+    .solution-list ul { list-style: none; padding: 0; }
+    .solution-list ul li { color: #e8e4dc; font-size: 16px; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 12px; }
+    .solution-list ul li:last-child { border-bottom: none; }
+    .solution-list ul li::before { content: '✦'; color: var(--gold); font-size: 13px; flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════════
+       MOCKUP: DONATION REPORT DASHBOARD
+       (Represents the real system built for MEC Miami)
+    ═══════════════════════════════════════════ */
+    .mockup-wrap {
+      margin: 44px 0;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      border: 1px solid rgba(0,0,0,0.12);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .mockup-titlebar {
+      background: var(--m-green);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mockup-titlebar .mtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--m-gold);
+      letter-spacing: 0.04em;
+    }
+    .mockup-titlebar .mbadge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: rgba(201,162,39,0.2);
+      color: var(--m-gold);
+      padding: 4px 10px;
+      border-radius: 2px;
+      border: 1px solid rgba(201,162,39,0.3);
+    }
+    .mockup-body { background: var(--m-light); padding: 24px 20px 20px; }
+
+    /* stat cards */
+    .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 20px; }
+    .stat-card { background: #fff; border-radius: 4px; padding: 14px 16px; border: 1px solid rgba(26,46,26,0.1); box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+    .stat-card .s-label { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #7a8a7a; margin-bottom: 4px; }
+    .stat-card .s-amount { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--m-green); }
+    .stat-card .s-sub { font-size: 11px; color: #aaa; margin-top: 2px; }
+    .stat-card.highlight { background: var(--m-green); border-color: var(--m-green); }
+    .stat-card.highlight .s-label { color: rgba(255,255,255,0.6); }
+    .stat-card.highlight .s-amount { color: var(--m-gold); }
+    .stat-card.highlight .s-sub { color: rgba(255,255,255,0.4); }
+
+    /* report table */
+    .report-table { background: #fff; border-radius: 4px; border: 1px solid rgba(26,46,26,0.1); overflow: hidden; }
+    .report-table-header { background: var(--m-green); padding: 10px 16px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr; gap: 8px; }
+    .report-table-header span { font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+    .report-row { padding: 11px 16px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr; gap: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); align-items: center; }
+    .report-row:last-child { border-bottom: none; }
+    .report-row:nth-child(even) { background: rgba(26,46,26,0.02); }
+    .report-row .rname { font-size: 13px; font-weight: 600; color: var(--m-green); }
+    .report-row .rdate { font-size: 12px; color: #888; }
+    .report-row .ramount { font-size: 13px; font-weight: 600; color: var(--m-green); }
+    .report-row .ramount.empty { color: #ccc; font-weight: 400; font-size: 12px; }
+    .report-row .rtotal { font-size: 13px; font-weight: 700; color: var(--m-gold); }
+
+    .mockup-footer { background: var(--m-green); padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .mockup-footer span { font-size: 11px; color: rgba(255,255,255,0.5); }
+    .mockup-footer .export-btn { font-size: 11px; font-weight: 600; background: var(--m-gold); color: var(--m-green); padding: 5px 14px; border-radius: 2px; letter-spacing: 0.06em; cursor: default; }
+
+    .mockup-caption { background: var(--cream); padding: 12px 20px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); font-style: italic; text-align: center; }
+
+    /* ── FEATURES GRID ── */
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 28px 0 40px; }
+    .feature-card { background: var(--black); border: 1px solid var(--border); border-radius: 4px; padding: 22px 18px; text-align: center; transition: border-color 0.2s; }
+    .feature-card:hover { border-color: var(--gold); }
+    .feature-card .icon { font-size: 24px; margin-bottom: 10px; }
+    .feature-card .name { font-size: 13px; font-weight: 600; color: #e8e4dc; letter-spacing: 0.04em; margin-bottom: 6px; }
+    .feature-card .desc { font-size: 12px; color: #888; line-height: 1.5; }
+
+    /* ── TREND CHART MOCKUP ── */
+    .trend-mockup { margin: 40px 0; border-radius: 6px; overflow: hidden; border: 1px solid rgba(0,0,0,0.1); box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .trend-header { background: var(--m-green); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .trend-header .th-title { font-family: 'Cormorant Garamond', serif; font-size: 15px; font-weight: 600; color: var(--m-gold); }
+    .trend-header .th-period { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 400; }
+    .trend-body { background: #fff; padding: 24px 20px; }
+    .chart-area { position: relative; height: 140px; display: flex; align-items: flex-end; gap: 10px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+    .bar-group { flex: 1; display: flex; gap: 3px; align-items: flex-end; flex-direction: column; }
+    .bar-wrap { width: 100%; display: flex; gap: 3px; align-items: flex-end; justify-content: center; }
+    .bar { border-radius: 2px 2px 0 0; transition: opacity 0.2s; min-width: 18px; }
+    .bar.tithe { background: var(--m-green); }
+    .bar.offering { background: var(--m-gold); opacity: 0.8; }
+    .bar.recompense { background: #4a7fd4; opacity: 0.75; }
+    .bar-label { font-size: 10px; color: #aaa; text-align: center; margin-top: 6px; }
+    .chart-legend { display: flex; gap: 20px; margin-top: 14px; }
+    .legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #888; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .trend-footer { background: var(--m-light); padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(26,46,26,0.08); }
+    .trend-footer span { font-size: 11px; color: var(--m-green); font-weight: 500; }
+
+    /* ── ACCOUNTABILITY BLOCK ── */
+    .accountability-block { background: var(--black); border: 1px solid var(--border); border-radius: 4px; padding: 36px 40px; margin: 40px 0; }
+    .accountability-block h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--gold); margin-bottom: 20px; }
+    .accountability-block ul { list-style: none; padding: 0; }
+    .accountability-block ul li { color: #d0ccc4; font-size: 15px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 14px; }
+    .accountability-block ul li:last-child { border-bottom: none; }
+    .accountability-block ul li .bullet { color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+    /* ── CLOSING ── */
+    .closing-banner { background: var(--black); border-top: 3px solid var(--gold); padding: 48px 40px; text-align: center; margin: 56px 0 0; border-radius: 4px; }
+    .closing-banner blockquote { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; font-weight: 400; color: #fff; line-height: 1.5; max-width: 580px; margin: 0 auto 24px; }
+    .closing-banner blockquote span { color: var(--gold); }
+    .closing-banner .cta-btn { display: inline-block; background: var(--gold); color: var(--black); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 32px; border-radius: 2px; text-decoration: none; transition: background 0.2s; }
+    .closing-banner .cta-btn:hover { background: var(--gold-light); }
+
+    /* ── RELATED ── */
+    .related-section { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .related-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--black); margin-bottom: 24px; }
+    .related-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .related-card { background: var(--black); border: 1px solid var(--border); padding: 24px 22px; border-radius: 4px; text-decoration: none; display: block; transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--gold); }
+    .related-card .tag { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .related-card .title { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: #fff; line-height: 1.35; }
+
+    /* ── FOOTER ── */
+    .site-footer { background: var(--black); border-top: 1px solid var(--border); text-align: center; padding: 36px 24px; font-size: 13px; color: #666; }
+    .site-footer strong { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .site-header { padding: 16px 20px; }
+      .site-header nav { display: none; }
+      .breadcrumb { padding: 10px 20px; }
+      .hero { padding: 48px 20px 40px; }
+      .content-wrap { padding: 40px 20px 60px; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .report-table-header, .report-row { grid-template-columns: 2fr 1fr 1fr 1fr; }
+      .report-table-header span:nth-child(5),
+      .report-table-header span:nth-child(6),
+      .report-row .ramount:nth-child(5),
+      .report-row .rtotal { display: none; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .related-cards { grid-template-columns: 1fr; }
+      .accountability-block { padding: 28px 24px; }
+      .closing-banner { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <a href="https://lafariesmortimerllc.com" class="logo">LaFaries Mortimer LLC</a>
+  <nav>
+    <a href="https://lafariesmortimerllc.com">Home</a>
+    <a href="https://lafariesmortimerllc.com/blog">Blog</a>
+    <a href="https://lafariesmortimerllc.com/#laap">LAAP Suite™</a>
+    <a href="https://lafariesmortimerllc.com/contact">Contact</a>
+  </nav>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="https://lafariesmortimerllc.com">Home</a>
+  <span class="sep">/</span>
+  <a href="https://lafariesmortimerllc.com/blog">Blog</a>
+  <span class="sep">/</span>
+  <span class="current">Ministry Donation Reporting</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-category">Ministry</div>
+  <h1>Why Ministries Need <em>Donation Reporting Systems</em> in 2026</h1>
+  <div class="hero-meta">
+    <span>By LaFaries Mortimer LLC</span>
+    <span class="divider">|</span>
+    <span>May 12, 2026</span>
+    <span class="divider">|</span>
+    <span>5 min read</span>
+  </div>
+</section>
+
+<!-- BODY -->
+<main class="content-wrap">
+
+  <p class="intro-pull">
+    Financial accountability is not optional for a ministry. It is the foundation of trust — with your congregation, your leadership, and your God.
+  </p>
+
+  <p>Many ministries still manage donations manually — through spreadsheets, handwritten logs, disconnected software, or fragmented reporting systems pulled together at the end of each month in a rush.</p>
+
+  <p>That creates operational confusion. And operational confusion in financial management creates something far more damaging: a loss of credibility.</p>
+
+  <h2>The Problem with Manual Donation Management</h2>
+
+  <div class="problem-list">
+    <p class="label">What manual systems create</p>
+    <ul>
+      <li>Giving records scattered across spreadsheets and paper logs</li>
+      <li>No real-time visibility into what has been received</li>
+      <li>No organized breakdown by giving category (Tithes, Offering, Recompense, etc.)</li>
+      <li>Delayed or missing donor statements</li>
+      <li>Leadership making decisions without accurate financial data</li>
+    </ul>
+  </div>
+
+  <p>Ministries today require financial visibility, centralized reporting, organized records, and simplified donation tracking. That operational need is what inspired the development of the <strong>Donation Report System</strong> created by LaFaries Mortimer LLC.</p>
+
+  <h2>The Donation Report System — What It Looks Like in Practice</h2>
+
+  <p>Below is a representation of the actual reporting dashboard built and deployed for ministry use. Giving data is entered or imported, and the system generates a clean, organized report — broken down by category and donor — in real time.</p>
+
+  <!-- ═══ MOCKUP 1: DONOR REPORT DASHBOARD ═══ -->
+  <div class="mockup-wrap">
+    <div class="mockup-titlebar">
+      <span class="mtitle">MEC Miami Ministries — Giving Report</span>
+      <span class="mbadge">Powered by LAAP Suite™</span>
+    </div>
+    <div class="mockup-body">
+      <!-- Stat Cards -->
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="s-label">Total Tithes</div>
+          <div class="s-amount">$5,453</div>
+          <div class="s-sub">Mar 26 – Apr 3, 2026</div>
+        </div>
+        <div class="stat-card">
+          <div class="s-label">Total Offering</div>
+          <div class="s-amount">$561</div>
+          <div class="s-sub">Mar 26 – Apr 3, 2026</div>
+        </div>
+        <div class="stat-card">
+          <div class="s-label">Recompense</div>
+          <div class="s-amount">$465</div>
+          <div class="s-sub">3 confirmed donors</div>
+        </div>
+        <div class="stat-card highlight">
+          <div class="s-label">Period Total</div>
+          <div class="s-amount">$6,479</div>
+          <div class="s-sub">32 transactions</div>
+        </div>
+      </div>
+      <!-- Table -->
+      <div class="report-table">
+        <div class="report-table-header">
+          <span>Donor</span>
+          <span>Date</span>
+          <span>Tithes</span>
+          <span>Offering</span>
+          <span>Recompense</span>
+          <span>Total</span>
+        </div>
+        <div class="report-row">
+          <div class="rname">Apostle Lashon Reese</div>
+          <div class="rdate">03/13/2026</div>
+          <div class="ramount">—</div>
+          <div class="ramount">—</div>
+          <div class="ramount">$300.00</div>
+          <div class="rtotal">$300.00</div>
+        </div>
+        <div class="report-row">
+          <div class="rname">Donor · (917) 991-1653</div>
+          <div class="rdate">03/26/2026</div>
+          <div class="ramount">$562.00</div>
+          <div class="ramount">—</div>
+          <div class="ramount">—</div>
+          <div class="rtotal">$562.00</div>
+        </div>
+        <div class="report-row">
+          <div class="rname">chaqeviagreen@yahoo.com</div>
+          <div class="rdate">04/01/2026</div>
+          <div class="ramount">—</div>
+          <div class="ramount">—</div>
+          <div class="ramount">$125.00</div>
+          <div class="rtotal">$125.00</div>
+        </div>
+        <div class="report-row">
+          <div class="rname">Donor · (954) 607-0792</div>
+          <div class="rdate">03/31/2026</div>
+          <div class="ramount">—</div>
+          <div class="ramount">$40.00</div>
+          <div class="ramount">$40.00</div>
+          <div class="rtotal">$80.00</div>
+        </div>
+        <div class="report-row">
+          <div class="rname">Veronica Moss</div>
+          <div class="rdate">03/28/2026</div>
+          <div class="ramount">$200.00</div>
+          <div class="ramount">$50.00</div>
+          <div class="ramount empty">—</div>
+          <div class="rtotal">$250.00</div>
+        </div>
+      </div>
+    </div>
+    <div class="mockup-footer">
+      <span>201 total giving emails · Dec 2025 – Apr 2026 · Synced via SwipeSimple</span>
+      <div class="export-btn">Export PDF</div>
+    </div>
+  </div>
+  <div class="mockup-caption">The Donation Report System generates real categorized giving records — Tithes, Offering, Recompense, and more — from your existing payment data.</div>
+
+  <h2>Built for Ministries, Not Technologists</h2>
+
+  <p>One of the strongest aspects of the system is accessibility. The platform was intentionally designed so ministries could use it without requiring advanced technical knowledge. Many ministry leaders are intimidated by overly complicated software systems. This platform was built differently.</p>
+
+  <p>The goal was simplicity, organization, and operational clarity.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon">📥</div>
+      <div class="name">Donation Entry</div>
+      <div class="desc">Enter or import giving records from existing sources in minutes.</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📊</div>
+      <div class="name">Reporting Dashboards</div>
+      <div class="desc">Clean visual summaries of all giving activity by period and category.</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">⚡</div>
+      <div class="name">Real-Time Updates</div>
+      <div class="desc">Giving totals and records update as data is entered — no waiting.</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📈</div>
+      <div class="name">Trend Analysis</div>
+      <div class="desc">See giving patterns across weeks, months, and seasons of ministry.</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🗂️</div>
+      <div class="name">Category Summaries</div>
+      <div class="desc">Separate totals for Tithes, Offering, Recompense, Seeds, and more.</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">👁️</div>
+      <div class="name">Financial Visibility</div>
+      <div class="desc">Leadership sees a clear picture of giving health at any time.</div>
+    </div>
+  </div>
+
+  <h2>Giving Trend Analysis — Month by Month</h2>
+
+  <p>Beyond individual reports, the system surfaces giving trends over time — giving ministry leadership the ability to plan, forecast, and respond to shifts in congregational giving with data rather than guesswork.</p>
+
+  <!-- ═══ MOCKUP 2: TREND CHART ═══ -->
+  <div class="trend-mockup">
+    <div class="trend-header">
+      <span class="th-title">Giving Trends — Dec 2025 through Apr 2026</span>
+      <span class="th-period">MEC Miami Ministries</span>
+    </div>
+    <div class="trend-body">
+      <div class="chart-area">
+        <!-- Dec -->
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div class="bar-wrap">
+            <div class="bar tithe" style="height:78px;"></div>
+            <div class="bar offering" style="height:28px;"></div>
+            <div class="bar recompense" style="height:18px;"></div>
+          </div>
+          <div class="bar-label">Dec</div>
+        </div>
+        <!-- Jan -->
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div class="bar-wrap">
+            <div class="bar tithe" style="height:92px;"></div>
+            <div class="bar offering" style="height:34px;"></div>
+            <div class="bar recompense" style="height:24px;"></div>
+          </div>
+          <div class="bar-label">Jan</div>
+        </div>
+        <!-- Feb -->
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div class="bar-wrap">
+            <div class="bar tithe" style="height:68px;"></div>
+            <div class="bar offering" style="height:22px;"></div>
+            <div class="bar recompense" style="height:30px;"></div>
+          </div>
+          <div class="bar-label">Feb</div>
+        </div>
+        <!-- Mar -->
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div class="bar-wrap">
+            <div class="bar tithe" style="height:105px;"></div>
+            <div class="bar offering" style="height:40px;"></div>
+            <div class="bar recompense" style="height:38px;"></div>
+          </div>
+          <div class="bar-label">Mar</div>
+        </div>
+        <!-- Apr -->
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center;">
+          <div class="bar-wrap">
+            <div class="bar tithe" style="height:88px;"></div>
+            <div class="bar offering" style="height:32px;"></div>
+            <div class="bar recompense" style="height:44px;"></div>
+          </div>
+          <div class="bar-label">Apr</div>
+        </div>
+      </div>
+      <div class="chart-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:var(--m-green);"></div> Tithes</div>
+        <div class="legend-item"><div class="legend-dot" style="background:var(--m-gold);opacity:0.8"></div> Offering</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#4a7fd4;opacity:0.75"></div> Recompense</div>
+      </div>
+    </div>
+    <div class="trend-footer">
+      <span>📈 Recompense giving increased 144% from Dec 2025 to Apr 2026</span>
+      <span style="color:#aaa;">201 transactions analyzed</span>
+    </div>
+  </div>
+  <div class="mockup-caption" style="background:var(--cream); padding:12px 20px; border:1px solid var(--border); border-top:none; font-size:12px; color:var(--muted); font-style:italic; text-align:center; border-radius:0 0 4px 4px; margin-bottom:20px;">The system automatically surfaces giving trends by category — so leadership can plan, not just react.</div>
+
+  <h2>Why Financial Accountability Matters for Ministries</h2>
+
+  <p>Financial accountability matters because ministries require structure in order to operate sustainably. Without clear financial records, leadership cannot steward resources responsibly, cannot report accurately to boards or trustees, and cannot make informed decisions about staffing, facilities, or programming.</p>
+
+  <div class="accountability-block">
+    <h3>What centralized donation reporting gives your ministry</h3>
+    <ul>
+      <li><span class="bullet">✦</span> Centralized giving information in one secure place</li>
+      <li><span class="bullet">✦</span> Improved reporting visibility for leadership and trustees</li>
+      <li><span class="bullet">✦</span> Reduction in confusion and manual reconciliation errors</li>
+      <li><span class="bullet">✦</span> Organized operational financial records for tax compliance</li>
+      <li><span class="bullet">✦</span> Donor giving statements ready for year-end distribution</li>
+    </ul>
+  </div>
+
+  <h2>Modern Ministry Requires Modern Infrastructure</h2>
+
+  <p>The ministries that will thrive in 2026 and beyond are not the ones with the biggest buildings. They are the ones operating with the most clarity — financially, administratively, and operationally.</p>
+
+  <p>Modern ministry operations require modern infrastructure. A Donation Report System is not a luxury. It is a foundation.</p>
+
+  <!-- CLOSING -->
+  <div class="closing-banner">
+    <blockquote>
+      "Structure is not the enemy of faith — it is the <span>stewardship</span> of it."
+    </blockquote>
+    <a href="https://lafariesmortimerllc.com/blog/ministry-digital-infrastructure.html" class="cta-btn">
+      Continue Reading: Why Ministries Need Digital Infrastructure in 2026 →
+    </a>
+  </div>
+
+  <!-- RELATED -->
+  <div class="related-section">
+    <h3>Continue Exploring</h3>
+    <div class="related-cards">
+      <a href="https://lafariesmortimerllc.com/blog/ministry-digital-infrastructure.html" class="related-card">
+        <div class="tag">Ministry</div>
+        <div class="title">Why Ministries Need Digital Infrastructure in 2026</div>
+      </a>
+      <a href="https://lafariesmortimerllc.com/blog/ai-employee-builder.html" class="related-card">
+        <div class="tag">AI &amp; Automation</div>
+        <div class="title">How the LaFaries AI Employee Builder Is Changing Business Operations</div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <strong>LaFaries Mortimer LLC</strong> · Administrative &amp; IT Services · Miami, Florida · Serving all 50 States<br />
+  <span style="margin-top:8px;display:inline-block;">LAAP Suite™ — Your AI-Powered Business Operating System</span>
+</footer>
+
+</body>
+</html>
