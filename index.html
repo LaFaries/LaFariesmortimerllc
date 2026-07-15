@@ -160,10 +160,14 @@ a{text-decoration:none;color:inherit}
 .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#555;}
 .hero-text h1{font-family:var(--h);font-size:50px;line-height:1.05;margin:12px 0;}
 .hero-text p{max-width:54ch;color:rgba(29,29,29,.75);}
+.hero-video{display:grid;}
 .hero-video video{
+  grid-area:1/1;
   width:100%;max-height:420px;object-fit:contain;
   border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.25);
+  opacity:0;transition:opacity .8s ease;
 }
+.hero-video video.video-active{opacity:1;}
 
 /* ================= SUPPORT SYSTEMS ================= */
 .support-systems{
@@ -361,9 +365,10 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <div class="hero-video">
-        <video id="heroVideo" autoplay muted loop playsinline preload="auto">
+        <video id="heroVideoA" class="video-active" autoplay muted loop playsinline preload="auto">
           <source src="/assets/img/hero-ai-agent.mp4" type="video/mp4">
         </video>
+        <video id="heroVideoB" muted loop playsinline preload="auto" aria-hidden="true"></video>
       </div>
     </div>
   </section>
@@ -469,25 +474,44 @@ a{text-decoration:none;color:inherit}
   <!-- ================= SCRIPTS ================= -->
   <script>
     /* Hero text & video rotation */
+    /* ── Hero rotation: text + video advance together, videos crossfade ──
+       The next clip is preloaded in the hidden buffer video, so the swap
+       is a smooth opacity fade with zero loading hiccup. */
     const textSlides = document.querySelectorAll('.text-slide');
-    let textIndex = 0;
-    setInterval(() => {
-      textSlides[textIndex].classList.remove('active');
-      textIndex = (textIndex + 1) % textSlides.length;
-      textSlides[textIndex].classList.add('active');
-    }, 10000);
-
     const videos = [
       "/assets/img/hero-ai-agent.mp4",
       "/assets/img/hero-ai-agent-2.mp4",
       "/assets/img/hero-free-tools.mp4"
     ];
-    let videoIndex = 0;
-    const videoEl = document.getElementById("heroVideo");
+    let heroIndex = 0;
+    let frontVideo = document.getElementById("heroVideoA");
+    let backVideo  = document.getElementById("heroVideoB");
+
+    // Preload the upcoming clip into the hidden buffer right away.
+    backVideo.src = videos[(heroIndex + 1) % videos.length];
+    backVideo.load();
+
     setInterval(() => {
-      videoIndex = (videoIndex + 1) % videos.length;
-      videoEl.src = videos[videoIndex];
-      videoEl.play();
+      // Advance text
+      textSlides[heroIndex % textSlides.length].classList.remove('active');
+      heroIndex++;
+      textSlides[heroIndex % textSlides.length].classList.add('active');
+
+      // Crossfade to the preloaded buffer video
+      const playAttempt = backVideo.play();
+      if (playAttempt && playAttempt.catch) playAttempt.catch(() => {});
+      backVideo.classList.add('video-active');
+      frontVideo.classList.remove('video-active');
+
+      // Swap roles, then quietly preload the NEXT clip into the new buffer
+      const swap = frontVideo;
+      frontVideo = backVideo;
+      backVideo  = swap;
+      setTimeout(() => {
+        backVideo.pause();
+        backVideo.src = videos[(heroIndex + 1) % videos.length];
+        backVideo.load();
+      }, 900); // after the .8s fade completes
     }, 10000);
 
     /* Mobile hamburger */
