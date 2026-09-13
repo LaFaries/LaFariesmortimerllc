@@ -201,6 +201,31 @@
     .agent-info p { font-size: 0.855rem; color: var(--muted); line-height: 1.5; }
     .agent-tier { font-size: 0.7rem; color: rgba(218,184,92,0.5); margin-top: 0.4rem; font-weight: 500; }
 
+/* AGENT VIDEO INTRODUCTIONS */
+.agent-video-intros { margin-top: 3.5rem; }
+.agent-video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.agent-video-card {
+  overflow: hidden;
+  border: 1px solid rgba(218,184,92,0.28);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.035);
+  box-shadow: 0 18px 46px rgba(0,0,0,0.2);
+}
+.agent-video-card video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: #080808;
+}
+.agent-video-copy { padding: 1.15rem 1.2rem 1.3rem; }
+.agent-video-copy h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; color: var(--offwhite); margin: 0 0 0.2rem; }
+.agent-video-role { color: var(--gold); font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 600; }
+.agent-video-copy p { color: var(--muted); font-size: 0.86rem; line-height: 1.55; margin: 0.7rem 0 0; }
+.agent-video-access { display: inline-block; margin-top: 0.85rem; color: rgba(218,184,92,0.72); font-size: 0.72rem; font-weight: 600; }
+@media (max-width: 900px) { .agent-video-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px) { .agent-video-grid { grid-template-columns: 1fr; } }
+
     /* PRICING TIERS */
     .tiers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; align-items: start; }
     .tier-card {
@@ -459,6 +484,80 @@
       </div>
       <div style="margin-top:1.5rem;padding:1.25rem 1.4rem;border:1px solid rgba(218,184,92,.35);border-radius:16px;background:rgba(218,184,92,.06);">
         <p style="margin:0;color:var(--text);"><strong style="color:var(--gold);">Optional add-on: Samantha — YouTube Strategy & Growth.</strong> Samantha is separate from the LAAP Suite™ core team and is not included in the Builder, Growth, or Elite plans.</p>
+      </div>
+
+      <div class="agent-video-intros" aria-labelledby="agent-video-title">
+        <p class="section-label">Meet the Team</p>
+        <h2 class="section-title" id="agent-video-title">Hear from your <em>LAAP specialists</em></h2>
+        <p class="section-sub">Select a video to meet each core agent and see the ability that agent brings to your operating system.</p>
+        <div class="agent-video-grid">
+          <article class="agent-video-card">
+            <video controls playsinline preload="metadata" poster="/assets/video/agents/francis.jpg" aria-label="Play Francis agent introduction">
+              <source src="/assets/video/agents/francis.mp4" type="video/mp4">
+            </video>
+            <div class="agent-video-copy">
+              <h3>Francis</h3>
+              <div class="agent-video-role">Formation & Compliance</div>
+              <p>Guides business formation, state filings, compliance requirements, and the records needed to keep your organization in good standing.</p>
+              <span class="agent-video-access">Growth & Elite</span>
+            </div>
+          </article>
+          <article class="agent-video-card">
+            <video controls playsinline preload="metadata" poster="/assets/video/agents/aria.jpg" aria-label="Play Aria agent introduction">
+              <source src="/assets/video/agents/aria.mp4" type="video/mp4">
+            </video>
+            <div class="agent-video-copy">
+              <h3>Aria</h3>
+              <div class="agent-video-role">Administration & Workflows</div>
+              <p>Organizes administrative workflows, documents, follow-ups, and repeatable processes so your daily operations stay structured.</p>
+              <span class="agent-video-access">Growth & Elite</span>
+            </div>
+          </article>
+          <article class="agent-video-card">
+            <video controls playsinline preload="metadata" poster="/assets/video/agents/grace.jpg" aria-label="Play Grace agent introduction">
+              <source src="/assets/video/agents/grace.mp4" type="video/mp4">
+            </video>
+            <div class="agent-video-copy">
+              <h3>Grace</h3>
+              <div class="agent-video-role">Ministry & Nonprofit Support</div>
+              <p>Supports ministry and nonprofit administration, governance workflows, organizational records, and faith-based operational structure.</p>
+              <span class="agent-video-access">Growth & Elite</span>
+            </div>
+          </article>
+          <article class="agent-video-card">
+            <video controls playsinline preload="metadata" poster="/assets/video/agents/rex.jpg" aria-label="Play Rex agent introduction">
+              <source src="/assets/video/agents/rex.mp4" type="video/mp4">
+            </video>
+            <div class="agent-video-copy">
+              <h3>Rex</h3>
+              <div class="agent-video-role">Research & Strategic Intelligence</div>
+              <p>Researches requirements, opportunities, and business information so you can make decisions with stronger facts and clearer direction.</p>
+              <span class="agent-video-access">Growth & Elite</span>
+            </div>
+          </article>
+          <article class="agent-video-card">
+            <video controls playsinline preload="metadata" poster="/assets/video/agents/lex.jpg" aria-label="Play Lex agent introduction">
+              <source src="/assets/video/agents/lex.mp4" type="video/mp4">
+            </video>
+            <div class="agent-video-copy">
+              <h3>Lex</h3>
+              <div class="agent-video-role">Legal Documentation & Business Structure</div>
+              <p>Helps organize business-structure information and document frameworks for professional review. Lex provides operational guidance, not legal advice.</p>
+              <span class="agent-video-access">Elite</span>
+            </div>
+          </article>
+          <article class="agent-video-card">
+            <video controls playsinline preload="metadata" poster="/assets/video/agents/nova.jpg" aria-label="Play Nova agent introduction">
+              <source src="/assets/video/agents/nova.mp4" type="video/mp4">
+            </video>
+            <div class="agent-video-copy">
+              <h3>Nova</h3>
+              <div class="agent-video-role">Legacy & Succession Planning</div>
+              <p>Helps organize succession plans, continuity records, and legacy documentation so what you build can be protected and passed forward.</p>
+              <span class="agent-video-access">Elite</span>
+            </div>
+          </article>
+        </div>
       </div>
     </div>
   </div>
