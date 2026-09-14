@@ -186,7 +186,7 @@
       <div class="lf-chips" id="lf-chips">
         <button class="lf-chip" onclick="lfChip('Tell me about LAAP Suite')">&#x1F4CB; LAAP Suite</button>
         <button class="lf-chip" onclick="lfChip('What are your AI Agent services?')">&#x1F916; AI Agents</button>
-        <button class="lf-chip" onclick="lfChip('What free tools do you offer?')">&#x1F193; Free Tools</button>
+        <button class="lf-chip" onclick="lfChip('What free tools do you offer?')">&#x1F193; Free Resources</button>
         <button class="lf-chip" onclick="lfChip('I want to book a call')">&#x1F4C5; Book a Call</button>
       </div>
       <div class="lf-input-row">
@@ -218,7 +218,7 @@
       answer: "We offer FREE tools with no account required!<br><br>• Invoice Generator<br>• Business Name Checker<br>• LLC Operating Agreement template<br>• Meeting Minutes Maker<br>• EIN Checklist<br>• Legacy & Family Tools app<br><br><a href='/apps.html' style='color:#DAB85C'>Access free tools →</a>",
     },
     "price|pricing|cost|how much": {
-      answer: "<strong>Our Services:</strong><br><br>• <strong>LAAP Suite™:</strong> $79/month (promo)<br>• <strong>AI Agents:</strong> Custom quote<br>• <strong>Custom Websites:</strong> Custom quote<br>• <strong>Managed Support:</strong> Custom quote<br>• <strong>Free Tools:</strong> $0<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call</a> for detailed pricing!",
+      answer: "<strong>Our Services:</strong><br><br>• <strong>LAAP Suite™:</strong> $79/month (promo)<br>• <strong>AI Agents:</strong> Custom quote<br>• <strong>Custom Websites:</strong> Custom quote<br>• <strong>Managed Support:</strong> Custom quote<br>• <strong>Free Resources:</strong> $0<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call</a> for detailed pricing!",
     },
     "contact|call|email|location|where": {
       answer: "We're based in <strong>Miami, FL</strong> providing virtual support nationwide.<br><br>📧 Email: support@lafariesmortimerllc.com<br>⏰ Response time: 24-48 hours<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call →</a>",
@@ -227,7 +227,7 @@
       answer: "LaFaries Mortimer LLC is an Administrative & IT Services company specializing in:<br><br>• Business formation & compliance<br>• Administrative automation (LAAP Suite™)<br>• AI-powered customer support<br>• Custom website development<br>• Ongoing IT & admin management<br><br>Based in Miami, FL • Serving businesses nationwide",
     },
     "service|services|offer": {
-      answer: "<strong>Our Services:</strong><br><br>1. <strong>LAAP Suite™</strong> ($79/mo) - Business operating system<br>2. <strong>AI Agents</strong> - 24/7 automated support<br>3. <strong>Custom Websites</strong> - Professional design<br>4. <strong>Managed Support</strong> - IT & admin help<br>5. <strong>Free Tools</strong> - No cost, no account needed<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call to learn more →</a>",
+      answer: "<strong>Our Services:</strong><br><br>1. <strong>LAAP Suite™</strong> ($79/mo) - Business operating system<br>2. <strong>AI Agents</strong> - 24/7 automated support<br>3. <strong>Custom Websites</strong> - Professional design<br>4. <strong>Managed Support</strong> - IT & admin help<br>5. <strong>Free Resources</strong> - No cost, no account needed<br><br><a href='/contact.html' style='color:#DAB85C'>Book a call to learn more →</a>",
     }
   };
 
@@ -307,7 +307,7 @@
       
       // Default response
       if (!response) {
-        response = "I can help you with information about:<br><br>• <strong>LAAP Suite™</strong> - Our business operating system<br>• <strong>AI Agents</strong> - 24/7 automated support<br>• <strong>Custom Websites</strong> - Professional design<br>• <strong>Free Tools</strong> - Business resources<br>• <strong>Pricing & Services</strong><br>• <strong>Contact Information</strong><br><br>What would you like to know? Or <a href='/contact.html' style='color:#DAB85C'>book a call</a> to speak with us directly!";
+        response = "I can help you with information about:<br><br>• <strong>LAAP Suite™</strong> - Our business operating system<br>• <strong>AI Agents</strong> - 24/7 automated support<br>• <strong>Custom Websites</strong> - Professional design<br>• <strong>Free Resources</strong> - Business resources<br>• <strong>Pricing & Services</strong><br>• <strong>Contact Information</strong><br><br>What would you like to know? Or <a href='/contact.html' style='color:#DAB85C'>book a call</a> to speak with us directly!";
       }
       
       lfRemoveTyping();
