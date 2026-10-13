@@ -74,6 +74,31 @@ from = "/blog/what-every-church-needs-to-stay-legally-compliant"
 to = "/blog/what-every-church-needs-to-stay-legally-compliant.html"
 status = 200
 
+[[redirects]]
+from = "/blog/hurricane-season-business-continuity-test"
+to = "/blog/hurricane-season-business-continuity-test.html"
+status = 200
+
+[[redirects]]
+from = "/blog/mid-year-compliance-check-small-business"
+to = "/blog/mid-year-compliance-check-small-business.html"
+status = 200
+
+[[redirects]]
+from = "/blog/preparing-church-fall-ministry-season"
+to = "/blog/preparing-church-fall-ministry-season.html"
+status = 200
+
+[[redirects]]
+from = "/blog/preserving-your-familys-story-legacy-planning"
+to = "/blog/preserving-your-familys-story-legacy-planning.html"
+status = 200
+
+[[redirects]]
+from = "/blog/clergy-appreciation-month-administrative-support"
+to = "/blog/clergy-appreciation-month-administrative-support.html"
+status = 200
+
 # Wildcard SPA fallback — MUST be last
 [[redirects]]
 from = "/*"
