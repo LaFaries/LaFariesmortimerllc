@@ -99,6 +99,36 @@ from = "/blog/clergy-appreciation-month-administrative-support"
 to = "/blog/clergy-appreciation-month-administrative-support.html"
 status = 200
 
+[[redirects]]
+from = "/blog/spotlight-mother-evangelist-virginia-siplin-smith"
+to = "/blog/spotlight-mother-evangelist-virginia-siplin-smith.html"
+status = 200
+
+[[redirects]]
+from = "/blog/spotlight-apostle-johnny-l-kemp-sr"
+to = "/blog/spotlight-apostle-johnny-l-kemp-sr.html"
+status = 200
+
+[[redirects]]
+from = "/blog/spotlight-pastor-lillian-yvonne-williams-coley"
+to = "/blog/spotlight-pastor-lillian-yvonne-williams-coley.html"
+status = 200
+
+[[redirects]]
+from = "/blog/spotlight-mec-miami-ministries"
+to = "/blog/spotlight-mec-miami-ministries.html"
+status = 200
+
+[[redirects]]
+from = "/blog/spotlight-jecholiah-mortimer-the-fariest-couture"
+to = "/blog/spotlight-jecholiah-mortimer-the-fariest-couture.html"
+status = 200
+
+[[redirects]]
+from = "/blog/spotlight-evelyn-julia-minns-rolle"
+to = "/blog/spotlight-evelyn-julia-minns-rolle.html"
+status = 200
+
 # Wildcard SPA fallback — MUST be last
 [[redirects]]
 from = "/*"
