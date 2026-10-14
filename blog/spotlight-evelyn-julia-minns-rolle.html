@@ -126,6 +126,15 @@
     .facts li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: 0.9rem 1.25rem; border-bottom: 1px solid var(--border); font-size: 0.95rem; color: rgba(248,246,241,0.85); }
     .facts li:last-child { border-bottom: none; }
     .facts li b { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 500; padding-top: 0.2rem; }
+    .video-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 1.5rem 0 0.5rem; border: 1px solid var(--border); background: #000; }
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-caption { font-size: 0.8rem !important; color: var(--off-white-dim) !important; margin-bottom: 2.5rem !important; }
+    .spotlight-hero { max-width: 900px; margin: 2rem auto 0; padding: 0 2rem; display: grid; gap: 1rem; grid-template-columns: repeat(var(--n, 1), 1fr); animation: fadeUp 0.8s ease both; }
+    .spotlight-hero figure { margin: 0; background: var(--mid); border: 1px solid var(--border); overflow: hidden; }
+    .spotlight-hero img { display: block; width: 100%; height: 420px; object-fit: cover; object-position: center top; background: #111; }
+    .spotlight-hero figcaption { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--off-white-dim); padding: 0.65rem 0.85rem; border-top: 1px solid var(--border); }
+    .spotlight-hero figcaption b { color: var(--gold); font-weight: 500; }
+    @media (max-width: 600px) { .spotlight-hero { padding: 0 1.25rem; grid-template-columns: 1fr; } .spotlight-hero img { height: 340px; } }
     .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0 2.5rem; }
     .gallery.two { grid-template-columns: repeat(2, 1fr); }
     .gallery figure { margin: 0; background: var(--mid); border: 1px solid var(--border); }
