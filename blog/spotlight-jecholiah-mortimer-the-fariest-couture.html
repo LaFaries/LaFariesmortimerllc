@@ -135,10 +135,15 @@
     .spotlight-hero figcaption { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--off-white-dim); padding: 0.65rem 0.85rem; border-top: 1px solid var(--border); }
     .spotlight-hero figcaption b { color: var(--gold); font-weight: 500; }
     @media (max-width: 600px) { .spotlight-hero { padding: 0 1.25rem; grid-template-columns: 1fr; } .spotlight-hero img { height: 340px; } }
+    .article-body h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.35rem; color: var(--gold); margin: 2.25rem 0 0.4rem; }
+    .gallery.single { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+    .gallery.single img { height: auto; }
+    .spotlight-hero.poster { max-width: 460px; }
+    .spotlight-hero.poster img { height: auto; object-fit: contain; }
     .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0 2.5rem; }
     .gallery.two { grid-template-columns: repeat(2, 1fr); }
     .gallery figure { margin: 0; background: var(--mid); border: 1px solid var(--border); }
-    .gallery img { display: block; width: 100%; height: 260px; object-fit: cover; background: #111; }
+    .gallery img { display: block; width: 100%; height: 260px; object-fit: cover; object-position: center top; background: #111; }
     .gallery.wide img { height: 220px; }
     .gallery figcaption { font-size: 0.78rem; color: var(--off-white-dim); padding: 0.6rem 0.75rem; line-height: 1.45; }
     @media (max-width: 600px) { .gallery, .gallery.two { grid-template-columns: 1fr 1fr; } .gallery img { height: 200px; } }
@@ -169,9 +174,8 @@
 
   <!-- HERO -->
     <!-- SPOTLIGHT PHOTOS -->
-  <div class="spotlight-hero" style="--n:2">
-    <figure><img src="images/fariest-couture/scene-curvy-couture.jpg" alt="A purple gown in the Curvy Couture Scene, 2011" onerror="this.closest('figure').style.display='none'" /><figcaption><b>The Fariest Couture</b> · Curvy Couture Scene, 2011</figcaption></figure>
-    <figure><img src="images/fariest-couture/sketch-2015-07-09.jpg" alt="Floral sets sketched under the FC Fariest Couture logo" onerror="this.closest('figure').style.display='none'" /><figcaption><b>Sketched by Jecholiah Mortimer</b> · under the FC logo, 2015</figcaption></figure>
+  <div class="spotlight-hero poster" style="--n:1">
+    <figure><img src="images/fariest-couture/flyer-fashions-by-ms-j-2011.jpg" alt="Flyer: The Fariest Couture Inc. presents Fashions by Ms. J, July 9, 2011, 6 PM, Joseph Caleb Auditorium" onerror="this.closest('figure').style.display='none'" /><figcaption><b>Fashions by: Ms. J</b> · July 9, 2011 · Joseph Caleb Auditorium</figcaption></figure>
   </div>
 
   <div class="article-hero">
@@ -208,17 +212,6 @@
 
     <p>She had a second passion, too: hair. Her adolescent years were hard, but she finished high school at sixteen through a correspondence course and enrolled right away in cosmetology at Miami Lakes Technical School. At seventeen she became a mother, and she took a year away from her studies to care for her son. When she returned, she felt an overwhelming desire to work on the fashions God was giving her. As she studied, the designs kept coming — so often and so fast that she would sketch for hours at a time. Her family took notice and decided to help her build her dream.</p>
 
-    <p>Her early drawings range from a color-blocked mermaid gown in purple, orange, lime, and blue to pen studies of chevron lines, buckled corset waists, a leather zipper dress with a button neck, and a half black, half white jumper.</p>
-
-    <div class="gallery ">
-      <figure><img src="images/fariest-couture/sketch-2008-11-15.jpg" alt="Color-blocked mermaid gown sketch" loading="lazy" /><figcaption>Color-blocked mermaid gown · November 2008</figcaption></figure>
-      <figure><img src="images/fariest-couture/sketch-2010-05-30.jpg" alt="Chevron-line fitted gown sketch" loading="lazy" /><figcaption>Chevron fitted gown · May 2010</figcaption></figure>
-      <figure><img src="images/fariest-couture/sketch-2010-10-31.jpg" alt="Zipper dress with button neck sketch" loading="lazy" /><figcaption>Zipper dress, button neck, leather · October 2010</figcaption></figure>
-      <figure><img src="images/fariest-couture/sketch-2010-11-10.jpg" alt="Tiered bodice dress with buckled waist sketch" loading="lazy" /><figcaption>Tiered bodice, buckled waist · November 2010</figcaption></figure>
-      <figure><img src="images/fariest-couture/sketch-2011-01-30.jpg" alt="Half black, half white jumper sketch" loading="lazy" /><figcaption>Half Black–Half White Jumper · January 2011</figcaption></figure>
-      <figure><img src="images/fariest-couture/sketch-2015-07-09.jpg" alt="Two floral sets under the FC Fariest Couture logo" loading="lazy" /><figcaption>Floral sets under the FC logo · July 2015</figcaption></figure>
-    </div>
-
     <h2>Building <em>the business</em></h2>
 
     <p>In November 2010, Jecholiah incorporated her company in Florida, with herself as president and CEO. The legal name was filed as The Fariest Coutour, Inc.; the brand the public came to know is The Fariest Couture. I served alongside her as vice president.</p>
@@ -235,23 +228,55 @@
 
     <p>In 2011, Jecholiah became the very first client of LaFaries Mortimer LLC, as we worked together on The Fariest Couture fashion show. On July 9, 2011, at 6 p.m., she took the stage at the Joseph Caleb Auditorium in Miami, a 960-seat venue — at just nineteen years old. She was supported by her family and her church family at Missionary Evangelist Center Outreach Ministries, under Apostle Johnny L. Kemp and Pastor Patty L. Kemp, her godparents.</p>
 
+    <p>The flyer billed it as <em>Fashions by: Ms. J</em> — a night of fashion and music, with special performances, to support Sisters in Crisis. The evening opened with a red carpet, was hosted by Supa Cindy and LS Spade, and was broadcast live online. Tickets were sold through MEC Ministries and Ticketmaster.</p>
+
     <p>The surviving highlight film, by KURF Films, shows a full production: hosts, live music and dance, backstage interviews, and a runway organized into themed scenes.</p>
 
-    <ul class="check-list">
-      <li><strong>Safari Couture</strong> — neutrals, animal print, and black-and-white tailoring</li>
-      <li><strong>Men in Black</strong> — men's suiting and all-black formalwear</li>
-      <li><strong>Curvy Couture</strong> — purple satin-look gowns and black-and-white evening looks, presented on curvy models</li>
-      <li><strong>Haute Couture</strong> — saturated red and fuchsia, with dramatic trains</li>
-      <li><strong>Charity Couture</strong> — a closing scene dedicated to Sisters in Crisis, Inc.</li>
-    </ul>
-
-    <div class="gallery wide">
-      <figure><img src="images/fariest-couture/scene-curvy-couture.jpg" alt="A purple gown in the Curvy Couture Scene" loading="lazy" /><figcaption>Curvy Couture Scene</figcaption></figure>
-      <figure><img src="images/fariest-couture/scene-haute-couture.jpg" alt="A red look in the Haute Couture Scene" loading="lazy" /><figcaption>Haute Couture Scene</figcaption></figure>
-      <figure><img src="images/fariest-couture/scene-charity-couture.jpg" alt="Participants on stage under the Charity Couture Scene, Sisters in Crisis Inc. title" loading="lazy" /><figcaption>Charity Couture Scene · Sisters in Crisis, Inc.</figcaption></figure>
+    <h3>Safari Couture</h3>
+    <p>Neutrals, animal print, and black-and-white tailoring.</p>
+    <div class="gallery two">
+      <figure><img src="images/fariest-couture/runway-safari-1.jpg" alt="Model in safari-style separates on the runway" loading="lazy" /><figcaption>Safari Couture · tailored separates</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-safari-2.jpg" alt="Model in an animal-print dress on the runway" loading="lazy" /><figcaption>Safari Couture · animal print</figcaption></figure>
     </div>
 
-    <p>Two things stand out to me, looking back. A dedicated Curvy Couture scene in 2011 put body-size inclusion on the runway by name. And the Charity Couture finale brought her nonprofit's mission onto the same stage as her designs. The work continued into 2012, when the archive shows a full model-casting session.</p>
+    <h3>Men in Black</h3>
+    <p>Men's suiting and all-black formalwear.</p>
+    <div class="gallery two">
+      <figure><img src="images/fariest-couture/runway-men-in-black-1.jpg" alt="Model in a checked blazer and flat cap" loading="lazy" /><figcaption>Men in Black · checked blazer and cap</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-men-in-black-2.jpg" alt="Model in a dark tailored suit" loading="lazy" /><figcaption>Men in Black · dark tailored suit</figcaption></figure>
+    </div>
+
+    <h3>Curvy Couture</h3>
+    <p>Purple satin-look gowns and black-and-white evening looks, presented on curvy models.</p>
+    <div class="gallery two">
+      <figure><img src="images/fariest-couture/runway-curvy-1.jpg" alt="Purple floor-length gown under the Curvy Couture Scene title" loading="lazy" /><figcaption>Curvy Couture · floor-length purple gown</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-curvy-2.jpg" alt="Purple high-low dress on the runway" loading="lazy" /><figcaption>Curvy Couture · high-low dress</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-curvy-3.jpg" alt="Purple bubble-skirt dress with a dark bodice" loading="lazy" /><figcaption>Curvy Couture · bubble skirt</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-curvy-4.jpg" alt="Purple fit-and-flare skirt with a dark top" loading="lazy" /><figcaption>Curvy Couture · fit and flare</figcaption></figure>
+    </div>
+
+    <h3>Haute Couture</h3>
+    <p>Saturated red and fuchsia, with dramatic trains.</p>
+    <div class="gallery two">
+      <figure><img src="images/fariest-couture/runway-haute-1.jpg" alt="Red look with a trailing hem under the Haute Couture Scene title" loading="lazy" /><figcaption>Haute Couture · red with a train</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-haute-2.jpg" alt="Red dress with long pearl-like strands" loading="lazy" /><figcaption>Haute Couture · red with pearls</figcaption></figure>
+    </div>
+
+    <h3>Charity Couture</h3>
+    <p>A closing scene dedicated to Sisters in Crisis, Inc., followed by the finale.</p>
+    <div class="gallery two">
+      <figure><img src="images/fariest-couture/runway-charity-1.jpg" alt="Participants on stage under the Charity Couture Scene, Sisters in Crisis Inc. title" loading="lazy" /><figcaption>Charity Couture · Sisters in Crisis, Inc.</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-finale.jpg" alt="The cast together on stage at the finale" loading="lazy" /><figcaption>The finale</figcaption></figure>
+    </div>
+
+    <p>Two things stand out to me, looking back. A dedicated Curvy Couture scene in 2011 put body-size inclusion on the runway by name. And the Charity Couture finale brought her nonprofit's mission onto the same stage as her designs. The work continued into 2012, with a model-casting session that June, new photo shoots, and another runway event that July.</p>
+
+    <div class="gallery two">
+      <figure><img src="images/fariest-couture/photoshoot-2012-stripes.jpg" alt="Model in a black-and-white striped strapless top and striped pants against a striped wall" loading="lazy" /><figcaption>Photo shoot · April 2012 · model Cassia Simpson</figcaption></figure>
+      <figure><img src="images/fariest-couture/runway-2012-07-15.jpg" alt="Model in a printed strapless jumpsuit on a runway stage" loading="lazy" /><figcaption>On the runway · July 15, 2012</figcaption></figure>
+      <figure><img src="images/fariest-couture/event-2012-07-15.jpg" alt="Guests and models at a Fariest Couture event with show posters and balloons" loading="lazy" /><figcaption>Fariest Couture event · July 15, 2012</figcaption></figure>
+      <figure><img src="images/fariest-couture/interview-2012-07-15.jpg" alt="A red-carpet interview in front of a Fariest Couture striped-look poster" loading="lazy" /><figcaption>Red-carpet interview · July 15, 2012</figcaption></figure>
+    </div>
 
     <h2>Behind <em>the scenes</em></h2>
 
@@ -274,6 +299,19 @@
     <p>First clients shape a business. Working on The Fariest Couture taught me what LaFaries Mortimer LLC still does today: take someone's gift and vision, and build the structure around it — the corporation, the nonprofit, the filings, the production — so the vision can be seen.</p>
 
     <p>Jecholiah's story is a reminder to every creative entrepreneur: keep your sketches, and date them. Your earliest ideas are the beginning of your brand's history.</p>
+
+    <h2>From her <em>sketchbook</em></h2>
+
+    <p>Where it all began. Her drawings range from a color-blocked mermaid gown in purple, orange, lime, and blue to pen studies of chevron lines, buckled corset waists, a leather zipper dress with a button neck, and a half black, half white jumper.</p>
+
+    <div class="gallery ">
+      <figure><img src="images/fariest-couture/sketch-2008-11-15.jpg" alt="Color-blocked mermaid gown sketch" loading="lazy" /><figcaption>Color-blocked mermaid gown · November 2008</figcaption></figure>
+      <figure><img src="images/fariest-couture/sketch-2010-05-30.jpg" alt="Chevron-line fitted gown sketch" loading="lazy" /><figcaption>Chevron fitted gown · May 2010</figcaption></figure>
+      <figure><img src="images/fariest-couture/sketch-2010-10-31.jpg" alt="Zipper dress with button neck sketch" loading="lazy" /><figcaption>Zipper dress, button neck, leather · October 2010</figcaption></figure>
+      <figure><img src="images/fariest-couture/sketch-2010-11-10.jpg" alt="Tiered bodice dress with buckled waist sketch" loading="lazy" /><figcaption>Tiered bodice, buckled waist · November 2010</figcaption></figure>
+      <figure><img src="images/fariest-couture/sketch-2011-01-30.jpg" alt="Half black, half white jumper sketch" loading="lazy" /><figcaption>Half Black–Half White Jumper · January 2011</figcaption></figure>
+      <figure><img src="images/fariest-couture/sketch-2015-07-09.jpg" alt="Two floral sets under the FC Fariest Couture logo" loading="lazy" /><figcaption>Floral sets under the FC logo · July 2015</figcaption></figure>
+    </div>
 
     <p>Watch The Fariest Couture on YouTube at <a href="https://www.youtube.com/@TheFariestCouture">@TheFariestCouture</a>.</p>
 
