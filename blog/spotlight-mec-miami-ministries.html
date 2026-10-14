@@ -141,6 +141,10 @@
     .gallery.single { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
     .gallery.single img { height: auto; }
     .spotlight-hero.poster { max-width: 560px; }
+    .spotlight-hero.logo { max-width: 520px; }
+    .spotlight-hero.logo figure { background: var(--black); }
+    .spotlight-hero.logo img { height: auto; max-height: 260px; object-fit: contain; padding: 2.5rem 2rem; background: var(--black); }
+    .spotlight-hero.logo figcaption { text-align: center; }
     .spotlight-hero.poster img { height: auto; object-fit: contain; }
     .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0 2.5rem; }
     .gallery.two { grid-template-columns: repeat(2, 1fr); }
@@ -176,9 +180,8 @@
 
   <!-- HERO -->
     <!-- SPOTLIGHT PHOTOS -->
-  <div class="spotlight-hero" style="--n:2">
-    <figure><img src="images/spotlights/mother-evangelist-virginia-siplin-smith.jpg" alt="Mother Evangelist Virginia Siplin Smith, founder of MEC" onerror="this.closest('figure').style.display='none'" /><figcaption><b>Mother Evangelist Virginia Siplin Smith</b> · Founder, 1971</figcaption></figure>
-    <figure><img src="images/spotlights/apostle-johnny-l-kemp-sr.jpg" alt="Apostle Johnny L. Kemp Sr." onerror="this.closest('figure').style.display='none'" /><figcaption><b>Apostle Johnny L. Kemp Sr.</b> · leading M.E.C. since 1977</figcaption></figure>
+  <div class="spotlight-hero logo" style="--n:1">
+    <figure><img src="https://faithconnector.s3.amazonaws.com/3521/images/library/design_assets/mec_logo_2023.png" alt="MEC Miami Ministries logo" onerror="this.closest('figure').style.display='none'" /><figcaption><b>MEC Miami Ministries</b></figcaption></figure>
   </div>
 
   <div class="article-hero">
